@@ -24,10 +24,10 @@ jobs:
           extended: true
 
       - name: Build
-        run: hugo --gc --minify -b https://ailab.io
+        run: hugo --gc --minify -b https://aicell.io
 
       - name: Add CNAME and .nojekyll
-        run: touch ./public/.nojekyll && echo ailab.io > ./public/CNAME
+        run: touch ./public/.nojekyll && echo aicell.io > ./public/CNAME
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
