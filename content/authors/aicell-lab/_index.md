@@ -1,26 +1,32 @@
 ---
 # Display name
-title: AI Cell Lab
+title: AI for Cell Biology Lab
 
 # Is this the primary user of the site?
-superuser: true
+superuser: false
 
 # Role/position/tagline
-role: Headed by Wei Ouyang
+role: Building AI Systems for Data-driven Cell and Molecular Biology
 
 # Organizations/Affiliations to show in About widget
 organizations:
+  - name: Science for Life Laboratory
+    url: https://scilifelab.se
   - name: KTH Royal Institute of Technology
     url: https://kth.se
 
 # Short bio (displayed in user profile at end of posts)
-bio: Building cell simulators with artificial intelligence
+bio: Building AI Systems for Data-driven Cell and Molecular Biology
 
 # Interests to show in About widget
 interests:
   - Artificial Intelligence
-  - Cell Biology
+  - Multi-omics Data Integration
+  - Whole-cell Modeling
+  - Automated Microscopy Imaging
   - BioImage Analysis
+  - Web Image Analysis 
+  - AI Model Serving
 
 # Social/Academic Networking
 # For available icons, see: https://wowchemy.com/docs/getting-started/page-builder/#icons
@@ -29,10 +35,10 @@ interests:
 social:
   - icon: envelope
     icon_pack: fas
-    link: '/#contact'
+    link: 'mailto: wei.ouyang@scilifelab.se'
   - icon: twitter
     icon_pack: fab
-    link: https://twitter.com/aicell
+    link: https://twitter.com/imweio
   - icon: graduation-cap # Alternatively, use `google-scholar` icon from `ai` icon pack
     icon_pack: fas
     link: https://scholar.google.co.uk/citations?user=bJBzM18AAAAJ
@@ -54,4 +60,4 @@ email: ''
 highlight_name: true
 ---
 
-The AI Cell Lab is a newly founded group at KTH Royal Insitute at Technology, headed by Wei Ouyang. The aim of the lab is to use AI, microscopy and multi-omics data integration to build whole-cell models.
+The AI Cell Lab is a newly founded research lab at Science for Life Laboratory and KTH Royal Institute at Technology. The lab is headed by [Wei Ouyang](https://oeway.github.io). The aim of the lab is to build AI systems for cell and molecular biology.
