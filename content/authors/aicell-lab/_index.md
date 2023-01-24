@@ -61,3 +61,7 @@ highlight_name: true
 ---
 
 The AI Cell Lab is a newly founded research lab at Science for Life Laboratory and KTH Royal Institute at Technology. The lab is headed by [Wei Ouyang](https://oeway.github.io). The aim of the lab is to build AI systems for cell and molecular biology.
+
+
+| :zap:       This website is under construction!   |
+|-----------------------------------------|
