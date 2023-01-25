@@ -9,7 +9,75 @@ Click on the &lt;strong>Slides&lt;/strong> button above to view the built-in sli
 &lt;li>&lt;strong>Upload&lt;/strong> an existing slide deck to &lt;code>static/&lt;/code> and link using &lt;code>url_slides&lt;/code> parameter in the front matter of the talk file&lt;/li>
 &lt;li>&lt;strong>Embed&lt;/strong> your slides (e.g. Google Slides) or presentation video on this page using &lt;a href="https://wowchemy.com/docs/writing-markdown-latex/" target="_blank" rel="noopener">shortcodes&lt;/a>.&lt;/li>
 &lt;/ul>
-&lt;p>Further event details, including &lt;a href="https://wowchemy.com/docs/writing-markdown-latex/" target="_blank" rel="noopener">page elements&lt;/a> such as image galleries, can be added to the body of this page.&lt;/p></description></item><item><title>An Open-Source Modular Framework for Automated Pipetting and Imaging Applications</title><link>https://aicell.io/publication/ouyang-2022-open/</link><pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate><guid>https://aicell.io/publication/ouyang-2022-open/</guid><description/></item><item><title>Analysis of the human protein atlas weakly supervised single-cell classification competition</title><link>https://aicell.io/publication/le-2022-analysis/</link><pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate><guid>https://aicell.io/publication/le-2022-analysis/</guid><description/></item><item><title>BioImage Model Zoo: A Community-Driven Resource for Accessible Deep Learning in BioImage Analysis</title><link>https://aicell.io/publication/ouyang-2022-bioimage/</link><pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate><guid>https://aicell.io/publication/ouyang-2022-bioimage/</guid><description/></item><item><title>FISH-quant v2: a scalable and modular tool for smFISH image analysis</title><link>https://aicell.io/publication/imbert-2022-fish/</link><pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate><guid>https://aicell.io/publication/imbert-2022-fish/</guid><description/></item><item><title>ShareLoc-an open platform for sharing localization microscopy data</title><link>https://aicell.io/publication/ouyang-2022-shareloc/</link><pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate><guid>https://aicell.io/publication/ouyang-2022-shareloc/</guid><description/></item><item><title>Subcellular mapping of the protein landscape of SARS-CoV-2 infected cells for target-centric drug repurposing</title><link>https://aicell.io/publication/kaimal-2022-subcellular/</link><pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate><guid>https://aicell.io/publication/kaimal-2022-subcellular/</guid><description/></item><item><title>Uncovering molecular grammars of intrinsically disordered regions that organize nucleolar fibrillar centers</title><link>https://aicell.io/publication/king-2022-uncovering/</link><pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate><guid>https://aicell.io/publication/king-2022-uncovering/</guid><description/></item><item><title>A multi-scale map of cell structure fusing protein images and interactions</title><link>https://aicell.io/publication/qin-2021-multi/</link><pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate><guid>https://aicell.io/publication/qin-2021-multi/</guid><description/></item><item><title>DeepImageJ: A user-friendly environment to run deep learning models in ImageJ</title><link>https://aicell.io/publication/gomez-2021-deepimagej/</link><pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate><guid>https://aicell.io/publication/gomez-2021-deepimagej/</guid><description/></item><item><title>Interactive biomedical segmentation tool powered by deep learning and ImJoy</title><link>https://aicell.io/publication/ouyang-2021-interactive/</link><pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate><guid>https://aicell.io/publication/ouyang-2021-interactive/</guid><description/></item><item><title>Pycro-Manager: open-source software for customized and reproducible microscope control</title><link>https://aicell.io/publication/pinkard-2021-pycro/</link><pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate><guid>https://aicell.io/publication/pinkard-2021-pycro/</guid><description/></item><item><title>Super-resolution visualization and modeling of human chromosomal regions reveals cohesin-dependent loop structures</title><link>https://aicell.io/publication/hao-2021-super/</link><pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate><guid>https://aicell.io/publication/hao-2021-super/</guid><description/></item><item><title>Welcome to Wowchemy, the website builder for Hugo</title><link>https://aicell.io/post/getting-started/</link><pubDate>Sun, 13 Dec 2020 00:00:00 +0000</pubDate><guid>https://aicell.io/post/getting-started/</guid><description>&lt;h2 id="overview">Overview&lt;/h2>
+&lt;p>Further event details, including &lt;a href="https://wowchemy.com/docs/writing-markdown-latex/" target="_blank" rel="noopener">page elements&lt;/a> such as image galleries, can be added to the body of this page.&lt;/p></description></item><item><title>BioImage Model Zoo</title><link>https://aicell.io/project/model-zoo/</link><pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate><guid>https://aicell.io/project/model-zoo/</guid><description>&lt;p>Deep learning-based approaches are revolutionizing imaging-driven scientific research. However, the accessibility and reproducibility of deep learning-based workflows for imaging scientists remain far from sufficient. Several tools have recently risen to the challenge of democratizing deep learning by providing user-friendly interfaces to analyze new data with pre-trained or fine-tuned models. Still, few of the existing pre-trained models are interoperable between these tools, critically restricting a model’s overall utility and the possibility of validating and reproducing scientific analyses. Here, we present the BioImage Model Zoo (&lt;a href="https://bioimage.io" target="_blank" rel="noopener">https://bioimage.io&lt;/a>): a community-driven, fully open resource where standardized pre-trained models can be shared, explored, tested, and downloaded for further adaptation or direct deployment in multiple end user-facing tools (e.g., ilastik, deepImageJ, QuPath, StarDist, ImJoy, ZeroCostDL4Mic, CSBDeep). To enable everyone to contribute and consume the Zoo resources, we provide a model standard to enable cross-compatibility, a rich list of example models and practical use-cases, developer tools, documentation, and the accompanying infrastructure for model upload, download and testing. Our contribution aims to lay the groundwork to make deep learning methods for microscopy imaging findable, accessible, interoperable, and reusable (FAIR) across software tools and platforms.&lt;/p>
+&lt;p>For more details, see our publication &lt;a href="https://www.biorxiv.org/content/10.1101/2022.06.07.495102v1" target="_blank" rel="noopener">here&lt;/a>.&lt;/p></description></item><item><title>Human Cell Simulator</title><link>https://aicell.io/project/human-cell-simulator/</link><pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate><guid>https://aicell.io/project/human-cell-simulator/</guid><description>&lt;p>Whole-cell modeling enables a holistic and quantitative view of cell biology and allows performing in-silico experimentation which has a great potential in revolutionizing system biology, synthetic biology, medicine and other applications in life science. However, modeling the entire cell is an extremely complex task and is heavily limited by our understanding of the biological systems. As a newly formed research group, we would like to take the grand challenge of building a human cell simulator through recent advances in multi-omics data generation and artificial intelligence. Our aim is to use recent deep learning techniques such as convolutional neural networks, transformers, AlphaFold and diffusion models to analysis existing multi-omics dataset, combining them with massive amount of newly generated live cell, multiplexed images, to model cellular behavior through generative and predictive models.&lt;/p></description></item><item><title>ImJoy - Web Data Analysis</title><link>https://aicell.io/project/imjoy/</link><pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate><guid>https://aicell.io/project/imjoy/</guid><description>&lt;p>Deep learning (DL) methods achieve breakthrough performances in analyzing biomedical data across countless tasks, including medical diagnostics, DNA sequence analysis, augmented microscopy and drug design. Combined with increasing data repositories in genomics, imaging and other fields, such successes underlay a growing demand to adapt DL methods to new datasets and questions1. However, the dissemination of DL approaches faces considerable hurdles. Most published DL studies2,3,4,5 require users to retrain models on their own data to obtain the best performance and/or avoid erroneous results. Although trained models are frequently available through web applications or ImageJ plugins, retraining is typically only possible via scripts or command lines, rather than graphical user interfaces (GUIs). In addition, the complexities of setting up the required hardware and software environments often constitute forbidding obstacles6. Furthermore, the large datasets and computational resources typical of current DL successes pose challenges to traditional desktop-oriented software that tightly couple GUI and computation. Cloud services can partly alleviate these difficulties, but raise privacy and confidentiality issues that can be prohibitive for medical data7. Meanwhile, deploying scientific software to mobile platforms can make them accessible to billions of people8, enabling large-scale biomedical research and citizen science. These opportunities and challenges call for new computational frameworks.&lt;/p>
+&lt;p>For more information, read our publication on &lt;a href="https://www.nature.com/articles/s41592-019-0627-0" target="_blank" rel="noopener">Nature Methods&lt;/a>.&lt;/p></description></item><item><title>Reef - Automated Imaging Farm</title><link>https://aicell.io/project/reef-imaging-farm/</link><pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate><guid>https://aicell.io/project/reef-imaging-farm/</guid><description>&lt;p>The aim of the project is to build a smart microscopy imaging farm for massive production of image data. It consists of multiple microscopes and fluidic systems, robotic arms, liquid handling robots and automatic incubators. The farm will be used for performing automated widefield/fluorescence imaging, long-term live cell imaging, tracking, spatial-omics and multiplexing imaging. With the AI-powered control software, data are analyzed in real-time, augmented views are added on the fly. By generating feedback control signals to control the microscope, the software will automatically change field-of-views, illumination power and other experimental conditions in order to optimize the phototoxicity and capture rare events in live cells.&lt;/p></description></item><item><title>An Open-Source Modular Framework for Automated Pipetting and Imaging Applications</title><link>https://aicell.io/publication/ouyang-2022-open/</link><pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate><guid>https://aicell.io/publication/ouyang-2022-open/</guid><description/></item><item><title>Analysis of the human protein atlas weakly supervised single-cell classification competition</title><link>https://aicell.io/publication/le-2022-analysis/</link><pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate><guid>https://aicell.io/publication/le-2022-analysis/</guid><description/></item><item><title>BioImage Model Zoo: A Community-Driven Resource for Accessible Deep Learning in BioImage Analysis</title><link>https://aicell.io/publication/ouyang-2022-bioimage/</link><pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate><guid>https://aicell.io/publication/ouyang-2022-bioimage/</guid><description/></item><item><title>FISH-quant v2: a scalable and modular tool for smFISH image analysis</title><link>https://aicell.io/publication/imbert-2022-fish/</link><pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate><guid>https://aicell.io/publication/imbert-2022-fish/</guid><description/></item><item><title>ShareLoc-an open platform for sharing localization microscopy data</title><link>https://aicell.io/publication/ouyang-2022-shareloc/</link><pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate><guid>https://aicell.io/publication/ouyang-2022-shareloc/</guid><description/></item><item><title>Subcellular mapping of the protein landscape of SARS-CoV-2 infected cells for target-centric drug repurposing</title><link>https://aicell.io/publication/kaimal-2022-subcellular/</link><pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate><guid>https://aicell.io/publication/kaimal-2022-subcellular/</guid><description/></item><item><title>Uncovering molecular grammars of intrinsically disordered regions that organize nucleolar fibrillar centers</title><link>https://aicell.io/publication/king-2022-uncovering/</link><pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate><guid>https://aicell.io/publication/king-2022-uncovering/</guid><description/></item><item><title>Slides</title><link>https://aicell.io/slides/imjoy/</link><pubDate>Fri, 05 Feb 2021 00:00:00 +0000</pubDate><guid>https://aicell.io/slides/imjoy/</guid><description>&lt;h2 id="imjoy-supercharging-interactivity-and-scalability-for-bioimage-analysis">ImJoy: Supercharging Interactivity and Scalability for BioImage Analysis&lt;/h2>
+&lt;p>Wei Ouyang&lt;/p>
+&lt;p>KTH | SciLifeLab, Stockholm&lt;/p>
+&lt;hr>
+&lt;h2 id="challenges-in-ai-for-bioimaging">Challenges in AI for bioimaging&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>Usability&lt;/strong>: User friendly GUI&lt;/li>
+&lt;li>&lt;strong>Flexibility&lt;/strong>: Flexible for different data types&lt;/li>
+&lt;li>&lt;strong>Interactivity&lt;/strong>: Respond to GUI on laptop/mobile&lt;/li>
+&lt;li>&lt;strong>Scalability&lt;/strong>: Remote storage and compute resources&lt;/li>
+&lt;li>&lt;strong>Privacy&lt;/strong>: Edge computing&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="progressive-web-app">Progressive Web App&lt;/h2>
+&lt;ul>
+&lt;li>Rich and interactive UI libraries&lt;/li>
+&lt;li>Computation in the browser (+cloud)&lt;/li>
+&lt;li>Offline support&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;!-- .slide: data-background="white" -->
+&lt;h3 id="imjoy-httpsimjoyio">ImJoy &lt;a href="https://imjoy.io" target="_blank" rel="noopener">https://imjoy.io&lt;/a>&lt;/h3>
+&lt;p>Data science tools in the browser&lt;/p>
+&lt;img src="https://docs.google.com/drawings/d/e/2PACX-1vSBsdhDBrp4L2zWfL_9YOUHCS2zQ51HtjplGa-l_a1hMpNjbqENzmXrcSmYs6yed_NACNZSRH-7qsph/pub?w=1248&amp;amp;h=573">
+---
+# Key concepts
+* Sandboxed plugins connected via Remote Procedure calls
+* Workflow composition via asynchronous programming
+* Open Integration with existing software/website
+&lt;hr>
+&lt;h3 id="open-integration-with-web-apps">👐Open Integration with Web Apps&lt;/h3>
+&lt;p>Customize annotation workflow with Kaibu&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-js" data-lang="js">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// load the web app via its URL
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="nx">viewer&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kr">await&lt;/span> &lt;span class="nx">api&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">createWindow&lt;/span>&lt;span class="p">({&lt;/span>&lt;span class="nx">src&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s2">&amp;#34;https://kaibu.org/#/app&amp;#34;&lt;/span>&lt;span class="p">})&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// call api functions directly via RPC
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// add an image layer
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="kr">await&lt;/span> &lt;span class="nx">viewer&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">view_image&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;https://images.proteinatlas.org/61448/1319_C10_2_blue_red_green.jpg&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// add an annotation layer
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="kr">await&lt;/span> &lt;span class="nx">viewer&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">add_shapes&lt;/span>&lt;span class="p">([],&lt;/span> &lt;span class="p">{&lt;/span>&lt;span class="nx">name&lt;/span>&lt;span class="o">:&lt;/span>&lt;span class="s2">&amp;#34;annotation&amp;#34;&lt;/span>&lt;span class="p">})&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="demo-visualization-with-vizarr">🔥Demo: Visualization with Vizarr&lt;/h3>
+&lt;p>Made by Trevor Manz et. al.&lt;/p>
+&lt;iframe width="100%" height="500px" src="https://hms-dbmi.github.io/vizarr/?source=https://uk1s3.embassy.ebi.ac.uk/idr/zarr/v0.1/4495402.zarr" frameborder="0" allowfullscreen>&lt;/iframe>
+&lt;hr>
+&lt;h2 id="a-rapid-growing-list-of-plugins">🚀A rapid growing list of plugins&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://ij.imjoy.io" target="_blank" rel="noopener">ImageJ.JS&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://imjoy-team.github.io/elFinder/" target="_blank" rel="noopener">File Manager&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/hms-dbmi/vizarr" target="_blank" rel="noopener">Vizarr&lt;/a> for visualizing zarr images&lt;/li>
+&lt;li>&lt;a href="https://kitware.github.io/itk-vtk-viewer/docs/" target="_blank" rel="noopener">ITK/VTK Viewer&lt;/a> for 3D visualizing&lt;/li>
+&lt;li>&lt;a href="https://slides.imjoy.io" target="_blank" rel="noopener">ImJoy Slides&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://chart.imjoy.io" target="_blank" rel="noopener">ImJoy Chart Editor&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="works-with-jupyterbinder-and-colab">Works with Jupyter/Binder and Colab&lt;/h3>
+&lt;img style="height:70%;object-fit:contain;background-color: white;" src="https://raw.githubusercontent.com/imjoy-team/imjoy-demo-assets/main/image125.gif">
+&lt;hr>
+&lt;h2 id="conclusions">Conclusions&lt;/h2>
+&lt;ul>
+&lt;li>ImJoy is built for scalability and interactivity&lt;/li>
+&lt;li>ImJoy plugins are sandbox services connected via RPC&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="acknowledgements">Acknowledgements&lt;/h3>
+&lt;p>Work carried out at Cell Profiling group @ SciLifeLab headed by Emma Lundberg&lt;/p>
+&lt;hr>
+&lt;h1 id="thank-you">🙏Thank You!&lt;/h1></description></item><item><title>A multi-scale map of cell structure fusing protein images and interactions</title><link>https://aicell.io/publication/qin-2021-multi/</link><pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate><guid>https://aicell.io/publication/qin-2021-multi/</guid><description/></item><item><title>DeepImageJ: A user-friendly environment to run deep learning models in ImageJ</title><link>https://aicell.io/publication/gomez-2021-deepimagej/</link><pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate><guid>https://aicell.io/publication/gomez-2021-deepimagej/</guid><description/></item><item><title>Interactive biomedical segmentation tool powered by deep learning and ImJoy</title><link>https://aicell.io/publication/ouyang-2021-interactive/</link><pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate><guid>https://aicell.io/publication/ouyang-2021-interactive/</guid><description/></item><item><title>Pycro-Manager: open-source software for customized and reproducible microscope control</title><link>https://aicell.io/publication/pinkard-2021-pycro/</link><pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate><guid>https://aicell.io/publication/pinkard-2021-pycro/</guid><description/></item><item><title>Super-resolution visualization and modeling of human chromosomal regions reveals cohesin-dependent loop structures</title><link>https://aicell.io/publication/hao-2021-super/</link><pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate><guid>https://aicell.io/publication/hao-2021-super/</guid><description/></item><item><title>Welcome to Wowchemy, the website builder for Hugo</title><link>https://aicell.io/post/getting-started/</link><pubDate>Sun, 13 Dec 2020 00:00:00 +0000</pubDate><guid>https://aicell.io/post/getting-started/</guid><description>&lt;h2 id="overview">Overview&lt;/h2>
 &lt;ol>
 &lt;li>The Wowchemy website builder for Hugo, along with its starter templates, is designed for professional creators, educators, and teams/organizations - although it can be used to create any kind of site&lt;/li>
 &lt;li>The template can be modified and customised to suit your needs. It&amp;rsquo;s a good platform for anyone looking to take control of their data and online identity whilst having the convenience to start off with a &lt;strong>no-code solution (write in Markdown and customize with YAML parameters)&lt;/strong> and having &lt;strong>flexibility to later add even deeper personalization with HTML and CSS&lt;/strong>&lt;/li>
@@ -174,8 +242,104 @@ data-background-image="/media/boards.jpg"
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
 &lt;h1 id="questions">Questions?&lt;/h1>
 &lt;p>&lt;a href="https://github.com/wowchemy/wowchemy-hugo-modules/discussions" target="_blank" rel="noopener">Ask&lt;/a>&lt;/p>
-&lt;p>&lt;a href="https://wowchemy.com/docs/managing-content/#create-slides" target="_blank" rel="noopener">Documentation&lt;/a>&lt;/p></description></item><item><title>Analysis of the human protein atlas image classification competition</title><link>https://aicell.io/publication/ouyang-2019-analysis/</link><pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate><guid>https://aicell.io/publication/ouyang-2019-analysis/</guid><description/></item><item><title>ImJoy: an open-source computational platform for the deep learning era</title><link>https://aicell.io/publication/ouyang-2019-imjoy/</link><pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate><guid>https://aicell.io/publication/ouyang-2019-imjoy/</guid><description/></item><item><title>A computational framework to study sub-cellular RNA localization</title><link>https://aicell.io/publication/samacoits-2018-computational/</link><pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate><guid>https://aicell.io/publication/samacoits-2018-computational/</guid><description/></item><item><title>Deep learning massively accelerates super-resolution localization microscopy</title><link>https://aicell.io/publication/ouyang-2018-deep/</link><pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate><guid>https://aicell.io/publication/ouyang-2018-deep/</guid><description/></item><item><title>IoT-based remote pain monitoring system: From device to cloud platform</title><link>https://aicell.io/publication/yang-2017-iot/</link><pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate><guid>https://aicell.io/publication/yang-2017-iot/</guid><description/></item><item><title>The imaging tsunami: computational opportunities and challenges</title><link>https://aicell.io/publication/ouyang-2017-imaging/</link><pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate><guid>https://aicell.io/publication/ouyang-2017-imaging/</guid><description/></item><item><title>Example Project</title><link>https://aicell.io/project/example/</link><pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate><guid>https://aicell.io/project/example/</guid><description>&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.&lt;/p>
-&lt;p>Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.&lt;/p>
-&lt;p>Cras aliquam rhoncus ipsum, in hendrerit nunc mattis vitae. Duis vitae efficitur metus, ac tempus leo. Cras nec fringilla lacus. Quisque sit amet risus at ipsum pharetra commodo. Sed aliquam mauris at consequat eleifend. Praesent porta, augue sed viverra bibendum, neque ante euismod ante, in vehicula justo lorem ac eros. Suspendisse augue libero, venenatis eget tincidunt ut, malesuada at lorem. Donec vitae bibendum arcu. Aenean maximus nulla non pretium iaculis. Quisque imperdiet, nulla in pulvinar aliquet, velit quam ultrices quam, sit amet fringilla leo sem vel nunc. Mauris in lacinia lacus.&lt;/p>
-&lt;p>Suspendisse a tincidunt lacus. Curabitur at urna sagittis, dictum ante sit amet, euismod magna. Sed rutrum massa id tortor commodo, vitae elementum turpis tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus turpis, venenatis a ullamcorper nec, tincidunt et massa. Integer posuere quam rutrum arcu vehicula imperdiet. Mauris ullamcorper quam vitae purus congue, quis euismod magna eleifend. Vestibulum semper vel augue eget tincidunt. Fusce eget justo sodales, dapibus odio eu, ultrices lorem. Duis condimentum lorem id eros commodo, in facilisis mauris scelerisque. Morbi sed auctor leo. Nullam volutpat a lacus quis pharetra. Nulla congue rutrum magna a ornare.&lt;/p>
-&lt;p>Aliquam in turpis accumsan, malesuada nibh ut, hendrerit justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque sed erat nec justo posuere suscipit. Donec ut efficitur arcu, in malesuada neque. Nunc dignissim nisl massa, id vulputate nunc pretium nec. Quisque eget urna in risus suscipit ultricies. Pellentesque odio odio, tincidunt in eleifend sed, posuere a diam. Nam gravida nisl convallis semper elementum. Morbi vitae felis faucibus, vulputate orci placerat, aliquet nisi. Aliquam erat volutpat. Maecenas sagittis pulvinar purus, sed porta quam laoreet at.&lt;/p></description></item><item><title/><link>https://aicell.io/admin/config.yml</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://aicell.io/admin/config.yml</guid><description/></item></channel></rss>
+&lt;p>&lt;a href="https://wowchemy.com/docs/managing-content/#create-slides" target="_blank" rel="noopener">Documentation&lt;/a>&lt;/p></description></item><item><title>Slides</title><link>https://aicell.io/slides/model-zoo/</link><pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate><guid>https://aicell.io/slides/model-zoo/</guid><description>&lt;h1 id="img-altbioimage-model-zoo-srchttpsbioimageiostaticimgbioimage-io-logo-whitesvg">&lt;img alt="BioImage Model Zoo" src="https://bioimage.io/static/img/bioimage-io-logo-white.svg">&lt;/h1>
+&lt;p>Wei OUYANG&lt;/p>
+&lt;p>SciLifeLab | KTH Royal Institute of Technology, Stockholm&lt;/p>
+&lt;hr>
+&lt;h3 id="httpsbioimageio">&lt;a href="https://bioimage.io" target="_blank" rel="noopener">https://bioimage.io&lt;/a>&lt;/h3>
+&lt;img style="max-height: calc(100vh - 100px);" alt="BioImage Model Zoo screenshot" src="https://raw.githubusercontent.com/oeway/slides/master/2022/bioimage-model-zoo-screenshot.png">
+&lt;hr>
+&lt;h1 id="challenges">Challenges&lt;/h1>
+&lt;ul>
+&lt;li>Training models is difficult&lt;/li>
+&lt;/ul>
+&lt;ul>
+&lt;li>Complex hardware/software setup&lt;/li>
+&lt;li>Environmental impact: &amp;ldquo;Training a single AI model can emit as much carbon as five cars in their lifetimes&amp;rdquo;&lt;/li>
+&lt;/ul>
+&lt;ul>
+&lt;li>Lack of interoperability&lt;/li>
+&lt;li>Hard for non-expert to run&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h1 id="bioimage-model-zoo">🦒BioImage Model Zoo&lt;/h1>
+&lt;ul>
+&lt;li>AI model file standard&lt;/li>
+&lt;li>Hosting pretrained models&lt;/li>
+&lt;li>Test run service&lt;/li>
+&lt;li>User/Developer services&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;!-- .slide: data-background="white" -->
+&lt;h3 id="bioimage-model-zoo-overview">🦒BioImage Model Zoo: Overview&lt;/h3>
+&lt;img style="height:calc(100% - 200px);object-fit:contain;background-color: white;" src="https://docs.google.com/drawings/d/e/2PACX-1vRSNdb6sW-nrTjmHgqwG8sOTdQTjdNjWH0y4DveZwairx_NUKiHg3dm0-0Z7VU4ppFdwSiK2BLn4hKo/pub?w=1732&amp;amp;h=1343">
+&lt;hr>
+&lt;!-- .slide: data-background="white" -->
+&lt;h3 id="how-it-works">🤔How it works&lt;/h3>
+&lt;img style="height:calc(100% - 200px);object-fit:contain;background-color: white;" src="https://docs.google.com/drawings/d/e/2PACX-1vSh8qO-jxZcGKjg5w52IMTesAUMbOaOxc3XQgmW7zBBj6btMGAUjcgh6iHgaTyzI18Ld7SSHkbie2k2/pub?w=1057&amp;amp;h=689">
+&lt;hr>
+&lt;h2 id="demos">🔥Demos!&lt;/h2>
+&lt;ul>
+&lt;li>Overview: &lt;a href="https://bioimage.io/" target="_blank" rel="noopener">https://bioimage.io/&lt;/a>&lt;/li>
+&lt;li>Find and download models&lt;/li>
+&lt;li>Upload Models&lt;/li>
+&lt;li>Ask for help&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;!-- .slide: data-background="white" -->
+&lt;h2 id="meet-the-bioengine">Meet the BioEngine&lt;/h2>
+&lt;img style="max-height: calc(100vh - 100px);" src="https://docs.google.com/drawings/d/e/2PACX-1vQCVUJDbgT_cPVsm--P75h13xbl7kW1Kt4RESW2opDb8MYOQrYQxToaFMFYdUwEBDBC4EWKwto0EExB/pub?w=1550&amp;amp;h=983">
+&lt;hr>
+&lt;!-- .slide: data-background="white" -->
+&lt;h2 id="deploying-the-bioengine">Deploying the BioEngine&lt;/h2>
+&lt;img src="https://docs.google.com/drawings/d/e/2PACX-1vSoG7ywI0qbNAbG-bV7J9LomhlK8r1xyhxS70LcA4_XNt_oUiWoYLcMFJlUFB2oA80hgL5TQzAWUhNW/pub?w=1510&amp;amp;h=1050">
+&lt;hr>
+&lt;h2 id="bioengine-feature-hightlights">BioEngine feature hightlights&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>Many models&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>Many users&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>Many applications&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>Shared GPU resources&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>Both inference and training&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>Local or cloud deployment&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="bioengine-vs-jupyter-notebooks--colab">BioEngine vs Jupyter Notebooks / Colab&lt;/h2>
+&lt;p>Scalability!&lt;/p>
+&lt;ul>
+&lt;li>Cloud &amp;amp; On-premise deployment&lt;/li>
+&lt;li>For multi-user or the public&lt;/li>
+&lt;li>Multi-model serving&lt;/li>
+&lt;li>Improved GPU utilization&lt;/li>
+&lt;li>Instant usage without setup or installation&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="accessing-the-bioengine-from-icy">Accessing the BioEngine from Icy&lt;/h2>
+&lt;img src="https://raw.githubusercontent.com/oeway/slides/master/2022/icy-bioengine-cellpose-demo.gif">
+&lt;p>Collabration with Carlos García López de Haro and the Icy Team&lt;/p>
+&lt;hr>
+&lt;h2 id="accessing-the-bioengine-from-icy-1">Accessing the BioEngine from Icy&lt;/h2>
+&lt;img src="https://raw.githubusercontent.com/oeway/slides/master/2022/icy-bioengine-demo-nuclei-segmentation.gif">
+&lt;p>Collabration with Carlos García López de Haro and the Icy Team&lt;/p>
+&lt;hr>
+&lt;h2 id="conclusions">Conclusions&lt;/h2>
+&lt;ul>
+&lt;li>AI model sharing via BioImage Model Zoo&lt;/li>
+&lt;li>BioEninge for scalable AI model serving&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="acknowledgements-1">Acknowledgements (1)&lt;/h3>
+&lt;p>Work carried out at Cell Profiling group @ SciLifeLab headed by Emma Lundberg&lt;/p>
+&lt;p>BioImage.IO is powered by the 🧠 and ❤️ of:&lt;/p>
+&lt;ul>
+&lt;li>deepImageJ Team&lt;/li>
+&lt;li>EBI Bioimage Archive Team&lt;/li>
+&lt;li>Fiji/ImageJ Team&lt;/li>
+&lt;li>ilastik Team&lt;/li>
+&lt;li>ImJoy Team&lt;/li>
+&lt;li>ZeroCostDL4Mic Team&lt;/li>
+&lt;li>&amp;hellip;&lt;/li>
+&lt;/ul>
+&lt;p>Follow us on twitter @bioimageio&lt;/p>
+&lt;hr>
+&lt;h1 id="thank-you">🙏Thank You!&lt;/h1></description></item><item><title>Analysis of the human protein atlas image classification competition</title><link>https://aicell.io/publication/ouyang-2019-analysis/</link><pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate><guid>https://aicell.io/publication/ouyang-2019-analysis/</guid><description/></item><item><title>ImJoy: an open-source computational platform for the deep learning era</title><link>https://aicell.io/publication/ouyang-2019-imjoy/</link><pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate><guid>https://aicell.io/publication/ouyang-2019-imjoy/</guid><description/></item><item><title>A computational framework to study sub-cellular RNA localization</title><link>https://aicell.io/publication/samacoits-2018-computational/</link><pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate><guid>https://aicell.io/publication/samacoits-2018-computational/</guid><description/></item><item><title>Deep learning massively accelerates super-resolution localization microscopy</title><link>https://aicell.io/publication/ouyang-2018-deep/</link><pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate><guid>https://aicell.io/publication/ouyang-2018-deep/</guid><description/></item><item><title>IoT-based remote pain monitoring system: From device to cloud platform</title><link>https://aicell.io/publication/yang-2017-iot/</link><pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate><guid>https://aicell.io/publication/yang-2017-iot/</guid><description/></item><item><title>The imaging tsunami: computational opportunities and challenges</title><link>https://aicell.io/publication/ouyang-2017-imaging/</link><pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate><guid>https://aicell.io/publication/ouyang-2017-imaging/</guid><description/></item><item><title/><link>https://aicell.io/admin/config.yml</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://aicell.io/admin/config.yml</guid><description/></item></channel></rss>

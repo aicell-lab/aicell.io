@@ -1,4 +1,70 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Slides | AICell Lab</title><link>https://aicell.io/slides/</link><atom:link href="https://aicell.io/slides/index.xml" rel="self" type="application/rss+xml"/><description>Slides</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 05 Feb 2019 00:00:00 +0000</lastBuildDate><item><title>Slides</title><link>https://aicell.io/slides/example/</link><pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate><guid>https://aicell.io/slides/example/</guid><description>&lt;h1 id="create-slides-in-markdown-with-wowchemy">Create slides in Markdown with Wowchemy&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Slides | AICell Lab</title><link>https://aicell.io/slides/</link><atom:link href="https://aicell.io/slides/index.xml" rel="self" type="application/rss+xml"/><description>Slides</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 05 Feb 2021 00:00:00 +0000</lastBuildDate><item><title>Slides</title><link>https://aicell.io/slides/imjoy/</link><pubDate>Fri, 05 Feb 2021 00:00:00 +0000</pubDate><guid>https://aicell.io/slides/imjoy/</guid><description>&lt;h2 id="imjoy-supercharging-interactivity-and-scalability-for-bioimage-analysis">ImJoy: Supercharging Interactivity and Scalability for BioImage Analysis&lt;/h2>
+&lt;p>Wei Ouyang&lt;/p>
+&lt;p>KTH | SciLifeLab, Stockholm&lt;/p>
+&lt;hr>
+&lt;h2 id="challenges-in-ai-for-bioimaging">Challenges in AI for bioimaging&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>Usability&lt;/strong>: User friendly GUI&lt;/li>
+&lt;li>&lt;strong>Flexibility&lt;/strong>: Flexible for different data types&lt;/li>
+&lt;li>&lt;strong>Interactivity&lt;/strong>: Respond to GUI on laptop/mobile&lt;/li>
+&lt;li>&lt;strong>Scalability&lt;/strong>: Remote storage and compute resources&lt;/li>
+&lt;li>&lt;strong>Privacy&lt;/strong>: Edge computing&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="progressive-web-app">Progressive Web App&lt;/h2>
+&lt;ul>
+&lt;li>Rich and interactive UI libraries&lt;/li>
+&lt;li>Computation in the browser (+cloud)&lt;/li>
+&lt;li>Offline support&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;!-- .slide: data-background="white" -->
+&lt;h3 id="imjoy-httpsimjoyio">ImJoy &lt;a href="https://imjoy.io" target="_blank" rel="noopener">https://imjoy.io&lt;/a>&lt;/h3>
+&lt;p>Data science tools in the browser&lt;/p>
+&lt;img src="https://docs.google.com/drawings/d/e/2PACX-1vSBsdhDBrp4L2zWfL_9YOUHCS2zQ51HtjplGa-l_a1hMpNjbqENzmXrcSmYs6yed_NACNZSRH-7qsph/pub?w=1248&amp;amp;h=573">
+---
+# Key concepts
+* Sandboxed plugins connected via Remote Procedure calls
+* Workflow composition via asynchronous programming
+* Open Integration with existing software/website
+&lt;hr>
+&lt;h3 id="open-integration-with-web-apps">👐Open Integration with Web Apps&lt;/h3>
+&lt;p>Customize annotation workflow with Kaibu&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-js" data-lang="js">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// load the web app via its URL
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="nx">viewer&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kr">await&lt;/span> &lt;span class="nx">api&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">createWindow&lt;/span>&lt;span class="p">({&lt;/span>&lt;span class="nx">src&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s2">&amp;#34;https://kaibu.org/#/app&amp;#34;&lt;/span>&lt;span class="p">})&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// call api functions directly via RPC
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// add an image layer
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="kr">await&lt;/span> &lt;span class="nx">viewer&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">view_image&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;https://images.proteinatlas.org/61448/1319_C10_2_blue_red_green.jpg&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// add an annotation layer
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="kr">await&lt;/span> &lt;span class="nx">viewer&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">add_shapes&lt;/span>&lt;span class="p">([],&lt;/span> &lt;span class="p">{&lt;/span>&lt;span class="nx">name&lt;/span>&lt;span class="o">:&lt;/span>&lt;span class="s2">&amp;#34;annotation&amp;#34;&lt;/span>&lt;span class="p">})&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="demo-visualization-with-vizarr">🔥Demo: Visualization with Vizarr&lt;/h3>
+&lt;p>Made by Trevor Manz et. al.&lt;/p>
+&lt;iframe width="100%" height="500px" src="https://hms-dbmi.github.io/vizarr/?source=https://uk1s3.embassy.ebi.ac.uk/idr/zarr/v0.1/4495402.zarr" frameborder="0" allowfullscreen>&lt;/iframe>
+&lt;hr>
+&lt;h2 id="a-rapid-growing-list-of-plugins">🚀A rapid growing list of plugins&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://ij.imjoy.io" target="_blank" rel="noopener">ImageJ.JS&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://imjoy-team.github.io/elFinder/" target="_blank" rel="noopener">File Manager&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/hms-dbmi/vizarr" target="_blank" rel="noopener">Vizarr&lt;/a> for visualizing zarr images&lt;/li>
+&lt;li>&lt;a href="https://kitware.github.io/itk-vtk-viewer/docs/" target="_blank" rel="noopener">ITK/VTK Viewer&lt;/a> for 3D visualizing&lt;/li>
+&lt;li>&lt;a href="https://slides.imjoy.io" target="_blank" rel="noopener">ImJoy Slides&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://chart.imjoy.io" target="_blank" rel="noopener">ImJoy Chart Editor&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="works-with-jupyterbinder-and-colab">Works with Jupyter/Binder and Colab&lt;/h3>
+&lt;img style="height:70%;object-fit:contain;background-color: white;" src="https://raw.githubusercontent.com/imjoy-team/imjoy-demo-assets/main/image125.gif">
+&lt;hr>
+&lt;h2 id="conclusions">Conclusions&lt;/h2>
+&lt;ul>
+&lt;li>ImJoy is built for scalability and interactivity&lt;/li>
+&lt;li>ImJoy plugins are sandbox services connected via RPC&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="acknowledgements">Acknowledgements&lt;/h3>
+&lt;p>Work carried out at Cell Profiling group @ SciLifeLab headed by Emma Lundberg&lt;/p>
+&lt;hr>
+&lt;h1 id="thank-you">🙏Thank You!&lt;/h1></description></item><item><title>Slides</title><link>https://aicell.io/slides/example/</link><pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate><guid>https://aicell.io/slides/example/</guid><description>&lt;h1 id="create-slides-in-markdown-with-wowchemy">Create slides in Markdown with Wowchemy&lt;/h1>
 &lt;p>&lt;a href="https://wowchemy.com/" target="_blank" rel="noopener">Wowchemy&lt;/a> | &lt;a href="https://owchemy.com/docs/managing-content/#create-slides" target="_blank" rel="noopener">Documentation&lt;/a>&lt;/p>
 &lt;hr>
 &lt;h2 id="features">Features&lt;/h2>
@@ -109,4 +175,104 @@ data-background-image="/media/boards.jpg"
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
 &lt;h1 id="questions">Questions?&lt;/h1>
 &lt;p>&lt;a href="https://github.com/wowchemy/wowchemy-hugo-modules/discussions" target="_blank" rel="noopener">Ask&lt;/a>&lt;/p>
-&lt;p>&lt;a href="https://wowchemy.com/docs/managing-content/#create-slides" target="_blank" rel="noopener">Documentation&lt;/a>&lt;/p></description></item></channel></rss>
+&lt;p>&lt;a href="https://wowchemy.com/docs/managing-content/#create-slides" target="_blank" rel="noopener">Documentation&lt;/a>&lt;/p></description></item><item><title>Slides</title><link>https://aicell.io/slides/model-zoo/</link><pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate><guid>https://aicell.io/slides/model-zoo/</guid><description>&lt;h1 id="img-altbioimage-model-zoo-srchttpsbioimageiostaticimgbioimage-io-logo-whitesvg">&lt;img alt="BioImage Model Zoo" src="https://bioimage.io/static/img/bioimage-io-logo-white.svg">&lt;/h1>
+&lt;p>Wei OUYANG&lt;/p>
+&lt;p>SciLifeLab | KTH Royal Institute of Technology, Stockholm&lt;/p>
+&lt;hr>
+&lt;h3 id="httpsbioimageio">&lt;a href="https://bioimage.io" target="_blank" rel="noopener">https://bioimage.io&lt;/a>&lt;/h3>
+&lt;img style="max-height: calc(100vh - 100px);" alt="BioImage Model Zoo screenshot" src="https://raw.githubusercontent.com/oeway/slides/master/2022/bioimage-model-zoo-screenshot.png">
+&lt;hr>
+&lt;h1 id="challenges">Challenges&lt;/h1>
+&lt;ul>
+&lt;li>Training models is difficult&lt;/li>
+&lt;/ul>
+&lt;ul>
+&lt;li>Complex hardware/software setup&lt;/li>
+&lt;li>Environmental impact: &amp;ldquo;Training a single AI model can emit as much carbon as five cars in their lifetimes&amp;rdquo;&lt;/li>
+&lt;/ul>
+&lt;ul>
+&lt;li>Lack of interoperability&lt;/li>
+&lt;li>Hard for non-expert to run&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h1 id="bioimage-model-zoo">🦒BioImage Model Zoo&lt;/h1>
+&lt;ul>
+&lt;li>AI model file standard&lt;/li>
+&lt;li>Hosting pretrained models&lt;/li>
+&lt;li>Test run service&lt;/li>
+&lt;li>User/Developer services&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;!-- .slide: data-background="white" -->
+&lt;h3 id="bioimage-model-zoo-overview">🦒BioImage Model Zoo: Overview&lt;/h3>
+&lt;img style="height:calc(100% - 200px);object-fit:contain;background-color: white;" src="https://docs.google.com/drawings/d/e/2PACX-1vRSNdb6sW-nrTjmHgqwG8sOTdQTjdNjWH0y4DveZwairx_NUKiHg3dm0-0Z7VU4ppFdwSiK2BLn4hKo/pub?w=1732&amp;amp;h=1343">
+&lt;hr>
+&lt;!-- .slide: data-background="white" -->
+&lt;h3 id="how-it-works">🤔How it works&lt;/h3>
+&lt;img style="height:calc(100% - 200px);object-fit:contain;background-color: white;" src="https://docs.google.com/drawings/d/e/2PACX-1vSh8qO-jxZcGKjg5w52IMTesAUMbOaOxc3XQgmW7zBBj6btMGAUjcgh6iHgaTyzI18Ld7SSHkbie2k2/pub?w=1057&amp;amp;h=689">
+&lt;hr>
+&lt;h2 id="demos">🔥Demos!&lt;/h2>
+&lt;ul>
+&lt;li>Overview: &lt;a href="https://bioimage.io/" target="_blank" rel="noopener">https://bioimage.io/&lt;/a>&lt;/li>
+&lt;li>Find and download models&lt;/li>
+&lt;li>Upload Models&lt;/li>
+&lt;li>Ask for help&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;!-- .slide: data-background="white" -->
+&lt;h2 id="meet-the-bioengine">Meet the BioEngine&lt;/h2>
+&lt;img style="max-height: calc(100vh - 100px);" src="https://docs.google.com/drawings/d/e/2PACX-1vQCVUJDbgT_cPVsm--P75h13xbl7kW1Kt4RESW2opDb8MYOQrYQxToaFMFYdUwEBDBC4EWKwto0EExB/pub?w=1550&amp;amp;h=983">
+&lt;hr>
+&lt;!-- .slide: data-background="white" -->
+&lt;h2 id="deploying-the-bioengine">Deploying the BioEngine&lt;/h2>
+&lt;img src="https://docs.google.com/drawings/d/e/2PACX-1vSoG7ywI0qbNAbG-bV7J9LomhlK8r1xyhxS70LcA4_XNt_oUiWoYLcMFJlUFB2oA80hgL5TQzAWUhNW/pub?w=1510&amp;amp;h=1050">
+&lt;hr>
+&lt;h2 id="bioengine-feature-hightlights">BioEngine feature hightlights&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>Many models&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>Many users&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>Many applications&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>Shared GPU resources&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>Both inference and training&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>Local or cloud deployment&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="bioengine-vs-jupyter-notebooks--colab">BioEngine vs Jupyter Notebooks / Colab&lt;/h2>
+&lt;p>Scalability!&lt;/p>
+&lt;ul>
+&lt;li>Cloud &amp;amp; On-premise deployment&lt;/li>
+&lt;li>For multi-user or the public&lt;/li>
+&lt;li>Multi-model serving&lt;/li>
+&lt;li>Improved GPU utilization&lt;/li>
+&lt;li>Instant usage without setup or installation&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="accessing-the-bioengine-from-icy">Accessing the BioEngine from Icy&lt;/h2>
+&lt;img src="https://raw.githubusercontent.com/oeway/slides/master/2022/icy-bioengine-cellpose-demo.gif">
+&lt;p>Collabration with Carlos García López de Haro and the Icy Team&lt;/p>
+&lt;hr>
+&lt;h2 id="accessing-the-bioengine-from-icy-1">Accessing the BioEngine from Icy&lt;/h2>
+&lt;img src="https://raw.githubusercontent.com/oeway/slides/master/2022/icy-bioengine-demo-nuclei-segmentation.gif">
+&lt;p>Collabration with Carlos García López de Haro and the Icy Team&lt;/p>
+&lt;hr>
+&lt;h2 id="conclusions">Conclusions&lt;/h2>
+&lt;ul>
+&lt;li>AI model sharing via BioImage Model Zoo&lt;/li>
+&lt;li>BioEninge for scalable AI model serving&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="acknowledgements-1">Acknowledgements (1)&lt;/h3>
+&lt;p>Work carried out at Cell Profiling group @ SciLifeLab headed by Emma Lundberg&lt;/p>
+&lt;p>BioImage.IO is powered by the 🧠 and ❤️ of:&lt;/p>
+&lt;ul>
+&lt;li>deepImageJ Team&lt;/li>
+&lt;li>EBI Bioimage Archive Team&lt;/li>
+&lt;li>Fiji/ImageJ Team&lt;/li>
+&lt;li>ilastik Team&lt;/li>
+&lt;li>ImJoy Team&lt;/li>
+&lt;li>ZeroCostDL4Mic Team&lt;/li>
+&lt;li>&amp;hellip;&lt;/li>
+&lt;/ul>
+&lt;p>Follow us on twitter @bioimageio&lt;/p>
+&lt;hr>
+&lt;h1 id="thank-you">🙏Thank You!&lt;/h1></description></item></channel></rss>
