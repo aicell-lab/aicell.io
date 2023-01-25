@@ -10,7 +10,6 @@ role: ''
 
 user_groups:
  - PI
- - Head
 # Status emoji
 status:
   icon: ☕️
@@ -21,7 +20,7 @@ status:
 #  url: ""
 
 # Short bio (displayed in user profile at end of posts)
-bio: My research interests includes 
+bio: Assistant Professor at KTH Royal Institute of Technology
 
 #interests:
 #- Artificial Intelligence
