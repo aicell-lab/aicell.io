@@ -18,18 +18,6 @@ image:
   focal_point: Smart
 
 links:
-  - icon: internet
-    icon_pack: fab
-    name: Website
-    url: https://bioimage.io
-  - icon: twitter
-    icon_pack: fab
-    name: Follow
-    url: https://twitter.com/bioimageio
-  - icon: paper
-    icon_pack: fab
-    name: Publication
-    url: https://www.biorxiv.org/content/10.1101/2022.06.07.495102v1
 
 url_code: ''
 url_pdf: ''
