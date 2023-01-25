@@ -1,12 +1,12 @@
 ---
 # Display name
-title: AI for Cell Biology Lab
+title: AI for Cell Biology Labratory
 
 # Is this the primary user of the site?
 superuser: false
 
 # Role/position/tagline
-role: Building AI Systems for Data-driven Cell and Molecular Biology
+role: Headed by Wei Ouyang
 
 # Organizations/Affiliations to show in About widget
 organizations:
