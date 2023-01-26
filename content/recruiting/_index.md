@@ -31,6 +31,5 @@ The AICell Lab is an interdisciplinary group which focuses on building AI system
 
 Read more about the [AICell Lab](/about).
 
-The following positions are available:
+Here you can find the available positions.
 
-----
