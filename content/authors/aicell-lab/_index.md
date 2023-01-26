@@ -1,6 +1,6 @@
 ---
 # Display name
-title: AI for Cell Biology Labratory
+title: AI for Cell Biology Laboratory
 
 # Is this the primary user of the site?
 superuser: false
