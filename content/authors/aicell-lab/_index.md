@@ -23,7 +23,7 @@ interests:
   - AI
   - Cell and Molecular Biology
   - Whole-cell Modeling
-  - Drug discovery
+  - Drug Discovery
   - Augmented Microscopy
   - BioImage Analysis
   - Distributed Computing
