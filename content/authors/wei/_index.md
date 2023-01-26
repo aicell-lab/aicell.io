@@ -44,6 +44,9 @@ bio: Assistant Professor at KTH Royal Institute of Technology
 #   For an email link, use "fas" icon pack, "envelope" icon, and a link in the
 #   form "mailto:your-email@example.com" or "#contact" for contact widget.
 social:
+  - icon: circle-info
+    icon_pack: fas
+    link: https://oeway.github.io
   - icon: envelope
     icon_pack: fas
     link: 'mailto: wei.ouyang@scilifelab.se' # For a direct email link, use "mailto:test@example.org".

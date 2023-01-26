@@ -17,7 +17,7 @@ image:
   focal_point: Smart
 
 links:
-  - icon: internet
+  - icon: globe
     icon_pack: fab
     name: Website
     url: https://bioimage.io

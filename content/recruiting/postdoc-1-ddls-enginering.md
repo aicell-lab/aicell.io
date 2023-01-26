@@ -1,0 +1,128 @@
+---
+title: Postdoc in AI-powered Automated Microscopy Imaging Systems
+
+# Summary for listings and search engines
+summary: 
+
+# Link this post with a project
+projects: []
+
+# Date published
+date: '2023-1-13T00:00:00Z'
+
+# Date updated
+lastmod: '2023-1-13T00:00:00Z'
+
+# Is this an unpublished draft?
+draft: false
+
+# Show this page in the Featured widget?
+featured: false
+
+authors:
+  - Wei Ouyang
+
+tags:
+  - AI
+
+categories:
+  - recruitment
+
+links:
+  - icon: pen-to-square
+    icon_pack: fas
+    name: Apply Now!
+    url: "mailto: wei.ouyang@scilifelab.se"
+---
+Title: Postdoc in AI-powered Automated Microscopy Imaging Systems
+
+Job description
+
+The Science for Life Laboratory (SciLifeLab) is a national center for molecular biosciences with focus on health and environmental research. The combination of the highly interdisciplinary expertise and research projects at the department is unique in Sweden and also at an international level. This expertise ranges across cell biology, biochemistry, biophysics and theory. Recently, the SciLifeLab and Wallenberg National Program started the [Data-Driven Life Science (DDLS) program](https://www.scilifelab.se/data-driven/) in order to accelerate life science research through innovations in AI and data science.
+
+[Wei Ouyang](https://oeway.github.io)'s research group at the department of Applied Physics, KTH and SciLifeLab is a newly funded lab through the DDLS Fellows program. The group focuses on building AI systems for data-driven cell and molecular biology, and is now seeking a postdoctoral researcher to develop AI-powered automated microscopy imaging systems.
+
+The aim of the project is to build a smart microscopy imaging farm for massive production of image data. It consists of multiple microscopes and fluidic systems, robotic arms, liquid handling robots and automatic incubators. The farm will be used for performing automated widefield/fluorescence imaging, long-term live cell imaging, tracking,  spatial-omics and multiplexing imaging. With the AI-powered control software, data are analyzed in real-time, augmented views are added on the fly. By generating feedback control signals to control the microscope, the software will automatically change field-of-views, illumination power and other experimental conditions in order to optimize the phototoxicity and capture rare events in live cells.
+
+The candidate is expected to develop an integrated system with microscopes, fluidic control, robotic arms, as well as the control software. The project is a collaboration with our collaborator within the [WASP program](https://wasp-sweden.org/) and built on top of our prior work (e.g. squid microscopes, [ImJoy](https://www.nature.com/articles/s41592-019-0627-0)) from us or our collaborators.
+
+What we offer 
+
+-   A position at a leading technical university that generates knowledge and skills for a sustainable future.
+
+-   Engaged and ambitious colleagues along with a creative, international and dynamic working environment
+
+-   Works in Stockholm, in close proximity to nature
+
+-   Collaboration opportunities with leading research institutions and universities in Europe and the US
+
+-   Learning and thriving in a young and ambitious research group
+
+-   Help to[ relocate and be settled in Sweden and at KTH](https://www.kth.se/en/om/work-at-kth/relocation).
+
+[Read more about what it is like to work at KTH](https://www.kth.se/en/om/work-at-kth/kth-your-future-workplace-1.49050)
+
+Qualifications
+
+Requirements
+
+-   A doctoral degree or an equivalent foreign degree, This eligibility requirement must be met no later than the time the employment decision is made.
+
+-   The ability to express yourself in English.
+
+Preferred qualifications
+
+-   You are passionate, curious and knowledgeable on developing automated systems
+
+-   Strong background in electronics, optics and mechanical engineering
+
+-   Proficient in programming languages such as Python and C/C++, Javascript, Bash
+
+-   Prior experience in building microscopes, fluidics and robotics systems
+
+-   Prior experience in building AI models, MLops and tools
+
+-   Knowledge in cell biology
+
+-   Knowledge in digital image analysis and computer vision
+
+-   Knowledge in web technologies (e.g. network communication, browser standards, containerization and kubernetes)
+
+-   Knowledge in software design, web services and distributed computing systems
+
+-   Collaborative abilities, and scientific communication 
+
+-   Awareness of diversity and equal opportunity issues, with a specific focus on gender equality
+
+Great emphasis will be placed on personal competency
+
+Trade union representatives
+
+You will find contact information to trade union representatives at [KTH.se](https://intra.kth.se/en/administration/rekrytering/annonsering/fackrepresentanter-1.500898)
+
+Application
+
+Log into KTH's recruitment system in order to apply to this position. You are responsible to ensure that your application is complete according to the instructions in the ad.
+
+The application must include:
+
+-   CV including relevant professional experience, knowledge and representative publications. Please also provide your Github/Gitlab/Bitbucket etc. handle if possible.
+
+-   Copy of diplomas and grades from your previous university studies. Translations into English or Swedish if the original documents have not been issued in any of these languages.
+
+-   Brief account of why you want to conduct research, your career goal and how they relate to your previous studies and future goals. Max two pages long.
+
+Your complete application must be received by KTH no later than the last day of application, midnight
+
+CET/CEST (Central European Time/Central European Summer Time).
+
+About the employment
+
+The position offered is for, at the most, two years. There may be possibilities to prolong employment.
+
+A position as a postdoctoral fellow is a time-limited qualified appointment focusing mainly on research, intended as a first career step after a dissertation.
+
+Other information
+
+Striving towards gender equality, diversity and equal conditions is both a question of quality for KTH and a given part of our values.\
+For information about processing of personal data in the recruitment process [please read here.](https://www.kth.se/en/om/work-at-kth/processing-of-personal-data-in-the-recruitment-process-1.823440)

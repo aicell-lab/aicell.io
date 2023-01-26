@@ -19,9 +19,12 @@ main:
   - name: People
     url: '#people'
     weight: 60
+  - name: Recruiting
+    url: '/recruiting'
+    weight: 70
   - name: Publications
     url: '#publications'
-    weight: 70
+    weight: 80
 
 
 # Link to a PDF of your resume/CV from the menu.

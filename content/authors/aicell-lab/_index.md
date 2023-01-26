@@ -20,13 +20,14 @@ bio: Building AI Systems for Data-driven Cell and Molecular Biology
 
 # Interests to show in About widget
 interests:
-  - Artificial Intelligence
-  - Multi-omics Data Integration
+  - AI
+  - Cell and Molecular Biology
   - Whole-cell Modeling
-  - Automated Microscopy Imaging
+  - Drug discovery
+  - Augmented Microscopy
   - BioImage Analysis
-  - Web Image Analysis 
-  - AI Model Serving
+  - Distributed Computing
+  - Open Source
 
 # Social/Academic Networking
 # For available icons, see: https://wowchemy.com/docs/getting-started/page-builder/#icons
@@ -62,6 +63,7 @@ highlight_name: true
 
 The AI Cell Lab is a newly formed research group at Science for Life Laboratory and KTH Royal Institute at Technology. The group is led by [Wei Ouyang](https://oeway.github.io) and funded by the [Data-Driven Life Science program](https://www.scilifelab.se/data-driven/). The aim of the lab is to build AI systems for data-driven cell and molecular biology.
 
+**👋 We are recruiting Ph.D students and postdocs, [check it out](/recruiting)!**
 
-| :zap:       This website is under construction!   |
-|-----------------------------------------|
+
+[About the AICell Lab](/about)
