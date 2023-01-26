@@ -18,7 +18,7 @@ image:
 
 links:
   - icon: globe
-    icon_pack: fab
+    icon_pack: fas
     name: Website
     url: https://imjoy.io
   - icon: twitter

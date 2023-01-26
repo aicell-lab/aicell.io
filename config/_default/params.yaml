@@ -15,11 +15,11 @@ appearance:
 
 marketing:
   seo:
-    site_type: Person
+    site_type: Organization
     local_business_type: ''
-    org_name: ''
-    description: 'A highly-customizable Hugo academic resume theme powered by Wowchemy website builder.'
-    twitter: 'wowchemy'
+    org_name: 'AICell Lab'
+    description: 'A research group at SciLifeLab focuses on building AI systems for cell and molecular biology'
+    twitter: 'aicell-io'
   analytics:
     google_analytics: ''
     baidu_tongji: ''
