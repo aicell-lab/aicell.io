@@ -1,6 +1,6 @@
 ---
 title: Human Cell Simulator
-summary: Building AI-powered Data-driven Human Whole-cell Model
+summary: Building AI-powered data-driven human whole-cell models
 tags:
   - whole-cell modeling
   - deep learning

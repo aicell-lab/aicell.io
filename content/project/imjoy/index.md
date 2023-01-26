@@ -1,6 +1,6 @@
 ---
 title: ImJoy - Web Data Analysis
-summary: Supercharging scalability and interactivity
+summary: A computational platform for supercharging scalability and interactivity
 tags:
   - deep learning
   - AI
