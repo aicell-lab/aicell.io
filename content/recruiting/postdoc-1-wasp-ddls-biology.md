@@ -34,17 +34,19 @@ links:
     name: Apply Now!
     url: "mailto: wei.ouyang@scilifelab.se"
 ---
-Job description
+Title:  Postdoc in Cell Biology and Computational Microscopy Imaging
+
+### Job description
 
 The Science for Life Laboratory (SciLifeLab) is a national center for molecular biosciences with focus on health and environmental research. The combination of the highly interdisciplinary expertise and research projects at the department is unique in Sweden and also at an international level. This expertise ranges across cell biology, biochemistry, biophysics and theory. Recently, the SciLifeLab and Wallenberg National Program started the [Data-Driven Life Science (DDLS) program](https://www.scilifelab.se/data-driven/) in order to accelerate life science research through innovations in AI and data science.
 
-[Wei Ouyang](https://oeway.github.io)'s research group at the department of Applied Physics, KTH and SciLifeLab is a newly funded lab through the DDLS Fellows program. The group focuses on building AI systems for data-driven cell and molecular biology, and is looking for highly motivated candidates to fill a 2-year postdoc position under the [WASP-DDLS collaboration](https://www.scilifelab.se/data-driven/wasp-collaboration/).
+The AICell Lab (<https://aicell.io>) in the department of Applied Physics at KTH and SciLifeLab is a new research group funded by the DDLS Fellows program. The group, led by Wei Ouyang, focuses on building AI systems for data-driven cell and molecular biology. To expand the team, we are now looking for highly motivated candidates to fill a 2-year postdoc position under the [WASP-DDLS collaboration](https://www.scilifelab.se/data-driven/wasp-collaboration/).
 
 The aim of the project is to develop an AI-powered self-driving microscopy system for studying cellular response under genetic and environmental stressors. The project will also be supported by the WASP-DDLS collaboration, and closely collaborate with the Jaldén group at KTH. The Jaldén group has rich experience in computer vision and automatic control systems. The work will also be supported by the Lundberg group under the Human Protein Atlas, which is a unique world-leading effort to map all the human proteins in cells, tissues, and organs in the human body. By joining the force with the Jaldén group and Lundberg group, we would like to develop an AI-powered imaging system to continuously monitor, actively acquire and track human cells under different cellular and environmental stressors. The data will be used to train large-scale AI models to study cellular responses and make predictions for cell fate.
 
 You will be responsible for actively and effectively designing, implementing, and optimizing  wet lab experiments for the self-driving microscope, including cell culture, sample preparation and microscopy imaging. Importantly, you will also actively work with other researchers in the group to develop and optimize protocols for the automated imaging system and AI models. Besides wet lab skills, you will get the opportunity to elaborate on your computational skills, e.g., by writing Python scripts to control the imaging farm, train AI models and develop automated data analysis workflows. In later stages of the project you will also design and conduct additional, custom validation experiments, which may involve different molecular biology techniques.
 
-What we offer 
+### What we offer 
 
 -   A position at a leading technical university that generates knowledge and skills for a sustainable future.
 
@@ -60,15 +62,15 @@ What we offer 
 
 [Read more about what it is like to work at KTH](https://www.kth.se/en/om/work-at-kth/kth-your-future-workplace-1.49050)
 
-Qualifications
+### Qualifications
 
-Requirements
+#### Requirements
 
 -   A doctoral degree or an equivalent foreign degree, This eligibility requirement must be met no later than the time the employment decision is made.
 
 -   The ability to express yourself in English.
 
-Preferred qualifications
+#### Preferred qualifications
 
 During the selection process, candidates will be assessed upon their ability to: 
 
@@ -102,11 +104,11 @@ During the selection process, candidates will be assessed upon their ability to:
 
 Great emphasis will be placed on personal competency
 
-Trade union representatives
+### Trade union representatives
 
 You will find contact information to trade union representatives at [KTH.se](https://intra.kth.se/en/administration/rekrytering/annonsering/fackrepresentanter-1.500898)
 
-Application
+### Application
 
 Log into KTH's recruitment system in order to apply to this position. You are responsible to ensure that your application is complete according to the instructions in the ad.
 
@@ -122,13 +124,13 @@ Your complete application must be received by KTH no later than the last day of 
 
 CET/CEST (Central European Time/Central European Summer Time).
 
-About the employment
+### About the employment
 
 The position offered is for, at the most, two years. There may be possibilities to prolong the employment.
 
 A position as a postdoctoral fellow is a time-limited qualified appointment focusing mainly on research, intended as a first career step after a dissertation.
 
-Other information
+### Other information
 
 Striving towards gender equality, diversity and equal conditions is both a question of quality for KTH and a given part of our values.\
 For information about processing of personal data in the recruitment process [please read here.](https://www.kth.se/en/om/work-at-kth/processing-of-personal-data-in-the-recruitment-process-1.823440)

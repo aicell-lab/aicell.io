@@ -38,9 +38,11 @@ Title:  Postdoc in Scalable AI Systems for BioImage Analysis
 
 ### Job description
 
-[AI4Life](https://ai4life.eurobioimaging.eu/) is an EU funded project which aims to empower life science researchers to harness the full potential of AI and machine learning methods for bioimage analysis. As one of the leading partners in the consortium, we are hiring a postdoctoral researcher at the department of applied physics, KTH Royal Institute of Technology.
+The Science for Life Laboratory (SciLifeLab) is a national center for molecular biosciences with focus on health and environmental research. The combination of the highly interdisciplinary expertise and research projects at the department is unique in Sweden and also at an international level. This expertise ranges across cell biology, biochemistry, biophysics and theory. Recently, the SciLifeLab and Wallenberg National Program started the [Data-Driven Life Science (DDLS) program](https://www.scilifelab.se/data-driven/) in order to accelerate life science research through innovations in AI and data science.
 
-The postdoc will join a newly formed research group led by [Wei Ouyang](https://oeway.github.io/) and work with other AI4Life consortium partners to build scalable AI tools and computing infrastructure for bioimage analysis. There are two aims in the project: 1) Creating web services and computing platforms for sharing AI models, making them more accessible and usable; 2) Building scalable bioimage analysis methods and tools for powering next-generation [augmented microscopy](https://www.sciencedirect.com/science/article/pii/S0092867418304562). This includes creating tools for collaborative and interactive annotation, model training, real-time inference and generating feedback signal for microscope control.
+The AICell Lab (https://aicell.io) in the department of Applied Physics at KTH and SciLifeLab is a new research group funded by the DDLS Fellows program. The group, led by Wei Ouyang, focuses on building AI systems for data-driven cell and molecular biology. To expand the team, we are now seeking a highly motivated postdoctoral researcher to work on the [AI4Life](https://ai4life.eurobioimaging.eu/) project. AI4Life is a Horizon Europe-funded project that brings together the computational and life science communities. Its goal is to empower life science researchers to harness the full potential of AI for bioimage analysis -- and in particular microscopy image analysis, by providing services, and developing standards aimed at both developers and users.
+
+The postdoc will work with other AI4Life consortium partners to build scalable AI tools and computing infrastructure for bioimage analysis. There are two aims in the project: 1) Creating web services and computing platforms for sharing AI models, making them more accessible and usable; 2) Building scalable bioimage analysis methods and tools for powering next-generation augmented microscopy. This includes creating tools for collaborative and interactive annotation, model training, real-time inference and generating feedback signal for microscope control.
 
 The candidates are expected to collaborate with other AI4Life partners and develop scalable AI methods, tools and platforms on top of our prior work such as the [BioImage Model Zoo](https://www.biorxiv.org/content/10.1101/2022.06.07.495102v1) and [ImJoy](https://www.nature.com/articles/s41592-019-0627-0).
 
@@ -62,13 +64,13 @@ The candidates are expected to collaborate with other AI4Life partners and devel
 
 ### Qualifications
 
-### Requirements
+#### Requirements
 
 -   A doctoral degree or an equivalent foreign degree, This eligibility requirement must be met no later than the time the employment decision is made.
 
 -   The ability to express yourself in English.
 
-### Preferred qualifications
+#### Preferred qualifications
 
 -   You are passionate, curious and knowledgeable on developing web services and tools
 
