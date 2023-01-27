@@ -12,6 +12,7 @@ role: Headed by Wei Ouyang
 organizations:
   - name: Science for Life Laboratory
     url: https://scilifelab.se
+    org_logo: "/static/logos/abcxyz.png"
   - name: KTH Royal Institute of Technology
     url: https://kth.se
 

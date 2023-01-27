@@ -23,7 +23,7 @@ main:
     url: '/recruiting'
     weight: 70
   - name: Publications
-    url: '#publications'
+    url: '/publication'
     weight: 80
 
 
