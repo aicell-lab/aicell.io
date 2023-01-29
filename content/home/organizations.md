@@ -3,7 +3,7 @@ type: landing
 ---
 <div class="container">
     <div class="row g-5 justify-content-center">
-        <div class="col-lg-6 col-sm-12" id="about-scilifelab">
+        <div class="col-lg-6 col-sm-12" id="about-scilifelab" style="margin-bottom: 30px;">
             <img src="./home/logos/SciLifeLab_symbol_Green.png" style="width: 6rem;">
             <h2 class="">About SciLifeLab</h2>
             <p>
@@ -17,12 +17,12 @@ type: landing
             KTH Royal Institute of Technology and Uppsala University.
             <p></p>
             <div class="pt-4">
-                <a href="https://www.scilifelab.se/campus-solna/wei-ouyang/">
+                <a target="_blank" href="https://www.scilifelab.se/campus-solna/wei-ouyang/">
                     Learn more at scilifelab.se
                 </a>
-                </div>
+            </div>
         </div>
-        <div class="col-lg-6 col-sm-12" id="about-kth">
+        <div class="col-lg-6 col-sm-12" id="about-kth"  style="margin-bottom: 30px;">
             <img src="./home/logos/KTH_Logotyp_RGB_2013.png" style="width: 6rem;">
             <h2 class="">About KTH</h2>
             <p>
@@ -37,7 +37,7 @@ type: landing
             <p>
             </p>
             <div class="pt-4">
-                <a href="https://www.aphys.kth.se/biophysics/research/ai-for-cell-biology?l=en">
+                <a target="_blank" href="https://www.aphys.kth.se/biophysics/research/ai-for-cell-biology?l=en">
                     Learn more at kth.se
                 </a>
             </div>
