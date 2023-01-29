@@ -20,7 +20,7 @@ links:
   - icon: globe
     icon_pack: fas
     name: Website
-    url: https://bioimage.io
+    url: https://ai4life.eurobioimaging.eu/
   - icon: twitter
     icon_pack: fab
     name: Follow
