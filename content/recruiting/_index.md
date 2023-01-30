@@ -31,5 +31,6 @@ The AICell Lab is an interdisciplinary group which focuses on building AI system
 
 Read more about the [AICell Lab](/about).
 
-Here you can find the available positions.
+You can find a list of open positions below.
 
+Besides these open positions, we are actively seeking for for highly motivated students and postdoctoral researchers. Please feel free to reach out if you are interested in joining the lab for an internship, master thesis project, or other potential positions.
