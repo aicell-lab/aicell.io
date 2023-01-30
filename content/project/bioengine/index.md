@@ -29,7 +29,7 @@ url_video: ''
 #   Simply enter your slide deck's filename without extension.
 #   E.g. `slides = "example-slides"` references `content/slides/example-slides.md`.
 #   Otherwise, set `slides = ""`.
-slides: model-zoo
+# slides: model-zoo
 ---
 
 The increasingly amount of data generated in life science poses challenges in managing and analysis. The conventional approach for storing and processing scientific data locally on workstations or laptops is failing to met modern needs in applications such as AI-powered image analysis. We would like to tackle the challenge by introducing the BioEngine platform, which is a computational platform consists of containerized services for scalable data management and AI model serving. It is a web platform built on top of the [Hypha](https://github.com/amun-ai/hypha) with an emphasis on serving models for bioimage analysis.

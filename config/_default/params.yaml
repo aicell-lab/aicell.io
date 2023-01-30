@@ -21,6 +21,7 @@ marketing:
     description: 'A research group at SciLifeLab focuses on building AI systems for cell and molecular biology'
     twitter: 'imweio'
   analytics:
+    google_tag_manager: 'G-W8RMPPP7P2'
     google_analytics: ''
     baidu_tongji: ''
   verification:
