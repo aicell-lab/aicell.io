@@ -31,6 +31,18 @@ url_video: ''
 #   E.g. `slides = "example-slides"` references `content/slides/example-slides.md`.
 #   Otherwise, set `slides = ""`.
 # slides: model-zoo
+
+imjoy:
+    show_jupyter_notebook: |
+        async function(notebookName, notebookUrl){
+            const jupyter = await api.createWindow({src: "https://jupyter.imjoy.io/lab/index.html", window_id: "jupyter-container", config: {"left_collapsed": true}})
+            const content = await (await fetch(notebookUrl)).text()
+            if(await jupyter.fileExists(notebookName)){
+                await jupyter.removeFile(notebookName)
+            }
+            const filePath = await jupyter.loadFile(notebookName, content, 'application/json')
+            await jupyter.openFile(filePath)
+        }
 ---
 
 The increasingly amount of data generated in life science poses challenges in managing and analysis. The conventional approach for storing and processing scientific data locally on workstations or laptops is failing to met modern needs in applications such as AI-powered image analysis. We would like to tackle the challenge by introducing the BioEngine platform, which is a computational platform consists of containerized services for scalable data management and AI model serving. It is a web platform built on top of the [Hypha](https://github.com/amun-ai/hypha) with an emphasis on serving models for bioimage analysis.
@@ -39,3 +51,6 @@ In this project, we aim to develop web services for providing flexible image dat
 
 To learn more technial details about the BioEngine, please see the tutorial slides [here](https://slides.imjoy.io/?slides=https://raw.githubusercontent.com/oeway/slides/master/2022/i2k-2022-bioengine-workshop.md).
 
+Here, you can also try the BioEngine in an example Jupyter notebook here:
+
+<div id="jupyter-container" style="height: 450px;"> <button onclick='imjoy.show_jupyter_notebook("1-bioengine-engine-tutorial.ipynb", "https://raw.githubusercontent.com/imjoy-team/imjoy-tutorials/master/2-bioengine/1-bioengine-engine-tutorial.ipynb")'>Click to try BioEngine in Jupyter Lite</button> </div>
