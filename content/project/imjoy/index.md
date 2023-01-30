@@ -79,7 +79,7 @@ For more information, read our publication on [Nature Methods](https://www.natur
 
 ## Live Demos
 
-This website has the ImJoy integration, you can find some example applications for image visualization below:
+This website contains ImJoy integration, you can find some example applications for image visualization below:
 
 <div id="menu-container"></div>
 
