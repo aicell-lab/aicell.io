@@ -29,3 +29,8 @@ button:focus {
 button:active {
     transform: scale(0.99);
 }
+
+.featured-image {
+    max-height: 400px;
+    object-fit: contain;
+}
