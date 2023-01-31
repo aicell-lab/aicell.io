@@ -11,10 +11,11 @@ role: Headed by Wei Ouyang
 # Organizations/Affiliations to show in About widget
 organizations:
   - name: Science for Life Laboratory
-    url: https://scilifelab.se
-    org_logo: "/static/logos/abcxyz.png"
+    url: "#about-scilifelab"
+    logo: "/authors/aicell-lab/scilifelab.png"
   - name: KTH Royal Institute of Technology
-    url: https://kth.se
+    url: "#about-kth"
+    logo: "/authors/aicell-lab/kth.png"
 
 # Short bio (displayed in user profile at end of posts)
 bio: Building AI Systems for Data-driven Cell and Molecular Biology
@@ -64,7 +65,11 @@ highlight_name: true
 
 The AICell Lab is a newly formed research group at [Science for Life Laboratory](#about-scilifelab) and [KTH Royal Institute at Technology](#about-kth). The group is led by [Wei Ouyang](https://oeway.github.io) and funded by the [Data-Driven Life Science program](https://www.scilifelab.se/data-driven/). The aim of the lab is to build AI systems for data-driven cell and molecular biology.
 
+
+[Read more about the AICell Lab...](/about)
+
+{{% callout hint %}}
 **👋 We are recruiting Ph.D students and postdocs, [check it out](/recruiting)!**
+{{% /callout %}}
 
 
-[About the AICell Lab](/about)
