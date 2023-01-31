@@ -1,21 +1,101 @@
-<!doctype html><html lang=en-us><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=generator content="Wowchemy 5.7.0 for Hugo"><link rel=manifest href=/manifest.webmanifest><link rel=icon type=image/png href=/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_32x32_fill_lanczos_center_3.png><link rel=apple-touch-icon type=image/png href=/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_192x192_fill_lanczos_center_3.png><link rel=canonical href=https://aicell.io/slides/imjoy/><title>Slides | AICell Lab</title><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/theme/black.min.css><link rel=stylesheet href=/css/libs/chroma/dracula.min.css></head><body><div class=reveal><div class=slides><section><h2 id=imjoy-supercharging-interactivity-and-scalability-for-bioimage-analysis>ImJoy: Supercharging Interactivity and Scalability for BioImage Analysis</h2><p>Wei Ouyang</p><p>KTH | SciLifeLab, Stockholm</p></section><section><h2 id=challenges-in-ai-for-bioimaging>Challenges in AI for bioimaging</h2><ul><li><strong>Usability</strong>: User friendly GUI</li><li><strong>Flexibility</strong>: Flexible for different data types</li><li><strong>Interactivity</strong>: Respond to GUI on laptop/mobile</li><li><strong>Scalability</strong>: Remote storage and compute resources</li><li><strong>Privacy</strong>: Edge computing</li></ul></section><section><h2 id=progressive-web-app>Progressive Web App</h2><ul><li>Rich and interactive UI libraries</li><li>Computation in the browser (+cloud)</li><li>Offline support</li></ul></section><section><h3 id=imjoy-httpsimjoyio>ImJoy <a href=https://imjoy.io target=_blank rel=noopener>https://imjoy.io</a></h3><p>Data science tools in the browser</p><img src="https://docs.google.com/drawings/d/e/2PACX-1vSBsdhDBrp4L2zWfL_9YOUHCS2zQ51HtjplGa-l_a1hMpNjbqENzmXrcSmYs6yed_NACNZSRH-7qsph/pub?w=1248&h=573">
+<!doctype html><html lang=en-us><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=generator content="Wowchemy 5.7.0 for Hugo"><link rel=manifest href=/manifest.webmanifest><link rel=icon type=image/png href=/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_32x32_fill_lanczos_center_3.png><link rel=apple-touch-icon type=image/png href=/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_192x192_fill_lanczos_center_3.png><link rel=canonical href=https://aicell.io/slides/imjoy/><title>Slides | AICell Lab</title><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/theme/black.min.css><link rel=stylesheet href=/css/libs/chroma/dracula.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/highlight/monokai.css id=highlight-theme><style>.reveal h1,.reveal h2,.reveal h3,.reveal h4,.reveal h5,.reveal h6{text-transform:none!important}.reveal iframe{max-width:100%!important;max-height:100%!important}.button{cursor:pointer;background-color:#3b60f4;border-radius:3px;color:#fff;padding:10px 32px;text-align:center;text-decoration:none;display:inline-block;font-size:16px}.splitter{width:100vw;height:100vh;display:flex}#separator{visibility:hidden;cursor:col-resize;background-color:#aaa;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='30'><path d='M2 0 v30 M5 0 v30 M8 0 v30' fill='none' stroke='black'/></svg>");background-repeat:no-repeat;background-position:50%;width:6px;height:100%;-moz-user-select:none;-ms-user-select:none;user-select:none}#code-editor{height:100%;min-width:10px}#reveal-container{height:100%;min-width:10px}</style><style>.lds-ellipsis{display:inline-block;width:80px;height:80px;position:absolute;top:50%;left:50%;margin-right:-50%;transform:translate(-50%,-50%)}.lds-ellipsis div{position:absolute;top:33px;width:13px;height:13px;border-radius:50%;background:#3e94f0;animation-timing-function:cubic-bezier(0,1,1,0)}.lds-ellipsis div:nth-child(1){left:8px;animation:lds-ellipsis1 .6s infinite}.lds-ellipsis div:nth-child(2){left:8px;animation:lds-ellipsis2 .6s infinite}.lds-ellipsis div:nth-child(3){left:32px;animation:lds-ellipsis2 .6s infinite}.lds-ellipsis div:nth-child(4){left:56px;animation:lds-ellipsis3 .6s infinite}@keyframes lds-ellipsis1{0%{transform:scale(0)}100%{transform:scale(1)}}@keyframes lds-ellipsis3{0%{transform:scale(1)}100%{transform:scale(0)}}@keyframes lds-ellipsis2{0%{transform:translate(0,0)}100%{transform:translate(24px,0)}}</style></head><body><div id=slide-loader class=lds-ellipsis><div></div><div></div><div></div><div></div></div><div class=splitter><div id=slide-editor-container></div><div id=separator></div><div id=slide-container class=reveal style=z-index:0><div class="slides markdown-slide-content"></div></div></div><div style=visibility:hidden><textarea id=raw-slide-content data-template>
+
+## ImJoy: Supercharging Interactivity and Scalability for BioImage Analysis
+
+Wei Ouyang 
+
+KTH | SciLifeLab, Stockholm
+
+---
+## Challenges in AI for bioimaging
+
+* **Usability**: User friendly GUI
+* **Flexibility**: Flexible for different data types
+* **Interactivity**: Respond to GUI on laptop/mobile
+* **Scalability**: Remote storage and compute resources
+* **Privacy**: Edge computing
+
+---
+## Progressive Web App
+
+* Rich and interactive UI libraries
+* Computation in the browser (&#43;cloud)
+* Offline support
+
+---
+&lt;!-- .slide: data-background=&#34;white&#34; --&gt;
+### ImJoy https://imjoy.io
+Data science tools in the browser
+
+&lt;img src=&#34;https://docs.google.com/drawings/d/e/2PACX-1vSBsdhDBrp4L2zWfL_9YOUHCS2zQ51HtjplGa-l_a1hMpNjbqENzmXrcSmYs6yed_NACNZSRH-7qsph/pub?w=1248&amp;h=573&#34;&gt;
 ---
 # Key concepts
-* Sandboxed plugins connected via Remote Procedure calls
-* Workflow composition via asynchronous programming
-* Open Integration with existing software/website</section><section><h3 id=open-integration-with-web-apps>👐Open Integration with Web Apps</h3><p>Customize annotation workflow with Kaibu</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=c1>// load the web app via its URL
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>viewer</span> <span class=o>=</span> <span class=kr>await</span> <span class=nx>api</span><span class=p>.</span><span class=nx>createWindow</span><span class=p>({</span><span class=nx>src</span><span class=o>:</span> <span class=s2>&#34;https://kaibu.org/#/app&#34;</span><span class=p>})</span>
-</span></span><span class=line><span class=cl><span class=c1>// call api functions directly via RPC
-</span></span></span><span class=line><span class=cl><span class=c1>// add an image layer
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kr>await</span> <span class=nx>viewer</span><span class=p>.</span><span class=nx>view_image</span><span class=p>(</span><span class=s2>&#34;https://images.proteinatlas.org/61448/1319_C10_2_blue_red_green.jpg&#34;</span><span class=p>)</span>
-</span></span><span class=line><span class=cl><span class=c1>// add an annotation layer
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kr>await</span> <span class=nx>viewer</span><span class=p>.</span><span class=nx>add_shapes</span><span class=p>([],</span> <span class=p>{</span><span class=nx>name</span><span class=o>:</span><span class=s2>&#34;annotation&#34;</span><span class=p>})</span>
-</span></span></code></pre></div></section><section><h3 id=demo-visualization-with-vizarr>🔥Demo: Visualization with Vizarr</h3><p>Made by Trevor Manz et. al.</p><iframe width=100% height=500px src="https://hms-dbmi.github.io/vizarr/?source=https://uk1s3.embassy.ebi.ac.uk/idr/zarr/v0.1/4495402.zarr" frameborder=0 allowfullscreen></iframe></section><section><h2 id=a-rapid-growing-list-of-plugins>🚀A rapid growing list of plugins</h2><ul><li><a href=https://ij.imjoy.io target=_blank rel=noopener>ImageJ.JS</a></li><li><a href=https://imjoy-team.github.io/elFinder/ target=_blank rel=noopener>File Manager</a></li><li><a href=https://github.com/hms-dbmi/vizarr target=_blank rel=noopener>Vizarr</a> for visualizing zarr images</li><li><a href=https://kitware.github.io/itk-vtk-viewer/docs/ target=_blank rel=noopener>ITK/VTK Viewer</a> for 3D visualizing</li><li><a href=https://slides.imjoy.io target=_blank rel=noopener>ImJoy Slides</a></li><li><a href=https://chart.imjoy.io target=_blank rel=noopener>ImJoy Chart Editor</a></li></ul></section><section><h3 id=works-with-jupyterbinder-and-colab>Works with Jupyter/Binder and Colab</h3><img style=height:70%;object-fit:contain;background-color:#fff src=https://raw.githubusercontent.com/imjoy-team/imjoy-demo-assets/main/image125.gif></section><section><h2 id=conclusions>Conclusions</h2><ul><li>ImJoy is built for scalability and interactivity</li><li>ImJoy plugins are sandbox services connected via RPC</li></ul></section><section><h3 id=acknowledgements>Acknowledgements</h3><p>Work carried out at Cell Profiling group @ SciLifeLab headed by Emma Lundberg</p></section><section><h1 id=thank-you>🙏Thank You!</h1></section></div></div><script src=https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.min.js crossorigin=anonymous></script>
+ * Sandboxed plugins connected via Remote Procedure calls
+ * Workflow composition via asynchronous programming
+ * Open Integration with existing software/website
+
+---
+
+### 👐Open Integration with Web Apps
+
+Customize annotation workflow with Kaibu
+
+```js
+// load the web app via its URL
+viewer = await api.createWindow({src: &#34;https://kaibu.org/#/app&#34;})
+// call api functions directly via RPC
+// add an image layer
+await viewer.view_image(&#34;https://images.proteinatlas.org/61448/1319_C10_2_blue_red_green.jpg&#34;)
+// add an annotation layer
+await viewer.add_shapes([], {name:&#34;annotation&#34;})
+```
+
+---
+
+### 🔥Demo: Visualization with Vizarr
+
+Made by Trevor Manz et. al.
+&lt;iframe width=&#34;100%&#34; height=&#34;500px&#34; src=&#34;https://hms-dbmi.github.io/vizarr/?source=https://uk1s3.embassy.ebi.ac.uk/idr/zarr/v0.1/4495402.zarr&#34;  frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;
+
+
+---
+
+## 🚀A rapid growing list of plugins
+ * [ImageJ.JS](https://ij.imjoy.io)
+ * [File Manager](https://imjoy-team.github.io/elFinder/)
+ * [Vizarr](https://github.com/hms-dbmi/vizarr) for visualizing zarr images
+ * [ITK/VTK Viewer](https://kitware.github.io/itk-vtk-viewer/docs/) for 3D visualizing
+ * [ImJoy Slides](https://slides.imjoy.io)
+ * [ImJoy Chart Editor](https://chart.imjoy.io)
+
+---
+### Works with Jupyter/Binder and Colab
+
+&lt;img style=&#34;height:70%;object-fit:contain;background-color: white;&#34;  src=&#34;https://raw.githubusercontent.com/imjoy-team/imjoy-demo-assets/main/image125.gif&#34;&gt;
+
+---
+## Conclusions
+ * ImJoy is built for scalability and interactivity
+ * ImJoy plugins are sandbox services connected via RPC
+
+---
+### Acknowledgements
+Work carried out at Cell Profiling group @ SciLifeLab headed by Emma Lundberg
+
+---
+
+# 🙏Thank You!
+
+</textarea></div><div id=window-container style=z-index:100></div><div id=menu-container style=z-index:200></div><script src=https://lib.imjoy.io/imjoy-loader.js></script>
+<script src=https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.min.js crossorigin=anonymous></script>
 <script src=https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/markdown/markdown.min.js crossorigin=anonymous></script>
 <script src=https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/notes/notes.min.js crossorigin=anonymous></script>
 <script src=https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/search/search.min.js crossorigin=anonymous></script>
 <script src=https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/math/math.min.js crossorigin=anonymous></script>
 <script src=https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/zoom/zoom.min.js crossorigin=anonymous></script>
+<script src=https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/highlight/highlight.min.js crossorigin=anonymous></script>
 <script src=https://cdn.jsdelivr.net/npm/reveal.js-menu@2.1.0/plugin.js integrity="sha256-M6JwAjnRAWmi+sbXURR/yAhWZKYhAw7YXnnLvIxrdGs=" crossorigin=anonymous></script>
 <script src=https://cdn.jsdelivr.net/npm/reveal.js-menu@2.1.0/menu.js integrity="sha256-l14dklFcW5mWar6w/9KaW0fWVerf3mYr7Wt0+rXzFAA=" crossorigin=anonymous></script>
-<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/reveal.js-menu@2.1.0/menu.css integrity="sha256-0fU8HKLaTjgzfaV9CgSqbsN8ilA3zo6zK1M6rlgULd8=" crossorigin=anonymous><script src=/js/wowchemy-slides.js></script></body></html>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/reveal.js-menu@2.1.0/menu.css integrity="sha256-0fU8HKLaTjgzfaV9CgSqbsN8ilA3zo6zK1M6rlgULd8=" crossorigin=anonymous><script src=/js/utils.js></script>
+<script src=/js/fullscreen.js></script>
+<script src=/js/main.js></script></body></html>
