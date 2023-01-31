@@ -83,6 +83,10 @@ This website contains ImJoy integration, you can find some example applications 
 
 <div id="menu-container"></div>
 
+### Kaibu
+
+<button onclick="imjoy.kaibu('https://images.proteinatlas.org/115/672_E2_1_blue_red_green.jpg')">Run Kaibu</button>
+
 ### ITK/VTK Viewer
 To visualize an image with ITK/VTK viewer, click <button onclick="api.showDialog({src: 'https://kitware.github.io/itk-vtk-viewer/app/', data: {image: 'https://images.proteinatlas.org/115/672_E2_1_blue_red_green.jpg'}})">here</button>
 
@@ -93,3 +97,4 @@ Vizarr be embedded in the page directly:
 
 <br>
 You can also view the image in a dialog by clicking <button onclick="imjoy.vizarr('https://uk1s3.embassy.ebi.ac.uk/idr/zarr/v0.1/4495402.zarr')">here</button>
+
