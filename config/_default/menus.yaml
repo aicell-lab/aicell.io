@@ -16,9 +16,9 @@ main:
   - name: Projects
     url: '#projects'
     weight: 50
-  - name: People
-    url: '#people'
-    weight: 60
+  # - name: People
+  #   url: '#people'
+  #   weight: 60
   - name: Recruiting
     url: '/recruiting'
     weight: 70
