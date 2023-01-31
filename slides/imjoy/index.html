@@ -6,7 +6,7 @@ Wei Ouyang
 
 KTH | SciLifeLab, Stockholm
 
----
+-----
 ## Challenges in AI for bioimaging
 
 * **Usability**: User friendly GUI
@@ -15,26 +15,37 @@ KTH | SciLifeLab, Stockholm
 * **Scalability**: Remote storage and compute resources
 * **Privacy**: Edge computing
 
----
+-----
 ## Progressive Web App
 
 * Rich and interactive UI libraries
 * Computation in the browser (&#43;cloud)
 * Offline support
 
----
+-----
 &lt;!-- .slide: data-background=&#34;white&#34; --&gt;
 ### ImJoy https://imjoy.io
 Data science tools in the browser
 
 &lt;img src=&#34;https://docs.google.com/drawings/d/e/2PACX-1vSBsdhDBrp4L2zWfL_9YOUHCS2zQ51HtjplGa-l_a1hMpNjbqENzmXrcSmYs6yed_NACNZSRH-7qsph/pub?w=1248&amp;h=573&#34;&gt;
----
+-----
 # Key concepts
  * Sandboxed plugins connected via Remote Procedure calls
  * Workflow composition via asynchronous programming
  * Open Integration with existing software/website
 
----
+-----
+&lt;!-- .slide: data-state=&#34;demo1&#34; --&gt;
+### Calling Python from JS with RPC
+&lt;div&gt;
+Python (cloud)  ⇔  Javascript (local)
+&lt;/div&gt;
+&lt;div&gt;
+&lt;div id=&#34;window-1&#34; style=&#34;display: inline-block;width: 46%; height: calc(100vh - 200px);&#34;&gt;&lt;/div&gt;
+
+&lt;div id=&#34;window-2&#34; style=&#34;display: inline-block;width: 46%; height: calc(100vh - 200px);&#34;&gt;&lt;/div&gt;
+&lt;/div&gt;
+-----
 
 ### 👐Open Integration with Web Apps
 
@@ -49,8 +60,15 @@ await viewer.view_image(&#34;https://images.proteinatlas.org/61448/1319_C10_2_bl
 // add an annotation layer
 await viewer.add_shapes([], {name:&#34;annotation&#34;})
 ```
+&lt;button class=&#34;button&#34; onclick=&#34;runDemo2()&#34;&gt;Run&lt;/button&gt;
 
----
+-----
+&lt;!-- .slide: data-state=&#34;ij-macro-1&#34; --&gt;
+## 🔥Demo: ImJoy &#43; ImageJ =&gt; ImageJ.JS
+
+&lt;div id=&#34;macro-editor-1&#34;&gt;&lt;/div&gt;
+
+-----
 
 ### 🔥Demo: Visualization with Vizarr
 
@@ -58,33 +76,353 @@ Made by Trevor Manz et. al.
 &lt;iframe width=&#34;100%&#34; height=&#34;500px&#34; src=&#34;https://hms-dbmi.github.io/vizarr/?source=https://uk1s3.embassy.ebi.ac.uk/idr/zarr/v0.1/4495402.zarr&#34;  frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;
 
 
----
+-----
 
 ## 🚀A rapid growing list of plugins
- * [ImageJ.JS](https://ij.imjoy.io)
- * [File Manager](https://imjoy-team.github.io/elFinder/)
- * [Vizarr](https://github.com/hms-dbmi/vizarr) for visualizing zarr images
- * [ITK/VTK Viewer](https://kitware.github.io/itk-vtk-viewer/docs/) for 3D visualizing
+ * [ImageJ.JS](https://ij.imjoy.io) &lt;button onclick=&#34;api.showDialog({src:&#39;https://ij.imjoy.io&#39;})&#34;&gt;Run&lt;/button&gt;
+ * [File Manager](https://imjoy-team.github.io/elFinder/) &lt;button onclick=&#34;api.showDialog({src:&#39;https://imjoy-team.github.io/elFinder/&#39;})&#34;&gt;Run&lt;/button&gt;
+ * [Vizarr](https://github.com/hms-dbmi/vizarr) for visualizing zarr images &lt;button onclick=&#34;api.showDialog({src:&#39;https://hms-dbmi.github.io/vizarr/?source=https://s3.embassy.ebi.ac.uk/idr/zarr/v0.1/4495402.zarr&#39;, passive:true})&#34;&gt;Run&lt;/button&gt;
+ * [ITK/VTK Viewer](https://kitware.github.io/itk-vtk-viewer/docs/) for 3D visualizing &lt;button onclick=&#34;api.getPlugin({src: ZarrPythonCode}).then(p=&gt;{p.run({})})&#34;&gt;Run&lt;/button&gt;
  * [ImJoy Slides](https://slides.imjoy.io)
  * [ImJoy Chart Editor](https://chart.imjoy.io)
 
----
+-----
 ### Works with Jupyter/Binder and Colab
 
 &lt;img style=&#34;height:70%;object-fit:contain;background-color: white;&#34;  src=&#34;https://raw.githubusercontent.com/imjoy-team/imjoy-demo-assets/main/image125.gif&#34;&gt;
 
----
+-----
+# &lt;img alt=&#34;BioImage Model Zoo&#34; src=&#34;https://bioimage.io/static/img/bioimage-io-logo-white.svg&#34;&gt;
+### Advanced AI models in one click!
+
+-----
+&lt;!-- .slide: data-background=&#34;white&#34; --&gt;
+### 🤔How it works
+
+&lt;img style=&#34;height:calc(100% - 200px);object-fit:contain;background-color: white;&#34; src=&#34;https://docs.google.com/drawings/d/e/2PACX-1vSh8qO-jxZcGKjg5w52IMTesAUMbOaOxc3XQgmW7zBBj6btMGAUjcgh6iHgaTyzI18Ld7SSHkbie2k2/pub?w=1057&amp;h=689&#34;&gt;
+
+-----
+## 🔥Try it yourself!
+ https://bioimage.io
+
+
+-----
+## BioEngine -- AI model and application serving
+ * Fetch models from bioimage.io
+ * Provide web API for model training and inference
+ * Support test run models and ImJoy applications
+ * Suitable for deploying AI workflows for institutions, facilities or labs
+
+-----
+Running models in JupyterLite via the BioEngine
+&lt;iframe style=&#34;width:100%;height:calc(100vh - 20px)&#34; src=&#34;https://jupyterlite.readthedocs.io/en/latest/_static/retro/notebooks/?path=bioengine-demo.ipynb&#34;&gt;&lt;/iframe&gt;
+
+-----
+## AI-assisted Bioimage Analysis
+### A taste of the future!
+
+Powered by OpenAI GPT-3 and Codex
+
+-----
+# 🔥Codex live demos!
+## Disclaimer!
+ * All the demo applications have not yet been approved for launch
+ * Please don&#39;t record the demos
+
+-----
+## Seminar at SciLifeLab
+[A sneak peek into the future of AI-assisted life science](https://www.scilifelab.se/event/scilifelab-ai-seminar-series-wei-ouyang/)
+* Tomorrow (November 23rd), 10:00 - 11:00 CET
+* https://www.scilifelab.se/event/scilifelab-ai-seminar-series-wei-ouyang/
+
+-----
 ## Conclusions
  * ImJoy is built for scalability and interactivity
  * ImJoy plugins are sandbox services connected via RPC
+ * BioImage Model Zoo for model sharing
+ * BioEninge for AI model serving
+ * The future of bioimage anlysis
 
----
+-----
 ### Acknowledgements
 Work carried out at Cell Profiling group @ SciLifeLab headed by Emma Lundberg
 
----
+BioImage.IO is powered by the 🧠 and ❤️ of:
+ * deepImageJ Team
+ * EBI Bioimage Archive Team
+ * Fiji/ImageJ Team
+ * ilastik Team
+ * ImJoy Team
+ * ZeroCostDL4Mic Team
+ * ...
+
+Follow us on twitter @bioimageio
+
+-----
+### Acknowledgements
+
+We thank OpenAI for providing beta testing access to GPT-3 and Codex
+
+The demos during this talk has not been approved by OpenAI
+
+
+-----
 
 # 🙏Thank You!
+
+
+
+-----
+
+# 🙏Thank You!
+
+
+&lt;!-- startup script  --&gt;
+```javascript execute
+const PythonPluginCode = `
+&lt;config lang=&#34;json&#34;&gt;
+{
+  &#34;name&#34;: &#34;PythonPlugin&#34;,
+  &#34;type&#34;: &#34;native-python&#34;,
+  &#34;version&#34;: &#34;0.1.0&#34;,
+  &#34;description&#34;: &#34;[TODO: describe this plugin with one sentence.]&#34;,
+  &#34;tags&#34;: [],
+  &#34;ui&#34;: &#34;&#34;,
+  &#34;cover&#34;: &#34;&#34;,
+  &#34;inputs&#34;: null,
+  &#34;outputs&#34;: null,
+  &#34;flags&#34;: [],
+  &#34;icon&#34;: &#34;extension&#34;,
+  &#34;api_version&#34;: &#34;0.1.8&#34;,
+  &#34;env&#34;: &#34;&#34;,
+  &#34;permissions&#34;: [],
+  &#34;requirements&#34;: [],
+  &#34;dependencies&#34;: []
+}
+&lt;/config&gt;
+
+&lt;script lang=&#34;python&#34;&gt;
+from imjoy import api
+
+
+class ImJoyPlugin():
+    def setup(self):
+        api.showMessage(&#39;Python plugin initialized&#39;)
+
+    def add(self, a, b):
+        return a &#43; b
+
+api.export(ImJoyPlugin())
+&lt;/script&gt;
+`
+
+const JSPluginCode = `
+&lt;config lang=&#34;json&#34;&gt;
+{
+  &#34;name&#34;: &#34;JSPlugin&#34;,
+  &#34;type&#34;: &#34;window&#34;,
+  &#34;tags&#34;: [],
+  &#34;ui&#34;: &#34;&#34;,
+  &#34;version&#34;: &#34;0.1.0&#34;,
+  &#34;cover&#34;: &#34;&#34;,
+  &#34;description&#34;: &#34;[TODO: describe this plugin with one sentence.]&#34;,
+  &#34;icon&#34;: &#34;extension&#34;,
+  &#34;inputs&#34;: null,
+  &#34;outputs&#34;: null,
+  &#34;api_version&#34;: &#34;0.1.8&#34;,
+  &#34;env&#34;: &#34;&#34;,
+  &#34;permissions&#34;: [],
+  &#34;requirements&#34;: [],
+  &#34;dependencies&#34;: [],
+  &#34;defaults&#34;: {&#34;w&#34;: 20, &#34;h&#34;: 10}
+}
+&lt;/config&gt;
+
+&lt;script lang=&#34;javascript&#34;&gt;
+window.callPython = async function(){
+    const pythonPlugin = await api.getPlugin(&#39;PythonPlugin&#39;)
+    const result = await pythonPlugin.add(10, 99)
+    document.getElementById(&#34;result&#34;).innerHTML = &#34;10 &#43; 99 =&#34; &#43; result
+}
+
+class ImJoyPlugin {
+  async setup() {
+    api.log(&#39;initialized&#39;)
+  }
+
+  async run(ctx) {
+  }
+}
+api.export(new ImJoyPlugin())
+&lt;/script&gt;
+
+&lt;window lang=&#34;html&#34;&gt;
+  &lt;div&gt;
+    &lt;button class=&#34;button&#34; onclick=&#34;callPython()&#34;&gt; Calculate in Python&lt;/button&gt;
+    &lt;h3 id=&#34;result&#34;&gt;&lt;/h3&gt;
+  &lt;/div&gt;
+&lt;/window&gt;
+
+&lt;style lang=&#34;css&#34;&gt;
+
+&lt;/style&gt;
+`
+
+window.ZarrPythonCode = `
+&lt;config lang=&#34;json&#34;&gt;
+{
+  &#34;name&#34;: &#34;ZarrPythonPlugin&#34;,
+  &#34;type&#34;: &#34;native-python&#34;,
+  &#34;version&#34;: &#34;0.1.0&#34;,
+  &#34;description&#34;: &#34;[TODO: describe this plugin with one sentence.]&#34;,
+  &#34;tags&#34;: [],
+  &#34;ui&#34;: &#34;&#34;,
+  &#34;cover&#34;: &#34;&#34;,
+  &#34;inputs&#34;: null,
+  &#34;outputs&#34;: null,
+  &#34;flags&#34;: [],
+  &#34;icon&#34;: &#34;extension&#34;,
+  &#34;api_version&#34;: &#34;0.1.8&#34;,
+  &#34;env&#34;: &#34;&#34;,
+  &#34;permissions&#34;: [],
+  &#34;requirements&#34;: [&#34;zarr&#34;, &#34;fsspec&#34;],
+  &#34;dependencies&#34;: []
+}
+&lt;/config&gt;
+
+&lt;script lang=&#34;python&#34;&gt;
+import zarr
+from imjoy_rpc import api
+from imjoy_rpc import register_default_codecs
+from fsspec.implementations.http import HTTPFileSystem
+register_default_codecs()
+
+fs = HTTPFileSystem()
+http_map = fs.get_mapper(&#34;https://openimaging.github.io/demos/multi-scale-chunked-compressed/build/data/medium.zarr&#34;)
+z_group = zarr.open(http_map, mode=&#39;r&#39;)
+
+class ImJoyPlugin:
+    async def setup(self):
+        pass
+
+    async def run(self, ctx):
+        viewer = await api.createWindow(
+            src=&#34;https://kitware.github.io/itk-vtk-viewer/app/&#34;,
+            name=&#34;ITK/VTK Viewer&#34;
+        )
+        await viewer.setImage(z_group)
+
+api.export(ImJoyPlugin())
+&lt;/script&gt;
+`
+function startImageJ(){
+  api.createWindow({src:&#34;https://ij.imjoy.io&#34;, name:&#34;ImageJ.JS&#34;})  
+}
+
+async function initializeMacroEditor(editor_container, code){
+    const editorElm = document.getElementById(editor_container);
+    if(!editorElm) throw new Error(&#34;editor container not found: &#34; &#43; editor_container)
+    editorElm.style.width = &#39;90%&#39;;
+    editorElm.style.display = &#39;inline-block&#39;;
+    editorElm.style.height = &#39;calc(100vh - 200px)&#39;;
+    // force update the slide
+    Reveal.layout();
+    let editorWindow;
+    const config = {lang: &#39;javascript&#39;}
+    config.templates = [
+        {
+          name: &#34;New&#34;,
+          url: null,
+          lang: &#39;javascript&#39;,
+        },
+        {
+          name: &#34;Sphere&#34;,
+          url: &#34;https://wsr.imagej.net/download/Examples/Macro/Sphere.ijm&#34;,
+          lang: &#39;javascript&#39;,
+        },
+        {
+          name: &#34;OpenDialog Demo&#34;,
+          url: &#34;https://wsr.imagej.net/download/Examples/Macro/OpenDialog_Demo.ijm&#34;,
+          lang: &#39;javascript&#39;,
+        },
+        {
+          name: &#34;Overlay&#34;,
+          url: &#34;https://wsr.imagej.net/download/Examples/Macro/Overlay.ijm&#34;,
+          lang: &#39;javascript&#39;,
+        }
+      ]
+    config.ui_elements = {
+      run: {
+          _rintf: true,
+          type: &#39;button&#39;,
+          label: &#34;Run&#34;,
+          icon: &#34;play&#34;,
+          visible: true,
+          shortcut: &#39;Shift-Enter&#39;,
+          async callback(content) {
+              try {
+                  let ij = await api.getWindow(&#34;ImageJ.JS-&#34; &#43; editor_container)
+                  if(!ij){
+                      //put the editor side by side
+                      editorElm.style.width = &#39;38.2%&#39;;
+                      const ijElm = document.createElement(&#39;div&#39;);
+                      ijElm.id = &#39;imagej-&#39; &#43; editor_container
+                      ijElm.style.display = &#39;inline-block&#39;;
+                      ijElm.style.width = &#39;61.8%&#39;;
+                      ijElm.style.height = editorElm.style.height;
+                      editorElm.parentNode.insertBefore(ijElm, editorElm.nextSibling);
+                      ij = await api.createWindow({src:&#34;https://ij.imjoy.io&#34;, name:&#34;ImageJ.JS-&#34; &#43; editor_container, window_id: &#39;imagej-&#39; &#43; editor_container})
+                  }
+                  await ij.runMacro(content)
+              } catch (e) {
+                  api.showMessage(&#34;Failed to run macro, error: &#34; &#43; e.toString());
+              } finally {
+                  editorWindow.updateUIElement(&#39;stop&#39;, {
+                      visible: false
+                  })
+                  editorWindow.setLoader(false);
+                  api.showProgress(100);
+              }
+          }
+      },
+    }
+    editorWindow = await api.createWindow({
+        src: &#39;https://if.imjoy.io&#39;,
+        name: &#39;ImageJ Script Editor&#39;,
+        config,
+        window_id: editor_container,
+        data: {code}
+    })
+}
+
+Reveal.addEventListener(&#39;ij-macro-1&#39;, async ()=&gt;{
+    const code = `run(&#34;Blobs (25K)&#34;);
+setAutoThreshold(&#34;Default&#34;);
+setOption(&#34;BlackBackground&#34;, true);
+run(&#34;Convert to Mask&#34;);
+run(&#34;Analyze Particles...&#34;, &#34;size=5-Infinity add&#34;);
+`
+    initializeMacroEditor(&#39;macro-editor-1&#39;, code)
+})
+
+Reveal.addEventListener(&#39;demo1&#39;, async function(){
+    await api.createWindow({src: &#39;https://if.imjoy.io&#39;, config: {fold: [1]}, data: {code: PythonPluginCode}, window_id: &#34;window-1&#34;})
+
+    await api.createWindow({src: &#39;https://if.imjoy.io&#39;, config: {fold: [1, 29]}, data: {code: JSPluginCode}, window_id: &#34;window-2&#34;})
+})
+
+async function runDemo2(){
+ const viewer = await api.showDialog({src: &#34;https://kaibu.org/#/app&#34;, name: &#34;Kaibu&#34;})
+        await viewer.view_image(&#34;https://images.proteinatlas.org/61448/1319_C10_2_blue_red_green.jpg&#34;)
+        await viewer.add_shapes([], {name:&#34;annotation&#34;})
+}
+
+
+
+
+```
+
+
 
 </textarea></div><div id=window-container style=z-index:100></div><div id=menu-container style=z-index:200></div><script src=https://lib.imjoy.io/imjoy-loader.js></script>
 <script src=https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.min.js crossorigin=anonymous></script>

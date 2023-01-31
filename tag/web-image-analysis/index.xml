@@ -3,6 +3,8 @@
 &lt;h2 id="live-demos">Live Demos&lt;/h2>
 &lt;p>This website contains ImJoy integration, you can find some example applications for image visualization below:&lt;/p>
 &lt;div id="menu-container">&lt;/div>
+&lt;h3 id="kaibu">Kaibu&lt;/h3>
+&lt;p>&lt;button onclick="imjoy.kaibu('https://images.proteinatlas.org/115/672_E2_1_blue_red_green.jpg')">Run Kaibu&lt;/button>&lt;/p>
 &lt;h3 id="itkvtk-viewer">ITK/VTK Viewer&lt;/h3>
 &lt;p>To visualize an image with ITK/VTK viewer, click &lt;button onclick="api.showDialog({src: 'https://kitware.github.io/itk-vtk-viewer/app/', data: {image: 'https://images.proteinatlas.org/115/672_E2_1_blue_red_green.jpg'}})">here&lt;/button>&lt;/p>
 &lt;h3 id="vizarr-example">Vizarr Example&lt;/h3>
