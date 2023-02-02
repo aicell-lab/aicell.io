@@ -31,7 +31,7 @@ categories:
 links:
   - icon: question
     icon_pack: fas
-    name: Enquiry
+    name: Ask Me
     url: "mailto: wei.ouyang@scilifelab.se"
 ---
 Title:  Postdoc in Cell Biology and Computational Microscopy Imaging
