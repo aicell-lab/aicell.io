@@ -1,5 +1,5 @@
 ---
-title: Postdoc in AI-powered multi-omics data integration and whole-cell modeling
+title: Postdoc in AI-powered Whole-cell Modeling
 
 # Summary for listings and search engines
 summary: 
@@ -31,10 +31,16 @@ categories:
 links:
   - icon: pen-to-square
     icon_pack: fas
-    name: Apply Now!
+    name: Apply Now
+    url: "https://kth.varbi.com/en/what:job/jobID:592100/where:4/"
+  - icon: question
+    icon_pack: fas
+    name: Enquiry
     url: "mailto: wei.ouyang@scilifelab.se"
 ---
 Title:  Postdoc in AI-powered Whole-cell Modeling
+
+**Application Deadline: 22.Feb.2023**
 
 ### Job description
 

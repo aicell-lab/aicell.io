@@ -31,10 +31,16 @@ categories:
 links:
   - icon: pen-to-square
     icon_pack: fas
-    name: Apply Now!
+    name: Apply Now
+    url: "https://kth.varbi.com/en/what:job/jobID:592340/where:4/"
+  - icon: question
+    icon_pack: fas
+    name: Enquiry
     url: "mailto: wei.ouyang@scilifelab.se"
 ---
 Title:  Postdoc in AI-powered Automated Microscopy Imaging Systems
+
+**Application Deadline: 22.Feb.2023**
 
 ### Job description
 

@@ -34,12 +34,14 @@ links:
     icon_pack: fas
     name: Apply Now
     url: "https://kth.varbi.com/en/what:job/jobID:590798/where:4/"
-  - icon: messages-question
+  - icon: question
     icon_pack: fas
     name: Enquiry
     url: "mailto: wei.ouyang@scilifelab.se"
 ---
 Title:  Postdoc in Scalable AI Systems for BioImage Analysis
+
+**Application Deadline: 22.Feb.2023**
 
 ### Job description
 

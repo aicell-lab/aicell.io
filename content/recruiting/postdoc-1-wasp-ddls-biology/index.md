@@ -29,12 +29,14 @@ categories:
   - recruitment
 
 links:
-  - icon: pen-to-square
+  - icon: question
     icon_pack: fas
-    name: Apply Now!
+    name: Enquiry
     url: "mailto: wei.ouyang@scilifelab.se"
 ---
 Title:  Postdoc in Cell Biology and Computational Microscopy Imaging
+
+**Application Deadline: 22.Feb.2023**
 
 ### Job description
 
