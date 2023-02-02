@@ -29,6 +29,10 @@ categories:
   - recruitment
 
 links:
+  - icon: pen-to-square
+    icon_pack: fas
+    name: Open Soon
+    url: "mailto: wei.ouyang@scilifelab.se"
   - icon: question
     icon_pack: fas
     name: Ask Me
