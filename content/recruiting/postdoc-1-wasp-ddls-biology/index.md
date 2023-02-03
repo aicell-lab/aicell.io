@@ -31,8 +31,8 @@ categories:
 links:
   - icon: pen-to-square
     icon_pack: fas
-    name: Open Soon
-    url: "mailto: wei.ouyang@scilifelab.se"
+    name: Apply Now
+    url: "https://kth.varbi.com/en/what:job/jobID:592193/where:4/"
   - icon: question
     icon_pack: fas
     name: Ask Me
