@@ -32,7 +32,7 @@ links:
   - icon: pen-to-square
     icon_pack: fas
     name: Open Soon
-    url: "mailto: wei.ouyang@scilifelab.se"
+    url: "https://kth.varbi.com/what:job/jobID:590623/where:4/"
   - icon: question
     icon_pack: fas
     name: Ask Me
