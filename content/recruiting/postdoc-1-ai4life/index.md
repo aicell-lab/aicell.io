@@ -41,7 +41,7 @@ links:
 ---
 Title:  Postdoc in Scalable AI Systems for BioImage Analysis
 
-**Application Deadline: 22.Feb.2023**
+**Application Closed (Deadline: 22.Feb.2023)**
 
 ### Job description
 

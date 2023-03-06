@@ -40,7 +40,7 @@ links:
 ---
 Title:  Postdoc in AI-powered Whole-cell Modeling
 
-**Application Deadline: 22.Feb.2023**
+**Application Closed (Deadline: 22.Feb.2023)**
 
 ### Job description
 

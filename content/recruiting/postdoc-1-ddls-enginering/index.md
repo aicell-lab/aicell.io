@@ -40,7 +40,7 @@ links:
 ---
 Title:  Postdoc in AI-powered Automated Microscopy Imaging Systems
 
-**Application Deadline: 22.Feb.2023**
+**Application Closed (Deadline: 22.Feb.2023)**
 
 ### Job description
 
