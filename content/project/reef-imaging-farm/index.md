@@ -32,3 +32,6 @@ slides:
 ---
 
 The aim of the project is to build a smart microscopy imaging farm for massive production of image data. It consists of multiple microscopes and fluidic systems, robotic arms, liquid handling robots and automatic incubators. The farm will be used for performing automated widefield/fluorescence imaging, long-term live cell imaging, tracking,  spatial-omics and multiplexing imaging. With the AI-powered control software, data are analyzed in real-time, augmented views are added on the fly. By generating feedback control signals to control the microscope, the software will automatically change field-of-views, illumination power and other experimental conditions in order to optimize the phototoxicity and capture rare events in live cells.
+
+Here is a sketch for our cell lab with the imaging farm:
+<iframe width="100%" height="400px" src="https://www.youtube.com/embed/1CmMyhX1ZTM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

@@ -41,4 +41,4 @@ In general, we are always looking for highly motivated individuals with a strong
 
 For questions or applications please reach out.
 
-You can find a list of open positions below.
+There is no open positions at the moment, below is an archive of the positions, reach out if you are still interested.
