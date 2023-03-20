@@ -34,7 +34,7 @@ links:
   - icon: pen-to-square
     icon_pack: fas
     name: Apply Now
-    url: ""
+    url: "https://kth.varbi.com/what:job/jobID:609903/where:4/"
   - icon: question
     icon_pack: fas
     name: Ask Me
