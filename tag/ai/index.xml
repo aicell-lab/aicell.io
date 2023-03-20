@@ -1,4 +1,75 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AI | AICell Lab</title><link>https://aicell.io/tag/ai/</link><atom:link href="https://aicell.io/tag/ai/index.xml" rel="self" type="application/rss+xml"/><description>AI</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 13 Jan 2023 00:00:00 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>AI</title><link>https://aicell.io/tag/ai/</link></image><item><title>Doctoral Student in Cell Biology and Computational Microscopy Imaging</title><link>https://aicell.io/recruiting/phd-1-wasp-ddls-biology/</link><pubDate>Fri, 13 Jan 2023 00:00:00 +0000</pubDate><guid>https://aicell.io/recruiting/phd-1-wasp-ddls-biology/</guid><description>&lt;p>Title: Doctoral Student in Cell Biology and Computational Microscopy Imaging&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AI | AICell Lab</title><link>https://aicell.io/tag/ai/</link><atom:link href="https://aicell.io/tag/ai/index.xml" rel="self" type="application/rss+xml"/><description>AI</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 20 Mar 2023 00:00:00 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>AI</title><link>https://aicell.io/tag/ai/</link></image><item><title>Postdoc in Robotics and AI-powered Microscopy Imaging</title><link>https://aicell.io/recruiting/postdoc-1-ddls-robotics/</link><pubDate>Mon, 20 Mar 2023 00:00:00 +0000</pubDate><guid>https://aicell.io/recruiting/postdoc-1-ddls-robotics/</guid><description>&lt;p>Title: Postdoc in Robotics and AI-powered Microscopy Imaging&lt;/p>
+&lt;p>&lt;strong>Application Deadline: 10.April.2023&lt;/strong>&lt;/p>
+&lt;h3 id="job-description">Job description&lt;/h3>
+&lt;p>The Science for Life Laboratory (SciLifeLab) is a national center for molecular biosciences with focus on health and environmental research. The combination of the highly interdisciplinary expertise and research projects at the department is unique in Sweden and also at an international level. This expertise ranges across cell biology, biochemistry, biophysics and theory. Recently, the SciLifeLab and Wallenberg National Program started the &lt;a href="https://www.scilifelab.se/data-driven/" target="_blank" rel="noopener">Data-Driven Life Science (DDLS) program&lt;/a> in order to accelerate life science research through innovations in AI and data science.&lt;/p>
+&lt;p>The AICell Lab (&lt;a href="https://aicell.io" target="_blank" rel="noopener">https://aicell.io&lt;/a>) in the department of Applied Physics at KTH and SciLifeLab is a new research group funded by the DDLS Fellows program. The group, led by Wei Ouyang, focuses on building AI systems for data-driven cell and molecular biology. To expand the team, we are now seeking a postdoctoral researcher to develop AI-powered automated microscopy imaging systems.&lt;/p>
+&lt;p>The aim of the project is to build a smart microscopy imaging farm for massive production of image data. It consists of multiple microscopes and fluidic systems, robotic arms, liquid handling robots and automatic incubators. The farm will be used for performing automated widefield/fluorescence imaging, long-term live cell imaging, tracking,  spatial-omics and multiplexing imaging. With the AI-powered control software, data are analyzed in real-time, augmented views are added on the fly. By generating feedback control signals to control the microscope, the software will automatically change field-of-views, illumination power and other experimental conditions in order to optimize the phototoxicity and capture rare events in live cells.&lt;/p>
+&lt;p>The candidate is expected to develop an integrated system with microscopes, fluidic control, robotic arms, as well as the control software. The project is a collaboration with our collaborator in the &lt;a href="https://wasp-sweden.org/" target="_blank" rel="noopener">WASP program&lt;/a> and built on top of our prior work (e.g. &lt;a href="https://www.biorxiv.org/content/10.1101/2020.12.28.424613v1" target="_blank" rel="noopener">squid&lt;/a>, &lt;a href="https://www.nature.com/articles/s41592-019-0627-0" target="_blank" rel="noopener">ImJoy&lt;/a>) from us or our collaborators at Stanford University.&lt;/p>
+&lt;h3 id="what-we-offer">What we offer &lt;/h3>
+&lt;ul>
+&lt;li>
+&lt;p>A position at a leading technical university that generates knowledge and skills for a sustainable future.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Engaged and ambitious colleagues along with a creative, international and dynamic working environment&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Works in Stockholm, in close proximity to nature&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Collaboration opportunities with leading research institutions and universities in Europe and the US&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Learning and thriving in a young and ambitious research group&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Help to&lt;a href="https://www.kth.se/en/om/work-at-kth/relocation" target="_blank" rel="noopener"> relocate and be settled in Sweden and at KTH&lt;/a>.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;a href="https://www.kth.se/en/om/work-at-kth/kth-your-future-workplace-1.49050" target="_blank" rel="noopener">Read more about what it is like to work at KTH&lt;/a>&lt;/p>
+&lt;h3 id="qualifications">Qualifications&lt;/h3>
+&lt;h4 id="requirements">Requirements&lt;/h4>
+&lt;ul>
+&lt;li>
+&lt;p>A doctoral degree or an equivalent foreign degree, This eligibility requirement must be met no later than the time the employment decision is made.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The ability to express yourself in English.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h4 id="preferred-qualifications">Preferred qualifications&lt;/h4>
+&lt;ul>
+&lt;li>You are passionate, curious and knowledgeable on robotic control&lt;/li>
+&lt;li>Strong background in electronics, optics, mechanical engineering, computer vision and AI&lt;/li>
+&lt;li>Proficient in programming languages such as Python and C/C++, Javascript, Bash&lt;/li>
+&lt;li>Prior experience in microscopy imaging, fluidics systems,  digital image analysis and software development is a plus&lt;/li>
+&lt;li>Knowledge inCollaborative abilities, and scientific communication &lt;/li>
+&lt;li>Awareness of diversity and equal opportunity issues, with a specific focus on gender equality&lt;/li>
+&lt;/ul>
+&lt;h3 id="trade-union-representatives">Trade union representatives&lt;/h3>
+&lt;p>You will find contact information to trade union representatives at &lt;a href="https://intra.kth.se/en/administration/rekrytering/annonsering/fackrepresentanter-1.500898" target="_blank" rel="noopener">KTH.se&lt;/a>&lt;/p>
+&lt;h3 id="application">Application&lt;/h3>
+&lt;p>Log into KTH&amp;rsquo;s recruitment system in order to apply to this position. You are responsible to ensure that your application is complete according to the instructions in the ad.&lt;/p>
+&lt;p>The application must include:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>CV including relevant professional experience, knowledge and representative publications. Please also provide your Github/Gitlab/Bitbucket etc. handle if possible.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Copy of diplomas and grades from your previous university studies. Translations into English or Swedish if the original documents have not been issued in any of these languages.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Brief account of why you want to conduct research, your career goal and how they relate to your previous studies and future goals. Max two pages long.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>Your complete application must be received by KTH no later than the last day of application, midnight&lt;/p>
+&lt;p>CET/CEST (Central European Time/Central European Summer Time).&lt;/p>
+&lt;h3 id="about-the-employment">About the employment&lt;/h3>
+&lt;p>The position offered is for, at the most, two years. There may be possibilities to prolong employment.&lt;/p>
+&lt;p>A position as a postdoctoral fellow is a time-limited qualified appointment focusing mainly on research, intended as a first career step after a dissertation.&lt;/p>
+&lt;h3 id="other-information">Other information&lt;/h3>
+&lt;p>Striving towards gender equality, diversity and equal conditions is both a question of quality for KTH and a given part of our values.&lt;br>
+For information about processing of personal data in the recruitment process &lt;a href="https://www.kth.se/en/om/work-at-kth/processing-of-personal-data-in-the-recruitment-process-1.823440" target="_blank" rel="noopener">please read here.&lt;/a>&lt;/p></description></item><item><title>Doctoral Student in Cell Biology and Computational Microscopy Imaging</title><link>https://aicell.io/recruiting/phd-1-wasp-ddls-biology/</link><pubDate>Fri, 13 Jan 2023 00:00:00 +0000</pubDate><guid>https://aicell.io/recruiting/phd-1-wasp-ddls-biology/</guid><description>&lt;p>Title: Doctoral Student in Cell Biology and Computational Microscopy Imaging&lt;/p>
 &lt;p>&lt;strong>Application Closed (Deadline: 20.Feb.2023)&lt;/strong>&lt;/p>
 &lt;p>KTH Royal Institute of Technology in Stockholm has grown to become one of Europe&amp;rsquo;s leading technical and engineering universities, as well as a key centre of intellectual talent and innovation. We are Sweden&amp;rsquo;s largest technical research and learning institution and home to students, researchers and faculty from around the world. Our research and education covers a wide area including natural sciences and all branches of engineering, as well as architecture, industrial management, urban planning, history and philosophy.&lt;/p>
 &lt;h3 id="project-description">Project description&lt;/h3>
