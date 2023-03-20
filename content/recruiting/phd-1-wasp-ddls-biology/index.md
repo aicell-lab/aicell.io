@@ -31,7 +31,7 @@ categories:
 links:
   - icon: pen-to-square
     icon_pack: fas
-    name: Apply Now
+    name: Application Closed
     url: "https://kth.varbi.com/what:job/jobID:590623/where:4/"
   - icon: question
     icon_pack: fas

@@ -25,6 +25,7 @@ authors:
 tags:
   - hiring
   - people
+
 ---
 
 The AICell Lab is an interdisciplinary group which focuses on building AI systems for cell and molecular biology. The group is funded by the [Data-Driven Life Science (DDLS) program](https://www.scilifelab.se/data-driven/) and located at the Science for Life Laboratory in Solna, Sweden.
@@ -40,5 +41,3 @@ In general, we are always looking for highly motivated individuals with a strong
  - cell and molecular biology
 
 For questions or applications please reach out.
-
-There is no open positions at the moment, below is an archive of the positions, reach out if you are still interested.
