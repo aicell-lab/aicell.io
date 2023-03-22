@@ -24,6 +24,7 @@ authors:
 
 tags:
   - AI
+  - closed
 
 categories:
   - recruitment
