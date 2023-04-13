@@ -42,7 +42,7 @@ links:
 ---
 Title: Postdoc in Robotics and AI-powered Microscopy Imaging
 
-**Application Deadline: 10.April.2023**
+**Application Deadline: 28.April.2023**
 
 ### Job description
 
