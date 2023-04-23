@@ -41,7 +41,7 @@ links:
 ---
 Title:  Doctoral Student in Cell Biology and Computational Microscopy Imaging
 
-**Application Closed (Deadline: 27.April.2023)**
+**Application Deadline: 27.April.2023**
 
 KTH Royal Institute of Technology in Stockholm has grown to become one of Europe's leading technical and engineering universities, as well as a key centre of intellectual talent and innovation. We are Sweden's largest technical research and learning institution and home to students, researchers and faculty from around the world. Our research and education covers a wide area including natural sciences and all branches of engineering, as well as architecture, industrial management, urban planning, history and philosophy.
 
