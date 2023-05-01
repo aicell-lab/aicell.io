@@ -33,7 +33,7 @@ categories:
 links:
   - icon: pen-to-square
     icon_pack: fas
-    name: Apply Now
+    name: Application Closed
     url: "https://kth.varbi.com/what:job/jobID:609903/where:4/"
   - icon: question
     icon_pack: fas
@@ -42,7 +42,7 @@ links:
 ---
 Title: Postdoc in Robotics and AI-powered Microscopy Imaging
 
-**Application Deadline: 28.April.2023**
+**Application Closed (Deadline: 28.April.2023)**
 
 ### Job description
 
