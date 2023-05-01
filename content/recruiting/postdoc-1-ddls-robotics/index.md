@@ -25,7 +25,7 @@ authors:
 tags:
   - AI
   - Robotics
-  - open
+  - closed
 
 categories:
   - recruitment
