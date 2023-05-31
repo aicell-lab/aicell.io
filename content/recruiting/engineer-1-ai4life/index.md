@@ -11,7 +11,7 @@ projects: []
 date: '2023-04-20T00:00:00Z'
 
 # Date updated
-lastmod: '2023-04-20T00:00:00Z'
+lastmod: '2023-05-31T00:00:00Z'
 
 # Is this an unpublished draft?
 draft: false
@@ -32,8 +32,8 @@ categories:
 links:
   - icon: pen-to-square
     icon_pack: fas
-    name: Open Soon
-    url: ""
+    name: Apply Now
+    url: "https://kth.varbi.com/what:job/jobID:622405/"
   - icon: question
     icon_pack: fas
     name: Ask Me
@@ -41,7 +41,7 @@ links:
 ---
 Title:  Research Engineer for AI-driven Web and Cloud Software Development
 
-**Application Open Soon (Deadline: TBD)**
+**Application Deadline: June 19 2023**
 
 
 ### Job description
