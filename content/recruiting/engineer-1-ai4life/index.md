@@ -24,7 +24,7 @@ authors:
 
 tags:
   - engineer
-  - open
+  - closed
 
 categories:
   - recruitment
@@ -41,7 +41,7 @@ links:
 ---
 Title:  Research Engineer for AI-driven Web and Cloud Software Development
 
-**Application Deadline: June 19 2023**
+**Application Closed (Deadline: June 19 2023)**
 
 
 ### Job description

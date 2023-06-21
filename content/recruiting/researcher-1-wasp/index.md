@@ -24,7 +24,7 @@ authors:
 
 tags:
   - engineer
-  - open
+  - closed
 
 categories:
   - recruitment
@@ -41,7 +41,7 @@ links:
 ---
 Title:  Researcher for Computational Microscopy and Cell Modeling
 
-**Application Deadline: June 14th, 2023**
+**Application Closed (Deadline: June 14th, 2023)**
 
 
 ### Job description
