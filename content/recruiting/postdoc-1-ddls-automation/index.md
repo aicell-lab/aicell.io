@@ -1,5 +1,5 @@
 ---
-title: Postdoc in Robotics and AI-powered Microscopy Imaging
+title: Postdoc in Robotics and Automated Microscopy Imaging
 
 # Summary for listings and search engines
 summary: 

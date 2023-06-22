@@ -1,5 +1,5 @@
 ---
-title: Postdoc in Cell Biology and Computational Microscopy Imaging
+title: Postdoc in Cell Biology and Microscopy Imaging
 
 # Summary for listings and search engines
 summary: 
