@@ -1,6 +1,6 @@
 ---
-title: "Hackathon on Web and Cloud Infrastructure for AI-Powered BioImage Analysis"
-summary: "The AI4Life Hackathon on Web and Cloud Infrastructure for AI-Powered BioImage Analysis took place at SciLifeLab from June 5th to 9th, 2023, showcasing the vibrant nature of our field."
+title: "Hosting Hackathon on Web & Cloud for AI-powered BioImage Analysis"
+summary: "The AICell Lab is hosting a AI4Life Hackathon on Web and Cloud Infrastructure for AI-Powered BioImage Analysis took place at SciLifeLab from June 5th to 9th, 2023, showcasing the vibrant nature of our field."
 date: '2023-06-23T00:00:00Z'
 lastmod: '2023-06-23T00:00:00Z'
 draft: false
@@ -19,9 +19,9 @@ tags:
 categories:
   - news
 ---
-# Outcomes of the Hackathon on Web and Cloud Infrastructure for AI-Powered BioImage Analysis
+# Hosting Hackathon on Web & Cloud for AI-powered BioImage Analysis
 
-*Originally Posted by [Caterina Fuster-Barceló](https://focalplane.biologists.com/author/cfusterbarcelo/), on 22 June 2023*
+*Originally Posted by [Caterina Fuster-Barceló](https://focalplane.biologists.com/author/cfusterbarcelo/), title: "Outcomes of the Hackathon on Web and Cloud Infrastructure for AI-Powered BioImage Analysis" on 22 June 2023*
 
 Recently, our community had the opportunity to partake in a dynamic event that demonstrated the vibrant nature of our field: The [AI4Life](https://ai4life.eurobioimaging.eu/) Hackathon on Web and Cloud Infrastructure for AI-Powered BioImage Analysis. This event, organized by Wei Ouyang at KTH Sweden, partner of the AI4Life, with generous support from Global BioImaging, took place from June 5th to 9th, 2023, at the distinguished SciLifeLab in Stockholm, Sweden.
 
