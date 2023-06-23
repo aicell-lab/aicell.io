@@ -2,12 +2,12 @@
 # An instance of the Pages widget.
 # Documentation: https://wowchemy.com/docs/page-builder/
 widget: pages
-active: false
+active: true
 # This file represents a page section.
 headless: true
 
 # Order that this section appears on the page.
-weight: 60
+weight: 21
 
 title: Recent Posts
 subtitle:
@@ -33,6 +33,6 @@ content:
 
 design:
   # Choose a view for the listings:
-  view: compact
+  view: Compact
   columns: '2'
 ---
