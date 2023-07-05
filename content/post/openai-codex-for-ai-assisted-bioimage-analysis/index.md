@@ -1,8 +1,8 @@
 ---
 title: "AI-assisted BioImage Analysis with GPT models"
 summary: "Using of OpenAI's GPT models for generating Python code from natural language to assist with bioimage analysis, providing an intuitive interface for non-programmers, while also highlighting the need for running generated code in a secure environment due to potential inaccuracies and security concerns."
-date: '2020-01-17T00:00:00Z'
-lastmod: '2020-01-17T00:00:00Z'
+date: '2023-01-17T00:00:00Z'
+lastmod: '2023-01-17T00:00:00Z'
 draft: false
 featured: true
 image:
