@@ -32,8 +32,8 @@ categories:
 links:
   - icon: pen-to-square
     icon_pack: fas
-    name: Application Open Soon
-    url: ""
+    name: Application Open
+    url: "https://kth.varbi.com/what:job/jobID:642575/"
   - icon: question
     icon_pack: fas
     name: Ask Me
@@ -41,7 +41,7 @@ links:
 ---
 Title:  Postdoc in Cell Biology and Microscopy Imaging
 
-**Application Open Soon**
+**Application Open (Deadline: August 24th, 2023)**
 
 ### Job description
 The AICell Lab (https://aicell.io) in the department of Applied Physics at KTH and Science for Life Laboratory is a new research group funded by the Data-driven Life Science Fellows program. The group, led by Wei Ouyang, focuses on building AI systems for data-driven cell and molecular biology. To expand the team, we are now opening a position for a postdoctoral researcher in cell biology and computational microscopy imaging. The aim is to develop wet lab protocols and analysis workflows for an AI-powered automated imaging system to actively detect, monitor and track the live human cells under drug and genetic perturbations.  The project is supported by the WASP DDLS collaboration, and in close collaboration with the Jaldén group at KTH and the Lundberg group under the Human Protein Atlas, which is a unique world-leading effort to map all the human proteins in cells, tissues, and organs in the human body.

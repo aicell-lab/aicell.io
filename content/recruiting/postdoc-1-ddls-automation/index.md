@@ -25,7 +25,7 @@ authors:
 tags:
   - AI
   - Robotics
-  - open
+  - closed
 
 categories:
   - recruitment
@@ -33,8 +33,8 @@ categories:
 links:
   - icon: pen-to-square
     icon_pack: fas
-    name: Application Open Soon
-    url: ""
+    name: Application Closed
+    url: "https://kth.varbi.com/what:job/jobID:642597/"
   - icon: question
     icon_pack: fas
     name: Ask Me
@@ -42,7 +42,7 @@ links:
 ---
 Title: Postdoc in Robotics and Automated Microscopy Imaging
 
-**Application Open Soon**
+**Application Closed(Deadline: August 10, 2023)**
 
 ### Job description
 
