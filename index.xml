@@ -9,7 +9,32 @@ Click on the &lt;strong>Slides&lt;/strong> button above to view the built-in sli
 &lt;li>&lt;strong>Upload&lt;/strong> an existing slide deck to &lt;code>static/&lt;/code> and link using &lt;code>url_slides&lt;/code> parameter in the front matter of the talk file&lt;/li>
 &lt;li>&lt;strong>Embed&lt;/strong> your slides (e.g. Google Slides) or presentation video on this page using &lt;a href="https://wowchemy.com/docs/writing-markdown-latex/" target="_blank" rel="noopener">shortcodes&lt;/a>.&lt;/li>
 &lt;/ul>
-&lt;p>Further event details, including &lt;a href="https://wowchemy.com/docs/writing-markdown-latex/" target="_blank" rel="noopener">page elements&lt;/a> such as image galleries, can be added to the body of this page.&lt;/p></description></item><item><title>Hosting Hackathon on Web &amp; Cloud for AI-powered BioImage Analysis</title><link>https://aicell.io/post/web-cloud-hackathon-stockholm-2023/</link><pubDate>Fri, 23 Jun 2023 00:00:00 +0000</pubDate><guid>https://aicell.io/post/web-cloud-hackathon-stockholm-2023/</guid><description>&lt;h1 id="hosting-hackathon-on-web--cloud-for-ai-powered-bioimage-analysis">Hosting Hackathon on Web &amp;amp; Cloud for AI-powered BioImage Analysis&lt;/h1>
+&lt;p>Further event details, including &lt;a href="https://wowchemy.com/docs/writing-markdown-latex/" target="_blank" rel="noopener">page elements&lt;/a> such as image galleries, can be added to the body of this page.&lt;/p></description></item><item><title>Announcing the 2023 Data-Driven Life Sciences Course</title><link>https://aicell.io/post/ddls-course-2023/</link><pubDate>Sun, 20 Aug 2023 00:00:00 +0000</pubDate><guid>https://aicell.io/post/ddls-course-2023/</guid><description>&lt;p>We are thrilled to announce the start of a new PhD course at KTH: &lt;strong>&amp;ldquo;Data-Driven Life Sciences&amp;rdquo;&lt;/strong>. The course kicks off next week on August 28th and promises an enriching journey into data-driven approaches in life sciences, designed for both Master&amp;rsquo;s and PhD-level students.&lt;/p>
+&lt;p>Course website: &lt;a href="https://ddls.aicell.io" target="_blank" rel="noopener">https://ddls.aicell.io&lt;/a>.&lt;/p>
+&lt;hr>
+&lt;h2 id="-whats-new-this-year">🔍 What&amp;rsquo;s New This Year?&lt;/h2>
+&lt;p>This year, we&amp;rsquo;re spicing things up by introducing &lt;strong>generative AI and ChatGPT&lt;/strong> into the course curriculum! You&amp;rsquo;ll get to learn how to harness the power of ChatGPT for coding, learning, and exploring various topics in life sciences. Plus, we&amp;rsquo;ll dive deep into ethical discussions surrounding generative AI. 🤖&lt;/p>
+&lt;hr>
+&lt;h2 id="-course-highlights">👩‍🔬 Course Highlights:&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Learn about data-driven research&lt;/strong> in structural biology, microscopy imaging, single-cell biology, multi-omics, and more.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Engage with guest lectures&lt;/strong> from SciLifeLab DDLS fellows, and other experts in the field.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Practice coding skills&lt;/strong> in Python and Jupyter Notebooks, focusing on various data analysis and modeling techniques relevant to life sciences.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Participate in seminars&lt;/strong> and engage in discussions about data-driven approaches in scientific papers.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="-sign-up-now">📝 Sign Up Now!&lt;/h2>
+&lt;p>&lt;a href="https://forms.gle/T8gtrsJL3nf1Dqwf6" target="_blank" rel="noopener">Click here to enroll&lt;/a> and take your research skills to the next level with this exciting course.&lt;/p>
+&lt;p>Feel free to share this opportunity with fellow master&amp;rsquo;s and PhD students. Looking forward to seeing you in the course!&lt;/p>
+&lt;p>&lt;strong>Registration Deadline: Sept. 4th, 2023&lt;/strong>&lt;/p></description></item><item><title>Hosting Hackathon on Web &amp; Cloud for AI-powered BioImage Analysis</title><link>https://aicell.io/post/web-cloud-hackathon-stockholm-2023/</link><pubDate>Fri, 23 Jun 2023 00:00:00 +0000</pubDate><guid>https://aicell.io/post/web-cloud-hackathon-stockholm-2023/</guid><description>&lt;h1 id="hosting-hackathon-on-web--cloud-for-ai-powered-bioimage-analysis">Hosting Hackathon on Web &amp;amp; Cloud for AI-powered BioImage Analysis&lt;/h1>
 &lt;p>&lt;em>Originally Posted by &lt;a href="https://focalplane.biologists.com/author/cfusterbarcelo/" target="_blank" rel="noopener">Caterina Fuster-Barceló&lt;/a>, title: &amp;ldquo;Outcomes of the Hackathon on Web and Cloud Infrastructure for AI-Powered BioImage Analysis&amp;rdquo; on 22 June 2023&lt;/em>&lt;/p>
 &lt;p>Recently, our community had the opportunity to partake in a dynamic event that demonstrated the vibrant nature of our field: The &lt;a href="https://ai4life.eurobioimaging.eu/" target="_blank" rel="noopener">AI4Life&lt;/a> Hackathon on Web and Cloud Infrastructure for AI-Powered BioImage Analysis. This event, organized by Wei Ouyang at KTH Sweden, partner of the AI4Life, with generous support from Global BioImaging, took place from June 5th to 9th, 2023, at the distinguished SciLifeLab in Stockholm, Sweden.&lt;/p>
 &lt;p>The objective of this hackathon was to bring together thought leaders from various backgrounds to discuss and design advanced web/cloud infrastructure for bioimage analysis, using the latest AI tools. This fusion of technology and biology aimed to drive future advancements in the life sciences and computing arenas.&lt;/p>
