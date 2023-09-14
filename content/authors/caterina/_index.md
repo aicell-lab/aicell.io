@@ -16,15 +16,15 @@ status:
 
 # Organizations/Affiliations
 organizations:
-- name: Universidad Carlos III de Madrid
+- name: UC3M
   url: "https://www.uc3m.es/home"
 
 # Short bio (displayed in user profile at end of posts)
 bio: I'm Caterina, a Post-doctoral researcher at Universidad Carlos III de Madrid (UC3M) in the Bioengineering department. I'm deeply engaged in the AI4Life project, where we're pushing AI's boundaries in life sciences. My expertise lies in bioimage analysis, including microscopy, histopathology, and magnetic resonances.
 
-interests:
-- Artificial Intelligence
-- Bioimage Analysis
+#interests:
+#- Artificial Intelligence
+#- Bioimage Analysis
 #- Information Retrieval
 
 education:
