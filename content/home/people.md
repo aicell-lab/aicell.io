@@ -7,7 +7,7 @@ widget: people
 headless: true
 
 # Order that this section appears on the page.
-weight: 40
+weight: 20
 
 title: People at AICell Lab
 subtitle:
