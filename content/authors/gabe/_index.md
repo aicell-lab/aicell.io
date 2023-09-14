@@ -8,7 +8,7 @@ active: false
 superuser: false
 
 # Role/position
-role: 'Postdoc'
+role: 'Postdoc Researcher'
 
 user_groups:
  - lab members
