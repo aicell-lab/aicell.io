@@ -17,7 +17,7 @@ status:
   icon: ☕️
 
 # Short bio (displayed in user profile at end of posts)
-bio: Postdoc Research at AICell Lab
+bio: Postdoc Researcher at AICell Lab
 # social:
 #   - icon: circle-info
 #     icon_pack: fas
