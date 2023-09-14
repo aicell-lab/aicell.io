@@ -2,22 +2,22 @@
 # Display name
 title: Wei Ouyang
 
-# Is this the primary user of the site?
 superuser: true
 
 # Role/position
-role: ''
+role: 'Principle Investigator'
 
 user_groups:
- - PI
+ - lab members
+
 # Status emoji
 status:
   icon: ☕️
 
 # Organizations/Affiliations
 #organizations:
-#- name: 腾讯
-#  url: ""
+#- name: KTH Royal Institute of Technology
+#  url: "https://kth.se"
 
 # Short bio (displayed in user profile at end of posts)
 bio: Assistant Professor at KTH Royal Institute of Technology
@@ -43,13 +43,14 @@ bio: Assistant Professor at KTH Royal Institute of Technology
 # For available icons, see: https://wowchemy.com/docs/getting-started/page-builder/#icons
 #   For an email link, use "fas" icon pack, "envelope" icon, and a link in the
 #   form "mailto:your-email@example.com" or "#contact" for contact widget.
+
 social:
   - icon: circle-info
     icon_pack: fas
     link: https://oeway.github.io
   - icon: envelope
     icon_pack: fas
-    link: 'mailto: wei.ouyang@scilifelab.se' # For a direct email link, use "mailto:test@example.org".
+    link: 'mailto:wei.ouyang@scilifelab.se' # For a direct email link, use "mailto:test@example.org".
   - icon: twitter
     icon_pack: fab
     link: https://twitter.com/imweio
@@ -57,20 +58,18 @@ social:
     icon_pack: fab
     link: https://github.com/oeway
 
-# Link to a PDF of your resume/CV from the About widget.
-# To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
-# - icon: cv
-#   icon_pack: ai
-#   link: files/cv.pdf
-
 # Enter email to display Gravatar (if Gravatar enabled in Config)
 #email: ""
 ---
 
-Wei OUYANG is an assistant professor at the applied physics department, KTH Royal Institute of Technology (Stockholm, Sweden). He is one of the [Data-Driven Life Science fellow](https://www.scilifelab.se/research/?filter=all#DDlsfellows) and currently leading a research group focusing on AI and data-driven method development for bioimage analysis and whole-cell modeling.
+Hi, I'm Wei Ouyang! I work as an assistant professor in the Applied Physics Department at [KTH Royal Institute of Technology](https://www.kth.se/en) in Stockholm, Sweden. I'm also thrilled to be a [Data-Driven Life Science fellow](https://www.scilifelab.se/research/?filter=all#DDlsfellows). Right now, I'm leading a team that's super excited about building AI systems to power next-generation life science.
 
-Dr. Ouyang obtained his PhD in computational image analysis at Institut Pasteur, Paris where he mainly focuses on applying deep learning for super-resolution microscopy. During this period, he developed a deep learning method called ANNA-PALM which massively accelerates super-resolution localization microscopy by 100x. He spent 4 years at [Emma Lundberg](https://biox.stanford.edu/people/emma-lundberg)'s group as a postdoctoral researcher. To address the challenges in the dissemination of AI tools, he developed an open-source computational platform, [ImJoy](https://imjoy.io), which makes deep learning tools easier to build and more accessible to the user. He is actively involved in consortiums and community activities for promoting more open, scalable, accessible and reproducible scientific tools. Among them, he is leading the development of the [BioImage Model Zoo](https://bioimage.io) for sharing AI models in bioimage analysis.
+I earned my PhD at [Institut Pasteur](https://www.pasteur.fr/en) in Paris, where I had a blast applying computational image analysis to some really cool projects. The highlight? Creating a deep learning method named ANNA-PALM that boosts super-resolution microscopy speed by a whopping 100x!
 
-Dr. Ouyang is mainly interested in AI augmented microscopy imaging and data-driven whole-cell modeling.
+After my PhD, I spent four awesome years as a postdoc with [Emma Lundberg](https://biox.stanford.edu/people/emma-lundberg)'s group. During that time, I focused mainly on image analysis method development and whole-cell modeling using generative AI models. I even led the analysis for the [Human Protein Atlas Image Classification competition](https://www.kaggle.com/competitions/human-protein-atlas-image-classification) on Kaggle. Not just that, I designed the single-cell version of the competition, [HPA Single Cell Image Classification](https://www.kaggle.com/c/hpa-single-cell-image-classification). We gathered AI experts from around the globe to tackle these image analysis tasks.
 
-<!-- {{< icon name="download" pack="fas" >}} {{< staticref "uploads/resume.pdf" "newtab" >}}Download{{< /staticref >}} my resumé as a PDF. -->
+I'm the creator of [ImJoy](https://imjoy.io), an open-source platform designed to make deep learning tools super user-friendly. I'm all in for making science more open, scalable, and accessible, which is why I'm leading the [BioImage Model Zoo](https://bioimage.io) initiative to share AI models in bioimage analysis.
+
+I'm enthusiastic about AI-augmented microscopy imaging and data-driven whole-cell modeling. The future in these areas is so promising, and I can't wait to see where we go next.
+
+Feel like chatting? I'd love to hear from you!

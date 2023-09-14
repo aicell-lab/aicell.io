@@ -9,6 +9,22 @@ Run the following command:
 ```
 hugo serve
 ```
+
+
+### Build Error
+If you came across the following error:
+```
+Error: command error: failed to create config from modules config: unknown output format "redirects" for kind "home"
+```
+
+Do the following:
+```bash
+rm -rf $TMPDIR/hugo_cache/
+hugo mod get
+hugo server
+```
+
+See here: https://wowchemy.com/docs/hugo-tutorials/troubleshooting/#error-failed-to-resolve-output-format
 ### Update publications
 
 Run the following command:

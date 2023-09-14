@@ -3,15 +3,13 @@
 # Documentation: https://wowchemy.com/docs/page-builder/
 widget: people
 
-active: false
-
 # This file represents a page section.
 headless: true
 
 # Order that this section appears on the page.
 weight: 40
 
-title: People
+title: People at AICell Lab
 subtitle:
 
 content:
@@ -29,4 +27,5 @@ design:
   show_role: true
   # Show user's organizations/affiliations?
   show_organizations: true
+  
 ---
