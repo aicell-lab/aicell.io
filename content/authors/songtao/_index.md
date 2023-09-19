@@ -63,11 +63,6 @@ During my Master's at the Shenzhen Institutes of Advanced Technology, Chinese Ac
 - Cycling
 - Console games
 
-## Education
-
-- 2020-2023, Shenzhen Institutes of Advanced Technology, Chinese Academy of Sciences, Master of Biological and Pharmaceutical Engineering
-- 2016-2020, Huazhong Agricultural University, Bachelor of Bioinformatics
-
 ## How My Expertise Fits into the AICell Lab
 
 My expertise in machine learning and lab automation makes me a good fit for the AICell Lab. I thrive in collaborative environments and have experience working closely with researchers from different territories on projects.
