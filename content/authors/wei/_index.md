@@ -68,7 +68,7 @@ I earned my PhD at [Institut Pasteur](https://www.pasteur.fr/en) in Paris, where
 
 After my PhD, I spent four awesome years as a postdoc with [Emma Lundberg](https://biox.stanford.edu/people/emma-lundberg)'s group. During that time, I focused mainly on image analysis method development and whole-cell modeling using generative AI models. I even led the analysis for the [Human Protein Atlas Image Classification competition](https://www.kaggle.com/competitions/human-protein-atlas-image-classification) on Kaggle. Not just that, I designed the single-cell version of the competition, [HPA Single Cell Image Classification](https://www.kaggle.com/c/hpa-single-cell-image-classification). We gathered AI experts from around the globe to tackle these image analysis tasks.
 
-I'm the creator of [ImJoy](https://imjoy.io), an open-source platform designed to make deep learning tools super user-friendly. I'm all in for making science more open, scalable, and accessible, which is why I'm leading the [BioImage Model Zoo](https://bioimage.io) initiative to share AI models in bioimage analysis.
+I'm the creator of [ImJoy](https://imjoy.io), an open-source platform designed to make deep learning tools super user-friendly. I'm all in for making science more open, scalable, and accessible, which is why I co-founded the [BioImage Model Zoo](https://bioimage.io) initiative and [the AI4Life consortium](https://ai4life.eurobioimaging.eu/) to share AI models in bioimage analysis.
 
 I'm enthusiastic about AI-augmented microscopy imaging and data-driven whole-cell modeling. The future in these areas is so promising, and I can't wait to see where we go next.
 
