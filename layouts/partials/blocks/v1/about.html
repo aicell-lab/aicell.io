@@ -53,7 +53,7 @@
 
         {{ range $person.organizations }}
         <h3>
-          <img style="width: 30px;display: inline-block;" src="{{ .logo }} " alt="{{ .name }}">
+          {{ if .logo }}<img style="width: 30px;display: inline-block;" src="{{ .logo }} " alt="{{ .name }}">{{ end }}
           {{ with .url }}<a href="{{ . }}">{{ end }}
           <span>{{ .name }}</span>
           {{ if .url }}</a>{{ end }}
