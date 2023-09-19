@@ -43,12 +43,13 @@ header:
 
 footer:
   copyright:
-    notice: '© {year} AICell Lab. All the content of this website is licensed under {license}'
+    notice: '© {year} AICell Lab. All the content of this website is licensed under {license}<br>The content on this website has been partially generated and refined using advanced Generative Language Learning Models such as ChatGPT.'
     license:
       enable: true
       allow_derivatives: false
       share_alike: true
       allow_commercial: false
+
 
 # Localization
 
