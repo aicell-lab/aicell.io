@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>education-and-outreach | AICell Lab</title><link>https://aicell.io/tag/education-and-outreach/</link><atom:link href="https://aicell.io/tag/education-and-outreach/index.xml" rel="self" type="application/rss+xml"/><description>education-and-outreach</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Thu, 21 Sep 2023 00:00:00 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>education-and-outreach</title><link>https://aicell.io/tag/education-and-outreach/</link></image><item><title>Introducing Jeremy: A Multifaceted Research Engineer Joins AICell Lab</title><link>https://aicell.io/post/welcome-jeremy/</link><pubDate>Thu, 21 Sep 2023 00:00:00 +0000</pubDate><guid>https://aicell.io/post/welcome-jeremy/</guid><description>&lt;p>We are thrilled to welcome Jeremy to our AICell Lab family. Jeremy will be joining us in October as a Research Engineer. With a rich academic and professional background, he brings a wealth of knowledge and expertise in computer vision, computational biology, and modelling and simulation.&lt;/p>
+&lt;h3 id="meet-jeremy-a-perfect-fit-for-aicell-lab">Meet Jeremy: A Perfect Fit for AICell Lab&lt;/h3>
+&lt;p>Born in Germany and raised in Wales, Jeremy is an academic polymath with a PhD in Quantum Computing and Quantum Optics from Imperial College London. He brings a tapestry of skills that dovetail seamlessly with AICell Lab&amp;rsquo;s mission.&lt;/p>
+&lt;p>His expertise spans from biological image analysis to computational modeling of biological systems, making him an invaluable asset for our multidisciplinary projects. As the former Head of Image Analysis at the University of Exeter, Jeremy made significant contributions to the BioImaging community, notably as a key contributor to the open-source platform, ImageJ.&lt;/p>
+&lt;p>Jeremy is not just a researcher but also an educator. He has bridged the gap between computational methods and biological research through a series of tutorials and workshops, including popular courses like &amp;ldquo;Introduction to Python, ImageJ, and Python for Data Analysis.&amp;rdquo;&lt;/p>
+&lt;p>His computational skills go beyond image analysis, encompassing parallel computing techniques and modeling of biological systems. These capabilities will be instrumental as AICell Lab scales its projects in areas like automated microscopy and whole-cell modeling.&lt;/p>
+&lt;h4 id="synergy-with-aicell-labs-focus-areas">Synergy with AICell Lab’s Focus Areas&lt;/h4>
+&lt;p>As a Research Engineer, Jeremy&amp;rsquo;s expertise will be crucial in advancing our computational support in the AICell Lab.&lt;/p>
+&lt;p>Jeremy will play a pivotal role in developing software tools to support various AICell Lab projects. These include bioimage analysis, &lt;a href="https://aicell.io/project/self-driving-microscope">self-driving microscopy&lt;/a>, &lt;a href="https://aicell.io/project/reef-imaging-farm">automated microscopy imaging farm&lt;/a>, and the &lt;a href="https://aicell.io/project/human-cell-simulator">human cell simulator&lt;/a>. He will also contribute to the development of our web and cloud computational frameworks, such as &lt;a href="https://imjoy.io" target="_blank" rel="noopener">ImJoy&lt;/a> and &lt;a href="https://aicell.io/project/bioengine/">BioEngine&lt;/a>.&lt;/p>
+&lt;p>Jeremy will mainly participate in the &lt;a href="https://aicell.io/project/ai4life/">AI4Life project&lt;/a>, a Horizon Europe-funded initiative aimed at empowering life science researchers with AI and Machine Learning methods for bioimage analysis. His expertise will be instrumental in developing the web-based model repository, &lt;a href="https://bioimage.io" target="_blank" rel="noopener">BioImage Model Zoo&lt;/a>, and the accompanying infrastructure for model upload, download, and running AI models in the cloud.&lt;/p>
+&lt;h3 id="interview-with-jeremy">Interview with Jeremy&lt;/h3>
+&lt;h4 id="q-could-you-provide-a-brief-background-about-where-you-come-from-where-you-have-studied-where-you-got-your-previous-degree-and-if-you-have-some-other-merit-that-you-want-to-mention">Q: Could you provide a brief background about where you come from, where you have studied, where you got your previous degree, and if you have some other merit that you want to mention?&lt;/h4>
+&lt;blockquote>
+&lt;p>&amp;ldquo;Born in Germany, Grew up in Wales, Studied in London, PhD also in London, Postdoc in New York, Image Analyst in Exeter UK, and now Sweden 🎉&amp;rdquo;&lt;/p>
+&lt;/blockquote>
+&lt;h4 id="q-how-do-you-think-your-expertise-fits-into-the-aicell-lab">Q: How do you think your expertise fits into the AICell Lab?&lt;/h4>
+&lt;blockquote>
+&lt;p>&amp;ldquo;Extremely well 😜! Seriously though, it seems that my and Wei&amp;rsquo;s academic trajectories have been very similar due to aligned research interests, and this will probably become evident as we work together.&amp;rdquo;&lt;/p>
+&lt;/blockquote>
+&lt;h4 id="q-in-an-easy-to-understand-way-could-you-describe-what-you-would-like-to-studylearn-and-work-on-at-the-aicell-lab">Q: In an easy-to-understand way, could you describe what you would like to study/learn and work on at the AICell Lab?&lt;/h4>
+&lt;blockquote>
+&lt;p>&amp;ldquo;How to more fully integrate AI workflows into a comprehensive, start-to-finish research setup.&amp;rdquo;&lt;/p>
+&lt;/blockquote>
+&lt;h4 id="q-name-one-thing-that-people-generally-do-not-know-about-you">Q: Name one thing that people generally do not know about you.&lt;/h4>
+&lt;blockquote>
+&lt;p>&amp;ldquo;I&amp;rsquo;m fluent in German 🇩🇪 and Italian 🇮🇹.&amp;rdquo;&lt;/p>
+&lt;/blockquote>
+&lt;h4 id="q-how-do-you-think-the-upcoming-experience-at-the-aicell-lab-will-contribute-to-your-career-development">Q: How do you think the upcoming experience at the AICell Lab will contribute to your career development?&lt;/h4>
+&lt;blockquote>
+&lt;p>&amp;ldquo;While I have had good experience of using AI for image processing applications, this experience will take the use of AI to a whole new level ✨✨.&amp;rdquo;&lt;/p>
+&lt;/blockquote>
+&lt;h4 id="q-in-one-word-describe-how-you-feel-about-becoming-a-member-of-the-aicell-lab">Q: In one word, describe how you feel about becoming a member of the AICell Lab.&lt;/h4>
+&lt;blockquote>
+&lt;p>&amp;ldquo;Excited 🎆&amp;rdquo;&lt;/p>
+&lt;/blockquote>
+&lt;h4 id="q-if-you-could-have-dinner-with-any-scientist-past-or-present-who-would-it-be-and-why">Q: If you could have dinner with any scientist, past or present, who would it be and why?&lt;/h4>
+&lt;blockquote>
+&lt;p>&amp;ldquo;Erwin Schroedinger - I&amp;rsquo;d be curious to find out what he had against cats 🐱☠️&amp;rdquo;&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="looking-ahead">Looking Ahead&lt;/h3>
+&lt;p>We are excited to see how Jeremy’s contributions will elevate the AICell Lab&amp;rsquo;s mission to new heights. His work will be instrumental in democratizing AI for the life science community and laying the groundwork for next-generation, data-driven life sciences.&lt;/p>
+&lt;p>Please join us in welcoming Jeremy to the AICell Lab!&lt;/p>
+&lt;hr>
+&lt;p>Feel free to reach out to Jeremy for potential collaborations or inquiries. Here you can find more information about &lt;a href="https://aicell.io/authors/jeremy">Jeremy&lt;/a>.&lt;/p></description></item></channel></rss>
