@@ -1,6 +1,6 @@
 ---
 # Display name
-title: Jeremy
+title: Jeremy Metz
 
 # Active status (since he is an upcoming member, you may set this accordingly)
 active: true
@@ -68,4 +68,4 @@ Here at AICell Lab, I aim to leverage my skills to improve our toolsets, contrib
 
 ---
 
-Read a welcome post with an interview with Jeremy here: [Introducing Jeremy: A Multifaceted Research Engineer Joins AICell Lab](/post/welcome-jeremy/).
+Read a welcome post with an interview with Jeremy here: [Introducing Jeremy Metz: A Multifaceted Research Engineer Joins AICell Lab](/post/welcome-jeremy/).

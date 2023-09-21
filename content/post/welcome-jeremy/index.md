@@ -1,5 +1,5 @@
 ---
-title: "Introducing Jeremy: A Multifaceted Research Engineer Joins AICell Lab"
+title: "Introducing Jeremy Metz: A Multifaceted Research Engineer Joins AICell Lab"
 summary: "We are delighted to welcome Jeremy, a Research Engineer with diverse expertise in computer vision, computational biology, and modelling. His arrival marks an exciting chapter in AICell Lab's journey towards advancing data-driven life sciences."
 date: '2023-09-21T00:00:00Z'
 lastmod: '2023-09-21T00:00:00Z'
