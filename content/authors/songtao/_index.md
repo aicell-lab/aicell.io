@@ -41,8 +41,6 @@ education:
 
 ---
 
-## Biography
-
 Hello, I'm Songtao Cheng, a PhD student at the AICell Lab, specializing in the Department of Applied Physics at the KTH Royal Institute of Technology.
 
 My current research revolves around the innovative design and implementation of an automated imaging farm. This groundbreaking project encompasses various aspects such as cell culture, passage, imaging, and more. Furthermore, I am actively engaged in the development of AI models tailored for real-time image analysis and whole-cell modeling.
@@ -71,6 +69,6 @@ My expertise in machine learning and lab automation makes me a good fit for the 
 
 I would like to learn about developing lab automation and artificial intelligence systems. This includes the application of robotics, automation control theory, and more knowledge about artificial intelligence. I also want to exercise my ability to develop related projects.
 
-## Welcome to the AICell Lab!
+---
 
-Read a post about Songtao's arrival here: [A Landmark Welcome to Songtao Cheng, AICell Lab's First PhD Student](/post/welcome-songtao/).
+Read a welcome post with an interview with Songtao here: [A Landmark Welcome to Songtao Cheng, AICell Lab's First PhD Student](/post/welcome-songtao/).

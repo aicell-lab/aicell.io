@@ -66,3 +66,9 @@ We warmly welcome Songtao to the AICell Lab family and eagerly anticipate the un
 ---
 
 Feel free to reach out to Songtao for potential collaborations or inquiries. Here you can find more information about [Songtao](/authors/songtao).
+
+---
+
+## Acknowledgments
+
+This post was co-edited with the assistance of ChatGPT, a conversational agent trained by OpenAI.
