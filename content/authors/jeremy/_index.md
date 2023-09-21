@@ -69,9 +69,3 @@ Here at AICell Lab, I aim to leverage my skills to improve our toolsets, contrib
 ---
 
 Read a welcome post with an interview with Jeremy here: [Introducing Jeremy: A Multifaceted Research Engineer Joins AICell Lab](/post/welcome-jeremy/).
-
----
-
-## Acknowledgments
-
-This post was co-edited with the assistance of ChatGPT, a conversational agent trained by OpenAI.

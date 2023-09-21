@@ -82,3 +82,9 @@ Please join us in welcoming Jeremy to the AICell Lab!
 ---
 
 Feel free to reach out to Jeremy for potential collaborations or inquiries. Here you can find more information about [Jeremy](/authors/jeremy).
+
+---
+
+## Acknowledgments
+
+This post was co-edited with the assistance of ChatGPT, a conversational agent trained by OpenAI.
