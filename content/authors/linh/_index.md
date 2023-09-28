@@ -62,3 +62,6 @@ I also have a strong passion for machine learning, particularly in applying deep
 
 - Reading
 - Viewing documentary films
+
+---
+Read a welcome post with an interview with Linh here: [Introducing Linh Duong: Bridging Biology and AI at AICell Lab](/post/welcome-linh/).
