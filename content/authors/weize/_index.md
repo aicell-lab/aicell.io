@@ -66,3 +66,8 @@ While exploring various image processing software options, I came across ImJoy, 
 - Fishing
 - Hiking
 - Video Games
+
+
+---
+
+Read a welcome post with an interview with Songtao here: [Introducing Weize Xu: A Visiting PhD Student Joins AICell Lab](/post/welcome-weize/).
