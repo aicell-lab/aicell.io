@@ -26,7 +26,7 @@ bio: "Researcher at AICell Lab focusing on experimental laboratory work related 
 social:
   - icon: github
     icon_pack: fab
-    link: https://github.com/linhduong
+    link: https://github.com/linhduongtuan
   - icon: google-scholar
     icon_pack: ai
     link: https://scholar.google.com/citations?user=aZKRy1oAAAAJ&hl=en
@@ -46,7 +46,11 @@ education:
 
 ---
 
-Hi, I am Linh, I earned a PhD in Life Sciences from the University of Greifswald, Germany. After graduating, I conducted research and lectured in Vietnam. My research has spanned across bacterial virulence factors, bacterial physiology, microbiome studies, human genetics, bioinformatics, and cell biology. Additionally, I have a keen interest in machine learning, especially deep learning techniques for image recognition, classification, and object detection. More recently, I have been focusing on applying generative artificial intelligence, specifically Stable Diffusion models, to tackle challenges in molecular and cell biology. Under the mentorship of Prof. Wei at AI Cell Lab, I aim to conduct wet-lab work related to cell imaging and leverage cutting-edge AI technologies in life sciences.
+Hello 👋, my name is Linh. I earned my PhD in Life Sciences from the University of Greifswald in Germany. After completing my doctoral studies, I engaged in both research and teaching activities in Vietnam.
+
+My research interests are quite diverse, encompassing areas like bacterial virulence factors, bacterial physiology, microbiome studies, human genetics, bioinformatics, and cell biology.
+
+I also have a strong passion for machine learning, particularly in applying deep learning techniques for tasks such as image recognition, classification, and object detection. Recently, I have shifted my focus towards using generative artificial intelligence, specifically Stable Diffusion models, to address various challenges in molecular and cell biology. Under the guidance of Prof. Wei at the AI Cell Lab, I aim to work on wet-lab experiments related to cell imaging while integrating state-of-the-art AI technologies in the field of life sciences.
 
 ## Research Interests
 
