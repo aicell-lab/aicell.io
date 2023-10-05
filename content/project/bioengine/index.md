@@ -49,7 +49,11 @@ The increasingly amount of data generated in life science poses challenges in ma
 
 In this project, we aim to develop web services for providing flexible image data management solutions and also model serving in the cloud (private or public). The BioEngine is being used to support the test run feature in the [BioImage Model Zoo](https://bioimage.io) website (also see the [AI4Life project](/project/ai4life)). We aim to provide deployment toolkit for users to setup their own server, either in an institutional Kubernetes cluster or a workstation. Under the AI4Life project, we aim to provide a standard for managing and sharing image data together with the [BioImage Archive](https://www.ebi.ac.uk/bioimage-archive/).
 
-To learn more technial details about the BioEngine, please see the tutorial slides [here](https://slides.imjoy.io/?slides=https://raw.githubusercontent.com/oeway/slides/master/2022/i2k-2022-bioengine-workshop.md).
+To learn more technial details about the BioEngine, please watch the following video on youtube:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/EEo_GPjbxn4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+And, you can find the tutorial slides [here](https://slides.imjoy.io/?slides=https://raw.githubusercontent.com/oeway/slides/master/2022/i2k-2022-bioengine-workshop.md).
 
 Here, you can also try the BioEngine in an example Jupyter notebook here:
 
