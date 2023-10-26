@@ -1,4 +1,71 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts | AICell Lab</title><link>https://aicell.io/post/</link><atom:link href="https://aicell.io/post/index.xml" rel="self" type="application/rss+xml"/><description>Posts</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 24 Oct 2023 00:00:00 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>Posts</title><link>https://aicell.io/post/</link></image><item><title>Introducing the 🦒BioImage.IO Chatbot: Your Personal Assistant for BioImage Analysis</title><link>https://aicell.io/post/bioimageio-chatbot/</link><pubDate>Tue, 24 Oct 2023 00:00:00 +0000</pubDate><guid>https://aicell.io/post/bioimageio-chatbot/</guid><description>&lt;h1 id="introducing-the-bioimageio-chatbot-your-personal-assistant-for-bioimage-analysis-">Introducing the 🦒BioImage.IO Chatbot: Your Personal Assistant for BioImage Analysis 🤖🔬&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts | AICell Lab</title><link>https://aicell.io/post/</link><atom:link href="https://aicell.io/post/index.xml" rel="self" type="application/rss+xml"/><description>Posts</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Thu, 26 Oct 2023 00:00:00 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>Posts</title><link>https://aicell.io/post/</link></image><item><title>Introducing Gabriel Reder: A Dynamic Postdoc Researcher Joins AICell Lab</title><link>https://aicell.io/post/welcome-gabriel/</link><pubDate>Thu, 26 Oct 2023 00:00:00 +0000</pubDate><guid>https://aicell.io/post/welcome-gabriel/</guid><description>&lt;p>We are thrilled to announce the newest member of our AICell Lab family, Dr. Gabriel Reder, who joins us as a Postdoc Researcher. Gabe brings a wealth of expertise in computational biology, automated scientific discovery, AI, simulation, lab robotics, and mass spectrometry metabolomics.&lt;/p>
+&lt;h2 id="about-gabriel">About Gabriel&lt;/h2>
+&lt;p>Born and raised in San Francisco, Gabe earned his PhD in Bioengineering from Stanford University, followed by a Master’s degree in Applied Mathematics from Columbia University and an AB in Computer Science from Princeton University. Prior to joining AICell, he worked at Chalmers University in Sweden, focusing on robotic automation in scientific research.&lt;/p>
+&lt;p>Gabe is passionate about the intersection of computational biology and laboratory automation. He aims to use his expertise to ease the process of making new discoveries and improve the quality of life for many. He is especially eager to work with high-throughput microscopy data at AICell Lab.&lt;/p>
+&lt;h3 id="research-interests">Research Interests&lt;/h3>
+&lt;ul>
+&lt;li>Automated scientific discovery&lt;/li>
+&lt;li>Computational biology&lt;/li>
+&lt;li>AI&lt;/li>
+&lt;li>Simulation&lt;/li>
+&lt;li>Lab robotics&lt;/li>
+&lt;li>Mass spectrometry metabolomics&lt;/li>
+&lt;/ul>
+&lt;h3 id="personal-interests">Personal Interests&lt;/h3>
+&lt;ul>
+&lt;li>Drawing&lt;/li>
+&lt;li>Digital art&lt;/li>
+&lt;li>Traveling&lt;/li>
+&lt;li>Cooking&lt;/li>
+&lt;li>American football&lt;/li>
+&lt;/ul>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img alt="Gabe Reder" srcset="
+/post/welcome-gabriel/robot-games-2001-Gabe-Reder_hu773230517013c8347f5992923a267658_167603_7bf9d1e54745fc64b4876993887ecc77.webp 400w,
+/post/welcome-gabriel/robot-games-2001-Gabe-Reder_hu773230517013c8347f5992923a267658_167603_868d065f534a30c900f1f61c285c3970.webp 760w,
+/post/welcome-gabriel/robot-games-2001-Gabe-Reder_hu773230517013c8347f5992923a267658_167603_1200x1200_fit_q75_h2_lanczos.webp 1200w"
+src="https://aicell.io/post/welcome-gabriel/robot-games-2001-Gabe-Reder_hu773230517013c8347f5992923a267658_167603_7bf9d1e54745fc64b4876993887ecc77.webp"
+width="377"
+height="439"
+loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;h2 id="what-will-gabe-work-on-at-the-aicell-lab">What Will Gabe Work On at the AICell Lab?&lt;/h2>
+&lt;p>Gabe will be a key contributor to our cutting-edge automated imaging farm, REEF. The ultimate goal is to create a fully automated, intelligent system that will redefine how we conduct biological imaging. He will explore the integration of large language models like ChatGPT and autonomous agents augmented by specialized knowledge bases. These advanced technologies aim to automate the entire biological imaging workflow, from formulating scientific hypotheses and crafting experimental plans to executing them on our imaging farm. Beyond mere automation, Gabe&amp;rsquo;s work will pave the way for fully autonomous agents capable of data collection and analysis, report generation, and even driving subsequent experiments based on findings. This ambitious project promises to be a cornerstone in our ongoing efforts to revolutionize data-driven life sciences.&lt;/p>
+&lt;h2 id="get-to-know-gabe-better-an-interview">Get to Know Gabe Better: An Interview&lt;/h2>
+&lt;h3 id="could-you-provide-a-brief-background-about-where-you-come-from-where-you-have-studied-where-you-got-your-previous-degree-and-if-you-have-some-other-merit-that-you-want-to-mention">Could you provide a brief background about where you come from, where you have studied, where you got your previous degree, and if you have some other merit that you want to mention?&lt;/h3>
+&lt;blockquote>
+&lt;p>I was born and raised in San Francisco, moved to the Northeast for university studies, returned to the Bay Area for my PhD at Stanford, and most recently lived in Göteborg, working at Chalmers University.&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="how-do-you-think-your-expertise-fits-into-the-aicell-lab">How do you think your expertise fits into the AICell Lab?&lt;/h3>
+&lt;blockquote>
+&lt;p>Hopefully smoothly! I see lots of overlaps between the lab&amp;rsquo;s mission, the expertise of its members, and my background. I&amp;rsquo;ve spent the last few years working on the automation of biology labs, combining AI, informatics, lab robotics, and high-throughput mass spectrometry.&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="what-would-you-like-to-studylearn-and-work-on-at-the-aicell-lab">What would you like to study/learn and work on at the AICell Lab?&lt;/h3>
+&lt;blockquote>
+&lt;p>I&amp;rsquo;d like to continue exploring and refining the automation of life sciences research. I&amp;rsquo;m interested in how to best use robots for experiments, analytical instruments for measurements, and computational techniques for automatically extracting insights.&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="name-one-thing-that-people-generally-do-not-know-about-you">Name one thing that people generally do not know about you.&lt;/h3>
+&lt;blockquote>
+&lt;p>I grew up speaking Portuguese at home.&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="how-do-you-think-the-upcoming-experience-at-the-aicell-lab-will-contribute-to-your-career-development">How do you think the upcoming experience at the AICell Lab will contribute to your career development?&lt;/h3>
+&lt;blockquote>
+&lt;p>It&amp;rsquo;ll be invaluable to be around such a mix of experiences, techniques, and people.&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="in-one-word-describe-how-you-feel-about-becoming-a-member-of-the-aicell-lab">In one word, describe how you feel about becoming a member of the AICell Lab.&lt;/h3>
+&lt;blockquote>
+&lt;p>Euphoric.&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="if-you-could-have-dinner-with-any-scientist-past-or-present-who-would-it-be-and-why">If you could have dinner with any scientist, past or present, who would it be and why?&lt;/h3>
+&lt;blockquote>
+&lt;p>Niels Bohr. He wasn&amp;rsquo;t just a genius but also a kind and interesting person. And he knew how to enjoy life!&lt;/p>
+&lt;/blockquote>
+&lt;hr>
+&lt;p>You can connect with Gabe on &lt;a href="https://www.linkedin.com/in/gabe-reder/" target="_blank" rel="noopener">LinkedIn&lt;/a> and check out his work on &lt;a href="https://scholar.google.com/citations?user=BAuQiy8AAAAJ&amp;amp;hl=en" target="_blank" rel="noopener">Google Scholar&lt;/a>. His GitHub ID is &lt;a href="https://github.com/gkreder" target="_blank" rel="noopener">gkreder&lt;/a>.&lt;/p>
+&lt;p>Please join us in extending a warm welcome to Gabriel Reder! We&amp;rsquo;re excited to see the contributions he will make to AICell Lab and the scientific community.&lt;/p></description></item><item><title>Introducing the 🦒BioImage.IO Chatbot: Your Personal Assistant for BioImage Analysis</title><link>https://aicell.io/post/bioimageio-chatbot/</link><pubDate>Tue, 24 Oct 2023 00:00:00 +0000</pubDate><guid>https://aicell.io/post/bioimageio-chatbot/</guid><description>&lt;h1 id="introducing-the-bioimageio-chatbot-your-personal-assistant-for-bioimage-analysis-">Introducing the 🦒BioImage.IO Chatbot: Your Personal Assistant for BioImage Analysis 🤖🔬&lt;/h1>
 &lt;p>Hey everyone, we&amp;rsquo;re thrilled to announce the latest addition to the BioImage.IO platform: the BioImage.IO Chatbot! 🎉&lt;/p>
 &lt;p>&lt;strong>Read our preprint here: &lt;a href="https://zenodo.org/records/10032228" target="_blank" rel="noopener">https://zenodo.org/records/10032228&lt;/a>&lt;/strong>&lt;/p>
 &lt;p>![](
