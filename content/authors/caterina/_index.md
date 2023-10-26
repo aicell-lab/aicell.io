@@ -5,7 +5,7 @@ title: Caterina Fuster-Barceló
 superuser: false
 
 # Role/position
-role: 'Visiting Postdoc'
+role: 'Visiting Postdoc - Alumni'
 
 user_groups:
  - lab members
