@@ -27,7 +27,6 @@ We're also on the hunt for early testers! If you're keen, sign up using this [fo
 
 We thank AI4Life consortium for its crucial support in the development of the BioImage.IO Chatbot. 
 
-AI4Life has received funding from the European Union’s Horizon Europe research and innovation programme under grant agreement number 101057970. Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or the European Research Council Executive Agency. Neither the European Union nor the granting authority can be held responsible for them.
+AI4Life has received funding from the European Union’s Horizon Europe research and innovation programme under grant agreement number 101057970.
 
 We're super excited about the possibilities that the BioImage.IO Chatbot brings to the bioimage analysis community. Stay tuned for more updates!
-
