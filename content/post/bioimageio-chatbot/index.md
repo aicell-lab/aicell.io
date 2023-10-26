@@ -1,9 +1,7 @@
 ---
-title: "Introducing the 🦒BioImage.IO Chatbot: Your Personal Assistant for BioImage Analysis"
+title: "Introducing the 🦒BioImage.IO Chatbot: Your Personal Assistant for BioImage Analysis🤖🔬"
 date: 2023-10-24
 ---
-
-# Introducing the 🦒BioImage.IO Chatbot: Your Personal Assistant for BioImage Analysis 🤖🔬
 
 Hey everyone, we're thrilled to announce the latest addition to the BioImage.IO platform: the BioImage.IO Chatbot! 🎉
 
