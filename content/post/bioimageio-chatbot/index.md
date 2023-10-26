@@ -9,7 +9,7 @@ Hey everyone, we're thrilled to announce the latest addition to the BioImage.IO 
 
 **Read our preprint here: https://zenodo.org/records/10032228**
 
-![](![Alt text](https://github.com/bioimage-io/bioimageio-chatbot/blob/main/docs/screenshots/chatbot-technical-question.png?raw%253Dtrue))
+![](![Alt text](https://raw.githubusercontent.com/bioimage-io/bioimageio-chatbot/main/docs/screenshots/chatbot-technical-question.png))
 
 
 ## What's New? 🆕
@@ -21,9 +21,10 @@ For a sneak peek at what the BioImage.IO Chatbot can do, check out our gallery o
 ## Get Involved! 🙋‍♀️🙋‍♂️
 Want to set up your own chatbot? Head over to our [Github Repository](https://github.com/bioimage-io/bioimageio-chatbot) for all the details. 
 
-We're also on the hunt for early testers! If you're keen, sign up using this [form](insert link here). Your feedback will be invaluable as we aim to create a public chatbot service for the bioimage analysis community. 🌏
+We're also on the hunt for early testers! If you're keen, sign up using this [form](https://forms.gle/fEnj68Rxut1VUX1Y8). Your feedback will be invaluable as we aim to create a public chatbot service for the bioimage analysis community. 🌏
 
 ## Acknowledgments 🙏
+
 We thank AI4Life consortium for its crucial support in the development of the BioImage.IO Chatbot. 
 
 AI4Life has received funding from the European Union’s Horizon Europe research and innovation programme under grant agreement number 101057970. Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or the European Research Council Executive Agency. Neither the European Union nor the granting authority can be held responsible for them.
