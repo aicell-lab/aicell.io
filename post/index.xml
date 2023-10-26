@@ -71,7 +71,7 @@ loading="lazy" data-zoomable />&lt;/div>
 &lt;p>![](
 &lt;figure >
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="https://github.com/bioimage-io/bioimageio-chatbot/blob/main/docs/screenshots/chatbot-technical-question.png?raw%253Dtrue" alt="Alt text" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="https://raw.githubusercontent.com/bioimage-io/bioimageio-chatbot/main/docs/screenshots/chatbot-technical-question.png" alt="Alt text" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;/figure>
 )&lt;/p>
 &lt;h2 id="whats-new-">What&amp;rsquo;s New? 🆕&lt;/h2>
@@ -80,7 +80,7 @@ loading="lazy" data-zoomable />&lt;/div>
 &lt;p>For a sneak peek at what the BioImage.IO Chatbot can do, check out our gallery of examples: &lt;a href="https://github.com/bioimage-io/bioimageio-chatbot/blob/main/docs/usage-example.md" target="_blank" rel="noopener">Usage Examples&lt;/a>.&lt;/p>
 &lt;h2 id="get-involved-">Get Involved! 🙋‍♀️🙋‍♂️&lt;/h2>
 &lt;p>Want to set up your own chatbot? Head over to our &lt;a href="https://github.com/bioimage-io/bioimageio-chatbot" target="_blank" rel="noopener">Github Repository&lt;/a> for all the details.&lt;/p>
-&lt;p>We&amp;rsquo;re also on the hunt for early testers! If you&amp;rsquo;re keen, sign up using this [form](insert link here). Your feedback will be invaluable as we aim to create a public chatbot service for the bioimage analysis community. 🌏&lt;/p>
+&lt;p>We&amp;rsquo;re also on the hunt for early testers! If you&amp;rsquo;re keen, sign up using this &lt;a href="https://forms.gle/fEnj68Rxut1VUX1Y8" target="_blank" rel="noopener">form&lt;/a>. Your feedback will be invaluable as we aim to create a public chatbot service for the bioimage analysis community. 🌏&lt;/p>
 &lt;h2 id="acknowledgments-">Acknowledgments 🙏&lt;/h2>
 &lt;p>We thank AI4Life consortium for its crucial support in the development of the BioImage.IO Chatbot.&lt;/p>
 &lt;p>AI4Life has received funding from the European Union’s Horizon Europe research and innovation programme under grant agreement number 101057970. Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or the European Research Council Executive Agency. Neither the European Union nor the granting authority can be held responsible for them.&lt;/p>
