@@ -86,6 +86,6 @@ Gabe will be a key contributor to our cutting-edge automated imaging farm, REEF.
 
 ---
 
-You can connect with Gabe on [LinkedIn](https://www.linkedin.com/in/gabe-reder/) and check out his work on [Google Scholar](https://scholar.google.com/citations?user=BAuQiy8AAAAJ&hl=en). His GitHub ID is [gkreder](https://github.com/gkreder).
+You can connect with Gabe on [LinkedIn](https://www.linkedin.com/in/gabe-reder/) and check out his work on [Google Scholar](https://scholar.google.com/citations?user=BAuQiy8AAAAJ&hl=en). His GitHub ID is [gkreder](https://github.com/gkreder). And also see his [profile page](https://aicell.io/authors/gabriel/).
 
 Please join us in extending a warm welcome to Gabriel Reder! We're excited to see the contributions he will make to AICell Lab and the scientific community.
