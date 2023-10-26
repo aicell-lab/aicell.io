@@ -1,8 +1,8 @@
 ---
 title: "Introducing Gabriel Reder: A Dynamic Postdoc Researcher Joins AICell Lab"
 summary: "We are ecstatic to welcome Gabriel, a Postdoc Researcher with a rich background in automated scientific discovery, computational biology, AI, and lab robotics. His addition to the AICell Lab team promises new avenues in our mission of advancing data-driven life sciences."
-date: '2023-10-26T00:00:00Z'
-lastmod: '2023-10-26T00:00:00Z'
+date: '2023-10-23T00:00:00Z'
+lastmod: '2023-10-23T00:00:00Z'
 draft: false
 featured: true
 image:
@@ -86,6 +86,12 @@ Gabe will be a key contributor to our cutting-edge automated imaging farm, REEF.
 
 ---
 
-You can connect with Gabe on [LinkedIn](https://www.linkedin.com/in/gabe-reder/) and check out his work on [Google Scholar](https://scholar.google.com/citations?user=BAuQiy8AAAAJ&hl=en). His GitHub ID is [gkreder](https://github.com/gkreder). And also see his [profile page](https://aicell.io/authors/gabriel/).
+Feel free to reach out to Gabe for potential collaborations or inquiries. Here you can find more information about [Gabe](https://aicell.io/authors/gabriel/).
 
-Please join us in extending a warm welcome to Gabriel Reder! We're excited to see the contributions he will make to AICell Lab and the scientific community.
+Please join us in extending a warm welcome to Gabe Reder! We're excited to see the contributions he will make to AICell Lab and the scientific community.
+
+---
+
+### Acknowledgments
+
+This post was co-edited with the assistance of ChatGPT, a conversational agent trained by OpenAI.
