@@ -1,5 +1,5 @@
 ---
-title: "Introducing the 🦒BioImage.IO Chatbot: Your Personal Assistant for BioImage Analysis🤖🔬"
+title: "Meet the 🦒BioImage.IO Chatbot: Your Personal Assistant for BioImage Analysis🤖🔬"
 date: 2023-10-24
 ---
 
