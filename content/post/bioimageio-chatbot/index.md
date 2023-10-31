@@ -5,9 +5,9 @@ date: 2023-10-24
 
 Hey everyone, we're thrilled to announce the latest addition to the BioImage.IO platform: the BioImage.IO Chatbot! 🎉
 
-**Read our preprint here: https://zenodo.org/records/10032228**
+**Read our preprint here: https://arxiv.org/abs/2310.18351**
 
-![BioImage.IO Chatbot Screenshot](https://raw.githubusercontent.com/bioimage-io/bioimageio-chatbot/main/docs/screenshots/chatbot-technical-question.png)
+![BioImage.IO Chatbot Screenshot](https://raw.githubusercontent.com/bioimage-io/bioimageio-chatbot/main/docs/screenshots/chatbot-animation.gif)
 
 
 ## What's New? 🆕
