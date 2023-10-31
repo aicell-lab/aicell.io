@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts | AICell Lab</title><link>https://aicell.io/post/</link><atom:link href="https://aicell.io/post/index.xml" rel="self" type="application/rss+xml"/><description>Posts</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 24 Oct 2023 00:00:00 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>Posts</title><link>https://aicell.io/post/</link></image><item><title>Meet the 🦒BioImage.IO Chatbot: Your Personal Assistant for BioImage Analysis🤖🔬</title><link>https://aicell.io/post/bioimageio-chatbot/</link><pubDate>Tue, 24 Oct 2023 00:00:00 +0000</pubDate><guid>https://aicell.io/post/bioimageio-chatbot/</guid><description>&lt;p>Hey everyone, we&amp;rsquo;re thrilled to announce the latest addition to the BioImage.IO platform: the BioImage.IO Chatbot! 🎉&lt;/p>
-&lt;p>&lt;strong>Read our preprint here: &lt;a href="https://zenodo.org/records/10032228" target="_blank" rel="noopener">https://zenodo.org/records/10032228&lt;/a>&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>Read our preprint here: &lt;a href="https://arxiv.org/abs/2310.18351" target="_blank" rel="noopener">https://arxiv.org/abs/2310.18351&lt;/a>&lt;/strong>&lt;/p>
 &lt;p>
 &lt;figure >
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="https://raw.githubusercontent.com/bioimage-io/bioimageio-chatbot/main/docs/screenshots/chatbot-technical-question.png" alt="BioImage.IO Chatbot Screenshot" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="https://raw.githubusercontent.com/bioimage-io/bioimageio-chatbot/main/docs/screenshots/chatbot-animation.gif" alt="BioImage.IO Chatbot Screenshot" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;/figure>
 &lt;/p>
 &lt;h2 id="whats-new-">What&amp;rsquo;s New? 🆕&lt;/h2>
