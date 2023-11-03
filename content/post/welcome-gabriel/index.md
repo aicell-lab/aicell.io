@@ -27,7 +27,7 @@ We are thrilled to announce the newest member of our AICell Lab family, Dr. Gabr
 
 ## About Gabriel
 
-Born and raised in San Francisco, Gabe earned his PhD in Bioengineering from Stanford University, followed by a Master’s degree in Applied Mathematics from Columbia University and an AB in Computer Science from Princeton University. Prior to joining AICell, he worked at Chalmers University in Sweden, focusing on robotic automation in scientific research.
+Born and raised in San Francisco, Gabe earned his PhD in Bioengineering from Stanford University after a Master’s degree in Applied Mathematics from Columbia University and an AB in Computer Science from Princeton University. Prior to joining AICell, he worked at Chalmers University in Sweden, focusing on robotic automation in scientific research.
 
 Gabe is passionate about the intersection of computational biology and laboratory automation. He aims to use his expertise to ease the process of making new discoveries and improve the quality of life for many. He is especially eager to work with high-throughput microscopy data at AICell Lab.
 
