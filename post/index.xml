@@ -44,6 +44,7 @@
 &lt;div class="w-100" >&lt;img src="./thunderstorm.png" alt="ThunderSTORM" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;/figure>
 &lt;/p>
+&lt;p>&lt;strong>Feel free to try the new version yourself at &lt;a href="https://aicell-lab.github.io/imagej.js/" target="_blank" rel="noopener">https://aicell-lab.github.io/imagej.js/&lt;/a>.&lt;/strong>&lt;/p>
 &lt;p>However, we recognize that this is an ongoing journey of optimization and exploration. Our team continues to probe the possibilities and potential improvements, committed to elevating ImageJ.JS to its utmost potential.&lt;/p>
 &lt;h2 id="the-future-of-imagejjs">The Future of ImageJ.JS&lt;/h2>
 &lt;p>ImageJ.JS&amp;rsquo;s popularity isn&amp;rsquo;t just in numbers. Its adaptability on platforms like mobiles and iPads has won users&amp;rsquo; hearts. With this enthusiasm, we are even more committed to refining the experience.&lt;/p>
@@ -54,6 +55,9 @@
 &lt;li>Envisioning a browser version of Fiji with a robust plugin system, enabling most ImageJ plugins to be used directly in ImageJ.JS.&lt;/li>
 &lt;/ul>
 &lt;p>In wrapping up, ImageJ.JS represents the convergence of a powerful legacy tool with modern technological adaptability. As we push its boundaries, we&amp;rsquo;re excited about its potential to further transform scientific image analysis on the web.&lt;/p>
+&lt;h2 id="join-us-on-this-journey">Join Us on This Journey&lt;/h2>
+&lt;p>We invite you to participate in this exciting venture. The repository for the new version of ImageJ.js is &lt;strong>available on GitHub: &lt;a href="https://github.com/aicell-lab/imagej.js" target="_blank" rel="noopener">https://github.com/aicell-lab/imagej.js&lt;/a>&lt;/strong>.&lt;/p>
+&lt;p>We welcome contributions, insights, and collaborations from the community. Together, let&amp;rsquo;s shape the future of web-based image analysis and continue to push the boundaries of what&amp;rsquo;s possible with ImageJ.js.&lt;/p>
 &lt;h2 id="acknowledgments">Acknowledgments&lt;/h2>
 &lt;p>We thank Curtis Rueden for his support and guidance in the development of ImageJ.JS, we also thank Leaning Technologies for providing us the compiler which makes it possible to run ImageJ in the browser.&lt;/p></description></item><item><title>Meet the 🦒BioImage.IO Chatbot: Your Personal Assistant for BioImage Analysis🤖🔬</title><link>https://aicell.io/post/bioimageio-chatbot/</link><pubDate>Tue, 24 Oct 2023 00:00:00 +0000</pubDate><guid>https://aicell.io/post/bioimageio-chatbot/</guid><description>&lt;p>Hey everyone, we&amp;rsquo;re thrilled to announce the latest addition to the BioImage.IO platform: the BioImage.IO Chatbot! 🎉&lt;/p>
 &lt;p>&lt;strong>Read our preprint here: &lt;a href="https://arxiv.org/abs/2310.18351" target="_blank" rel="noopener">https://arxiv.org/abs/2310.18351&lt;/a>&lt;/strong>&lt;/p>
