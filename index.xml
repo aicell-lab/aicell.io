@@ -9,7 +9,64 @@ Click on the &lt;strong>Slides&lt;/strong> button above to view the built-in sli
 &lt;li>&lt;strong>Upload&lt;/strong> an existing slide deck to &lt;code>static/&lt;/code> and link using &lt;code>url_slides&lt;/code> parameter in the front matter of the talk file&lt;/li>
 &lt;li>&lt;strong>Embed&lt;/strong> your slides (e.g. Google Slides) or presentation video on this page using &lt;a href="https://wowchemy.com/docs/writing-markdown-latex/" target="_blank" rel="noopener">shortcodes&lt;/a>.&lt;/li>
 &lt;/ul>
-&lt;p>Further event details, including &lt;a href="https://wowchemy.com/docs/writing-markdown-latex/" target="_blank" rel="noopener">page elements&lt;/a> such as image galleries, can be added to the body of this page.&lt;/p></description></item><item><title>Meet the 🦒BioImage.IO Chatbot: Your Personal Assistant for BioImage Analysis🤖🔬</title><link>https://aicell.io/post/bioimageio-chatbot/</link><pubDate>Tue, 24 Oct 2023 00:00:00 +0000</pubDate><guid>https://aicell.io/post/bioimageio-chatbot/</guid><description>&lt;p>Hey everyone, we&amp;rsquo;re thrilled to announce the latest addition to the BioImage.IO platform: the BioImage.IO Chatbot! 🎉&lt;/p>
+&lt;p>Further event details, including &lt;a href="https://wowchemy.com/docs/writing-markdown-latex/" target="_blank" rel="noopener">page elements&lt;/a> such as image galleries, can be added to the body of this page.&lt;/p></description></item><item><title>Taking ImageJ.JS to the Next Level</title><link>https://aicell.io/post/improving-imagej.js/</link><pubDate>Sun, 05 Nov 2023 00:00:00 +0000</pubDate><guid>https://aicell.io/post/improving-imagej.js/</guid><description>&lt;p>&lt;a href="https://imagej.nih.gov/ij/" target="_blank" rel="noopener">ImageJ&lt;/a>, a renowned open-source image processing tool, has long been a familiar name in the scientific community. Seeking to build upon its rich legacy, we undertook an ambitious endeavor: to transition ImageJ to the web through &lt;a href="https://ij.imjoy.io" target="_blank" rel="noopener">ImageJ.JS&lt;/a>. The outcome? An unequivocal triumph. ImageJ.JS has captivated a global audience, attracting over 1,000 users daily. The ability to run ImageJ on mobile devices and iPads has been particularly celebrated, offering users a newfound flexibility and accessibility in their work.&lt;/p>
+&lt;h2 id="a-brief-look-back">A Brief Look Back&lt;/h2>
+&lt;p>The creation of &lt;a href="https://ij.imjoy.io" target="_blank" rel="noopener">ImageJ.JS&lt;/a> originated from a desire to bring the robust capabilities of the ImageJ image analysis tool directly to web browsers. In the initial stages, we utilized compilers such as &lt;a href="https://leaningtech.com/cheerpj/" target="_blank" rel="noopener">CheerpJ&lt;/a> to facilitate this transition. This process entailed converting Java Archive (&lt;code>.jar&lt;/code>) files into JavaScript (&lt;code>.jar.js&lt;/code>) files, thereby enabling the execution of Java applications in browsers without necessitating plugins.&lt;/p>
+&lt;p>However, despite these efforts, we encountered several hurdles:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>File Size Limitations&lt;/strong>: The web-based environment imposed constraints on loading large datasets, restricting us to files smaller than 4GB.&lt;/li>
+&lt;li>&lt;strong>Lack of Multi-threading Support&lt;/strong>: The absence of multi-threading capabilities limited the performance and speed of computations.&lt;/li>
+&lt;li>&lt;strong>Plugin Integration Challenges&lt;/strong>: Incorporating and compiling ImageJ plugins into the web version was a complex task, often requiring extensive adjustments to ensure compatibility.&lt;/li>
+&lt;/ul>
+&lt;p>To address these issues, we initiated a &lt;a href="https://github.com/imjoy-team/imageja.js" target="_blank" rel="noopener">fork of the ImageJ project on GitHub&lt;/a>. Here, we explored solutions to bypass the aforementioned constraints and enhance functionality. By delving into the source code, we aimed to optimize ImageJ.JS for smoother and more efficient performance in web environments.&lt;/p>
+&lt;h2 id="elevating-imagejjs">Elevating ImageJ.JS&lt;/h2>
+&lt;p>Determined to enhance &lt;a href="https://ij.imjoy.io" target="_blank" rel="noopener">ImageJ.JS&lt;/a>, our team actively sought out cutting-edge solutions that could refine the user experience and expand its capabilities. Recently, &lt;a href="https://labs.leaningtech.com/blog/announcing-cheerpj-3" target="_blank" rel="noopener">the launch of the updated CheerpJ compiler 3&lt;/a> provided a promising avenue for exploration.&lt;/p>
+&lt;p>This new version of &lt;a href="https://leaningtech.com/cheerpj/" target="_blank" rel="noopener">CheerpJ&lt;/a> introduced several transformative features. Notably, the new JIT compilation support eliminated the necessity for an intermediate compilation step, which had previously been a cumbersome phase in the deployment process. Instead, the updated CheerpJ allows &lt;code>.jar&lt;/code> files, originally constructed for a standard Java Virtual Machine (JVM), to be loaded directly into the browser. It also support full classloader which makes it easier to dynamically load jar files. This innovation significantly streamlined the process of bringing Java applications into web environments.&lt;/p>
+&lt;p>So, what implications does this have for ImageJ.JS?&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Streamlined Plugin Integration&lt;/strong>: The ability to load &lt;code>.jar&lt;/code> files directly paves the way for easier integration with ImageJ&amp;rsquo;s vast plugin ecosystem. Users can now anticipate smoother, more straightforward implementations of plugins, enhancing the versatility of ImageJ.JS.&lt;/li>
+&lt;li>&lt;strong>Dynamic Patching Capabilities&lt;/strong>: The updated CheerpJ facilitates dynamic patching, wherein we can swiftly adapt and modify functions to align with web-specific requirements. This provides a seamless transition between traditional desktop applications and web environments, ensuring consistent user experience across platforms.&lt;/li>
+&lt;/ul>
+&lt;p>Upon delving deep into the capabilities of the updated CheerpJ, we were encouraged by the initial results. Enhancements in the speed and efficiency of certain functions were evident, and the newfound ease of integration marked a significant step forward.&lt;/p>
+&lt;p>Here is how the 3D volume viewer looks like in the new ImageJ.JS:&lt;/p>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./3d-volume-viewer.gif" alt="3D Volume Viewer" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;p>And the 3D surface plot:&lt;/p>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./3d-surface-plot.gif" alt="3D Surface Plot" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;p>Without any compilation step, we can for example, directly load the MorpholibJ plugin and run it inside ImageJ.JS:&lt;/p>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./morpholibj-filters.gif" alt="MorphoLibJ" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./thunderstorm.png" alt="ThunderSTORM" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;p>However, we recognize that this is an ongoing journey of optimization and exploration. Our team continues to probe the possibilities and potential improvements, committed to elevating ImageJ.JS to its utmost potential.&lt;/p>
+&lt;h2 id="the-future-of-imagejjs">The Future of ImageJ.JS&lt;/h2>
+&lt;p>ImageJ.JS&amp;rsquo;s popularity isn&amp;rsquo;t just in numbers. Its adaptability on platforms like mobiles and iPads has won users&amp;rsquo; hearts. With this enthusiasm, we are even more committed to refining the experience.&lt;/p>
+&lt;p>Next steps include:&lt;/p>
+&lt;ul>
+&lt;li>Fix the file loading with the hope of support files larger than the memory&lt;/li>
+&lt;li>Evaluating file chooser integration and potential mapping with our elFinder plugin.&lt;/li>
+&lt;li>Envisioning a browser version of Fiji with a robust plugin system, enabling most ImageJ plugins to be used directly in ImageJ.JS.&lt;/li>
+&lt;/ul>
+&lt;p>In wrapping up, ImageJ.JS represents the convergence of a powerful legacy tool with modern technological adaptability. As we push its boundaries, we&amp;rsquo;re excited about its potential to further transform scientific image analysis on the web.&lt;/p>
+&lt;h2 id="acknowledgments">Acknowledgments&lt;/h2>
+&lt;p>We thank Curtis Rueden for his support and guidance in the development of ImageJ.JS, we also thank Leaning Technologies for providing us the compiler which makes it possible to run ImageJ in the browser.&lt;/p></description></item><item><title>Meet the 🦒BioImage.IO Chatbot: Your Personal Assistant for BioImage Analysis🤖🔬</title><link>https://aicell.io/post/bioimageio-chatbot/</link><pubDate>Tue, 24 Oct 2023 00:00:00 +0000</pubDate><guid>https://aicell.io/post/bioimageio-chatbot/</guid><description>&lt;p>Hey everyone, we&amp;rsquo;re thrilled to announce the latest addition to the BioImage.IO platform: the BioImage.IO Chatbot! 🎉&lt;/p>
 &lt;p>&lt;strong>Read our preprint here: &lt;a href="https://arxiv.org/abs/2310.18351" target="_blank" rel="noopener">https://arxiv.org/abs/2310.18351&lt;/a>&lt;/strong>&lt;/p>
 &lt;p>
 &lt;figure >
