@@ -44,7 +44,10 @@ Without any compilation step, we can for example, directly load the MorpholibJ p
 
 ![ThunderSTORM](./thunderstorm.png)
 
+**Feel free to try the new version yourself at [https://aicell-lab.github.io/imagej.js/](https://aicell-lab.github.io/imagej.js/).**
+
 However, we recognize that this is an ongoing journey of optimization and exploration. Our team continues to probe the possibilities and potential improvements, committed to elevating ImageJ.JS to its utmost potential.
+
 
 ## The Future of ImageJ.JS
 
@@ -57,6 +60,13 @@ Next steps include:
 - Envisioning a browser version of Fiji with a robust plugin system, enabling most ImageJ plugins to be used directly in ImageJ.JS.
 
 In wrapping up, ImageJ.JS represents the convergence of a powerful legacy tool with modern technological adaptability. As we push its boundaries, we're excited about its potential to further transform scientific image analysis on the web.
+
+
+## Join Us on This Journey
+
+We invite you to participate in this exciting venture. The repository for the new version of ImageJ.js is **available on GitHub: [https://github.com/aicell-lab/imagej.js](https://github.com/aicell-lab/imagej.js)**.
+
+We welcome contributions, insights, and collaborations from the community. Together, let's shape the future of web-based image analysis and continue to push the boundaries of what's possible with ImageJ.js.
 
 ## Acknowledgments
 
