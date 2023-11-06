@@ -8,10 +8,10 @@ authors:
 - Estibaliz Gómez-de-Mariscal
 - Carlos Garcı́a-López-de-Haro
 - Wei Ouyang
-- Laurène Donati
+- Laurene Donati
 - Emma Lundberg
 - Michael Unser
-- Arrate Muñoz-Barrutia
+- Arrate Munoz-Barrutia
 - Daniel Sage
 tags: []
 categories: []
@@ -34,7 +34,7 @@ image:
 #   E.g. `projects = ["internal-project"]` references `content/project/deep-learning/index.md`.
 #   Otherwise, set `projects = []`.
 projects: []
-publishDate: '2023-01-15T23:42:14.908576Z'
+publishDate: '2023-11-06T17:16:23.489603Z'
 publication_types:
 - '2'
 abstract: ''

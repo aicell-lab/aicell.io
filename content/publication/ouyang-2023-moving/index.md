@@ -1,19 +1,18 @@
 ---
 # Documentation: https://wowchemy.com/docs/managing-content/
 
-title: Deep learning massively accelerates super-resolution localization microscopy
+title: 'Moving beyond the desktop: prospects for practical bioimage analysis via the
+  web'
 subtitle: ''
 summary: ''
 authors:
 - Wei Ouyang
-- Andrey Aristov
-- Mickaël Lelek
-- Xian Hao
-- Christophe Zimmer
+- Kevin W Eliceiri
+- Beth A Cimini
 tags: []
 categories: []
-date: '2018-01-01'
-lastmod: 2023-01-16T00:42:13+01:00
+date: '2023-01-01'
+lastmod: 2023-11-06T18:16:30+01:00
 featured: false
 draft: false
 
@@ -31,9 +30,9 @@ image:
 #   E.g. `projects = ["internal-project"]` references `content/project/deep-learning/index.md`.
 #   Otherwise, set `projects = []`.
 projects: []
-publishDate: '2023-11-06T17:16:18.751504Z'
+publishDate: '2023-11-06T17:16:30.018706Z'
 publication_types:
 - '2'
 abstract: ''
-publication: '*Nature biotechnology*'
+publication: '*Frontiers in Bioinformatics*'
 ---

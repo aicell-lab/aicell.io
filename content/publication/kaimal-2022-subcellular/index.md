@@ -2,7 +2,7 @@
 # Documentation: https://wowchemy.com/docs/managing-content/
 
 title: Subcellular mapping of the protein landscape of SARS-CoV-2 infected cells for
-  target-centric drug repurposing
+  target-centric drug repurposing (preprint)
 subtitle: ''
 summary: ''
 authors:
@@ -38,9 +38,9 @@ image:
 #   E.g. `projects = ["internal-project"]` references `content/project/deep-learning/index.md`.
 #   Otherwise, set `projects = []`.
 projects: []
-publishDate: '2023-01-15T23:42:15.998042Z'
+publishDate: '2023-11-06T17:16:28.618997Z'
 publication_types:
 - '2'
 abstract: ''
-publication: '*bioRxiv*'
+publication: ''
 ---

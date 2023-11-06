@@ -1,8 +1,8 @@
 ---
 # Documentation: https://wowchemy.com/docs/managing-content/
 
-title: 'BioImage Model Zoo: A Community-Driven Resource for Accessible Deep Learning
-  in BioImage Analysis'
+title: 'Bioimage model zoo: a community-driven resource for accessible deep learning
+  in bioimage analysis'
 subtitle: ''
 summary: ''
 authors:
@@ -38,7 +38,7 @@ image:
 #   E.g. `projects = ["internal-project"]` references `content/project/deep-learning/index.md`.
 #   Otherwise, set `projects = []`.
 projects: []
-publishDate: '2023-01-15T23:42:15.700730Z'
+publishDate: '2023-11-06T17:16:25.842131Z'
 publication_types:
 - '2'
 abstract: ''
