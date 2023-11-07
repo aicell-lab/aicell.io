@@ -63,7 +63,7 @@ email: ''
 highlight_name: true
 ---
 
-Welcome to the AICell Lab, a dynamic research hub within the [Science for Life Laboratory](#about-scilifelab) and [KTH Royal Institute of Technology](#about-kth), spearheaded by Dr. [Wei Ouyang](https://oeway.github.io). Our work is at the intersection of artificial intelligence and life sciences, fueled by the visionary [Data-Driven Life Science initiative](https://www.scilifelab.se/data-driven/). We are dedicated to the design of intelligent AI frameworks that transform cell and molecular biology research.
+Welcome to the AICell Lab, a dynamic research group within the [Science for Life Laboratory](#about-scilifelab) and [KTH Royal Institute of Technology](#about-kth), spearheaded by [Wei Ouyang](https://oeway.github.io). Our work is at the intersection of artificial intelligence and life sciences, fueled by the visionary [Data-Driven Life Science initiative](https://www.scilifelab.se/data-driven/). We are dedicated to the design of intelligent AI frameworks that transform cell and molecular biology research.
 
 **Our Mission**: To seamlessly integrate AI with cell and molecular biology, driving forward the ambitious endeavor of human cell modeling and fostering the generation of deep, actionable insights.
 
