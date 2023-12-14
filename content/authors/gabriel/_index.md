@@ -1,6 +1,6 @@
 ---
 # Display name
-title: Gabe Reder
+title: Gabriel Reder
 
 # Active status
 active: true

@@ -5,10 +5,10 @@ title: Caterina Fuster-Barceló
 superuser: false
 
 # Role/position
-role: 'Visiting Postdoc - Alumni'
+role: 'Visiting Postdoc'
 
 user_groups:
- - lab members
+  - alumni
 
 # Status emoji
 status:
