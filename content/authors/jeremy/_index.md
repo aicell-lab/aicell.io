@@ -13,7 +13,7 @@ role: 'Research Engineer'
 
 # User Groups
 user_groups:
-  - lab members
+  - alumni
 
 # Status emoji (I've chosen a coffee emoji as a default; feel free to change)
 status:

@@ -13,7 +13,7 @@ role: 'Visiting PhD'
 
 # User Groups
 user_groups:
-  - lab members
+  - alumni
 
 # Status emoji (I've chosen a microscope emoji to reflect his research focus)
 status:
