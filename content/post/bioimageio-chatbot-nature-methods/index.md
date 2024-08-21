@@ -15,7 +15,7 @@ This groundbreaking work is the result of a collaboration between the AICell Lab
 ## A Quick Recap 📖
 The BioImage.IO Chatbot is not just any AI assistant; it’s a community-driven platform designed to help researchers navigate the complex landscape of bioimaging tools, databases, and services. Powered by GPT-4 and a sophisticated retrieval augmented generation (RAG) system, the chatbot is built on a dynamic knowledge base contributed by the global bioimaging community. This ensures it delivers accurate, context-aware responses, aiding researchers in tackling everything from routine tasks to advanced bioimage analysis challenges.
 
-**Try the BioImage.IO Chatbot here: [BioImage.IO Chatbot](https://bioimage.io/chatbot)!**
+**Try the BioImage.IO Chatbot here: [BioImage.IO Chatbot](https://bioimage.io/chat)!**
 
 ## What’s New? 🆕
 Since our initial release, we’ve made several substantial improvements:
