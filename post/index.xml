@@ -5,7 +5,7 @@
 &lt;p>This groundbreaking work is the result of a collaboration between the AICell Lab at KTH Royal Institute of Technology, the Department of Intelligent Systems at KTH, Ericsson Inc., Universidad Carlos III de Madrid, and Instituto de Investigación Sanitaria Gregorio Marañón. The authors—&lt;strong>Wanlu Lei, Caterina Fuster-Barceló, Gabriel Reder, Arrate Muñoz-Barrutia, and Wei Ouyang&lt;/strong>—bring together expertise from diverse fields to push the boundaries of AI-driven bioimaging.&lt;/p>
 &lt;h2 id="a-quick-recap-">A Quick Recap 📖&lt;/h2>
 &lt;p>The BioImage.IO Chatbot is not just any AI assistant; it’s a community-driven platform designed to help researchers navigate the complex landscape of bioimaging tools, databases, and services. Powered by GPT-4 and a sophisticated retrieval augmented generation (RAG) system, the chatbot is built on a dynamic knowledge base contributed by the global bioimaging community. This ensures it delivers accurate, context-aware responses, aiding researchers in tackling everything from routine tasks to advanced bioimage analysis challenges.&lt;/p>
-&lt;p>&lt;strong>Try the BioImage.IO Chatbot here: &lt;a href="https://bioimage.io/chatbot" target="_blank" rel="noopener">BioImage.IO Chatbot&lt;/a>!&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>Try the BioImage.IO Chatbot here: &lt;a href="https://bioimage.io/chat" target="_blank" rel="noopener">BioImage.IO Chatbot&lt;/a>!&lt;/strong>&lt;/p>
 &lt;h2 id="whats-new-">What’s New? 🆕&lt;/h2>
 &lt;p>Since our initial release, we’ve made several substantial improvements:&lt;/p>
 &lt;ol>
