@@ -7,7 +7,7 @@ We’re thrilled to share some exciting news with the bioimaging community! The 
 
 **Read the full correspondence here: [Nature Methods, August 2024](https://www.nature.com/articles/s41592-024-01565-4)**
 
-**Free Access: [https://rdcu.be/dQuw7]**
+**Free Access: [https://rdcu.be/dQuw7](https://rdcu.be/dQuw7)**
 
 ## A Collaborative Effort 🤝
 This groundbreaking work is the result of a collaboration between the AICell Lab at KTH Royal Institute of Technology, the Department of Intelligent Systems at KTH, Ericsson Inc., Universidad Carlos III de Madrid, and Instituto de Investigación Sanitaria Gregorio Marañón. The authors—**Wanlu Lei, Caterina Fuster-Barceló, Gabriel Reder, Arrate Muñoz-Barrutia, and Wei Ouyang**—bring together expertise from diverse fields to push the boundaries of AI-driven bioimaging.
