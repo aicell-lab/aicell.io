@@ -27,7 +27,7 @@ social:
   - icon: github
     icon_pack: fab
     link: https://github.com/hugokallander
- - icon: linkedin
+  - icon: linkedin
     icon_pack: fab
     link: https://www.linkedin.com/in/hugodk/
 
