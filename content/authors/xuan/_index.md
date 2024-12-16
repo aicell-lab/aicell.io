@@ -35,14 +35,14 @@ social:
 education:
   courses:
   - course: MSc Molecular Techniques in Life Science
-    institution: [KTH Royal Institute of Technology]
-    year: [Expected Graduation Year, e.g., 2025]
+    institution: KTH Royal Institute of Technology
+    year: 2025
 
 ---
 
 Hello, I’m Xuan Liu! I’m currently a Master’s project student at AICell Lab, coming from the MTLS program—a collaborative bioinformatics-focused initiative by KTH, KI, and SU.
 
-Originally from China, I completed my undergraduate studies at Northwest A&F University, where I focused on molecular biology and microbiology. Driven by a curiosity for bioinformatics, I came to Stockholm to pursue my master’s degree. Throughout my studies, I developed a strong interest in machine learning, which has shaped my current project at AICell Lab. Here, I’m working on fine-tuning GPT-4 for bioimage-specific object detection, along with exploring DINO-GPT4 for two-stage detection, with the goal of enhancing automation in biological research.
+Originally from China, I completed my undergraduate studies at Northwest A&F University, where I focused on molecular biology and microbiology. Driven by a curiosity for bioinformatics, I came to Stockholm to pursue my master’s degree. Throughout my studies, I developed a strong interest in machine learning, which has shaped my current project at AICell Lab. Here, I’m working on fine-tuning GPT-4 for bioimage-specific analysis, along with exploring advanced object detection model, with the goal of enhancing automation in biological research.
 
 My work combines my passion for AI and biology, particularly in the realm of image analysis, and I’m excited to continue pushing the boundaries in this field.
 
@@ -58,7 +58,6 @@ My work combines my passion for AI and biology, particularly in the realm of ima
 
 ### Personal Interests / Hobbies
 
-- Cooking
+- Baking
 - Frisbee playing
-- Occult enthusiast
 
