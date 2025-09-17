@@ -9,7 +9,7 @@ active: true
 superuser: false
 
 # Role/position
-role: 'Research Engineer'
+role: 'PhD Student'
 
 # User Groups
 user_groups:
