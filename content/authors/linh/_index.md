@@ -13,7 +13,7 @@ role: 'Researcher'
 
 # User Groups
 user_groups:
-  - lab members
+  - Alumni
 
 # Status emoji (I've chosen a microscope emoji to signify her research focus; feel free to change)
 status:
