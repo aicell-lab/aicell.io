@@ -3,6 +3,7 @@
 title: Wei Ouyang
 
 superuser: true
+weight: 1
 
 # Role/position
 role: 'Principle Investigator'
