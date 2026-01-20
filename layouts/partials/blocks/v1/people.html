@@ -25,11 +25,12 @@
   {{ end }}
 
   {{ range $block.Params.content.user_groups }}
+  {{ $group := . }}
   {{ $query := where (where site.Pages "Section" "authors") ".Params.user_groups" "intersect" (slice .) }}
 
   {{if $query | and (gt (len $block.Params.content.user_groups) 1) }}
   <div class="col-md-12">
-    <!-- <h2 class="mb-4">{{ . | markdownify }}</h2> -->
+    <h2 class="mb-4">{{ if eq $group "PI" }}PI{{ else }}{{ $group | humanize | title }}{{ end }}</h2>
     <hr>
   </div>
   {{end}}
@@ -41,7 +42,7 @@
   {{ with site.GetPage (printf "/authors/%s" (path.Base .File.Dir)) }}
     {{ $link = .RelPermalink }}
   {{ end }}
-  <div class="col-12 col-sm-auto people-person">
+  <div class="col-12 col-sm-auto people-person group-{{ $group | urlize }}">
     {{ $src := "" }}
     {{ if site.Params.features.avatar.gravatar }}
       {{ $src = printf "https://s.gravatar.com/avatar/%s?s=150" (md5 .Params.email) }}

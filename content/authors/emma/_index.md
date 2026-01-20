@@ -13,7 +13,7 @@ role: 'Master Student'
 
 # User Groups
 user_groups:
-  - lab members
+  - Alumni
 
 # Status emoji
 status:

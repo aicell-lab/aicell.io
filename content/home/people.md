@@ -18,6 +18,7 @@ content:
   user_groups:
     - PI
     - lab members
+    - Alumni
 design:
   # Show user's social networking links? (true/false)
   show_social: true

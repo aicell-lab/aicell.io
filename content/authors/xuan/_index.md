@@ -13,7 +13,7 @@ role: 'Master project student'
 
 # User Groups
 user_groups:
-  - lab members
+  - Alumni
 
 # Status emoji
 status:
