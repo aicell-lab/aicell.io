@@ -8,7 +8,7 @@ superuser: false
 role: 'Visiting Postdoc'
 
 user_groups:
-  - alumni
+  - Alumni
 
 # Status emoji
 status:
