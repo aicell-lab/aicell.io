@@ -98,12 +98,43 @@ skipped (do not fail the whole run).
 
 ## Slack setup
 
-Set one of these (checked in order); the pipeline no-ops Slack if none is present:
-- `SLACK_WEBHOOK_URL` — an Incoming Webhook for #general. Post with:
-  `curl -fsS -X POST -H 'Content-type: application/json' --data '{"text":"<msg>"}' "$SLACK_WEBHOOK_URL"`
-- `SLACK_BOT_TOKEN` (+ channel `#general`) — `chat.postMessage` via the Slack API.
+Use the helper `scripts/post-to-slack.sh "<message>"` — it posts via whichever credential is
+set and **exits 0 with `slack: SKIPPED` when none is**, so the run never fails on a missing secret:
+- `SLACK_WEBHOOK_URL` — an Incoming Webhook for #general (simplest); or
+- `SLACK_BOT_TOKEN` (+ optional `SLACK_CHANNEL`, default `#general`) — `chat.postMessage`.
 
-Store the secret outside the repo (e.g. the daemon/session environment), never commit it.
+Store the secret outside the repo (daemon/session environment), never commit it. To enable Slack
+for the nightly run, export the var in the environment the trigger's agent inherits.
+
+## Scheduling (how the nightly run is wired) — IMPORTANT, learned the hard way
+
+Use **`svamp trigger`** (alias `svamp routine`), NOT `svamp workflow`, to schedule this:
+
+```bash
+svamp trigger add --session <owner-session-id> --name nightly-newsletter \
+  --schedule "0 5 * * *" --loop --dir /Users/weio/workspace/aicell.io \
+  --task "Run the lab newsletter pipeline per .claude/skills/lab-newsletter/SKILL.md (prod) …" \
+  --oracle 'test -e "content/post/newsletter-$(date -u +%F)/index.md"'
+```
+
+Why, and the gotchas (verified 2026-06-23):
+- **`svamp workflow … --on schedule --cron` does NOT fire** on the running daemon — its
+  schedules are not wired into the scheduler (only `svamp workflow run` executes the steps
+  manually). Don't rely on it for the nightly. The `svamp trigger`/routines scheduler **does**
+  fire reliably (incl. triggers added after the daemon started — confirmed firing every minute
+  on a test).
+- **Never use `svamp session send .`** in an automation: `.` resolves via `SVAMP_SESSION_ID`,
+  which is absent in the daemon/workflow shell → `No session found matching: .`. Always target
+  a real session id, spawn a fresh agent, or use a trigger's `--loop`/`--message` action.
+- **Trigger actions enqueue to the owner session's message queue** (the daemon drains it when
+  that session is idle). So the `--session <owner>` must be a **live** session that becomes idle
+  around the schedule time; if it's permanently busy (e.g. mid-loop) or dead, the run won't drain.
+  Quote the deferred-date oracle in **single quotes** so `$(date)` evaluates at fire time, not when
+  you create the trigger.
+- **Deterministic alternative (no live session needed):** spawn a fresh one-shot agent —
+  `svamp session spawn claude -d /Users/weio/workspace/aicell.io --message "<pipeline prompt>"`.
+  This is what to use for an on-demand run or a manual test; it produces and commits independently.
+- Inspect runs: `svamp trigger list`; history in `~/.svamp/routines/<id>.json` (`last_runs`).
 
 ## Guardrails
 - Never invent facts or quotes; always link the real source you fetched.
