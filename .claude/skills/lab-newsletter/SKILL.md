@@ -30,13 +30,26 @@ exact post front matter and the build/commit/deploy flow.
 ## Pipeline (run top to bottom)
 
 ### 1. Research
-Gather candidate items relevant to the lab's mission. Topics of interest:
+Cover **two buckets** every day, and aim for a mix of both in the final digest:
+
+**Bucket A — field news** (what's new in the broader area the lab cares about):
 - AI for cell & molecular biology, bioimage analysis, augmented microscopy,
-  whole-cell modeling, foundation models for biology.
-- The lab's own software & initiatives: ImJoy, BioImage Model Zoo / bioimage.io,
-  BioEngine, AI4Life, Hypha, agent-lens, HPA.
-- Collaborators, SciLifeLab / KTH / DDLS / WASP announcements, major venues,
-  relevant funding calls and events.
+  whole-cell modeling, foundation models for biology, agentic AI for science.
+- Major venues, notable papers/preprints, big model or tool releases.
+
+**Bucket B — the lab's own focus topics** (keep the digest grounded in what the
+lab actually works on, not generic AI news):
+- **Derive the focus list from the site itself**: read the current
+  `content/project/*/index.md` titles + summaries and the `content/authors/aicell-lab`
+  interests — these are the lab's live priorities. Today that includes ImJoy,
+  BioImage Model Zoo / bioimage.io, BioEngine, Hypha, agent-lens, HPA, the
+  self-driving microscope, reef imaging, and human/whole-cell modeling.
+- Track news touching those projects, their dependencies/competitors, the lab's
+  own papers and software releases, collaborators, and SciLifeLab / KTH / DDLS /
+  WASP announcements, plus relevant funding calls and events.
+
+Re-deriving Bucket B from `content/project/*` each run means the digest
+automatically follows the lab's focus as the weekly refresh updates the projects.
 
 Use `WebSearch`/`WebFetch` (or the `deep-research` skill in `prod`). Prefer
 primary sources (papers, official blogs, release notes). **Never fabricate facts,
@@ -82,19 +95,31 @@ voice: warm, first-person-plural, lightly linked. End with a one-line "Why it
 matters for the lab." Keep it skimmable. No multi-MB images.
 
 ### 5. Build & commit
+**Get the correct env first.** Automations run as fresh agents/shells without the
+build toolchain on PATH, and in Claude Code **each Bash call is a fresh shell** (env
+does not persist between calls) — so `source scripts/setup-build-env.sh` in the SAME
+command as the build. That script puts Hugo extended 0.101.0 + Go at stable paths
+(`~/.cache/aicell-build`, not ephemeral `/tmp`), sets the cache vars, and loads
+secrets from `~/.svamp/aicell-newsletter.env`.
 ```bash
-# hugo extended 0.101.0 (matches CI); see aicell-website skill for binary/cache setup
-hugo --gc --minify -b https://aicell.io      # must exit 0
+# one shell: source env, then build with the resolved $HUGO_BIN (NOT bare `hugo`)
+. scripts/setup-build-env.sh && "$HUGO_BIN" --gc --minify -b https://aicell.io   # must exit 0
 git add content/post/newsletter-<date> data/newsletter/<date>/sources.md
 git commit -m "Newsletter: <Month D, YYYY> digest"
 git push origin main                          # nightly is pre-authorized routine content
 ```
+Do **not** run `hugo mod get` (it upgrades the theme to v5.9.0 and breaks Hugo 0.101.0;
+the theme is pinned in `go.mod`).
 
 ### 6. Publish to Slack #general
-Post a short teaser + link to the live post. Slack delivery requires a configured
-credential — see **Slack setup** below. If no credential is configured, SKIP Slack,
-still publish the website post, and note in the commit/run output that Slack was
-skipped (do not fail the whole run).
+Post a short teaser + link to the live post in the SAME shell that sourced the env
+(so the Slack secret is present):
+```bash
+. scripts/setup-build-env.sh && scripts/post-to-slack.sh "📰 New lab newsletter: <title> — https://aicell.io/post/newsletter-<date>/"
+```
+`post-to-slack.sh` posts via `SLACK_WEBHOOK_URL`/`SLACK_BOT_TOKEN` and **exits 0 with
+`slack: SKIPPED`** when neither is set, so a missing secret never fails the run — still
+publish the website post and note that Slack was skipped.
 
 ## Slack setup
 
