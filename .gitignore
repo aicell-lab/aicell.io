@@ -18,3 +18,8 @@ go.sum
 .claude/settings.json
 .claude/settings.local.json
 .claude/agents/loop-evaluator.md
+
+# Newsletter raw source captures (keep sources.md, ignore bulky downloads)
+data/newsletter/**/*.pdf
+data/newsletter/**/*.html
+data/newsletter/**/*.txt
