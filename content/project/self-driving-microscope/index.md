@@ -31,4 +31,6 @@ url_video: ''
 slides: 
 ---
 
+> This is the lab's overarching vision for autonomous microscopy. We are realizing it concretely through two active projects: [Agent-Lens](/project/agent-lens) — AI agents that control microscopes — and the [REEF Automated Imaging Farm](/project/reef-imaging-farm) — robotics and fluidics for imaging at scale.
+
 The aim of the project is to develop an AI-powered self-driving microscopy system for studying cellular response under genetic and environmental stressors. The project will also be supported by the WASP-DDLS collaboration, and closely collaborate with the Jaldén group at KTH. The Jaldén group has rich experience in computer vision and automatic control systems. The work will also be supported by the Lundberg group under the Human Protein Atlas, which is a unique world-leading effort to map all the human proteins in cells, tissues, and organs in the human body. By joining the force with the Jaldén group and Lundberg group, we would like to develop an AI-powered imaging system to continuously monitor, actively acquire and track human cells under different cellular and environmental stressors. The data will be used to train large-scale AI models to study cellular responses and make predictions for cell fate.
