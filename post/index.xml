@@ -1,4 +1,52 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts | AICell Lab</title><link>https://aicell.io/post/</link><atom:link href="https://aicell.io/post/index.xml" rel="self" type="application/rss+xml"/><description>Posts</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 20 Aug 2024 00:00:00 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>Posts</title><link>https://aicell.io/post/</link></image><item><title>BioImage.IO Chatbot Officially Published in Nature Methods! 🚀 A New Milestone in AI-Driven Bioimaging 🧠🔬</title><link>https://aicell.io/post/bioimageio-chatbot-nature-methods/</link><pubDate>Tue, 20 Aug 2024 00:00:00 +0000</pubDate><guid>https://aicell.io/post/bioimageio-chatbot-nature-methods/</guid><description>&lt;p>We’re thrilled to share some exciting news with the bioimaging community! The &lt;strong>BioImage.IO Chatbot&lt;/strong> has just been published in &lt;em>Nature Methods&lt;/em> as part of a special issue focused on advanced AI in biology—marking a significant achievement for our team and the broader field of computational bioimaging. 🎉&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts | AICell Lab</title><link>https://aicell.io/post/</link><atom:link href="https://aicell.io/post/index.xml" rel="self" type="application/rss+xml"/><description>Posts</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 23 Jun 2026 06:00:00 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>Posts</title><link>https://aicell.io/post/</link></image><item><title>Lab Newsletter — June 23, 2026</title><link>https://aicell.io/post/newsletter-2026-06-23/</link><pubDate>Tue, 23 Jun 2026 06:00:00 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-06-23/</guid><description>&lt;p>A short digest of what&amp;rsquo;s caught our eye lately — from our own software stack to the
+wider world of AI for cell biology and bioimaging. Everything below links to its
+source.&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>BioEngine gets agent-readable.&lt;/strong> Our group has a new preprint out,
+&lt;a href="https://www.biorxiv.org/content/10.64898/2026.04.19.719496v1" target="_blank" rel="noopener">&lt;em>BioEngine: scalable execution and adaptation of bioimage AI through agent-readable interfaces&lt;/em>&lt;/a>
+(bioRxiv, April 2026). It describes how BioEngine — built on Hypha — lets both
+people and AI agents run and adapt bioimage AI models through interfaces that
+agents can read and call directly. It&amp;rsquo;s a step toward the kind of autonomous,
+tool-using analysis pipelines we keep gesturing at in this newsletter.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>A Model Zoo glow-up.&lt;/strong> AI4Life ran a week-long hackathon at EMBL Heidelberg to
+upgrade the &lt;a href="https://ai4life.eurobioimaging.eu/hackathon-summary-bioimage-model-zoo-enhancements/" target="_blank" rel="noopener">BioImage Model Zoo&lt;/a>.
+Highlights: a new internal model uploader (no more leaning on Zenodo) with
+authenticated contributions, CI moved to the &lt;code>collection-bioimage-io&lt;/code> repo, and
+BioEngine now launchable on Slurm/Apptainer and other HPC backends. One nice
+detail — quantizing a 3D U-Net cut batch inference from 60 ms to 30 ms.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>2026 DDLS postdoc decisions land.&lt;/strong> SciLifeLab and the Wallenberg
+&lt;a href="https://www.scilifelab.se/data-driven/ddls-research-school/ddls-research-school-postdoc-call-2026/" target="_blank" rel="noopener">DDLS Research School&lt;/a>
+reach their funding decision on June 15 for the 2026 call: 22 fellowships (15
+academic, 7 industrial), each 2 MSEK over two years, with employment starting
+October 1. Cell &amp;amp; Molecular Biology is one of the four strategic areas — squarely
+the neighbourhood we work in.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>A single-cell model you can interrogate.&lt;/strong> &lt;em>Nature Communications&lt;/em> published
+&lt;a href="https://www.nature.com/articles/s41467-026-70071-5" target="_blank" rel="noopener">an interpretable single-cell foundation model&lt;/a>
+trained on roughly 68 million cells with about 500 million parameters. The pitch
+is interpretability — being able to ask &lt;em>why&lt;/em> the model places a cell in a given
+state — which matters a lot if these models are to inform real biology rather than
+just rank well on benchmarks.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Toward compositional foundation models.&lt;/strong> A &lt;em>Cell Systems&lt;/em> perspective,
+&lt;a href="https://www.cell.com/cell-systems/abstract/S2405-4712%2826%2900016-5" target="_blank" rel="noopener">&lt;em>From modality-specific to compositional foundation models for cell biology&lt;/em>&lt;/a>,
+argues for modular models that compose across modalities — chromatin accessibility,
+protein abundance, spatial transcriptomics, microscopy images, and text — into a
+shared picture of cellular behaviour, rather than training one monolith per data
+type.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Why it matters for the lab:&lt;/strong> agent-readable infrastructure (BioEngine/Hypha) and
+the BioImage Model Zoo are exactly the rails the field needs as foundation models for
+cells move from single-modality demos toward composable, interpretable systems — and
+the DDLS call is where the next people to build them get funded.&lt;/p></description></item><item><title>BioImage.IO Chatbot Officially Published in Nature Methods! 🚀 A New Milestone in AI-Driven Bioimaging 🧠🔬</title><link>https://aicell.io/post/bioimageio-chatbot-nature-methods/</link><pubDate>Tue, 20 Aug 2024 00:00:00 +0000</pubDate><guid>https://aicell.io/post/bioimageio-chatbot-nature-methods/</guid><description>&lt;p>We’re thrilled to share some exciting news with the bioimaging community! The &lt;strong>BioImage.IO Chatbot&lt;/strong> has just been published in &lt;em>Nature Methods&lt;/em> as part of a special issue focused on advanced AI in biology—marking a significant achievement for our team and the broader field of computational bioimaging. 🎉&lt;/p>
 &lt;p>&lt;strong>Read the full correspondence here: &lt;a href="https://www.nature.com/articles/s41592-024-01565-4" target="_blank" rel="noopener">Nature Methods, August 2024&lt;/a>&lt;/strong>&lt;/p>
 &lt;p>&lt;strong>Free Access: &lt;a href="https://rdcu.be/dQuw7" target="_blank" rel="noopener">https://rdcu.be/dQuw7&lt;/a>&lt;/strong>&lt;/p>
 &lt;h2 id="a-collaborative-effort-">A Collaborative Effort 🤝&lt;/h2>
