@@ -10,3 +10,11 @@ go.sum
 .hugo_build.lock
 .DS_Store
 
+
+# Svamp loop/session scratch (binaries, loop state)
+.svamp/
+
+# Loop-session-specific (reference .svamp loop scripts)
+.claude/settings.json
+.claude/settings.local.json
+.claude/agents/loop-evaluator.md

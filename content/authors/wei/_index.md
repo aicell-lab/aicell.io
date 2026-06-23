@@ -6,10 +6,10 @@ superuser: true
 weight: 1
 
 # Role/position
-role: 'Principle Investigator'
+role: 'Principal Investigator'
 
 user_groups:
- - lab members
+ - PI
 
 # Status emoji
 status:
