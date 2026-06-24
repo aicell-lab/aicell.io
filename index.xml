@@ -1,4 +1,38 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AICell Lab</title><link>https://aicell.io/</link><atom:link href="https://aicell.io/index.xml" rel="self" type="application/rss+xml"/><description>AICell Lab</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 24 Jun 2026 03:00:00 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>AICell Lab</title><link>https://aicell.io/</link></image><item><title>Lab Newsletter — June 24, 2026</title><link>https://aicell.io/post/newsletter-2026-06-24/</link><pubDate>Wed, 24 Jun 2026 03:00:00 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-06-24/</guid><description>&lt;p>A quick, curated read on what moved this week in AI for cell biology and
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AICell Lab</title><link>https://aicell.io/</link><atom:link href="https://aicell.io/index.xml" rel="self" type="application/rss+xml"/><description>AICell Lab</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 24 Jun 2026 09:49:00 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>AICell Lab</title><link>https://aicell.io/</link></image><item><title>New preprint: BioEngine — running bioimage AI through agent-readable interfaces</title><link>https://aicell.io/post/bioengine-preprint/</link><pubDate>Wed, 24 Jun 2026 09:49:00 +0000</pubDate><guid>https://aicell.io/post/bioengine-preprint/</guid><description>&lt;p>We&amp;rsquo;re excited to share a new preprint describing &lt;strong>&lt;a href="https://aicell.io/project/bioengine/">BioEngine&lt;/a>&lt;/strong> —
+the platform behind the &amp;ldquo;test run&amp;rdquo; feature on the &lt;a href="https://bioimage.io" target="_blank" rel="noopener">BioImage Model Zoo&lt;/a>
+and a big step toward making AI for bioimage analysis genuinely usable.&lt;/p>
+&lt;p>&lt;strong>Read it on bioRxiv:&lt;/strong>
+&lt;a href="https://doi.org/10.64898/2026.04.19.719496" target="_blank" rel="noopener">&lt;em>BioEngine: scalable execution and adaptation of bioimage AI through agent-readable
+interfaces&lt;/em>&lt;/a>
+(Mechtel, Dettner Källander, Cheng, Zhang, the AI4Life Horizon Europe Program
+Consortium, and Ouyang).&lt;/p>
+&lt;h3 id="what-bioengine-does">What BioEngine does&lt;/h3>
+&lt;p>The community has produced an enormous number of deep-learning models for
+microscopy — but actually &lt;em>running&lt;/em> the right one, at scale, has remained hard for
+the biologists who need them. BioEngine is our answer: an &lt;strong>agent-first&lt;/strong>
+infrastructure platform that connects browsers, microscopes, and AI agents to GPU
+compute, so a scientist can describe a goal in plain language and have the right
+model found, run, and adapted for them — no programming required.&lt;/p>
+&lt;p>A few ideas we&amp;rsquo;re particularly happy with:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Agent-readable interfaces.&lt;/strong> Models and services expose themselves in a way
+that both people &lt;em>and&lt;/em> AI agents (like &lt;a href="https://aicell.io/project/agent-lens/">Agent-Lens&lt;/a>) can
+discover and operate — turning a model zoo into something an autonomous system
+can actually use.&lt;/li>
+&lt;li>&lt;strong>Scales without rewrites.&lt;/strong> Built on &lt;a href="https://aicell.io/project/hypha/">Hypha&lt;/a> for serverless
+connectivity and &lt;a href="https://www.ray.io" target="_blank" rel="noopener">Ray&lt;/a> for distributed orchestration,
+BioEngine runs the same way from a single laptop to multi-node GPU clusters.&lt;/li>
+&lt;li>&lt;strong>FAIR by design.&lt;/strong> It integrates with the &lt;a href="https://aicell.io/project/bioimage-model-zoo/">BioImage Model Zoo&lt;/a>
+so the models you run are standardized, validated, and reusable across tools.&lt;/li>
+&lt;/ul>
+&lt;p>This work grew out of the &lt;a href="https://aicell.io/project/ai4life/">AI4Life&lt;/a> project and is part of the
+lab&amp;rsquo;s broader push to build the AI infrastructure for data-driven cell biology —
+the same backbone our &lt;a href="https://www.scilifelab.se/alpha-cell/" target="_blank" rel="noopener">Alpha Cell&lt;/a> work
+relies on. Huge thanks to the team and collaborators who made it happen.&lt;/p>
+&lt;p>Want to try it? Explore the &lt;a href="https://bioimage.io" target="_blank" rel="noopener">BioImage Model Zoo&lt;/a> or read the
+&lt;a href="https://aicell.io/project/bioengine/">BioEngine project page&lt;/a>.&lt;/p>
+&lt;hr>
+&lt;p>&lt;em>Competing interests: W. Ouyang is a co-founder of Amun AI AB.&lt;/em>&lt;/p></description></item><item><title>Lab Newsletter — June 24, 2026</title><link>https://aicell.io/post/newsletter-2026-06-24/</link><pubDate>Wed, 24 Jun 2026 03:00:00 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-06-24/</guid><description>&lt;p>A quick, curated read on what moved this week in AI for cell biology and
 bioimaging — and why it&amp;rsquo;s interesting from where we sit. Everything below links
 to its source.&lt;/p>
 &lt;p>&lt;strong>An AI agent that actually drives ImageJ.&lt;/strong> A new preprint introduces
