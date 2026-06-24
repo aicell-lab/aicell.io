@@ -13,8 +13,8 @@ main:
   # - name: Talks
   #   url: '#talks'
   #   weight: 40
-  - name: People
-    url: '#people'
+  - name: Team
+    url: '#team'
     weight: 50
   - name: Projects
     url: '#projects'
