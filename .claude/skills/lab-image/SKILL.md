@@ -31,13 +31,12 @@ appended automatically. FLUX returns a 1024×1024 JPEG; the CLI saves it and fix
 the extension to match the real format.
 
 ## The AICell Lab signature style (our visual trail)
-One recognizable look across the site — *abstract science-art blending flowing AI
-data-sculpture (à la Refik Anadol) with bioluminescent microscopy*: deep cobalt→indigo
-gradients, luminous cyan and soft-violet glow, elegant translucent cells / molecular
-networks / streams of data, gentle volumetric light, particle bokeh, premium editorial
-minimalism — **no text**. It's baked into `HOUSE_STYLE` in `scripts/lab-image.py`; keep
-it consistent (edit there if the brand evolves). Examples live on the newsletter and
-BioEngine post covers.
+**Flat, black & white, with orange as the only accent.** One recognizable look across the
+whole site: clean flat minimalist illustration / line-art, strictly monochrome (black on
+white), with a *single* bright-orange highlight used sparingly for the active accent — no
+gradients, no shading, no 3D, no other colors, no text. It's baked into `HOUSE_STYLE` in
+`scripts/lab-image.py`; keep it consistent. For icons, also ask the subject to *fill the
+frame*. Examples: the Happy Agent avatar and the newsletter/BioEngine covers.
 
 ## Use it for posts / digests
 Generate the cover **into the post folder** as `featured.jpg`; Hugo auto-processes it:

@@ -37,14 +37,12 @@ DEFAULT_MODEL = "flux"
 # One consistent, recognizable look across all digests/posts: abstract science-art,
 # deep cobalt→indigo with luminous cyan, elegant flowing cell/network/data forms.
 HOUSE_STYLE = (
-    "in the AICell Lab signature style — a stunning, premium abstract science-art cover that "
-    "blends the look of flowing AI data-sculpture (think Refik Anadol) with bioluminescent "
-    "microscopy: a deep cobalt-blue to indigo gradient field glowing with luminous cyan and "
-    "soft violet light, elegant translucent forms suggesting living cells, neural and molecular "
-    "networks, and streams of flowing data, rendered with gentle volumetric lighting, delicate "
-    "particle bokeh, and smooth glossy depth; modern editorial minimalism, cinematic and "
-    "ultra-clean composition, very high detail with refined color grading. "
-    "Absolutely no text, no words, no letters, no logos, no watermark."
+    "in the AICell Lab flat style — a clean, flat, minimalist illustration, strictly "
+    "black and white / monochrome with bold simple line-art and shapes, using a SINGLE "
+    "accent color of bright orange sparingly for the active highlight only. Modern editorial "
+    "vector look, generous white negative space, crisp and elegant. Absolutely NO gradients, "
+    "no soft shading, no glow, no 3D, no other colors besides black, white and one orange "
+    "accent. No text, no words, no letters, no logos, no watermark."
 )
 
 
