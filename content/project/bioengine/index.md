@@ -1,6 +1,6 @@
 ---
 title: BioEngine - Cloud-Powered AI for Bioimage Analysis
-summary: An agent-first platform that deploys bioimage AI models as autoscaling, agent-readable services on cloud or HPC — and powers the "test run" feature on the BioImage Model Zoo. Described in a 2026 preprint.
+summary: An agent-first platform that deploys bioimage AI models as autoscaling, agent-readable services on cloud or HPC — and powers the "test run" feature on the BioImage Model Zoo.
 tags:
   - deep learning
   - AI
@@ -10,7 +10,7 @@ tags:
   - web
   - cloud computing
   - agents
-date: '2026-04-22T00:00:00Z'
+date: '2026-06-01T00:00:00Z'
 
 # Optional external URL for project (replaces project detail page).
 external_link: ''
@@ -29,10 +29,10 @@ links:
     icon_pack: fas
     name: Try it
     url: https://bioimage.io/#/models
-  - icon: book
+  - icon: globe
     icon_pack: fas
-    name: Preprint
-    url: https://doi.org/10.64898/2026.04.19.719496
+    name: Model Zoo
+    url: https://bioimage.io
 
 url_code: ''
 url_pdf: ''
@@ -59,7 +59,7 @@ imjoy:
         }
 ---
 
-BioEngine is an **agent-first** platform: it connects browsers, microscopes, and AI agents to GPU compute over secure links, so a scientist can describe a goal in plain language and have an agent find, run, and adapt the right model for them. Built on [Hypha](/project/hypha) (serverless RPC connectivity) and [Ray](https://www.ray.io) (distributed task orchestration), it scales from a single laptop to multi-node GPU clusters with no code changes, and exposes **agent-readable service interfaces** so AI agents (such as [Agent-Lens](/project/agent-lens/)) can operate the whole platform. It integrates with the [BioImage Model Zoo](/project/bioimage-model-zoo/) for FAIR, validated community models. The approach is described in our 2026 preprint, [*BioEngine: scalable execution and adaptation of bioimage AI through agent-readable services*](https://doi.org/10.64898/2026.04.19.719496).
+BioEngine is an **agent-first** platform: it connects browsers, microscopes, and AI agents to GPU compute over secure links, so a scientist can describe a goal in plain language and have an agent find, run, and adapt the right model for them. Built on [Hypha](/project/hypha) (serverless RPC connectivity) and [Ray](https://www.ray.io) (distributed task orchestration), it scales from a single laptop to multi-node GPU clusters with no code changes, and exposes **agent-readable service interfaces** so AI agents (such as [Agent-Lens](/project/agent-lens/)) can operate the whole platform. It integrates with the [BioImage Model Zoo](/project/bioimage-model-zoo/) for FAIR, validated community models.
 
 The increasingly amount of data generated in life science poses challenges in managing and analysis. The conventional approach for storing and processing scientific data locally on workstations or laptops is failing to met modern needs in applications such as AI-powered image analysis. We would like to tackle the challenge by introducing the BioEngine platform, which is a computational platform consists of containerized services for scalable data management and AI model serving. It is a web platform built on top of the [Hypha](https://github.com/amun-ai/hypha) with an emphasis on serving models for bioimage analysis.
 
