@@ -1,4 +1,23 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>LLM | AICell Lab</title><link>https://aicell.io/tag/llm/</link><atom:link href="https://aicell.io/tag/llm/index.xml" rel="self" type="application/rss+xml"/><description>LLM</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 17 Jan 2023 00:00:00 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>LLM</title><link>https://aicell.io/tag/llm/</link></image><item><title>AI-assisted BioImage Analysis with GPT models</title><link>https://aicell.io/post/openai-codex-for-ai-assisted-bioimage-analysis/</link><pubDate>Tue, 17 Jan 2023 00:00:00 +0000</pubDate><guid>https://aicell.io/post/openai-codex-for-ai-assisted-bioimage-analysis/</guid><description>&lt;h1 id="ai-assisted-bioimage-analysis-with-openai-gpt-models">AI-assisted BioImage Analysis with OpenAI GPT models&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>LLM | AICell Lab</title><link>https://aicell.io/tag/llm/</link><atom:link href="https://aicell.io/tag/llm/index.xml" rel="self" type="application/rss+xml"/><description>LLM</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 20 Aug 2024 00:00:00 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>LLM</title><link>https://aicell.io/tag/llm/</link></image><item><title>BioImage.IO Chatbot — Your AI Assistant for Bioimage Analysis</title><link>https://aicell.io/project/bioimageio-chatbot/</link><pubDate>Tue, 20 Aug 2024 00:00:00 +0000</pubDate><guid>https://aicell.io/project/bioimageio-chatbot/</guid><description>&lt;p>Bioimaging is evolving fast, with an ever-growing landscape of tools, data
+formats and workflows. For many researchers — especially those without extensive
+programming experience — navigating it is daunting. The &lt;strong>BioImage.IO Chatbot&lt;/strong>
+bridges that gap: an AI-powered assistant, built on a knowledge base contributed
+by the global bioimaging community, that answers complex questions, points to the
+right tools and databases, and can &lt;em>autonomously carry out&lt;/em> analysis tasks on
+demand.&lt;/p>
+&lt;p>Under the hood it pairs large language models with a retrieval-augmented
+generation (RAG) system over community-curated documentation, and a set of
+specialized AI agents tuned for different needs — general information, education,
+and hands-on bioimage analysis. Leveraging modern code-generation, tool-calling
+and vision capabilities, it solves bioimaging tasks with increasing autonomy and
+accuracy, and can be embedded into third-party websites or extended through
+&lt;a href="https://aicell.io/project/imjoy/">ImJoy&lt;/a> and &lt;a href="https://aicell.io/project/hypha/">Hypha&lt;/a>.&lt;/p>
+&lt;p>The work was &lt;strong>&lt;a href="https://www.nature.com/articles/s41592-024-01565-4" target="_blank" rel="noopener">published in &lt;em>Nature Methods&lt;/em>&lt;/a>&lt;/strong>
+(2024, &lt;em>Focus on advanced AI in biology&lt;/em>; &lt;a href="https://rdcu.be/dQuw7" target="_blank" rel="noopener">free access&lt;/a>)
+by Wanlu Lei, Caterina Fuster-Barceló, Gabriel Reder, Arrate Muñoz-Barrutia and
+Wei Ouyang — a collaboration between the AICell Lab (KTH), KTH&amp;rsquo;s Department of
+Intelligent Systems, Ericsson, and Universidad Carlos III de Madrid.&lt;/p>
+&lt;p>&lt;a href="https://bioimage.io/chat" target="_blank" rel="noopener">&lt;strong>Try the BioImage.IO Chatbot →&lt;/strong>&lt;/a>&lt;/p></description></item><item><title>AI-assisted BioImage Analysis with GPT models</title><link>https://aicell.io/post/openai-codex-for-ai-assisted-bioimage-analysis/</link><pubDate>Tue, 17 Jan 2023 00:00:00 +0000</pubDate><guid>https://aicell.io/post/openai-codex-for-ai-assisted-bioimage-analysis/</guid><description>&lt;h1 id="ai-assisted-bioimage-analysis-with-openai-gpt-models">AI-assisted BioImage Analysis with OpenAI GPT models&lt;/h1>
 &lt;p>&lt;em>Originally Posted on &lt;a href="https://forum.image.sc/t/ai-assisted-bioimage-analysis-with-openai-codex/" target="_blank" rel="noopener">image.sc&lt;/a>, on 17th Jan 2022&lt;/em>&lt;/p>
 &lt;p>Deep learning has already revolutionized the way we do image analysis, now it comes the latest AI models for natural language processing which will change the way we interact with bioimage analysis software.&lt;/p>
 &lt;p>Here is an Open AI codex demo showing how one can generate Python code from English for bioimage analysis including cellpose segmentation, feature extraction and plotting!&lt;/p>

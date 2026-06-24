@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>RAG | AICell Lab</title><link>https://aicell.io/tag/rag/</link><atom:link href="https://aicell.io/tag/rag/index.xml" rel="self" type="application/rss+xml"/><description>RAG</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 20 Aug 2024 00:00:00 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>RAG</title><link>https://aicell.io/tag/rag/</link></image><item><title>BioImage.IO Chatbot — Your AI Assistant for Bioimage Analysis</title><link>https://aicell.io/project/bioimageio-chatbot/</link><pubDate>Tue, 20 Aug 2024 00:00:00 +0000</pubDate><guid>https://aicell.io/project/bioimageio-chatbot/</guid><description>&lt;p>Bioimaging is evolving fast, with an ever-growing landscape of tools, data
+formats and workflows. For many researchers — especially those without extensive
+programming experience — navigating it is daunting. The &lt;strong>BioImage.IO Chatbot&lt;/strong>
+bridges that gap: an AI-powered assistant, built on a knowledge base contributed
+by the global bioimaging community, that answers complex questions, points to the
+right tools and databases, and can &lt;em>autonomously carry out&lt;/em> analysis tasks on
+demand.&lt;/p>
+&lt;p>Under the hood it pairs large language models with a retrieval-augmented
+generation (RAG) system over community-curated documentation, and a set of
+specialized AI agents tuned for different needs — general information, education,
+and hands-on bioimage analysis. Leveraging modern code-generation, tool-calling
+and vision capabilities, it solves bioimaging tasks with increasing autonomy and
+accuracy, and can be embedded into third-party websites or extended through
+&lt;a href="https://aicell.io/project/imjoy/">ImJoy&lt;/a> and &lt;a href="https://aicell.io/project/hypha/">Hypha&lt;/a>.&lt;/p>
+&lt;p>The work was &lt;strong>&lt;a href="https://www.nature.com/articles/s41592-024-01565-4" target="_blank" rel="noopener">published in &lt;em>Nature Methods&lt;/em>&lt;/a>&lt;/strong>
+(2024, &lt;em>Focus on advanced AI in biology&lt;/em>; &lt;a href="https://rdcu.be/dQuw7" target="_blank" rel="noopener">free access&lt;/a>)
+by Wanlu Lei, Caterina Fuster-Barceló, Gabriel Reder, Arrate Muñoz-Barrutia and
+Wei Ouyang — a collaboration between the AICell Lab (KTH), KTH&amp;rsquo;s Department of
+Intelligent Systems, Ericsson, and Universidad Carlos III de Madrid.&lt;/p>
+&lt;p>&lt;a href="https://bioimage.io/chat" target="_blank" rel="noopener">&lt;strong>Try the BioImage.IO Chatbot →&lt;/strong>&lt;/a>&lt;/p></description></item></channel></rss>
