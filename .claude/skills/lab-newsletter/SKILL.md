@@ -135,35 +135,32 @@ never committed. Use `scripts/lab-slack.py announce --post <path>` to announce a
 `scripts/lab-slack.py dm --to <email> --text "…"` to DM someone. (The legacy
 `scripts/post-to-slack.sh` webhook helper still works as a fallback.)
 
-## Scheduling (how the nightly run is wired) — IMPORTANT, learned the hard way
+## Scheduling (how the nightly run is wired)
 
-Use **`svamp trigger`** (alias `svamp routine`), NOT `svamp workflow`, to schedule this:
+The nightly digest runs as a **`svamp workflow`** on a cron schedule (workflows are
+the single automation surface as of svamp-cli 0.2.176+):
 
 ```bash
-svamp trigger add --session <owner-session-id> --name nightly-newsletter \
-  --schedule "0 5 * * *" --loop --dir /Users/weio/workspace/aicell.io \
-  --task "Run the lab newsletter pipeline per .claude/skills/lab-newsletter/SKILL.md (prod) …" \
-  --oracle 'test -e "content/post/newsletter-$(date -u +%F)/index.md"'
+svamp workflow add nightly-newsletter --on schedule --cron "0 5 * * *" \
+  --run "svamp session send <owner-session-id> '<the pipeline prompt>'"
 ```
+The generated yaml (`.svamp/workflows/nightly-newsletter.yaml`) is GitHub-Actions
+style (`on: schedule: - cron`, `jobs: run: steps: - run`). The daemon's ~20s cron
+tick fires it. Inspect with `svamp workflow list` / `svamp workflow run <name>` (manual).
 
-Why, and the gotchas (verified 2026-06-23):
-- **`svamp workflow … --on schedule --cron` does NOT fire** on the running daemon — its
-  schedules are not wired into the scheduler (only `svamp workflow run` executes the steps
-  manually). Don't rely on it for the nightly. The `svamp trigger`/routines scheduler **does**
-  fire reliably (incl. triggers added after the daemon started — confirmed firing every minute
-  on a test).
+History & gotchas (verified 2026-06-23/24):
+- **Workflows now fire** on the daemon (cron scheduler shipped in 0.2.176). The old
+  **`svamp trigger`/`routine` system was removed entirely** (#0048) — those commands now
+  error. If you find references to triggers, they're stale; use workflows.
 - **Never use `svamp session send .`** in an automation: `.` resolves via `SVAMP_SESSION_ID`,
-  which is absent in the daemon/workflow shell → `No session found matching: .`. Always target
-  a real session id, spawn a fresh agent, or use a trigger's `--loop`/`--message` action.
-- **Trigger actions enqueue to the owner session's message queue** (the daemon drains it when
-  that session is idle). So the `--session <owner>` must be a **live** session that becomes idle
-  around the schedule time; if it's permanently busy (e.g. mid-loop) or dead, the run won't drain.
-  Quote the deferred-date oracle in **single quotes** so `$(date)` evaluates at fire time, not when
-  you create the trigger.
-- **Deterministic alternative (no live session needed):** spawn a fresh one-shot agent —
-  `svamp session spawn claude -d /Users/weio/workspace/aicell.io --message "<pipeline prompt>"`.
-  This is what to use for an on-demand run or a manual test; it produces and commits independently.
-- Inspect runs: `svamp trigger list`; history in `~/.svamp/routines/<id>.json` (`last_runs`).
+  absent in the daemon/workflow shell → `No session found matching: .`. Target a real session
+  id, or spawn a fresh agent.
+- The step **enqueues to the owner session's message queue** (drained when that session is
+  idle), so `<owner-session-id>` must be a **live** session that goes idle near the schedule
+  time. **More robust alternative:** have the step spawn a fresh one-shot agent —
+  `svamp session spawn claude -d /Users/weio/workspace/aicell.io --message "<pipeline prompt>"`
+  — which produces and commits independently of any live session. Use this for on-demand runs
+  and manual tests too.
 
 ## Guardrails
 - Never invent facts or quotes; always link the real source you fetched.
