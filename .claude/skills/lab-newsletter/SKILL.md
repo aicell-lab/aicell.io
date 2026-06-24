@@ -77,8 +77,8 @@ Create `content/post/newsletter-<YYYY-MM-DD>/index.md`:
 ---
 title: "Lab Newsletter — <Month D, YYYY>"
 summary: "This week in AI for life science: <one-line teaser>."
-date: '<YYYY-MM-DD>T06:00:00Z'
-lastmod: '<YYYY-MM-DD>T06:00:00Z'
+date: '<NOW>'        # the ACTUAL run time in UTC, e.g. `date -u +%Y-%m-%dT%H:%M:%SZ`
+lastmod: '<NOW>'
 draft: false
 featured: false
 authors:
@@ -89,6 +89,11 @@ categories:
   - newsletter          # the dedicated category for these AI-generated digests
 ---
 ```
+> ⚠️ **Don't future-date the post.** Use the real current UTC time for `date`
+> (`date -u +%Y-%m-%dT%H:%M:%SZ`), not a fixed hour like `06:00Z`. Hugo (and CI,
+> which builds without `--buildFuture`) silently **skips future-dated content**, so
+> a post stamped `06:00Z` won't render or deploy if the nightly fires earlier
+> (the `0 5 * * *` cron is 05:00 *local*, ≈ 03:00 UTC).
 Body: a short intro line, then 3–6 bulleted items. Each item = a bold headline,
 2–4 sentences of plain-language digest, and an inline link to the source. House
 voice: warm, first-person-plural, lightly linked. End with a one-line "Why it
