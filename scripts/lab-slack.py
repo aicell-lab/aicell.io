@@ -191,7 +191,7 @@ def _parse_front_matter(path):
     return meta
 
 
-def announce(post_path, channel, base, dry_run=False, as_user=False):
+def announce(post_path, channel, base, dry_run=False, as_user=False, note=None):
     meta = _parse_front_matter(post_path)
     title = meta.get("title", "New post")
     summary = meta.get("summary", "")
@@ -203,9 +203,11 @@ def announce(post_path, channel, base, dry_run=False, as_user=False):
     ]
     if summary:
         blocks.append({"type": "section", "text": {"type": "mrkdwn", "text": summary}})
+    if note:  # member @-mentions / highlights, e.g. "<@U…> this BioEngine item is for you"
+        blocks.append({"type": "section", "text": {"type": "mrkdwn", "text": note}})
     blocks.append({"type": "context", "elements": [
         {"type": "mrkdwn", "text": f"aicell.io · <{url}|Read the full post →>"}]})
-    fallback = f"{title} — {url}"
+    fallback = f"{title} — {url}" + (f"\n{note}" if note else "")
     if dry_run:
         print(json.dumps({"channel": channel, "text": fallback, "blocks": blocks}, indent=2))
         return
@@ -394,6 +396,7 @@ def main():
     pa.add_argument("--base", default=DEFAULT_BASE)
     pa.add_argument("--dry-run", action="store_true")
     pa.add_argument("--as-user", action="store_true")
+    pa.add_argument("--note", help="extra mrkdwn line (e.g. member @-mentions '<@U…> …')")
 
     pf = sub.add_parser("files", help="download file attachments from a channel/DM")
     pf.add_argument("--channel", required=True)
@@ -442,7 +445,7 @@ def main():
         out = send(cid, text=a.text, as_user=a.as_user)
         print(f"DM sent to {a.to} (ts={out.get('ts')})")
     elif a.cmd == "announce":
-        announce(a.post, a.channel, a.base, dry_run=a.dry_run, as_user=a.as_user)
+        announce(a.post, a.channel, a.base, dry_run=a.dry_run, as_user=a.as_user, note=a.note)
     elif a.cmd == "files":
         download_files(a.channel, since_ts=a.since, out_dir=a.out, as_user=a.as_user)
     elif a.cmd == "poll":

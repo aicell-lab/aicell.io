@@ -30,30 +30,43 @@ exact post front matter and the build/commit/deploy flow.
 ## Pipeline (run top to bottom)
 
 ### 1. Research
-Cover **two buckets** every day, and aim for a mix of both in the final digest:
+The digest is **grounded in what the lab does, then extends toward where the field
+(and the lab's strategy) is heading.** Cover **two buckets** and mix them:
 
-**Bucket A — field news** (what's new in the broader area the lab cares about):
-- AI for cell & molecular biology, bioimage analysis, augmented microscopy,
-  whole-cell modeling, foundation models for biology, agentic AI for science.
-- Major venues, notable papers/preprints, big model or tool releases.
+**Bucket A — the horizon** (the future the lab is building toward):
+- The **virtual cell** and AI models of cells; **automated / autonomous scientific
+  discovery** ("AI scientists", self-driving labs); **AI agents** for science and
+  automation.
+- **Advanced AI tools & development** — notable new models, frameworks, agent
+  tooling, and capabilities (not just bio-specific) that the lab could build on.
+- **State-of-the-art cell biology & omics** — single-cell / spatial / multi-omics,
+  imaging, foundation models for biology.
+- The **bigger picture**: what AI + automation could mean for science and humanity —
+  problems we could *potentially solve with AI agents and automation*.
+- Treat this as a **strategy radar**: when something could reshape how the lab works
+  or what it should pursue, say so in one line.
 
-**Bucket B — the lab's own focus topics** (keep the digest grounded in what the
-lab actually works on, not generic AI news):
-- **Derive the focus list from the site itself**: read the current
-  `content/project/*/index.md` titles + summaries and the `content/authors/aicell-lab`
-  interests — these are the lab's live priorities. Today that includes ImJoy,
-  BioImage Model Zoo / bioimage.io, BioEngine, Hypha, agent-lens, HPA, the
-  self-driving microscope, reef imaging, and human/whole-cell modeling.
-- Track news touching those projects, their dependencies/competitors, the lab's
-  own papers and software releases, collaborators, and SciLifeLab / KTH / DDLS /
-  WASP announcements, plus relevant funding calls and events.
+**Bucket B — the lab's own focus** (keep it concrete and current):
+- **Derive the focus list from the site**: read `content/project/*/index.md`
+  titles+summaries and the `content/authors/aicell-lab` interests — the live priorities
+  (today: ImJoy, BioImage Model Zoo, BioEngine, Hypha, Agent-Lens, REEF, the
+  self-driving microscope, human/whole-cell modeling, Safe Colab, the Research Navigator).
+- Track news touching those, the lab's own releases/papers, collaborators, and
+  SciLifeLab / KTH / DDLS / WASP / Alpha Cell announcements, funding, and events.
 
-Re-deriving Bucket B from `content/project/*` each run means the digest
-automatically follows the lab's focus as the weekly refresh updates the projects.
+Re-deriving Bucket B from `content/project/*` each run keeps the digest following the
+lab's focus as projects evolve.
 
 Use `WebSearch`/`WebFetch` (or the `deep-research` skill in `prod`). Prefer
 primary sources (papers, official blogs, release notes). **Never fabricate facts,
 numbers, or quotes. Every claim must trace to a source you actually fetched.**
+
+**Tag relevant lab members.** When an item strongly matches someone's work, add a
+short friendly @-mention so they see it — using the Slack IDs + keyword map in
+`.claude/skills/lab-newsletter/lab-members.local.md` (gitignored). Tag sparingly
+(strong matches only, ≤1–2 people per item; skip for routine lab-own news). The tag
+is for the **Slack** announcement (`<@SLACK_ID>`); on the website post, name the
+person in plain text instead of a Slack mention.
 
 ### 2. Collect sources locally
 Save the raw source material into a dated folder so the digest is reproducible:
@@ -120,7 +133,11 @@ the theme is pinned in `go.mod`).
 Announce the published digest to the lab using the [`lab-slack`](../lab-slack/SKILL.md) CLI,
 which formats a card linking to the post:
 ```bash
-scripts/lab-slack.py announce --post content/post/newsletter-<date>/index.md   # → #general
+scripts/lab-slack.py announce --post content/post/newsletter-<date>/index.md \
+  --note "<@U06DE2TPG1W> the BioEngine item might interest you · <@U082CS9FMNE> lab-automation news below"   # → #general
+
+# Build the --note from lab-members.local.md: @-mention members whose keywords strongly
+# match items in today's digest (sparingly; skip if nothing is a strong match → omit --note).
 ```
 It loads the bot token from `~/.svamp/lab-slack.env` automatically. If Slack isn't
 configured on this machine the command errors — that's non-fatal for the run: still
