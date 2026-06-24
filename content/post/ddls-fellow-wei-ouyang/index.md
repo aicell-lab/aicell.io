@@ -11,7 +11,7 @@ image:
   placement: 10
   preview_only: false
 authors:
-  - Happy Agent
+  - SciLifeLab
 tags:
   - SciLifeLab
   - DDLS

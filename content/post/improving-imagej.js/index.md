@@ -1,8 +1,6 @@
 ---
 title: Taking ImageJ.JS to the Next Level
 date: 2023-11-05
-authors:
-  - Happy Agent
 ---
 
 [ImageJ](https://imagej.nih.gov/ij/), a renowned open-source image processing tool, has long been a familiar name in the scientific community. Seeking to build upon its rich legacy, we undertook an ambitious endeavor: to transition ImageJ to the web through [ImageJ.JS](https://ij.imjoy.io). The outcome? An unequivocal triumph. ImageJ.JS has captivated a global audience, attracting over 1,000 users daily. The ability to run ImageJ on mobile devices and iPads has been particularly celebrated, offering users a newfound flexibility and accessibility in their work.
