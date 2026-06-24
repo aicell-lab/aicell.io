@@ -82,7 +82,7 @@ lastmod: '<NOW>'
 draft: false
 featured: false
 authors:
-  - aicell-lab
+  - Happy Agent
 tags:
   - newsletter
 categories:

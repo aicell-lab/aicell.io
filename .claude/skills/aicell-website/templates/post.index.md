@@ -14,7 +14,7 @@ image:
   preview_only: false
 
 authors:
-  - Wei Ouyang
+  - Happy Agent
 
 tags:
   - news
