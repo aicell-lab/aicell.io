@@ -7,7 +7,7 @@ draft: false
 featured: true
 
 authors:
-  - Wei Ouyang
+  - Happy Agent
 tags:
   - new-member
   - AI

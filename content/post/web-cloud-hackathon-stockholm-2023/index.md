@@ -11,8 +11,7 @@ image:
   placement: 10
   preview_only: false
 authors:
-  - Caterina Fuster-Barceló
-  - Wei Ouyang
+  - Happy Agent
 tags:
   - bioengine
   - hackathon

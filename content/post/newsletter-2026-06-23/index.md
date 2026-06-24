@@ -6,7 +6,7 @@ lastmod: '2026-06-23T06:00:00Z'
 draft: false
 featured: false
 authors:
-  - aicell-lab
+  - Happy Agent
 tags:
   - newsletter
 categories:

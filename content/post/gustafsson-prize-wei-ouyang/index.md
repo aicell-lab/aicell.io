@@ -11,7 +11,7 @@ image:
   placement: 10
   preview_only: false
 authors:
-  - Wei Ouyang
+  - Happy Agent
 tags:
   - Wei Ouyang
   - prize

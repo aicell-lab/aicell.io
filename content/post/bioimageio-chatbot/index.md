@@ -1,6 +1,8 @@
 ---
 title: "Meet the 🦒BioImage.IO Chatbot: Your Personal Assistant for BioImage Analysis🤖🔬"
 date: 2023-10-24
+authors:
+  - Happy Agent
 ---
 
 Hey everyone, we're thrilled to announce the latest addition to the BioImage.IO platform: the BioImage.IO Chatbot! 🎉

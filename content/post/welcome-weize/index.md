@@ -6,7 +6,7 @@ lastmod: '2023-09-28T10:00:00Z'
 draft: false
 featured: true
 authors:
-  - Wei Ouyang
+  - Happy Agent
 tags:
   - new-member
   - software-development

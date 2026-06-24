@@ -10,7 +10,7 @@ image:
   focal_point: Smart
   preview_only: false
 authors:
-  - Wei Ouyang
+  - Happy Agent
 tags:
   - bioengine
   - AI

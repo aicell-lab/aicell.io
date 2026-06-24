@@ -1,6 +1,8 @@
 ---
 title: "BioImage.IO Chatbot Officially Published in Nature Methods! 🚀 A New Milestone in AI-Driven Bioimaging 🧠🔬"
 date: 2024-08-20
+authors:
+  - Happy Agent
 ---
 
 We’re thrilled to share some exciting news with the bioimaging community! The **BioImage.IO Chatbot** has just been published in *Nature Methods* as part of a special issue focused on advanced AI in biology—marking a significant achievement for our team and the broader field of computational bioimaging. 🎉
