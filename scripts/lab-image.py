@@ -33,16 +33,15 @@ MODELS = {
 }
 DEFAULT_MODEL = "flux"
 
-# ---- AICell Lab signature cover style (applied to every prompt unless --raw) ----
-# One consistent, recognizable look across all digests/posts: abstract science-art,
-# deep cobalt→indigo with luminous cyan, elegant flowing cell/network/data forms.
+# ---- AICell Lab signature style (applied to every prompt unless --raw) ----
+# Strictly FLAT two-tone: pure black + pure white, bold line-art, ONE orange accent.
 HOUSE_STYLE = (
-    "in the AICell Lab flat style — a clean, flat, minimalist illustration, strictly "
-    "black and white / monochrome with bold simple line-art and shapes, using a SINGLE "
-    "accent color of bright orange sparingly for the active highlight only. Modern editorial "
-    "vector look, generous white negative space, crisp and elegant. Absolutely NO gradients, "
-    "no soft shading, no glow, no 3D, no other colors besides black, white and one orange "
-    "accent. No text, no words, no letters, no logos, no watermark."
+    "in the AICell Lab flat style — a strictly FLAT 2D illustration, bold black-and-white "
+    "line art, very high contrast using ONLY pure black and pure white (absolutely no greys, "
+    "no gradients, no shading, no depth, no perspective, no 3D), with a SINGLE flat bright-orange "
+    "accent used sparingly for one active highlight. Clean modern minimalist vector / icon look, "
+    "simple bold flat shapes, crisp solid fills. No greyscale, no other colors. "
+    "No text, no words, no letters, no logos, no watermark."
 )
 
 
