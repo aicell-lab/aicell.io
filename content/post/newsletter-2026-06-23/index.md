@@ -1,5 +1,5 @@
 ---
-title: "Lab Newsletter — June 23, 2026"
+title: "Lab Newsletter — June 23, 2026: When Models Learn to Read Cells"
 summary: "This week in AI for life science: agent-readable bioimage AI, a Model Zoo glow-up, the 2026 DDLS postdoc decisions, and foundation models that read cells."
 date: '2026-06-23T06:00:00Z'
 lastmod: '2026-06-23T06:00:00Z'

@@ -1,5 +1,5 @@
 ---
-title: "Lab Newsletter — June 24, 2026"
+title: "Lab Newsletter — June 24, 2026: Thinking Microscopes & Self-Imagining Cells"
 summary: "Today in AI for life science: an AI agent that drives ImageJ, the case for 'thinking microscopes' that run their own experiments, and a foundation model that imagines how cells morph under perturbation."
 date: '2026-06-24T03:00:00Z'
 lastmod: '2026-06-24T03:00:00Z'

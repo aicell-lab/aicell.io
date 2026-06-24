@@ -102,7 +102,7 @@ keep `sources.md` small and commit it with the post if useful for provenance.
 Create `content/post/newsletter-<YYYY-MM-DD>/index.md`:
 ```yaml
 ---
-title: "Lab Newsletter — <Month D, YYYY>"
+title: "Lab Newsletter — <Month D, YYYY>: <Short Descriptive Headline>"
 summary: "This week in AI for life science: <one-line teaser>."
 date: '<NOW>'        # the ACTUAL run time in UTC, e.g. `date -u +%Y-%m-%dT%H:%M:%SZ`
 lastmod: '<NOW>'
@@ -116,6 +116,10 @@ categories:
   - newsletter          # the dedicated category for these AI-generated digests
 ---
 ```
+> **Descriptive title:** keep the recognizable `Lab Newsletter — <Month D, YYYY>` prefix,
+> then append `: <Short Descriptive Headline>` that captures the day's lead items (e.g.
+> *"Thinking Microscopes & Self-Imagining Cells"*). This makes the post list and search
+> results read like real stories instead of bare dates. Keep the headline punchy (≤ ~7 words).
 > ⚠️ **Don't future-date the post.** Use the real current UTC time for `date`
 > (`date -u +%Y-%m-%dT%H:%M:%SZ`), not a fixed hour like `06:00Z`. Hugo (and CI,
 > which builds without `--buildFuture`) silently **skips future-dated content**, so
