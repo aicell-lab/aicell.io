@@ -2,6 +2,7 @@
 title: Autonomous Research Agents — Discovery from Minimal AI Loops
 summary: Can genuine scientific discovery emerge from radically simple AI agent loops? We explore autonomous research agents built from minimal ingredients.
 tags:
+  - active
   - AI
   - agents
   - autonomous-science

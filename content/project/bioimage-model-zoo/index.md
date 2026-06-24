@@ -2,6 +2,7 @@
 title: BioImage Model Zoo — FAIR AI Models for Microscopy
 summary: A community-driven, fully open repository where standardized deep-learning models can be shared, tested in the browser, and deployed across imaging tools.
 tags:
+  - active
   - AI
   - deep learning
   - models

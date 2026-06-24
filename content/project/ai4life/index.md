@@ -2,6 +2,7 @@
 title: AI4Life - AI Models for BioImaging (completed)
 summary: 'Completed Horizon Europe project (2022–2025) that built open AI infrastructure for bioimaging — its services live on through the BioImage Model Zoo.'
 tags:
+  - active
   - deep learning
   - AI
   - models

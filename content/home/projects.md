@@ -24,13 +24,14 @@ content:
   # To show all items, set `tag` to "*".
   # To filter by a specific tag, set `tag` to an existing tag name.
   # To remove the toolbar, delete the entire `filter_button` block.
-  # filter_button:
-  #   - name: All
-  #     tag: '*'
-  #   - name: Deep Learning
-  #     tag: Deep Learning
-  #   - name: Other
-  #     tag: Demo
+  # "Active" (default) shows current projects; "All" shows the full portfolio including
+  # archived ones (e.g. ImJoy). Archive a project by removing its `active` tag in
+  # content/project/<slug>/index.md; add the tag to bring it back into Active.
+  filter_button:
+    - name: Active
+      tag: active
+    - name: All
+      tag: '*'
 
 design:
   # Choose how many columns the section has. Valid values: '1' or '2'.

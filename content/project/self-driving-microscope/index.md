@@ -2,6 +2,7 @@
 title: Self-driving Microscope
 summary: Building an AI-powered self-driving microscopy system for studying cellular response
 tags:
+  - active
   - deep learning
   - AI
   - microscopy

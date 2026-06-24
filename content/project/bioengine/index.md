@@ -2,6 +2,7 @@
 title: BioEngine - Cloud-Powered AI for Bioimage Analysis
 summary: An agent-first platform that deploys bioimage AI models as autoscaling, agent-readable interfaces on cloud or HPC — and powers the "test run" feature on the BioImage Model Zoo. Described in a 2026 preprint.
 tags:
+  - active
   - deep learning
   - AI
   - models

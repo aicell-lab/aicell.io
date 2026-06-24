@@ -2,6 +2,7 @@
 title: Hypha — Distributed Computing for AI-Powered Science
 summary: Open-source framework that connects AI models, data, and instruments into shared workspaces — the backbone of the lab's platforms.
 tags:
+  - active
   - AI
   - distributed computing
   - agents

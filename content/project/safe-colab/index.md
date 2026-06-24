@@ -2,6 +2,7 @@
 title: Safe Colab — AI Agents for Sensitive Data Collaboration
 summary: A privacy-preserving platform where AI assistants let researchers collaborate on sensitive clinical and biomedical data without exposing the raw records — enabling discovery and privacy at once.
 tags:
+  - active
   - AI
   - agents
   - data collaboration

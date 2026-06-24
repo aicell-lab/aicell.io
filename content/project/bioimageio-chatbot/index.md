@@ -2,6 +2,7 @@
 title: BioImage.IO Chatbot — Your AI Assistant for Bioimage Analysis
 summary: A community-driven, AI-powered assistant that helps researchers navigate bioimaging tools, databases and services — and autonomously runs analysis tasks from plain-language prompts. Published in Nature Methods.
 tags:
+  - active
   - AI
   - agents
   - LLM

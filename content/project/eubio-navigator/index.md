@@ -2,6 +2,7 @@
 title: Euro-BioImaging Research Navigator — AI for Access
 summary: An AI assistant that helps scientists find the right imaging technologies and facilities across the Euro-BioImaging network from plain-language questions.
 tags:
+  - active
   - AI
   - agents
   - LLM

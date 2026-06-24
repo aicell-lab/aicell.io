@@ -2,6 +2,7 @@
 title: Reef - Automated Imaging Farm
 summary: Building AI-powered automated imaging farm for massive image data generation
 tags:
+  - active
   - deep learning
   - AI
   - microscopy

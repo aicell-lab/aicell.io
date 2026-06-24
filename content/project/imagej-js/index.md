@@ -2,6 +2,7 @@
 title: ImageJ.JS — ImageJ in Your Browser
 summary: The classic ImageJ, reimagined to run entirely in the web browser — no installation, full plugin support, and AI assistance.
 tags:
+  - active
   - web computing
   - image analysis
   - WebAssembly

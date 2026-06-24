@@ -2,6 +2,7 @@
 title: Agent-Lens — AI Agents for Smart Microscopy
 summary: Control microscopes in plain language — LLM agents that turn scientific intent into imaging, segmentation, and analysis.
 tags:
+  - active
   - AI
   - agents
   - microscopy
