@@ -28,13 +28,16 @@ Examples:
 import argparse
 import json
 import os
+import subprocess
 import sys
+import time
 import urllib.parse
 import urllib.request
 
 API = "https://slack.com/api/"
 DEFAULT_CHANNEL = "#general"
 DEFAULT_BASE = "https://aicell.io"
+POLL_STATE = os.path.expanduser("~/.svamp/lab-slack-poll.json")
 # Secrets files checked in order (first existing wins) for token env vars.
 ENV_FILES = [
     os.path.expanduser("~/.svamp/lab-slack.env"),
@@ -74,8 +77,12 @@ def _reads_as_user():
     return bool(os.environ.get("SLACK_USER_TOKEN"))
 
 
-def _call(method, params=None, json_body=None, as_user=False):
-    """Call a Slack Web API method. GET for reads (params), POST JSON for writes."""
+def _call(method, params=None, json_body=None, as_user=False, soft=False):
+    """Call a Slack Web API method. GET for reads (params), POST JSON for writes.
+
+    soft=True returns the raw (possibly not-ok) response instead of exiting — used by
+    poll() so one missing scope doesn't abort the whole sweep.
+    """
     tok = _token(as_user=as_user)
     headers = {"Authorization": f"Bearer {tok}"}
     if json_body is not None:
@@ -89,8 +96,10 @@ def _call(method, params=None, json_body=None, as_user=False):
         with urllib.request.urlopen(req, timeout=30) as resp:
             out = json.loads(resp.read().decode())
     except urllib.error.URLError as e:
+        if soft:
+            return {"ok": False, "error": f"network:{e}"}
         sys.exit(f"error: network failure calling {method}: {e}")
-    if not out.get("ok"):
+    if not out.get("ok") and not soft:
         sys.exit(f"error: Slack API {method} failed: {out.get('error')} {out.get('response_metadata','')}")
     return out
 
@@ -205,6 +214,122 @@ def announce(post_path, channel, base, dry_run=False, as_user=False):
     print(f"posted to {channel} (ts={out.get('ts')})")
 
 
+# ---- poll (receive) --------------------------------------------------------
+
+_USER_CACHE = {}
+
+
+def _user_label(uid):
+    if not uid:
+        return "someone"
+    if uid in _USER_CACHE:
+        return _USER_CACHE[uid]
+    out = _call("users.info", {"user": uid}, soft=True)
+    prof = (out.get("user") or {}).get("profile", {}) if out.get("ok") else {}
+    label = prof.get("display_name") or prof.get("real_name") or uid
+    _USER_CACHE[uid] = label
+    return label
+
+
+def _respond_spawn(msgs, repo="/Users/weio/workspace/aicell.io"):
+    """Spawn a fresh Happy Agent responder per inbound message (robust 'respond in time')."""
+    for m in msgs:
+        where = "a direct message" if m["kind"] == "dm" else f"#{m['channel_name']}"
+        thread = f" --thread {m['ts']}" if m["kind"] == "mention" else ""
+        prompt = (
+            f"You are Happy Agent, the AICell Lab's AI agent. A lab member ({m['user_label']}) "
+            f"sent you this Slack message in {where}:\n\n\"{m['text']}\"\n\n"
+            f"Respond helpfully, concisely, and on-brand. Reply by running:\n"
+            f"  python3 {repo}/scripts/lab-slack.py post --channel {m['channel']}{thread} --text \"<your reply>\"\n"
+            f"You can use the website repo and the lab-slack/aicell-website skills to answer. "
+            f"If the message isn't actually addressed to you or needs a human, reply briefly saying so "
+            f"(or do nothing). When done, stop."
+        )
+        try:
+            subprocess.run(["svamp", "session", "spawn", "claude", "-d", repo, "--message", prompt],
+                           timeout=60, capture_output=True, text=True)
+        except Exception as e:
+            print(f"warn: could not spawn responder: {e}", file=sys.stderr)
+
+
+def poll(state_path=POLL_STATE, notify_session=None, respond=False, mark=True, lookback_hours=12, as_json=False):
+    """Find new DMs to the bot and @mentions of the bot since the last poll."""
+    bot_id = _call("auth.test")["user_id"]
+    try:
+        state = json.load(open(state_path)) if os.path.isfile(state_path) else {}
+    except Exception:
+        state = {}
+    floor = time.time() - lookback_hours * 3600
+    new = []
+
+    def scan(cid, kind, channel_name=None, mention_only=False):
+        last = float(state.get(cid, 0)) or floor
+        h = _call("conversations.history", {"channel": cid, "oldest": str(last), "limit": 50}, soft=True)
+        if not h.get("ok"):
+            return
+        newest = float(state.get(cid, 0))
+        for m in h.get("messages", []):
+            ts = float(m["ts"]); newest = max(newest, ts)
+            # skip the agent's own messages and channel-join/system events; keep human msgs
+            if ts <= last or m.get("user") == bot_id or m.get("subtype"):
+                continue
+            text = m.get("text", "")
+            if mention_only and f"<@{bot_id}>" not in text:
+                continue
+            new.append({"kind": kind, "channel": cid, "channel_name": channel_name,
+                        "ts": m["ts"], "user": m.get("user"), "user_label": _user_label(m.get("user")),
+                        "text": text})
+        state[cid] = newest
+
+    # 1) Direct messages to the bot
+    ims = _call("conversations.list", {"types": "im"}, soft=True)
+    for im in ims.get("channels", []) if ims.get("ok") else []:
+        scan(im["id"], "dm")
+    # 2) @mentions in channels the bot belongs to
+    chs = _call("conversations.list", {"types": "public_channel,private_channel",
+                                       "exclude_archived": "true"}, soft=True)
+    for ch in chs.get("channels", []) if chs.get("ok") else []:
+        if ch.get("is_member"):
+            scan(ch["id"], "mention", channel_name=ch.get("name"), mention_only=True)
+
+    new.sort(key=lambda x: float(x["ts"]))
+    if mark:
+        os.makedirs(os.path.dirname(state_path), exist_ok=True)
+        json.dump(state, open(state_path, "w"))
+
+    if notify_session and new:
+        _notify(notify_session, new)
+    if respond and new:
+        _respond_spawn(new)
+    if as_json:
+        print(json.dumps(new, indent=2))
+    else:
+        for m in new:
+            where = "DM" if m["kind"] == "dm" else f"#{m['channel_name']}"
+            print(f"[{where}] {m['user_label']}: {m['text']}  (channel={m['channel']} ts={m['ts']})")
+    return new
+
+
+def _notify(session, msgs):
+    """Forward new inbound Slack messages to a Svamp session so the agent can reply."""
+    lines = []
+    for m in msgs:
+        where = "a DM" if m["kind"] == "dm" else f"#{m['channel_name']}"
+        lines.append(f"- From {m['user_label']} in {where} (channel={m['channel']}, thread_ts={m['ts']}):\n  \"{m['text']}\"")
+    body = (
+        "📨 New Slack message(s) for Happy Agent — please read and respond in time.\n\n"
+        + "\n".join(lines)
+        + "\n\nReply with the lab-slack CLI: for a DM use `scripts/lab-slack.py post --channel <channel> --text \"…\"`; "
+          "for a channel @mention reply in-thread with `--channel <channel> --thread <thread_ts>`. "
+          "Be helpful, concise, and on-brand as Happy Agent. Ignore anything not actually addressed to you."
+    )
+    try:
+        subprocess.run(["svamp", "session", "send", session, body], timeout=30,
+                       capture_output=True, text=True)
+    except Exception as e:
+        print(f"warn: could not notify session {session}: {e}", file=sys.stderr)
+
+
 # ---- CLI -------------------------------------------------------------------
 
 def main():
@@ -232,6 +357,13 @@ def main():
     pa.add_argument("--base", default=DEFAULT_BASE)
     pa.add_argument("--dry-run", action="store_true")
     pa.add_argument("--as-user", action="store_true")
+
+    pl = sub.add_parser("poll", help="discover new DMs + @mentions since last poll")
+    pl.add_argument("--notify-session", help="forward new messages to this Svamp session id")
+    pl.add_argument("--respond", action="store_true", help="spawn a fresh Happy Agent to reply to each new message")
+    pl.add_argument("--no-mark", action="store_true", help="don't advance the seen-cursor (dry peek)")
+    pl.add_argument("--lookback-hours", type=float, default=12)
+    pl.add_argument("--json", action="store_true")
 
     a = ap.parse_args()
 
@@ -268,6 +400,9 @@ def main():
         print(f"DM sent to {a.to} (ts={out.get('ts')})")
     elif a.cmd == "announce":
         announce(a.post, a.channel, a.base, dry_run=a.dry_run, as_user=a.as_user)
+    elif a.cmd == "poll":
+        poll(notify_session=a.notify_session, respond=a.respond, mark=not a.no_mark,
+             lookback_hours=a.lookback_hours, as_json=a.json)
 
 
 if __name__ == "__main__":

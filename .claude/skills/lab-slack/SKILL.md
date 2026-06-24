@@ -50,6 +50,32 @@ scripts/lab-slack.py announce --post content/post/<slug>/index.md   # → #gener
 scripts/lab-slack.py announce --post content/post/<slug>/index.md --dry-run   # preview JSON
 ```
 
+## Receiving — discover & respond to DMs and @mentions
+
+The bot can **receive** too. `poll` reads new direct messages to the bot and new
+`@happyagent` mentions in channels it belongs to, since the last check (cursor stored
+in `~/.svamp/lab-slack-poll.json`), and can act on them:
+
+```bash
+scripts/lab-slack.py poll                       # print new inbound messages (advances cursor)
+scripts/lab-slack.py poll --no-mark --json      # peek without advancing the cursor
+scripts/lab-slack.py poll --respond             # spawn a fresh Happy Agent to reply to each
+scripts/lab-slack.py poll --notify-session <id> # forward new messages to a live session instead
+```
+
+**Background loop (respond in time).** A `svamp workflow` named **`slack-watch`** runs
+`poll --respond` **every 2 minutes**, so when someone DMs Happy Agent or `@`-mentions it,
+a fresh Happy Agent is spawned to read and reply — independent of any one session being
+awake. Manage it with `svamp workflow show slack-watch` / `svamp workflow run slack-watch`.
+
+> How it works: there's no public webhook — this is **pull-based polling** via the Slack
+> Web API (`conversations.history` over the bot's DMs + member channels), deduped by a
+> per-channel timestamp cursor. The bot has the needed scopes (`im:history`,
+> `channels:history`, `app_mentions:read`). Latency ≈ the poll interval.
+
+A spawned responder replies with:
+`scripts/lab-slack.py post --channel <channel> [--thread <thread_ts>] --text "…"`.
+
 ## Primary use — announce new blog posts
 
 Whenever a new post is published (especially the **daily newsletter digest**),
