@@ -41,4 +41,6 @@ publication_types:
 - '2'
 abstract: ''
 publication: '*Nature Communications*'
+url_pdf: 'https://doi.org/10.1038/s41467-018-06868-w'
+doi: '10.1038/s41467-018-06868-w'
 ---

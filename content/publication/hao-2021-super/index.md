@@ -39,4 +39,5 @@ publication_types:
 - '2'
 abstract: ''
 publication: '*Genome biology*'
+url_pdf: 'https://scholar.google.com/scholar?q=Super-resolution%20visualization%20and%20modeling%20of%20human%20chromosomal%20regions%20reveals'
 ---

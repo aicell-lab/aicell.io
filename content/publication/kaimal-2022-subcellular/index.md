@@ -43,4 +43,5 @@ publication_types:
 - '2'
 abstract: ''
 publication: ''
+url_pdf: 'https://scholar.google.com/scholar?q=Subcellular%20mapping%20of%20the%20protein%20landscape%20of%20SARS-CoV-2%20infected%20cells%20for'
 ---

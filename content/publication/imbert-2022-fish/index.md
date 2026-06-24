@@ -39,4 +39,6 @@ publication_types:
 - '2'
 abstract: ''
 publication: '*Rna*'
+url_pdf: 'https://doi.org/10.1261/rna.079073.121'
+doi: '10.1261/rna.079073.121'
 ---

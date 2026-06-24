@@ -40,4 +40,5 @@ publication_types:
 - '2'
 abstract: ''
 publication: '*bioRxiv*'
+url_pdf: 'https://scholar.google.com/scholar?q=Uncovering%20molecular%20grammars%20of%20intrinsically%20disordered%20regions%20that%20organize'
 ---

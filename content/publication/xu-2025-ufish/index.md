@@ -42,5 +42,6 @@ publication_types:
 - '2'
 abstract: ''
 publication: '*Genome Biology*'
+url_pdf: 'https://doi.org/10.1186/s13059-025-03736-x'
 doi: '10.1186/s13059-025-03736-x'
 ---

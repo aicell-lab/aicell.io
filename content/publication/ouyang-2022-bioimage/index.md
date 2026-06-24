@@ -43,4 +43,6 @@ publication_types:
 - '2'
 abstract: ''
 publication: '*bioRxiv*'
+url_pdf: 'https://doi.org/10.1101/2022.06.07.495102'
+doi: '10.1101/2022.06.07.495102'
 ---

@@ -36,4 +36,5 @@ publication_types:
 - '2'
 abstract: ''
 publication: '*arXiv preprint arXiv:2310.18351*'
+url_pdf: 'https://scholar.google.com/scholar?q=BioImage.%20IO%20Chatbot%3A%20A%20Personalized%20Assistant%20for%20BioImage%20Analysis%20Augmented'
 ---

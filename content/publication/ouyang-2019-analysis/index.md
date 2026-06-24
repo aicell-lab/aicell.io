@@ -42,4 +42,5 @@ publication_types:
 - '2'
 abstract: ''
 publication: '*Nature methods*'
+url_pdf: 'https://scholar.google.com/scholar?q=Analysis%20of%20the%20human%20protein%20atlas%20image%20classification%20competition'
 ---

@@ -39,4 +39,6 @@ publication_types:
 - '2'
 abstract: ''
 publication: '*IEEE journal of biomedical and health informatics*'
+url_pdf: 'https://doi.org/10.1109/jbhi.2017.2776351'
+doi: '10.1109/jbhi.2017.2776351'
 ---

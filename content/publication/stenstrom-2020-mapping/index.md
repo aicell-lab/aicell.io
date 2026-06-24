@@ -42,4 +42,5 @@ publication_types:
 - '2'
 abstract: ''
 publication: '*Molecular systems biology*'
+url_pdf: 'https://scholar.google.com/scholar?q=Mapping%20the%20nucleolar%20proteome%20reveals%20a%20spatiotemporal%20organization%20related'
 ---

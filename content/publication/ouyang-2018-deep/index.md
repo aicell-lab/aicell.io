@@ -36,4 +36,6 @@ publication_types:
 - '2'
 abstract: ''
 publication: '*Nature biotechnology*'
+url_pdf: 'https://doi.org/10.1038/nbt.4106'
+doi: '10.1038/nbt.4106'
 ---

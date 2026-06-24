@@ -39,4 +39,6 @@ publication_types:
 - '2'
 abstract: ''
 publication: '*Advanced biology*'
+url_pdf: 'https://doi.org/10.1002/adbi.202101063'
+doi: '10.1002/adbi.202101063'
 ---

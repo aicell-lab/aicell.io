@@ -33,4 +33,6 @@ publication_types:
 - '2'
 abstract: ''
 publication: '*Current Opinion in Systems Biology*'
+url_pdf: 'https://doi.org/10.1016/j.coisb.2017.07.011'
+doi: '10.1016/j.coisb.2017.07.011'
 ---

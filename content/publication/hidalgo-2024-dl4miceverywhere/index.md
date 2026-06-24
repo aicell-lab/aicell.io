@@ -49,5 +49,6 @@ publication_types:
 - '2'
 abstract: ''
 publication: '*Nature Methods*'
+url_pdf: 'https://doi.org/10.1038/s41592-024-02295-6'
 doi: '10.1038/s41592-024-02295-6'
 ---

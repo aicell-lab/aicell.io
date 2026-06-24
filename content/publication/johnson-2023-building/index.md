@@ -41,4 +41,6 @@ publication_types:
 - '2'
 abstract: ''
 publication: '*Biophysical Journal*'
+url_pdf: 'https://doi.org/10.1016/j.bpj.2023.04.006'
+doi: '10.1016/j.bpj.2023.04.006'
 ---

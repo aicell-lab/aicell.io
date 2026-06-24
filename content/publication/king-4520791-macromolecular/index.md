@@ -42,4 +42,6 @@ publication_types:
 - '2'
 abstract: ''
 publication: '*Available at SSRN 4520791*'
+url_pdf: 'https://doi.org/10.2139/ssrn.4520791'
+doi: '10.2139/ssrn.4520791'
 ---

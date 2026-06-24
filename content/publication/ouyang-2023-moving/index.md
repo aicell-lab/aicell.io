@@ -35,4 +35,6 @@ publication_types:
 - '2'
 abstract: ''
 publication: '*Frontiers in Bioinformatics*'
+url_pdf: 'https://doi.org/10.3389/fbinf.2023.1233748'
+doi: '10.3389/fbinf.2023.1233748'
 ---

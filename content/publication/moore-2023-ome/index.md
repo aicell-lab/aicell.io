@@ -43,4 +43,5 @@ publication_types:
 - '2'
 abstract: ''
 publication: '*bioRxiv*'
+url_pdf: 'https://scholar.google.com/scholar?q=OME-Zarr%3A%20a%20cloud-optimized%20bioimaging%20file%20format%20with%20international%20community'
 ---

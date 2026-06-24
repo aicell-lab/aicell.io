@@ -35,4 +35,5 @@ publication_types:
 - '0'
 abstract: ''
 publication: ''
+url_pdf: 'https://scholar.google.com/scholar?q=Method%2C%20device%2C%20and%20computer%20program%20for%20improving%20the%20reconstruction%20of%20dense'
 ---

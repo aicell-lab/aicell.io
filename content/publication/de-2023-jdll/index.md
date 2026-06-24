@@ -40,4 +40,6 @@ publication_types:
 - '2'
 abstract: ''
 publication: '*arXiv preprint arXiv:2306.04796*'
+url_pdf: 'https://doi.org/10.1038/s41592-023-02129-x'
+doi: '10.1038/s41592-023-02129-x'
 ---

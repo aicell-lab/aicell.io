@@ -35,4 +35,6 @@ publication_types:
 - '2'
 abstract: ''
 publication: '*F1000Research*'
+url_pdf: 'https://doi.org/10.12688/f1000research.50798.1'
+doi: '10.12688/f1000research.50798.1'
 ---

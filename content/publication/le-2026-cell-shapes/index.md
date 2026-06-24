@@ -35,5 +35,6 @@ publication_types:
 - '2'
 abstract: ''
 publication: '*Cell Systems*'
+url_pdf: 'https://doi.org/10.1016/j.cels.2026.101589'
 doi: '10.1016/j.cels.2026.101589'
 ---

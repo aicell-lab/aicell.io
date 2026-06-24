@@ -42,4 +42,6 @@ publication_types:
 - '2'
 abstract: ''
 publication: '*Nature*'
+url_pdf: 'https://doi.org/10.1038/s41586-021-04115-9'
+doi: '10.1038/s41586-021-04115-9'
 ---
