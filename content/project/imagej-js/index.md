@@ -33,6 +33,6 @@ url_video: ''
 slides: ''
 ---
 
-[ImageJ.JS](https://ij.aicell.io) brings **ImageJ — one of the most widely used scientific image-analysis tools — into the web browser**. Powered by WebAssembly (via CheerpJ), it runs the full Java application with no installation: open it from any link, keep plugin support, work directly with local files, and get AI assistance for analysis. It is used daily by a global community of researchers and educators.
+[ImageJ.JS](https://ij.aicell.io) brings **ImageJ — one of the most widely used scientific image-analysis tools — into the web browser**. Powered by WebAssembly (via CheerpJ), it runs the full Java application with no installation: open it from any link, keep plugin support, work directly with local files, and get AI assistance for analysis. It serves **1,000–1,500 unique users every day** — researchers and educators worldwide.
 
 By removing the installation barrier, ImageJ.JS makes image analysis instantly shareable — ideal for teaching, reproducible workflows, and embedding interactive analysis in websites and notebooks. It integrates with the lab's broader web-computing ecosystem around [ImJoy](/project/imjoy) and [Hypha](/project/hypha).
