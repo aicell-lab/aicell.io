@@ -80,3 +80,20 @@
   });
 </script>
 {{ end }}
+<!-- Back-compat redirect: the "People" section was renamed to "Team" (#people → #team).
+     Keeps old saved links / bookmarks working. -->
+<script>
+  (function () {
+    function fixPeopleHash() {
+      if (location.hash === '#people') {
+        if (history.replaceState) history.replaceState(null, '', '#team');
+        else location.hash = '#team';
+        var el = document.getElementById('team');
+        if (el) el.scrollIntoView();
+      }
+    }
+    window.addEventListener('hashchange', fixPeopleHash);
+    document.addEventListener('DOMContentLoaded', fixPeopleHash);
+    fixPeopleHash();
+  })();
+</script>
