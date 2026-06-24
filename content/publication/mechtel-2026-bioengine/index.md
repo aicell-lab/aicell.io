@@ -1,14 +1,15 @@
 ---
 # Documentation: https://wowchemy.com/docs/managing-content/
 
-title: 'BioEngine: scalable execution and adaptation of bioimage AI through agent-readable services'
+title: 'BioEngine: scalable execution and adaptation of bioimage AI through agent-readable interfaces'
 subtitle: ''
-summary: 'A distributed platform for deploying and adapting bioimage AI models as agent-readable services, with autoscaling and FAIR data access — the engine behind the BioImage Model Zoo test runs.'
+summary: 'A distributed platform for deploying and adapting bioimage AI models as agent-readable interfaces, with autoscaling and FAIR data access — the engine behind the BioImage Model Zoo test runs.'
 authors:
 - Nils Mechtel
-- Hugo Dettner Kallander
+- Hugo Dettner Källander
 - Songtao Cheng
-- H. L. Zhang
+- Hanzhao Zhang
+- AI4Life Horizon Europe Program Consortium
 - Wei Ouyang
 tags:
 - AI
