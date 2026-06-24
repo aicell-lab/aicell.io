@@ -151,6 +151,21 @@ Publications are generated from BibTeX — don't hand-write the per-paper folder
    This regenerates folders under `content/publication/`.
 3. Review the diff — `academic` can overwrite manual tweaks (abstracts, images,
    `featured: true`). Keep intentional edits; don't blindly commit the whole regen.
+4. **Preprint guard (confidentiality — do this on every refresh).** Do **not**
+   auto-publish preprints blindly. For any *new* entry that is a preprint
+   (`publication: '*bioRxiv*'`/`'*arXiv*'`, `publication_types: ['3']`):
+   - **Verify it is genuinely public**: resolve the `doi:` and confirm the title it
+     returns matches the lab's paper. DOIs can be conflated — a near-identical DOI may
+     point to a *different* paper. If you cannot independently verify (e.g. the host
+     blocks fetching), treat it as unverified.
+   - **When unsure, confirm before publishing** with the responsible project agent
+     (`svamp session list`) or the corresponding author (Wei Ouyang). Never publish an
+     entry that cites an in-preparation/unpublished manuscript.
+   - **Flag, don't auto-commit** uncertain preprints — hold them out of the commit and
+     surface them for review, rather than letting an unverified citation go live.
+   - *Precedent:* an auto-imported BioEngine preprint (`mechtel-2026-bioengine`) was
+     briefly pulled when its DOI couldn't be verified, then restored once the PI
+     confirmed it was public. Verify, don't assume — in either direction.
 
 ## 8. Preview locally
 
