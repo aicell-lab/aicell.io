@@ -6,7 +6,7 @@ superuser: false
 weight: 99
 
 # Role/position
-role: 'AI Lab Agent'
+role: 'Lab Assistant'
 
 # People-section placement (exact case): PI | lab members | Alumni
 user_groups:
