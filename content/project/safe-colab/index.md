@@ -1,6 +1,6 @@
 ---
 title: Safe Colab — AI Agents for Sensitive Data Collaboration
-summary: Making collaboration on sensitive life-science data trustworthy — using AI agents to help people work together on protected data without compromising privacy or security.
+summary: A privacy-preserving platform where AI assistants let researchers collaborate on sensitive clinical and biomedical data without exposing the raw records — enabling discovery and privacy at once.
 tags:
   - AI
   - agents
@@ -26,17 +26,17 @@ url_video: ''
 slides: ''
 ---
 
-Some of the most valuable data in life science — clinical data, patient samples,
-proprietary datasets — is also the most sensitive. Collaborating on it is essential
-for discovery, but doing so *safely*, with privacy and security intact, is genuinely
-hard. **Safe Colab** is the AICell Lab's effort to make that collaboration
-trustworthy: we use **AI agents to help researchers and institutions work together
-on sensitive data while keeping it protected and under their control**.
+**Safe Colab** is a privacy-preserving platform that lets life-science researchers
+collaborate on sensitive datasets — such as clinical and biomedical data — **without
+exposing the underlying raw records**. AI assistants help collaborators analyze the
+data *in place*, so scientific insights can be shared while the confidential data
+stays protected with its owner.
 
-Our goal is to lower the barrier to *responsible* data collaboration — so the science
-that depends on sensitive data can move faster, without compromising on privacy,
-security, or trust. We see it as part of the lab's broader mission: building AI that
-serves not only the lab but society — **AI for life science, and beyond**.
+This matters because privacy regulations rightly restrict sharing sensitive health
+data, yet collaboration drives discovery. Safe Colab aims to enable **both at once:
+faster research and stronger protection of individuals' privacy**. We see it as part
+of the lab's broader mission — building AI that serves not only the lab but society:
+**AI for life science, and beyond**.
 
 Safe Colab is developed together with collaborators at the **KTH Royal Hacking Lab**,
 whose security expertise helps hold the work to a high standard.
