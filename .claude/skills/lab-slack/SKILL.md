@@ -64,9 +64,12 @@ scripts/lab-slack.py poll --notify-session <id> # forward new messages to a live
 ```
 
 **Background loop (respond in time).** A `svamp workflow` named **`slack-watch`** runs
-`poll --respond` **every 2 minutes**, so when someone DMs Happy Agent or `@`-mentions it,
-a fresh Happy Agent is spawned to read and reply — independent of any one session being
-awake. Manage it with `svamp workflow show slack-watch` / `svamp workflow run slack-watch`.
+`poll --notify-session high-frog-dzjybt` **every 2 minutes**, forwarding any new DM or
+`@happyagent` mention into the **main Happy Agent session** (`high-frog-dzjybt`), which
+reads it and replies — everything is handled in that one session (no spawning extra
+sessions). Manage it with `svamp workflow show slack-watch` / `svamp workflow run slack-watch`.
+(`poll --respond`, which spawns a fresh responder per message, exists as an alternative but
+is **not** used here — keep handling in the single main session.)
 
 > How it works: there's no public webhook — this is **pull-based polling** via the Slack
 > Web API (`conversations.history` over the bot's DMs + member channels), deduped by a
