@@ -276,9 +276,11 @@ def poll(state_path=POLL_STATE, notify_session=None, respond=False, mark=True, l
             text = m.get("text", "")
             if mention_only and f"<@{bot_id}>" not in text:
                 continue
+            files = [{"id": f.get("id"), "name": f.get("name"), "mimetype": f.get("mimetype"),
+                      "url_private": f.get("url_private")} for f in m.get("files", [])]
             new.append({"kind": kind, "channel": cid, "channel_name": channel_name,
                         "ts": m["ts"], "user": m.get("user"), "user_label": _user_label(m.get("user")),
-                        "text": text})
+                        "text": text, "files": files})
         state[cid] = newest
 
     # 1) Direct messages to the bot
@@ -310,12 +312,47 @@ def poll(state_path=POLL_STATE, notify_session=None, respond=False, mark=True, l
     return new
 
 
+def download_files(channel, since_ts=0.0, out_dir="data/slack-files", as_user=False):
+    """Download file attachments from a channel's messages since `since_ts` (bot token)."""
+    os.makedirs(out_dir, exist_ok=True)
+    tok = _token(as_user=as_user)
+    h = _call("conversations.history", {"channel": channel, "oldest": str(since_ts), "limit": 100}, soft=True)
+    saved = []
+    for m in h.get("messages", []):
+        for f in m.get("files", []):
+            url = f.get("url_private_download") or f.get("url_private")
+            if not url:
+                continue
+            name = f"{f.get('id')}_{f.get('name', 'file')}"
+            dest = os.path.join(out_dir, name)
+            req = urllib.request.Request(url, headers={"Authorization": f"Bearer {tok}"})
+            try:
+                with urllib.request.urlopen(req, timeout=60) as r:
+                    data = r.read()
+                if data[:15].lstrip().lower().startswith(b"<!doctype html") or b"<html" in data[:200].lower():
+                    print(f"warn: {name} came back as HTML — the bot likely lacks 'files:read' scope", file=sys.stderr)
+                    continue
+                with open(dest, "wb") as fh:
+                    fh.write(data)
+                saved.append(dest)
+                print(f"saved {dest} ({len(data)} bytes, {f.get('mimetype')})")
+            except Exception as e:
+                print(f"warn: failed to download {name}: {e}", file=sys.stderr)
+    if not saved:
+        print("(no files downloaded)")
+    return saved
+
+
 def _notify(session, msgs):
     """Forward new inbound Slack messages to a Svamp session so the agent can reply."""
     lines = []
     for m in msgs:
         where = "a DM" if m["kind"] == "dm" else f"#{m['channel_name']}"
-        lines.append(f"- From {m['user_label']} in {where} (channel={m['channel']}, thread_ts={m['ts']}):\n  \"{m['text']}\"")
+        att = ""
+        if m.get("files"):
+            att = f" [{len(m['files'])} attachment(s): " + ", ".join(f.get("name", "?") for f in m["files"]) + \
+                  f" — download with: scripts/lab-slack.py files --channel {m['channel']} --since {m['ts']}]"
+        lines.append(f"- From {m['user_label']} in {where} (channel={m['channel']}, thread_ts={m['ts']}):\n  \"{m['text']}\"{att}")
     body = (
         "📨 New Slack message(s) for Happy Agent — please read and respond in time.\n\n"
         + "\n".join(lines)
@@ -357,6 +394,12 @@ def main():
     pa.add_argument("--base", default=DEFAULT_BASE)
     pa.add_argument("--dry-run", action="store_true")
     pa.add_argument("--as-user", action="store_true")
+
+    pf = sub.add_parser("files", help="download file attachments from a channel/DM")
+    pf.add_argument("--channel", required=True)
+    pf.add_argument("--since", type=float, default=0.0, help="only files in messages after this ts")
+    pf.add_argument("--out", default="data/slack-files")
+    pf.add_argument("--as-user", action="store_true")
 
     pl = sub.add_parser("poll", help="discover new DMs + @mentions since last poll")
     pl.add_argument("--notify-session", help="forward new messages to this Svamp session id")
@@ -400,6 +443,8 @@ def main():
         print(f"DM sent to {a.to} (ts={out.get('ts')})")
     elif a.cmd == "announce":
         announce(a.post, a.channel, a.base, dry_run=a.dry_run, as_user=a.as_user)
+    elif a.cmd == "files":
+        download_files(a.channel, since_ts=a.since, out_dir=a.out, as_user=a.as_user)
     elif a.cmd == "poll":
         poll(notify_session=a.notify_session, respond=a.respond, mark=not a.no_mark,
              lookback_hours=a.lookback_hours, as_json=a.json)
