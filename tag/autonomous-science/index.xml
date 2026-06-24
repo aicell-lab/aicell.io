@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>autonomous-science | AICell Lab</title><link>https://aicell.io/tag/autonomous-science/</link><atom:link href="https://aicell.io/tag/autonomous-science/index.xml" rel="self" type="application/rss+xml"/><description>autonomous-science</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 01 Jun 2026 00:00:00 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>autonomous-science</title><link>https://aicell.io/tag/autonomous-science/</link></image><item><title>Autonomous Research Agents — Discovery from Minimal AI Loops</title><link>https://aicell.io/project/autonomous-research-agents/</link><pubDate>Mon, 01 Jun 2026 00:00:00 +0000</pubDate><guid>https://aicell.io/project/autonomous-research-agents/</guid><description>&lt;p>What is the &lt;em>minimum&lt;/em> an AI agent needs to do real science? In this research
+direction we study whether genuine scientific discovery can emerge from radically
+simple agent loops: agents that wake up fresh each cycle, read a shared notes
+file, do a little work, write back what they learned, and repeat — with no
+long-term memory, no hardcoded tools, and no domain-specific programming.&lt;/p>
+&lt;p>It&amp;rsquo;s a deliberately minimal setup, and that&amp;rsquo;s the point. Much as intricate
+patterns arise from simple rules in nature, we&amp;rsquo;re interested in whether complex,
+useful autonomous research behaviour can &lt;em>emerge&lt;/em> from a handful of basic
+ingredients. We run these loops across several life-science domains, using public
+scientific databases as the agents&amp;rsquo; &amp;ldquo;instruments.&amp;rdquo;&lt;/p>
+&lt;p>This work is ongoing and a manuscript describing the underlying principle is in
+preparation, so we&amp;rsquo;re holding specific findings until they&amp;rsquo;ve been through
+validation and peer review. If you&amp;rsquo;re excited by autonomous AI agents, emergence,
+and machine-driven discovery in the life sciences, this is one of the frontiers
+we&amp;rsquo;re actively hiring for — &lt;a href="https://aicell.io/#contact">get in touch&lt;/a>.&lt;/p></description></item></channel></rss>

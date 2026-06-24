@@ -1,4 +1,22 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>RAG | AICell Lab</title><link>https://aicell.io/tag/rag/</link><atom:link href="https://aicell.io/tag/rag/index.xml" rel="self" type="application/rss+xml"/><description>RAG</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 20 Aug 2024 00:00:00 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>RAG</title><link>https://aicell.io/tag/rag/</link></image><item><title>BioImage.IO Chatbot — Your AI Assistant for Bioimage Analysis</title><link>https://aicell.io/project/bioimageio-chatbot/</link><pubDate>Tue, 20 Aug 2024 00:00:00 +0000</pubDate><guid>https://aicell.io/project/bioimageio-chatbot/</guid><description>&lt;p>Bioimaging is evolving fast, with an ever-growing landscape of tools, data
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>RAG | AICell Lab</title><link>https://aicell.io/tag/rag/</link><atom:link href="https://aicell.io/tag/rag/index.xml" rel="self" type="application/rss+xml"/><description>RAG</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 06 May 2026 00:00:00 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>RAG</title><link>https://aicell.io/tag/rag/</link></image><item><title>Euro-BioImaging Research Navigator — AI for Access</title><link>https://aicell.io/project/eubio-navigator/</link><pubDate>Wed, 06 May 2026 00:00:00 +0000</pubDate><guid>https://aicell.io/project/eubio-navigator/</guid><description>&lt;p>Finding the right microscope — or the right facility — shouldn&amp;rsquo;t require knowing
+the map of European imaging infrastructure by heart. The &lt;strong>Euro-BioImaging
+Research Navigator&lt;/strong> is an AI-powered assistant for the
+&lt;a href="https://eap.eurobioimaging.eu" target="_blank" rel="noopener">Euro-BioImaging Access Portal&lt;/a> that answers
+plain-language research questions like &lt;em>&amp;ldquo;Which nodes offer MINFLUX in Europe?&amp;rdquo;&lt;/em> or
+&lt;em>&amp;ldquo;I need cryo-EM for structural biology — where can I go?&amp;rdquo;&lt;/em> and returns grounded,
+ranked recommendations.&lt;/p>
+&lt;p>Built as part of the EU-funded &lt;strong>&amp;ldquo;AI for Access&amp;rdquo;&lt;/strong> project, the Navigator uses a
+&lt;strong>retrieval-first&lt;/strong> architecture: the language model generates focused search
+queries, a deterministic BM25 lookup retrieves real records from the facility
+database, and an agent synthesizes the answer — so recommendations stay grounded
+in actual data, with honest fallback when something isn&amp;rsquo;t in the database. It
+supports streaming responses, visible reasoning steps, multi-turn conversation and
+interactive clarification.&lt;/p>
+&lt;p>The Navigator is &lt;strong>&lt;a href="https://navigator.bioimage.io" target="_blank" rel="noopener">live at navigator.bioimage.io&lt;/a>&lt;/strong>,
+deployed on Kubernetes on the KTH cluster, with frontend integration into the
+Euro-BioImaging Access Portal underway. It continues the lab&amp;rsquo;s work — alongside
+&lt;a href="https://aicell.io/project/ai4life/">AI4Life&lt;/a> and the &lt;a href="https://aicell.io/project/bioimage-model-zoo/">BioImage Model Zoo&lt;/a> —
+on making bioimaging infrastructure open, findable and AI-accessible.&lt;/p></description></item><item><title>BioImage.IO Chatbot — Your AI Assistant for Bioimage Analysis</title><link>https://aicell.io/project/bioimageio-chatbot/</link><pubDate>Tue, 20 Aug 2024 00:00:00 +0000</pubDate><guid>https://aicell.io/project/bioimageio-chatbot/</guid><description>&lt;p>Bioimaging is evolving fast, with an ever-growing landscape of tools, data
 formats and workflows. For many researchers — especially those without extensive
 programming experience — navigating it is daunting. The &lt;strong>BioImage.IO Chatbot&lt;/strong>
 bridges that gap: an AI-powered assistant, built on a knowledge base contributed
