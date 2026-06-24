@@ -1,6 +1,6 @@
 ---
 title: BioEngine - Cloud-Powered AI for Bioimage Analysis
-summary: A distributed platform that deploys AI models with autoscaling and powers the "test run" feature on the BioImage Model Zoo.
+summary: A distributed AI platform that deploys bioimage models as autoscaling, agent-readable services on cloud or HPC — and powers the "test run" feature on the BioImage Model Zoo. Published in 2026.
 tags:
   - deep learning
   - AI
@@ -9,7 +9,8 @@ tags:
   - model zoo
   - web
   - cloud computing
-date: '2024-01-01T00:00:00Z'
+  - agents
+date: '2026-04-22T00:00:00Z'
 
 # Optional external URL for project (replaces project detail page).
 external_link: ''
@@ -28,8 +29,10 @@ links:
     icon_pack: fas
     name: Try it
     url: https://bioimage.io/#/models
-
-links: []
+  - icon: book
+    icon_pack: fas
+    name: Paper
+    url: /publication/mechtel-2026-bioengine/
 
 url_code: ''
 url_pdf: ''
@@ -55,6 +58,8 @@ imjoy:
             await jupyter.openFile(filePath)
         }
 ---
+
+BioEngine is described in our 2026 paper, [*BioEngine: scalable execution and adaptation of bioimage AI through agent-readable services*](/publication/mechtel-2026-bioengine/) — a key idea is exposing AI models as **agent-readable services** so that both people and AI agents (such as [Agent-Lens](/project/agent-lens/)) can discover and run them on demand.
 
 The increasingly amount of data generated in life science poses challenges in managing and analysis. The conventional approach for storing and processing scientific data locally on workstations or laptops is failing to met modern needs in applications such as AI-powered image analysis. We would like to tackle the challenge by introducing the BioEngine platform, which is a computational platform consists of containerized services for scalable data management and AI model serving. It is a web platform built on top of the [Hypha](https://github.com/amun-ai/hypha) with an emphasis on serving models for bioimage analysis.
 

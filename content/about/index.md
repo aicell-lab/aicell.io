@@ -24,6 +24,8 @@ slides:
 
 The AICell Lab is an interdisciplinary group which focuses on building AI systems for cell and molecular biology.
 
+We are proud to be part of **[Alpha Cell](https://www.scilifelab.se/alpha-cell/)**, SciLifeLab's flagship program to create predictive AI models that explain how human cells function, adapt, and transition in disease. Funded by the Knut and Alice Wallenberg Foundation and directed by Jan Ellenberg and Mathias Uhlén, Alpha Cell unites cutting-edge AI, large-scale molecular data (anchored in the [Human Protein Atlas](https://www.proteinatlas.org)), and disruptive imaging to map cells at unprecedented molecular scale. Our lab contributes the AI systems, automation, and whole-cell modeling that turn those maps into predictive, simulatable models of the cell.
+
 **Our Mission**: To seamlessly integrate AI with cell and molecular biology, driving forward the ambitious endeavor of human cell modeling and fostering the generation of deep, actionable insights.
 
 **Our Vision**: To set the standard in crafting comprehensive human cell models, catalyzing breakthroughs in in-silico experimentation, propelling forward drug discovery, and deepening the comprehension of cellular intricacies.
