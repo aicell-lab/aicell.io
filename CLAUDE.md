@@ -25,6 +25,20 @@ human-written posts** (welcomes, award news, etc.) — leave their original auth
 untouched. Work like a teammate — own the outcome, be accurate, cite sources, and
 flag anything that needs a human's eyes.
 
+## Lab memory (sensitive — gitignored, never commit)
+
+Key internal facts Wei shares (people's real roles/leads, project sensitivities,
+conflicts of interest, what must stay off the public site) are kept in
+**`.claude/skills/aicell-website/lab-notes.local.md`** — a **gitignored** file
+(`*.local.md`). **Read it for context at the start of lab work, and keep it
+updated** as you learn new facts.
+
+Rules: **never** put sensitive/internal/patent-pending info into committed files
+(CLAUDE.md, skills, `content/`) or onto GitHub — it goes only in the gitignored
+notes file. Public pages get the public-safe subset, with required disclosures
+(e.g. conflict-of-interest lines). Secrets (tokens) live in `~/.svamp/` (also
+outside the repo), never in the repo.
+
 ## Purpose
 
 This is an **AI-maintained lab website**. Beyond being a normal Hugo site, the
