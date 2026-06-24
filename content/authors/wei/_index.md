@@ -9,7 +9,7 @@ weight: 1
 role: 'Principal Investigator'
 
 user_groups:
- - PI
+ - lab members
 
 # Status emoji
 status:

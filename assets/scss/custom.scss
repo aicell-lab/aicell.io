@@ -38,3 +38,77 @@ button:active {
 h1 {
     font-size: 1.8rem;
 }
+
+/* =====================================================================
+   #0005 — Modern, slick, mobile-friendly polish
+   Scoped to specific blocks so the theme isn't broken.
+   ===================================================================== */
+
+/* ---- People section: flat team, prominent members, compact alumni ---- */
+.people-widget .section-heading h1 { font-weight: 700; letter-spacing: -0.015em; }
+.people-widget h2 {            /* group heading (Lab Members / Alumni) */
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.people-widget hr {
+  max-width: 64px;
+  border-top: 3px solid #1565c0;
+  opacity: 0.85;
+  margin-top: 0.4rem;
+}
+
+.people-widget .people-person {
+  text-align: center;
+  margin: 0.9rem 1.1rem 1.4rem;
+}
+.people-widget .people-person .avatar {
+  width: 170px; height: 170px;          /* modern size (theme default was 270) */
+  border: 4px solid #fff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.13);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+.people-widget .people-person:hover .avatar {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.20);
+}
+.people-widget .people-person .portrait-title h2 {
+  font-size: 1.05rem; font-weight: 600; margin-top: 0.65rem; margin-bottom: 0.1rem;
+}
+.people-widget .people-person .portrait-title h3 {
+  font-size: 0.85rem; font-weight: 500; color: rgba(0, 0, 0, 0.58);
+}
+
+/* Compact Alumni — smaller avatars, lighter text, minimal chrome */
+.people-widget .people-person.group-alumni { margin: 0.45rem 0.55rem 0.8rem; }
+.people-widget .people-person.group-alumni .avatar {
+  width: 84px; height: 84px; border-width: 3px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+.people-widget .people-person.group-alumni .portrait-title h2 { font-size: 0.82rem; margin-top: 0.4rem; }
+.people-widget .people-person.group-alumni .portrait-title h3 { font-size: 0.72rem; }
+.people-widget .people-person.group-alumni .people-interests,
+.people-widget .people-person.group-alumni .network-icon { display: none; }
+
+/* Mobile */
+@media (max-width: 575.98px) {
+  .people-widget .people-person { margin: 0.7rem 0.6rem 1rem; }
+  .people-widget .people-person .avatar { width: 128px; height: 128px; }
+  .people-widget .people-person.group-alumni .avatar { width: 70px; height: 70px; }
+}
+
+/* ---- Gentle site-wide modern touches (safe, transition-only) ---- */
+a { transition: color 0.15s ease; }
+.universal-wrapper { } /* no-op anchor */
+.view-card .card,
+.portfolio-item .card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: none;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+.view-card .card:hover,
+.portfolio-item .card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.14);
+}
+.btn { transition: transform 0.12s ease, box-shadow 0.15s ease, background 0.15s ease; }
+.btn:hover { transform: translateY(-1px); }

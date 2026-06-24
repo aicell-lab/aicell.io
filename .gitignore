@@ -32,3 +32,5 @@ lab-slack.env
 # Sensitive/internal lab memory — NEVER commit (gitignored)
 *.local.md
 .claude/skills/aicell-website/lab-notes.local.md
+
+public_preview/
