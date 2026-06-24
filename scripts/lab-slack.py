@@ -77,6 +77,49 @@ def _reads_as_user():
     return bool(os.environ.get("SLACK_USER_TOKEN"))
 
 
+# ---- #general rate limiter (anti-spam) -------------------------------------
+import datetime as _dt
+QUOTA_PATH = os.path.expanduser("~/.svamp/lab-slack-quota.json")
+GENERAL_REFS = {"#general", "general", "C059XLQFT2P"}
+DEFAULT_MAX_GENERAL = int(os.environ.get("SLACK_MAX_GENERAL_PER_DAY", "5"))
+
+
+def _is_general(channel):
+    return str(channel).strip() in GENERAL_REFS
+
+
+def _quota():
+    today = _dt.datetime.now(_dt.timezone.utc).strftime("%Y-%m-%d")
+    try:
+        q = json.load(open(QUOTA_PATH))
+    except Exception:
+        q = {}
+    if q.get("date") != today:
+        q = {"date": today, "general": 0}
+    return q
+
+
+def general_count_today():
+    return _quota().get("general", 0)
+
+
+def _bump_general():
+    q = _quota(); q["general"] = q.get("general", 0) + 1
+    os.makedirs(os.path.dirname(QUOTA_PATH), exist_ok=True)
+    json.dump(q, open(QUOTA_PATH, "w"))
+    return q["general"]
+
+
+def _guard_general(channel, max_general, force):
+    """Block #general posts past the daily cap unless --force (for truly exceptional news)."""
+    if not _is_general(channel):
+        return
+    n = general_count_today()
+    if n >= max_general and not force:
+        sys.exit(f"RATE LIMIT: {n} message(s) already posted to #general today (cap {max_general}). "
+                 f"Don't spam — only use --force for genuinely exceptional/breaking news.")
+
+
 def _call(method, params=None, json_body=None, as_user=False, soft=False):
     """Call a Slack Web API method. GET for reads (params), POST JSON for writes.
 
@@ -385,6 +428,10 @@ def main():
     pp.add_argument("--channel", default=DEFAULT_CHANNEL)
     pp.add_argument("--text"); pp.add_argument("--blocks-file")
     pp.add_argument("--as-user", action="store_true"); pp.add_argument("--thread")
+    pp.add_argument("--max-general", type=int, default=DEFAULT_MAX_GENERAL)
+    pp.add_argument("--force", action="store_true", help="override the #general daily cap (exceptional news only)")
+
+    sub.add_parser("quota", help="show today's #general post count vs the daily cap")
 
     pd = sub.add_parser("dm")
     pd.add_argument("--to", required=True); pd.add_argument("--text", required=True)
@@ -397,6 +444,8 @@ def main():
     pa.add_argument("--dry-run", action="store_true")
     pa.add_argument("--as-user", action="store_true")
     pa.add_argument("--note", help="extra mrkdwn line (e.g. member @-mentions '<@U…> …')")
+    pa.add_argument("--max-general", type=int, default=DEFAULT_MAX_GENERAL)
+    pa.add_argument("--force", action="store_true", help="override the #general daily cap (exceptional news only)")
 
     pf = sub.add_parser("files", help="download file attachments from a channel/DM")
     pf.add_argument("--channel", required=True)
@@ -431,13 +480,20 @@ def main():
             hay = " ".join([u.get("name", ""), u.get("real_name") or "", prof.get("email") or ""]).lower()
             if a.query.lower() in hay:
                 print(f"{u['id']}  {u.get('name')}  {prof.get('real_name','')}  <{prof.get('email','')}>")
+    elif a.cmd == "quota":
+        n = general_count_today()
+        print(f"#general posts today (UTC): {n} / cap {DEFAULT_MAX_GENERAL} — {max(0, DEFAULT_MAX_GENERAL - n)} remaining")
     elif a.cmd == "post":
+        _guard_general(a.channel, a.max_general, a.force)
         blocks = None
         if a.blocks_file:
             with open(a.blocks_file) as fh:
                 blocks = json.load(fh)
         out = send(a.channel, text=a.text, blocks=blocks, as_user=a.as_user, thread_ts=a.thread)
-        print(f"posted to {a.channel} (ts={out.get('ts')})")
+        if _is_general(a.channel):
+            print(f"posted to {a.channel} (ts={out.get('ts')}) · #general today: {_bump_general()}/{a.max_general}")
+        else:
+            print(f"posted to {a.channel} (ts={out.get('ts')})")
     elif a.cmd == "dm":
         uid = resolve_user_id(a.to, as_user=_reads_as_user())
         opened = _call("conversations.open", json_body={"users": uid}, as_user=a.as_user)
@@ -445,7 +501,11 @@ def main():
         out = send(cid, text=a.text, as_user=a.as_user)
         print(f"DM sent to {a.to} (ts={out.get('ts')})")
     elif a.cmd == "announce":
+        if not a.dry_run:
+            _guard_general(a.channel, a.max_general, a.force)
         announce(a.post, a.channel, a.base, dry_run=a.dry_run, as_user=a.as_user, note=a.note)
+        if not a.dry_run and _is_general(a.channel):
+            print(f"#general today: {_bump_general()}/{a.max_general}")
     elif a.cmd == "files":
         download_files(a.channel, since_ts=a.since, out_dir=a.out, as_user=a.as_user)
     elif a.cmd == "poll":

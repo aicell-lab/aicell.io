@@ -62,6 +62,15 @@ lab's focus as projects evolve.
 journals, AI-lab blogs, virtual-cell/automated-discovery initiatives, the lab's own
 GitHub/sites, funders, and events). Keep that file pruned and current as strategy shifts.
 
+**Sweep X (Twitter)** via the `lab-x` CLI — a primary signal source:
+- `scripts/lab-x.py monitor --since-hours 24 --min-likes 30` → recent high-signal posts
+  from the watch-list (`x-accounts.md`: AI labs, AI-for-bio researchers, bioimaging,
+  aggregators). Fold the genuinely relevant items into the digest, with their links.
+- `scripts/lab-x.py search "<topic>" --max 20` for topic sweeps (e.g. "virtual cell").
+- **Living watch-list:** also run `scripts/lab-x.py discover` and add any clearly
+  relevant new accounts to `x-accounts.md` (verify with `lab-x.py info <h>` first).
+  Every run, ask: *"is there a new person/channel worth following?"*
+
 Use `WebSearch`/`WebFetch` (or the `deep-research` skill in `prod`). Prefer
 primary sources (papers, official blogs, release notes). **Never fabricate facts,
 numbers, or quotes. Every claim must trace to a source you actually fetched.**

@@ -99,6 +99,26 @@ Guardrails: never invent facts or fabricate quotes; always link the source; stay
 on-topic for the lab; small scoped commits; reuse existing tags/categories; don't
 add multi-MB images. The site footer already discloses AI-assisted content.
 
+## Living news system — X monitoring + Slack (remember this)
+
+The digest is fed by a **living X (Twitter) monitor** and posts to the lab Slack:
+
+- **`scripts/lab-x.py`** (getxapi; key `X_API_KEY` in `~/.svamp/.env`, never committed):
+  `monitor` sweeps the watch-list, `search` does topic sweeps, `discover` traverses who
+  our seeds follow to propose new accounts, `info` verifies a handle.
+- **Watch-list = `.claude/skills/lab-newsletter/x-accounts.md`** (AI labs, AI-for-bio
+  researchers, bioimaging, aggregators, journals). It is **living**: every digest/scan,
+  run `discover` and ask *"is there anyone new worth following?"*; verify + add.
+- **Tagging:** `.claude/skills/lab-newsletter/lab-members.local.md` (gitignored) maps
+  members → Slack IDs → interests; @-mention people when an item is strongly theirs.
+- **Two schedules** (svamp workflows): `nightly-newsletter` (05:00 — full digest →
+  website + `#general`) and `x-breaking` (every 3 h — scan X; **only** flag genuinely
+  exceptional/breaking news directly to `#general`).
+- **Anti-spam (critical):** posting to `#general` is **rate-limited** —
+  `scripts/lab-slack.py` tracks a daily count (`lab-slack.py quota`) and **refuses past
+  the cap** (`SLACK_MAX_GENERAL_PER_DAY`, default 5) unless `--force`. Be *extremely*
+  conservative: routine news waits for the daily digest; `--force` only for historic news.
+
 ## Working conventions
 
 - Branch for changes (`git switch -c website/<task>`); open a PR; CI green before merge.
