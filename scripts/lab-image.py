@@ -12,14 +12,28 @@ Commands:
   verify                                 Check the API token is valid.
   models                                 List the supported image models.
   generate --prompt "<text>" --out <path>
-           [--model flux|sdxl|sdxl-lightning|dreamshaper]
+           [--model flux|sdxl|sdxl-lightning|dreamshaper|sd15-img2img]
            [--steps N] [--negative "<text>"] [--width W] [--height H]
+           [--image PATH] [--strength FLOAT] [--seed INT]
                                          Generate an image and save it.
+
+Image-to-image (identity-preserving variations):
+  Pass --image PATH to seed generation from a base picture (e.g. our mascot) and
+  produce a variation guided by --prompt. img2img needs a Stable Diffusion model
+  (FLUX is text-only); if --image is given with the FLUX model, it auto-switches
+  to "sdxl". --strength (0..1, default 0.6) controls how far to drift from the
+  base: LOWER strength = closer to the original / better identity preservation.
+  Note: Workers AI has no true InstantID/IP-Adapter face-lock model, so this
+  preserves composition/silhouette, not a guaranteed exact face. SDXL may also
+  shift our flat B&W style a little — use low strength and keep the house style.
 
 Examples:
   scripts/lab-image.py verify
   scripts/lab-image.py generate --prompt "abstract AI + cell biology cover, blue/indigo, minimal" \
                                 --out content/post/<slug>/featured.jpg
+  scripts/lab-image.py generate --image content/authors/happy-agent/avatar.jpg \
+                                --prompt "the same cute chibi robot mascot, waving hello" \
+                                --strength 0.5 --seed 7 --out /tmp/wave.jpg
 """
 import argparse, base64, json, os, subprocess, sys, tempfile
 
@@ -30,8 +44,15 @@ MODELS = {
     "sdxl": "@cf/stabilityai/stable-diffusion-xl-base-1.0",  # binary PNG
     "sdxl-lightning": "@cf/bytedance/stable-diffusion-xl-lightning",
     "dreamshaper": "@cf/lykon/dreamshaper-8-lcm",
+    "sd15-img2img": "@cf/runwayml/stable-diffusion-v1-5-img2img",  # img2img, binary PNG
 }
 DEFAULT_MODEL = "flux"
+# Models that belong to the FLUX family use the "steps" key; everyone else (Stable
+# Diffusion) uses "num_steps". FLUX is text-to-image only (no image input).
+FLUX_MODELS = {"@cf/black-forest-labs/flux-1-schnell"}
+# Only these models accept an input image on the Workers AI REST API. (Despite the
+# docs, SDXL-base 1.0 rejects image input there — only SD-1.5-img2img works.)
+IMG2IMG_MODELS = {"@cf/runwayml/stable-diffusion-v1-5-img2img"}
 
 # ---- AICell Lab signature style (applied to every prompt unless --raw) ----
 # Strictly FLAT two-tone: pure black + pure white, bold line-art, ONE orange accent.
@@ -72,12 +93,19 @@ def _creds():
 def _curl(method, url, token, body=None, out_file=None):
     args = ["curl", "-sS", "--max-time", "120", "-X", method,
             "-H", f"Authorization: Bearer {token}"]
+    stdin = None
     if body is not None:
-        args += ["-H", "Content-Type: application/json", "--data", json.dumps(body)]
+        # Pass the JSON via stdin ("--data @-") so large bodies (e.g. img2img's byte
+        # array) don't blow the command-line argv size limit.
+        args += ["-H", "Content-Type: application/json", "--data-binary", "@-"]
+        stdin = json.dumps(body)
     if out_file:
         args += ["-o", out_file, "-w", "%{http_code}"]
     args.append(url)
-    p = subprocess.run(args, capture_output=True, text=(out_file is None))
+    text = out_file is None
+    if stdin is not None and not text:
+        stdin = stdin.encode()
+    p = subprocess.run(args, input=stdin, capture_output=True, text=text)
     return p
 
 
@@ -105,14 +133,32 @@ def _detect_ext(data):
 
 
 def generate(prompt, out, model="flux", steps=None, negative=None, width=None, height=None,
-             raw=False, style=None):
+             raw=False, style=None, image=None, strength=None, seed=None):
     acct, tok = _creds()
     model_id = MODELS.get(model, model)
+
+    # img2img: FLUX is text-only and SDXL-base rejects image input on the REST API,
+    # so auto-switch those to the Stable Diffusion 1.5 img2img model.
+    if image and model_id not in IMG2IMG_MODELS:
+        old = model
+        model = "sd15-img2img"
+        model_id = MODELS[model]
+        print(f"note: model '{old}' can't do image-to-image; switching to '{model}'")
+
     body = {"prompt": styled(prompt, raw=raw, style=style)}
-    if steps is not None: body["steps"] = steps
+    # Steps key differs by family: FLUX uses "steps", Stable Diffusion uses "num_steps".
+    if steps is not None:
+        body["steps" if model_id in FLUX_MODELS else "num_steps"] = steps
     if negative: body["negative_prompt"] = negative
     if width: body["width"] = width
     if height: body["height"] = height
+    if image:
+        # Workers AI img2img wants the image as an array of uint8 bytes ("image");
+        # the documented "image_b64" string is rejected by the run API for these models.
+        with open(image, "rb") as f:
+            body["image"] = list(f.read())
+        if strength is not None: body["strength"] = strength
+        if seed is not None: body["seed"] = seed
     url = f"{API}/{acct}/ai/run/{model_id}"
 
     tmp = tempfile.NamedTemporaryFile(delete=False).name
@@ -170,6 +216,10 @@ def main():
     pg.add_argument("--height", type=int)
     pg.add_argument("--raw", action="store_true", help="skip the AICell house style (use prompt verbatim)")
     pg.add_argument("--style", help="override the house style suffix")
+    pg.add_argument("--image", help="base image for image-to-image (identity-preserving variation)")
+    pg.add_argument("--strength", type=float, default=0.6,
+                    help="img2img drift 0..1 (lower = closer to the base / better identity); default 0.6")
+    pg.add_argument("--seed", type=int, help="RNG seed (reproducible results)")
     a = ap.parse_args()
 
     if a.cmd == "verify":
@@ -180,7 +230,8 @@ def main():
     elif a.cmd == "generate":
         generate(a.prompt, a.out, model=a.model, steps=a.steps,
                  negative=a.negative, width=a.width, height=a.height,
-                 raw=a.raw, style=a.style)
+                 raw=a.raw, style=a.style,
+                 image=a.image, strength=(a.strength if a.image else None), seed=a.seed)
 
 
 if __name__ == "__main__":

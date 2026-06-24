@@ -25,6 +25,7 @@ scripts/lab-image.py verify                      # check the token
 scripts/lab-image.py models                      # list image models
 scripts/lab-image.py generate --prompt "<subject>" --out <path.jpg> [--model flux|sdxl|...] [--steps N]
 scripts/lab-image.py generate --prompt "…" --out … --raw      # skip the house style
+scripts/lab-image.py generate --image <base.jpg> --prompt "…" --out … [--strength 0..1] [--seed N]   # img2img
 ```
 You pass only the **subject** (what the cover is about) — the signature style is
 appended automatically. FLUX returns a 1024×1024 JPEG; the CLI saves it and fixes
@@ -47,6 +48,40 @@ scripts/lab-image.py generate \
 ```
 Then make sure the post front matter has an `image:` block (the templates already do).
 Keep covers < 1 MB (FLUX JPEGs are ~0.4–0.6 MB — fine).
+
+## Image-to-image / identity preservation (mascot variations)
+Pass a **base image** with `--image PATH` to generate a variation of an existing
+picture (e.g. our Happy Agent mascot in a new pose) instead of a fresh image from
+text. The `--prompt` then *guides* the change.
+
+```bash
+# Make the mascot wave hello while keeping its identity (low strength = stays on-model)
+scripts/lab-image.py generate \
+  --image content/authors/happy-agent/avatar.jpg \
+  --prompt "the same cute chibi robot mascot character, now waving hello with one hand" \
+  --strength 0.4 --seed 7 --out /tmp/wave.png
+```
+
+Knobs:
+- **`--strength` (0..1, default 0.6)** — how far to drift from the base.
+  **LOWER preserves identity better.** In our tests **~0.4 kept the mascot clearly
+  recognizable** (antennae, masked face, big eyes, blush, orange flask, silhouette);
+  0.6 started to lose the face; 0.75 produced a *different* robot. Start at **0.35–0.45**.
+- **`--seed INT`** — fix it for reproducible runs / A/B comparisons across strengths.
+
+Honest limits (read before promising "same face"):
+- **There is no true InstantID / IP-Adapter identity-lock model on Workers AI.** This
+  img2img mode preserves **composition / pose / silhouette**, not a guaranteed exact
+  face. Expect a *family-resemblance* variation, not a pixel-faithful clone. Re-roll
+  seeds / nudge strength down until it looks like us; pick the best of a few.
+- **Model:** only `@cf/runwayml/stable-diffusion-v1-5-img2img` (`sd15-img2img`) actually
+  accepts image input on the REST API. **FLUX is text-only**, and despite the docs
+  **SDXL-base rejects image input** — so `--image` with any non-img2img model
+  **auto-switches to `sd15-img2img`** (it prints a note). Output is a **512×512 PNG**.
+- **Style drift:** SD-1.5 may soften our strictly-flat black-&-white look (faint
+  background texture, muted orange). Mitigate by keeping the **house-style prompt**
+  (don't use `--raw`) and using **low strength**. For a crisp on-brand cover from
+  scratch, prefer plain text-to-image with FLUX.
 
 ## Matching writing flavor (so words + image feel like one voice)
 The digest/post voice is the verbal half of the same identity: **warm and
