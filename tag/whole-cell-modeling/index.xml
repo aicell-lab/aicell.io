@@ -1,1 +1,39 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>whole-cell modeling | AICell Lab</title><link>https://aicell.io/tag/whole-cell-modeling/</link><atom:link href="https://aicell.io/tag/whole-cell-modeling/index.xml" rel="self" type="application/rss+xml"/><description>whole-cell modeling</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 01 Jan 2023 00:00:00 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>whole-cell modeling</title><link>https://aicell.io/tag/whole-cell-modeling/</link></image><item><title>Human Cell Simulator</title><link>https://aicell.io/project/human-cell-simulator/</link><pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate><guid>https://aicell.io/project/human-cell-simulator/</guid><description>&lt;p>Whole-cell modeling enables a holistic and quantitative view of cell biology and allows performing in-silico experimentation which has a great potential in revolutionizing system biology, synthetic biology, medicine and other applications in life science. However, modeling the entire cell is an extremely complex task and is heavily limited by our understanding of the biological systems. As a newly formed research group, we would like to take the grand challenge of building a human cell simulator through recent advances in multi-omics data generation and artificial intelligence. Our aim is to use recent deep learning techniques such as convolutional neural networks, transformers, AlphaFold and diffusion models to analysis existing multi-omics dataset, combining them with massive amount of newly generated live cell, multiplexed images, to model cellular behavior through generative and predictive models.&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>whole-cell-modeling | AICell Lab</title><link>https://aicell.io/tag/whole-cell-modeling/</link><atom:link href="https://aicell.io/tag/whole-cell-modeling/index.xml" rel="self" type="application/rss+xml"/><description>whole-cell-modeling</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 24 Jun 2026 03:00:00 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>whole-cell-modeling</title><link>https://aicell.io/tag/whole-cell-modeling/</link></image><item><title>Lab Newsletter — June 24, 2026</title><link>https://aicell.io/post/newsletter-2026-06-24/</link><pubDate>Wed, 24 Jun 2026 03:00:00 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-06-24/</guid><description>&lt;p>A quick, curated read on what moved this week in AI for cell biology and
+bioimaging — and why it&amp;rsquo;s interesting from where we sit. Everything below links
+to its source.&lt;/p>
+&lt;p>&lt;strong>An AI agent that actually drives ImageJ.&lt;/strong> A new preprint introduces
+&lt;a href="https://arxiv.org/abs/2606.02080" target="_blank" rel="noopener">Agentic-J&lt;/a>, a containerized multi-agent
+assistant that turns a plain-language request (&amp;ldquo;segment the nuclei, track the
+cells, quantify per condition&amp;rdquo;) into executable ImageJ/Fiji workflows. Specialized
+sub-agents handle plugin management, code generation, debugging, QA, and
+statistical reporting, and — crucially — every decision is logged into a
+documented, reproducible project. It frames analysis as a &lt;em>collaboration&lt;/em> between
+a biologist and an agent rather than a black-box handover. This is exactly the
+direction we care about with &lt;a href="https://aicell.io/project/imagej-js/">ImageJ.JS&lt;/a>,
+&lt;a href="https://aicell.io/project/imjoy/">ImJoy&lt;/a>, and &lt;a href="https://aicell.io/project/agent-lens/">Agent-Lens&lt;/a> — making powerful
+tools usable in natural language without giving up traceability.&lt;/p>
+&lt;p>&lt;strong>The microscope as a &amp;ldquo;thinking&amp;rdquo; collaborator.&lt;/strong> A Georgia Tech team
+(&lt;a href="https://phys.org/news/2026-05-agentic-ai-electron-microscopes.html" target="_blank" rel="noopener">Phys.org, May 22&lt;/a>;
+perspective in &lt;a href="https://www.nature.com/articles/s41524-026-02077-y" target="_blank" rel="noopener">npj Computational Materials&lt;/a>)
+argues for embedding AI agents directly into microscopes so they can &lt;em>plan, adapt,
+and analyze&lt;/em> experiments in real time — weighing competing hypotheses and refining
+the next acquisition on the fly, with humans kept firmly in the loop. They also
+make a point close to our hearts: this future needs &lt;strong>open-access data
+repositories and secure, shared remote access to instruments&lt;/strong>. That&amp;rsquo;s precisely
+the gap our &lt;a href="https://aicell.io/project/self-driving-microscope/">Self-driving Microscope&lt;/a> and the
+shared infrastructure behind &lt;a href="https://aicell.io/project/hypha/">Hypha&lt;/a> and
+&lt;a href="https://aicell.io/project/bioengine/">BioEngine&lt;/a> are built to close.&lt;/p>
+&lt;p>&lt;strong>Foundation models that imagine the cell.&lt;/strong> On the modeling side,
+&lt;a href="https://www.biorxiv.org/content/10.64898/2026.01.19.696785v1" target="_blank" rel="noopener">CellFluxV2&lt;/a> is an
+image-generative foundation model that predicts how cell morphology changes in
+response to chemical and genetic perturbations, and reports the first &lt;em>scaling
+laws&lt;/em> for image-based virtual-cell modeling — a step toward in-silico drug
+screening. The &amp;ldquo;virtual cell&amp;rdquo; push is gathering real momentum across the field,
+and it&amp;rsquo;s the same north star as our &lt;a href="https://aicell.io/project/human-cell-simulator/">Human Cell Simulator&lt;/a>:
+data-driven, predictive models of whole cells.&lt;/p>
+&lt;p>&lt;em>Why it matters for the lab:&lt;/em> three different groups, one shared bet — that
+agentic AI and generative models will let us &lt;strong>ask experiments in plain language,
+run them autonomously, and simulate their outcomes&lt;/strong>. That&amp;rsquo;s the loop we&amp;rsquo;re
+building, end to end.&lt;/p>
+&lt;!-- Generated by the lab's nightly newsletter pipeline; sources curated and
+linked above. See the lab's note on AI-assisted content in the site footer. --></description></item><item><title>Human Cell Simulator</title><link>https://aicell.io/project/human-cell-simulator/</link><pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate><guid>https://aicell.io/project/human-cell-simulator/</guid><description>&lt;p>Whole-cell modeling enables a holistic and quantitative view of cell biology and allows performing in-silico experimentation which has a great potential in revolutionizing system biology, synthetic biology, medicine and other applications in life science. However, modeling the entire cell is an extremely complex task and is heavily limited by our understanding of the biological systems. As a newly formed research group, we would like to take the grand challenge of building a human cell simulator through recent advances in multi-omics data generation and artificial intelligence. Our aim is to use recent deep learning techniques such as convolutional neural networks, transformers, AlphaFold and diffusion models to analysis existing multi-omics dataset, combining them with massive amount of newly generated live cell, multiplexed images, to model cellular behavior through generative and predictive models.&lt;/p></description></item></channel></rss>
