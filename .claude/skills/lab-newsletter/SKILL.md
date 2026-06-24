@@ -126,6 +126,14 @@ Body: a short intro line, then 3–6 bulleted items. Each item = a bold headline
 voice: warm, first-person-plural, lightly linked. End with a one-line "Why it
 matters for the lab." Keep it skimmable. No multi-MB images.
 
+**Give it a cover.** Generate an on-brand featured image with the
+[`lab-image`](../lab-image/SKILL.md) CLI (consistent AICell Lab signature style):
+```bash
+scripts/lab-image.py generate --prompt "<one line capturing today's digest>" \
+  --out content/post/newsletter-<date>/index.jpg   # or featured.jpg in the folder
+```
+Hugo auto-processes `featured.jpg`. This makes each digest rich and recognizable.
+
 ### 5. Build & commit
 **Get the correct env first.** Automations run as fresh agents/shells without the
 build toolchain on PATH, and in Claude Code **each Bash call is a fresh shell** (env

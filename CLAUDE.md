@@ -114,6 +114,10 @@ The digest is fed by a **living X (Twitter) monitor** and posts to the lab Slack
 - **Two schedules** (svamp workflows): `nightly-newsletter` (05:00 — full digest →
   website + `#general`) and `x-breaking` (every 3 h — scan X; **only** flag genuinely
   exceptional/breaking news directly to `#general`).
+- **Covers (visual identity):** `scripts/lab-image.py` (Cloudflare Workers AI, FLUX.1
+  [schnell]; key `CLOUDFLARE_API_TOKEN` in `~/.svamp/.env`) generates on-brand featured
+  images in the **AICell Lab signature style** (deep blue/indigo science-art — baked into
+  the CLI). Give every digest/post a `featured.jpg`. See the `lab-image` skill.
 - **Anti-spam (critical):** posting to `#general` is **rate-limited** —
   `scripts/lab-slack.py` tracks a daily count (`lab-slack.py quota`) and **refuses past
   the cap** (`SLACK_MAX_GENERAL_PER_DAY`, default 5) unless `--force`. Be *extremely*
