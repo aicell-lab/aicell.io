@@ -39,6 +39,21 @@ notes file. Public pages get the public-safe subset, with required disclosures
 (e.g. conflict-of-interest lines). Secrets (tokens) live in `~/.svamp/` (also
 outside the repo), never in the repo.
 
+## Commit & push discipline (always)
+
+**Always AUDIT for sensitive information before every commit AND before every push —
+then commit and push so changes go live soon.** Default flow: finish a change → audit
+→ commit → `git push origin main` (deploys to aicell.io via CI). Don't leave work
+sitting unpushed unless explicitly told to hold.
+
+Audit checklist (run on the staged diff / about-to-push commits):
+- **Secrets:** scan for tokens/keys — `git diff --cached | grep -iE 'xox[bp]-[A-Za-z0-9]|cfat_[A-Za-z0-9]|get-x-api-[0-9a-f]|_API_TOKEN=|_SECRET|ACCESS_KEY|AWS_|PRIVATE KEY'`.
+  Confirm gitignored secret/notes files (`*.local.md`, anything under `~/.svamp/`) are NOT staged.
+- **Content:** no patent-pending / unpublished / internal facts, no undisclosed conflicts of
+  interest — only the public-safe subset (cross-check `lab-notes.local.md`).
+- If anything sensitive is found → STOP, move the secret to `~/.svamp/.env` / redact, and
+  rewrite history if it was already committed. Only push once the audit is clean.
+
 ## Purpose
 
 This is an **AI-maintained lab website**. Beyond being a normal Hugo site, the
