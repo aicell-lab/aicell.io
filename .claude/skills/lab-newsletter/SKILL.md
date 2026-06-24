@@ -57,6 +57,11 @@ The digest is **grounded in what the lab does, then extends toward where the fie
 Re-deriving Bucket B from `content/project/*` each run keeps the digest following the
 lab's focus as projects evolve.
 
+**Where to look:** gather from the curated source set in
+[`sources.md`](./sources.md) (the lab's "information channels" — preprint servers,
+journals, AI-lab blogs, virtual-cell/automated-discovery initiatives, the lab's own
+GitHub/sites, funders, and events). Keep that file pruned and current as strategy shifts.
+
 Use `WebSearch`/`WebFetch` (or the `deep-research` skill in `prod`). Prefer
 primary sources (papers, official blogs, release notes). **Never fabricate facts,
 numbers, or quotes. Every claim must trace to a source you actually fetched.**
