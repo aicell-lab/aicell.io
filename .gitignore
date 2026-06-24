@@ -23,3 +23,8 @@ go.sum
 data/newsletter/**/*.pdf
 data/newsletter/**/*.html
 data/newsletter/**/*.txt
+
+# Never commit Slack/secret tokens
+*.env
+!*.env.example
+lab-slack.env

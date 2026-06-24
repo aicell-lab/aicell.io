@@ -116,25 +116,24 @@ git push origin main                          # nightly is pre-authorized routin
 Do **not** run `hugo mod get` (it upgrades the theme to v5.9.0 and breaks Hugo 0.101.0;
 the theme is pinned in `go.mod`).
 
-### 6. Publish to Slack #general
-Post a short teaser + link to the live post in the SAME shell that sourced the env
-(so the Slack secret is present):
+### 6. Announce to Slack #general
+Announce the published digest to the lab using the [`lab-slack`](../lab-slack/SKILL.md) CLI,
+which formats a card linking to the post:
 ```bash
-. scripts/setup-build-env.sh && scripts/post-to-slack.sh "📰 New lab newsletter: <title> — https://aicell.io/post/newsletter-<date>/"
+scripts/lab-slack.py announce --post content/post/newsletter-<date>/index.md   # → #general
 ```
-`post-to-slack.sh` posts via `SLACK_WEBHOOK_URL`/`SLACK_BOT_TOKEN` and **exits 0 with
-`slack: SKIPPED`** when neither is set, so a missing secret never fails the run — still
-publish the website post and note that Slack was skipped.
+It loads the bot token from `~/.svamp/lab-slack.env` automatically. If Slack isn't
+configured on this machine the command errors — that's non-fatal for the run: still
+publish the website post and note Slack was skipped. Preview without posting via
+`--dry-run`.
 
 ## Slack setup
 
-Use the helper `scripts/post-to-slack.sh "<message>"` — it posts via whichever credential is
-set and **exits 0 with `slack: SKIPPED` when none is**, so the run never fails on a missing secret:
-- `SLACK_WEBHOOK_URL` — an Incoming Webhook for #general (simplest); or
-- `SLACK_BOT_TOKEN` (+ optional `SLACK_CHANNEL`, default `#general`) — `chat.postMessage`.
-
-Store the secret outside the repo (daemon/session environment), never commit it. To enable Slack
-for the nightly run, export the var in the environment the trigger's agent inherits.
+Slack is handled by the **`lab-slack` skill** (`scripts/lab-slack.py`), which posts as the
+lab bot using tokens in `~/.svamp/lab-slack.env` (`SLACK_BOT_TOKEN`, `SLACK_USER_TOKEN`) —
+never committed. Use `scripts/lab-slack.py announce --post <path>` to announce a post, or
+`scripts/lab-slack.py dm --to <email> --text "…"` to DM someone. (The legacy
+`scripts/post-to-slack.sh` webhook helper still works as a fallback.)
 
 ## Scheduling (how the nightly run is wired) — IMPORTANT, learned the hard way
 
