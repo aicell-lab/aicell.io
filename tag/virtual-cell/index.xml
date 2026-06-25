@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>virtual-cell | AICell Lab</title><link>https://aicell.io/tag/virtual-cell/</link><atom:link href="https://aicell.io/tag/virtual-cell/index.xml" rel="self" type="application/rss+xml"/><description>virtual-cell</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Thu, 25 Jun 2026 03:06:02 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>virtual-cell</title><link>https://aicell.io/tag/virtual-cell/</link></image><item><title>Lab Newsletter — June 25, 2026: Agents Grow Up, Virtual Cells Get a Reality Check</title><link>https://aicell.io/post/newsletter-2026-06-25/</link><pubDate>Thu, 25 Jun 2026 03:06:02 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-06-25/</guid><description>&lt;p>A quieter week on the model front, a louder one on &lt;em>what we build around the models&lt;/em>.
+Here&amp;rsquo;s what caught our eye — with a strategy-radar lens on where the lab is heading.&lt;/p>
+&lt;h3 id="-anthropic-bets-on-agent-infrastructure-not-a-bigger-model">🤖 Anthropic bets on agent &lt;em>infrastructure&lt;/em>, not a bigger model&lt;/h3>
+&lt;p>The most telling signal from &lt;a href="https://www.mindstudio.ai/blog/code-with-claude-2026-new-agent-features" target="_blank" rel="noopener">Code with Claude 2026&lt;/a>
+is what &lt;em>wasn&amp;rsquo;t&lt;/em> shipped: no new frontier model, and instead a stack of agent
+plumbing — Managed Agents that run tools in sandboxes you control and reach private
+&lt;strong>Model Context Protocol&lt;/strong> servers, plus MCP &lt;strong>Tool Search&lt;/strong> landing
+&lt;a href="https://tessl.io/blog/anthropic-brings-mcp-tool-search-to-claude-code/" target="_blank" rel="noopener">inside Claude Code&lt;/a>
+so agents discover tools on demand instead of front-loading every definition. The
+underlying &lt;a href="https://www.anthropic.com/engineering/advanced-tool-use" target="_blank" rel="noopener">advanced tool-use features&lt;/a>
+(Tool Search, Programmatic Tool Calling) report an ~85% cut in token usage and large
+accuracy gains on big tool libraries (Opus 4.5: 79.5% → 88.1% on MCP evals).
+&lt;strong>Why it matters for the lab:&lt;/strong> this is &lt;em>our&lt;/em> architecture — agents over MCP services
+(BioEngine, Hypha, Agent-Lens). Context-frugal tool discovery is a direct, adoptable win.&lt;/p>
+&lt;h3 id="-the-virtual-cell-gets-a-reality-check">🧫 The virtual cell gets a reality check&lt;/h3>
+&lt;p>Scaling continues — Arc Institute&amp;rsquo;s &lt;strong>STATE&lt;/strong> model, the &lt;strong>Tahoe-100M&lt;/strong> perturbation
+atlas, and the community &lt;a href="https://github.com/OmicsML/awesome-foundation-model-single-cell-papers" target="_blank" rel="noopener">Virtual Cell Challenge&lt;/a> —
+but 2025–26 benchmarking is refreshingly sober: multiple studies find deep
+perturbation-prediction models don&amp;rsquo;t yet clearly beat simple linear baselines, and a new
+2026 preprint asks bluntly whether today&amp;rsquo;s AI virtual-cell models are actually useful for
+discovery. &lt;strong>Why it matters for the lab:&lt;/strong> the virtual cell is squarely on our horizon —
+and the lesson is to pair ambition with rigorous baselines and honest, leakage-free
+benchmarks before trusting predictions.&lt;/p>
+&lt;h3 id="-self-driving-labs-go-mainstream">🔬 Self-driving labs go mainstream&lt;/h3>
+&lt;p>&lt;em>Nature&lt;/em> ran a &lt;a href="https://www.nature.com/articles/d41586-026-00974-2" target="_blank" rel="noopener">feature on the self-driving-lab revolution&lt;/a>,
+and a wave of reviews (&lt;a href="https://pubs.rsc.org/en/content/articlelanding/2026/mh/d5mh01984b" target="_blank" rel="noopener">Materials Horizons&amp;rsquo; &amp;ldquo;SDL 2.0&amp;rdquo;&lt;/a>)
+and national-lab programs (&lt;a href="https://www.anl.gov/autonomous-discovery" target="_blank" rel="noopener">Argonne&lt;/a>, Sandia)
+show closed-loop AI + robotics moving from one-off demos to standing infrastructure —
+mostly in chemistry and materials, with biology close behind. &lt;strong>Why it matters for the
+lab:&lt;/strong> REEF and our self-driving microscope live here; the design patterns — active
+learning in the loop, observe→reason→act, augmenting rather than replacing scientists —
+transfer directly.&lt;/p>
+&lt;h3 id="-spatial-omics-gets-its-foundation-models">🧬 Spatial omics gets its foundation models&lt;/h3>
+&lt;p>The image × omics convergence we care about is crystallizing into foundation models:
+&lt;a href="https://www.nature.com/articles/s41592-025-02814-z" target="_blank" rel="noopener">Nicheformer&lt;/a> (single-cell &lt;strong>and&lt;/strong>
+spatial, pretrained on a 110M-cell corpus), plus a fast-growing
+&lt;a href="https://github.com/OmicsML/awesome-foundation-model-single-cell-papers" target="_blank" rel="noopener">catalog&lt;/a> of
+spatial/histopathology models (spEMO, scGPT-spatial, KRONOS) that read H&amp;amp;E images and
+molecular profiles &lt;em>together&lt;/em>. &lt;strong>Why it matters for the lab:&lt;/strong> models that jointly reason
+over microscopy images and omics are exactly the bridge between our bioimage-AI tooling
+and the cell biology it serves.&lt;/p>
+&lt;h3 id="-from-the-lab">📖 From the lab&lt;/h3>
+&lt;p>Fresh from us: Wei Ouyang and Hanzhao Zhang wrote the &lt;strong>&amp;ldquo;Large Language Models and AI
+Agents&amp;rdquo;&lt;/strong> chapter for Janelia&amp;rsquo;s &lt;em>AI in Microscopy: A BioImaging Guide&lt;/em> — a practical tour
+from deep learning to autonomous, agent-driven bioimage analysis. We
+&lt;a href="https://aicell.io/post/bioimaging-ai-llm-agents-chapter/" target="_blank" rel="noopener">wrote it up here&lt;/a>.&lt;/p>
+&lt;p>&lt;em>Sources are linked inline. Compiled by Happy Agent; the lab footer notes our
+AI-assisted content. Spotted something we should cover? Nudge us.&lt;/em>&lt;/p></description></item></channel></rss>
