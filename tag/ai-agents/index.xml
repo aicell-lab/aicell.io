@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AI agents | AICell Lab</title><link>https://aicell.io/tag/ai-agents/</link><atom:link href="https://aicell.io/tag/ai-agents/index.xml" rel="self" type="application/rss+xml"/><description>AI agents</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Thu, 25 Jun 2026 01:22:30 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>AI agents</title><link>https://aicell.io/tag/ai-agents/</link></image><item><title>LLMs &amp; AI Agents for bioimaging — our chapter in Janelia's 'AI in Microscopy' guide</title><link>https://aicell.io/post/bioimaging-ai-llm-agents-chapter/</link><pubDate>Thu, 25 Jun 2026 01:22:30 +0000</pubDate><guid>https://aicell.io/post/bioimaging-ai-llm-agents-chapter/</guid><description>&lt;p>A new piece of writing from the lab: &lt;strong>Wei Ouyang and Hanzhao Zhang&lt;/strong> authored
+&lt;strong>Chapter 3 — &amp;ldquo;Large Language Models and AI Agents&amp;rdquo;&lt;/strong> (&lt;em>From Deep Learning to
+Autonomous AI-Powered Bioimage Analysis&lt;/em>) for &lt;strong>&lt;a href="https://bioimagingai.janelia.org/" target="_blank" rel="noopener">&lt;em>AI in Microscopy: A BioImaging
+Guide&lt;/em>&lt;/a>&lt;/strong>, a community guide from &lt;strong>HHMI Janelia
+Research Campus&lt;/strong> (edited by Teng-Leong Chew, Rachel Lee, and Owen Puls).&lt;/p>
+&lt;p>The chapter is a practical, intuition-first tour of how microscopy and bioimage
+analysis are moving from task-specific deep learning toward &lt;strong>generalist foundation
+models, LLMs, and AI agents&lt;/strong>:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>From CNNs to foundation models&lt;/strong> — the &amp;ldquo;extrapolation problem&amp;rdquo; of narrow models,
+and the rise of generalists like Cellpose and the SAM family (micro-SAM, CellSAM,
+Cellpose-SAM).&lt;/li>
+&lt;li>&lt;strong>An LLM primer&lt;/strong> — tokens, embeddings, transformers and self-attention, fine-tuning,
+and where code generation helps (and breaks), with an ImageJ-macro example.&lt;/li>
+&lt;li>&lt;strong>Vision-language models&lt;/strong> — how VLMs read microscopy images, vision-guided
+programming, and today&amp;rsquo;s cost/speed/reliability trade-offs.&lt;/li>
+&lt;li>&lt;strong>&lt;a href="https://bioimagingai.janelia.org/3-llms.html#sec-function-calling" target="_blank" rel="noopener">Function calling &amp;amp; tool use&lt;/a>&lt;/strong> —
+how models went from text to &lt;em>action&lt;/em>: structured tool calls, the shift to a universal
+protocol (Anthropic&amp;rsquo;s &lt;strong>Model Context Protocol&lt;/strong>), and a &amp;ldquo;trust spectrum&amp;rdquo; from
+&lt;strong>assisted → supervised → autonomous&lt;/strong> modes for deciding how much to hand over.&lt;/li>
+&lt;li>&lt;strong>Agents &amp;amp; autonomous microscopy&lt;/strong> — the observe–reason–act loop, harness/context
+engineering and memory, autonomous systems (EIMS, AILA, SmartEM, pySTED), and coding
+agents (Claude Code, Gemini CLI, Codex), plus on-demand software and a hands-on FUCCI
+cell-cycle classification walkthrough.&lt;/li>
+&lt;li>&lt;strong>A clear-eyed outlook&lt;/strong> — hallucinations, non-determinism, data governance, and the
+evolving role of the bioimage analyst.&lt;/li>
+&lt;/ul>
+&lt;p>It maps closely onto what we build — agentic, AI-for-bioimaging tooling like ImJoy,
+BioEngine, the BioImage Model Zoo, and Agent-Lens — so it doubles as a readable map of
+the territory we work in. In the spirit of the topic, the chapter carries an AI
+disclosure (Anthropic&amp;rsquo;s Claude was used in preparation, with all content reviewed and
+verified by the authors).&lt;/p>
+&lt;p>&lt;strong>Read it here:&lt;/strong> &lt;a href="https://bioimagingai.janelia.org/3-llms.html" target="_blank" rel="noopener">Chapter 3 — Large Language Models and AI Agents&lt;/a>
+· &lt;a href="https://bioimagingai.janelia.org/3-llms.html#sec-function-calling" target="_blank" rel="noopener">the function-calling section&lt;/a>&lt;/p></description></item></channel></rss>
