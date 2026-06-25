@@ -34,3 +34,6 @@ lab-slack.env
 .claude/skills/aicell-website/lab-notes.local.md
 
 public_preview/
+
+# Bulk interview captures (raw photos + notes) — select/resize into content/ when writing the post
+data/interviews/
