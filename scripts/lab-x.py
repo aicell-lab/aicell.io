@@ -40,21 +40,57 @@ def _key():
     sys.exit("error: X_API_KEY not set (env or ~/.svamp/.env)")
 
 
+class XAPIError(Exception):
+    """A systemic getxapi failure (out of credits / auth / rate-limit) — abort, don't skip per-handle."""
+
+
 def _get(path):
-    """GET via curl (the host resets python-urllib TLS; curl is reliable)."""
+    """GET via curl (the host resets python-urllib TLS; curl is reliable).
+
+    Surfaces API errors instead of silently returning empty: a 402 "Insufficient
+    credits" body starts with '{', so without checking the HTTP status the caller
+    would just see no tweets. We append the status via -w and fail loudly on
+    credit/auth/rate errors and on JSON error envelopes.
+    """
     url = BASE + path
+    last = ""
     for attempt in range(3):
         p = subprocess.run(
-            ["curl", "-sS", "--max-time", "40", "-H", f"Authorization: Bearer {_key()}",
+            ["curl", "-sS", "--max-time", "40", "-w", "\n%{http_code}",
+             "-H", f"Authorization: Bearer {_key()}",
              "-H", "Accept: application/json", url],
             capture_output=True, text=True)
-        if p.returncode == 0 and p.stdout.strip().startswith(("{", "[")):
-            try:
-                return json.loads(p.stdout)
-            except json.JSONDecodeError:
-                pass
+        out = p.stdout or ""
+        body, _, code = out.rpartition("\n")          # status code is the trailing line
+        code = code.strip()
+        last = (p.stderr or body or "").strip()[:200]
+        if p.returncode == 0 and code.isdigit():
+            data = None
+            if body.strip().startswith(("{", "[")):
+                try:
+                    data = json.loads(body)
+                except json.JSONDecodeError:
+                    data = None
+            err = (data.get("error") or data.get("message")) if isinstance(data, dict) else None
+            if code == "402" or (err and "credit" in str(err).lower()):
+                raise XAPIError("getxapi returned HTTP 402 'Insufficient credits' — the X API account "
+                                "is OUT OF CREDITS. Top up the getxapi account (key X_API_KEY in ~/.svamp/.env), "
+                                "then verify with `scripts/lab-x.py info OpenAI`. Meanwhile the x-breaking "
+                                "workflow can stay disabled: `svamp workflow disable x-breaking`.")
+            if code in ("401", "403"):
+                raise XAPIError(f"getxapi auth failed (HTTP {code}) — check/rotate X_API_KEY in "
+                                f"~/.svamp/.env. Body: {body.strip()[:160]}")
+            if code == "429":
+                raise XAPIError(f"getxapi rate-limited (HTTP 429) — back off and retry later. "
+                                f"Body: {body.strip()[:160]}")
+            if data is not None:
+                if isinstance(data, dict) and err:        # JSON error envelope (any status)
+                    raise XAPIError(f"getxapi error for {path} (HTTP {code}): {err}")
+                if code.startswith("2"):
+                    return data
+                raise XAPIError(f"getxapi HTTP {code} for {path}: {str(data)[:160]}")
         time.sleep(2)
-    sys.exit(f"error: X API call failed for {path}: {(p.stderr or p.stdout)[:200]}")
+    sys.exit(f"error: X API call failed for {path}: {last}")
 
 
 def _parse_time(s):
@@ -213,4 +249,7 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except XAPIError as e:
+        sys.exit(f"error: {e}")
