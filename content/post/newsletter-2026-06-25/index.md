@@ -1,12 +1,12 @@
 ---
 title: "Lab Newsletter — June 25, 2026: Agents Grow Up, Virtual Cells Get a Reality Check"
-summary: "This week in AI for life science: Anthropic bets on agent infrastructure over bigger models, the virtual cell meets honest benchmarks, self-driving labs go mainstream, and spatial omics gets its foundation models — plus a new chapter from the lab."
+summary: "Today in AI for life science: Anthropic bets on agent infrastructure over bigger models, the virtual cell meets honest benchmarks, self-driving labs go mainstream, and spatial omics gets its foundation models — plus a new chapter from the lab."
 date: '2026-06-25T03:06:02Z'
 lastmod: '2026-06-25T03:06:02Z'
 draft: false
 featured: false
 image:
-  caption: "AI for life science — weekly digest"
+  caption: "AI for life science — daily digest"
   focal_point: Smart
   preview_only: false
 authors:
@@ -23,7 +23,7 @@ categories:
   - newsletter
 ---
 
-A quieter week on the model front, a louder one on *what we build around the models*.
+A quieter day on the model front, a louder one on *what we build around the models*.
 Here's what caught our eye — with a strategy-radar lens on where the lab is heading.
 
 ### 🤖 Anthropic bets on agent *infrastructure*, not a bigger model

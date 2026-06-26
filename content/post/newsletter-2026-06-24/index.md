@@ -17,7 +17,7 @@ categories:
   - newsletter
 ---
 
-A quick, curated read on what moved this week in AI for cell biology and
+A quick, curated read on what moved today in AI for cell biology and
 bioimaging — and why it's interesting from where we sit. Everything below links
 to its source.
 

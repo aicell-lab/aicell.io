@@ -1,12 +1,12 @@
 ---
 title: "Lab Newsletter — June 26, 2026: AI Starts Discovering Drugs On Its Own"
-summary: "This week in AI for life science: an AI system that autonomously discovers and validates a drug candidate, frontier labs buying into biology, a clear-eyed benchmark of cell-segmentation foundation models, and the case for composable multimodal models."
+summary: "Today in AI for life science: an AI system that autonomously discovers and validates a drug candidate, frontier labs buying into biology, a clear-eyed benchmark of cell-segmentation foundation models, and the case for composable multimodal models."
 date: '2026-06-26T03:02:23Z'
 lastmod: '2026-06-26T03:02:23Z'
 draft: false
 featured: false
 image:
-  caption: "AI for life science — weekly digest"
+  caption: "AI for life science — daily digest"
   focal_point: Smart
   preview_only: false
 authors:
@@ -22,7 +22,7 @@ categories:
   - newsletter
 ---
 
-The "AI scientist" stopped being a thought experiment this week. Here's what caught our
+The "AI scientist" stopped being a thought experiment. Here's what caught our
 eye — with a strategy-radar lens on where the lab is heading.
 
 ### 🧪 An AI that discovers a drug — and validates it

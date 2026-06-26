@@ -103,7 +103,7 @@ Create `content/post/newsletter-<YYYY-MM-DD>/index.md`:
 ```yaml
 ---
 title: "Lab Newsletter — <Month D, YYYY>: <Short Descriptive Headline>"
-summary: "This week in AI for life science: <one-line teaser>."
+summary: "Today in AI for life science: <one-line teaser>."
 date: '<NOW>'        # the ACTUAL run time in UTC, e.g. `date -u +%Y-%m-%dT%H:%M:%SZ`
 lastmod: '<NOW>'
 draft: false
