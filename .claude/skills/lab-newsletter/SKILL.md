@@ -155,12 +155,12 @@ git push origin main                          # nightly is pre-authorized routin
 Do **not** run `hugo mod get` (it upgrades the theme to v5.9.0 and breaks Hugo 0.101.0;
 the theme is pinned in `go.mod`).
 
-### 6. Announce to Slack #general
+### 6. Announce to Slack #ai-digest (daily) — weekly highlights go to #general
 Announce the published digest to the lab using the [`lab-slack`](../lab-slack/SKILL.md) CLI,
 which formats a card linking to the post:
 ```bash
-scripts/lab-slack.py announce --post content/post/newsletter-<date>/index.md \
-  --note "<@U06DE2TPG1W> the BioEngine item might interest you · <@U082CS9FMNE> lab-automation news below"   # → #general
+scripts/lab-slack.py announce --channel ai-digest --post content/post/newsletter-<date>/index.md \
+  --note "<@U06DE2TPG1W> the BioEngine item might interest you · <@U082CS9FMNE> lab-automation news below"   # → #ai-digest
 
 # Build the --note from lab-members.local.md: @-mention members whose keywords strongly
 # match items in today's digest (sparingly; skip if nothing is a strong match → omit --note).
