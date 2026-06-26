@@ -36,4 +36,4 @@ lab-slack.env
 public_preview/
 
 # Bulk interview captures (raw photos + notes) — select/resize into content/ when writing the post
-data/interviews/
+interviews/
