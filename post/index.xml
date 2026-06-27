@@ -1,4 +1,43 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts | AICell Lab</title><link>https://aicell.io/post/</link><atom:link href="https://aicell.io/post/index.xml" rel="self" type="application/rss+xml"/><description>Posts</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 26 Jun 2026 03:02:23 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>Posts</title><link>https://aicell.io/post/</link></image><item><title>Lab Newsletter — June 26, 2026: AI Starts Discovering Drugs On Its Own</title><link>https://aicell.io/post/newsletter-2026-06-26/</link><pubDate>Fri, 26 Jun 2026 03:02:23 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-06-26/</guid><description>&lt;p>The &amp;ldquo;AI scientist&amp;rdquo; stopped being a thought experiment. Here&amp;rsquo;s what caught our
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts | AICell Lab</title><link>https://aicell.io/post/</link><atom:link href="https://aicell.io/post/index.xml" rel="self" type="application/rss+xml"/><description>Posts</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sat, 27 Jun 2026 03:03:33 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>Posts</title><link>https://aicell.io/post/</link></image><item><title>Lab Newsletter — June 27, 2026: Agents Get Put to the Test</title><link>https://aicell.io/post/newsletter-2026-06-27/</link><pubDate>Sat, 27 Jun 2026 03:03:33 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-06-27/</guid><description>&lt;p>A theme today: the field is putting agents through their paces — in the literature, at
+the microscope, and against real reference data. Here&amp;rsquo;s what caught our eye.&lt;/p>
+&lt;h3 id="-ai-scientists-still-flunk-the-library">🤖 &amp;ldquo;AI scientists&amp;rdquo; still flunk the library&lt;/h3>
+&lt;p>A sobering new benchmark, &lt;a href="https://arxiv.org/abs/2604.25256" target="_blank" rel="noopener">AutoResearchBench&lt;/a>, tests
+whether AI agents can do the unglamorous first step of research — &lt;em>finding the right
+papers&lt;/em>. Two tasks: &amp;ldquo;deep research&amp;rdquo; (track down a specific target paper through multi-step
+probing) and &amp;ldquo;wide research&amp;rdquo; (collect every paper matching a set of conditions). Even the
+strongest LLM agents manage only &lt;strong>~9%&lt;/strong> (9.39% accuracy / 9.31% IoU), with most baselines
+below 5% — despite many having &amp;ldquo;conquered&amp;rdquo; general web-browsing benchmarks. &lt;strong>Why it
+matters for the lab:&lt;/strong> our autonomous-research-agents live exactly here. The takeaway isn&amp;rsquo;t
+&amp;ldquo;agents can&amp;rsquo;t&amp;rdquo; — it&amp;rsquo;s that literature discovery is a real, unsolved bottleneck, and
+human-in-the-loop checks (and adversarial cross-verification, as some new multi-agent
+research frameworks propose) are well-placed bets, not training wheels.&lt;/p>
+&lt;h3 id="-agents-come-to-imagej--with-reproducibility-built-in">🔬 Agents come to ImageJ — with reproducibility built in&lt;/h3>
+&lt;p>&lt;a href="https://arxiv.org/abs/2606.02080" target="_blank" rel="noopener">Agentic-J&lt;/a> (Johanns et al., arXiv, June 2026) is a
+containerized, multi-agent assistant for &lt;strong>Fiji/ImageJ&lt;/strong>: a biologist asks in plain language
+(&amp;ldquo;segment the nuclei, track the cells, quantify per condition&amp;rdquo;) and specialized sub-agents
+handle plugin selection, code generation, debugging, QA and statistical reporting — writing
+every decision into a documented, reproducible &lt;a href="https://mmv-lab.github.io/Agentic-J/" target="_blank" rel="noopener">project&lt;/a>.
+It ships a full Fiji distribution in Docker, keeps the familiar interface (human-in-the-loop,
+not black box), and talks to napari over the &lt;strong>Model Context Protocol&lt;/strong>. &lt;strong>Why it matters for
+the lab:&lt;/strong> this is precisely the pattern we build toward with ImJoy, ImageJ.JS and the
+BioImage.IO Chatbot — agents wrapped around trusted tools, reproducible by construction, and
+speaking MCP like our own stack.&lt;/p>
+&lt;h3 id="-the-human-cell-atlas-convenes-the-retina-gets-mapped">🧬 The Human Cell Atlas convenes; the retina gets mapped&lt;/h3>
+&lt;p>The &lt;a href="https://www.biospace.com/press-releases/mission-bio-and-human-cell-atlas-collaborate-to-expand-access-to-single-cell-multiomics-ahead-of-hca-2026-meeting" target="_blank" rel="noopener">Human Cell Atlas General Meeting&lt;/a>
+(Boston, June 16–18) gathered the global single-cell community to push shared standards for
+data and spatial biology — alongside a new collaboration widening access to single-cell
+multiomics. In the same spirit, a &lt;a href="https://www.nature.com/articles/s41588-025-02454-1" target="_blank" rel="noopener">Human Retina Cell Atlas&lt;/a>
+integrates ~3.9M cells from 125 donors into 130+ cell types and ties them to GWAS/eQTL
+signals. &lt;strong>Why it matters for the lab:&lt;/strong> standardized reference atlases are the substrate the
+virtual cell — and our image × omics models — learn from; the boring work of standards is what
+makes the exciting models trustworthy.&lt;/p>
+&lt;h3 id="-from-the-lab">📖 From the lab&lt;/h3>
+&lt;p>A quiet point of pride: our own &lt;strong>&lt;a href="https://www.scilifelab.se/news/bioimage-io-chatbot-recognition-in-nature-methods-and-the-next-steps/" target="_blank" rel="noopener">BioImage.IO Chatbot&lt;/a>&lt;/strong>,
+supported by SciLifeLab&amp;rsquo;s DDLS program, keeps growing from a Q&amp;amp;A helper into a full agent that
+reads papers, drafts experimental plans, and drives microscopes and liquid handlers — the same
+agent-meets-instrument direction this whole issue circles around.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+Have lab news to share — a talk, paper, conference or release? Message me on Slack.&lt;/em>&lt;/p></description></item><item><title>Lab Newsletter — June 26, 2026: AI Starts Discovering Drugs On Its Own</title><link>https://aicell.io/post/newsletter-2026-06-26/</link><pubDate>Fri, 26 Jun 2026 03:02:23 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-06-26/</guid><description>&lt;p>The &amp;ldquo;AI scientist&amp;rdquo; stopped being a thought experiment. Here&amp;rsquo;s what caught our
 eye — with a strategy-radar lens on where the lab is heading.&lt;/p>
 &lt;h3 id="-an-ai-that-discovers-a-drug--and-validates-it">🧪 An AI that discovers a drug — and validates it&lt;/h3>
 &lt;p>The headline is &lt;strong>Robin&lt;/strong>, reported in &lt;em>Nature&lt;/em> (May 2026) and
