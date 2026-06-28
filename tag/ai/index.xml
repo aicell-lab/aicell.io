@@ -1,4 +1,38 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AI | AICell Lab</title><link>https://aicell.io/tag/ai/</link><atom:link href="https://aicell.io/tag/ai/index.xml" rel="self" type="application/rss+xml"/><description>AI</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sat, 27 Jun 2026 03:03:33 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>AI</title><link>https://aicell.io/tag/ai/</link></image><item><title>Lab Newsletter — June 27, 2026: Agents Get Put to the Test</title><link>https://aicell.io/post/newsletter-2026-06-27/</link><pubDate>Sat, 27 Jun 2026 03:03:33 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-06-27/</guid><description>&lt;p>A theme today: the field is putting agents through their paces — in the literature, at
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AI | AICell Lab</title><link>https://aicell.io/tag/ai/</link><atom:link href="https://aicell.io/tag/ai/index.xml" rel="self" type="application/rss+xml"/><description>AI</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 28 Jun 2026 03:02:25 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>AI</title><link>https://aicell.io/tag/ai/</link></image><item><title>Lab Newsletter — June 28, 2026: Designing Proteins, Reading Genomes</title><link>https://aicell.io/post/newsletter-2026-06-28/</link><pubDate>Sun, 28 Jun 2026 03:02:25 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-06-28/</guid><description>&lt;p>A change of scenery from this week&amp;rsquo;s agents-and-microscopes run: today the spotlight is on
+&lt;em>designing&lt;/em> and &lt;em>reading&lt;/em> biology&amp;rsquo;s sequences — proteins and genomes.&lt;/p>
+&lt;h3 id="-protein-design-grows-into-an-engineering-discipline">🧬 Protein design grows into an engineering discipline&lt;/h3>
+&lt;p>A fresh &lt;a href="https://www.frontiersin.org/journals/molecular-biosciences/articles/10.3389/fmolb.2026.1903318/full" target="_blank" rel="noopener">Frontiers editorial&lt;/a>
+(June 25) and a &lt;a href="https://www.nature.com/articles/s42003-026-10112-3" target="_blank" rel="noopener">Communications Biology commentary&lt;/a>
+both make the same point: AI protein design has moved from &amp;ldquo;remarkable demo&amp;rdquo; to &lt;em>scalable
+engineering&lt;/em>. Generative tools like &lt;strong>RFdiffusion&lt;/strong> and &lt;strong>BindCraft&lt;/strong> now produce
+high-affinity binders, enzymes and therapeutic candidates with high experimental success
+rates — and the next frontiers are sharpening: predicting full &lt;strong>conformational ensembles&lt;/strong>
+(approximating Boltzmann-weighted states at a fraction of molecular-dynamics cost) and making
+de novo binder design a routine, reliable pipeline. &lt;strong>Why it matters for the lab:&lt;/strong> protein
+design is the &amp;ldquo;design&amp;rdquo; half of the AI-for-biology loop that complements our imaging and
+cell-modeling work — and the framing we keep coming back to (turn a craft into a reliable,
+benchmarked engineering discipline) is exactly our north star for agentic tooling, too.&lt;/p>
+&lt;h3 id="-evo-2-reads-genomes-at-scale--but-scale-isnt-everything">🧪 Evo 2 reads genomes at scale — but scale isn&amp;rsquo;t everything&lt;/h3>
+&lt;p>Arc Institute&amp;rsquo;s &lt;a href="https://arcinstitute.org/tools/evo" target="_blank" rel="noopener">&lt;strong>Evo 2&lt;/strong>&lt;/a> (&lt;em>Nature&lt;/em>, March 2026) is a
+genomic foundation model at a striking scale: &lt;strong>40 billion parameters&lt;/strong>, a &lt;strong>1-megabase
+context&lt;/strong>, trained on &lt;strong>9 trillion+ nucleotides&lt;/strong> across eukaryotic and prokaryotic genomes,
+for generalist prediction &lt;em>and&lt;/em> design across DNA, RNA and protein at single-nucleotide
+resolution. Yet a &lt;a href="https://www.nature.com/articles/s41467-025-65823-8" target="_blank" rel="noopener">benchmark in &lt;em>Nature Communications&lt;/em>&lt;/a>
+keeps it honest: general-purpose DNA foundation models were competitive at pathogenic-variant
+identification but &lt;strong>lagged specialized models&lt;/strong> at predicting gene expression and pinning down
+causal QTLs. &lt;strong>Why it matters for the lab:&lt;/strong> it&amp;rsquo;s the same lesson the virtual-cell field is
+learning — scale is necessary but not sufficient; the win comes from matching the model (and a
+fair benchmark) to the question.&lt;/p>
+&lt;h3 id="-the-dual-use-shadow-worth-naming">🛡️ The dual-use shadow worth naming&lt;/h3>
+&lt;p>A &lt;a href="https://www.frontiersin.org/journals/microbiology/articles/10.3389/fmicb.2026.1817535/full" target="_blank" rel="noopener">Frontiers analysis&lt;/a>
+(March 2026) raises a concern the field can&amp;rsquo;t wave away: AI can now generate proteins that are
+&lt;em>functionally&lt;/em> equivalent to known toxins while sharing almost no sequence similarity — which
+makes today&amp;rsquo;s homology-based biosecurity screening effectively blind to them. &lt;strong>Why it matters
+for the lab:&lt;/strong> as we build more autonomous, agentic tools, responsibility scales with
+capability. Provenance, guardrails and human-in-the-loop checks aren&amp;rsquo;t friction — they&amp;rsquo;re part
+of doing powerful science well, and a thread we&amp;rsquo;ll keep pulling on.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+Have lab news to share — a talk, paper, conference or release? Message me on Slack.&lt;/em>&lt;/p></description></item><item><title>Lab Newsletter — June 27, 2026: Agents Get Put to the Test</title><link>https://aicell.io/post/newsletter-2026-06-27/</link><pubDate>Sat, 27 Jun 2026 03:03:33 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-06-27/</guid><description>&lt;p>A theme today: the field is putting agents through their paces — in the literature, at
 the microscope, and against real reference data. Here&amp;rsquo;s what caught our eye.&lt;/p>
 &lt;h3 id="-ai-scientists-still-flunk-the-library">🤖 &amp;ldquo;AI scientists&amp;rdquo; still flunk the library&lt;/h3>
 &lt;p>A sobering new benchmark, &lt;a href="https://arxiv.org/abs/2604.25256" target="_blank" rel="noopener">AutoResearchBench&lt;/a>, tests
