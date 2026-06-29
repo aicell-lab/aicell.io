@@ -1,4 +1,36 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>governance | AICell Lab</title><link>https://aicell.io/tag/governance/</link><atom:link href="https://aicell.io/tag/governance/index.xml" rel="self" type="application/rss+xml"/><description>governance</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 28 Jun 2026 03:02:25 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>governance</title><link>https://aicell.io/tag/governance/</link></image><item><title>Lab Newsletter — June 28, 2026: Designing Proteins, Reading Genomes</title><link>https://aicell.io/post/newsletter-2026-06-28/</link><pubDate>Sun, 28 Jun 2026 03:02:25 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-06-28/</guid><description>&lt;p>A change of scenery from this week&amp;rsquo;s agents-and-microscopes run: today the spotlight is on
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>governance | AICell Lab</title><link>https://aicell.io/tag/governance/</link><atom:link href="https://aicell.io/tag/governance/index.xml" rel="self" type="application/rss+xml"/><description>governance</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 29 Jun 2026 03:02:47 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>governance</title><link>https://aicell.io/tag/governance/</link></image><item><title>Lab Newsletter — June 29, 2026: Microscopes That Think, Labs That Run Themselves</title><link>https://aicell.io/post/newsletter-2026-06-29/</link><pubDate>Mon, 29 Jun 2026 03:02:47 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-06-29/</guid><description>&lt;p>Two ends of the automation story today — the microscope getting smarter at the bench, and
+the whole lab learning to run itself in the cloud — plus the governance gap between them.&lt;/p>
+&lt;h3 id="-microscopes-that-think-while-they-watch">🔬 Microscopes that think while they watch&lt;/h3>
+&lt;p>A new &lt;a href="https://www.nature.com/articles/s44303-026-00145-y" target="_blank" rel="noopener">npj Imaging review&lt;/a> frames
+&amp;ldquo;smart microscopy&amp;rdquo; cleanly: real-time analysis + feedback control + automated actuation, so
+the instrument adapts acquisition on the fly to balance resolution, speed and sample health.
+A vivid example landed alongside it — &lt;a href="https://phys.org/news/2026-04-ai-microscopy-crisp-real-video.html" target="_blank" rel="noopener">UBSIM&lt;/a>
+(UC San Diego, &lt;em>Nature Communications&lt;/em> 2026), an AI-reconstructed structured-illumination
+method that streams &lt;strong>super-resolution video of live cells in real time&lt;/strong> — ~2× sharper, up
+to 50 fps — and, crucially, embeds the optical physics so it &lt;strong>removes artifacts and
+hallucinations&lt;/strong> rather than inventing detail. &lt;strong>Why it matters for the lab:&lt;/strong> this is our
+self-driving-microscope and REEF territory exactly — closing the loop between &lt;em>seeing&lt;/em> and
+&lt;em>deciding&lt;/em>, sparing the sample, and keeping the AI honest about what&amp;rsquo;s really there.&lt;/p>
+&lt;h3 id="-an-ai-ran-36000-biology-experiments-on-its-own">🤖 An AI ran ~36,000 biology experiments on its own&lt;/h3>
+&lt;p>According to a &lt;a href="https://www.biorxiv.org/content/10.64898/2026.02.05.703998v1" target="_blank" rel="noopener">bioRxiv preprint&lt;/a>
+(reported by &lt;a href="https://theconversation.com/ai-can-design-and-run-thousands-of-lab-experiments-without-human-hands-humanity-isnt-ready-for-the-new-risks-this-brings-to-biology-279191" target="_blank" rel="noopener">The Conversation&lt;/a>),
+an LLM-driven autonomous lab (GPT-5 wired to a robotic cloud lab) designed and ran on the
+order of &lt;strong>36,000 cell-free protein-synthesis experiments&lt;/strong> across six closed-loop rounds —
+cutting specific cost ($/g protein) by &lt;strong>~40%&lt;/strong> while raising titer ~27%, with humans left
+mostly to load plates. In parallel, &lt;a href="https://www.prnewswire.com/news-releases/ginkgo-bioworks-launches-ginkgo-cloud-lab-powered-by-autonomous-lab-infrastructure-302700458.html" target="_blank" rel="noopener">Ginkgo Cloud Lab&lt;/a>
+went commercial (March 2) — 70+ remotely driven instruments on reconfigurable robotic carts,
+fronted by a plain-language &amp;ldquo;EstiMate&amp;rdquo; agent. &lt;strong>Why it matters for the lab:&lt;/strong> the closed-loop
+AI scientist has now reached &lt;em>biology at scale&lt;/em>, not just chemistry — the same observe→reason→act
+loop our autonomous-research-agents and REEF imaging farm are built around.&lt;/p>
+&lt;h3 id="-and-the-guardrails-havent-caught-up">⚖️ …and the guardrails haven&amp;rsquo;t caught up&lt;/h3>
+&lt;p>The same reporting carries a sober warning: rules governing biological research weren&amp;rsquo;t written
+for AI-driven automation, controls vary across providers, and screening the synthetic DNA that
+makes such work possible remains &lt;strong>mostly voluntary&lt;/strong> — alongside a &amp;ldquo;deskilling&amp;rdquo; risk as tacit
+expertise shifts to the machine. &lt;strong>Why it matters for the lab:&lt;/strong> it&amp;rsquo;s the throughline of this
+week — capability is outrunning governance, so provenance, consistent controls and
+human-in-the-loop judgment are features to build in, not afterthoughts.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+Have lab news to share — a talk, paper, conference or release? Message me on Slack.&lt;/em>&lt;/p></description></item><item><title>Lab Newsletter — June 28, 2026: Designing Proteins, Reading Genomes</title><link>https://aicell.io/post/newsletter-2026-06-28/</link><pubDate>Sun, 28 Jun 2026 03:02:25 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-06-28/</guid><description>&lt;p>A change of scenery from this week&amp;rsquo;s agents-and-microscopes run: today the spotlight is on
 &lt;em>designing&lt;/em> and &lt;em>reading&lt;/em> biology&amp;rsquo;s sequences — proteins and genomes.&lt;/p>
 &lt;h3 id="-protein-design-grows-into-an-engineering-discipline">🧬 Protein design grows into an engineering discipline&lt;/h3>
 &lt;p>A fresh &lt;a href="https://www.frontiersin.org/journals/molecular-biosciences/articles/10.3389/fmolb.2026.1903318/full" target="_blank" rel="noopener">Frontiers editorial&lt;/a>
