@@ -1,4 +1,40 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AI | AICell Lab</title><link>https://aicell.io/tag/ai/</link><atom:link href="https://aicell.io/tag/ai/index.xml" rel="self" type="application/rss+xml"/><description>AI</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 29 Jun 2026 03:02:47 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>AI</title><link>https://aicell.io/tag/ai/</link></image><item><title>Lab Newsletter — June 29, 2026: Microscopes That Think, Labs That Run Themselves</title><link>https://aicell.io/post/newsletter-2026-06-29/</link><pubDate>Mon, 29 Jun 2026 03:02:47 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-06-29/</guid><description>&lt;p>Two ends of the automation story today — the microscope getting smarter at the bench, and
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AI | AICell Lab</title><link>https://aicell.io/tag/ai/</link><atom:link href="https://aicell.io/tag/ai/index.xml" rel="self" type="application/rss+xml"/><description>AI</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 30 Jun 2026 03:03:07 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>AI</title><link>https://aicell.io/tag/ai/</link></image><item><title>Lab Newsletter — June 30, 2026: RNA's AlphaFold Moment, and a Proteome in Pictures</title><link>https://aicell.io/post/newsletter-2026-06-30/</link><pubDate>Tue, 30 Jun 2026 03:03:07 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-06-30/</guid><description>&lt;p>After a week heavy on agents and automation, today is about &lt;em>molecules and images&lt;/em> — RNA
+finally getting its structure tools, pathology models maturing in the clinic, and a new
+proteome-scale picture of the cell from our own bench.&lt;/p>
+&lt;h3 id="-rna-catches-up-to-proteins">🧬 RNA catches up to proteins&lt;/h3>
+&lt;p>Protein folding had its AlphaFold moment years ago; RNA is having its now.
+&lt;a href="https://www.synbiobeta.com/read/new-ai-model-predicts-rna-structures-with-unprecedented-accuracy" target="_blank" rel="noopener">NuFold&lt;/a>
+(Purdue; &lt;em>Nature Communications&lt;/em>) predicts 3D RNA structure from sequence — its lead calls it
+&amp;ldquo;the RNA equivalent of AlphaFold&amp;rdquo; — and it&amp;rsquo;s open-source with a Colab notebook;
+&lt;a href="https://www.nature.com/articles/s42256-026-01223-x" target="_blank" rel="noopener">trRosettaRNA2&lt;/a> (&lt;em>Nature Machine
+Intelligence&lt;/em>, 2026) pushes accuracy further by fusing end-to-end learning with secondary-structure
+priors. On the &lt;em>design&lt;/em> side, &lt;a href="https://www.science.org/doi/10.1126/science.adr8470" target="_blank" rel="noopener">generative mRNA models&lt;/a>
+(&lt;em>Science&lt;/em>) now compose de novo sequences with enhanced translational capacity and stability —
+relevant to vaccines, protein-replacement and in-vivo cell therapies. &lt;strong>Why it matters for the
+lab:&lt;/strong> the protein-folding playbook is transferring to a harder, more dynamic molecule — and
+structure + design together turn RNA from &amp;ldquo;read-only&amp;rdquo; into something you can engineer.&lt;/p>
+&lt;h3 id="-pathology-foundation-models-grow-up-at-the-clinical-edge">🔬 Pathology foundation models grow up at the clinical edge&lt;/h3>
+&lt;p>A &lt;a href="https://jpatholtm.org/journal/view.php?number=17219" target="_blank" rel="noopener">2026 review&lt;/a> maps how computational
+pathology is maturing: foundation models trained on enormous slide corpora — &lt;strong>Virchow&lt;/strong> (0.95
+AUC across 16 cancer types from ~1.5M H&amp;amp;E slides), Prov-GigaPath (1.3B tiles), the cytology-focused
+CytoFM, and &lt;strong>KRONOS&lt;/strong> for spatial proteomics — now support subtyping, biomarker detection and
+pan-cancer tasks, alongside &lt;strong>virtual staining&lt;/strong> (synthesizing diagnostic stains) and multimodal
+&amp;ldquo;copilots&amp;rdquo; (PathChat, TeamPath). Real products are FDA-cleared and adoption is climbing (~10% of
+US labs, 2024). &lt;strong>Why it matters for the lab:&lt;/strong> this is the regulated, clinical edge of the
+image × omics work we care about — virtual staining echoes our generative-imaging direction, and
+KRONOS sits right on the spatial-proteomics bridge.&lt;/p>
+&lt;h3 id="-from-the-lab-a-proteome-wide-image-of-the-cell">📖 From the lab: a proteome-wide image of the cell&lt;/h3>
+&lt;p>Hot off bioRxiv, a new paper with the lab&amp;rsquo;s Wei Ouyang (and Emma Lundberg) —
+&lt;a href="https://aicell.io/publication/sun-2026-proteome-wide/">&lt;strong>ProtiCelli&lt;/strong>&lt;/a> — uses a deep generative (diffusion)
+model to &lt;em>simulate&lt;/em> microscopy images for &lt;strong>12,800 human proteins&lt;/strong> from just three landmark
+stains, trained on the Human Protein Atlas. It then generates &lt;strong>Proteome2Cell&lt;/strong>: ~30.7M images
+forming 2,400 &amp;ldquo;virtual cells&amp;rdquo; across 12 cell lines, recovering subcellular organization,
+protein–protein interaction landscapes and even drug-induced changes from morphology alone.
+&lt;strong>Why it matters for the lab:&lt;/strong> it&amp;rsquo;s a concrete step toward &lt;em>spatial&lt;/em> virtual-cell modeling —
+turning spatial proteomics from cataloguing proteins into simulating whole cellular systems,
+exactly the horizon this newsletter keeps circling.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+Have lab news to share — a talk, paper, conference or release? Message me on Slack.&lt;/em>&lt;/p></description></item><item><title>Lab Newsletter — June 29, 2026: Microscopes That Think, Labs That Run Themselves</title><link>https://aicell.io/post/newsletter-2026-06-29/</link><pubDate>Mon, 29 Jun 2026 03:02:47 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-06-29/</guid><description>&lt;p>Two ends of the automation story today — the microscope getting smarter at the bench, and
 the whole lab learning to run itself in the cloud — plus the governance gap between them.&lt;/p>
 &lt;h3 id="-microscopes-that-think-while-they-watch">🔬 Microscopes that think while they watch&lt;/h3>
 &lt;p>A new &lt;a href="https://www.nature.com/articles/s44303-026-00145-y" target="_blank" rel="noopener">npj Imaging review&lt;/a> frames
