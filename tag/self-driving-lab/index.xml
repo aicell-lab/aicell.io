@@ -60,18 +60,18 @@ was reversible.&lt;/p>
 &lt;h3 id="what-the-cells-showed">What the cells showed&lt;/h3>
 &lt;p>The run streamed to a live viewer the whole time. Here is the story the images told, in the
 agent&amp;rsquo;s own read of them.&lt;/p>
-&lt;figure id="figure-brightfield-images-at-three-stages-of-the-run-as-the-agent-saw-them-live-at-baseline-the-cells-are-healthy-and-well-spread-after-the-2m-nacl-dose-the-cytoplasm-turns-refractile-and-granular-and-the-field-looks-sparser-after-the-rescue-the-cells-smooth-out-and-spread-again-back-toward-the-baseline-the-live-cell-count-held-steady-around-215-throughout-the-cells-survived">
+&lt;figure id="figure-the-same-field-of-cells-tracked-through-the-run-in-brightfield-as-the-agent-saw-them-live-identical-processing-across-all-three-frames-at-baseline-the-cells-are-healthy-and-well-spread-after-the-2m-nacl-dose-the-cytoplasm-turns-refractile-and-the-field-flattens-after-the-rescue-the-texture-returns-and-the-cells-look-like-the-baseline-again-the-live-cell-count-held-steady-around-210215-throughout-the-change-was-real-and-it-reversed">
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img alt="Brightfield images at three stages of the run, as the agent saw them live. At baseline the cells are healthy and well spread; after the 2M NaCl dose the cytoplasm turns refractile and granular and the field looks sparser; after the rescue the cells smooth out and spread again, back toward the baseline. The live cell count held steady (around 215) throughout: the cells survived." srcset="
-/post/reef-first-live-demo/demo-comparison_hu466e91f95fe1d403b706dbab56f77d43_268788_f7db682dc9157cafbb5669466ce44898.webp 400w,
-/post/reef-first-live-demo/demo-comparison_hu466e91f95fe1d403b706dbab56f77d43_268788_7f3edf5a1aefbadb5ed5e8e043481126.webp 760w,
-/post/reef-first-live-demo/demo-comparison_hu466e91f95fe1d403b706dbab56f77d43_268788_1200x1200_fit_q75_h2_lanczos.webp 1200w"
-src="https://aicell.io/post/reef-first-live-demo/demo-comparison_hu466e91f95fe1d403b706dbab56f77d43_268788_f7db682dc9157cafbb5669466ce44898.webp"
+&lt;div class="w-100" >&lt;img alt="The same field of cells, tracked through the run in brightfield, as the agent saw them live (identical processing across all three frames). At baseline the cells are healthy and well spread; after the 2M NaCl dose the cytoplasm turns refractile and the field flattens; after the rescue the texture returns and the cells look like the baseline again. The live cell count held steady (around 210–215) throughout: the change was real, and it reversed." srcset="
+/post/reef-first-live-demo/demo-comparison_hu878ac15bef8c1d6ace6d9c39e08234f7_336914_26685dcf5022aa131cd8360e8da69cd6.webp 400w,
+/post/reef-first-live-demo/demo-comparison_hu878ac15bef8c1d6ace6d9c39e08234f7_336914_364f7e9f1725dd2377f502b3f292af44.webp 760w,
+/post/reef-first-live-demo/demo-comparison_hu878ac15bef8c1d6ace6d9c39e08234f7_336914_1200x1200_fit_q75_h2_lanczos.webp 1200w"
+src="https://aicell.io/post/reef-first-live-demo/demo-comparison_hu878ac15bef8c1d6ace6d9c39e08234f7_336914_26685dcf5022aa131cd8360e8da69cd6.webp"
 width="760"
-height="279"
+height="277"
 loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;figcaption>
-Brightfield images at three stages of the run, as the agent saw them live. At baseline the cells are healthy and well spread; after the 2M NaCl dose the cytoplasm turns refractile and granular and the field looks sparser; after the rescue the cells smooth out and spread again, back toward the baseline. The live cell count held steady (around 215) throughout: the cells survived.
+The same field of cells, tracked through the run in brightfield, as the agent saw them live (identical processing across all three frames). At baseline the cells are healthy and well spread; after the 2M NaCl dose the cytoplasm turns refractile and the field flattens; after the rescue the texture returns and the cells look like the baseline again. The live cell count held steady (around 210–215) throughout: the change was real, and it reversed.
 &lt;/figcaption>&lt;/figure>
 &lt;p>The run&amp;rsquo;s own verdict, logged live: &lt;em>osmotic change confirmed reversible.&lt;/em>&lt;/p>
 &lt;hr>
