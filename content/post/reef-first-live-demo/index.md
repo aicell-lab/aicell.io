@@ -1,5 +1,5 @@
 ---
-title: "One Prompt, a Whole Lab: A Live Agent-Run Experiment on REEF"
+title: "We Typed One Sentence, and the Lab Ran the Experiment"
 summary: "At an invited talk at CZI, we ran a live, fully agent-controlled wet-lab experiment on the REEF Imaging Farm. A single natural-language prompt set an entire lab in motion, on real cells, in real time. We interviewed the agent that ran it."
 date: '2026-07-01T02:11:38Z'
 lastmod: '2026-07-01T02:11:38Z'
@@ -105,7 +105,7 @@ was reversible.
 The run streamed to a live viewer the whole time. Here is the story the images told, in the
 agent's own read of them.
 
-{{< figure src="demo-comparison.jpg" caption="Three stages of the live run, shown as representative brightfield fields: a healthy baseline, the refractile (shrunken) look after the 2M NaCl dose, and recovery after the rescue. The cell count held steady (around 215) throughout, and the cells survived." >}}
+{{< figure src="demo-comparison.jpg" caption="The system's live cell detection at three stages of the run. At baseline the cells are healthy and well spread; after the 2M NaCl dose they round up and pack together; after the rescue they spread out again, back toward the baseline. Each colour is one cell the system found and counted in real time, and the count held steady (around 215) throughout: the cells survived." >}}
 
 The run's own verdict, logged live: *osmotic change confirmed reversible.*
 
