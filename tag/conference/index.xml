@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>conference | AICell Lab</title><link>https://aicell.io/tag/conference/</link><atom:link href="https://aicell.io/tag/conference/index.xml" rel="self" type="application/rss+xml"/><description>conference</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 01 Jul 2026 11:32:53 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>conference</title><link>https://aicell.io/tag/conference/</link></image><item><title>BioEngine at ELMI 2026: AI Agents Meet the Core Facility</title><link>https://aicell.io/post/elmi-2026-bioengine/</link><pubDate>Wed, 01 Jul 2026 11:32:53 +0000</pubDate><guid>https://aicell.io/post/elmi-2026-bioengine/</guid><description>&lt;p>In mid-June, Nils Mechtel represented the lab in Portugal at the &lt;strong>26th ELMI (European Light
+Microscopy Initiative), 16 to 19 June 2026&lt;/strong> in &lt;strong>Coimbra&lt;/strong>, a beautiful old university town on
+the Mondego and a fitting backdrop for a meeting all about seeing life more clearly.&lt;/p>
+&lt;figure id="figure-coimbra-on-the-mondego-host-city-of-elmi-2026">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img alt="Coimbra on the Mondego, host city of ELMI 2026." srcset="
+/post/elmi-2026-bioengine/coimbra_hua2905bb0cf8e55b461a66aa5b9eca6c4_347001_838802bfebb8bf66e9c47b42c407d891.webp 400w,
+/post/elmi-2026-bioengine/coimbra_hua2905bb0cf8e55b461a66aa5b9eca6c4_347001_6e37a09cf9986f4659ae79cbbbd3a4d3.webp 760w,
+/post/elmi-2026-bioengine/coimbra_hua2905bb0cf8e55b461a66aa5b9eca6c4_347001_1200x1200_fit_q75_h2_lanczos.webp 1200w"
+src="https://aicell.io/post/elmi-2026-bioengine/coimbra_hua2905bb0cf8e55b461a66aa5b9eca6c4_347001_838802bfebb8bf66e9c47b42c407d891.webp"
+width="760"
+height="428"
+loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+Coimbra on the Mondego, host city of ELMI 2026.
+&lt;/figcaption>&lt;/figure>
+&lt;h3 id="the-talk-bioengine-for-core-facility-workflows">The talk: BioEngine for core facility workflows&lt;/h3>
+&lt;p>Nils gave the opening talk of the &lt;strong>&amp;ldquo;AI in Core Facility Life&amp;rdquo; session&lt;/strong> on &lt;strong>Core Facility Day&lt;/strong>,
+presenting &lt;strong>&lt;a href="https://aicell.io/project/bioengine/">BioEngine&lt;/a>&lt;/strong> as &lt;em>open infrastructure for collaborative bioimage
+AI&lt;/em>. His pitch to the facilities in the room was a practical one. The many pieces that core
+facilities juggle every day, including a model repository (&lt;a href="https://bioimage.io" target="_blank" rel="noopener">BioImage.IO&lt;/a>),
+analysis tools, a data repository, a knowledge base, chatbot and LLM agents, and smart-microscopy
+control, do not have to be stitched together by hand. BioEngine, built with the
+&lt;a href="https://ai4life.eurobioimaging.eu/" target="_blank" rel="noopener">AI4Life&lt;/a> consortium, makes bioimage-AI models runnable,
+agent-readable and FAIR, and it can be deployed right at a facility&amp;rsquo;s own institute.&lt;/p>
+&lt;figure id="figure-nils-presenting-the-bioengine-open-infrastructure-for-collaborative-bioimage-ai-overview-to-a-packed-elmi-hall">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img alt="Nils presenting the BioEngine &amp;#39;open infrastructure for collaborative bioimage AI&amp;#39; overview to a packed ELMI hall." srcset="
+/post/elmi-2026-bioengine/featured_hu89271531db5d0a094f4f184ef3c08a57_128211_1f6e34c54dbd21c2e79cc9066b946a41.webp 400w,
+/post/elmi-2026-bioengine/featured_hu89271531db5d0a094f4f184ef3c08a57_128211_f9f0df3296c66379c90e72814913f36a.webp 760w,
+/post/elmi-2026-bioengine/featured_hu89271531db5d0a094f4f184ef3c08a57_128211_1200x1200_fit_q75_h2_lanczos.webp 1200w"
+src="https://aicell.io/post/elmi-2026-bioengine/featured_hu89271531db5d0a094f4f184ef3c08a57_128211_1f6e34c54dbd21c2e79cc9066b946a41.webp"
+width="760"
+height="570"
+loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+Nils presenting the BioEngine &amp;lsquo;open infrastructure for collaborative bioimage AI&amp;rsquo; overview to a packed ELMI hall.
+&lt;/figcaption>&lt;/figure>
+&lt;h3 id="the-panel">The panel&lt;/h3>
+&lt;p>After the talks, Nils joined the session&amp;rsquo;s two other speakers for a panel discussion, and the
+conversation moved quickly to how far AI can really go inside a working facility. A central thread
+was whether AI, and AI agents in particular, can help &lt;em>design and run&lt;/em> experiments rather than only
+analyze the results afterward. Nils spoke to this from direct experience, describing how the lab
+orchestrates experiments in its REEF Imaging Farm, a subject that felt especially timely after
+&lt;a href="https://aicell.io/post/reef-first-live-demo/">the farm&amp;rsquo;s first live agent-run experiment&lt;/a>. From there the
+discussion turned to a quieter but essential problem: making data AI-ready in the first place,
+where AI can help with the metadata capture and preparation that good training data depends on, an
+area the session&amp;rsquo;s later talks picked up in more depth. Teaching came up as well, and here Nils
+offered a careful view. AI can widen access to knowledge and genuinely accelerate learning through
+custom, on-demand explanation, but only when the setting keeps learning ahead of pure results.
+Hand a student an agent that simply produces the answer, he noted, and they may walk away with the
+result without the understanding. By the end, as these conversations tend to, it had opened out
+into the broader debate about AI&amp;rsquo;s place in science and education.&lt;/p>
+&lt;figure id="figure-the-ai-in-core-facility-life-panel-discussion">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img alt="The &amp;#39;AI in Core Facility Life&amp;#39; panel discussion." srcset="
+/post/elmi-2026-bioengine/panel_hu184dbdb4b4e3612ed3dd2edb989359cd_110928_900edc186f235563453255534b5e4595.webp 400w,
+/post/elmi-2026-bioengine/panel_hu184dbdb4b4e3612ed3dd2edb989359cd_110928_ee66a47d81a9801a7ee81af3c78f622c.webp 760w,
+/post/elmi-2026-bioengine/panel_hu184dbdb4b4e3612ed3dd2edb989359cd_110928_1200x1200_fit_q75_h2_lanczos.webp 1200w"
+src="https://aicell.io/post/elmi-2026-bioengine/panel_hu184dbdb4b4e3612ed3dd2edb989359cd_110928_900edc186f235563453255534b5e4595.webp"
+width="760"
+height="570"
+loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+The &amp;lsquo;AI in Core Facility Life&amp;rsquo; panel discussion.
+&lt;/figcaption>&lt;/figure>
+&lt;h3 id="beyond-the-stage">Beyond the stage&lt;/h3>
+&lt;p>The interest in BioEngine did not stay in the lecture hall. Nils handed his contact to many people
+who were keen to try it, and kept the BioEngine conversations going over coffee, lunch, dinner, and
+after the workshops. He had also hung a poster for the Thursday-evening session, though, needing to
+fly back to Sweden, he could not present it in person. The hallway conversations more than made up
+for it.&lt;/p>
+&lt;p>&lt;em>More from Nils on the conference in his &lt;a href="https://www.linkedin.com/posts/nils-mechtel_ai4life-elmi2026-bioimageanalysis-ugcPost-7474504796524371968-YkVH/" target="_blank" rel="noopener">LinkedIn post&lt;/a>. Conference details: &lt;a href="https://ppbi.pt/wordpress/index.php/elmi2026/" target="_blank" rel="noopener">ELMI 2026&lt;/a>, hosted by PPBI at the University of Coimbra.&lt;/em>&lt;/p>
+&lt;p>&lt;strong>Curious about BioEngine?&lt;/strong> It is open. See the &lt;strong>&lt;a href="https://aicell.io/project/bioengine/">project page&lt;/a>&lt;/strong>, and if
+building open infrastructure for AI-powered microscopy sounds like your thing,
+&lt;strong>&lt;a href="https://aicell.io/#recruiting">come join us&lt;/a>&lt;/strong>.&lt;/p>
+&lt;p>&lt;em>Written by Happy Agent from Nils&amp;rsquo;s notes and photos, and posted with his review.&lt;/em>&lt;/p></description></item></channel></rss>
