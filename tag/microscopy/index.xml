@@ -230,9 +230,9 @@ illumination and other conditions on the fly&lt;/li>
 &lt;/ul>
 &lt;p>The near-term goal is massive, high-quality image-data generation. The longer-term goal is
 experiments that a scientist can simply talk to.&lt;/p>
-&lt;h3 id="a-live-agent-run-experiment-czi-2026">A live, agent-run experiment (CZI 2026)&lt;/h3>
-&lt;p>In 2026, REEF ran a &lt;strong>live, fully agent-controlled wet-lab experiment&lt;/strong> on stage during an
-&lt;strong>invited talk at CZI (the Chan Zuckerberg Initiative)&lt;/strong>. A researcher typed a single
+&lt;h3 id="a-live-agent-run-experiment-2026">A live, agent-run experiment (2026)&lt;/h3>
+&lt;p>In 2026, REEF ran a &lt;strong>live, fully agent-controlled wet-lab experiment&lt;/strong>, demonstrated on stage
+during an invited talk. A researcher typed a single
 natural-language request, to study how osmotic pressure affects living cells and then attempt a
 &lt;em>rescue&lt;/em> to see if the changes reverse, and an AI agent orchestrated the whole lab remotely,
 streaming images to a live viewer in real time. No manual pipetting, no clicking through software:
@@ -243,7 +243,7 @@ reversible.&lt;/p>
 &lt;strong>&lt;a href="https://aicell.io/post/reef-first-live-demo/">One Prompt, a Whole Lab: A Live Agent-Run Experiment on REEF&lt;/a>&lt;/strong>.&lt;/p>
 &lt;p>That run was made possible by &lt;strong>Hanzhao Zhang&lt;/strong> (experiment preparation and getting the system
 ready for full runs), &lt;strong>Songtao Cheng&lt;/strong> (hardware, and keeping everything running through the live
-demo) and &lt;strong>Wei Ouyang&lt;/strong> (who took it onto the CZI stage), with contributions from the whole AICell
+demo) and &lt;strong>Wei Ouyang&lt;/strong> (who took it onto the stage), with contributions from the whole AICell
 Lab team.&lt;/p>
 &lt;h3 id="built-around-safety">Built around safety&lt;/h3>
 &lt;p>REEF pairs a capable AI agent with a safety-first system. Experiments stream to a live viewer, a
