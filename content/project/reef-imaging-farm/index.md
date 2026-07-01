@@ -46,12 +46,13 @@ Here is a sketch for our cell lab with the imaging farm:
 ## 🎉 A first: a fully live, agent-run experiment (CZI, 2026)
 
 In 2026, REEF reached a milestone we'd been building toward for years: its **first fully live,
-agent-controlled experiment**, run on stage during an **invited talk at CZI (the Chan Zuckerberg
-Initiative)**. A researcher typed a single natural-language request — study how osmotic pressure
-affects living, cell-cycle-reporting cells, then attempt a *rescue* to see if the changes reverse
-— and an AI agent orchestrated the whole lab remotely, streaming images to a live viewer in real
-time. No manual pipetting, no clicking through software: one prompt, and the farm ran the
-experiment end to end. It worked.
+agent-controlled wet-lab experiment**, run on stage during an **invited talk at CZI (the Chan
+Zuckerberg Initiative)**. A researcher typed a single natural-language request — study how osmotic
+pressure affects living cells, then attempt a *rescue* to see if the changes reverse — and an AI
+agent orchestrated the whole lab remotely, streaming images to a live viewer in real time. No
+manual pipetting, no clicking through software: one prompt, and the farm ran the experiment on
+real cells, end to end — catching and recovering from the inevitable live-demo hiccups along the
+way. It worked.
 
 We wrote up the experience — including a short interview with the agent that ran it — here:
 **[One Prompt, a Whole Lab: REEF's First Live Agent-Run Experiment](/post/reef-first-live-demo/)**.
