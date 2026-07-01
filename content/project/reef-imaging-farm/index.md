@@ -42,3 +42,27 @@ The aim of the project is to build a smart microscopy imaging farm for massive p
 
 Here is a sketch for our cell lab with the imaging farm:
 <iframe width="100%" height="400px" src="https://www.youtube.com/embed/1CmMyhX1ZTM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+## 🎉 A first: a fully live, agent-run experiment (CZI, 2026)
+
+In 2026, REEF reached a milestone we'd been building toward for years: its **first fully live,
+agent-controlled experiment**, run on stage during an **invited talk at CZI (the Chan Zuckerberg
+Initiative)**. A researcher typed a single natural-language request — study how osmotic pressure
+affects living, cell-cycle-reporting cells, then attempt a *rescue* to see if the changes reverse
+— and an AI agent orchestrated the whole lab remotely, streaming images to a live viewer in real
+time. No manual pipetting, no clicking through software: one prompt, and the farm ran the
+experiment end to end. It worked.
+
+We wrote up the experience — including a short interview with the agent that ran it — here:
+**[One Prompt, a Whole Lab: REEF's First Live Agent-Run Experiment](/post/reef-first-live-demo/)**.
+
+This milestone was made possible by **Hanzhao Zhang** (experiment preparation and getting the
+system ready for full runs), **Songtao Cheng** (hardware, and keeping everything running through
+the live demo), and **Wei Ouyang** (who took it onto the CZI stage) — with contributions from the
+whole AICell Lab team.
+
+## Join us
+
+REEF is where AI agents, robotics and live cell biology meet — a self-driving lab in the making.
+If you'd like to help build labs that a scientist can simply *talk to*, we'd love to hear from
+you — see our **[open positions](/#recruiting)** or reach out to the lab.
