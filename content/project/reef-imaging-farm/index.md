@@ -66,10 +66,10 @@ And the whole farm during a run, across its lab cameras (transport, imaging and 
 The near-term goal is massive, high-quality image-data generation. The longer-term goal is
 experiments that a scientist can simply talk to.
 
-### A live, agent-run experiment (CZI 2026)
+### A live, agent-run experiment (2026)
 
-In 2026, REEF ran a **live, fully agent-controlled wet-lab experiment** on stage during an
-**invited talk at CZI (the Chan Zuckerberg Initiative)**. A researcher typed a single
+In 2026, REEF ran a **live, fully agent-controlled wet-lab experiment**, demonstrated on stage
+during an invited talk. A researcher typed a single
 natural-language request, to study how osmotic pressure affects living cells and then attempt a
 *rescue* to see if the changes reverse, and an AI agent orchestrated the whole lab remotely,
 streaming images to a live viewer in real time. No manual pipetting, no clicking through software:
@@ -82,7 +82,7 @@ We wrote up the experience, including a short interview with the agent that ran 
 
 That run was made possible by **Hanzhao Zhang** (experiment preparation and getting the system
 ready for full runs), **Songtao Cheng** (hardware, and keeping everything running through the live
-demo) and **Wei Ouyang** (who took it onto the CZI stage), with contributions from the whole AICell
+demo) and **Wei Ouyang** (who took it onto the stage), with contributions from the whole AICell
 Lab team.
 
 ### Built around safety
