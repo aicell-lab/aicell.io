@@ -70,12 +70,13 @@ Intelligent Systems, Ericsson, and Universidad Carlos III de Madrid.&lt;/p>
 &lt;iframe width="100%" height="400px" src="https://www.youtube.com/embed/1CmMyhX1ZTM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>&lt;/iframe>
 &lt;h2 id="-a-first-a-fully-live-agent-run-experiment-czi-2026">🎉 A first: a fully live, agent-run experiment (CZI, 2026)&lt;/h2>
 &lt;p>In 2026, REEF reached a milestone we&amp;rsquo;d been building toward for years: its &lt;strong>first fully live,
-agent-controlled experiment&lt;/strong>, run on stage during an &lt;strong>invited talk at CZI (the Chan Zuckerberg
-Initiative)&lt;/strong>. A researcher typed a single natural-language request — study how osmotic pressure
-affects living, cell-cycle-reporting cells, then attempt a &lt;em>rescue&lt;/em> to see if the changes reverse
-— and an AI agent orchestrated the whole lab remotely, streaming images to a live viewer in real
-time. No manual pipetting, no clicking through software: one prompt, and the farm ran the
-experiment end to end. It worked.&lt;/p>
+agent-controlled wet-lab experiment&lt;/strong>, run on stage during an &lt;strong>invited talk at CZI (the Chan
+Zuckerberg Initiative)&lt;/strong>. A researcher typed a single natural-language request — study how osmotic
+pressure affects living cells, then attempt a &lt;em>rescue&lt;/em> to see if the changes reverse — and an AI
+agent orchestrated the whole lab remotely, streaming images to a live viewer in real time. No
+manual pipetting, no clicking through software: one prompt, and the farm ran the experiment on
+real cells, end to end — catching and recovering from the inevitable live-demo hiccups along the
+way. It worked.&lt;/p>
 &lt;p>We wrote up the experience — including a short interview with the agent that ran it — here:
 &lt;strong>&lt;a href="https://aicell.io/post/reef-first-live-demo/">One Prompt, a Whole Lab: REEF&amp;rsquo;s First Live Agent-Run Experiment&lt;/a>&lt;/strong>.&lt;/p>
 &lt;p>This milestone was made possible by &lt;strong>Hanzhao Zhang&lt;/strong> (experiment preparation and getting the
