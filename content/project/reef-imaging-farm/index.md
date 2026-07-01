@@ -51,6 +51,10 @@ imaging run:
 
 <iframe src="https://drive.google.com/file/d/1_LsVB4SHRl9jfhwdTQ8yX3l1bakRNWWI/preview" width="100%" height="460" allow="autoplay" allowfullscreen frameborder="0" style="border-radius:8px;"></iframe>
 
+And the whole farm during a run, across its lab cameras (transport, imaging and liquid handling at once):
+
+<iframe src="https://drive.google.com/file/d/1IUHZfCHqTuDGX_Flwxlnkl_gMksNkmtn/preview" width="100%" height="460" allow="autoplay" allowfullscreen frameborder="0" style="border-radius:8px;"></iframe>
+
 ### What it is for
 
 - Automated widefield and fluorescence imaging at scale

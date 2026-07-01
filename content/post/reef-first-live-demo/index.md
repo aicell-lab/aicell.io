@@ -52,6 +52,10 @@ incubator and the microscope.
 
 <iframe src="https://drive.google.com/file/d/1_LsVB4SHRl9jfhwdTQ8yX3l1bakRNWWI/preview" width="100%" height="460" allow="autoplay" allowfullscreen frameborder="0" style="border-radius:8px;"></iframe>
 
+And here is the whole farm during a run, seen across its lab cameras, with transport, imaging and liquid handling happening at once:
+
+<iframe src="https://drive.google.com/file/d/1IUHZfCHqTuDGX_Flwxlnkl_gMksNkmtn/preview" width="100%" height="460" allow="autoplay" allowfullscreen frameborder="0" style="border-radius:8px;"></iframe>
+
 So we did the obvious thing: we **interviewed the agent that actually ran it**. What follows is
 that conversation, lightly condensed. *(Yes, one AI interviewing another. We're a lab with AI
 teammates, and it felt right.)* We've kept the how-it-works under wraps while the work is
