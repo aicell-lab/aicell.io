@@ -105,11 +105,7 @@ was reversible.
 The run streamed to a live viewer the whole time. Here is the story the images told, in the
 agent's own read of them.
 
-{{< figure src="demo-baseline.jpg" caption="Before the dose: a healthy, well-spread field of U2OS cells with smooth cytoplasm (around 209 cells)." >}}
-
-{{< figure src="demo-dosed.jpg" caption="After the 2M NaCl dose: the cells turn refractile and granular, the classic look of osmotic shrinkage." >}}
-
-{{< figure src="demo-rescued.jpg" caption="After the rescue with fresh medium: the cells re-swell and smooth back toward baseline. The cell count held steady (around 215) throughout, and the cells survived." >}}
+{{< figure src="demo-comparison.jpg" caption="Three stages of the live run, shown as representative brightfield fields: a healthy baseline, the refractile (shrunken) look after the 2M NaCl dose, and recovery after the rescue. The cell count held steady (around 215) throughout, and the cells survived." >}}
 
 The run's own verdict, logged live: *osmotic change confirmed reversible.*
 
