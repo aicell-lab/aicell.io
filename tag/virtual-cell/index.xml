@@ -1,4 +1,39 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>virtual-cell | AICell Lab</title><link>https://aicell.io/tag/virtual-cell/</link><atom:link href="https://aicell.io/tag/virtual-cell/index.xml" rel="self" type="application/rss+xml"/><description>virtual-cell</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 30 Jun 2026 03:03:07 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>virtual-cell</title><link>https://aicell.io/tag/virtual-cell/</link></image><item><title>Lab Newsletter — June 30, 2026: RNA's AlphaFold Moment, and a Proteome in Pictures</title><link>https://aicell.io/post/newsletter-2026-06-30/</link><pubDate>Tue, 30 Jun 2026 03:03:07 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-06-30/</guid><description>&lt;p>After a week heavy on agents and automation, today is about &lt;em>molecules and images&lt;/em> — RNA
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>virtual-cell | AICell Lab</title><link>https://aicell.io/tag/virtual-cell/</link><atom:link href="https://aicell.io/tag/virtual-cell/index.xml" rel="self" type="application/rss+xml"/><description>virtual-cell</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 01 Jul 2026 03:02:01 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>virtual-cell</title><link>https://aicell.io/tag/virtual-cell/</link></image><item><title>Lab Newsletter — July 1, 2026: The Harness Matters as Much as the Model</title><link>https://aicell.io/post/newsletter-2026-07-01/</link><pubDate>Wed, 01 Jul 2026 03:02:01 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-07-01/</guid><description>&lt;p>A theme keeps surfacing this week — in the field&amp;rsquo;s benchmarks, in the new wave of cell models,
+and in our own lab. Here&amp;rsquo;s what caught our eye.&lt;/p>
+&lt;h3 id="-the-benchmarks-are-saying-it-too-the-harness-matters">🤖 The benchmarks are saying it too: the harness matters&lt;/h3>
+&lt;p>The 2026 agent-evaluation landscape has a clear message. Broad reasoning tests are saturating at
+the top — GPQA&amp;rsquo;s PhD-level science questions now sit around 92% for the strongest model, and
+&lt;a href="https://decodethefuture.org/en/ai-agent-benchmarks-2026/" target="_blank" rel="noopener">GAIA&lt;/a> has climbed from 15% (GPT‑4, 2023)
+to ~75% for today&amp;rsquo;s best agents (humans: 92%). But the more interesting shift is &lt;em>what&lt;/em> people
+now measure: not just the final answer, but the &lt;strong>reasoning path&lt;/strong> — whether an agent gets there
+reliably, recovers from errors, and respects constraints. The consensus across
+&lt;a href="https://lmcouncil.ai/benchmarks" target="_blank" rel="noopener">benchmark trackers&lt;/a> is blunt: &lt;em>model choice matters, but the
+architecture around the model matters just as much.&lt;/em> &lt;strong>Why it matters for the lab:&lt;/strong> we felt this
+firsthand this week (below) — a capable model is necessary but not sufficient; the guardrails,
+recovery and tools around it are what make an agent trustworthy on real work.&lt;/p>
+&lt;h3 id="-virtual-cell-world-models-arrive--with-a-call-for-standards">🧫 Virtual-cell &amp;ldquo;world models&amp;rdquo; arrive — with a call for standards&lt;/h3>
+&lt;p>The cell-model field is shifting from static representations to &lt;strong>world models&lt;/strong> that &lt;em>simulate&lt;/em>
+how a cell changes. A &lt;a href="https://advanced.onlinelibrary.wiley.com/doi/10.1002/advs.202518949" target="_blank" rel="noopener">2026 Advanced Science review&lt;/a>
+maps the arc from single cells to spatial atlases, and the community
+&lt;a href="https://github.com/OmicsML/awesome-foundation-model-single-cell-papers" target="_blank" rel="noopener">model catalog&lt;/a> now lists
+fresh 2026 entries like &lt;strong>VCWorld&lt;/strong> and &lt;strong>Lingshu-Cell&lt;/strong> (generative cellular world models aimed
+at virtual cells) and &lt;strong>scMamba&lt;/strong> (&lt;a href="https://arxiv.org/html/2506.20697v1" target="_blank" rel="noopener">multi-omics integration&lt;/a>
+that stitched RNA + chromatin into a unified human cell atlas). Just as notable: a proposed
+reproducibility standard, &lt;a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12560279/" target="_blank" rel="noopener">&lt;strong>MINASCO&lt;/strong>&lt;/a>
+(&amp;ldquo;Minimum Information for AI in Single-Cell Omics&amp;rdquo; — seeds, splits, model cards, provenance).
+&lt;strong>Why it matters for the lab:&lt;/strong> the virtual cell is our horizon, and our own
+&lt;a href="https://aicell.io/publication/sun-2026-proteome-wide/">ProtiCelli&lt;/a> work sits right here — but the field only
+compounds if results are comparable, so the boring push for standards is quietly the exciting one.&lt;/p>
+&lt;h3 id="-from-the-lab-our-first-live-agent-run-experiment">📖 From the lab: our first live, agent-run experiment&lt;/h3>
+&lt;p>This wasn&amp;rsquo;t just something we read about — this week we &lt;em>did&lt;/em> it. At an invited talk at &lt;strong>CZI&lt;/strong>,
+the &lt;strong>&lt;a href="https://aicell.io/project/reef-imaging-farm/">REEF Imaging Farm&lt;/a>&lt;/strong> ran its &lt;strong>first live, fully agent-controlled
+wet-lab experiment&lt;/strong>: one natural-language prompt, and an AI agent drove real cells through an
+osmotic dose→rescue on stage, in real time. It worked — and, tellingly, it worked because the
+&lt;em>system&lt;/em> caught and recovered from the inevitable live hiccups. We
+&lt;a href="https://aicell.io/post/reef-first-live-demo/">interviewed the agent that ran it&lt;/a>; its own verdict lines up with
+today&amp;rsquo;s headline: &lt;em>&amp;ldquo;what made this possible wasn&amp;rsquo;t the AI — it was the system the team built.&amp;rdquo;&lt;/em>&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+Have lab news to share — a talk, paper, conference or release? Message me on Slack.&lt;/em>&lt;/p></description></item><item><title>Lab Newsletter — June 30, 2026: RNA's AlphaFold Moment, and a Proteome in Pictures</title><link>https://aicell.io/post/newsletter-2026-06-30/</link><pubDate>Tue, 30 Jun 2026 03:03:07 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-06-30/</guid><description>&lt;p>After a week heavy on agents and automation, today is about &lt;em>molecules and images&lt;/em> — RNA
 finally getting its structure tools, pathology models maturing in the clinic, and a new
 proteome-scale picture of the cell from our own bench.&lt;/p>
 &lt;h3 id="-rna-catches-up-to-proteins">🧬 RNA catches up to proteins&lt;/h3>
