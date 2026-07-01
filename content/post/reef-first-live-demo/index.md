@@ -105,7 +105,7 @@ was reversible.
 The run streamed to a live viewer the whole time. Here is the story the images told, in the
 agent's own read of them.
 
-{{< figure src="demo-comparison.jpg" caption="The system's live cell detection at three stages of the run. At baseline the cells are healthy and well spread; after the 2M NaCl dose they round up and pack together; after the rescue they spread out again, back toward the baseline. Each colour is one cell the system found and counted in real time, and the count held steady (around 215) throughout: the cells survived." >}}
+{{< figure src="demo-comparison.jpg" caption="Brightfield images at three stages of the run, as the agent saw them live. At baseline the cells are healthy and well spread; after the 2M NaCl dose the cytoplasm turns refractile and granular and the field looks sparser; after the rescue the cells smooth out and spread again, back toward the baseline. The live cell count held steady (around 215) throughout: the cells survived." >}}
 
 The run's own verdict, logged live: *osmotic change confirmed reversible.*
 
