@@ -10,28 +10,53 @@ Cellpose-SAM); and an &lt;strong>agent skill&lt;/strong> that lets any AI assist
 through contributing a model end to end — packaging, validating, and submitting it.
 Much of this runs entirely client-side via Pyodide/WebAssembly, backed by
 &lt;a href="https://aicell.io/project/hypha">Hypha&lt;/a> Cloud.&lt;/p>
-&lt;p>Read more in our &lt;a href="https://www.biorxiv.org/content/10.1101/2022.06.07.495102v1" target="_blank" rel="noopener">preprint&lt;/a>.&lt;/p></description></item><item><title>Cell shapes decode molecular phenotypes in image-based spatial proteomics</title><link>https://aicell.io/publication/le-2026-cell-shapes/</link><pubDate>Mon, 20 Apr 2026 00:00:00 +0000</pubDate><guid>https://aicell.io/publication/le-2026-cell-shapes/</guid><description/></item><item><title>U-FISH: a fluorescent spot detector for imaging-based spatial-omics analysis</title><link>https://aicell.io/publication/xu-2025-ufish/</link><pubDate>Mon, 01 Sep 2025 00:00:00 +0000</pubDate><guid>https://aicell.io/publication/xu-2025-ufish/</guid><description/></item><item><title>Reef - Automated Imaging Farm</title><link>https://aicell.io/project/reef-imaging-farm/</link><pubDate>Sat, 01 Jun 2024 00:00:00 +0000</pubDate><guid>https://aicell.io/project/reef-imaging-farm/</guid><description>&lt;p>The aim of the project is to build a smart microscopy imaging farm for massive production of image data. It consists of multiple microscopes and fluidic systems, robotic arms, liquid handling robots and automatic incubators. The farm will be used for performing automated widefield/fluorescence imaging, long-term live cell imaging, tracking, spatial-omics and multiplexing imaging. With the AI-powered control software, data are analyzed in real-time, augmented views are added on the fly. By generating feedback control signals to control the microscope, the software will automatically change field-of-views, illumination power and other experimental conditions in order to optimize the phototoxicity and capture rare events in live cells.&lt;/p>
-&lt;p>Here is a sketch for our cell lab with the imaging farm:&lt;/p>
-&lt;iframe width="100%" height="400px" src="https://www.youtube.com/embed/1CmMyhX1ZTM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>&lt;/iframe>
-&lt;h2 id="-a-first-a-fully-live-agent-run-experiment-czi-2026">🎉 A first: a fully live, agent-run experiment (CZI, 2026)&lt;/h2>
-&lt;p>In 2026, REEF reached a milestone we&amp;rsquo;d been building toward for years: its &lt;strong>first fully live,
-agent-controlled wet-lab experiment&lt;/strong>, run on stage during an &lt;strong>invited talk at CZI (the Chan
-Zuckerberg Initiative)&lt;/strong>. A researcher typed a single natural-language request — study how osmotic
-pressure affects living cells, then attempt a &lt;em>rescue&lt;/em> to see if the changes reverse — and an AI
-agent orchestrated the whole lab remotely, streaming images to a live viewer in real time. No
-manual pipetting, no clicking through software: one prompt, and the farm ran the experiment on
-real cells, end to end — catching and recovering from the inevitable live-demo hiccups along the
-way. It worked.&lt;/p>
-&lt;p>We wrote up the experience — including a short interview with the agent that ran it — here:
-&lt;strong>&lt;a href="https://aicell.io/post/reef-first-live-demo/">One Prompt, a Whole Lab: REEF&amp;rsquo;s First Live Agent-Run Experiment&lt;/a>&lt;/strong>.&lt;/p>
-&lt;p>This milestone was made possible by &lt;strong>Hanzhao Zhang&lt;/strong> (experiment preparation and getting the
-system ready for full runs), &lt;strong>Songtao Cheng&lt;/strong> (hardware, and keeping everything running through
-the live demo), and &lt;strong>Wei Ouyang&lt;/strong> (who took it onto the CZI stage) — with contributions from the
-whole AICell Lab team.&lt;/p>
-&lt;h2 id="join-us">Join us&lt;/h2>
-&lt;p>REEF is where AI agents, robotics and live cell biology meet — a self-driving lab in the making.
-If you&amp;rsquo;d like to help build labs that a scientist can simply &lt;em>talk to&lt;/em>, we&amp;rsquo;d love to hear from
-you — see our &lt;strong>&lt;a href="https://aicell.io/#recruiting">open positions&lt;/a>&lt;/strong> or reach out to the lab.&lt;/p></description></item><item><title>DL4MicEverywhere: deep learning for microscopy made flexible, shareable and reproducible</title><link>https://aicell.io/publication/hidalgo-2024-dl4miceverywhere/</link><pubDate>Fri, 17 May 2024 00:00:00 +0000</pubDate><guid>https://aicell.io/publication/hidalgo-2024-dl4miceverywhere/</guid><description/></item><item><title>A Warm Welcome to Nils Mechtel, AICell Lab's Second PhD Student</title><link>https://aicell.io/post/welcome-nils/</link><pubDate>Wed, 13 Dec 2023 00:00:00 +0000</pubDate><guid>https://aicell.io/post/welcome-nils/</guid><description>&lt;h1 id="a-warm-welcome-to-nils-mechtel-aicell-labs-second-phd-student">A Warm Welcome to Nils Mechtel, AICell Lab&amp;rsquo;s Second PhD Student&lt;/h1>
+&lt;p>Read more in our &lt;a href="https://www.biorxiv.org/content/10.1101/2022.06.07.495102v1" target="_blank" rel="noopener">preprint&lt;/a>.&lt;/p></description></item><item><title>Cell shapes decode molecular phenotypes in image-based spatial proteomics</title><link>https://aicell.io/publication/le-2026-cell-shapes/</link><pubDate>Mon, 20 Apr 2026 00:00:00 +0000</pubDate><guid>https://aicell.io/publication/le-2026-cell-shapes/</guid><description/></item><item><title>U-FISH: a fluorescent spot detector for imaging-based spatial-omics analysis</title><link>https://aicell.io/publication/xu-2025-ufish/</link><pubDate>Mon, 01 Sep 2025 00:00:00 +0000</pubDate><guid>https://aicell.io/publication/xu-2025-ufish/</guid><description/></item><item><title>REEF Imaging Farm</title><link>https://aicell.io/project/reef-imaging-farm/</link><pubDate>Sat, 01 Jun 2024 00:00:00 +0000</pubDate><guid>https://aicell.io/project/reef-imaging-farm/</guid><description>&lt;p>&lt;strong>REEF is a self-driving cell-biology lab.&lt;/strong> It is an automated imaging farm where AI agents plan,
+run and adapt live-cell experiments across a whole cluster of instruments, with a human able to
+watch and step in at any point.&lt;/p>
+&lt;p>The idea at its heart is simple: a scientist should be able to &lt;em>describe&lt;/em> an experiment in plain
+language and have the lab carry it out. Under the hood, REEF brings together multiple microscopes
+and fluidic systems, robotic arms, liquid-handling robots and automated incubators into one
+coordinated system. AI analyzes the images as they are captured and feeds decisions back to the
+hardware, so an experiment can adapt while it runs, minimize phototoxicity, and catch rare events
+in living cells.&lt;/p>
+&lt;h3 id="the-farm-in-action">The farm in action&lt;/h3>
+&lt;p>The robotic arm moving a plate between the incubator and the microscope, part of a fully automated
+imaging run:&lt;/p>
+&lt;iframe src="https://drive.google.com/file/d/1_LsVB4SHRl9jfhwdTQ8yX3l1bakRNWWI/preview" width="100%" height="460" allow="autoplay" allowfullscreen frameborder="0" style="border-radius:8px;">&lt;/iframe>
+&lt;h3 id="what-it-is-for">What it is for&lt;/h3>
+&lt;ul>
+&lt;li>Automated widefield and fluorescence imaging at scale&lt;/li>
+&lt;li>Long-term live-cell imaging and cell tracking&lt;/li>
+&lt;li>Spatial-omics and multiplexed imaging&lt;/li>
+&lt;li>Real-time, AI-augmented analysis with feedback control, automatically adjusting field of view,
+illumination and other conditions on the fly&lt;/li>
+&lt;/ul>
+&lt;p>The near-term goal is massive, high-quality image-data generation. The longer-term goal is
+experiments that a scientist can simply talk to.&lt;/p>
+&lt;h3 id="a-live-agent-run-experiment-czi-2026">A live, agent-run experiment (CZI 2026)&lt;/h3>
+&lt;p>In 2026, REEF ran a &lt;strong>live, fully agent-controlled wet-lab experiment&lt;/strong> on stage during an
+&lt;strong>invited talk at CZI (the Chan Zuckerberg Initiative)&lt;/strong>. A researcher typed a single
+natural-language request, to study how osmotic pressure affects living cells and then attempt a
+&lt;em>rescue&lt;/em> to see if the changes reverse, and an AI agent orchestrated the whole lab remotely,
+streaming images to a live viewer in real time. No manual pipetting, no clicking through software:
+one prompt, and the farm ran the experiment on real cells, end to end, catching and recovering from
+the inevitable live hiccups along the way. It worked, and the osmotic change was confirmed
+reversible.&lt;/p>
+&lt;p>We wrote up the experience, including a short interview with the agent that ran it, here:
+&lt;strong>&lt;a href="https://aicell.io/post/reef-first-live-demo/">One Prompt, a Whole Lab: A Live Agent-Run Experiment on REEF&lt;/a>&lt;/strong>.&lt;/p>
+&lt;p>That run was made possible by &lt;strong>Hanzhao Zhang&lt;/strong> (experiment preparation and getting the system
+ready for full runs), &lt;strong>Songtao Cheng&lt;/strong> (hardware, and keeping everything running through the live
+demo) and &lt;strong>Wei Ouyang&lt;/strong> (who took it onto the CZI stage), with contributions from the whole AICell
+Lab team.&lt;/p>
+&lt;h3 id="built-around-safety">Built around safety&lt;/h3>
+&lt;p>REEF pairs a capable AI agent with a safety-first system. Experiments stream to a live viewer, a
+human stays in the loop, and unsafe actions are refused rather than risked, so the cells and the
+instruments are protected even when a run hits the unexpected. (We keep the deeper technical
+details under wraps while the work is unpublished.)&lt;/p>
+&lt;h3 id="get-involved">Get involved&lt;/h3>
+&lt;p>REEF is where AI agents, robotics and live cell biology meet. The code lives on
+&lt;a href="https://github.com/aicell-lab/reef-imaging" target="_blank" rel="noopener">GitHub&lt;/a>, and if building labs that a scientist can
+simply talk to sounds like your thing, we would be glad to &lt;a href="https://aicell.io/#recruiting">hear from you&lt;/a>.&lt;/p></description></item><item><title>DL4MicEverywhere: deep learning for microscopy made flexible, shareable and reproducible</title><link>https://aicell.io/publication/hidalgo-2024-dl4miceverywhere/</link><pubDate>Fri, 17 May 2024 00:00:00 +0000</pubDate><guid>https://aicell.io/publication/hidalgo-2024-dl4miceverywhere/</guid><description/></item><item><title>A Warm Welcome to Nils Mechtel, AICell Lab's Second PhD Student</title><link>https://aicell.io/post/welcome-nils/</link><pubDate>Wed, 13 Dec 2023 00:00:00 +0000</pubDate><guid>https://aicell.io/post/welcome-nils/</guid><description>&lt;h1 id="a-warm-welcome-to-nils-mechtel-aicell-labs-second-phd-student">A Warm Welcome to Nils Mechtel, AICell Lab&amp;rsquo;s Second PhD Student&lt;/h1>
 &lt;p>We are delighted to announce that Nils Mechtel has joined the AICell Lab as our second PhD student, starting in January 2024. Hailing from the Rhineland in Germany, Nils brings a wealth of knowledge in computational biology and deep learning, further enriching our lab&amp;rsquo;s interdisciplinary research environment.&lt;/p>
 &lt;p>
 &lt;figure >
