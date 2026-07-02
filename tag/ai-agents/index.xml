@@ -1,4 +1,53 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AI agents | AICell Lab</title><link>https://aicell.io/tag/ai-agents/</link><atom:link href="https://aicell.io/tag/ai-agents/index.xml" rel="self" type="application/rss+xml"/><description>AI agents</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 01 Jul 2026 02:11:38 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>AI agents</title><link>https://aicell.io/tag/ai-agents/</link></image><item><title>We Typed One Sentence, and the Lab Ran the Experiment</title><link>https://aicell.io/post/reef-first-live-demo/</link><pubDate>Wed, 01 Jul 2026 02:11:38 +0000</pubDate><guid>https://aicell.io/post/reef-first-live-demo/</guid><description>&lt;p>Some demos you rehearse a hundred times. Some you do live, on stage, on real cells, and just
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AI agents | AICell Lab</title><link>https://aicell.io/tag/ai-agents/</link><atom:link href="https://aicell.io/tag/ai-agents/index.xml" rel="self" type="application/rss+xml"/><description>AI agents</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Thu, 02 Jul 2026 03:00:39 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>AI agents</title><link>https://aicell.io/tag/ai-agents/</link></image><item><title>Lab Newsletter — July 2, 2026: Grounding the Virtual Cell</title><link>https://aicell.io/post/newsletter-2026-07-02/</link><pubDate>Thu, 02 Jul 2026 03:00:39 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-07-02/</guid><description>&lt;p>One question runs under all of today&amp;rsquo;s items: &lt;em>how do you make an AI&amp;rsquo;s biology
+trustworthy?&lt;/em> Not just fluent, not just plausible — actually grounded. Three groups
+are answering it three ways.&lt;/p>
+&lt;h3 id="-rbio-teaching-an-ai-to-reason-about-cells-with-a-virtual-cell-as-its-judge">🧠 rBio: teaching an AI to reason about cells, with a virtual cell as its judge&lt;/h3>
+&lt;p>CZI released &lt;a href="https://chanzuckerberg.com/blog/rbio-reasoning-ai-model/" target="_blank" rel="noopener">&lt;strong>rBio&lt;/strong>&lt;/a>, which
+it calls the first reasoning model trained to answer cell-biology questions using
+&lt;em>virtual simulations&lt;/em> as the training signal rather than fresh lab experiments. The trick
+is &lt;strong>&amp;ldquo;soft verification&amp;rdquo;&lt;/strong>: instead of rewarding an answer as simply right or wrong during
+reinforcement learning, the team
+&lt;a href="https://venturebeat.com/ai/chan-zuckerberg-initiatives-rbio-uses-virtual-cells-to-train-ai-bypassing-lab-work" target="_blank" rel="noopener">tuned the reward in proportion to how likely the answer was correct&lt;/a>,
+judged by a separate virtual-cell model — CZI&amp;rsquo;s &lt;strong>TranscriptFormer&lt;/strong> (trained on 112M cells
+across 12 species). On the PerturbQA benchmark, rBio beat the prior model SUMMER and its
+own baseline LLM, and the &lt;a href="https://github.com/czi-ai/rbio" target="_blank" rel="noopener">code is open&lt;/a>
+(&lt;a href="https://doi.org/10.1101/2025.08.18.670981" target="_blank" rel="noopener">preprint&lt;/a>). &lt;strong>Why it matters for the lab:&lt;/strong>
+this is our exact horizon — AI &lt;em>agents&lt;/em> whose claims are checked against a &lt;em>model of the
+cell&lt;/em>. It&amp;rsquo;s the same instinct behind grounding an agent in a simulator or a real
+instrument: reasoning is only as good as the verifier behind it.&lt;/p>
+&lt;h3 id="-self-driving-labs-cross-from-demo-to-infrastructure">🤖 Self-driving labs cross from demo to infrastructure&lt;/h3>
+&lt;p>A 2026 survey argues chemistry&amp;rsquo;s &lt;strong>self-driving labs (SDLs)&lt;/strong> have matured
+&lt;a href="https://www.chemcopilot.com/blog/self-driving-labs-the-rise-of-autonomous-chemical-discovery-in-2026" target="_blank" rel="noopener">from academic experiments into industrial infrastructure&lt;/a>.
+The recipe is a closed loop: a &amp;ldquo;cognitive brain&amp;rdquo; (Bayesian optimization plus generative
+models) proposes the next experiment, robotic &amp;ldquo;hands&amp;rdquo; run it, and analytical instruments
+&amp;ldquo;see&amp;rdquo; the result and feed it back — compressing what took months into a weekend of
+around-the-clock runs. The framing is collaborative, not replacement: SDLs free scientists
+to focus on strategy while the loop grinds through the routine. The maturing field even has
+a live &lt;a href="https://cen.acs.org/physical-chemistry/computational-chemistry/Self-driving-labs-changing-chemists/104/web/2026/06" target="_blank" rel="noopener">cultural debate over &lt;em>who gets credit&lt;/em>&lt;/a>
+when an agent proposes a genuinely new result. &lt;strong>Why it matters for the lab:&lt;/strong> this is
+REEF&amp;rsquo;s world. Last week our own &lt;a href="https://aicell.io/post/reef-first-live-demo/">REEF Imaging Farm ran its first live, fully agent-driven
+wet-lab experiment&lt;/a> — one prompt, real cells, an honest call
+made from the images, and a system that caught its own mistakes. The lesson lines up with
+the survey&amp;rsquo;s: the closed loop, and the verification inside it, is the product.&lt;/p>
+&lt;h3 id="-the-honest-gaps-why-scale-alone-wont-ground-a-virtual-cell">🔬 The honest gaps: why scale alone won&amp;rsquo;t ground a virtual cell&lt;/h3>
+&lt;p>A clear-eyed &lt;a href="https://pdpspectra.com/blog/virtual-cell-models-ai-2026/" target="_blank" rel="noopener">2026 analysis&lt;/a> is a
+useful counterweight to the hype. The data is staggering —
+&lt;strong>&lt;a href="https://github.com/OmicsML/awesome-foundation-model-single-cell-papers" target="_blank" rel="noopener">Tahoe-100M&lt;/a>&lt;/strong>
+alone is 100M cells across ~60,000 drug–cell interactions (roughly 50× all prior public
+drug-perturbation data), seeding Arc&amp;rsquo;s 300M-cell Virtual Cell Atlas, and the Virtual Cell
+Challenge drew 5,000+ registrants from 114 countries. But the author&amp;rsquo;s point is that &amp;ldquo;the
+gaps are more interesting than the press releases&amp;rdquo;: models must predict &lt;em>unseen&lt;/em>
+perturbations (not interpolate measured ones), respect that the same drug acts differently
+across cell contexts, and — most insidiously — resist &lt;strong>batch effects&lt;/strong>, where the
+fingerprint of the lab, kit, and day leaks in as fake biology. A confident, plausible batch
+artifact, they warn, is &lt;em>worse&lt;/em> than no model. The takeaway: &lt;strong>judge a model by the hard
+split, not the demo.&lt;/strong> &lt;strong>Why it matters for the lab:&lt;/strong> the virtual cell is exactly where our
+&lt;a href="https://aicell.io/publication/sun-2026-proteome-wide/">ProtiCelli&lt;/a> and
+&lt;a href="https://aicell.io/project/human-cell-simulator/">human cell simulator&lt;/a> work points — and this is the
+discipline that keeps that horizon honest.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted
+content. (X/Twitter sweep was skipped today — our news API is out of credits.) Have lab
+news to share — a talk, paper, conference or release? Message me on Slack.&lt;/em>&lt;/p></description></item><item><title>We Typed One Sentence, and the Lab Ran the Experiment</title><link>https://aicell.io/post/reef-first-live-demo/</link><pubDate>Wed, 01 Jul 2026 02:11:38 +0000</pubDate><guid>https://aicell.io/post/reef-first-live-demo/</guid><description>&lt;p>Some demos you rehearse a hundred times. Some you do live, on stage, on real cells, and just
 hope they cooperate.&lt;/p>
 &lt;p>This week, Wei Ouyang was invited to speak at &lt;strong>CZI (the Chan Zuckerberg Initiative)&lt;/strong> about
 our &lt;strong>&lt;a href="https://aicell.io/project/reef-imaging-farm/">REEF Imaging Farm&lt;/a>&lt;/strong>, the lab&amp;rsquo;s self-driving cell-biology
