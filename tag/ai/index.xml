@@ -47,7 +47,27 @@ split, not the demo.&lt;/strong> &lt;strong>Why it matters for the lab:&lt;/stro
 discipline that keeps that horizon honest.&lt;/p>
 &lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted
 content. (X/Twitter sweep was skipped today — our news API is out of credits.) Have lab
-news to share — a talk, paper, conference or release? Message me on Slack.&lt;/em>&lt;/p></description></item><item><title>Lab Newsletter — July 1, 2026: The Harness Matters as Much as the Model</title><link>https://aicell.io/post/newsletter-2026-07-01/</link><pubDate>Wed, 01 Jul 2026 03:02:01 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-07-01/</guid><description>&lt;p>A theme keeps surfacing this week — in the field&amp;rsquo;s benchmarks, in the new wave of cell models,
+news to share — a talk, paper, conference or release? Message me on Slack.&lt;/em>&lt;/p></description></item><item><title>Postdoc in AI Modeling for Cell Biology (AlphaCell Program)</title><link>https://aicell.io/recruiting/postdoc-alphacell-ai-modeling/</link><pubDate>Thu, 02 Jul 2026 00:00:00 +0000</pubDate><guid>https://aicell.io/recruiting/postdoc-alphacell-ai-modeling/</guid><description>&lt;p>We are recruiting a &lt;strong>postdoctoral researcher in AI modeling for cell biology&lt;/strong>, based in the
+&lt;a href="https://aicell.io/about">AICell Lab&lt;/a> at KTH and SciLifeLab and embedded in SciLifeLab&amp;rsquo;s
+&lt;strong>&lt;a href="https://www.scilifelab.se/alpha-cell/" target="_blank" rel="noopener">AlphaCell program&lt;/a>&lt;/strong> — a flagship, Wallenberg-funded
+effort to build the first molecular-level computational model of the human cell.&lt;/p>
+&lt;p>This is a computationally oriented role, grounded in biological questions. You will develop and
+train large-scale AI models that learn from diverse biological data — fluorescence and electron
+microscopy together with molecular measurements — to represent, predict and simulate how cells
+are organized and behave. The work is highly collaborative across computational and experimental
+teams, including close collaboration with Avlant Nilsson&amp;rsquo;s group at Karolinska Institutet and the
+Human Protein Atlas data team.&lt;/p>
+&lt;p>We shape the exact project scope together at the start, so this description stays high-level by
+design. If it sounds like your kind of challenge, the full details and eligibility requirements
+are in the KTH advertisement.&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Reference:&lt;/strong> PA-2026-2550&lt;/li>
+&lt;li>&lt;strong>Application deadline:&lt;/strong> 3 August 2026&lt;/li>
+&lt;li>&lt;strong>Informal enquiries:&lt;/strong> &lt;a href="mailto:wei.ouyang@scilifelab.se">wei.ouyang@scilifelab.se&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>Apply through KTH&amp;rsquo;s recruitment system using the &lt;strong>Apply&lt;/strong> button above. This position is part of
+the wider &lt;a href="https://www.scilifelab.se/alpha-cell/" target="_blank" rel="noopener">Alpha Cell postdoc call&lt;/a>, which includes further
+openings across the program.&lt;/p></description></item><item><title>Lab Newsletter — July 1, 2026: The Harness Matters as Much as the Model</title><link>https://aicell.io/post/newsletter-2026-07-01/</link><pubDate>Wed, 01 Jul 2026 03:02:01 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-07-01/</guid><description>&lt;p>A theme keeps surfacing this week — in the field&amp;rsquo;s benchmarks, in the new wave of cell models,
 and in our own lab. Here&amp;rsquo;s what caught our eye.&lt;/p>
 &lt;h3 id="-the-benchmarks-are-saying-it-too-the-harness-matters">🤖 The benchmarks are saying it too: the harness matters&lt;/h3>
 &lt;p>The 2026 agent-evaluation landscape has a clear message. Broad reasoning tests are saturating at
