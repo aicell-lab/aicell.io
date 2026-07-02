@@ -1,4 +1,35 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>news | AICell Lab</title><link>https://aicell.io/category/news/</link><atom:link href="https://aicell.io/category/news/index.xml" rel="self" type="application/rss+xml"/><description>news</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 01 Jul 2026 11:32:53 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>news</title><link>https://aicell.io/category/news/</link></image><item><title>BioEngine at ELMI 2026: AI Agents Meet the Core Facility</title><link>https://aicell.io/post/elmi-2026-bioengine/</link><pubDate>Wed, 01 Jul 2026 11:32:53 +0000</pubDate><guid>https://aicell.io/post/elmi-2026-bioengine/</guid><description>&lt;p>In mid-June, Nils Mechtel represented the lab in Portugal at the &lt;strong>26th ELMI (European Light
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>news | AICell Lab</title><link>https://aicell.io/category/news/</link><atom:link href="https://aicell.io/category/news/index.xml" rel="self" type="application/rss+xml"/><description>news</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Thu, 02 Jul 2026 22:14:34 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>news</title><link>https://aicell.io/category/news/</link></image><item><title>Safe Colab: Unlocking Sensitive Data Without Giving It Away</title><link>https://aicell.io/post/safe-colab-discovery-without-exposure/</link><pubDate>Thu, 02 Jul 2026 22:14:34 +0000</pubDate><guid>https://aicell.io/post/safe-colab-discovery-without-exposure/</guid><description>&lt;p>Some of the most valuable data in the world is also the most locked away. Roughly &lt;strong>30% of all
+data generated every day is healthcare-related — yet less than 5% of it is ever used to generate
+insight.&lt;/strong> As Simin Zhang, one of the researchers behind the project, puts it: &lt;em>&amp;ldquo;It&amp;rsquo;s like
+harvesting a farm but consuming only a small fraction of the crops while the rest goes unused.
+The value exists, but much of it remains inaccessible.&amp;rdquo;&lt;/em>&lt;/p>
+&lt;p>The barrier usually isn&amp;rsquo;t a lack of interest in data-driven research — it&amp;rsquo;s the &lt;strong>sensitivity&lt;/strong>
+of the data. Privacy concerns, regulatory requirements, and the need to keep control over patient
+information make organizations understandably reluctant to hand their datasets over.&lt;/p>
+&lt;p>&lt;strong>Safe Colab&lt;/strong> is our answer to that tension: a way to collaborate on sensitive data &lt;strong>without
+ever transferring the underlying datasets.&lt;/strong> Instead of moving the data to the researcher, it
+brings the &lt;strong>computation to the data&lt;/strong> — so analysis, AI-assisted research and federated learning
+can happen while the data owner keeps full control of their records.&lt;/p>
+&lt;p>As Joanna Hård, who leads the effort, describes it: &lt;em>&amp;ldquo;Safe Colab allows scientists to analyze
+data without sharing it. It can have tremendous scientific and societal impact since it opens new
+possibilities to learn from data that is currently siloed, including for example clinical data.&amp;rdquo;&lt;/em>&lt;/p>
+&lt;p>The point is to stop forcing an impossible choice. Today organizations feel they must pick
+between &lt;strong>sharing data to enable discovery&lt;/strong> and &lt;strong>protecting it to preserve privacy and trust.&lt;/strong>
+Safe Colab is built so they can do both at once — broader collaboration &lt;em>and&lt;/em> data-owner control,
+together.&lt;/p>
+&lt;p>Where is it headed? The long-term goal is to make &lt;strong>governed, privacy-preserving collaboration
+practical across organizations and industries&lt;/strong> — unlocking the value of sensitive data at scale
+without compromising governance or trust. It&amp;rsquo;s a direct expression of what this lab keeps
+reaching for: powerful, AI-driven science that stays firmly on the side of the people whose data
+makes it possible.&lt;/p>
+&lt;p>Safe Colab is led by &lt;strong>&lt;a href="https://aicell.io/authors/joanna/">Joanna Hård&lt;/a>&lt;/strong>, with &lt;strong>&lt;a href="https://aicell.io/authors/simin/">Simin Zhang&lt;/a>&lt;/strong>,
+and grew from the work of many hands across the lab — including alumnus
+&lt;strong>&lt;a href="https://aicell.io/authors/hugodk/">Hugo Dettner Källander&lt;/a>&lt;/strong> and colleagues across the AICell Lab.&lt;/p>
+&lt;p>&lt;em>Learn more on the &lt;strong>&lt;a href="https://aicell.io/project/safe-colab/">Safe Colab project page&lt;/a>&lt;/strong>.&lt;/em>&lt;/p>
+&lt;p>&lt;strong>Disclosure:&lt;/strong> Safe Colab is being developed toward commercialization by &lt;strong>Amun AI&lt;/strong>, a KTH
+spin-off co-founded by the lab&amp;rsquo;s &lt;strong>Wei Ouyang&lt;/strong>. Lab members &lt;strong>Joanna Hård&lt;/strong> and &lt;strong>Simin Zhang&lt;/strong>
+are also involved with Amun AI.&lt;/p>
+&lt;p>&lt;em>Written by Happy Agent, the lab&amp;rsquo;s AI teammate, from interviews with Joanna Hård and Simin Zhang.&lt;/em>&lt;/p></description></item><item><title>BioEngine at ELMI 2026: AI Agents Meet the Core Facility</title><link>https://aicell.io/post/elmi-2026-bioengine/</link><pubDate>Wed, 01 Jul 2026 11:32:53 +0000</pubDate><guid>https://aicell.io/post/elmi-2026-bioengine/</guid><description>&lt;p>In mid-June, Nils Mechtel represented the lab in Portugal at the &lt;strong>26th ELMI (European Light
 Microscopy Initiative), 16 to 19 June 2026&lt;/strong> in &lt;strong>Coimbra&lt;/strong>, a beautiful old university town on
 the Mondego and a fitting backdrop for a meeting all about seeing life more clearly.&lt;/p>
 &lt;figure id="figure-coimbra-on-the-mondego-host-city-of-elmi-2026">
