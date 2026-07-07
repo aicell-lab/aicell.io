@@ -1,4 +1,50 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>virtual-cell | AICell Lab</title><link>https://aicell.io/tag/virtual-cell/</link><atom:link href="https://aicell.io/tag/virtual-cell/index.xml" rel="self" type="application/rss+xml"/><description>virtual-cell</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Thu, 02 Jul 2026 03:00:39 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>virtual-cell</title><link>https://aicell.io/tag/virtual-cell/</link></image><item><title>Lab Newsletter — July 2, 2026: Grounding the Virtual Cell</title><link>https://aicell.io/post/newsletter-2026-07-02/</link><pubDate>Thu, 02 Jul 2026 03:00:39 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-07-02/</guid><description>&lt;p>One question runs under all of today&amp;rsquo;s items: &lt;em>how do you make an AI&amp;rsquo;s biology
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>virtual-cell | AICell Lab</title><link>https://aicell.io/tag/virtual-cell/</link><atom:link href="https://aicell.io/tag/virtual-cell/index.xml" rel="self" type="application/rss+xml"/><description>virtual-cell</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 07 Jul 2026 05:38:59 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>virtual-cell</title><link>https://aicell.io/tag/virtual-cell/</link></image><item><title>Lab Newsletter — July 7, 2026: Big Money Meets the Hard Tests</title><link>https://aicell.io/post/newsletter-2026-07-07/</link><pubDate>Tue, 07 Jul 2026 05:38:59 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-07-07/</guid><description>&lt;p>Two forces are pulling on AI-for-biology at once: &lt;strong>capital is arriving at industrial scale&lt;/strong>,
+and &lt;strong>the honest tests are getting harder to game&lt;/strong>. Today&amp;rsquo;s items sit on that fault line.&lt;/p>
+&lt;h3 id="-industry-goes-all-in-on-agentic-labs">🏭 Industry goes all-in on agentic labs&lt;/h3>
+&lt;p>NVIDIA and Eli Lilly are standing up a
+&lt;a href="https://nvidianews.nvidia.com/news/nvidia-and-lilly-announce-co-innovation-lab-to-reinvent-drug-discovery-in-the-age-of-ai" target="_blank" rel="noopener">&lt;strong>co-innovation lab&lt;/strong>&lt;/a> —
+up to &lt;strong>$1B over five years&lt;/strong> — to build next-generation biology and chemistry foundation models
+on NVIDIA BioNeMo, wiring Lilly&amp;rsquo;s &lt;strong>agentic wet labs&lt;/strong> to computational dry labs for round-the-clock,
+&amp;ldquo;scientist-in-the-loop&amp;rdquo; experimentation, robotics and physical AI included. And it isn&amp;rsquo;t a one-off:
+NVIDIA and Thermo Fisher are pushing to make &lt;strong>instruments themselves intelligent&lt;/strong> with multi-agent
+workflows that generate protocols and run experiments, while a wave of
+&lt;a href="https://www.ycombinator.com/companies/industry/drug-discovery-and-delivery" target="_blank" rel="noopener">YC startups&lt;/a> is
+building &amp;ldquo;agentic drug companies&amp;rdquo; on top of biological foundation models. &lt;strong>Why it matters for the
+lab:&lt;/strong> the agent-first, self-driving-lab thesis we&amp;rsquo;ve been building — &lt;a href="https://aicell.io/project/reef-imaging-farm/">REEF&lt;/a>,
+&lt;a href="https://aicell.io/project/agent-lens/">Agent-Lens&lt;/a>, &lt;a href="https://aicell.io/project/bioengine/">BioEngine&lt;/a>, &lt;a href="https://aicell.io/project/hypha/">Hypha&lt;/a> — is
+now exactly where the industry is pouring capital. That&amp;rsquo;s validation, and a reminder that our edge
+is &lt;em>openness&lt;/em> and closing the loop on &lt;em>real&lt;/em> cells. &lt;em>(NVIDIA+Lilly was unveiled in January; it&amp;rsquo;s
+part of a 2026-long industrial turn.)&lt;/em>&lt;/p>
+&lt;h3 id="-virtual-cells-keep-scaling--and-the-baselines-keep-them-honest">🧫 Virtual cells keep scaling — and the baselines keep them honest&lt;/h3>
+&lt;p>The perturbation-prediction field keeps shipping models, with Arc&amp;rsquo;s &lt;strong>STATE&lt;/strong> (trained on ~170M
+observational and 100M+ perturbational cells) anchoring the frontier. But a clear-eyed
+&lt;a href="https://pdpspectra.com/blog/virtual-cell-models-ai-2026/" target="_blank" rel="noopener">read of the field&lt;/a> warns the wins are
+fragile: scored honestly, deep models often &lt;em>don&amp;rsquo;t&lt;/em> clearly beat trivial ones — &lt;em>&amp;ldquo;naive baselines
+that predict the dataset mean are stubbornly hard to beat on the wrong metric&amp;rdquo;&lt;/em> — and the real test,
+generalizing to &lt;strong>unseen perturbations and unseen cell types&lt;/strong>, &lt;em>&amp;ldquo;is brutal.&amp;rdquo;&lt;/em> Tellingly, the
+&lt;a href="https://github.com/OmicsML/awesome-foundation-model-single-cell-papers" target="_blank" rel="noopener">Virtual Cell Challenge&lt;/a>
+drew 5,000+ teams from 114 countries &lt;em>because&lt;/em> the community hasn&amp;rsquo;t agreed how to evaluate this yet.
+&lt;strong>Why it matters for the lab:&lt;/strong> our virtual-cell ambitions (&lt;a href="https://aicell.io/publication/sun-2026-proteome-wide/">ProtiCelli&lt;/a>)
+live or die on the hard split, not the demo — a discipline worth importing wholesale.&lt;/p>
+&lt;h3 id="-image-based-profiling-reaches-for-assay-agnostic-foundation-models">🔬 Image-based profiling reaches for assay-agnostic foundation models&lt;/h3>
+&lt;p>Cell Painting — cheap, single-cell-resolution &lt;strong>morphological profiling&lt;/strong> — is having its
+foundation-model moment. A &lt;a href="https://arxiv.org/abs/2508.05800" target="_blank" rel="noopener">2026 review&lt;/a> traces the shift from
+CNNs to self-supervised vision transformers and transformer-based segmentation (&lt;strong>CellSAM&lt;/strong>,
+&lt;strong>CellViT&lt;/strong>), while a &lt;a href="https://www.nature.com/articles/s44303-025-00116-9" target="_blank" rel="noopener">confounder-aware model&lt;/a>
+trained on &lt;strong>13M+ images across 107k compounds&lt;/strong> reports state-of-the-art mechanism-of-action and
+target prediction even on &lt;em>unseen&lt;/em> compounds. The recurring theme — echoed in a
+&lt;a href="https://www.cell.com/cell-systems/abstract/S2405-4712%2826%2900016-5" target="_blank" rel="noopener">Cell Systems piece&lt;/a> on
+&amp;ldquo;compositional&amp;rdquo; foundation models — is accessibility and generalization: most models assume the
+5-channel Cell Painting panel and stumble on other microscopy modalities, so the field is pushing
+toward &lt;strong>assay-agnostic, open, benchmarked&lt;/strong> models. &lt;strong>Why it matters for the lab:&lt;/strong> that&amp;rsquo;s exactly
+the open, FAIR, model-sharing world our &lt;a href="https://aicell.io/project/bioimage-model-zoo/">BioImage Model Zoo&lt;/a> and
+&lt;a href="https://aicell.io/project/bioengine/">BioEngine&lt;/a> were built for.&lt;/p>
+&lt;p>The through-line: capital and scale are arriving fast, but the honest tests — baselines, unseen
+splits, cross-modality transfer — are where it&amp;rsquo;s actually decided. Prediction is cheap;
+generalization is the moat.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(X/Twitter sweep was skipped today — our news API is out of credits.) Have lab news to share — a
+talk, paper, conference or release? Message me on Slack.&lt;/em>&lt;/p></description></item><item><title>Lab Newsletter — July 2, 2026: Grounding the Virtual Cell</title><link>https://aicell.io/post/newsletter-2026-07-02/</link><pubDate>Thu, 02 Jul 2026 03:00:39 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-07-02/</guid><description>&lt;p>One question runs under all of today&amp;rsquo;s items: &lt;em>how do you make an AI&amp;rsquo;s biology
 trustworthy?&lt;/em> Not just fluent, not just plausible — actually grounded. Three groups
 are answering it three ways.&lt;/p>
 &lt;h3 id="-rbio-teaching-an-ai-to-reason-about-cells-with-a-virtual-cell-as-its-judge">🧠 rBio: teaching an AI to reason about cells, with a virtual cell as its judge&lt;/h3>
