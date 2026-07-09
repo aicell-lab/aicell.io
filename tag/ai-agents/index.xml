@@ -1,4 +1,41 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AI agents | AICell Lab</title><link>https://aicell.io/tag/ai-agents/</link><atom:link href="https://aicell.io/tag/ai-agents/index.xml" rel="self" type="application/rss+xml"/><description>AI agents</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 07 Jul 2026 05:38:59 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>AI agents</title><link>https://aicell.io/tag/ai-agents/</link></image><item><title>Lab Newsletter — July 7, 2026: Big Money Meets the Hard Tests</title><link>https://aicell.io/post/newsletter-2026-07-07/</link><pubDate>Tue, 07 Jul 2026 05:38:59 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-07-07/</guid><description>&lt;p>Two forces are pulling on AI-for-biology at once: &lt;strong>capital is arriving at industrial scale&lt;/strong>,
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AI agents | AICell Lab</title><link>https://aicell.io/tag/ai-agents/</link><atom:link href="https://aicell.io/tag/ai-agents/index.xml" rel="self" type="application/rss+xml"/><description>AI agents</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Thu, 09 Jul 2026 03:03:20 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>AI agents</title><link>https://aicell.io/tag/ai-agents/</link></image><item><title>Lab Newsletter — July 9, 2026: A Whole Cell, Simulated in 4D</title><link>https://aicell.io/post/newsletter-2026-07-09/</link><pubDate>Thu, 09 Jul 2026 03:03:20 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-07-09/</guid><description>&lt;p>The virtual cell has two roads to it — &lt;em>simulate the mechanism&lt;/em> or &lt;em>learn from data&lt;/em> — and today
+both moved, alongside the open engines that will drive the agents doing the work.&lt;/p>
+&lt;h3 id="-an-entire-cell-alive-in-4d">🦠 An entire cell, alive in 4D&lt;/h3>
+&lt;p>Researchers brought a minimal bacterium fully to life &lt;em>in silico&lt;/em>: a
+&lt;a href="https://www.genengnews.com/topics/artificial-intelligence/simulating-life-4d-whole-cell-model-of-a-minimal-bacterium/" target="_blank" rel="noopener">&lt;strong>4D whole-cell simulation of JCVI-syn3A&lt;/strong>&lt;/a>
+(a stripped-down cell of &lt;strong>fewer than 500 genes&lt;/strong>), published in &lt;em>Cell&lt;/em>. For the first time, one
+dynamic, spatially resolved run couples &lt;strong>metabolism, DNA replication, gene expression and cell
+division&lt;/strong> at nanoscale across a full &lt;strong>~105-minute cell cycle&lt;/strong> — and its simulated timing matched
+real cells to within about two minutes. As lead Zan Luthey-Schulten put it, &amp;ldquo;the simulations can
+give you the results of hundreds of experiments simultaneously.&amp;rdquo; A companion &lt;em>Cell&lt;/em> paper even
+builds &lt;a href="https://www.cell.com/cell/fulltext/S0092-8674%2826%2900697-5" target="_blank" rel="noopener">human-cell digital twins from light-sheet microscopy&lt;/a>.
+&lt;strong>Why it matters for the lab:&lt;/strong> this is the mechanistic face of our
+&lt;a href="https://aicell.io/project/human-cell-simulator/">Human Cell Simulator&lt;/a> — proof that a living cell&amp;rsquo;s full dynamics
+can be run on a computer, and a target for the imaging-driven models we build.&lt;/p>
+&lt;h3 id="-two-roads-and-the-interpretability-tax">🧠 Two roads, and the interpretability tax&lt;/h3>
+&lt;p>That mechanistic triumph lands right as the field pivots the other way. Hand-built models (from
+E-Cell in 1999 to the 2012 &lt;em>Mycoplasma&lt;/em> whole-cell model) are giving way to scalable, data-driven
+&lt;a href="https://github.com/OmicsML/awesome-foundation-model-single-cell-papers" target="_blank" rel="noopener">foundation models&lt;/a> —
+scGPT, CellFM, scLong — that learn the cell from multi-omics at scale. The catch, a 2026 &lt;em>Nature
+Genetics&lt;/em> review cautions, is a quiet &lt;strong>interpretability tax&lt;/strong>: the learned models predict more but
+explain less. &lt;strong>Why it matters for the lab:&lt;/strong> the prize isn&amp;rsquo;t one road or the other — it&amp;rsquo;s fusing
+them, keeping the &lt;em>scale&lt;/em> of foundation models and the &lt;em>mechanistic legibility&lt;/em> of simulation. That
+synthesis is exactly the space our whole-cell work sits in.&lt;/p>
+&lt;h3 id="-the-engines-get-cheap-and-open">🤖 The engines get cheap and open&lt;/h3>
+&lt;p>The models that power science &lt;em>agents&lt;/em> keep getting cheaper and more open. A mid-2026
+&lt;a href="https://openrouter.ai/blog/insights/the-open-weight-models-that-matter-june-2026/" target="_blank" rel="noopener">survey of open-weight models&lt;/a>
+highlights &lt;strong>DeepSeek V4&lt;/strong> (a 1M-token-context MoE, MIT-licensed, ~79% on SWE-bench Verified — &amp;ldquo;the
+first open-weight model teams dropped into real agentic pipelines&amp;rdquo; at pennies per million tokens),
+&lt;strong>GLM 5.2&lt;/strong> (the top open-weight on quality, ~5 points below Claude Fable 5), and NVIDIA&amp;rsquo;s
+&lt;strong>Nemotron 3 Ultra&lt;/strong> — with open weights holding a steady 3–6-month gap behind the frontier.
+&lt;strong>Why it matters for the lab:&lt;/strong> the agents behind &lt;a href="https://aicell.io/project/bioengine/">BioEngine&lt;/a>,
+&lt;a href="https://aicell.io/project/agent-lens/">Agent-Lens&lt;/a> and &lt;a href="https://aicell.io/project/reef-imaging-farm/">REEF&lt;/a> run on exactly these
+engines — capable, controllable, and cheap enough to put an agent on every instrument.&lt;/p>
+&lt;p>Simulate the cell, learn the cell, and drive it all with open agents — three sides of the same
+build. The virtual cell is starting to look less like a metaphor and more like an engineering plan.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(X/Twitter sweep was skipped today — our news API is out of credits.) Have lab news to share — a
+talk, paper, conference or release? Message me on Slack.&lt;/em>&lt;/p></description></item><item><title>Lab Newsletter — July 7, 2026: Big Money Meets the Hard Tests</title><link>https://aicell.io/post/newsletter-2026-07-07/</link><pubDate>Tue, 07 Jul 2026 05:38:59 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-07-07/</guid><description>&lt;p>Two forces are pulling on AI-for-biology at once: &lt;strong>capital is arriving at industrial scale&lt;/strong>,
 and &lt;strong>the honest tests are getting harder to game&lt;/strong>. Today&amp;rsquo;s items sit on that fault line.&lt;/p>
 &lt;h3 id="-industry-goes-all-in-on-agentic-labs">🏭 Industry goes all-in on agentic labs&lt;/h3>
 &lt;p>NVIDIA and Eli Lilly are standing up a
