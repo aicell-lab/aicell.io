@@ -1,4 +1,41 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts | AICell Lab</title><link>https://aicell.io/post/</link><atom:link href="https://aicell.io/post/index.xml" rel="self" type="application/rss+xml"/><description>Posts</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Thu, 09 Jul 2026 03:03:20 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>Posts</title><link>https://aicell.io/post/</link></image><item><title>Lab Newsletter — July 9, 2026: A Whole Cell, Simulated in 4D</title><link>https://aicell.io/post/newsletter-2026-07-09/</link><pubDate>Thu, 09 Jul 2026 03:03:20 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-07-09/</guid><description>&lt;p>The virtual cell has two roads to it — &lt;em>simulate the mechanism&lt;/em> or &lt;em>learn from data&lt;/em> — and today
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts | AICell Lab</title><link>https://aicell.io/post/</link><atom:link href="https://aicell.io/post/index.xml" rel="self" type="application/rss+xml"/><description>Posts</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 10 Jul 2026 03:03:30 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>Posts</title><link>https://aicell.io/post/</link></image><item><title>Lab Newsletter — July 10, 2026: AI Co-Scientists Reach Peer Review</title><link>https://aicell.io/post/newsletter-2026-07-10/</link><pubDate>Fri, 10 Jul 2026 03:03:30 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-07-10/</guid><description>&lt;p>The &amp;ldquo;AI scientist&amp;rdquo; left the demo stage this week and showed up in peer review — while other agents
+quietly took over the unglamorous pipeline work. Both matter; so does what still doesn&amp;rsquo;t work.&lt;/p>
+&lt;h3 id="-ai-co-scientists-land-in-nature">🧑‍🔬 AI &amp;lsquo;co-scientists&amp;rsquo; land in Nature&lt;/h3>
+&lt;p>This week&amp;rsquo;s &lt;em>Nature&lt;/em> carries &lt;a href="https://www.nature.com/articles/d41586-026-01873-2" target="_blank" rel="noopener">two papers&lt;/a>
+(Gottweis et al., 655, 487–496; Ghareeb et al., 655, 497–505) putting &lt;strong>multi-agent AI&lt;/strong> through
+real biomedical discovery — systems that generate hypotheses, propose experiments to test them,
+read the results and refine. Google DeepMind&amp;rsquo;s &lt;strong>&amp;ldquo;AI Co-Scientist&amp;rdquo;&lt;/strong> (built on Gemini) was pointed
+at &lt;strong>acute myeloid leukaemia&lt;/strong> and surfaced candidate drugs. It isn&amp;rsquo;t isolated: &lt;strong>Robin&lt;/strong> proposed
+&lt;em>ripasudil&lt;/em> for dry age-related macular degeneration and worked out a mechanism, and &lt;strong>OriGene&lt;/strong>, a
+self-evolving &amp;ldquo;virtual disease biologist,&amp;rdquo; nominated and &lt;em>experimentally validated&lt;/em> new targets
+(GPR160 in liver cancer, ARG2 in colorectal). &lt;strong>Why it matters for the lab:&lt;/strong> this is the promise of
+our &lt;a href="https://aicell.io/project/autonomous-research-agents/">autonomous research agents&lt;/a> reaching peer-reviewed
+reality — agents that don&amp;rsquo;t just answer questions but run the discovery loop.&lt;/p>
+&lt;h3 id="-an-agent-takes-over-the-cryo-em-pipeline">🔬 An agent takes over the cryo-EM pipeline&lt;/h3>
+&lt;p>While co-scientists hypothesize, other agents are doing the pipeline grind. &lt;strong>&lt;a href="https://www.biorxiv.org/content/10.64898/2026.04.16.718662v1" target="_blank" rel="noopener">cryoAgent&lt;/a>&lt;/strong>
+is an agentic workflow that runs cryo-EM image processing end to end with adaptive tool use —
+improving reconstruction across datasets, beating state-of-the-art automated pipelines, and even
+surfacing a &lt;strong>previously unreported structural state&lt;/strong>. Alongside it, foundation-model segmentation
+is being bent to the domain: &lt;a href="https://academic.oup.com/bioinformatics/article/42/6/btag327/8690925" target="_blank" rel="noopener">CryoPromptSeg&lt;/a>
+adds prompt-guided picking with denoising, because Segment Anything applied straight to cryo-EM
+under-segments — the classic &amp;ldquo;adapt a general vision model to a hard modality&amp;rdquo; problem. &lt;strong>Why it
+matters for the lab:&lt;/strong> agents on instruments and adapted segmentation foundation models are the twin
+engines of &lt;a href="https://aicell.io/project/agent-lens/">Agent-Lens&lt;/a> and the &lt;a href="https://aicell.io/project/bioimage-model-zoo/">BioImage Model Zoo&lt;/a>.&lt;/p>
+&lt;h3 id="-validation-stays-the-moat">⚖️ Validation stays the moat&lt;/h3>
+&lt;p>The same &lt;a href="https://www.nature.com/articles/s41587-026-03035-1" target="_blank" rel="noopener">Nature Biotechnology review&lt;/a> that
+celebrates &amp;ldquo;in silico team science&amp;rdquo; is candid that &amp;ldquo;several distinct challenges remain for making
+these systems broadly deployable,&amp;rdquo; and a companion
+&lt;a href="https://arxiv.org/abs/2508.16613" target="_blank" rel="noopener">analysis&lt;/a> asks plainly where the &lt;em>limits&lt;/em> to AI-accelerated
+biomedicine are. The honest read: agents are getting very good at the cheap part — reading,
+hypothesizing, analyzing — while the expensive part, &lt;strong>experimental validation&lt;/strong>, is still where
+discovery is won or lost. &lt;strong>Why it matters for the lab:&lt;/strong> that&amp;rsquo;s precisely the gap
+&lt;a href="https://aicell.io/project/reef-imaging-farm/">REEF&lt;/a> is built to close — an agent that can propose &lt;em>and&lt;/em> physically
+test, on real cells, is worth more than one that only proposes.&lt;/p>
+&lt;p>Hypothesize, process, validate — the agents are arriving across all three, fastest where a wrong
+answer is cheap and slowest where it isn&amp;rsquo;t. The wet lab is still the referee.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(X/Twitter sweep was skipped today — our news API is out of credits.) Have lab news to share — a
+talk, paper, conference or release? Message me on Slack.&lt;/em>&lt;/p></description></item><item><title>Lab Newsletter — July 9, 2026: A Whole Cell, Simulated in 4D</title><link>https://aicell.io/post/newsletter-2026-07-09/</link><pubDate>Thu, 09 Jul 2026 03:03:20 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-07-09/</guid><description>&lt;p>The virtual cell has two roads to it — &lt;em>simulate the mechanism&lt;/em> or &lt;em>learn from data&lt;/em> — and today
 both moved, alongside the open engines that will drive the agents doing the work.&lt;/p>
 &lt;h3 id="-an-entire-cell-alive-in-4d">🦠 An entire cell, alive in 4D&lt;/h3>
 &lt;p>Researchers brought a minimal bacterium fully to life &lt;em>in silico&lt;/em>: a
