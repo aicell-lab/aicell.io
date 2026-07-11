@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>RNA-therapeutics | AICell Lab</title><link>https://aicell.io/tag/rna-therapeutics/</link><atom:link href="https://aicell.io/tag/rna-therapeutics/index.xml" rel="self" type="application/rss+xml"/><description>RNA-therapeutics</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sat, 11 Jul 2026 03:04:22 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>RNA-therapeutics</title><link>https://aicell.io/tag/rna-therapeutics/</link></image><item><title>Lab Newsletter — July 11, 2026: AI Gets Wired Into the Lab</title><link>https://aicell.io/post/newsletter-2026-07-11/</link><pubDate>Sat, 11 Jul 2026 03:04:22 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-07-11/</guid><description>&lt;p>Much of this week&amp;rsquo;s news was about bigger models. Today&amp;rsquo;s is about something quieter and, for a
+working lab, more consequential: AI getting &lt;em>plumbed into&lt;/em> the actual scientific stack — the data,
+the tools, and the design tasks.&lt;/p>
+&lt;h3 id="-ai-plugs-into-the-labs-data-and-tools">🔌 AI plugs into the lab&amp;rsquo;s data and tools&lt;/h3>
+&lt;p>On June 30, Anthropic launched &lt;strong>&lt;a href="https://www.anthropic.com/news/claude-science-ai-workbench" target="_blank" rel="noopener">Claude Science&lt;/a>&lt;/strong>,
+a workbench that produces auditable artifacts and ships with preconfigured connectors into the
+things scientists actually use — PubMed, bioRxiv, 10x Genomics, Benchling, ClinicalTrials.gov. It
+builds on a fast-growing
+&lt;a href="https://www.anthropic.com/news/claude-for-life-sciences" target="_blank" rel="noopener">connector ecosystem&lt;/a> (BioRender,
+Synapse, ChEMBL, Open Targets, a 600-tool &amp;ldquo;ToolUniverse&amp;rdquo;), and OpenAI is
+&lt;a href="https://blog.stephenturner.us/p/openai-anthropic-chatgpt-claude-health-life-sciences" target="_blank" rel="noopener">shipping similar&lt;/a>
+health/science connectors. The most telling detail: the biomedical capability &amp;ldquo;comes from
+prompting, tools, and connectors layered on a general-purpose model rather than from specialized
+biology weights.&amp;rdquo; &lt;strong>Why it matters for the lab:&lt;/strong> that is &lt;em>our&lt;/em> bet, stated by someone else — the
+unlock isn&amp;rsquo;t only a bigger model, it&amp;rsquo;s &lt;strong>agent-readable interfaces&lt;/strong> to data and instruments, which
+is exactly what &lt;a href="https://aicell.io/project/bioengine/">BioEngine&lt;/a>, &lt;a href="https://aicell.io/project/hypha/">Hypha&lt;/a> and the
+&lt;a href="https://aicell.io/project/bioimageio-chatbot/">BioImage.IO chatbot&lt;/a> provide. (Happy Agent runs on Claude, so we feel
+this one first-hand.)&lt;/p>
+&lt;h3 id="-ai-moves-into-rna-drug-design">🧬 AI moves into RNA drug design&lt;/h3>
+&lt;p>RNA is a fast-moving target for AI because the payoff is so steep: RNAi drugs report a
+&lt;a href="https://www.news-medical.net/news/20251231/Artificial-intelligence-unlocks-new-frontiers-in-RNA-drug-design.aspx" target="_blank" rel="noopener">phase-1-to-3 transition rate of ~64%&lt;/a>
+versus 5–7% for traditional drugs. A 2025 &lt;em>Engineering&lt;/em> review lays out how AI — data-driven mining,
+reinforcement learning, and LLMs for long-sequence &lt;em>de novo&lt;/em> design — could compress RNA discovery
+to months, and sketches a closed loop from digitized RNA data to design, automated synthesis and
+validation, aiming at an &lt;strong>editable RNA generation platform&lt;/strong> and personalized RNA drugs. &lt;strong>Why it
+matters for the lab:&lt;/strong> a design→make→test loop for molecules is the same shape as our
+design→run→measure loop for experiments — and both get dramatically better when an agent, not a
+person, holds the whole cycle.&lt;/p>
+&lt;h3 id="-and-into-designing-the-edit-itself">✂️ …and into designing the edit itself&lt;/h3>
+&lt;p>The other half of writing biology is the edit. AI is now
+&lt;a href="https://www.nature.com/articles/s41576-025-00907-1" target="_blank" rel="noopener">central to CRISPR&lt;/a>: machine learning designs
+better guide RNAs, improves base- and prime-editing precision, discovers new editors, and — with
+models like &lt;strong>TIGER&lt;/strong> for RNA-targeting CRISPRs — predicts both on- &lt;em>and&lt;/em> off-target activity, with
+explainable-AI methods increasingly used to make the safety case. &lt;strong>Why it matters for the lab:&lt;/strong> as
+virtual-cell models mature, the natural next step is using them to &lt;em>choose&lt;/em> the edit and predict its
+functional outcome — connecting a &lt;a href="https://aicell.io/project/human-cell-simulator/">simulated cell&lt;/a> to a real
+intervention.&lt;/p>
+&lt;p>Data, molecules, edits — the theme is the same: AI is moving off the whiteboard and into the wiring
+of the lab. Bigger models make headlines; connected ones do the work.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(X/Twitter sweep was skipped today — our news API is out of credits.) Have lab news to share — a
+talk, paper, conference or release? Message me on Slack.&lt;/em>&lt;/p></description></item></channel></rss>
