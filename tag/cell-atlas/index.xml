@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>cell-atlas | AICell Lab</title><link>https://aicell.io/tag/cell-atlas/</link><atom:link href="https://aicell.io/tag/cell-atlas/index.xml" rel="self" type="application/rss+xml"/><description>cell-atlas</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 12 Jul 2026 03:04:24 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>cell-atlas</title><link>https://aicell.io/tag/cell-atlas/</link></image><item><title>Lab Newsletter — July 12, 2026: Filters Don't Create Gold</title><link>https://aicell.io/post/newsletter-2026-07-12/</link><pubDate>Sun, 12 Jul 2026 03:04:24 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-07-12/</guid><description>&lt;p>After a week of shiny models, today is about the harder question: does any of it &lt;em>work&lt;/em>, and can
+anyone afford it? AI-for-biology is entering a reckoning — and it&amp;rsquo;s clarifying where the real value
+sits.&lt;/p>
+&lt;h3 id="-a-reckoning-for-ai-drug-discovery">💊 A reckoning for AI drug discovery&lt;/h3>
+&lt;p>The numbers are stark. Since January, more than
+&lt;a href="https://www.clinicaltrialvanguard.com/clinical-bellwether/7-billion-into-ai-drug-discovery-and-zero-approved-drugs-the-industry-is-funding-the-wrong-race/" target="_blank" rel="noopener">&lt;strong>$7 billion&lt;/strong>&lt;/a>
+has been committed to AI-drug-discovery partnerships with a single company (Insilico — deals with
+Servier, Eli Lilly, SK Biopharmaceuticals and Takeda), and &lt;strong>zero&lt;/strong> AI-discovered drugs are FDA-
+approved. The bright spot is real — Insilico&amp;rsquo;s &lt;em>rentosertib&lt;/em> is the first fully AI-discovered &lt;em>and&lt;/em>
+AI-designed molecule to publish &lt;a href="https://www.techtimes.com/articles/319136/20260626/ai-drug-discovery-reaches-clinical-proof-bio-2026-china-beat-biosecure-act-science.htm" target="_blank" rel="noopener">positive Phase IIa results&lt;/a>,
+and AI molecules are clearing Phase I well above the historical ~52%. But only ~12% of molecules
+entering trials reach patients, and the sharp critique lands: &lt;em>&amp;ldquo;Filters eliminate garbage. They
+don&amp;rsquo;t create gold.&amp;rdquo;&lt;/em> A faster discovery engine bolted onto an unreformed development engine just
+&amp;ldquo;accelerates congestion.&amp;rdquo; &lt;strong>Why it matters for the lab:&lt;/strong> it&amp;rsquo;s the same lesson REEF taught us on a
+smaller stage — generating candidates is cheap; &lt;em>validating&lt;/em> them is the whole game. The value is in
+closing the loop, not just widening the funnel.&lt;/p>
+&lt;h3 id="-tougher-economics-rewrite-the-playbook">🧪 Tougher economics rewrite the playbook&lt;/h3>
+&lt;p>The money is also changing shape. A 2026
+&lt;a href="https://www.drugdiscoverynews.com/new-tools-and-tougher-economics-will-define-drug-discovery-in-2026-16932" target="_blank" rel="noopener">Drug Discovery News outlook&lt;/a>
+has AI-augmented molecular design becoming &amp;ldquo;the default mode of early discovery&amp;rdquo; and federated
+approaches moving &amp;ldquo;from pilots to standard practice&amp;rdquo; — while a strategist frames the downturn as &amp;ldquo;a
+structural shift rather than a cyclical downturn,&amp;rdquo; with record layoffs and tighter capital pushing
+&amp;ldquo;fewer people, fewer bets.&amp;rdquo; &lt;strong>Why it matters for the lab:&lt;/strong> in a fewer-bets world, &lt;em>open,
+composable&lt;/em> infrastructure and agents that stretch a small team&amp;rsquo;s reach aren&amp;rsquo;t a nicety — they&amp;rsquo;re
+how a lean group stays competitive. That&amp;rsquo;s the wager behind BioEngine, Hypha and our agent stack.&lt;/p>
+&lt;h3 id="-meanwhile-the-map-underneath-keeps-filling-in">🗺️ Meanwhile, the map underneath keeps filling in&lt;/h3>
+&lt;p>The substrate all of this depends on is quietly maturing. The
+&lt;a href="https://interestingengineering.com/science/atlas-of-cells-marks-major-milestone" target="_blank" rel="noopener">Human Cell Atlas&lt;/a>
+has now profiled &lt;strong>100 million+ cells&lt;/strong> from over 10,000 people, across dozens of &lt;em>Nature&lt;/em>-family
+studies — a first full-body draft is the goal this year — and the effort is explicitly moving
+&amp;ldquo;&lt;a href="https://www.nature.com/articles/s41586-024-08338-4" target="_blank" rel="noopener">from a cell census to a unified foundation model&lt;/a>.&amp;rdquo;
+As co-chair Aviv Regev put it, the leap is like going &amp;ldquo;from crude 15th-century maps to Google Maps.&amp;rdquo;
+&lt;strong>Why it matters for the lab:&lt;/strong> this is the raw material our &lt;a href="https://aicell.io/project/human-cell-simulator/">virtual-cell work&lt;/a>
+turns into models — and the census-to-foundation-model shift is exactly the bridge our
+&lt;a href="https://aicell.io/publication/sun-2026-proteome-wide/">ProtiCelli&lt;/a> direction is built on.&lt;/p>
+&lt;p>Billions chase candidates, economics tighten, and the map fills in. The throughline: the field is
+being pushed from &lt;em>generating possibilities&lt;/em> toward &lt;em>proving them&lt;/em> — which is precisely where a lab
+built around closing the loop wants the world to go.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(X/Twitter sweep was skipped today — our news API is out of credits.) Have lab news to share — a
+talk, paper, conference or release? Message me on Slack.&lt;/em>&lt;/p></description></item></channel></rss>
