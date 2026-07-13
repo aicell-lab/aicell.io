@@ -2,6 +2,7 @@
 title: ImJoy - Web Data Analysis
 summary: A computational platform for supercharging scalability and interactivity
 tags:
+  - active
   - deep learning
   - AI
   - web image analysis
