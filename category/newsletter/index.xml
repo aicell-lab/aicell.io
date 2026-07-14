@@ -1,4 +1,47 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>newsletter | AICell Lab</title><link>https://aicell.io/category/newsletter/</link><atom:link href="https://aicell.io/category/newsletter/index.xml" rel="self" type="application/rss+xml"/><description>newsletter</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 13 Jul 2026 03:03:03 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>newsletter</title><link>https://aicell.io/category/newsletter/</link></image><item><title>Lab Newsletter — July 13, 2026: Wiring Diagrams for the Cell</title><link>https://aicell.io/post/newsletter-2026-07-13/</link><pubDate>Mon, 13 Jul 2026 03:03:03 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-07-13/</guid><description>&lt;p>A cell isn&amp;rsquo;t a parts list; it&amp;rsquo;s a wiring diagram. Today&amp;rsquo;s items are three attempts to draw it — the
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>newsletter | AICell Lab</title><link>https://aicell.io/category/newsletter/</link><atom:link href="https://aicell.io/category/newsletter/index.xml" rel="self" type="application/rss+xml"/><description>newsletter</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 14 Jul 2026 03:03:52 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>newsletter</title><link>https://aicell.io/category/newsletter/</link></image><item><title>Lab Newsletter — July 14, 2026: AI Learns the Language of the Lab</title><link>https://aicell.io/post/newsletter-2026-07-14/</link><pubDate>Tue, 14 Jul 2026 03:03:52 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-07-14/</guid><description>&lt;p>A quiet pattern connects today&amp;rsquo;s items: AI is getting good at &lt;em>translation&lt;/em> — turning cells into
+language, language into workflows, and samples into decisions. When those translations are faithful,
+real biology comes out the other side.&lt;/p>
+&lt;h3 id="-a-cell-language-model-that-proposed-a-validated-cancer-lead">🧬 A cell-language model that proposed a validated cancer lead&lt;/h3>
+&lt;p>The clearest example so far comes from
+&lt;a href="https://blog.google/innovation-and-ai/products/google-gemma-ai-cancer-therapy-discovery/" target="_blank" rel="noopener">&lt;strong>Cell2Sentence-Scale 27B&lt;/strong>&lt;/a>
+(Google DeepMind + Yale, built on the open Gemma models), which turns single-cell data into
+&amp;ldquo;sentences&amp;rdquo; so a language model can reason about cells. Asked to find a drug that would amplify immune
+visibility &lt;em>only&lt;/em> where a faint interferon signal was already present, it flagged the CK2 inhibitor
+&lt;strong>silmitasertib&lt;/strong> — a genuinely novel prediction (that mechanism wasn&amp;rsquo;t in the literature). Then it
+held up: in human neuroendocrine cells the model had &lt;em>never seen&lt;/em>, silmitasertib alone did nothing,
+low-dose interferon did a little, and the combination drove a
+&lt;a href="https://www.ddw-online.com/google-ai-model-reveals-new-way-to-improve-immunotherapy-38114-202510/" target="_blank" rel="noopener">&lt;strong>~50% jump in antigen presentation&lt;/strong>&lt;/a>
+— turning a &amp;ldquo;cold&amp;rdquo; tumor &amp;ldquo;hot.&amp;rdquo; &lt;strong>Why it matters for the lab:&lt;/strong> this is the virtual-cell dream doing
+its job — not just predicting, but &lt;em>proposing a testable hypothesis that survived the bench.&lt;/em> It&amp;rsquo;s
+exactly the loop our &lt;a href="https://aicell.io/project/human-cell-simulator/">virtual-cell work&lt;/a> and
+&lt;a href="https://aicell.io/publication/sun-2026-proteome-wide/">ProtiCelli&lt;/a> are pointed at.&lt;/p>
+&lt;h3 id="-plain-language--reproducible-image-analysis">🗣️ Plain language → reproducible image analysis&lt;/h3>
+&lt;p>On the analysis side, agents are learning to speak &lt;em>microscopy&lt;/em>. A new preprint, &lt;strong>Agentic-J&lt;/strong>, turns a
+plain request — &amp;ldquo;segment the nuclei, track the cells, quantify per condition&amp;rdquo; — into an executable
+&lt;strong>ImageJ/Fiji&lt;/strong> pipeline, using specialized sub-agents for plugin management, code generation,
+debugging, QA and stats, and — crucially — logging every decision into a documented, reproducible
+project. It&amp;rsquo;s part of the same wave as the
+&lt;a href="https://www.nature.com/articles/s41524-026-02077-y" target="_blank" rel="noopener">&amp;ldquo;thinking microscopes&amp;rdquo;&lt;/a> idea of embedding agents
+directly in instruments. &lt;strong>Why it matters for the lab:&lt;/strong> this is precisely what
+&lt;a href="https://aicell.io/project/agent-lens/">Agent-Lens&lt;/a>, &lt;a href="https://aicell.io/project/imagej-js/">ImageJ.JS&lt;/a> and the
+&lt;a href="https://aicell.io/project/bioimageio-chatbot/">BioImage.IO chatbot&lt;/a> are built to do — with the reproducibility log
+being the part that makes it trustworthy, not just convenient.&lt;/p>
+&lt;h3 id="-microscopes-that-decide-what-to-image">🔭 Microscopes that decide what to image&lt;/h3>
+&lt;p>The acquisition end is going autonomous too. A 2026
+&lt;a href="https://onlinelibrary.wiley.com/doi/full/10.1002/smtd.202401757" target="_blank" rel="noopener">Small Methods review&lt;/a> surveys
+&lt;strong>self-driving super-resolution microscopy&lt;/strong>, where ML decides &lt;em>what, when and how&lt;/em> to image — finding
+rare events, tracking them, and holding focus without constant human babysitting — while related
+&lt;a href="https://www.nature.com/articles/s41467-025-60912-0" target="_blank" rel="noopener">label-free self-driving systems&lt;/a> cut phototoxicity
+to catch fragile, transient processes in living cells. &lt;strong>Why it matters for the lab:&lt;/strong> a microscope
+that chooses its own next shot is the heart of our
+&lt;a href="https://aicell.io/project/self-driving-microscope/">self-driving microscope&lt;/a> and &lt;a href="https://aicell.io/project/reef-imaging-farm/">REEF&lt;/a> —
+and it&amp;rsquo;s how you turn scarce imaging time into the data a virtual cell actually needs.&lt;/p>
+&lt;p>Cells into sentences, sentences into pipelines, samples into decisions — the throughline is
+translation. The labs that win will be the ones whose translations stay honest all the way to the
+bench.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(X/Twitter sweep was skipped today — our news API is out of credits.) Have lab news to share — a
+talk, paper, conference or release? Message me on Slack.&lt;/em>&lt;/p></description></item><item><title>Lab Newsletter — July 13, 2026: Wiring Diagrams for the Cell</title><link>https://aicell.io/post/newsletter-2026-07-13/</link><pubDate>Mon, 13 Jul 2026 03:03:03 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-07-13/</guid><description>&lt;p>A cell isn&amp;rsquo;t a parts list; it&amp;rsquo;s a wiring diagram. Today&amp;rsquo;s items are three attempts to draw it — the
 physical connections, the regulatory logic, and the hard question of whether the drawings are true.&lt;/p>
 &lt;h3 id="-the-interactome-goes-public-at-scale">🕸️ The interactome goes public, at scale&lt;/h3>
 &lt;p>The &lt;a href="https://www.embl.org/news/science-technology/first-complexes-alphafold-database/" target="_blank" rel="noopener">AlphaFold Database&lt;/a>
