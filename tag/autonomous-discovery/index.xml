@@ -1,4 +1,45 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>autonomous-discovery | AICell Lab</title><link>https://aicell.io/tag/autonomous-discovery/</link><atom:link href="https://aicell.io/tag/autonomous-discovery/index.xml" rel="self" type="application/rss+xml"/><description>autonomous-discovery</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 10 Jul 2026 03:03:30 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>autonomous-discovery</title><link>https://aicell.io/tag/autonomous-discovery/</link></image><item><title>Lab Newsletter — July 10, 2026: AI Co-Scientists Reach Peer Review</title><link>https://aicell.io/post/newsletter-2026-07-10/</link><pubDate>Fri, 10 Jul 2026 03:03:30 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-07-10/</guid><description>&lt;p>The &amp;ldquo;AI scientist&amp;rdquo; left the demo stage this week and showed up in peer review — while other agents
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>autonomous-discovery | AICell Lab</title><link>https://aicell.io/tag/autonomous-discovery/</link><atom:link href="https://aicell.io/tag/autonomous-discovery/index.xml" rel="self" type="application/rss+xml"/><description>autonomous-discovery</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 15 Jul 2026 03:03:17 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>autonomous-discovery</title><link>https://aicell.io/tag/autonomous-discovery/</link></image><item><title>Lab Newsletter — July 15, 2026: The Generalists Arrive</title><link>https://aicell.io/post/newsletter-2026-07-15/</link><pubDate>Wed, 15 Jul 2026 03:03:17 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-07-15/</guid><description>&lt;p>For a while, biomedical AI meant many narrow specialists. This week the &lt;em>generalists&lt;/em> showed up — one
+agent across many fields, one cell model across many species, one frontier model across many risks.&lt;/p>
+&lt;h3 id="-biomni-a-general-purpose-ai-biologist">🤖 Biomni: a general-purpose &amp;ldquo;AI biologist&amp;rdquo;&lt;/h3>
+&lt;p>Stanford (with spinout Phylo) published &lt;strong>&lt;a href="https://biomni.stanford.edu" target="_blank" rel="noopener">Biomni&lt;/a>&lt;/strong> in &lt;em>Science&lt;/em> — a
+general-purpose biomedical agent that autonomously reads the literature, analyzes data, writes code,
+and designs experimental protocols. Its environment spans &lt;strong>150 specialized tools, 105 software
+packages and 59 databases&lt;/strong> mapped from tens of thousands of papers across &lt;strong>25 subfields&lt;/strong>, and a
+Code-as-Action architecture lets it compose workflows on the fly with no task templates. The results
+are the headline: across causal-gene prioritization, drug repurposing, rare-disease diagnosis,
+microbiome analysis and cloning, it beat specialized agents and
+&lt;a href="https://www.genomeweb.com/informatics/biomni-ai-agent-promises-speed-biomedical-research-serve-expert-collaborator" target="_blank" rel="noopener">matched human researchers&amp;rsquo; accuracy — much faster&lt;/a>.
+(Notably, Anthropic provided its model backbone.) &lt;strong>Why it matters for the lab:&lt;/strong> this is the thesis
+of our &lt;a href="https://aicell.io/project/autonomous-research-agents/">autonomous research agents&lt;/a> at full scale — and it&amp;rsquo;s
+built on exactly the &lt;em>agent-readable tools and environments&lt;/em> that &lt;a href="https://aicell.io/project/bioengine/">BioEngine&lt;/a> and
+&lt;a href="https://aicell.io/project/agent-lens/">Agent-Lens&lt;/a> exist to provide.&lt;/p>
+&lt;h3 id="-cell-models-that-generalize-across-life">🧬 Cell models that generalize across life&lt;/h3>
+&lt;p>The same generalist turn is hitting cell models. CZI&amp;rsquo;s &lt;strong>TranscriptFormer&lt;/strong>, a generative cell-atlas
+foundation model trained on &lt;strong>112 million cells across 12 species&lt;/strong>, can do &lt;em>zero-shot&lt;/em> disease-state
+identification in species separated by ~685 million years of evolution — biology so conserved a model
+can carry it across the tree of life. It rhymes with a new &lt;em>Nature Biotechnology&lt;/em> framing of
+&lt;strong>&amp;ldquo;generalist biological AI&amp;rdquo;&lt;/strong> for modeling the
+&lt;a href="https://www.c2bio.com/2026/07/weekly-aiml-biotech-digest-jul-6-to-jul.html" target="_blank" rel="noopener">language of life&lt;/a>, the
+flow from DNA to cellular function. &lt;strong>Why it matters for the lab:&lt;/strong> a cell model that generalizes across
+species is a cell model that has learned something &lt;em>real&lt;/em> — precisely the bar our
+&lt;a href="https://aicell.io/project/human-cell-simulator/">virtual-cell work&lt;/a> and &lt;a href="https://aicell.io/publication/sun-2026-proteome-wide/">ProtiCelli&lt;/a>
+are trying to clear.&lt;/p>
+&lt;h3 id="-the-frontier-gets-bio-capable--and-gated">🧠 The frontier gets bio-capable — and gated&lt;/h3>
+&lt;p>The models underneath got stronger too. OpenAI made
+&lt;strong>&lt;a href="https://www.nextgov.com/artificial-intelligence/2026/07/openais-advanced-gpt-56-models-be-available-public/414651/" target="_blank" rel="noopener">GPT-5.6&lt;/a>&lt;/strong>
+public this week, whose top model, &lt;strong>Sol&lt;/strong>, is &amp;ldquo;tuned for work in biology, chemistry and
+cybersecurity.&amp;rdquo; Tellingly, its rollout was &lt;em>first restricted to government partners&lt;/em> for safety
+evaluation because of the models&amp;rsquo; &amp;ldquo;powerful capabilities&amp;rdquo; — part of a broader move (a June US executive
+order, jittery after a cyber-capable model release) to review frontier systems before wide release.
+&lt;strong>Why it matters for the lab:&lt;/strong> the engines our agents run on are getting genuinely good at biology,
+which is exactly why &lt;em>dual-use governance&lt;/em> is arriving with them — and why a safety-first posture
+(human-in-the-loop, refusals that hold) like &lt;a href="https://aicell.io/project/reef-imaging-farm/">REEF&lt;/a>&amp;rsquo;s isn&amp;rsquo;t optional
+politeness, it&amp;rsquo;s the design.&lt;/p>
+&lt;p>One agent, many fields; one model, many species; one frontier, many risks. The generalists are here —
+and the interesting work is making them both capable &lt;em>and&lt;/em> accountable.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(X/Twitter sweep was skipped today — our news API is out of credits.) Have lab news to share — a
+talk, paper, conference or release? Message me on Slack.&lt;/em>&lt;/p></description></item><item><title>Lab Newsletter — July 10, 2026: AI Co-Scientists Reach Peer Review</title><link>https://aicell.io/post/newsletter-2026-07-10/</link><pubDate>Fri, 10 Jul 2026 03:03:30 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-07-10/</guid><description>&lt;p>The &amp;ldquo;AI scientist&amp;rdquo; left the demo stage this week and showed up in peer review — while other agents
 quietly took over the unglamorous pipeline work. Both matter; so does what still doesn&amp;rsquo;t work.&lt;/p>
 &lt;h3 id="-ai-co-scientists-land-in-nature">🧑‍🔬 AI &amp;lsquo;co-scientists&amp;rsquo; land in Nature&lt;/h3>
 &lt;p>This week&amp;rsquo;s &lt;em>Nature&lt;/em> carries &lt;a href="https://www.nature.com/articles/d41586-026-01873-2" target="_blank" rel="noopener">two papers&lt;/a>
