@@ -1,4 +1,41 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AICell Lab</title><link>https://aicell.io/</link><atom:link href="https://aicell.io/index.xml" rel="self" type="application/rss+xml"/><description>AICell Lab</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 15 Jul 2026 03:03:17 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>AICell Lab</title><link>https://aicell.io/</link></image><item><title>Lab Newsletter — July 15, 2026: The Generalists Arrive</title><link>https://aicell.io/post/newsletter-2026-07-15/</link><pubDate>Wed, 15 Jul 2026 03:03:17 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-07-15/</guid><description>&lt;p>For a while, biomedical AI meant many narrow specialists. This week the &lt;em>generalists&lt;/em> showed up — one
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AICell Lab</title><link>https://aicell.io/</link><atom:link href="https://aicell.io/index.xml" rel="self" type="application/rss+xml"/><description>AICell Lab</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Thu, 16 Jul 2026 03:03:36 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>AICell Lab</title><link>https://aicell.io/</link></image><item><title>Lab Newsletter — July 16, 2026: Turning Back the Cellular Clock</title><link>https://aicell.io/post/newsletter-2026-07-16/</link><pubDate>Thu, 16 Jul 2026 03:03:36 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-07-16/</guid><description>&lt;p>Most cell models see a single snapshot. Aging is the one problem that forces you to model &lt;em>time&lt;/em> —
+and this week, that&amp;rsquo;s exactly where the interesting work is.&lt;/p>
+&lt;h3 id="-an-ai-that-predicts-how-cells-age--and-it-checks-out">🕰️ An AI that predicts how cells age — and it checks out&lt;/h3>
+&lt;p>Christina Theodoris&amp;rsquo;s group at Gladstone (with NVIDIA) unveiled
+&lt;strong>&lt;a href="https://gladstone.org/news/new-ai-model-predicts-how-cells-age" target="_blank" rel="noopener">MaxToki&lt;/a>&lt;/strong>, a temporal foundation
+model — a descendant of their &lt;strong>Geneformer&lt;/strong> — trained on &lt;strong>~170 million cells&lt;/strong> spanning birth to
+90+ (roughly a &lt;em>trillion&lt;/em> genetic tokens). Instead of one snapshot, it follows a tissue &lt;em>through&lt;/em>
+aging and predicts which genes speed it up or slow it down. The striking part is the validation:
+trained only on &lt;em>healthy&lt;/em> data, it still detected accelerated aging in disease (pulmonary fibrosis
++15 years, heavy smokers +5, Alzheimer&amp;rsquo;s microglia +3), and when it flagged pro-aging genes in heart
+cells, activating the top two caused real heart dysfunction in young mice within a month. As
+Theodoris put it, &amp;ldquo;these were targets we would not have tested otherwise.&amp;rdquo; &lt;strong>Why it matters for the
+lab:&lt;/strong> this is the &lt;em>temporal&lt;/em> virtual cell — a model of cell-state trajectories that produces
+testable, wet-lab-confirmed biology, exactly the horizon our
+&lt;a href="https://aicell.io/project/human-cell-simulator/">Human Cell Simulator&lt;/a> is built for.&lt;/p>
+&lt;h3 id="-reversing-senescence--and-being-honest-about-ais-role">🔄 Reversing senescence — and being honest about AI&amp;rsquo;s role&lt;/h3>
+&lt;p>On the intervention side, a 2026
+&lt;a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12798543/" target="_blank" rel="noopener">review&lt;/a> maps how &lt;strong>cellular reprogramming&lt;/strong>
+resets the epigenetic clock. Classic Yamanaka-factor reprogramming reverses senescence but risks
+tumors; newer &lt;strong>small-molecule cocktails&lt;/strong> achieve partial rejuvenation &lt;em>without&lt;/em> genetic
+manipulation (one chemical system cut senescence markers in aged fibroblasts while re-expressing
+youth genes). Worth a careful note: despite the headlines, AI here is still &lt;em>forward-looking&lt;/em> — the
+peer-reviewed work places it in &amp;ldquo;future directions&amp;rdquo; (predicting small-molecule–target interactions),
+not yet a proven &amp;ldquo;safety autopilot&amp;rdquo; for rejuvenation. &lt;strong>Why it matters for the lab:&lt;/strong> the honest
+framing is the useful one — reprogramming is real and advancing, and AI&amp;rsquo;s contribution will be earned
+by prediction that survives the bench, not by press release.&lt;/p>
+&lt;h3 id="-aging-is-the-dynamic-virtual-cell-problem">🧭 Aging is the dynamic virtual-cell problem&lt;/h3>
+&lt;p>Step back and the two stories converge. Most single-cell foundation models still reason about a cell
+frozen in a moment; aging refuses to be frozen. MaxToki&amp;rsquo;s payoff came precisely because it modeled
+&lt;strong>cell state over time&lt;/strong> and then had its predictions tested. &lt;strong>Why it matters for the lab:&lt;/strong> it&amp;rsquo;s a
+sharp reminder of where cell modeling has to go next — from static embeddings to trajectories — and
+why pairing a predictive model with a way to &lt;em>validate&lt;/em> its drivers (our &lt;a href="https://aicell.io/project/reef-imaging-farm/">REEF&lt;/a>
+loop) is the combination that turns a clock-reading model into a clock-&lt;em>changing&lt;/em> one.&lt;/p>
+&lt;p>Model the clock, then learn to move its hands — carefully. Aging is turning into the proving ground
+for whether a virtual cell can do more than describe: whether it can predict, and hold up.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(X/Twitter sweep was skipped today — our news API is out of credits.) Have lab news to share — a
+talk, paper, conference or release? Message me on Slack.&lt;/em>&lt;/p></description></item><item><title>Lab Newsletter — July 15, 2026: The Generalists Arrive</title><link>https://aicell.io/post/newsletter-2026-07-15/</link><pubDate>Wed, 15 Jul 2026 03:03:17 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-07-15/</guid><description>&lt;p>For a while, biomedical AI meant many narrow specialists. This week the &lt;em>generalists&lt;/em> showed up — one
 agent across many fields, one cell model across many species, one frontier model across many risks.&lt;/p>
 &lt;h3 id="-biomni-a-general-purpose-ai-biologist">🤖 Biomni: a general-purpose &amp;ldquo;AI biologist&amp;rdquo;&lt;/h3>
 &lt;p>Stanford (with spinout Phylo) published &lt;strong>&lt;a href="https://biomni.stanford.edu" target="_blank" rel="noopener">Biomni&lt;/a>&lt;/strong> in &lt;em>Science&lt;/em> — a
