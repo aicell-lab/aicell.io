@@ -1,4 +1,46 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>biosecurity | AICell Lab</title><link>https://aicell.io/tag/biosecurity/</link><atom:link href="https://aicell.io/tag/biosecurity/index.xml" rel="self" type="application/rss+xml"/><description>biosecurity</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 15 Jul 2026 03:03:17 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>biosecurity</title><link>https://aicell.io/tag/biosecurity/</link></image><item><title>Lab Newsletter — July 15, 2026: The Generalists Arrive</title><link>https://aicell.io/post/newsletter-2026-07-15/</link><pubDate>Wed, 15 Jul 2026 03:03:17 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-07-15/</guid><description>&lt;p>For a while, biomedical AI meant many narrow specialists. This week the &lt;em>generalists&lt;/em> showed up — one
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>biosecurity | AICell Lab</title><link>https://aicell.io/tag/biosecurity/</link><atom:link href="https://aicell.io/tag/biosecurity/index.xml" rel="self" type="application/rss+xml"/><description>biosecurity</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 17 Jul 2026 03:03:49 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>biosecurity</title><link>https://aicell.io/tag/biosecurity/</link></image><item><title>Lab Newsletter — July 17, 2026: Reach Extended, Rails Pending</title><link>https://aicell.io/post/newsletter-2026-07-17/</link><pubDate>Fri, 17 Jul 2026 03:03:49 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-07-17/</guid><description>&lt;p>AI keeps extending its reach into biology — into new control of instruments, new scale of
+experiments, and new kinds of data. The lagging variable, as ever, is the guardrail.&lt;/p>
+&lt;h3 id="-agents-get-a-safe-protocol-to-run-instruments">🔌 Agents get a safe protocol to run instruments&lt;/h3>
+&lt;p>There are already standards for agents to call &lt;em>tools&lt;/em> (Anthropic&amp;rsquo;s MCP) and to talk to other
+&lt;em>agents&lt;/em> (Google&amp;rsquo;s A2A) — but not for the hardest edge: an agent driving a &lt;strong>physical instrument&lt;/strong>,
+where actions are stateful, exclusively owned, and irreversible. A new proposal,
+&lt;a href="https://arxiv.org/abs/2606.03755" target="_blank" rel="noopener">&lt;strong>LAP (Lab Agent Protocol)&lt;/strong>&lt;/a>, fills exactly that gap. It adds
+four physical-world primitives: an &lt;strong>InstrumentCard&lt;/strong> (signed capabilities and physical limits),
+&lt;strong>first-class reservations&lt;/strong> (locking an instrument and sample), a &lt;strong>safety-fence handshake&lt;/strong>
+(operator-confirmation tokens cryptographically tied to a task, gating hazardous or irreversible
+operations), and a &lt;strong>measurement schema&lt;/strong> that is calibration-anchored and uncertainty-bearing by
+construction. &lt;strong>Why it matters for the lab:&lt;/strong> this is the formalization of what
+&lt;a href="https://aicell.io/project/hypha/">Hypha&lt;/a> and &lt;a href="https://aicell.io/project/reef-imaging-farm/">REEF&lt;/a> already do — connect agents to real
+instruments with safety built in. That &amp;ldquo;safety-fence handshake&amp;rdquo; is precisely the &lt;em>refuse-rather-than-
+risk&lt;/em> behavior our REEF run leaned on when two operations collided.&lt;/p>
+&lt;h3 id="-because-autonomy-is-outpacing-the-rules">⚠️ Because autonomy is outpacing the rules&lt;/h3>
+&lt;p>Why does a safety handshake matter now? Because the scale is already here. In an
+&lt;a href="https://theconversation.com/ai-can-design-and-run-thousands-of-lab-experiments-without-human-hands-humanity-isnt-ready-for-the-new-risks-this-brings-to-biology-279191" target="_blank" rel="noopener">OpenAI–Ginkgo collaboration&lt;/a>,
+an AI &lt;strong>autonomously designed and ran 36,000 biology experiments&lt;/strong> in a robotic cloud lab, cutting
+the cost of producing a target protein by 40% — and Ginkgo&amp;rsquo;s Cloud Lab now takes jobs from &lt;strong>$39 a
+run&lt;/strong>. The governance, though, lags badly: the 2023 US AI executive order&amp;rsquo;s biosecurity provisions
+were revoked, DNA-synthesis screening is &amp;ldquo;mostly voluntary,&amp;rdquo; and the 1975 Biological Weapons
+Convention &amp;ldquo;contains no provisions for AI,&amp;rdquo; even as studies debate how much models lower the barrier
+to misuse. &lt;strong>Why it matters for the lab:&lt;/strong> the responsible answer isn&amp;rsquo;t to slow the science, it&amp;rsquo;s to
+build the rails &lt;em>into&lt;/em> the system — human-in-the-loop, refusals that hold, access matched to risk. A
+protocol like LAP and a safety-first platform like REEF are what &amp;ldquo;moving fast responsibly&amp;rdquo; actually
+looks like.&lt;/p>
+&lt;h3 id="-meanwhile-foundation-models-reach-the-microbiome">🦠 Meanwhile, foundation models reach the microbiome&lt;/h3>
+&lt;p>The reach is widening into new data, too. &lt;strong>&lt;a href="https://www.biorxiv.org/content/10.64898/2026.01.05.697599v1" target="_blank" rel="noopener">BiomeGPT&lt;/a>&lt;/strong>
+is a transformer foundation model pretrained on &lt;strong>13,300+ human gut metagenomes&lt;/strong> across 32 phenotypes
+(healthy plus 31 diseases), learning species-level, context-aware community representations; fine-
+tuned, it separates healthy from diseased microbiomes and its attention surfaces biologically
+plausible microbial signatures. A companion model,
+&lt;a href="https://www.biorxiv.org/content/10.64898/2026.05.21.726868v1.full.pdf" target="_blank" rel="noopener">Genos-m&lt;/a>, works at the
+microbial-genome level and gets stable embeddings from as few as 10,000 reads. &lt;strong>Why it matters for
+the lab:&lt;/strong> the foundation-model playbook has now reached one of biology&amp;rsquo;s messiest data types — more
+grist for the agent-readable, model-serving infrastructure (&lt;a href="https://aicell.io/project/bioengine/">BioEngine&lt;/a>) we care
+about.&lt;/p>
+&lt;p>New control, new scale, new data — the reach keeps extending. The work that matters is making sure
+the rails extend with it.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(X/Twitter sweep was skipped today — our news API is out of credits.) Have lab news to share — a
+talk, paper, conference or release? Message me on Slack.&lt;/em>&lt;/p></description></item><item><title>Lab Newsletter — July 15, 2026: The Generalists Arrive</title><link>https://aicell.io/post/newsletter-2026-07-15/</link><pubDate>Wed, 15 Jul 2026 03:03:17 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-07-15/</guid><description>&lt;p>For a while, biomedical AI meant many narrow specialists. This week the &lt;em>generalists&lt;/em> showed up — one
 agent across many fields, one cell model across many species, one frontier model across many risks.&lt;/p>
 &lt;h3 id="-biomni-a-general-purpose-ai-biologist">🤖 Biomni: a general-purpose &amp;ldquo;AI biologist&amp;rdquo;&lt;/h3>
 &lt;p>Stanford (with spinout Phylo) published &lt;strong>&lt;a href="https://biomni.stanford.edu" target="_blank" rel="noopener">Biomni&lt;/a>&lt;/strong> in &lt;em>Science&lt;/em> — a
