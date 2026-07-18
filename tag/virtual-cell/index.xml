@@ -1,4 +1,45 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>virtual-cell | AICell Lab</title><link>https://aicell.io/tag/virtual-cell/</link><atom:link href="https://aicell.io/tag/virtual-cell/index.xml" rel="self" type="application/rss+xml"/><description>virtual-cell</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Thu, 16 Jul 2026 03:03:36 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>virtual-cell</title><link>https://aicell.io/tag/virtual-cell/</link></image><item><title>Lab Newsletter — July 16, 2026: Turning Back the Cellular Clock</title><link>https://aicell.io/post/newsletter-2026-07-16/</link><pubDate>Thu, 16 Jul 2026 03:03:36 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-07-16/</guid><description>&lt;p>Most cell models see a single snapshot. Aging is the one problem that forces you to model &lt;em>time&lt;/em> —
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>virtual-cell | AICell Lab</title><link>https://aicell.io/tag/virtual-cell/</link><atom:link href="https://aicell.io/tag/virtual-cell/index.xml" rel="self" type="application/rss+xml"/><description>virtual-cell</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sat, 18 Jul 2026 03:03:56 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>virtual-cell</title><link>https://aicell.io/tag/virtual-cell/</link></image><item><title>Lab Newsletter — July 18, 2026: Data Decides</title><link>https://aicell.io/post/newsletter-2026-07-18/</link><pubDate>Sat, 18 Jul 2026 03:03:56 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-07-18/</guid><description>&lt;p>Two big &amp;ldquo;virtual organ&amp;rdquo; efforts reported results this stretch, and both point at the same
+unglamorous truth: the models don&amp;rsquo;t win on size — they win on &lt;em>data&lt;/em>.&lt;/p>
+&lt;h3 id="-the-virtual-cell-challenges-verdict-hybrids-won">🏆 The Virtual Cell Challenge&amp;rsquo;s verdict: hybrids won&lt;/h3>
+&lt;p>Arc Institute&amp;rsquo;s inaugural
+&lt;strong>&lt;a href="https://arcinstitute.org/news/virtual-cell-challenge-2025-wrap-up" target="_blank" rel="noopener">Virtual Cell Challenge&lt;/a>&lt;/strong> —
+5,000+ registrants across 114 countries, 1,200+ teams, and a purpose-built benchmark of &lt;strong>~300,000
+single-cell profiles&lt;/strong> with 300 CRISPRi perturbations — handed out its prizes, and the pattern is
+instructive. First place ($100k) went to BioMap&amp;rsquo;s &lt;strong>xTrimoSCPerturb&lt;/strong>, explicitly a &lt;em>hybrid&lt;/em> of deep
+learning and classical statistics; Altos Labs took a new Generalist Prize with a flow-matching model;
+and a third-place entry, &lt;strong>TransPert&lt;/strong>, was essentially statistics (pseudo-bulk profiles + a Wilcoxon
+test). The organizers&amp;rsquo; blunt takeaways: models are &amp;ldquo;not yet consistently outperforming naive
+baselines across all metrics,&amp;rdquo; and &amp;ldquo;purely AI-based approaches did not consistently outperform
+statistical baselines.&amp;rdquo; &lt;strong>Why it matters for the lab:&lt;/strong> for the virtual cell, &lt;em>curated data plus
+hybrid methods&lt;/em> is beating pure end-to-end scale — a result worth internalizing before betting a
+project on a bigger model alone.&lt;/p>
+&lt;h3 id="-the-same-wave-reaches-the-brain--where-the-data-allows">🧠 The same wave reaches the brain — where the data allows&lt;/h3>
+&lt;p>The foundation-model idea is generalizing to a new organ. Meta&amp;rsquo;s &lt;strong>TRIBE v2&lt;/strong> is a tri-modal
+brain-encoding model that predicts fMRI responses to what people see, hear and read (1,000+ hours of
+fMRI from ~720 people), and the &lt;strong>MICrONS&lt;/strong> model learned the visual cortex from ~135,000 neurons and
+generalizes to new mice. But note &lt;em>how&lt;/em> they were possible: TRIBE leaned on standardized repositories
+(BIDS, the Human Connectome Project, UK Biobank), and MICrONS&amp;rsquo;s corpus took
+&lt;a href="https://www.thetransmitter.org/artificial-intelligence/ai-cant-solve-the-brain-without-data-that-fit-together/" target="_blank" rel="noopener">half a decade to build&lt;/a>.
+&lt;strong>Why it matters for the lab:&lt;/strong> &amp;ldquo;virtual brain&amp;rdquo; and &amp;ldquo;virtual cell&amp;rdquo; are the same bet — and both are
+gated by whether the underlying data was made model-ready first.&lt;/p>
+&lt;h3 id="-the-real-bottleneck-is-interoperable-data">🔗 The real bottleneck is interoperable data&lt;/h3>
+&lt;p>The sharpest piece of the week argues that brain foundation models emerged &lt;em>not&lt;/em> because models got
+smarter but because parts of the field did the slow work of making data &lt;strong>fit together&lt;/strong> — shared
+standards (BIDS, NWB), protocol standardization, and &lt;em>operational provenance&lt;/em> (what a measurement
+actually means). &amp;ldquo;Machines don&amp;rsquo;t apprentice,&amp;rdquo; the author notes: the tacit know-how passed hand-to-hand
+in labs has to become explicit, or biological signal drowns in methodological noise. One striking
+number: back-modeling unrecorded methodology raised neuron-type classification from &lt;strong>48% to 81%&lt;/strong> —
+most of the &amp;ldquo;unexplained&amp;rdquo; variance was just undocumented method. AlphaFold, remember, worked because
+the Protein Data Bank spent decades on standardized reporting. &lt;strong>Why it matters for the lab:&lt;/strong> this is
+our lane. FAIR, agent-readable models and data (&lt;a href="https://aicell.io/project/bioimage-model-zoo/">BioImage Model Zoo&lt;/a>,
+&lt;a href="https://aicell.io/project/bioengine/">BioEngine&lt;/a>) and instruments that generate curated data &lt;em>with provenance&lt;/em>
+(&lt;a href="https://aicell.io/project/reef-imaging-farm/">REEF&lt;/a>) aren&amp;rsquo;t housekeeping — they&amp;rsquo;re the substrate the next model
+stands on.&lt;/p>
+&lt;p>Bigger models made the headlines; better data won the prizes. The lab that makes its data
+model-ready — interoperable, provenanced, curated — is the lab whose models will actually generalize.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(X/Twitter sweep was skipped today — our news API is out of credits.) Have lab news to share — a
+talk, paper, conference or release? Message me on Slack.&lt;/em>&lt;/p></description></item><item><title>Lab Newsletter — July 16, 2026: Turning Back the Cellular Clock</title><link>https://aicell.io/post/newsletter-2026-07-16/</link><pubDate>Thu, 16 Jul 2026 03:03:36 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-07-16/</guid><description>&lt;p>Most cell models see a single snapshot. Aging is the one problem that forces you to model &lt;em>time&lt;/em> —
 and this week, that&amp;rsquo;s exactly where the interesting work is.&lt;/p>
 &lt;h3 id="-an-ai-that-predicts-how-cells-age--and-it-checks-out">🕰️ An AI that predicts how cells age — and it checks out&lt;/h3>
 &lt;p>Christina Theodoris&amp;rsquo;s group at Gladstone (with NVIDIA) unveiled
