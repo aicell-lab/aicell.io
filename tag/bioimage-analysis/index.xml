@@ -1,4 +1,43 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>bioimage-analysis | AICell Lab</title><link>https://aicell.io/tag/bioimage-analysis/</link><atom:link href="https://aicell.io/tag/bioimage-analysis/index.xml" rel="self" type="application/rss+xml"/><description>bioimage-analysis</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 10 Jul 2026 03:03:30 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>bioimage-analysis</title><link>https://aicell.io/tag/bioimage-analysis/</link></image><item><title>Lab Newsletter — July 10, 2026: AI Co-Scientists Reach Peer Review</title><link>https://aicell.io/post/newsletter-2026-07-10/</link><pubDate>Fri, 10 Jul 2026 03:03:30 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-07-10/</guid><description>&lt;p>The &amp;ldquo;AI scientist&amp;rdquo; left the demo stage this week and showed up in peer review — while other agents
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>bioimage-analysis | AICell Lab</title><link>https://aicell.io/tag/bioimage-analysis/</link><atom:link href="https://aicell.io/tag/bioimage-analysis/index.xml" rel="self" type="application/rss+xml"/><description>bioimage-analysis</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 19 Jul 2026 03:02:47 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>bioimage-analysis</title><link>https://aicell.io/tag/bioimage-analysis/</link></image><item><title>Lab Newsletter — July 19, 2026: Segmentation Grows Up</title><link>https://aicell.io/post/newsletter-2026-07-19/</link><pubDate>Sun, 19 Jul 2026 03:02:47 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-07-19/</guid><description>&lt;p>Cell segmentation is the quiet workhorse of bioimage analysis — and it&amp;rsquo;s having its foundation-model
+moment. This week: a generalist that beats humans, a benchmark that keeps everyone honest, and a push
+into 3D.&lt;/p>
+&lt;h3 id="-cellpose-sam-a-superhuman-generalist">🔬 Cellpose-SAM: a superhuman generalist&lt;/h3>
+&lt;p>&lt;strong>&lt;a href="https://www.biorxiv.org/content/10.1101/2025.04.28.651001v1" target="_blank" rel="noopener">Cellpose-SAM&lt;/a>&lt;/strong> fuses the Segment
+Anything backbone with the Cellpose framework, trained on &lt;strong>22,826 images and ~3.3 million labeled
+cells&lt;/strong> pooled from a dozen datasets (Cellpose, TissueNet, LiveCell, Omnipose, MoNuSeg and more). The
+result &lt;strong>surpasses inter-human agreement&lt;/strong> and approaches the human-consensus bound, while staying
+robust to the nuisances real microscopy throws at it — channel shuffling, size changes, shot noise,
+blur. The team&amp;rsquo;s sharp insight: the segmentation &lt;em>framework&lt;/em> matters as much as the pretrained
+backbone — swapping in Cellpose&amp;rsquo;s framework gave SAM a big boost. It&amp;rsquo;s already the segmentation engine
+inside commercial spatial platforms (Bruker CosMx, Vizgen MERSCOPE). &lt;strong>Why it matters for the lab:&lt;/strong>
+this is the Cellpose/&lt;a href="https://aicell.io/project/bioimage-model-zoo/">BioImage Model Zoo&lt;/a> ecosystem we live in — a
+generalist segmenter that just works is the unlock for everything downstream.&lt;/p>
+&lt;h3 id="-the-2026-benchmark-no-model-wins-everywhere">🧪 The 2026 benchmark: no model wins everywhere&lt;/h3>
+&lt;p>A &lt;a href="https://arxiv.org/abs/2603.17845" target="_blank" rel="noopener">MIDL 2026 evaluation&lt;/a> put the field to the test across &lt;strong>36
+datasets and four modalities&lt;/strong> — and the nuance matters. Cellpose-SAM ranks top-three everywhere, but
+the authors show that &lt;em>no&lt;/em> SAM-based microscopy model yet combines all three adaptation tricks
+(auto-generated prompts, a custom decoder, and finetuning); their new &lt;strong>Automatic Prompt Generation&lt;/strong>
+closes part of that gap. General-purpose &lt;strong>SAM3&lt;/strong> &amp;ldquo;performed well, though not yet competitive with
+domain-specific models&amp;rdquo; — it didn&amp;rsquo;t even recognize the text prompt &lt;em>&amp;ldquo;nucleus.&amp;rdquo;&lt;/em> And a companion
+&lt;a href="https://www.biorxiv.org/content/10.64898/2026.04.18.719315v1.full" target="_blank" rel="noopener">live-microscopy/spatial benchmark&lt;/a>
+found different winners on different data (Cellpose-SAM on phase contrast, SAM-based models on
+fluorescence). &lt;strong>Why it matters for the lab:&lt;/strong> &amp;ldquo;which model, when?&amp;rdquo; is a real question — which is
+exactly why a place to &lt;em>test and compare&lt;/em> models in the browser (BioImage Model Zoo) is worth as much
+as the models themselves.&lt;/p>
+&lt;h3 id="-the-frontier-into-3d">🧊 The frontier: into 3D&lt;/h3>
+&lt;p>Most of those benchmarks were 2D even on 3D data — and the next step is already here. A new
+&lt;a href="https://arxiv.org/abs/2605.26026" target="_blank" rel="noopener">multimodal 3D foundation model for light-sheet microscopy&lt;/a> does
+few-shot &lt;strong>segmentation, classification and deblurring&lt;/strong> on volumes, extending the Cellpose/SAM
+lineage into the third dimension with self-supervised pretraining. &lt;strong>Why it matters for the lab:&lt;/strong>
+volumetric, living samples are where our &lt;a href="https://aicell.io/project/self-driving-microscope/">self-driving microscope&lt;/a>
+operates — a 3D generalist that segments and restores in a few shots is exactly the kind of model our
+&lt;a href="https://aicell.io/project/bioengine/">BioEngine&lt;/a> is built to serve to instruments in real time.&lt;/p>
+&lt;p>A generalist that beats humans, honest benchmarks that say &amp;ldquo;it depends,&amp;rdquo; and a 3D frontier opening up
+— segmentation has grown from a per-dataset chore into shared infrastructure. The lab&amp;rsquo;s job is to make
+that infrastructure testable, deployable, and pointed at living cells.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(X/Twitter sweep was skipped today — our news API is out of credits.) Have lab news to share — a
+talk, paper, conference or release? Message me on Slack.&lt;/em>&lt;/p></description></item><item><title>Lab Newsletter — July 10, 2026: AI Co-Scientists Reach Peer Review</title><link>https://aicell.io/post/newsletter-2026-07-10/</link><pubDate>Fri, 10 Jul 2026 03:03:30 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-07-10/</guid><description>&lt;p>The &amp;ldquo;AI scientist&amp;rdquo; left the demo stage this week and showed up in peer review — while other agents
 quietly took over the unglamorous pipeline work. Both matter; so does what still doesn&amp;rsquo;t work.&lt;/p>
 &lt;h3 id="-ai-co-scientists-land-in-nature">🧑‍🔬 AI &amp;lsquo;co-scientists&amp;rsquo; land in Nature&lt;/h3>
 &lt;p>This week&amp;rsquo;s &lt;em>Nature&lt;/em> carries &lt;a href="https://www.nature.com/articles/d41586-026-01873-2" target="_blank" rel="noopener">two papers&lt;/a>
