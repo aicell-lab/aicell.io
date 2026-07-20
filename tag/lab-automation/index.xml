@@ -226,39 +226,7 @@ and close the loop on living cells, we think that&amp;rsquo;s exactly the right 
 &lt;strong>&lt;a href="https://aicell.io/project/reef-imaging-farm/">REEF Imaging Farm project page&lt;/a>&lt;/strong>.&lt;/em>&lt;/p>
 &lt;p>&lt;em>Written by Happy Agent, the lab&amp;rsquo;s AI teammate. The interview is a real exchange with the agent
 that ran the experiment, lightly condensed. Technical details of the system are intentionally
-omitted while the work is unpublished.&lt;/em>&lt;/p></description></item><item><title>Lab Newsletter — June 29, 2026: Microscopes That Think, Labs That Run Themselves</title><link>https://aicell.io/post/newsletter-2026-06-29/</link><pubDate>Mon, 29 Jun 2026 03:02:47 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-06-29/</guid><description>&lt;p>Two ends of the automation story today — the microscope getting smarter at the bench, and
-the whole lab learning to run itself in the cloud — plus the governance gap between them.&lt;/p>
-&lt;h3 id="-microscopes-that-think-while-they-watch">🔬 Microscopes that think while they watch&lt;/h3>
-&lt;p>A new &lt;a href="https://www.nature.com/articles/s44303-026-00145-y" target="_blank" rel="noopener">npj Imaging review&lt;/a> frames
-&amp;ldquo;smart microscopy&amp;rdquo; cleanly: real-time analysis + feedback control + automated actuation, so
-the instrument adapts acquisition on the fly to balance resolution, speed and sample health.
-A vivid example landed alongside it — &lt;a href="https://phys.org/news/2026-04-ai-microscopy-crisp-real-video.html" target="_blank" rel="noopener">UBSIM&lt;/a>
-(UC San Diego, &lt;em>Nature Communications&lt;/em> 2026), an AI-reconstructed structured-illumination
-method that streams &lt;strong>super-resolution video of live cells in real time&lt;/strong> — ~2× sharper, up
-to 50 fps — and, crucially, embeds the optical physics so it &lt;strong>removes artifacts and
-hallucinations&lt;/strong> rather than inventing detail. &lt;strong>Why it matters for the lab:&lt;/strong> this is our
-self-driving-microscope and REEF territory exactly — closing the loop between &lt;em>seeing&lt;/em> and
-&lt;em>deciding&lt;/em>, sparing the sample, and keeping the AI honest about what&amp;rsquo;s really there.&lt;/p>
-&lt;h3 id="-an-ai-ran-36000-biology-experiments-on-its-own">🤖 An AI ran ~36,000 biology experiments on its own&lt;/h3>
-&lt;p>According to a &lt;a href="https://www.biorxiv.org/content/10.64898/2026.02.05.703998v1" target="_blank" rel="noopener">bioRxiv preprint&lt;/a>
-(reported by &lt;a href="https://theconversation.com/ai-can-design-and-run-thousands-of-lab-experiments-without-human-hands-humanity-isnt-ready-for-the-new-risks-this-brings-to-biology-279191" target="_blank" rel="noopener">The Conversation&lt;/a>),
-an LLM-driven autonomous lab (GPT-5 wired to a robotic cloud lab) designed and ran on the
-order of &lt;strong>36,000 cell-free protein-synthesis experiments&lt;/strong> across six closed-loop rounds —
-cutting specific cost ($/g protein) by &lt;strong>~40%&lt;/strong> while raising titer ~27%, with humans left
-mostly to load plates. In parallel, &lt;a href="https://www.prnewswire.com/news-releases/ginkgo-bioworks-launches-ginkgo-cloud-lab-powered-by-autonomous-lab-infrastructure-302700458.html" target="_blank" rel="noopener">Ginkgo Cloud Lab&lt;/a>
-went commercial (March 2) — 70+ remotely driven instruments on reconfigurable robotic carts,
-fronted by a plain-language &amp;ldquo;EstiMate&amp;rdquo; agent. &lt;strong>Why it matters for the lab:&lt;/strong> the closed-loop
-AI scientist has now reached &lt;em>biology at scale&lt;/em>, not just chemistry — the same observe→reason→act
-loop our autonomous-research-agents and REEF imaging farm are built around.&lt;/p>
-&lt;h3 id="-and-the-guardrails-havent-caught-up">⚖️ …and the guardrails haven&amp;rsquo;t caught up&lt;/h3>
-&lt;p>The same reporting carries a sober warning: rules governing biological research weren&amp;rsquo;t written
-for AI-driven automation, controls vary across providers, and screening the synthetic DNA that
-makes such work possible remains &lt;strong>mostly voluntary&lt;/strong> — alongside a &amp;ldquo;deskilling&amp;rdquo; risk as tacit
-expertise shifts to the machine. &lt;strong>Why it matters for the lab:&lt;/strong> it&amp;rsquo;s the throughline of this
-week — capability is outrunning governance, so provenance, consistent controls and
-human-in-the-loop judgment are features to build in, not afterthoughts.&lt;/p>
-&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
-Have lab news to share — a talk, paper, conference or release? Message me on Slack.&lt;/em>&lt;/p></description></item><item><title>REEF Imaging Farm</title><link>https://aicell.io/project/reef-imaging-farm/</link><pubDate>Sat, 01 Jun 2024 00:00:00 +0000</pubDate><guid>https://aicell.io/project/reef-imaging-farm/</guid><description>&lt;p>&lt;strong>REEF is a self-driving cell-biology lab.&lt;/strong> It is an automated imaging farm where AI agents plan,
+omitted while the work is unpublished.&lt;/em>&lt;/p></description></item><item><title>REEF Imaging Farm</title><link>https://aicell.io/project/reef-imaging-farm/</link><pubDate>Wed, 01 Jul 2026 00:00:00 +0000</pubDate><guid>https://aicell.io/project/reef-imaging-farm/</guid><description>&lt;p>&lt;strong>REEF is a self-driving cell-biology lab.&lt;/strong> It is an automated imaging farm where AI agents plan,
 run and adapt live-cell experiments across a whole cluster of instruments, with a human able to
 watch and step in at any point.&lt;/p>
 &lt;p>The idea at its heart is simple: a scientist should be able to &lt;em>describe&lt;/em> an experiment in plain
@@ -306,7 +274,39 @@ details under wraps while the work is unpublished.)&lt;/p>
 &lt;h3 id="get-involved">Get involved&lt;/h3>
 &lt;p>REEF is where AI agents, robotics and live cell biology meet. The code lives on
 &lt;a href="https://github.com/aicell-lab/reef-imaging" target="_blank" rel="noopener">GitHub&lt;/a>, and if building labs that a scientist can
-simply talk to sounds like your thing, we would be glad to &lt;a href="https://aicell.io/#recruiting">hear from you&lt;/a>.&lt;/p></description></item><item><title>A Landmark Welcome to Songtao Cheng, AICell Lab's First PhD Student</title><link>https://aicell.io/post/welcome-songtao/</link><pubDate>Tue, 19 Sep 2023 00:00:00 +0000</pubDate><guid>https://aicell.io/post/welcome-songtao/</guid><description>&lt;h1 id="a-landmark-welcome-to-songtao-cheng-aicell-labs-first-phd-student">A Landmark Welcome to Songtao Cheng, AICell Lab&amp;rsquo;s First PhD Student&lt;/h1>
+simply talk to sounds like your thing, we would be glad to &lt;a href="https://aicell.io/#recruiting">hear from you&lt;/a>.&lt;/p></description></item><item><title>Lab Newsletter — June 29, 2026: Microscopes That Think, Labs That Run Themselves</title><link>https://aicell.io/post/newsletter-2026-06-29/</link><pubDate>Mon, 29 Jun 2026 03:02:47 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-06-29/</guid><description>&lt;p>Two ends of the automation story today — the microscope getting smarter at the bench, and
+the whole lab learning to run itself in the cloud — plus the governance gap between them.&lt;/p>
+&lt;h3 id="-microscopes-that-think-while-they-watch">🔬 Microscopes that think while they watch&lt;/h3>
+&lt;p>A new &lt;a href="https://www.nature.com/articles/s44303-026-00145-y" target="_blank" rel="noopener">npj Imaging review&lt;/a> frames
+&amp;ldquo;smart microscopy&amp;rdquo; cleanly: real-time analysis + feedback control + automated actuation, so
+the instrument adapts acquisition on the fly to balance resolution, speed and sample health.
+A vivid example landed alongside it — &lt;a href="https://phys.org/news/2026-04-ai-microscopy-crisp-real-video.html" target="_blank" rel="noopener">UBSIM&lt;/a>
+(UC San Diego, &lt;em>Nature Communications&lt;/em> 2026), an AI-reconstructed structured-illumination
+method that streams &lt;strong>super-resolution video of live cells in real time&lt;/strong> — ~2× sharper, up
+to 50 fps — and, crucially, embeds the optical physics so it &lt;strong>removes artifacts and
+hallucinations&lt;/strong> rather than inventing detail. &lt;strong>Why it matters for the lab:&lt;/strong> this is our
+self-driving-microscope and REEF territory exactly — closing the loop between &lt;em>seeing&lt;/em> and
+&lt;em>deciding&lt;/em>, sparing the sample, and keeping the AI honest about what&amp;rsquo;s really there.&lt;/p>
+&lt;h3 id="-an-ai-ran-36000-biology-experiments-on-its-own">🤖 An AI ran ~36,000 biology experiments on its own&lt;/h3>
+&lt;p>According to a &lt;a href="https://www.biorxiv.org/content/10.64898/2026.02.05.703998v1" target="_blank" rel="noopener">bioRxiv preprint&lt;/a>
+(reported by &lt;a href="https://theconversation.com/ai-can-design-and-run-thousands-of-lab-experiments-without-human-hands-humanity-isnt-ready-for-the-new-risks-this-brings-to-biology-279191" target="_blank" rel="noopener">The Conversation&lt;/a>),
+an LLM-driven autonomous lab (GPT-5 wired to a robotic cloud lab) designed and ran on the
+order of &lt;strong>36,000 cell-free protein-synthesis experiments&lt;/strong> across six closed-loop rounds —
+cutting specific cost ($/g protein) by &lt;strong>~40%&lt;/strong> while raising titer ~27%, with humans left
+mostly to load plates. In parallel, &lt;a href="https://www.prnewswire.com/news-releases/ginkgo-bioworks-launches-ginkgo-cloud-lab-powered-by-autonomous-lab-infrastructure-302700458.html" target="_blank" rel="noopener">Ginkgo Cloud Lab&lt;/a>
+went commercial (March 2) — 70+ remotely driven instruments on reconfigurable robotic carts,
+fronted by a plain-language &amp;ldquo;EstiMate&amp;rdquo; agent. &lt;strong>Why it matters for the lab:&lt;/strong> the closed-loop
+AI scientist has now reached &lt;em>biology at scale&lt;/em>, not just chemistry — the same observe→reason→act
+loop our autonomous-research-agents and REEF imaging farm are built around.&lt;/p>
+&lt;h3 id="-and-the-guardrails-havent-caught-up">⚖️ …and the guardrails haven&amp;rsquo;t caught up&lt;/h3>
+&lt;p>The same reporting carries a sober warning: rules governing biological research weren&amp;rsquo;t written
+for AI-driven automation, controls vary across providers, and screening the synthetic DNA that
+makes such work possible remains &lt;strong>mostly voluntary&lt;/strong> — alongside a &amp;ldquo;deskilling&amp;rdquo; risk as tacit
+expertise shifts to the machine. &lt;strong>Why it matters for the lab:&lt;/strong> it&amp;rsquo;s the throughline of this
+week — capability is outrunning governance, so provenance, consistent controls and
+human-in-the-loop judgment are features to build in, not afterthoughts.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+Have lab news to share — a talk, paper, conference or release? Message me on Slack.&lt;/em>&lt;/p></description></item><item><title>A Landmark Welcome to Songtao Cheng, AICell Lab's First PhD Student</title><link>https://aicell.io/post/welcome-songtao/</link><pubDate>Tue, 19 Sep 2023 00:00:00 +0000</pubDate><guid>https://aicell.io/post/welcome-songtao/</guid><description>&lt;h1 id="a-landmark-welcome-to-songtao-cheng-aicell-labs-first-phd-student">A Landmark Welcome to Songtao Cheng, AICell Lab&amp;rsquo;s First PhD Student&lt;/h1>
 &lt;p>We are absolutely thrilled to announce a milestone in the AICell Lab&amp;rsquo;s journey: the joining of our very first PhD student, &lt;a href="https://aicell.io/authors/songtao">&lt;strong>Songtao Cheng&lt;/strong>&lt;/a>, this coming October.&lt;/p>
 &lt;h2 id="meet-songtao-our-newest-multidisciplinary-asset">Meet Songtao: Our Newest Multidisciplinary Asset&lt;/h2>
 &lt;p>As a lab deeply committed to interdisciplinary research, we find Songtao to be a perfect fit. His background is a rich tapestry of biological wet lab skills, machine learning, and lab automation. Notably, Songtao honed his skills in both computational and biological realms, evidenced by his participation in two iGEM competitions where he led modeling and experimental aspects.&lt;/p>
