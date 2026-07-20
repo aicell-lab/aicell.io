@@ -1,4 +1,40 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>foundation-models | AICell Lab</title><link>https://aicell.io/tag/foundation-models/</link><atom:link href="https://aicell.io/tag/foundation-models/index.xml" rel="self" type="application/rss+xml"/><description>foundation-models</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 19 Jul 2026 03:02:47 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>foundation-models</title><link>https://aicell.io/tag/foundation-models/</link></image><item><title>Lab Newsletter — July 19, 2026: Segmentation Grows Up</title><link>https://aicell.io/post/newsletter-2026-07-19/</link><pubDate>Sun, 19 Jul 2026 03:02:47 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-07-19/</guid><description>&lt;p>Cell segmentation is the quiet workhorse of bioimage analysis — and it&amp;rsquo;s having its foundation-model
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>foundation-models | AICell Lab</title><link>https://aicell.io/tag/foundation-models/</link><atom:link href="https://aicell.io/tag/foundation-models/index.xml" rel="self" type="application/rss+xml"/><description>foundation-models</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 20 Jul 2026 03:03:28 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>foundation-models</title><link>https://aicell.io/tag/foundation-models/</link></image><item><title>Lab Newsletter — July 20, 2026: Design, Build, Test — and Safeguard?</title><link>https://aicell.io/post/newsletter-2026-07-20/</link><pubDate>Mon, 20 Jul 2026 03:03:28 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-07-20/</guid><description>&lt;p>Three items today trace one arc: AI can now &lt;em>design&lt;/em> biology&amp;rsquo;s catalysts, machines can &lt;em>build and
+test&lt;/em> them, and — the part that hasn&amp;rsquo;t kept pace — almost none of it ships with guardrails.&lt;/p>
+&lt;h3 id="-generative-ai-can-finally-design-enzymes">🧫 Generative AI can finally design enzymes&lt;/h3>
+&lt;p>A &lt;a href="https://arxiv.org/abs/2602.03779" target="_blank" rel="noopener">Feb 2026 review&lt;/a> (Middendorf &amp;amp; Ferruz) marks a real turning
+point: &amp;ldquo;after more than one decade of low success rates for computationally designed enzymes,
+generative AI models are now frequently used for designing proficient enzymes&amp;rdquo; — mature enough,
+they argue, for industrial use. The shift is from structure-first to &lt;em>function-first&lt;/em> design, with
+&lt;a href="https://www.mdpi.com/1420-3049/31/1/45" target="_blank" rel="noopener">generative models&lt;/a> (ProGen, ESM-2, ProteinGAN, diffusion)
+producing &lt;strong>&amp;ldquo;synzymes&amp;rdquo;&lt;/strong> that catalyze reactions nature never evolved. &lt;strong>Why it matters for the lab:&lt;/strong>
+this is generative modeling graduating from &lt;em>describing&lt;/em> biology to &lt;em>designing&lt;/em> it — the same
+generative-imaging thread our &lt;a href="https://aicell.io/publication/sun-2026-proteome-wide/">ProtiCelli&lt;/a> work pulls on, now
+producing functional molecules.&lt;/p>
+&lt;h3 id="-autonomous-biofoundries-close-the-loop">🤖 Autonomous biofoundries close the loop&lt;/h3>
+&lt;p>Design is only half of it; the other half is &lt;em>build and test&lt;/em>. A wave of
+&lt;a href="https://www.sciencedirect.com/science/article/pii/S0958166925001247" target="_blank" rel="noopener">AI-powered biofoundries&lt;/a> couples
+generative design with automation to run the &lt;strong>design–build–test–learn&lt;/strong> cycle with minimal hands —
+one recent setup used a low-cost liquid-handling robot to automate expression, purification and
+screening of plastic-degrading (PETase) enzymes in 96-well plates. The trajectory points squarely at
+autonomous protein-engineering platforms. &lt;strong>Why it matters for the lab:&lt;/strong> that loop is REEF&amp;rsquo;s loop —
+propose, run, measure, repeat — pointed at molecules instead of cells. The lab that owns the
+closed loop owns the tempo of discovery.&lt;/p>
+&lt;h3 id="-but-safeguards-are-the-rare-exception">🛡️ But safeguards are the rare exception&lt;/h3>
+&lt;p>Now the sobering counterweight. Epoch AI
+&lt;a href="https://epoch.ai/publications/expanding-our-analysis-of-biological-ai-models" target="_blank" rel="noopener">cataloged 1,196 biological AI models&lt;/a>
+across nine categories — and found that only &lt;strong>3.2%&lt;/strong> carry any documented safeguards. (Frontier LLMs
+are the exception at 95%; for everything else it&amp;rsquo;s 1.4%.) The census also lands a familiar point: for
+biology AI, &amp;ldquo;compute does not appear to be the primary bottleneck&amp;rdquo; — progress is &amp;ldquo;more constrained by
+data availability and quality.&amp;rdquo; Most models are open, few are risk-assessed. &lt;strong>Why it matters for the
+lab:&lt;/strong> capability is racing ahead of guardrails, which makes a &lt;em>safety-first, human-in-the-loop&lt;/em>
+posture (&lt;a href="https://aicell.io/project/reef-imaging-farm/">REEF&lt;/a>&amp;rsquo;s refusals; FAIR, auditable infrastructure) not a
+constraint but a differentiator — the exception the field will have to make the rule.&lt;/p>
+&lt;p>Design is solved-ish, build-and-test is automating fast, and the guardrails are the lagging variable.
+The interesting work now isn&amp;rsquo;t just making biology programmable — it&amp;rsquo;s making it programmable
+&lt;em>responsibly&lt;/em>.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(X/Twitter sweep was skipped today — our news API is out of credits.) Have lab news to share — a
+talk, paper, conference or release? Message me on Slack.&lt;/em>&lt;/p></description></item><item><title>Lab Newsletter — July 19, 2026: Segmentation Grows Up</title><link>https://aicell.io/post/newsletter-2026-07-19/</link><pubDate>Sun, 19 Jul 2026 03:02:47 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-07-19/</guid><description>&lt;p>Cell segmentation is the quiet workhorse of bioimage analysis — and it&amp;rsquo;s having its foundation-model
 moment. This week: a generalist that beats humans, a benchmark that keeps everyone honest, and a push
 into 3D.&lt;/p>
 &lt;h3 id="-cellpose-sam-a-superhuman-generalist">🔬 Cellpose-SAM: a superhuman generalist&lt;/h3>
