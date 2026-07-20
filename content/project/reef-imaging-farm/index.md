@@ -10,7 +10,7 @@ tags:
   - augmented microscopy
   - robotics
   - lab automation
-date: '2024-06-01T00:00:00Z'
+date: '2026-07-01T00:00:00Z'
 
 # Optional external URL for project (replaces project detail page).
 external_link: ''
