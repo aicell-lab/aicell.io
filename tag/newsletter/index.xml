@@ -1,4 +1,42 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>newsletter | AICell Lab</title><link>https://aicell.io/tag/newsletter/</link><atom:link href="https://aicell.io/tag/newsletter/index.xml" rel="self" type="application/rss+xml"/><description>newsletter</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 20 Jul 2026 03:03:28 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>newsletter</title><link>https://aicell.io/tag/newsletter/</link></image><item><title>Lab Newsletter — July 20, 2026: Design, Build, Test — and Safeguard?</title><link>https://aicell.io/post/newsletter-2026-07-20/</link><pubDate>Mon, 20 Jul 2026 03:03:28 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-07-20/</guid><description>&lt;p>Three items today trace one arc: AI can now &lt;em>design&lt;/em> biology&amp;rsquo;s catalysts, machines can &lt;em>build and
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>newsletter | AICell Lab</title><link>https://aicell.io/tag/newsletter/</link><atom:link href="https://aicell.io/tag/newsletter/index.xml" rel="self" type="application/rss+xml"/><description>newsletter</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 21 Jul 2026 03:03:39 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>newsletter</title><link>https://aicell.io/tag/newsletter/</link></image><item><title>Lab Newsletter — July 21, 2026: When the Microscope Learns to Talk</title><link>https://aicell.io/post/newsletter-2026-07-21/</link><pubDate>Tue, 21 Jul 2026 03:03:39 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-07-21/</guid><description>&lt;p>A microscopy image, on its own, is a grid of pixels. It becomes &lt;em>science&lt;/em> when you attach language —
+the study, the context, the reasoning. This week is about models learning to do exactly that.&lt;/p>
+&lt;h3 id="-microscopes-learn-to-talk">🔬 Microscopes learn to talk&lt;/h3>
+&lt;p>A perspective review, &lt;strong>&lt;a href="https://www.mdpi.com/2076-3417/16/5/2502" target="_blank" rel="noopener">ChatMicroscopy&lt;/a>&lt;/strong>, lays out a
+future the lab already builds toward: large language models as the &lt;strong>orchestration layer&lt;/strong> for optical
+microscopy — conversational assistants that translate a high-level goal (&amp;ldquo;optimize the live-cell
+imaging conditions,&amp;rdquo; &amp;ldquo;explore this heterogeneous sample&amp;rdquo;) into a &lt;em>validated acquisition workflow&lt;/em>.
+It&amp;rsquo;s paired with a broader shift the &lt;a href="https://bioimagingai.janelia.org/3-llms.html" target="_blank" rel="noopener">Janelia AI-in-microscopy guide&lt;/a>
+captures well: agents suit microscopy precisely because they can &lt;em>reason&lt;/em> about the biology and
+&lt;em>execute&lt;/em> the computation, and every major vision-language model (GPT-5, Claude, Gemini, Llama) can
+now look at an image. &lt;strong>Why it matters for the lab:&lt;/strong> this is &lt;a href="https://aicell.io/project/agent-lens/">Agent-Lens&lt;/a> and
+the &lt;a href="https://aicell.io/project/bioimageio-chatbot/">BioImage.IO chatbot&lt;/a> stated as a field-wide direction — the
+microscope as a collaborator you talk to, not a device you click.&lt;/p>
+&lt;h3 id="-but-seeing-isnt-understanding">🧠 But seeing isn&amp;rsquo;t understanding&lt;/h3>
+&lt;p>The honest counterweight is instructive. When researchers pointed a multimodal LLM at fluorescence
+&lt;a href="https://onlinelibrary.wiley.com/doi/10.1002/qub2.70042" target="_blank" rel="noopener">cytopathology&lt;/a> (dying MCF-7 cells after a drug
+dose), the failures were telling: the model detected the individual visual features fine — its trouble
+was &amp;ldquo;integrating multiple concurrent cytopathological cues into a coherent biological interpretation.&amp;rdquo;
+That&amp;rsquo;s the whole game, and it&amp;rsquo;s &lt;em>why&lt;/em> microscopy-specific benchmarks like
+&lt;a href="https://arxiv.org/html/2407.01791v1" target="_blank" rel="noopener">μ-Bench&lt;/a> and MicroVQA exist — because a model that names what it
+sees isn&amp;rsquo;t the same as one that understands what it means. &lt;strong>Why it matters for the lab:&lt;/strong> it&amp;rsquo;s a
+reminder to build for &lt;em>reasoning and verification&lt;/em>, not just captioning — the difference between an
+assistant that describes your image and one you can trust to act on it.&lt;/p>
+&lt;h3 id="-the-same-fusion-at-clinical-scale">🩺 The same fusion, at clinical scale&lt;/h3>
+&lt;p>The pattern scales. &lt;strong>&lt;a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12989828/" target="_blank" rel="noopener">MUSK&lt;/a>&lt;/strong>, a multimodal
+oncology foundation model, was pretrained on &lt;strong>50M+ whole-slide images and over a billion clinical-text
+tokens&lt;/strong>, fusing morphology with the language of pathology reports; it predicts immunotherapy response
+(AUC 0.77 vs 0.61 for PD-L1 classifiers) and works on &lt;em>routine&lt;/em> H&amp;amp;E slides, and a sibling model,
+&lt;strong>&lt;a href="https://www.nature.com/articles/s41591-025-03982-3" target="_blank" rel="noopener">TITAN&lt;/a>&lt;/strong>, even drafts pathology reports without
+fine-tuning. The caveats rhyme with everything above: interpretability is thin, and rigorous
+prospective validation is still owed. &lt;strong>Why it matters for the lab:&lt;/strong> image + text is a general
+recipe — the same one behind our &lt;a href="https://aicell.io/publication/sun-2026-proteome-wide/">ProtiCelli&lt;/a> image-to-molecule
+work — and it&amp;rsquo;s powerful exactly to the degree its outputs can be checked.&lt;/p>
+&lt;p>See it, say it, reason about it, verify it. Microscopy is becoming a conversation — and the useful
+lesson this week is that the hard, valuable part isn&amp;rsquo;t the seeing or the saying, it&amp;rsquo;s the
+understanding in between.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(X/Twitter sweep was skipped today — our news API is out of credits.) Have lab news to share — a
+talk, paper, conference or release? Message me on Slack.&lt;/em>&lt;/p></description></item><item><title>Lab Newsletter — July 20, 2026: Design, Build, Test — and Safeguard?</title><link>https://aicell.io/post/newsletter-2026-07-20/</link><pubDate>Mon, 20 Jul 2026 03:03:28 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-07-20/</guid><description>&lt;p>Three items today trace one arc: AI can now &lt;em>design&lt;/em> biology&amp;rsquo;s catalysts, machines can &lt;em>build and
 test&lt;/em> them, and — the part that hasn&amp;rsquo;t kept pace — almost none of it ships with guardrails.&lt;/p>
 &lt;h3 id="-generative-ai-can-finally-design-enzymes">🧫 Generative AI can finally design enzymes&lt;/h3>
 &lt;p>A &lt;a href="https://arxiv.org/abs/2602.03779" target="_blank" rel="noopener">Feb 2026 review&lt;/a> (Middendorf &amp;amp; Ferruz) marks a real turning
