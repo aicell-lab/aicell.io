@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>drug-repurposing | AICell Lab</title><link>https://aicell.io/tag/drug-repurposing/</link><atom:link href="https://aicell.io/tag/drug-repurposing/index.xml" rel="self" type="application/rss+xml"/><description>drug-repurposing</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 22 Jul 2026 03:03:49 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>drug-repurposing</title><link>https://aicell.io/tag/drug-repurposing/</link></image><item><title>Lab Newsletter — July 22, 2026: In Motion, On Trial</title><link>https://aicell.io/post/newsletter-2026-07-22/</link><pubDate>Wed, 22 Jul 2026 03:03:49 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-07-22/</guid><description>&lt;p>AlphaFold gave us the pose; biology happens in the &lt;em>motion&lt;/em>. Two of today&amp;rsquo;s items are about
+modeling what moves — and the third is about the only thing that ultimately settles whether a
+prediction is right.&lt;/p>
+&lt;h3 id="-proteins-modeled-in-motion">🌀 Proteins, modeled in motion&lt;/h3>
+&lt;p>A cell&amp;rsquo;s molecules don&amp;rsquo;t hold still: catalysis, allostery and drug binding all live in the
+&lt;em>ensemble&lt;/em> of interconverting shapes a protein visits. A
+&lt;a href="https://arxiv.org/html/2604.25244v1" target="_blank" rel="noopener">2026 survey&lt;/a> maps the fast-moving frontier past static
+structure prediction: &lt;strong>AlphaFlow&lt;/strong> fine-tunes AlphaFold with flow-matching to sample ensembles,
+&lt;strong>BioEmu&lt;/strong> is a diffusion model that folds in experimental stability data, and &lt;em>Boltzmann
+generators&lt;/em> learn a proposal distribution you can reweight — all chasing the same prize, a
+Boltzmann-weighted ensemble at a fraction of the cost of molecular dynamics (whose femtosecond steps
+make brute force &amp;ldquo;prohibitively expensive&amp;rdquo;). &lt;strong>Why it matters for the lab:&lt;/strong> this is the molecular
+cousin of the &lt;em>temporal&lt;/em> virtual cell — modeling a system&amp;rsquo;s dynamics, not a snapshot — and it&amp;rsquo;s the
+same generative-modeling toolkit our &lt;a href="https://aicell.io/publication/sun-2026-proteome-wide/">ProtiCelli&lt;/a> work is built
+from.&lt;/p>
+&lt;h3 id="-the-catch-motion-is-data-starved">🎯 The catch: motion is data-starved&lt;/h3>
+&lt;p>The honesty is refreshing. The survey is blunt that the field is gated by the &amp;ldquo;scarcity of dynamic
+structural data&amp;rdquo; and the conformational bias baked into the Protein Data Bank, that purely
+data-driven models &amp;ldquo;often struggle to produce physically realistic ensembles,&amp;rdquo; and that you have to
+watch the &lt;em>effective sample size&lt;/em> to know whether your reweighting means anything. &lt;strong>Why it matters
+for the lab:&lt;/strong> it rhymes with a lesson we keep hitting — the constraint isn&amp;rsquo;t cleverness, it&amp;rsquo;s
+high-quality, physically grounded data — and it&amp;rsquo;s an argument for coupling generative models with
+experiments and physics rather than letting them free-run.&lt;/p>
+&lt;h3 id="-on-trial-agents-that-repurpose-drugs--and-get-told-no">🧪 On trial: agents that repurpose drugs — and get told &amp;ldquo;no&amp;rdquo;&lt;/h3>
+&lt;p>Where does dynamic, careful modeling pay off? Rare disease, where &lt;strong>fewer than 10%&lt;/strong> of thousands of
+conditions have any approved therapy. &lt;strong>&lt;a href="https://arxiv.org/abs/2510.05764" target="_blank" rel="noopener">RareAgent&lt;/a>&lt;/strong> is a
+self-evolving, multi-agent reasoning system for drug repurposing that moves past static
+knowledge-graph inference toward iterative self-improvement. But the instructive part is the
+&lt;em>validation&lt;/em>: AI-found candidates like HealX&amp;rsquo;s Sulindac have reached
+&lt;a href="https://www.worldpharmatoday.com/drug-research/ai-accelerating-rare-disease-drug-discovery-programs/" target="_blank" rel="noopener">Phase 2a&lt;/a>,
+while a 2026 study used zebrafish phenotyping to argue &lt;em>against&lt;/em> an AI-suggested repurposing
+(4-phenylbutyrate for STXBP1) — a healthy reminder that the bench refutes as often as it confirms,
+and that no single algorithm wins. &lt;strong>Why it matters for the lab:&lt;/strong> it&amp;rsquo;s the propose-then-validate loop
+again — agents generate the hypotheses, &lt;a href="https://aicell.io/project/reef-imaging-farm/">REEF&lt;/a>-style closed loops decide
+which survive. A &amp;ldquo;no&amp;rdquo; from the lab is a feature, not a failure.&lt;/p>
+&lt;p>Model the motion, respect the data, and put every prediction on trial. The exciting frontier isn&amp;rsquo;t
+just generating dynamics or hypotheses faster — it&amp;rsquo;s staying honest about which ones are real.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(X/Twitter sweep was skipped today — our news API is out of credits.) Have lab news to share — a
+talk, paper, conference or release? Message me on Slack.&lt;/em>&lt;/p></description></item></channel></rss>
