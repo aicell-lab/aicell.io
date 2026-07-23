@@ -1,4 +1,42 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>newsletter | AICell Lab</title><link>https://aicell.io/tag/newsletter/</link><atom:link href="https://aicell.io/tag/newsletter/index.xml" rel="self" type="application/rss+xml"/><description>newsletter</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 22 Jul 2026 03:03:49 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>newsletter</title><link>https://aicell.io/tag/newsletter/</link></image><item><title>Lab Newsletter — July 22, 2026: In Motion, On Trial</title><link>https://aicell.io/post/newsletter-2026-07-22/</link><pubDate>Wed, 22 Jul 2026 03:03:49 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-07-22/</guid><description>&lt;p>AlphaFold gave us the pose; biology happens in the &lt;em>motion&lt;/em>. Two of today&amp;rsquo;s items are about
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>newsletter | AICell Lab</title><link>https://aicell.io/tag/newsletter/</link><atom:link href="https://aicell.io/tag/newsletter/index.xml" rel="self" type="application/rss+xml"/><description>newsletter</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Thu, 23 Jul 2026 03:03:32 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>newsletter</title><link>https://aicell.io/tag/newsletter/</link></image><item><title>Lab Newsletter — July 23, 2026: AI Designs the Parts</title><link>https://aicell.io/post/newsletter-2026-07-23/</link><pubDate>Thu, 23 Jul 2026 03:03:32 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-07-23/</guid><description>&lt;p>For years AI mostly &lt;em>read&lt;/em> biology — predicting structures, classifying images, scoring
+perturbations. Today&amp;rsquo;s three items are about the flip side: AI &lt;em>writing&lt;/em> it — designing the parts,
+and finally being able to build them.&lt;/p>
+&lt;h3 id="-ai-designed-proteins-become-new-eyes-inside-the-cell">🔬 AI-designed proteins become new eyes inside the cell&lt;/h3>
+&lt;p>The standout is &lt;strong>&lt;a href="https://phys.org/news/2026-07-ai-proteins-scientists-cells.html" target="_blank" rel="noopener">NovoTags&lt;/a>&lt;/strong> (in
+&lt;em>Science&lt;/em>): fluorescent protein tags designed &lt;strong>from scratch&lt;/strong> to bind Janelia Fluor dyes and light
+up specific proteins in living human cells. Out of the Baker Lab&amp;rsquo;s design pipeline (RFdiffusion →
+LigandMPNN → AlphaFold/RoseTTAFold filtering) came orthogonal far-red, orange and green binders that
+enable multicolor imaging, live STED and fluorescence-lifetime microscopy — enough, in principle, to
+track &lt;strong>up to 30 proteins at once&lt;/strong>. A split version, NovoSplit, acts as a dye-triggered &amp;ldquo;molecular
+switch,&amp;rdquo; and the tags point toward inducible cryo-CLEM for in-cell structural biology. &lt;strong>Why it
+matters for the lab:&lt;/strong> this is protein design in service of &lt;em>seeing&lt;/em> — AI designing the very tools
+our microscopes use. It&amp;rsquo;s the most on-brand possible fusion of generative design and bioimaging, and
+the sequences are open to everyone.&lt;/p>
+&lt;h3 id="-ai-can-now-write-genomes">🧬 AI can now write genomes&lt;/h3>
+&lt;p>The same generative turn is reaching DNA itself. A
+&lt;a href="https://www.nature.com/articles/d41586-026-00681-y" target="_blank" rel="noopener">Nature feature&lt;/a> asks how close AI-written
+genomes are to synthetic life, and the proof points are piling up: &lt;strong>&lt;a href="https://www.nature.com/articles/s41588-025-02441-6" target="_blank" rel="noopener">DNA-Diffusion&lt;/a>&lt;/strong>
+(Nature Genetics) designs compact, cell-type-specific regulatory elements and used one to reactivate
+the leukemia-protective gene &lt;em>AXIN2&lt;/em> in its native context, while an earlier
+&lt;a href="https://www.sciencedaily.com/releases/2025/05/250508112324.htm" target="_blank" rel="noopener">Cell study&lt;/a> showed AI-designed DNA
+controlling gene expression in healthy mammalian cells for the first time. &lt;strong>Why it matters for the
+lab:&lt;/strong> designing regulatory DNA is designing the &lt;em>control logic&lt;/em> of the cell — a direct handle on the
+cellular programs a virtual cell tries to predict.&lt;/p>
+&lt;h3 id="-and-now-we-can-actually-build-them">🏗️ And now we can actually build them&lt;/h3>
+&lt;p>Design has been outrunning construction — Evo 2 can write sequences far faster than labs can make
+them. &lt;strong>&lt;a href="https://spectrum.ieee.org/faster-dna-synthesis-sidewinder" target="_blank" rel="noopener">Sidewinder&lt;/a>&lt;/strong> (Caltech) closes
+that gap: it assembles many sequences at once with &lt;strong>one error per 10 million junctions&lt;/strong> (versus
+one per 10–30 conventionally), using cheap oligos tagged with molecular &amp;ldquo;barcodes&amp;rdquo; so fragments snap
+together in the right order. In a demo, the team redesigned a 12,500-letter &lt;em>E. coli&lt;/em> stretch with
+Evo 2 and built it &lt;strong>error-free&lt;/strong> — turning a month of work into a few days. &lt;strong>Why it matters for the
+lab:&lt;/strong> the bottleneck is shifting from &lt;em>designing&lt;/em> biology to &lt;em>building and testing&lt;/em> it — which is
+exactly the design–build–test loop &lt;a href="https://aicell.io/project/reef-imaging-farm/">REEF&lt;/a> is built to run, now with far
+more ambitious things to make.&lt;/p>
+&lt;p>Design the probe, write the DNA, build it for real — AI is moving from describing biology to
+manufacturing it. The lab&amp;rsquo;s job is to keep that loop honest: design, build, and &lt;em>test&lt;/em> on real cells.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(X/Twitter sweep was skipped today — our news API is out of credits.) Have lab news to share — a
+talk, paper, conference or release? Message me on Slack.&lt;/em>&lt;/p></description></item><item><title>Lab Newsletter — July 22, 2026: In Motion, On Trial</title><link>https://aicell.io/post/newsletter-2026-07-22/</link><pubDate>Wed, 22 Jul 2026 03:03:49 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-07-22/</guid><description>&lt;p>AlphaFold gave us the pose; biology happens in the &lt;em>motion&lt;/em>. Two of today&amp;rsquo;s items are about
 modeling what moves — and the third is about the only thing that ultimately settles whether a
 prediction is right.&lt;/p>
 &lt;h3 id="-proteins-modeled-in-motion">🌀 Proteins, modeled in motion&lt;/h3>
