@@ -1,4 +1,39 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>foundation-models | AICell Lab</title><link>https://aicell.io/tag/foundation-models/</link><atom:link href="https://aicell.io/tag/foundation-models/index.xml" rel="self" type="application/rss+xml"/><description>foundation-models</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 22 Jul 2026 03:03:49 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>foundation-models</title><link>https://aicell.io/tag/foundation-models/</link></image><item><title>Lab Newsletter — July 22, 2026: In Motion, On Trial</title><link>https://aicell.io/post/newsletter-2026-07-22/</link><pubDate>Wed, 22 Jul 2026 03:03:49 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-07-22/</guid><description>&lt;p>AlphaFold gave us the pose; biology happens in the &lt;em>motion&lt;/em>. Two of today&amp;rsquo;s items are about
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>foundation-models | AICell Lab</title><link>https://aicell.io/tag/foundation-models/</link><atom:link href="https://aicell.io/tag/foundation-models/index.xml" rel="self" type="application/rss+xml"/><description>foundation-models</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 24 Jul 2026 03:03:29 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>foundation-models</title><link>https://aicell.io/tag/foundation-models/</link></image><item><title>Lab Newsletter — July 24, 2026: Open by Design</title><link>https://aicell.io/post/newsletter-2026-07-24/</link><pubDate>Fri, 24 Jul 2026 03:03:29 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-07-24/</guid><description>&lt;p>A quieter but consequential fight is taking shape: not which model is smartest, but whether the AI
+stack scientists work &lt;em>in&lt;/em> is open or owned. This week it got concrete.&lt;/p>
+&lt;h3 id="-an-open-science-workbench-arrives">🔓 An open science workbench arrives&lt;/h3>
+&lt;p>&lt;strong>&lt;a href="https://www.marktechpost.com/2026/07/05/synthetic-sciences-releases-openscience-an-open-source-model-agnostic-ai-workbench-for-machine-learning-biology-physics-and-chemistry-research/" target="_blank" rel="noopener">OpenScience&lt;/a>&lt;/strong>
+(Synthetic Sciences) is an Apache-2.0, &lt;strong>model-agnostic&lt;/strong> AI workbench for biology, chemistry, physics
+and ML: a browser workspace on a local runtime that runs the full research loop — literature,
+hypothesis, code, experiment, analysis, write-up — with &lt;strong>250+ editable skills&lt;/strong> and 30+ scientific
+databases (UniProt, PDB, ChEMBL, arXiv) wired in as tools. The pitch is pointed: &lt;em>your keys stay on
+your machine&lt;/em>, and you route each request to whatever model you like (Claude, GPT, Gemini, DeepSeek, or
+a local fine-tune). It&amp;rsquo;s explicitly framed as the open answer to Anthropic&amp;rsquo;s &lt;strong>Claude Science&lt;/strong>. &lt;strong>Why
+it matters for the lab:&lt;/strong> this is our thesis, shipped by someone else — open, agent-readable, model-
+swappable tooling that a lab can run on its own infrastructure. It&amp;rsquo;s exactly what
+&lt;a href="https://aicell.io/project/bioengine/">BioEngine&lt;/a> and &lt;a href="https://aicell.io/project/hypha/">Hypha&lt;/a> are built to be.&lt;/p>
+&lt;h3 id="-open-vs-proprietary--and-open-can-be-frontier">🏛️ Open vs. proprietary — and open can be frontier&lt;/h3>
+&lt;p>The comparison is the story. OpenScience and Claude Science &lt;em>both&lt;/em> run the loop, render science
+inline, and prize reproducibility; the difference, as the writeup puts it, is &amp;ldquo;openness and model
+choice&amp;rdquo; — any provider vs. Claude-only, your infra vs. lab machines, 250+ editable skills vs. a curated
+set. And crucially, open doesn&amp;rsquo;t mean second-rate: the most capable general-purpose biomedical agent of
+the year, &lt;a href="https://biomni.stanford.edu" target="_blank" rel="noopener">Biomni&lt;/a>, shipped in &lt;em>Science&lt;/em> fully open, and open image-
+analysis agents like &lt;a href="https://arxiv.org/abs/2606.02080" target="_blank" rel="noopener">Agentic-J&lt;/a> are proliferating. &lt;strong>Why it matters
+for the lab:&lt;/strong> the scientific AI stack is genuinely up for grabs right now — and the open path is both
+viable and winning contributors, which is where a small, open lab can punch above its weight.&lt;/p>
+&lt;h3 id="-why-the-lab-bets-open">🌍 Why the lab bets open&lt;/h3>
+&lt;p>This isn&amp;rsquo;t only ideology. Model-agnostic, local-data, open-source tooling means &lt;strong>data sovereignty&lt;/strong>
+(no records leaving your institute), &lt;strong>no vendor lock-in&lt;/strong>, and &lt;strong>reproducibility&lt;/strong> by default — and,
+as a &lt;a href="https://mronline.org/2026/07/21/open-biology-and-ai-need-for-the-global-south/" target="_blank" rel="noopener">recent perspective&lt;/a>
+on open biology and the Global South argues, it means &lt;em>access&lt;/em> for labs without big budgets. That&amp;rsquo;s
+the entire design of our own stack: &lt;a href="https://aicell.io/project/imjoy/">ImJoy&lt;/a> runs in a browser with no install, the
+&lt;a href="https://aicell.io/project/bioimage-model-zoo/">BioImage Model Zoo&lt;/a> is free and testable in-page, and BioEngine deploys
+at a facility&amp;rsquo;s own institute. &lt;strong>Why it matters for the lab:&lt;/strong> openness isn&amp;rsquo;t a feature we add — it&amp;rsquo;s
+the differentiator and the mission. The more the field&amp;rsquo;s tooling opens up, the more our bet pays off.&lt;/p>
+&lt;p>The smartest model of the month will change. Whether scientists can own, inspect and run their tools is
+a more durable question — and this week the open side got a serious new entry.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(X/Twitter sweep was skipped today — our news API is out of credits.) Have lab news to share — a
+talk, paper, conference or release? Message me on Slack.&lt;/em>&lt;/p></description></item><item><title>Lab Newsletter — July 22, 2026: In Motion, On Trial</title><link>https://aicell.io/post/newsletter-2026-07-22/</link><pubDate>Wed, 22 Jul 2026 03:03:49 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-07-22/</guid><description>&lt;p>AlphaFold gave us the pose; biology happens in the &lt;em>motion&lt;/em>. Two of today&amp;rsquo;s items are about
 modeling what moves — and the third is about the only thing that ultimately settles whether a
 prediction is right.&lt;/p>
 &lt;h3 id="-proteins-modeled-in-motion">🌀 Proteins, modeled in motion&lt;/h3>
