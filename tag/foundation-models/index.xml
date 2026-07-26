@@ -1,4 +1,48 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>foundation-models | AICell Lab</title><link>https://aicell.io/tag/foundation-models/</link><atom:link href="https://aicell.io/tag/foundation-models/index.xml" rel="self" type="application/rss+xml"/><description>foundation-models</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 24 Jul 2026 03:03:29 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>foundation-models</title><link>https://aicell.io/tag/foundation-models/</link></image><item><title>Lab Newsletter — July 24, 2026: Open by Design</title><link>https://aicell.io/post/newsletter-2026-07-24/</link><pubDate>Fri, 24 Jul 2026 03:03:29 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-07-24/</guid><description>&lt;p>A quieter but consequential fight is taking shape: not which model is smartest, but whether the AI
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>foundation-models | AICell Lab</title><link>https://aicell.io/tag/foundation-models/</link><atom:link href="https://aicell.io/tag/foundation-models/index.xml" rel="self" type="application/rss+xml"/><description>foundation-models</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 26 Jul 2026 03:03:12 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>foundation-models</title><link>https://aicell.io/tag/foundation-models/</link></image><item><title>Lab Newsletter — July 26, 2026: Cells in Context</title><link>https://aicell.io/post/newsletter-2026-07-26/</link><pubDate>Sun, 26 Jul 2026 03:03:12 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-07-26/</guid><description>&lt;p>To sequence a cell you usually have to rip it out of its tissue — and the moment you do, you lose
+&lt;em>where it was&lt;/em> and &lt;em>who its neighbors were&lt;/em>. That spatial context is often the whole story. Today&amp;rsquo;s
+three items are all about giving it back.&lt;/p>
+&lt;h3 id="-a-cheap-slide-read-for-its-molecules">🧫 A cheap slide, read for its molecules&lt;/h3>
+&lt;p>The standout is &lt;strong>&lt;a href="https://www.cell.com/cell/abstract/S0092-8674%2826%2900458-7" target="_blank" rel="noopener">Path2Space&lt;/a>&lt;/strong>, published
+in &lt;em>Cell&lt;/em>: a model that predicts the &lt;strong>spatial expression of thousands of genes directly from an
+ordinary H&amp;amp;E histology slide&lt;/strong> — the same stained tissue image a pathologist has looked at for a
+century. Trained on breast-cancer spatial-transcriptomics data, it outperforms &lt;strong>21 established
+methods&lt;/strong>, and applied to &lt;strong>976 TCGA tumors&lt;/strong> it maps the tumor microenvironment, finds &lt;strong>three new
+prognostic subgroups&lt;/strong> (&amp;ldquo;SpatioTypes&amp;rdquo;), and — most usefully — predicts response to &lt;strong>chemotherapy and
+trastuzumab&lt;/strong> &lt;em>better than costly bulk-sequencing biomarkers&lt;/em>, keying on how HER2 expression is
+spatially &lt;em>scattered&lt;/em> across the tumor. &lt;strong>Why it matters for the lab:&lt;/strong> this is our thesis in one
+result — a cheap image, read by AI for the expensive molecular measurement underneath. It&amp;rsquo;s exactly
+the image-to-molecule move behind our &lt;a href="https://aicell.io/publication/sun-2026-proteome-wide/">ProtiCelli&lt;/a> work, and the
+recurring win of a good surrogate: skip the assay, keep the answer.&lt;/p>
+&lt;h3 id="-putting-dissociated-cells-back-in-place">🧩 Putting dissociated cells back in place&lt;/h3>
+&lt;p>The complement to predicting spatial data is &lt;em>recovering&lt;/em> it. &lt;strong>&lt;a href="https://www.nature.com/articles/s41592-025-02814-z" target="_blank" rel="noopener">Nicheformer&lt;/a>&lt;/strong>
+(Helmholtz Munich / TUM, &lt;em>Nature Methods&lt;/em>) is a foundation model trained on &lt;strong>over 110 million cells&lt;/strong> —
+a curated &lt;strong>SpatialCorpus-110M&lt;/strong> blending 57M dissociated cells with 53M spatially resolved ones — that
+learns to &lt;strong>transfer spatial context back onto single-cell data that never had any&lt;/strong>. Its quiet but
+important finding: spatial patterns leave measurable traces in gene expression &lt;em>even after cells are
+dissociated&lt;/em>, so the neighborhood a cell came from can be partly reconstructed. &lt;strong>Why it matters for
+the lab:&lt;/strong> it&amp;rsquo;s another argument that the payoff comes from &lt;strong>model-ready, well-curated data&lt;/strong> — the
+same lesson the Virtual Cell Challenge drove home — and a reminder that the decades of dissociated
+single-cell atlases aren&amp;rsquo;t spatially blind after all.&lt;/p>
+&lt;h3 id="-an-agent-that-runs-the-whole-spatial-workflow--and-the-honest-asterisk">🤖 An agent that runs the whole spatial workflow — and the honest asterisk&lt;/h3>
+&lt;p>Then there&amp;rsquo;s automation. &lt;strong>&lt;a href="https://www.biorxiv.org/content/10.1101/2025.04.03.646459v1" target="_blank" rel="noopener">SpatialAgent&lt;/a>&lt;/strong>
+(Genentech / Stanford) is an autonomous agent for spatial biology that pairs a language model with
+tool execution to run the loop end-to-end — design a gene panel, annotate cells and niches, generate
+hypotheses — in either fully &lt;strong>autonomous&lt;/strong> or &lt;strong>co-pilot&lt;/strong> mode. On ~2M cells it reportedly matched
+expert accuracy in heart-tissue annotation while &lt;strong>cutting the time ~80%&lt;/strong>, and surfaced novel TGF-β
+fibroblast–pericyte interactions in colitis that earlier studies missed; a
+&lt;a href="https://cen.acs.org/analytical-chemistry/big-data/spatial-biology-data-artificial-intelligence/104/web/2026/05" target="_blank" rel="noopener">2026 feature&lt;/a>
+places it in a fast-commercializing field (GSK paid $50M to license spatial-cancer models this year).
+&lt;strong>The honest asterisk:&lt;/strong> the headline claim that it &amp;ldquo;matched or outperformed human scientists&amp;rdquo; comes
+from a &lt;strong>preprint&lt;/strong>, not peer-reviewed work. &lt;strong>Why it matters for the lab:&lt;/strong> it&amp;rsquo;s the shape of things
+we build — agents that &lt;em>reason and act&lt;/em> over microscopy and omics, like &lt;a href="https://aicell.io/project/agent-lens/">Agent-Lens&lt;/a>
+and the &lt;a href="https://aicell.io/project/bioimageio-chatbot/">BioImage.IO chatbot&lt;/a> — and the caveat is the point: the agent
+proposes, but a &lt;a href="https://aicell.io/project/reef-imaging-farm/">REEF&lt;/a>-style closed loop still has to check.&lt;/p>
+&lt;p>Predict the context from a cheap image, restore it onto old data, and let an agent work the whole
+board — but keep a human, and a wet lab, in the loop to say whether it&amp;rsquo;s right. Spatial biology is
+where imaging, omics and agents finally meet, which makes it about as on-brand as a week gets.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(X/Twitter sweep was skipped today — our news API is out of credits.) Have lab news to share — a
+talk, paper, conference or release? Message me on Slack.&lt;/em>&lt;/p></description></item><item><title>Lab Newsletter — July 24, 2026: Open by Design</title><link>https://aicell.io/post/newsletter-2026-07-24/</link><pubDate>Fri, 24 Jul 2026 03:03:29 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-07-24/</guid><description>&lt;p>A quieter but consequential fight is taking shape: not which model is smartest, but whether the AI
 stack scientists work &lt;em>in&lt;/em> is open or owned. This week it got concrete.&lt;/p>
 &lt;h3 id="-an-open-science-workbench-arrives">🔓 An open science workbench arrives&lt;/h3>
 &lt;p>&lt;strong>&lt;a href="https://www.marktechpost.com/2026/07/05/synthetic-sciences-releases-openscience-an-open-source-model-agnostic-ai-workbench-for-machine-learning-biology-physics-and-chemistry-research/" target="_blank" rel="noopener">OpenScience&lt;/a>&lt;/strong>
