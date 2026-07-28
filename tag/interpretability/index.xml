@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>interpretability | AICell Lab</title><link>https://aicell.io/tag/interpretability/</link><atom:link href="https://aicell.io/tag/interpretability/index.xml" rel="self" type="application/rss+xml"/><description>interpretability</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 28 Jul 2026 03:06:00 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>interpretability</title><link>https://aicell.io/tag/interpretability/</link></image><item><title>Lab Newsletter — July 28, 2026: Two Ledgers</title><link>https://aicell.io/post/newsletter-2026-07-28/</link><pubDate>Tue, 28 Jul 2026 03:06:00 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-07-28/</guid><description>&lt;p>A year ago the genome-model story was all headline: &lt;strong>Evo 2&lt;/strong> predicting BRCA1 pathogenicity at
+&lt;a href="https://aicell.io/post/newsletter-2026-07-08/">&amp;gt;90% accuracy&lt;/a>, &lt;strong>AlphaGenome&lt;/strong> scoring a variant a second across the
+non-coding 98%. 2026 is the quieter, more useful chapter — the &lt;em>audit&lt;/em>. The question has shifted from
+&amp;ldquo;what can the model do?&amp;rdquo; to &amp;ldquo;what survives when you force every claim through a held-out test set with
+an honest baseline?&amp;rdquo;&lt;/p>
+&lt;h3 id="-two-ledgers-one-honest-baseline">📒 Two ledgers, one honest baseline&lt;/h3>
+&lt;p>A sharp &lt;a href="https://rewire.it/blog/genomic-foundation-models-in-2026/" target="_blank" rel="noopener">2026 analysis&lt;/a> proposes reading
+this field with &lt;strong>two separate ledgers&lt;/strong>: a &lt;em>capability ledger&lt;/em> (what a model can demonstrably do at
+scale — what the press release reports) and a &lt;em>validity ledger&lt;/em> (&amp;ldquo;what holds up when you pass each
+claim through an independent test set with an honest baseline&amp;rdquo;). Kept apart, the verdict is refreshingly
+specific: genomic foundation models are &lt;strong>genuinely maturing for variant-effect prediction&lt;/strong>, but they
+&lt;strong>fail for perturbation prediction and mechanistic interpretability&lt;/strong> — there, &lt;em>&amp;ldquo;five foundation models
+plus two other deep networks failed to beat simple linear baselines.&amp;rdquo;&lt;/em> And the leaderboards are
+unstable: &amp;ldquo;the same model can be a breakthrough in one paper and an underperformer in another,&amp;rdquo;
+because rankings reshuffle by task. &lt;strong>Why it matters for the lab:&lt;/strong> this is the Virtual Cell Challenge
+lesson at the genome layer — a held-out benchmark against a baseline you must actually beat is how you
+tell signal from froth. It&amp;rsquo;s the discipline our &lt;a href="https://aicell.io/project/bioimage-model-zoo/">BioImage Model Zoo&lt;/a>
+builds around: models the community can benchmark, not just admire.&lt;/p>
+&lt;h3 id="-the-right-model-for-the-variant-class">🧬 The right model for the variant class&lt;/h3>
+&lt;p>&amp;ldquo;One model to rule them all&amp;rdquo; is quietly dying, and that&amp;rsquo;s progress. On &lt;strong>coding missense&lt;/strong> variants,
+the specialists still win — Evo 2&amp;rsquo;s 40B and 7B &amp;ldquo;ranked fourth and fifth, behind &lt;strong>AlphaMissense,
+ESM-1b, and GPN-MSA&lt;/strong>.&amp;rdquo; On &lt;strong>non-coding and splicing&lt;/strong> variants, the foundation models lead — Evo 2
+sets the state of the art, AlphaGenome matched or beat external models on 24 of 26 evaluations. The
+honest framing: zero-shot scores are now &amp;ldquo;good enough to contribute evidence under an ACMG-style
+framework&amp;rdquo; but &amp;ldquo;not good enough to act alone.&amp;rdquo; A &lt;a href="https://www.biorxiv.org/content/10.64898/2026.03.10.710786v1.full" target="_blank" rel="noopener">March 2026
+preprint&lt;/a> sharpens the caution,
+reporting systematic &lt;strong>blind spots&lt;/strong> in Evo 2 — weaknesses on short-range signals like codon-usage bias
+and a counter-intuitive drop on the most &lt;em>severe&lt;/em> variants — enough, its authors argue, to &amp;ldquo;challenge
+current claims of zero-shot pathogenicity prediction&amp;rdquo; (preprint, not yet peer-reviewed). &lt;strong>Why it
+matters for the lab:&lt;/strong> and there&amp;rsquo;s a third axis beyond accuracy — &lt;strong>access&lt;/strong>. Evo 2 is &amp;ldquo;one of the
+largest fully open AI models in any domain&amp;rdquo;; AlphaGenome is &amp;ldquo;API-only and non-commercial.&amp;rdquo; For a
+regulated lab, open weights you can &lt;em>freeze and audit&lt;/em> are &amp;ldquo;a materially different proposition&amp;rdquo; — which
+is the whole bet behind &lt;a href="https://aicell.io/project/hypha/">Hypha&lt;/a>, &lt;a href="https://aicell.io/project/bioengine/">BioEngine&lt;/a> and
+&lt;a href="https://aicell.io/project/imjoy/">ImJoy&lt;/a>.&lt;/p>
+&lt;h3 id="-dont-just-score-the-variant--explain-it-and-open-it">🔍 Don&amp;rsquo;t just score the variant — explain it, and open it&lt;/h3>
+&lt;p>The most encouraging response to the audit is to build &lt;em>for&lt;/em> it. &lt;strong>&lt;a href="https://evee.goodfire.ai/" target="_blank" rel="noopener">EVEE&lt;/a>&lt;/strong>
+(Evo Variant Effect Explorer, &lt;a href="https://www.goodfire.ai/research/evee-explaining-genetic-variants" target="_blank" rel="noopener">Goodfire&lt;/a> ×
+Mayo Clinic, &lt;a href="https://www.biorxiv.org/content/10.64898/2026.04.10.717844v1" target="_blank" rel="noopener">Apr 2026 preprint&lt;/a>) trains
+interpretable probes on &lt;strong>Evo 2 (7B)&lt;/strong> embeddings, reports &lt;strong>0.997 AUROC&lt;/strong> across variant types
+(generalizing zero-shot to indels), and — the part that matters — turns each prediction into a
+&lt;strong>natural-language explanation&lt;/strong> of &lt;em>which&lt;/em> biological signals a variant disrupts. It ships as a public
+web tool with precomputed calls for all &lt;strong>4.2 million ClinVar variants&lt;/strong>, and even as an &lt;strong>&lt;a href="https://github.com/goodfire-ai/evee-mcp" target="_blank" rel="noopener">MCP
+server&lt;/a>&lt;/strong> so an LLM agent can query it directly. Its own
+disclaimer stays honest: &amp;ldquo;computational predictions are not diagnoses.&amp;rdquo; &lt;strong>Why it matters for the lab:&lt;/strong>
+a model that &lt;em>reasons and explains&lt;/em> and can be queried by an agent is precisely the shape of the tools
+we build — the &lt;a href="https://aicell.io/project/bioimageio-chatbot/">BioImage.IO chatbot&lt;/a>, &lt;a href="https://aicell.io/project/agent-lens/">Agent-Lens&lt;/a>.
+An interpretable, open, agent-callable variant oracle is our whole thesis wearing a lab coat.&lt;/p>
+&lt;p>The froth is being sorted from the signal by the most old-fashioned instrument there is: a held-out
+test set. That&amp;rsquo;s not bad news for genome AI — it&amp;rsquo;s the field growing up. And the tools that come out
+ahead are the open, benchmarked, explainable ones. On that scoreboard, at least, we&amp;rsquo;ve been playing the
+long game all along.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(X/Twitter sweep was skipped today — our news API is out of credits.) Have lab news to share — a
+talk, paper, conference or release? Message me on Slack.&lt;/em>&lt;/p></description></item></channel></rss>
