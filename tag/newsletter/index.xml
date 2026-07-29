@@ -1,4 +1,57 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>newsletter | AICell Lab</title><link>https://aicell.io/tag/newsletter/</link><atom:link href="https://aicell.io/tag/newsletter/index.xml" rel="self" type="application/rss+xml"/><description>newsletter</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 28 Jul 2026 03:06:00 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>newsletter</title><link>https://aicell.io/tag/newsletter/</link></image><item><title>Lab Newsletter — July 28, 2026: Two Ledgers</title><link>https://aicell.io/post/newsletter-2026-07-28/</link><pubDate>Tue, 28 Jul 2026 03:06:00 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-07-28/</guid><description>&lt;p>A year ago the genome-model story was all headline: &lt;strong>Evo 2&lt;/strong> predicting BRCA1 pathogenicity at
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>newsletter | AICell Lab</title><link>https://aicell.io/tag/newsletter/</link><atom:link href="https://aicell.io/tag/newsletter/index.xml" rel="self" type="application/rss+xml"/><description>newsletter</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 29 Jul 2026 03:04:00 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>newsletter</title><link>https://aicell.io/tag/newsletter/</link></image><item><title>Lab Newsletter — July 29, 2026: Seeing the Cell's Machines</title><link>https://aicell.io/post/newsletter-2026-07-29/</link><pubDate>Wed, 29 Jul 2026 03:04:00 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-07-29/</guid><description>&lt;p>Most of this newsletter lives in the world of &lt;em>sequences&lt;/em> — genomes, transcripts, proteins as
+strings. Today we go the other way, all the way down to the &lt;strong>picture&lt;/strong>: cryo-electron tomography
+(cryo-ET) can now photograph molecular machines &lt;em>in their native cell&lt;/em>, unpurified and in place. The
+long-standing dream is &lt;strong>visual proteomics&lt;/strong> — a molecular atlas of the cell read directly from these
+images. The catch was never the microscope. It&amp;rsquo;s that a single tomogram is a crowded, near-noise 3D
+volume where most macromolecules &amp;ldquo;are hardly discernible from noise,&amp;rdquo; and someone has to find and name
+every one. This week, that someone is increasingly an AI — trained on open, community-built data.&lt;/p>
+&lt;h3 id="-an-open-atlas-you-can-download">🔬 An open atlas you can download&lt;/h3>
+&lt;p>The anchor is a striking act of open science. A &lt;a href="https://www.cell.com/molecular-cell/fulltext/S1097-2765%2825%2900970-0" target="_blank" rel="noopener">&lt;em>Molecular Cell&lt;/em>
+study&lt;/a> (Plitzko, Engel &amp;amp; Kotecha
+labs) released &lt;strong>1,829 annotated in-cell tomograms&lt;/strong> of the green alga &lt;em>Chlamydomonas reinhardtii&lt;/em> —
+prepared by cryo-plasma-FIB milling, spanning the cell&amp;rsquo;s organelles, &lt;strong>raw data and all&lt;/strong> — explicitly
+as a &lt;em>community resource&lt;/em>. To prove the dataset&amp;rsquo;s worth they averaged complexes across a staggering
+size range, &lt;strong>from &amp;gt;3 MDa ribosomes down to ~200 kDa&lt;/strong> (Rubisco, nucleosomes, clathrin, photosystem
+II, ATP synthase), with most maps reaching &lt;strong>sub-nanometer resolution&lt;/strong>. The raw tilt-series sit in
+&lt;a href="https://empiar.pdbj.org/en/entry/11830/" target="_blank" rel="noopener">EMPIAR&lt;/a> and the annotations on
+&lt;a href="https://github.com/Chromatin-Structure-Rhythms-Lab/ChlamyAnnotations" target="_blank" rel="noopener">GitHub&lt;/a>. &lt;strong>Why it matters for
+the lab:&lt;/strong> this is imaging-as-measurement at the ultimate resolution — the structural ground truth
+beneath &lt;a href="https://aicell.io/project/human-cell-simulator/">whole-cell modeling&lt;/a> — and it&amp;rsquo;s shared the way we believe
+data should be: large, annotated, and open for anyone to build on.&lt;/p>
+&lt;h3 id="-crowdsourcing-the-bottleneck">🤖 Crowdsourcing the bottleneck&lt;/h3>
+&lt;p>If picking particles by hand &amp;ldquo;can take months,&amp;rdquo; why not turn it into a sport? That&amp;rsquo;s what the &lt;strong>Chan
+Zuckerberg Imaging Institute&lt;/strong> did: a &lt;a href="https://www.czbiohub.org/life-science/crowdsourcing-solve-problems-cryoet/" target="_blank" rel="noopener">3-month Kaggle
+challenge&lt;/a> to annotate six
+molecular species across hundreds of experimental tomograms drew &lt;strong>over 1,000 participants&lt;/strong> and
+produced particle pickers that &lt;strong>beat the previous state of the art&lt;/strong> (a &lt;a href="https://www.biorxiv.org/content/10.1101/2025.11.03.686153v2.full" target="_blank" rel="noopener">Nov 2025
+write-up&lt;/a> found data augmentation
+was the decisive trick). Everything — tomograms, ground truth, and the winners&amp;rsquo; models — was released
+&lt;strong>CC0 on the CryoET Data Portal&lt;/strong>, alongside open tools like &lt;strong>Copick&lt;/strong> and &lt;strong>MONAI&lt;/strong> 3D-U-Net
+notebooks, and the dataset now lives on CZI&amp;rsquo;s
+&lt;a href="https://virtualcellmodels.cziscience.com/dataset/czii-cryoet" target="_blank" rel="noopener">Virtual Cells Platform&lt;/a>. &lt;strong>Why it
+matters for the lab:&lt;/strong> a crowdsourced, openly-benchmarked model that outruns the specialists is a
+&lt;a href="https://aicell.io/project/bioimage-model-zoo/">BioImage Model Zoo&lt;/a> story in a new modality — and it&amp;rsquo;s no accident the
+data landed on a &lt;em>virtual-cell&lt;/em> platform. Visual proteomics is one of the atlases a virtual cell will
+be built from.&lt;/p>
+&lt;h3 id="-ai-along-the-whole-pipeline--and-the-honest-frontier">🧩 AI along the whole pipeline — and the honest frontier&lt;/h3>
+&lt;p>Zoom out and the whole cryo-ET workflow is quietly becoming a deep-learning stack. A &lt;a href="https://arxiv.org/abs/2507.19565" target="_blank" rel="noopener">July 2025
+review&lt;/a> (with UCLA&amp;rsquo;s Z. Hong Zhou and vision pioneer Demetri
+Terzopoulos) maps AI onto every stage: &lt;strong>picking&lt;/strong> (Topaz, crYOLO, CryoSegNet), &lt;strong>denoising and
+missing-wedge repair&lt;/strong> (Topaz-Denoise, IsoNet), &lt;strong>orientation-bias correction&lt;/strong> (spIsoNet, cryoPROS),
+and &lt;strong>automated model building&lt;/strong> (ModelAngelo, DeepTracer, CryoREAD) — turning intractable, noisy
+volumes into interpretable structures &amp;ldquo;from HIV virus-like particles to in situ ribosomal complexes.&amp;rdquo;
+Open toolkits like &lt;a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12934263/" target="_blank" rel="noopener">&lt;strong>AITom&lt;/strong>&lt;/a> (Min Xu&amp;rsquo;s CMU group)
+package the in-cell half end-to-end. &lt;strong>The honest frontier:&lt;/strong> only a &lt;em>handful&lt;/em> of molecular species can
+yet be reliably identified in the crowded, low-contrast cytoplasm — the full &amp;ldquo;molecular atlas of the
+cell&amp;rdquo; is still a horizon, not a result. &lt;strong>Why it matters for the lab:&lt;/strong> this is our thesis in a
+different key — open images, open models, community benchmarks — the same stack we build for light
+microscopy (&lt;a href="https://aicell.io/project/bioengine/">BioEngine&lt;/a>, AI4Life), now pointed at molecules in situ.&lt;/p>
+&lt;p>Sequences tell you what a cell &lt;em>could&lt;/em> build; visual proteomics shows you what it &lt;em>actually did&lt;/em>, and
+where. Getting there is a computer-vision problem as much as a microscopy one — which is exactly why
+it&amp;rsquo;s on-brand for a lab that lives where imaging and AI meet.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(X/Twitter sweep was skipped today — our news API is out of credits.) Have lab news to share — a
+talk, paper, conference or release? Message me on Slack.&lt;/em>&lt;/p></description></item><item><title>Lab Newsletter — July 28, 2026: Two Ledgers</title><link>https://aicell.io/post/newsletter-2026-07-28/</link><pubDate>Tue, 28 Jul 2026 03:06:00 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-07-28/</guid><description>&lt;p>A year ago the genome-model story was all headline: &lt;strong>Evo 2&lt;/strong> predicting BRCA1 pathogenicity at
 &lt;a href="https://aicell.io/post/newsletter-2026-07-08/">&amp;gt;90% accuracy&lt;/a>, &lt;strong>AlphaGenome&lt;/strong> scoring a variant a second across the
 non-coding 98%. 2026 is the quieter, more useful chapter — the &lt;em>audit&lt;/em>. The question has shifted from
 &amp;ldquo;what can the model do?&amp;rdquo; to &amp;ldquo;what survives when you force every claim through a held-out test set with
