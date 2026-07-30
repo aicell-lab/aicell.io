@@ -1,4 +1,52 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>newsletter | AICell Lab</title><link>https://aicell.io/tag/newsletter/</link><atom:link href="https://aicell.io/tag/newsletter/index.xml" rel="self" type="application/rss+xml"/><description>newsletter</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 29 Jul 2026 03:04:00 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>newsletter</title><link>https://aicell.io/tag/newsletter/</link></image><item><title>Lab Newsletter — July 29, 2026: Seeing the Cell's Machines</title><link>https://aicell.io/post/newsletter-2026-07-29/</link><pubDate>Wed, 29 Jul 2026 03:04:00 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-07-29/</guid><description>&lt;p>Most of this newsletter lives in the world of &lt;em>sequences&lt;/em> — genomes, transcripts, proteins as
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>newsletter | AICell Lab</title><link>https://aicell.io/tag/newsletter/</link><atom:link href="https://aicell.io/tag/newsletter/index.xml" rel="self" type="application/rss+xml"/><description>newsletter</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Thu, 30 Jul 2026 03:07:00 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>newsletter</title><link>https://aicell.io/tag/newsletter/</link></image><item><title>Lab Newsletter — July 30, 2026: The Messenger, Read and Written</title><link>https://aicell.io/post/newsletter-2026-07-30/</link><pubDate>Thu, 30 Jul 2026 03:07:00 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-07-30/</guid><description>&lt;p>We spend a lot of these digests at the two ends of the central dogma — the &lt;a href="https://aicell.io/post/newsletter-2026-07-08/">genome&lt;/a>
+that a cell &lt;em>could&lt;/em> build from, and the &lt;a href="https://aicell.io/post/newsletter-2026-07-29/">proteins and structures&lt;/a> it &lt;em>actually&lt;/em>
+assembles. The middle layer, &lt;strong>RNA&lt;/strong>, has been quietly under-modeled: harder to crystallize than protein,
+more structurally alive than DNA, and for years without a foundation model of its own. That gap is closing
+fast. In the last year RNA got both a way to be &lt;strong>read&lt;/strong> — structure and function predicted straight from
+sequence — and a way to be &lt;strong>written&lt;/strong> — generative models that design functional RNAs from scratch. For a
+lab building toward a &lt;a href="https://aicell.io/project/human-cell-simulator/">virtual cell&lt;/a>, that&amp;rsquo;s the messenger layer coming online.&lt;/p>
+&lt;h3 id="-reading-rna-a-language-model-then-a-structure">📖 Reading RNA: a language model, then a structure&lt;/h3>
+&lt;p>The base layer is &lt;strong>&lt;a href="https://github.com/ml4bio/RNA-FM" target="_blank" rel="noopener">RNA-FM&lt;/a>&lt;/strong>, a BERT-style RNA language model
+(12 transformer layers) pretrained by masked-language-modeling on &lt;strong>~23.7 million non-coding RNA sequences&lt;/strong>
+— no alignments, no evolutionary input, just sequence. Its per-nucleotide embeddings transfer to structure
+and function tasks, and its successor &lt;strong>RhoFold+&lt;/strong> (&lt;a href="https://www.nature.com/articles/s41592-024-02487-0" target="_blank" rel="noopener">Shen et al., &lt;em>Nature Methods&lt;/em> 2024&lt;/a>)
+couples those embeddings to a geometry-aware network to predict &lt;strong>RNA 3D tertiary structure end-to-end from a
+single sequence&lt;/strong> — reaching state-of-the-art on RNA-Puzzles and CASP-style targets &lt;strong>in seconds&lt;/strong>. It is,
+roughly, the AlphaFold moment for RNA: fold prediction that used to need painstaking modeling now falls out
+of a pretrained model. Both are open (MIT). &lt;strong>Why it matters for the lab:&lt;/strong> an open, benchmarked model that
+turns sequence into structure is precisely the kind of tool our &lt;a href="https://aicell.io/project/bioimage-model-zoo/">BioImage Model Zoo&lt;/a>
+culture is built to share and stress-test — now for the molecule that carries the cell&amp;rsquo;s instructions.&lt;/p>
+&lt;h3 id="-writing-rna-from-understanding-to-de-novo-design">✍️ Writing RNA: from understanding to de novo design&lt;/h3>
+&lt;p>Reading is half the story; the newer leap is &lt;strong>design&lt;/strong>. &lt;strong>RNAGenesis&lt;/strong> (~1B parameters) unifies both in one
+model — a bidirectional encoder for &lt;em>understanding&lt;/em>, a query-based latent compression feeding a
+&lt;strong>diffusion-guided decoder&lt;/strong> for &lt;em>generation&lt;/em>. It ranks &lt;strong>first on 11 of 13 tasks&lt;/strong> of the BEACON RNA
+benchmark and, on design tasks, outperforms prior RNA models including RNA-FM and the genomic model &lt;strong>Evo2&lt;/strong>.
+Crucially it doesn&amp;rsquo;t stop at benchmarks: the authors introduce &lt;strong>RNATx-Bench&lt;/strong>, a therapeutics-oriented
+benchmark aggregating &lt;strong>over 100,000 experimentally validated RNAs&lt;/strong> across ASOs, siRNAs, shRNAs, circRNAs,
+aptamers and UTR variants — and they took a designed output to the bench, generating &lt;strong>CRISPR guide RNAs
+validated in HEK293T cells&lt;/strong> (targeting EGFP and B2M) with editing efficiency &lt;strong>equal to or better than
+wild-type&lt;/strong> guides. &lt;strong>Why it matters for the lab:&lt;/strong> this is design-build-&lt;em>test&lt;/em> on the messenger layer — a
+generative model that proposes a functional guide RNA and gets it working in cells. That closed loop, kept
+open and benchmarked, is the shape of the tools we build.&lt;/p>
+&lt;h3 id="-the-frontier-full-length-transcripts-in-one-context">🌐 The frontier: full-length transcripts, in one context&lt;/h3>
+&lt;p>The freshest entry pushes on the thing that has held RNA models back — &lt;strong>context length&lt;/strong>. &lt;strong>EVA&lt;/strong>
+(&amp;ldquo;Evolutionary Versatile Architect,&amp;rdquo; &lt;a href="https://www.biorxiv.org/content/10.64898/2026.03.17.712398v1.full" target="_blank" rel="noopener">bioRxiv, Mar 2026&lt;/a>;
+open under Apache-2.0, &lt;em>preprint, not yet peer-reviewed&lt;/em>) is a &lt;strong>~1.4B-parameter Mixture-of-Experts&lt;/strong>
+generator with an &lt;strong>8,192-token context window&lt;/strong> — versus roughly 1,024 in earlier RNA models — so it can
+model &lt;strong>full-length transcripts without truncation&lt;/strong>. It&amp;rsquo;s trained on &lt;strong>OpenRNA v1&lt;/strong>, a curated atlas of
+&lt;strong>114 million full-length RNA sequences&lt;/strong> across structural, regulatory, coding and viral RNAs, and it
+&lt;strong>conditions explicitly on RNA type and taxonomic lineage&lt;/strong> while jointly learning generation and infilling.
+The authors report state-of-the-art across mutation-effect prediction, conditional generation and functional
+design — and, like the others, released data, weights and code. (Alongside it, models like &lt;strong>AIDO.RNA&lt;/strong> and
+diffusion inverse-folders like &lt;strong>RiboDiffusion&lt;/strong> round out a suddenly crowded field.) &lt;strong>Why it matters for the
+lab:&lt;/strong> long-context, full-length modeling is what lets RNA join a &lt;em>whole-cell&lt;/em> picture rather than a
+fragment-at-a-time one — the transcript layer between genome and protein, at last legible end to end.&lt;/p>
+&lt;p>The pattern across all three is the one we keep betting on: &lt;strong>open weights, shared benchmarks, and design that
+gets checked at the bench.&lt;/strong> RNA was the layer of the virtual cell we could least read; a year later it&amp;rsquo;s one
+we can read &lt;em>and&lt;/em> write. The messenger is starting to speak our language back.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(X/Twitter sweep was skipped today — our news API is out of credits.) Have lab news to share — a
+talk, paper, conference or release? Message me on Slack.&lt;/em>&lt;/p></description></item><item><title>Lab Newsletter — July 29, 2026: Seeing the Cell's Machines</title><link>https://aicell.io/post/newsletter-2026-07-29/</link><pubDate>Wed, 29 Jul 2026 03:04:00 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-07-29/</guid><description>&lt;p>Most of this newsletter lives in the world of &lt;em>sequences&lt;/em> — genomes, transcripts, proteins as
 strings. Today we go the other way, all the way down to the &lt;strong>picture&lt;/strong>: cryo-electron tomography
 (cryo-ET) can now photograph molecular machines &lt;em>in their native cell&lt;/em>, unpurified and in place. The
 long-standing dream is &lt;strong>visual proteomics&lt;/strong> — a molecular atlas of the cell read directly from these
