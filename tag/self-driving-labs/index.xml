@@ -1,4 +1,57 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>self-driving-labs | AICell Lab</title><link>https://aicell.io/tag/self-driving-labs/</link><atom:link href="https://aicell.io/tag/self-driving-labs/index.xml" rel="self" type="application/rss+xml"/><description>self-driving-labs</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 27 Jul 2026 03:03:20 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>self-driving-labs</title><link>https://aicell.io/tag/self-driving-labs/</link></image><item><title>Lab Newsletter — July 27, 2026: The Prove-It Year</title><link>https://aicell.io/post/newsletter-2026-07-27/</link><pubDate>Mon, 27 Jul 2026 03:03:20 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-07-27/</guid><description>&lt;p>Most days this newsletter reads a paper. Today it reads the &lt;em>field&lt;/em> — the money, the rules and the
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>self-driving-labs | AICell Lab</title><link>https://aicell.io/tag/self-driving-labs/</link><atom:link href="https://aicell.io/tag/self-driving-labs/index.xml" rel="self" type="application/rss+xml"/><description>self-driving-labs</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 31 Jul 2026 03:07:00 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>self-driving-labs</title><link>https://aicell.io/tag/self-driving-labs/</link></image><item><title>Lab Newsletter — July 31, 2026: The Agent Decides</title><link>https://aicell.io/post/newsletter-2026-07-31/</link><pubDate>Fri, 31 Jul 2026 03:07:00 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-07-31/</guid><description>&lt;p>Three weeks ago we watched AI &lt;a href="https://aicell.io/post/newsletter-2026-07-10/">reach peer review as a co-scientist&lt;/a> and
+&lt;a href="https://aicell.io/post/newsletter-2026-07-11/">get wired into instruments&lt;/a>. The 2026 update is quieter and more
+consequential: the question is no longer whether an agent can &lt;em>run&lt;/em> an experiment, but whether it can
+&lt;em>decide which one to run next&lt;/em>. That single shift — from executing a human&amp;rsquo;s plan to choosing the plan —
+moves the whole bottleneck to the one place AI can&amp;rsquo;t shortcut: the physical world. It&amp;rsquo;s a frontier the lab
+lives on, so it&amp;rsquo;s worth reading closely.&lt;/p>
+&lt;h3 id="-from-executing-to-deciding">🔁 From executing to deciding&lt;/h3>
+&lt;p>A crisp &lt;a href="https://arxiv.org/abs/2607.04508" target="_blank" rel="noopener">July 2026 paper&lt;/a> (Hur &amp;amp; Lee, ICML 2026 AI-for-Science
+Workshop) draws the line exactly. In an ordinary self-driving lab (SDL) the robot &lt;em>executes&lt;/em> while a human
+decides which experiments are worth running; in an &lt;strong>agentic SDL&lt;/strong>, the agent itself handles ideation,
+planning and analysis — &lt;em>choosing&lt;/em> the experiments — and only the final step still needs the bench.
+&lt;em>&amp;ldquo;Agentic AI-for-Science can automate ideation, planning, and analysis, but final validation still
+depends on real experiments,&amp;rdquo;&lt;/em> the authors write. Their target is what they call the &lt;strong>validation
+bottleneck&lt;/strong>, and they attack it two ways: a &lt;strong>prior-aware experiment-design loop&lt;/strong> that uses domain
+knowledge and past results to propose fewer, more informative next experiments, and a &lt;strong>cost-aware
+surrogate&lt;/strong> that predicts expensive high-resolution measurements from cheap low-resolution ones —
+&lt;em>&amp;ldquo;chooses between a high- and a low-cost measurement based on the predicted uncertainty.&amp;rdquo;&lt;/em> They show it in
+&lt;strong>biology and materials&lt;/strong>. &lt;strong>Why it matters for the lab:&lt;/strong> spending fewer wet-lab rounds to reach the same
+answer is the whole economic case for &lt;a href="https://aicell.io/project/agent-lens/">Agent-Lens&lt;/a> and closed-loop microscopy —
+intelligence upstream so the expensive step downstream runs less often.&lt;/p>
+&lt;h3 id="-biology-has-already-closed-a-loop">🧪 Biology has already closed a loop&lt;/h3>
+&lt;p>Is this real for biology, or a materials-science story we admire from afar? It&amp;rsquo;s real. The &lt;strong>Virtual Lab&lt;/strong>
+(&lt;a href="https://www.nature.com/articles/s41586-025-09442-9" target="_blank" rel="noopener">Swanson, Wu, Bulaong, Pak &amp;amp; Zou, &lt;em>Nature&lt;/em> 646, 716–723, 2025&lt;/a>)
+put an &lt;strong>LLM principal-investigator agent&lt;/strong> in charge of a team of specialist agents — a chemist, a
+computer scientist, a critic — running structured &amp;ldquo;research meetings&amp;rdquo; with a human giving high-level
+feedback. Pointed at SARS-CoV-2, the agents assembled a pipeline (&lt;strong>ESM + AlphaFold-Multimer + Rosetta&lt;/strong>)
+and designed &lt;strong>92 nanobodies that were then experimentally validated&lt;/strong>, two of them binding better to the
+&lt;strong>JN.1 / KP.3&lt;/strong> variants while holding onto the ancestral spike — with the &lt;a href="https://github.com/zou-group/virtual-lab" target="_blank" rel="noopener">code open on
+GitHub&lt;/a>. &lt;strong>Why it matters for the lab:&lt;/strong> this is design-build-&lt;em>test&lt;/em>
+in biology, agent-run and then physically checked — the same closed loop the lab cares about, and proof
+the &amp;ldquo;agent decides&amp;rdquo; paradigm produces molecules that actually work, not just scores that look good.&lt;/p>
+&lt;h3 id="-the-missing-standard--and-the-honest-frontier">🔌 The missing standard — and the honest frontier&lt;/h3>
+&lt;p>If agents are going to drive real instruments at scale, they need a safe, common language to do it — and
+that&amp;rsquo;s the gap a &lt;a href="https://arxiv.org/abs/2606.03755" target="_blank" rel="noopener">June 2026 protocol paper&lt;/a> (Zhu et al.) names directly.
+&lt;strong>Anthropic&amp;rsquo;s MCP&lt;/strong> handles agent↔tool and &lt;strong>Google&amp;rsquo;s A2A&lt;/strong> handles agent↔agent, but &lt;em>neither addresses the
+agent↔instrument edge&lt;/em>, where operations are &amp;ldquo;stateful, safety-critical, and produce physical measurements
+with units and uncertainty.&amp;rdquo; Their &lt;strong>LAP&lt;/strong> protocol fills it with four primitives: a signed &lt;strong>InstrumentCard&lt;/strong>
+(what a machine can do), &lt;strong>reservation&lt;/strong> (exclusive locking), a &lt;strong>safety-fence handshake&lt;/strong> (operator
+confirmation for hazardous steps), and a &lt;strong>MeasurementResult schema&lt;/strong> (physically-typed, uncertainty-bearing
+results) — and it &lt;em>&amp;ldquo;encapsulates rather than replaces existing device standards such as SiLA 2 and OPC-UA.&amp;rdquo;&lt;/em>
+&lt;strong>Why it matters for the lab:&lt;/strong> this is a near-perfect description of what &lt;a href="https://aicell.io/project/hypha/">Hypha&lt;/a> and
+&lt;a href="https://aicell.io/project/bioengine/">BioEngine&lt;/a> already do — connect reasoning agents like the
+&lt;a href="https://aicell.io/project/bioimageio-chatbot/">BioImage.IO chatbot&lt;/a> to services and instruments — so an emerging &lt;em>standard&lt;/em>
+for that edge is a validation of the bet, not a threat to it. The honest frontier stays honest: biology
+still lags materials and chemistry because its data is noisier, and a &lt;strong>person in the loop&lt;/strong> remains central
+to safety — which is exactly why a protocol whose first-class primitive is a &lt;em>safety handshake&lt;/em> is the right
+shape.&lt;/p>
+&lt;p>The stack is inverting. For a decade the hard part of automation was the hands — the liquid handlers, the
+stages, the cameras. Increasingly the hard part is the &lt;em>head&lt;/em>: an agent good enough to decide what&amp;rsquo;s worth
+doing, honest enough to know its guess is cheap and the experiment is not. Building the safe, open plumbing
+between that head and those hands is a lab-shaped problem — and it&amp;rsquo;s the one we&amp;rsquo;ve been working on all along.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(X/Twitter sweep was skipped today — our news API is out of credits.) Have lab news to share — a
+talk, paper, conference or release? Message me on Slack.&lt;/em>&lt;/p></description></item><item><title>Lab Newsletter — July 27, 2026: The Prove-It Year</title><link>https://aicell.io/post/newsletter-2026-07-27/</link><pubDate>Mon, 27 Jul 2026 03:03:20 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-07-27/</guid><description>&lt;p>Most days this newsletter reads a paper. Today it reads the &lt;em>field&lt;/em> — the money, the rules and the
 reality check taking shape around AI-for-biology. One analyst calls 2026 the field&amp;rsquo;s &lt;strong>&amp;ldquo;prove it&amp;rdquo;
 year&lt;/strong>, and the numbers, the regulators and the robots all agree the honeymoon is over.&lt;/p>
 &lt;h3 id="-the-money-is-real--and-pooling-at-the-top">💰 The money is real — and pooling at the top&lt;/h3>
