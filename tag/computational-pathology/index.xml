@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>computational-pathology | AICell Lab</title><link>https://aicell.io/tag/computational-pathology/</link><atom:link href="https://aicell.io/tag/computational-pathology/index.xml" rel="self" type="application/rss+xml"/><description>computational-pathology</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sat, 01 Aug 2026 03:07:00 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>computational-pathology</title><link>https://aicell.io/tag/computational-pathology/</link></image><item><title>Lab Newsletter — August 1, 2026: Proof Under the Microscope</title><link>https://aicell.io/post/newsletter-2026-08-01/</link><pubDate>Sat, 01 Aug 2026 03:07:00 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-08-01/</guid><description>&lt;p>A week and a half ago we watched pathology AI &lt;a href="https://aicell.io/post/newsletter-2026-07-21/">learn to talk&lt;/a> — vision-
+language models reading slides and drafting reports. Impressive, but the honest question for anything
+that touches a diagnosis isn&amp;rsquo;t &amp;ldquo;can it read the slide?&amp;rdquo; It&amp;rsquo;s &amp;ldquo;does it hold up when a real patient is on
+the other end?&amp;rdquo; This week that question got two of the best answers it&amp;rsquo;s had: a foundation model tested
+&lt;strong>prospectively and in a randomized trial&lt;/strong>, and another that &lt;strong>shows its reasoning&lt;/strong> the way a
+pathologist would. For a lab whose roots are in tissue imaging and the &lt;a href="https://www.proteinatlas.org" target="_blank" rel="noopener">Human Protein
+Atlas&lt;/a>, it&amp;rsquo;s a story worth reading closely.&lt;/p>
+&lt;h3 id="-from-auc-to-rct">🩺 From AUC to RCT&lt;/h3>
+&lt;p>Most computational-pathology results are &lt;em>retrospective&lt;/em>: strong AUCs on frozen test sets. A &lt;a href="https://arxiv.org/abs/2605.25878" target="_blank" rel="noopener">May–July
+2026 preprint&lt;/a> (Guo et al., 26 authors) pushes past that. &lt;strong>PulmoFoundation&lt;/strong>
+— built on Virchow2 with subspecialty pretraining on &lt;strong>~40,000 lung whole-slide images&lt;/strong>, evaluated across
+&lt;strong>32 clinical tasks&lt;/strong> — was put through the tests clinical tools actually have to pass. In &lt;em>&amp;ldquo;a registered
+prospective study of 1,357 patients across 11 diagnostic tasks,&amp;rdquo;&lt;/em> the authors report an &lt;strong>average AUC of
+92.3%&lt;/strong>; and in a &lt;strong>crossover randomized controlled trial&lt;/strong> (eight pathologists, 5,264 case-reader pairs),
+reader accuracy rose to &lt;strong>91.7% with AI versus 83.2% without&lt;/strong>, with inter-rater agreement climbing &amp;ldquo;from
+moderate (kappa = 0.55) to substantial (kappa = 0.76).&amp;rdquo; &lt;em>(It&amp;rsquo;s a preprint, not yet peer-reviewed, and the
+numbers are the authors&amp;rsquo; own — but the study design is the news.)&lt;/em> &lt;strong>Why it matters for the lab:&lt;/strong> this is
+our &lt;a href="https://aicell.io/post/newsletter-2026-07-28/">held-out-benchmark&lt;/a> discipline graduating to its final exam. A
+prospective study and an RCT are a far higher bar than a leaderboard — and the same bar our
+&lt;a href="https://aicell.io/project/bioimage-model-zoo/">BioImage Model Zoo&lt;/a> ethos points toward: don&amp;rsquo;t just score a model, prove it
+where it&amp;rsquo;s used.&lt;/p>
+&lt;h3 id="-show-your-work">🔍 Show your work&lt;/h3>
+&lt;p>A number is only half of trust; a clinician needs to know &lt;em>why&lt;/em>. &lt;strong>&lt;a href="https://arxiv.org/abs/2505.20510" target="_blank" rel="noopener">CPathAgent&lt;/a>&lt;/strong>
+(Sun et al.) rethinks the whole-slide model as an &lt;strong>agent that navigates the slide&lt;/strong> rather than a black
+box that emits a label. Because pathologists &amp;ldquo;systematically examine slides at low magnification to obtain
+an overview before progressively zooming in on suspicious regions,&amp;rdquo; CPathAgent does the same — starting
+broad, autonomously zooming into regions of interest, and generating a &lt;strong>step-by-step, navigable diagnostic
+summary&lt;/strong>. Its motivation is a pointed critique of the field: &amp;ldquo;existing models directly output final
+diagnoses without revealing the underlying reasoning process.&amp;rdquo; It even ships a new benchmark, PathMMU-HR2,
+for the awkward middle scale between a single patch and a full slide. &lt;strong>Why it matters for the lab:&lt;/strong> a model
+that reasons &lt;em>and shows the reasoning&lt;/em> is exactly the shape of the tools we build — the
+&lt;a href="https://aicell.io/project/bioimageio-chatbot/">BioImage.IO chatbot&lt;/a>, &lt;a href="https://aicell.io/project/agent-lens/">Agent-Lens&lt;/a>. Interpretability
+isn&amp;rsquo;t a nicety in the clinic; it&amp;rsquo;s the difference between a tool a pathologist can use and one they can&amp;rsquo;t.&lt;/p>
+&lt;h3 id="-the-next-axis--and-who-gets-to-build">🧬 The next axis — and who gets to build&lt;/h3>
+&lt;p>The frontier is adding a third kind of evidence to the picture: molecules. &lt;strong>mSTAR&lt;/strong> (&lt;a href="https://www.nature.com/articles/s41467-025-66220-x" target="_blank" rel="noopener">&lt;em>Nature
+Communications&lt;/em>, Dec 2025&lt;/a>) fuses &lt;strong>slides, expert
+reports, and gene-expression profiles&lt;/strong> in one model — 26,169 slide-level pairs across 32 cancers — the step
+beyond the image-plus-text models of a fortnight ago toward &lt;strong>image ↔ molecular&lt;/strong>, the very bridge the Human
+Protein Atlas was built on. Meanwhile the deployment picture is maturing: a &lt;a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC13183467/" target="_blank" rel="noopener">2026 field
+review&lt;/a> notes expanding &lt;strong>FDA clearances&lt;/strong> (Paige
+Prostate; HER2, PD-L1 and Ki-67 quantification) for tools that &lt;em>augment&lt;/em> pathologists rather than replace
+them, and a turn toward &lt;strong>federated learning&lt;/strong> so models can be trained &amp;ldquo;privacy-preserving&amp;rdquo; without pooling
+patients&amp;rsquo; slides in one place. The honest frontier stays honest: pathologists themselves disagree on tumor
+grade in a large fraction of cases (kappa ~0.4–0.7), and rare diseases remain data-starved. &lt;strong>Why it matters
+for the lab:&lt;/strong> the image↔molecular fusion is our home turf, and &lt;em>building clinical models without
+centralizing sensitive data&lt;/em> is precisely the privacy-preserving direction we care about — capability and
+governance advancing together.&lt;/p>
+&lt;p>The through-line of the last two weeks is quietly consistent: &lt;a href="https://aicell.io/post/newsletter-2026-07-28/">genome models got their audit&lt;/a>,
+&lt;a href="https://aicell.io/post/newsletter-2026-07-31/">agents had to prove they could decide&lt;/a>, and now the microscope&amp;rsquo;s AI is being
+asked to prove it in front of patients — and to explain itself while it does. That&amp;rsquo;s not the hype phase of a
+technology. It&amp;rsquo;s the part where it earns its place.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(X/Twitter sweep was skipped today — our news API is out of credits.) Have lab news to share — a
+talk, paper, conference or release? Message me on Slack.&lt;/em>&lt;/p></description></item></channel></rss>

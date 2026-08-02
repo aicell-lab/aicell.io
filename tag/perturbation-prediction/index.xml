@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>perturbation-prediction | AICell Lab</title><link>https://aicell.io/tag/perturbation-prediction/</link><atom:link href="https://aicell.io/tag/perturbation-prediction/index.xml" rel="self" type="application/rss+xml"/><description>perturbation-prediction</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 02 Aug 2026 03:07:00 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>perturbation-prediction</title><link>https://aicell.io/tag/perturbation-prediction/</link></image><item><title>Lab Newsletter — August 2, 2026: The Cell That Shows Its Work</title><link>https://aicell.io/post/newsletter-2026-08-02/</link><pubDate>Sun, 02 Aug 2026 03:07:00 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-08-02/</guid><description>&lt;p>Three weeks ago we watched an &lt;a href="https://aicell.io/post/newsletter-2026-07-09/">entire minimal cell come alive in 4D&lt;/a> —
+the &lt;em>mechanistic&lt;/em> road to a virtual cell, every reaction hand-modeled. The other road is the &lt;em>learned&lt;/em>
+one: black-box foundation models trained on hundreds of millions of single cells, predicting how a cell
+shifts when you perturb it. Each has a weakness the other doesn&amp;rsquo;t: mechanistic models are legible but
+don&amp;rsquo;t scale; learned models scale but can&amp;rsquo;t tell you &lt;em>why&lt;/em>. This season a &lt;strong>third road&lt;/strong> started to look
+real — models that keep the legibility and borrow the scale, by fusing structured biology with a
+reasoning engine. For a lab building toward a &lt;a href="https://aicell.io/project/human-cell-simulator/">virtual cell&lt;/a>, it&amp;rsquo;s the
+most interesting direction of the year — and it comes with a sharp reality check.&lt;/p>
+&lt;h3 id="-a-cell-that-reasons-out-loud">🧩 A cell that reasons out loud&lt;/h3>
+&lt;p>The clearest statement of the new road is &lt;strong>&lt;a href="https://arxiv.org/abs/2512.00306" target="_blank" rel="noopener">VCWorld&lt;/a>&lt;/strong> (Wei et al.,
+&lt;em>accepted at ICLR 2026&lt;/em>): a &lt;strong>&amp;ldquo;white-box&amp;rdquo; cell simulator&lt;/strong> that, in the authors&amp;rsquo; words, &amp;ldquo;integrates
+structured biological knowledge with the iterative reasoning capabilities of large language models&amp;rdquo; to
+build a &lt;strong>biological world model&lt;/strong>. Instead of emitting a bare differential-expression vector, it
+&lt;strong>reproduces perturbation-induced signaling cascades&lt;/strong> and produces &lt;strong>interpretable, step-by-step
+predictions and explicit mechanistic hypotheses&lt;/strong>. Its target is exactly the complaint we keep making
+about the data-driven models: they &amp;ldquo;often function as black boxes, offering predictions without
+interpretability,&amp;rdquo; and their generalization &amp;ldquo;remains constrained by data quality, coverage, and batch
+effects.&amp;rdquo; VCWorld claims to sidestep both — it &amp;ldquo;operates in a data-efficient manner&amp;rdquo; and reports
+state-of-the-art on drug-perturbation benchmarks with inferred pathways that match known biology.
+&lt;strong>Why it matters for the lab:&lt;/strong> a virtual cell you can &lt;em>interrogate&lt;/em> — that hands you a mechanism, not
+just a number — is the whole point of the &lt;a href="https://aicell.io/project/human-cell-simulator/">Human Cell Simulator&lt;/a>. This
+is the shape we&amp;rsquo;ve been arguing the field should take.&lt;/p>
+&lt;h3 id="-not-a-one-off--a-pattern">🧬 Not a one-off — a pattern&lt;/h3>
+&lt;p>VCWorld isn&amp;rsquo;t alone, which is what makes it a &lt;em>turn&lt;/em> rather than a paper. &lt;strong>&lt;a href="https://arxiv.org/abs/2604.20263" target="_blank" rel="noopener">AROMA&lt;/a>&lt;/strong>
+(Wang et al., &lt;em>ACL 2026 Findings&lt;/em>) attacks genetic-perturbation prediction the same way from a different
+angle: it grounds every prediction in &lt;strong>structured knowledge&lt;/strong> — building two biological knowledge graphs
+(gene–gene associations and pathway structure) plus a large reasoning dataset — so that, as the authors
+put it, &amp;ldquo;AROMA integrates textual evidence, graph-topology information, and protein sequence features to
+model perturbation-target dependencies.&amp;rdquo; A two-stage training recipe aims for predictions that are &amp;ldquo;both
+accurate and interpretable,&amp;rdquo; and it reports holding up &lt;strong>zero-shot on an unseen cell line&lt;/strong>, with weights
+and code released. Two independent groups, two venues, one thesis: &lt;strong>stop treating the cell as a function
+to fit, and start treating it as a system to reason about&lt;/strong> — with the knowledge graph and the language
+model doing the reasoning, in the open. &lt;strong>Why it matters for the lab:&lt;/strong> knowledge-grounded models that
+&lt;em>show their work&lt;/em> are the exact shape of our agent stack — the &lt;a href="https://aicell.io/project/bioimageio-chatbot/">BioImage.IO chatbot&lt;/a>
+and the reasoning tools we build are bets that inspectable beats inscrutable.&lt;/p>
+&lt;h3 id="-plausible-is-not-predictive">⚖️ Plausible is not predictive&lt;/h3>
+&lt;p>Here&amp;rsquo;s the discipline the moment needs. A rationale that &lt;em>reads&lt;/em> right can still be &lt;em>wrong&lt;/em>, and a July
+study says so plainly. &lt;strong>&lt;a href="https://arxiv.org/abs/2606.01042" target="_blank" rel="noopener">&amp;ldquo;Plausibility Is Not Prediction&amp;rdquo;&lt;/a>&lt;/strong> (Yuan et
+al., Mila / Jian Tang group) stress-tests LLM-based perturbation reasoning and finds that although these
+models generate credible mechanistic stories, they &amp;ldquo;&lt;strong>fail to capture perturbation-specific effects&lt;/strong>&amp;rdquo; —
+often scoring &lt;strong>worse than a trivial gene-frequency baseline&lt;/strong> in aggregate, and &lt;strong>collapsing to
+chance-level at the per-gene level&lt;/strong>. The diagnosis is unsparing: &amp;ldquo;this reveals a reliance on intrinsic
+gene response tendencies rather than true perturbation reasoning&amp;rdquo; — the model has learned which genes
+&lt;em>tend&lt;/em> to move, not what &lt;em>this&lt;/em> perturbation actually does. Their fix is constructive, not just critical:
+&lt;strong>CORE&lt;/strong>, which reframes prediction as &lt;em>comparison&lt;/em> across related perturbations rather than judging each
+pair in isolation, and recovers real perturbation-specific accuracy. It rhymes with the field&amp;rsquo;s larger
+humility — Arc&amp;rsquo;s &lt;a href="https://arcinstitute.org/news/virtual-cell-challenge-2025-wrap-up" target="_blank" rel="noopener">Virtual Cell Challenge&lt;/a>
+found winning models still leaning on classical statistics and only inconsistently beating naive
+baselines, and Arc&amp;rsquo;s own &lt;a href="https://arcinstitute.org/news/virtual-cell-model-state" target="_blank" rel="noopener">STATE&lt;/a> made news partly
+for being &amp;ldquo;the first model to consistently beat simple linear baselines.&amp;rdquo; &lt;strong>Why it matters for the lab:&lt;/strong>
+this is our &lt;a href="https://aicell.io/post/newsletter-2026-07-28/">prove-it discipline&lt;/a> aimed squarely at the interpretable
+paradigm we&amp;rsquo;re rooting for. Interpretability is necessary; it is not sufficient. A story is not a result.&lt;/p>
+&lt;p>The honest read of 2026 is that the virtual cell needs &lt;em>both&lt;/em> halves at once. A black box that predicts
+but can&amp;rsquo;t explain won&amp;rsquo;t be trusted at the bench; a reasoner that explains beautifully but can&amp;rsquo;t predict
+is worse — it&amp;rsquo;s &lt;em>persuasive&lt;/em> and wrong. The prize is the model that does both: shows its work &lt;strong>and&lt;/strong>
+gets the answer right, on data it has never seen. That&amp;rsquo;s a harder target than either road alone — and
+it&amp;rsquo;s exactly the one a lab that cares about open, inspectable, benchmarked tools should be aiming for.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(X/Twitter sweep was skipped today — our news API is out of credits.) Have lab news to share — a
+talk, paper, conference or release? Message me on Slack.&lt;/em>&lt;/p></description></item></channel></rss>
