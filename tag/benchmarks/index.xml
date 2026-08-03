@@ -1,4 +1,64 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>benchmarks | AICell Lab</title><link>https://aicell.io/tag/benchmarks/</link><atom:link href="https://aicell.io/tag/benchmarks/index.xml" rel="self" type="application/rss+xml"/><description>benchmarks</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sat, 18 Jul 2026 03:03:56 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>benchmarks</title><link>https://aicell.io/tag/benchmarks/</link></image><item><title>Lab Newsletter — July 18, 2026: Data Decides</title><link>https://aicell.io/post/newsletter-2026-07-18/</link><pubDate>Sat, 18 Jul 2026 03:03:56 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-07-18/</guid><description>&lt;p>Two big &amp;ldquo;virtual organ&amp;rdquo; efforts reported results this stretch, and both point at the same
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>benchmarks | AICell Lab</title><link>https://aicell.io/tag/benchmarks/</link><atom:link href="https://aicell.io/tag/benchmarks/index.xml" rel="self" type="application/rss+xml"/><description>benchmarks</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 03 Aug 2026 03:07:00 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>benchmarks</title><link>https://aicell.io/tag/benchmarks/</link></image><item><title>Lab Newsletter — August 3, 2026: The Third Molecule</title><link>https://aicell.io/post/newsletter-2026-08-03/</link><pubDate>Mon, 03 Aug 2026 03:07:00 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-08-03/</guid><description>&lt;p>Over the last two weeks we&amp;rsquo;ve watched generative design take on two of the cell&amp;rsquo;s molecules — the
+&lt;a href="https://aicell.io/post/newsletter-2026-07-23/">proteins&lt;/a> it &lt;a href="https://aicell.io/post/newsletter-2026-07-25/">builds from&lt;/a> and the
+&lt;a href="https://aicell.io/post/newsletter-2026-07-30/">RNA&lt;/a> that carries its instructions. The third is the oldest target of all
+and the hardest: the &lt;strong>small molecule&lt;/strong>, the little drug that has to slot into a protein pocket and &lt;em>do&lt;/em>
+something. It&amp;rsquo;s hard because chemical space is effectively infinite and the only judge that counts is a
+wet-lab assay. This year gave us both halves of an honest picture — a model whose designed molecules
+&lt;strong>actually worked at the bench&lt;/strong>, and a benchmark blunt enough to say how rarely that still happens. For a
+lab that lives by held-out tests and the design-build-&lt;em>test&lt;/em> loop, the pairing is the whole lesson.&lt;/p>
+&lt;h3 id="-the-good-news-it-works-at-the-bench">💊 The good news: it works, at the bench&lt;/h3>
+&lt;p>The capability milestone is &lt;strong>&lt;a href="https://www.nature.com/articles/s41467-025-63245-0" target="_blank" rel="noopener">DiffGui&lt;/a>&lt;/strong> (Hu et al.,
+&lt;em>Nature Communications&lt;/em> 16:7928, 2025 — peer-reviewed). It&amp;rsquo;s a &lt;strong>target-conditioned E(3)-equivariant
+diffusion&lt;/strong> model that grows a ligand inside a protein pocket, with two ideas that matter: it &lt;strong>diffuses
+atoms and bonds together&lt;/strong> (so bond types follow the evolving geometry instead of being bolted on
+afterward, cutting the distorted rings that plagued earlier models), and it uses &lt;strong>property guidance&lt;/strong> to
+steer generation toward binding affinity and drug-likeness at once. On standard benchmarks it beats a row
+of prior methods on structural realism and affinity — but the headline is what happened &lt;em>off&lt;/em> the
+leaderboard. For &lt;strong>RSK4&lt;/strong>, a kinase not in its training set, DiffGui&amp;rsquo;s two synthesized molecules were
+active in an HTRF assay at &lt;strong>IC₅₀ ≈ 215 nM and ≈ 111 nM&lt;/strong>; in a lead-optimization test on &lt;strong>DHODH&lt;/strong> it
+sharpened one series from &lt;strong>32 nM to 10 nM&lt;/strong>. The authors report &amp;ldquo;both Compound 1 and Compound 2
+demonstrate potent inhibitory activity in the HTRF assay.&amp;rdquo; &lt;strong>Why it matters for the lab:&lt;/strong> this is
+design-build-&lt;em>test&lt;/em> in chemistry — a generative model whose output was synthesized and measured, not just
+scored. That closed loop, kept open (the &lt;a href="https://github.com/QiaoyuHu89/DiffGui" target="_blank" rel="noopener">code is on GitHub&lt;/a>), is
+the shape of tooling we care about.&lt;/p>
+&lt;h3 id="-the-honest-ruler">📏 The honest ruler&lt;/h3>
+&lt;p>Now the counterweight, and it&amp;rsquo;s a good one. Most molecule-generation papers report affinity and validity on
+frozen test sets — numbers that flatter. &lt;strong>&lt;a href="https://www.biorxiv.org/content/10.1101/2025.11.03.686215v1.full" target="_blank" rel="noopener">MolGenBench&lt;/a>&lt;/strong>
+(bioRxiv, Nov 2025; &lt;em>preprint&lt;/em>) refuses to. It assembles a genuinely industrial yardstick — &lt;strong>120 protein
+targets, 5,433 chemical series, 220,005 experimentally confirmed active molecules&lt;/strong> — and runs &lt;strong>17
+generative models&lt;/strong> through the multi-stage workflow real discovery actually uses. The findings are
+sobering and specific. Stratify targets by whether the model &lt;em>saw&lt;/em> them in training and the floor drops out:
+top de-novo hit rate falls from &lt;strong>0.124% on familiar proteins to 0.024% on unseen ones&lt;/strong>, and benchmarks
+that don&amp;rsquo;t stratify &amp;ldquo;overestimate real-world utility.&amp;rdquo; Most models show &lt;strong>weak target awareness&lt;/strong> —
+generating &amp;ldquo;structurally similar molecules regardless of which target they were conditioned on.&amp;rdquo; Pose
+quality is thin: &lt;strong>typically below 23%&lt;/strong> of generated poses land within 2 Å of a redocked conformation. And
+you can&amp;rsquo;t brute-force it — sampling &lt;strong>100,000&lt;/strong> molecules per target raised the raw number of hits &amp;ldquo;but with
+diminishing efficiency.&amp;rdquo; &lt;strong>Why it matters for the lab:&lt;/strong> this is our &lt;a href="https://aicell.io/post/newsletter-2026-07-28/">prove-it discipline&lt;/a>
+transplanted into chemistry, and its central rule is one we keep repeating — &lt;em>stratify by novelty or you&amp;rsquo;ll
+fool yourself&lt;/em>. A model that shines on proteins it has seen and collapses on the ones you actually need is a
+benchmark artifact, not a drug engine. The &lt;a href="https://aicell.io/project/bioimage-model-zoo/">BioImage Model Zoo&lt;/a> ethos —
+share the model &lt;em>and&lt;/em> the honest test — is exactly what a field at this stage needs.&lt;/p>
+&lt;h3 id="-the-way-through">🧭 The way through&lt;/h3>
+&lt;p>The gap is real, but 2026 is also showing how it closes. On the protein-binder side,
+&lt;strong>&lt;a href="https://neurosnap.ai/blog/post/boltzgen-a-universal-generative-framework-for-biomolecular-binder-design/6914d2838b9522d6ffefa787" target="_blank" rel="noopener">BoltzGen&lt;/a>&lt;/strong>
+(Nov 2025) took the novel-target wall head-on and reported &lt;strong>wet-lab nanomolar binders for nine new targets&lt;/strong>
+sharing under &lt;strong>30% sequence identity&lt;/strong> with anything in the PDB — proof that generalization past the
+training distribution is achievable, not just aspirational. And a &lt;a href="https://pubs.acs.org/doi/10.1021/acs.jcim.5c02234" target="_blank" rel="noopener">2026 review in &lt;em>JCIM&lt;/em>&lt;/a>
+names the levers: bake in &lt;strong>physical priors&lt;/strong> instead of hoping the model learns physics, fuse &lt;strong>structure,
+omics, and phenotype&lt;/strong> rather than scoring on pocket-fit alone, wrap the generator in &lt;strong>autonomous agents&lt;/strong>
+that adapt across design-make-test rounds, and optimize for &lt;strong>many objectives with uncertainty&lt;/strong> in view.
+Read that list and it&amp;rsquo;s a map of the lab: agents that close the loop (&lt;a href="https://aicell.io/project/agent-lens/">Agent-Lens&lt;/a>,
+the &lt;a href="https://aicell.io/project/bioimageio-chatbot/">BioImage.IO chatbot&lt;/a>), and the multimodal, phenotype-aware scoring that a
+&lt;a href="https://aicell.io/project/human-cell-simulator/">virtual cell&lt;/a> is built to provide — judging a molecule not by how it fits a
+pocket but by what it does to a cell.&lt;/p>
+&lt;p>The arc across three molecules is the same each time. Generation gets impressive fast; the bench stays
+honest; and the models that matter are the ones willing to be measured where it&amp;rsquo;s hard — on the target
+they&amp;rsquo;ve never seen, in the assay that doesn&amp;rsquo;t care how good the loss curve looked. Proteins, RNA, and now
+small molecules are all learning the same lesson we build around: a design is a hypothesis, and the
+experiment gets the last word.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(X/Twitter sweep was skipped today — our news API is out of credits.) Have lab news to share — a
+talk, paper, conference or release? Message me on Slack.&lt;/em>&lt;/p></description></item><item><title>Lab Newsletter — July 18, 2026: Data Decides</title><link>https://aicell.io/post/newsletter-2026-07-18/</link><pubDate>Sat, 18 Jul 2026 03:03:56 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-07-18/</guid><description>&lt;p>Two big &amp;ldquo;virtual organ&amp;rdquo; efforts reported results this stretch, and both point at the same
 unglamorous truth: the models don&amp;rsquo;t win on size — they win on &lt;em>data&lt;/em>.&lt;/p>
 &lt;h3 id="-the-virtual-cell-challenges-verdict-hybrids-won">🏆 The Virtual Cell Challenge&amp;rsquo;s verdict: hybrids won&lt;/h3>
 &lt;p>Arc Institute&amp;rsquo;s inaugural
