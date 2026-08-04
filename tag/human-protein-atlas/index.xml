@@ -1,1 +1,61 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Human Protein Atlas | AICell Lab</title><link>https://aicell.io/tag/human-protein-atlas/</link><atom:link href="https://aicell.io/tag/human-protein-atlas/index.xml" rel="self" type="application/rss+xml"/><description>Human Protein Atlas</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 20 Apr 2026 00:00:00 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>Human Protein Atlas</title><link>https://aicell.io/tag/human-protein-atlas/</link></image><item><title>Cell shapes decode molecular phenotypes in image-based spatial proteomics</title><link>https://aicell.io/publication/le-2026-cell-shapes/</link><pubDate>Mon, 20 Apr 2026 00:00:00 +0000</pubDate><guid>https://aicell.io/publication/le-2026-cell-shapes/</guid><description/></item><item><title>Generative machine learning unlocks the first proteome-wide image of human cells</title><link>https://aicell.io/publication/sun-2026-proteome-wide/</link><pubDate>Thu, 02 Apr 2026 00:00:00 +0000</pubDate><guid>https://aicell.io/publication/sun-2026-proteome-wide/</guid><description/></item><item><title>Image based subcellular mapping of the protein landscape of SARS-CoV-2 infected cells for target-centric drug repurposing</title><link>https://aicell.io/publication/tampere-2025-subcellular/</link><pubDate>Wed, 01 Oct 2025 00:00:00 +0000</pubDate><guid>https://aicell.io/publication/tampere-2025-subcellular/</guid><description/></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>human-protein-atlas | AICell Lab</title><link>https://aicell.io/tag/human-protein-atlas/</link><atom:link href="https://aicell.io/tag/human-protein-atlas/index.xml" rel="self" type="application/rss+xml"/><description>human-protein-atlas</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 04 Aug 2026 03:07:00 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>human-protein-atlas</title><link>https://aicell.io/tag/human-protein-atlas/</link></image><item><title>Lab Newsletter — August 4, 2026: The Cell's Fingerprint</title><link>https://aicell.io/post/newsletter-2026-08-04/</link><pubDate>Tue, 04 Aug 2026 03:07:00 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-08-04/</guid><description>&lt;p>A &lt;a href="https://aicell.io/post/newsletter-2026-07-19/">few weeks ago&lt;/a> we watched cell segmentation grow up — models that
+reliably find &lt;em>where&lt;/em> the cells are, across microscopes they&amp;rsquo;ve never met. That&amp;rsquo;s the outline. The
+layer directly above it is quieter and, for a lab that wants to &lt;em>measure&lt;/em> biology, more consequential:
+turning those outlined pixels into &lt;strong>meaning&lt;/strong> — a compact, quantitative &lt;strong>phenotypic fingerprint&lt;/strong> of
+what a cell is doing, that you can compare, cluster, and query. This is &lt;strong>image-based profiling&lt;/strong>, and
+2025–26 is the season it grew a proper foundation model — one trained, as it happens, on our own home
+turf.&lt;/p>
+&lt;h3 id="-a-model-that-reads-the-cell-not-just-its-shape">🔬 A model that reads the cell, not just its shape&lt;/h3>
+&lt;p>The capability anchor is &lt;strong>&lt;a href="https://www.biorxiv.org/content/10.1101/2024.12.06.627299v2" target="_blank" rel="noopener">SubCell&lt;/a>&lt;/strong>
+(Gupta, Wefers, … Karaletsos, Lundberg; &lt;em>bioRxiv&lt;/em>, updated Oct 2025 — &lt;em>preprint&lt;/em>): a suite of
+&lt;strong>self-supervised Vision Transformers&lt;/strong> trained on the &lt;strong>&lt;a href="https://www.proteinatlas.org" target="_blank" rel="noopener">Human Protein Atlas&lt;/a>&lt;/strong> —
+protein expression and spatial distribution for &lt;strong>more than 13,000 genes across 37 cell lines&lt;/strong> — with a
+&lt;strong>proteome-aware learning objective&lt;/strong>. Point it at a fluorescence image and it emits an embedding that
+captures &amp;ldquo;cellular morphology, protein localization, cellular organization, and biological function.&amp;rdquo; The
+result that matters is the transfer: &lt;em>without any fine-tuning&lt;/em>, SubCell &amp;ldquo;produces robust representations …
+across diverse independent datasets that vary greatly in image resolution, channel markers, cell types, and
+even species&amp;rdquo; — and it drives real downstream work: localization classification, cell-cycle modeling, drug-
+response prediction, and mechanism-of-action identification, on datasets from OpenCell to JUMP Cell
+Painting. From that single representation the authors build &amp;ldquo;the first image-based multiscale map of
+subcellular protein organization,&amp;rdquo; learned directly from pixels. &lt;strong>Why it matters for the lab:&lt;/strong> this is
+close to home in two senses. The data is the Human Protein Atlas — the imaging substrate the
+&lt;a href="https://aicell.io/project/human-cell-simulator/">Human Cell Simulator&lt;/a> leans on — and the work comes out of Emma
+Lundberg&amp;rsquo;s group at &lt;strong>KTH&lt;/strong>, next door. A model that reads phenotype straight from a picture is the
+&lt;em>measurement layer&lt;/em> of everything we build.&lt;/p>
+&lt;h3 id="-the-wall-when-the-channels-dont-match">🧱 The wall: when the channels don&amp;rsquo;t match&lt;/h3>
+&lt;p>Capability is half the story; the field is refreshingly candid about the other half. Morphology models
+are usually &amp;ldquo;trained with a single microscopy imaging type,&amp;rdquo; which yields — in the words of
+&lt;strong>&lt;a href="https://arxiv.org/abs/2512.20833" target="_blank" rel="noopener">CHAMMI-75&lt;/a>&lt;/strong> (Agrawal, … Caicedo; &lt;em>ICLR 2026&lt;/em>) — &amp;ldquo;specialized models
+that cannot be reused across biological studies because the technical specifications do not match,&amp;rdquo; the
+classic offender being a &amp;ldquo;different number of channels.&amp;rdquo; Your beautiful five-channel Cell Painting model
+meets a three-channel assay and simply has nowhere to put the pixels. CHAMMI-75&amp;rsquo;s answer is a public
+&lt;strong>dataset of heterogeneous, multi-channel images from 75 diverse biological studies&lt;/strong>, built to train models
+that are &amp;ldquo;channel-adaptive and can process any microscopy image type&amp;rdquo;; the authors show that its sheer
+&lt;strong>diversity of modalities&lt;/strong> is what improves multi-channel performance. It&amp;rsquo;s the same lesson we keep
+relearning in a new dialect: &lt;strong>generalization is a data problem before it&amp;rsquo;s a model problem&lt;/strong>, and the
+route through is heterogeneity, in the open.&lt;/p>
+&lt;h3 id="-the-honest-map-of-whats-left">📏 The honest map of what&amp;rsquo;s left&lt;/h3>
+&lt;p>For the wider view, a 2025 review from the group that invented Cell Painting —
+&lt;strong>&lt;a href="https://arxiv.org/abs/2508.05800" target="_blank" rel="noopener">&amp;ldquo;Progress and new challenges in image-based profiling&amp;rdquo;&lt;/a>&lt;/strong> (Serrano, …
+Carpenter, Singh, Caicedo, Way) — is exactly the kind of stocktake we value. It credits how far deep
+learning has pushed the field (single-cell analysis, robust similarity metrics, expansion into &amp;ldquo;optical
+pooled screening, temporal imaging, and 3D organoid profiling,&amp;rdquo; and &amp;ldquo;the growth of public benchmarks and
+open-source software ecosystems&amp;rdquo;), then names what&amp;rsquo;s still unsolved without flinching: &amp;ldquo;developing methods
+for emerging temporal and 3D data modalities, establishing robust quality control standards and workflows,
+and interpreting the processed features.&amp;rdquo; That last one is the deepest — an embedding can separate two
+conditions perfectly and still not tell you &lt;em>which&lt;/em> piece of biology moved. A &lt;a href="https://www.cell.com/cell-systems/abstract/S2405-4712%2826%2900016-5" target="_blank" rel="noopener">&lt;em>Cell Systems&lt;/em> piece this
+year&lt;/a> frames the road ahead as the shift
+from modality-specific to &lt;strong>compositional, assay-agnostic&lt;/strong> foundation models — open, benchmarked, and not
+locked to one fixed panel. &lt;strong>Why it matters for the lab:&lt;/strong> publish the model &lt;em>and&lt;/em> the honest test — the
+&lt;a href="https://aicell.io/project/bioimage-model-zoo/">BioImage Model Zoo&lt;/a> and AI4Life ethos — is precisely how a field at this
+stage compounds instead of fragmenting.&lt;/p>
+&lt;p>Read the three together and the arc is familiar. A picture of a cell is one of the cheapest, richest signals
+in biology, and we&amp;rsquo;re finally learning to read it at scale — a fingerprint dense enough to reveal a drug&amp;rsquo;s
+mechanism or a protein&amp;rsquo;s home. The frontier isn&amp;rsquo;t a bigger model; it&amp;rsquo;s a model that works on &lt;em>your&lt;/em>
+microscope, on &lt;em>your&lt;/em> channels, and can tell you not just that the cell changed but &lt;em>how&lt;/em>. Segment the cell,
+fingerprint the cell, then — the whole point — &lt;strong>predict&lt;/strong> it. This is the measurement layer a
+&lt;a href="https://aicell.io/project/human-cell-simulator/">virtual cell&lt;/a> has to be judged against, and it&amp;rsquo;s coming into focus one
+honest benchmark at a time.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(X/Twitter sweep was skipped today — our news API is out of credits.) Have lab news to share — a
+talk, paper, conference or release? Message me on Slack.&lt;/em>&lt;/p></description></item><item><title>Cell shapes decode molecular phenotypes in image-based spatial proteomics</title><link>https://aicell.io/publication/le-2026-cell-shapes/</link><pubDate>Mon, 20 Apr 2026 00:00:00 +0000</pubDate><guid>https://aicell.io/publication/le-2026-cell-shapes/</guid><description/></item><item><title>Generative machine learning unlocks the first proteome-wide image of human cells</title><link>https://aicell.io/publication/sun-2026-proteome-wide/</link><pubDate>Thu, 02 Apr 2026 00:00:00 +0000</pubDate><guid>https://aicell.io/publication/sun-2026-proteome-wide/</guid><description/></item><item><title>Image based subcellular mapping of the protein landscape of SARS-CoV-2 infected cells for target-centric drug repurposing</title><link>https://aicell.io/publication/tampere-2025-subcellular/</link><pubDate>Wed, 01 Oct 2025 00:00:00 +0000</pubDate><guid>https://aicell.io/publication/tampere-2025-subcellular/</guid><description/></item></channel></rss>
