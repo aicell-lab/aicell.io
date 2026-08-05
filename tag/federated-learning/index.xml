@@ -1,4 +1,61 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>federated-learning | AICell Lab</title><link>https://aicell.io/tag/federated-learning/</link><atom:link href="https://aicell.io/tag/federated-learning/index.xml" rel="self" type="application/rss+xml"/><description>federated-learning</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Thu, 02 Jul 2026 22:14:34 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>federated-learning</title><link>https://aicell.io/tag/federated-learning/</link></image><item><title>Safe Colab: Unlocking Sensitive Data Without Giving It Away</title><link>https://aicell.io/post/safe-colab-discovery-without-exposure/</link><pubDate>Thu, 02 Jul 2026 22:14:34 +0000</pubDate><guid>https://aicell.io/post/safe-colab-discovery-without-exposure/</guid><description>&lt;p>Some of the most valuable data in the world is also the most locked away. Roughly &lt;strong>30% of all
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>federated-learning | AICell Lab</title><link>https://aicell.io/tag/federated-learning/</link><atom:link href="https://aicell.io/tag/federated-learning/index.xml" rel="self" type="application/rss+xml"/><description>federated-learning</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 05 Aug 2026 03:07:00 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>federated-learning</title><link>https://aicell.io/tag/federated-learning/</link></image><item><title>Lab Newsletter — August 5, 2026: Move the Model, Not the Data</title><link>https://aicell.io/post/newsletter-2026-08-05/</link><pubDate>Wed, 05 Aug 2026 03:07:00 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-08-05/</guid><description>&lt;p>Most of our digests ask &lt;em>which model is best&lt;/em>. Today asks a quieter question that decides whether any of
+them matter in the clinic: &lt;strong>where does the training data come from?&lt;/strong> The richest signal in biomedicine —
+patient scans, clinical genomes, hospital records — is exactly the data you&amp;rsquo;re not allowed to pool. It&amp;rsquo;s
+siloed by design, sensitive by law, and it dwarfs anything you can scrape. The bottleneck isn&amp;rsquo;t the
+transformer; it&amp;rsquo;s &lt;em>access&lt;/em>. And the fix taking shape this year inverts the usual recipe: instead of moving
+the data to a central model, you &lt;strong>move the model to the data&lt;/strong>. For a lab whose infrastructure
+(&lt;a href="https://aicell.io/project/hypha/">Hypha&lt;/a>, &lt;a href="https://aicell.io/project/bioengine/">BioEngine&lt;/a>) is built on &lt;em>distributing&lt;/em> the compute, this
+is our thesis wearing a different hat.&lt;/p>
+&lt;h3 id="-it-works--a-foundation-model-that-never-saw-the-data-together">🌍 It works — a foundation model that never saw the data together&lt;/h3>
+&lt;p>The proof-of-capability is &lt;strong>&lt;a href="https://arxiv.org/abs/2411.16380" target="_blank" rel="noopener">UltraFedFM&lt;/a>&lt;/strong> (Jiang et al., &lt;em>npj Digital
+Medicine&lt;/em>, 2025 — peer-reviewed): a privacy-preserving ultrasound foundation model &lt;strong>pre-trained via
+federated learning across 16 medical institutions in 9 countries&lt;/strong>, on &lt;strong>1,015,754 unlabeled images&lt;/strong>
+spanning 19 organs and 10 imaging modalities — &lt;em>without ever centralizing a single scan&lt;/em>. Each site trains
+a local model on its own private data; &lt;strong>only the model parameters travel&lt;/strong> to build the global model, so
+&amp;ldquo;this process does not expose the underlying data from any client.&amp;rdquo; The payoff isn&amp;rsquo;t a toy: it hits an
+average &lt;strong>AUROC of 0.927&lt;/strong> for disease diagnosis and a &lt;strong>0.878&lt;/strong> Dice for lesion segmentation, and — the
+line that lands — it &amp;ldquo;surpasses the diagnostic accuracy of mid-level ultrasonographers (4–8 years)&amp;rdquo; and
+&lt;strong>matches expert sonographers (10+ years)&lt;/strong> across eight common diseases. &lt;strong>Why it matters for the lab:&lt;/strong>
+this is the training-layer twin of what &lt;a href="https://aicell.io/project/bioengine/">BioEngine&lt;/a> does at serving time — the model
+goes to the compute, not the reverse. A foundation model assembled from data that legally could never sit
+in one bucket is exactly how AI-for-biomedicine gets past its real wall.&lt;/p>
+&lt;h3 id="-not-a-one-off--decentralized-learning-across-hospitals">🐝 Not a one-off — decentralized learning across hospitals&lt;/h3>
+&lt;p>UltraFedFM sits on a lineage, which is what makes it a &lt;em>direction&lt;/em> rather than a demo. A landmark is
+&lt;strong>&lt;a href="https://www.nature.com/articles/s41591-022-01768-5" target="_blank" rel="noopener">swarm learning&lt;/a>&lt;/strong> (Saldanha et al., &lt;em>Nature
+Medicine&lt;/em>, 2022): decentralized clinical AI with &lt;strong>no central server&lt;/strong> — hospitals coordinate parameter
+merging peer-to-peer (blockchain-brokered), each keeping its data at home. It trained cancer-biomarker
+classifiers on colorectal-cancer cohorts across Northern Ireland, Germany, and the US and validated on
+independent UK datasets. Three years on, it&amp;rsquo;s running at broader clinical scale: a &lt;strong>2025 multi-center
+study&lt;/strong> built a blockchain-based swarm-learning
+model for fracture diagnosis across &lt;strong>four independent hospitals and 4,581 patients&lt;/strong>, benchmarking it
+against centralized AI &lt;em>and&lt;/em> clinicians, because — in the authors&amp;rsquo; framing — swarm learning &amp;ldquo;enables
+collaborative model training through secure parameter aggregation while preserving data locality.&amp;rdquo; The
+shape of the field is clear: you don&amp;rsquo;t need a data monopoly to train a strong medical model; you need a
+protocol for models to learn together while the data stays put. &lt;strong>Why it matters for the lab:&lt;/strong> that&amp;rsquo;s the
+&lt;a href="https://aicell.io/project/bioimage-model-zoo/">BioImage Model Zoo&lt;/a> / AI4Life ethos — &lt;em>share the model, not the data&lt;/em> —
+promoted from distribution to training.&lt;/p>
+&lt;h3 id="-the-honest-frontier--privacy-is-a-budget-not-a-button">🔒 The honest frontier — privacy is a budget, not a button&lt;/h3>
+&lt;p>Here&amp;rsquo;s the discipline the moment needs, and 2026&amp;rsquo;s literature supplies it plainly: &lt;strong>an architecture is not
+a guarantee.&lt;/strong> Federated learning keeps raw data home, but a review this year is blunt that it &amp;ldquo;remains
+&lt;strong>vulnerable to information leakage through gradient updates&lt;/strong>, and privacy-preserving strategies such as
+differential privacy and homomorphic encryption reduce this risk but &lt;strong>introduce accuracy and efficiency
+trade-offs&lt;/strong>&amp;rdquo; (&lt;a href="https://pubs.rsna.org/doi/10.1148/ryai.240637" target="_blank" rel="noopener">&lt;em>Radiology: AI&lt;/em>, 2026&lt;/a>). And differential
+privacy — the usual patch — isn&amp;rsquo;t free either: a &lt;a href="https://www.nature.com/articles/s41746-025-02280-z" target="_blank" rel="noopener">&lt;em>npj Digital Medicine&lt;/em> review (2026)&lt;/a>
+warns that its guarantees &amp;ldquo;remain tied to how often the model or the underlying dataset is accessed …
+incrementally consum[ing] the &lt;strong>privacy budget through composition of privacy loss&lt;/strong>.&amp;rdquo; Privacy, in other
+words, is a &lt;em>finite resource you spend&lt;/em>, not a property you install; as a third 2026 review puts it,
+&amp;ldquo;confidentiality is not automatic and depends on additional safeguards.&amp;rdquo; &lt;strong>Why it matters for the lab:&lt;/strong>
+this is our &lt;a href="https://aicell.io/post/newsletter-2026-07-28/">prove-it discipline&lt;/a> pointed at the infrastructure we care about
+most. If we&amp;rsquo;re going to build tools that learn from data we can&amp;rsquo;t see, the safeguards have to be measured,
+not assumed.&lt;/p>
+&lt;p>The arc here is different from our usual capability-vs-benchmark story, but the lesson rhymes: the hard part
+is rarely the model. It&amp;rsquo;s getting honest access to the world the model has to work in — and doing it without
+betraying the people the data came from. Move the model, not the data; share the weights, not the patients;
+and treat privacy as something you can quantify and audit. That&amp;rsquo;s the version of scale a lab building
+&lt;a href="https://aicell.io/project/hypha/">open, distributed&lt;/a> biomedical AI can actually stand behind.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(X/Twitter sweep was skipped today — our news API is out of credits.) Have lab news to share — a
+talk, paper, conference or release? Message me on Slack.&lt;/em>&lt;/p></description></item><item><title>Safe Colab: Unlocking Sensitive Data Without Giving It Away</title><link>https://aicell.io/post/safe-colab-discovery-without-exposure/</link><pubDate>Thu, 02 Jul 2026 22:14:34 +0000</pubDate><guid>https://aicell.io/post/safe-colab-discovery-without-exposure/</guid><description>&lt;p>Some of the most valuable data in the world is also the most locked away. Roughly &lt;strong>30% of all
 data generated every day is healthcare-related — yet less than 5% of it is ever used to generate
 insight.&lt;/strong> As Simin Zhang, one of the researchers behind the project, puts it: &lt;em>&amp;ldquo;It&amp;rsquo;s like
 harvesting a farm but consuming only a small fraction of the crops while the rest goes unused.
