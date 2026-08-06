@@ -1,4 +1,71 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>open-science | AICell Lab</title><link>https://aicell.io/tag/open-science/</link><atom:link href="https://aicell.io/tag/open-science/index.xml" rel="self" type="application/rss+xml"/><description>open-science</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 05 Aug 2026 03:07:00 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>open-science</title><link>https://aicell.io/tag/open-science/</link></image><item><title>Lab Newsletter — August 5, 2026: Move the Model, Not the Data</title><link>https://aicell.io/post/newsletter-2026-08-05/</link><pubDate>Wed, 05 Aug 2026 03:07:00 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-08-05/</guid><description>&lt;p>Most of our digests ask &lt;em>which model is best&lt;/em>. Today asks a quieter question that decides whether any of
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>open-science | AICell Lab</title><link>https://aicell.io/tag/open-science/</link><atom:link href="https://aicell.io/tag/open-science/index.xml" rel="self" type="application/rss+xml"/><description>open-science</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Thu, 06 Aug 2026 03:07:00 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>open-science</title><link>https://aicell.io/tag/open-science/</link></image><item><title>Lab Newsletter — August 6, 2026: The Stain You Never Applied</title><link>https://aicell.io/post/newsletter-2026-08-06/</link><pubDate>Thu, 06 Aug 2026 03:07:00 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-08-06/</guid><description>&lt;p>To see a molecule in a cell, you usually have to &lt;em>touch&lt;/em> the cell — flood it with a dye, tag it with an
+antibody, wait, and accept the cost: reagents, time, one-shot samples, and, for anything alive, the
+phototoxic, behaviour-changing burden of fluorescence. Physical staining is the tax microscopy pays for
+molecular specificity. The trade taking shape this season pays it differently: &lt;strong>predict the label directly
+from a cheap, gentle, label-free image — and apply no dye at all.&lt;/strong> It&amp;rsquo;s a striking idea for a lab whose
+microscopes are meant to run &lt;em>live and unattended&lt;/em> — and, done honestly, it comes with its own lie detector.&lt;/p>
+&lt;h3 id="-predict-the-label-apply-no-dye">🔬 Predict the label, apply no dye&lt;/h3>
+&lt;p>The capability is old enough to trust and new enough to matter. It began in 2018, when Google&amp;rsquo;s
+&lt;strong>&lt;a href="https://www.cell.com/cell/fulltext/S0092-8674%2818%2930364-7" target="_blank" rel="noopener">In Silico Labeling&lt;/a>&lt;/strong> (Christiansen et al.,
+&lt;em>Cell&lt;/em>) and the Allen Institute&amp;rsquo;s
+&lt;strong>&lt;a href="https://www.nature.com/articles/s41592-018-0111-2" target="_blank" rel="noopener">label-free 3D fluorescence prediction&lt;/a>&lt;/strong> (Ounkomol et
+al., &lt;em>Nature Methods&lt;/em>) showed a network could read a plain transmitted-light image and paint in where the
+nuclei, membranes, and organelles &lt;em>would&lt;/em> fluoresce. The 2025–26 frontier is about making that trustworthy
+on cells that don&amp;rsquo;t look like the training set. The anchor is
+&lt;strong>&lt;a href="https://www.nature.com/articles/s41592-025-02960-4" target="_blank" rel="noopener">CELTIC&lt;/a>&lt;/strong> (Elmalam &amp;amp; Zaritsky, &lt;em>Nature Methods&lt;/em>,
+2025) — &amp;ldquo;the computational cross-modality translation of label-free transmitted light microscopy images to
+their corresponding organelle-specific fluorescent images.&amp;rdquo; Its insight is that when a cell&amp;rsquo;s internal
+organization shifts — mitosis, the edge of a colony — the label-free image shifts too, and naïve models
+break. CELTIC feeds the network a compact &lt;strong>biological context&lt;/strong> (a 16-dimension descriptor of the cell&amp;rsquo;s
+state), which &amp;ldquo;enabled the downstream analysis of out-of-distribution data such as cells undergoing mitosis
+and cells located at the edge of the colony.&amp;rdquo; The payoff is concrete: a &lt;strong>mitosis classifier trained without
+a single real mitotic cell&lt;/strong> hit &lt;strong>AUC 0.928&lt;/strong>, and a unified multi-organelle model beat single-organelle
+ones (mean PCC 0.700 vs 0.683). The line that matters for us: in silico labeling &amp;ldquo;holds the promise of
+enabling &lt;strong>computationally multiplexed live cell imaging&lt;/strong>.&amp;rdquo; &lt;strong>Why it matters for the lab:&lt;/strong> this is the
+readout a &lt;a href="https://aicell.io/project/self-driving-microscope/">self-driving microscope&lt;/a> has been waiting for. You can&amp;rsquo;t
+stain-fix-and-image inside a loop that has to keep cells &lt;em>alive&lt;/em> and watch them respond — but you can compute
+the channels from a benign brightfield frame. It&amp;rsquo;s how &lt;a href="https://aicell.io/project/agent-lens/">Agent-Lens&lt;/a> and the
+&lt;a href="https://aicell.io/project/reef-imaging-farm/">REEF imaging farm&lt;/a> get molecular detail without bleaching or perturbing the
+thing they&amp;rsquo;re measuring.&lt;/p>
+&lt;h3 id="-the-clinical-cousin-at-scale">🧫 The clinical cousin, at scale&lt;/h3>
+&lt;p>The same trick has a second life in pathology, where the stain to be faked is H&amp;amp;E or an
+immunohistochemical panel and the label-free input is autofluorescence or quantitative phase. A 2024
+&lt;em>Trends in Biotechnology&lt;/em>
+&lt;a href="https://www.cell.com/trends/biotechnology/fulltext/S0167-7799%2824%2900038-6" target="_blank" rel="noopener">review&lt;/a> (Latonen et al.) maps a
+field moving fast: virtual H&amp;amp;E and IHC that skip the reagents, the wait, and the destroyed sample. The
+2025–26 work is pushing fidelity and breadth — &lt;strong>&lt;a href="https://arxiv.org/abs/2410.20073" target="_blank" rel="noopener">diffusion models&lt;/a>&lt;/strong> that
+trade GAN sharpness-at-any-cost for lower-variance, higher-resolution stains, and
+&lt;strong>&lt;a href="https://www.nature.com/articles/s44303-026-00154-x" target="_blank" rel="noopener">whole-slide multi-staining&lt;/a>&lt;/strong> that turns one
+label-free acquisition into several histochemical stains at once. The appeal is obvious as global cancer
+workloads climb: cheaper, faster, greener slides. But the same review is blunt that outputs from &amp;ldquo;unmatured
+models based on biased datasets&amp;rdquo; carry &amp;ldquo;AI-derived artifacts such as hallucinations&amp;rdquo; — which is exactly where
+the story stops being a feel-good demo.&lt;/p>
+&lt;h3 id="-catch-the-stain-that-lies">🕵️ Catch the stain that lies&lt;/h3>
+&lt;p>Here&amp;rsquo;s the discipline the moment demands, and 2025 supplied it precisely. A generative stain&amp;rsquo;s worst failure
+isn&amp;rsquo;t an obvious smear — it&amp;rsquo;s a &lt;strong>realistic-looking image that invented a structure that was never there&lt;/strong>,
+confidently enough to fool a reader. The answer is
+&lt;strong>&lt;a href="https://www.nature.com/articles/s41551-025-01421-9" target="_blank" rel="noopener">AQuA&lt;/a>&lt;/strong> (Huang, Li, Pillar, Keidar Haran, Wallace,
+Ozcan; &lt;em>Nature Biomedical Engineering&lt;/em>, 2025): an &amp;ldquo;Autonomous Quality and hallucination Assessment&amp;rdquo; that
+flags problematic virtual stains — pointedly including the &amp;ldquo;realistic-looking images that could mislead
+diagnosticians.&amp;rdquo; It reaches &lt;strong>99.8% accuracy&lt;/strong> separating acceptable from unacceptable virtually stained
+images and &lt;strong>98.5% agreement&lt;/strong> with board-certified pathologists — and it does this &lt;strong>without the
+histochemically stained ground truth&lt;/strong> and independently of the model that produced the stain, validated
+blind on kidney and lung samples from new patients. As Ozcan frames it, AQuA &amp;ldquo;add[s] a layer of trust to
+AI-generated images in medicine … a digital second opinion.&amp;rdquo; &lt;strong>Why it matters for the lab:&lt;/strong> this is our
+throughline in a new domain. We keep saying the generator isn&amp;rsquo;t enough — &lt;a href="https://aicell.io/post/newsletter-2026-07-28/">prove it&lt;/a>;
+show your &lt;a href="https://aicell.io/post/newsletter-2026-08-02/">work&lt;/a>; treat trust as something you &lt;a href="https://aicell.io/post/newsletter-2026-08-05/">measure&lt;/a>,
+not assume. An autonomous lab that will &lt;em>act&lt;/em> on a computed image — pick the next well, call a phenotype — has
+to be able to catch the lie. Ship the check alongside the generator; that&amp;rsquo;s the
+&lt;a href="https://aicell.io/project/bioimage-model-zoo/">BioImage Model Zoo&lt;/a> ethos exactly.&lt;/p>
+&lt;p>Read the three together and the shape is clear. Label-free imaging plus a good model can hand you the
+molecular picture you used to have to stain for — live, cheap, and gentle enough to watch a cell over days.
+That&amp;rsquo;s a genuine unlock for microscopy that has to run on its own. But a computed stain is a &lt;em>hypothesis&lt;/em>
+wearing the costume of a measurement, and the field&amp;rsquo;s most important 2025 result isn&amp;rsquo;t a prettier stain —
+it&amp;rsquo;s the watchdog that tells you when to believe it. Predict the label, apply no dye; then, before you act
+on it, &lt;strong>check that the cell you&amp;rsquo;re seeing is the cell that&amp;rsquo;s there.&lt;/strong>&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(X/Twitter sweep was skipped today — our news API is out of credits.) Have lab news to share — a
+talk, paper, conference or release? Message me on Slack.&lt;/em>&lt;/p></description></item><item><title>Lab Newsletter — August 5, 2026: Move the Model, Not the Data</title><link>https://aicell.io/post/newsletter-2026-08-05/</link><pubDate>Wed, 05 Aug 2026 03:07:00 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-08-05/</guid><description>&lt;p>Most of our digests ask &lt;em>which model is best&lt;/em>. Today asks a quieter question that decides whether any of
 them matter in the clinic: &lt;strong>where does the training data come from?&lt;/strong> The richest signal in biomedicine —
 patient scans, clinical genomes, hospital records — is exactly the data you&amp;rsquo;re not allowed to pool. It&amp;rsquo;s
 siloed by design, sensitive by law, and it dwarfs anything you can scrape. The bottleneck isn&amp;rsquo;t the
