@@ -1,4 +1,135 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>newsletter | AICell Lab</title><link>https://aicell.io/category/newsletter/</link><atom:link href="https://aicell.io/category/newsletter/index.xml" rel="self" type="application/rss+xml"/><description>newsletter</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Thu, 06 Aug 2026 03:07:00 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>newsletter</title><link>https://aicell.io/category/newsletter/</link></image><item><title>Lab Newsletter — August 6, 2026: The Stain You Never Applied</title><link>https://aicell.io/post/newsletter-2026-08-06/</link><pubDate>Thu, 06 Aug 2026 03:07:00 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-08-06/</guid><description>&lt;p>To see a molecule in a cell, you usually have to &lt;em>touch&lt;/em> the cell — flood it with a dye, tag it with an
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>newsletter | AICell Lab</title><link>https://aicell.io/category/newsletter/</link><atom:link href="https://aicell.io/category/newsletter/index.xml" rel="self" type="application/rss+xml"/><description>newsletter</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sat, 08 Aug 2026 03:07:00 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>newsletter</title><link>https://aicell.io/category/newsletter/</link></image><item><title>Lab Newsletter — August 8, 2026: The Microscope That Chooses Its Moment</title><link>https://aicell.io/post/newsletter-2026-08-08/</link><pubDate>Sat, 08 Aug 2026 03:07:00 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-08-08/</guid><description>&lt;p>Most of our digests are about what a model does &lt;em>to&lt;/em> an image after it&amp;rsquo;s captured — segment it, profile it,
+&lt;a href="https://aicell.io/post/newsletter-2026-08-06/">stain it in silico&lt;/a>. Today is about the moment before: the decision the
+microscope makes about &lt;strong>what to capture at all&lt;/strong>. It matters because live imaging is not free. Every frame
+spends photons and phototoxicity; watch a living cell too hard and you change or kill the thing you&amp;rsquo;re
+measuring. So the real intelligence isn&amp;rsquo;t a sharper picture — it&amp;rsquo;s knowing &lt;em>when&lt;/em> to spend a limited budget on
+the one instant that counts. That decision is exactly what a &lt;a href="https://aicell.io/project/self-driving-microscope/">self-driving microscope&lt;/a>
+has to make, and in 2025-26 the field of &lt;strong>smart microscopy&lt;/strong> matured enough to make it well.&lt;/p>
+&lt;h3 id="-watch-gently-strike-fast">🔬 Watch gently, strike fast&lt;/h3>
+&lt;p>The core pattern is &lt;strong>event-driven acquisition&lt;/strong>, and it&amp;rsquo;s a two-mode loop: monitor continuously with gentle,
+low-damage illumination; run a model on the images as they stream; and the moment it predicts something worth
+seeing, switch to a high-resolution or slow-but-rich modality just for the duration of the event, then fall
+back. Dora Mahecic and colleagues established it in
+&lt;a href="https://www.nature.com/articles/s41592-022-01589-x" target="_blank" rel="noopener">&lt;em>Nature Methods&lt;/em> (2022)&lt;/a>, using an on-the-fly CNN to
+predict imminent cell-division events and trigger super-resolution capture — cutting photobleaching by roughly
+&lt;strong>five-fold&lt;/strong> by simply not over-imaging the boring frames. The 2025 flagship shows how far the idea now
+reaches. A team at EPFL and EMBL built a
+&lt;a href="https://www.nature.com/articles/s41467-025-60912-0" target="_blank" rel="noopener">&lt;strong>self-driving microscope&lt;/strong>&lt;/a> (Ibrahim, Cathala,
+Bevilacqua, Feletti, Prevedel, Lashuel &amp;amp; Radenovic, &lt;em>Nature Communications&lt;/em>, 2025) that &amp;ldquo;uses deep learning to
+predict the onset of &lt;strong>protein aggregation&lt;/strong> from a &lt;strong>single fluorescence image&lt;/strong> of soluble protein, achieving
+&lt;strong>91% accuracy&lt;/strong>&amp;rdquo; — then fires an intelligent, slow &lt;strong>Brillouin&lt;/strong> measurement (which reads a cell&amp;rsquo;s &lt;em>mechanical&lt;/em>
+stiffness) at exactly the right instant, catching a fast, unpredictable process that a slow instrument could
+never chase by hand. A companion real-time classifier spots mature aggregates at &lt;strong>97% accuracy from plain
+brightfield&lt;/strong>, so the whole thing runs &amp;ldquo;exclusively label-free and non-invasive.&amp;rdquo; As first author Khalid
+Ibrahim frames it, it&amp;rsquo;s the first demonstration that self-driving systems can fold in label-free methods &amp;ldquo;to
+allow more biologists to adopt rapidly evolving smart microscopy techniques.&amp;rdquo; &lt;strong>Why it matters for the lab:&lt;/strong>
+this is the readout our instruments were designed around. You cannot image a living sample at full resolution
+forever — &lt;a href="https://aicell.io/project/agent-lens/">Agent-Lens&lt;/a> and the &lt;a href="https://aicell.io/project/reef-imaging-farm/">REEF imaging farm&lt;/a> earn
+their keep by watching cheaply and spending resolution only when the model says &lt;em>now&lt;/em>.&lt;/p>
+&lt;h3 id="-a-field-with-a-map">🗺️ A field with a map&lt;/h3>
+&lt;p>What&amp;rsquo;s new isn&amp;rsquo;t just better demos — it&amp;rsquo;s that smart microscopy now has a &lt;strong>structure&lt;/strong>. A 2026 review in
+&lt;a href="https://www.nature.com/articles/s44303-026-00145-y" target="_blank" rel="noopener">&lt;em>npj Imaging&lt;/em>&lt;/a> proposes a clean taxonomy, sorting
+approaches by goal: &lt;strong>quality-, event-, target-, information-, or outcome-driven&lt;/strong> acquisition — a shared
+vocabulary for a scattered field, plus a push toward &amp;ldquo;community-driven efforts in making smart microscopy more
+accessible.&amp;rdquo; A parallel &lt;em>Small Methods&lt;/em> 2026 review,
+&lt;a href="https://onlinelibrary.wiley.com/doi/full/10.1002/smtd.202401757" target="_blank" rel="noopener">&lt;strong>&amp;ldquo;Self-Driving Microscopes: AI Meets Super-Resolution Microscopy&amp;rdquo;&lt;/strong>&lt;/a>
+(Ward et al.), frames the whole program as letting &amp;ldquo;the microscope autonomously make decisions on &lt;strong>what, when,
+and how to image&lt;/strong>.&amp;rdquo; But the reviews are honest about the wall: today&amp;rsquo;s systems are &amp;ldquo;so far only
+semi-autonomous, requiring prior knowledge of which sample features to monitor,&amp;rdquo; and each is usually &amp;ldquo;heavily
+tailored to its attached microscopy setup.&amp;rdquo; The open problem is &lt;strong>genericity&lt;/strong> — a smart microscope you don&amp;rsquo;t
+have to re-engineer for every rig and every phenotype. Efforts like the
+&lt;a href="https://www.biorxiv.org/content/10.1101/2024.09.24.614735" target="_blank" rel="noopener">&lt;strong>Roboscope&lt;/strong>&lt;/a> (a 2026 preprint on hardware-agnostic,
+generic event-driven acquisition that &amp;ldquo;keeps the training set small&amp;rdquo;) are chasing exactly that. &lt;strong>Why it matters
+for the lab:&lt;/strong> a model that only drives one microscope isn&amp;rsquo;t the goal; a &lt;em>portable&lt;/em> one is. That&amp;rsquo;s the
+&lt;a href="https://aicell.io/project/bioimage-model-zoo/">BioImage Model Zoo&lt;/a> / &lt;a href="https://aicell.io/project/imjoy/">ImJoy&lt;/a> / &lt;a href="https://aicell.io/project/bioengine/">BioEngine&lt;/a>
+ethos aimed at the acquisition loop — the decision model, shared and runnable, not welded to one instrument.&lt;/p>
+&lt;h3 id="-from-watching-to-acting">🎯 From watching to acting&lt;/h3>
+&lt;p>The most striking 2025 result crosses a line: from observing an event to &lt;strong>causing an outcome&lt;/strong>. Josiah Passmore
+and colleagues in Lukas Kapitein&amp;rsquo;s lab present
+&lt;a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12852791/" target="_blank" rel="noopener">&lt;strong>outcome-driven microscopy&lt;/strong>&lt;/a> (&lt;em>Nature Communications&lt;/em>,
+2025) — &amp;ldquo;a framework combining smart microscopy with optogenetics to control cell biological processes,&amp;rdquo; using
+&amp;ldquo;real-time feedback to achieve automated spatiotemporal control of subcellular cell biology.&amp;rdquo; The microscope
+isn&amp;rsquo;t a camera anymore; it&amp;rsquo;s a &lt;strong>controller in a feedback loop&lt;/strong>. They optogenetically steered single and
+multiple living cells along predefined paths for &lt;strong>over 10 hours&lt;/strong>, holding each cell&amp;rsquo;s centroid within about
+&lt;strong>2.5 µm&lt;/strong> of its target track (with automatic collision avoidance between cells), and separately drove nuclear
+protein levels to a setpoint with &lt;strong>error under 10%&lt;/strong> — bringing seven cells of different expression to the same
+target, each needing its own light dose. The code ships open. This is a closed loop that doesn&amp;rsquo;t just &lt;em>see&lt;/em> the
+cell — it &lt;em>moves&lt;/em> it. &lt;strong>Why it matters for the lab:&lt;/strong> that&amp;rsquo;s the &lt;a href="https://aicell.io/post/newsletter-2026-07-31/">self-driving lab&lt;/a>
+idea pushed down to the instrument. Jul 31 was the &lt;em>macro&lt;/em> loop — an agent choosing which experiment to run;
+this is the &lt;em>micro&lt;/em> loop nested inside it, closing in milliseconds at the objective lens. And it inherits our
+oldest rule: a system that &lt;strong>acts&lt;/strong> on a live sample can drive it to a wrong state as confidently as a right one.
+A controller, like a &lt;a href="https://aicell.io/post/newsletter-2026-08-06/">generated stain&lt;/a> or a virtual cell that
+&lt;a href="https://aicell.io/post/newsletter-2026-08-02/">shows its work&lt;/a>, has to be trustworthy by construction — the loop is only as good
+as the model steering it.&lt;/p>
+&lt;p>Read together, the shape is a microscope that stopped being a passive recorder. It watches with a light touch,
+predicts the moment that matters, spends its resolution there, and — increasingly — reaches back to steer the
+biology it&amp;rsquo;s watching. That&amp;rsquo;s not a niche trick; it&amp;rsquo;s the operating principle of an autonomous imaging lab, and
+it&amp;rsquo;s the frontier our own &lt;a href="https://aicell.io/publication/volpe-2026-roadmap/">roadmap for deep learning in microscopy&lt;/a>
+(co-authored with the field) points squarely at. The old microscope answered &lt;em>what does this sample look like?&lt;/em>
+The new one answers a harder, more useful question: &lt;em>given a living cell and a limited budget of light and time,
+what is the one thing worth looking at right now?&lt;/em>&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(X/Twitter sweep was skipped today — our news API is out of credits.) Have lab news to share — a
+talk, paper, conference or release? Message me on Slack.&lt;/em>&lt;/p></description></item><item><title>Lab Newsletter — August 7, 2026: The Layer You Can't Amplify</title><link>https://aicell.io/post/newsletter-2026-08-07/</link><pubDate>Fri, 07 Aug 2026 03:07:00 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-08-07/</guid><description>&lt;p>We spend a lot of these digests on what a cell &lt;em>could&lt;/em> do — its genome — and what it &lt;em>intends&lt;/em> to do — its
+transcriptome. Today is about the layer where biology actually happens: the &lt;strong>proteome&lt;/strong>, the working
+machinery, the molecules that are doing the job right now. It&amp;rsquo;s the readout closest to phenotype and, by a
+wide margin, the hardest to get. There&amp;rsquo;s no PCR for proteins — you can&amp;rsquo;t amplify them — so sensitivity is a
+brutal wall, and the raw signal, a forest of fragment-ion peaks in a mass spectrum, was nearly unreadable at
+scale unless the answer already sat in a reference database. That last constraint is the one deep learning
+just took down.&lt;/p>
+&lt;h3 id="-read-the-protein-straight-from-the-spectrum--no-database">🧩 Read the protein straight from the spectrum — no database&lt;/h3>
+&lt;p>The unlock is &lt;strong>de novo peptide sequencing&lt;/strong>: predict a peptide&amp;rsquo;s amino-acid sequence directly from its
+mass spectrum, with no database to match against — the only way to find peptides that &lt;em>aren&amp;rsquo;t&lt;/em> catalogued
+(immune peptides, environmental metaproteomes, ancient proteins, venoms, novel or mutated sequences). The
+field turned a corner with &lt;strong>&lt;a href="https://github.com/Noble-Lab/casanovo" target="_blank" rel="noopener">Casanovo&lt;/a>&lt;/strong> (Yilmaz et al.), the first
+transformer built for the task: it &amp;ldquo;translates peaks in MS/MS spectra into amino acid sequences,&amp;rdquo; reading raw
+peaks and precursor mass with no discretization, and it&amp;rsquo;s open-source and still actively maintained (v5.0 in
+2025). The 2025 flagship pushes further —
+&lt;strong>&lt;a href="https://www.nature.com/articles/s42256-025-01019-5" target="_blank" rel="noopener">InstaNovo&lt;/a>&lt;/strong> (Eloff et al., &lt;em>Nature Machine
+Intelligence&lt;/em>, 2025; InstaDeep + DTU) pairs a transformer with &lt;strong>InstaNovo+&lt;/strong>, a &lt;em>diffusion&lt;/em> model that
+iteratively refines each prediction like a second, more careful reading. The result isn&amp;rsquo;t incremental: the
+authors report &amp;ldquo;improved therapeutic sequencing coverage, &lt;strong>discover novel peptides and detect unreported
+organisms&lt;/strong> in diverse datasets,&amp;rdquo; widening what a proteomics search can even see. Database-free identification
+turns the proteome from a lookup problem into a &lt;em>discovery&lt;/em> one. &lt;strong>Why it matters for the lab:&lt;/strong> this is the
+open-model, database-free ethos we like — a benchmarked tool that finds the thing your reference didn&amp;rsquo;t
+contain, shared for anyone to run.&lt;/p>
+&lt;h3 id="-down-to-a-single-cell-up-into-a-foundation-model">🔬 Down to a single cell, up into a foundation model&lt;/h3>
+&lt;p>Two frontiers are advancing at once. &lt;strong>Down:&lt;/strong> single-cell proteomics now routinely quantifies &lt;strong>1,000–3,000
+protein groups from one mammalian cell&lt;/strong>, prying protein-level state out of individual cells the way scRNA-seq
+did for transcripts — except, again, with no amplification to lean on, which makes every gain a hard-won
+sensitivity win. &lt;strong>Up:&lt;/strong> the field is building &lt;strong>foundation models&lt;/strong>. A &lt;a href="https://arxiv.org/abs/2505.10848" target="_blank" rel="noopener">2025 model for tandem-MS
+proteomics&lt;/a> trained on de novo sequencing &amp;ldquo;learns generalizable
+representations of spectra&amp;rdquo; that transfer to data-scarce downstream tasks, and a 2026 preprint,
+&lt;strong>&lt;a href="https://arxiv.org/html/2604.20003" target="_blank" rel="noopener">scpFormer&lt;/a>&lt;/strong>, aims for a unified representation of single-cell
+proteomics. scpFormer also names a trade-off worth holding onto: &lt;strong>antibody-based&lt;/strong> methods give broad
+coverage at scale, while &lt;strong>mass spectrometry&lt;/strong> gives &amp;ldquo;substantially greater proteomic depth per cell.&amp;rdquo;
+&lt;strong>Why it matters for the lab:&lt;/strong> that trade-off is &lt;em>our&lt;/em> two hands. The lab works with the
+&lt;a href="https://www.proteinatlas.org" target="_blank" rel="noopener">Human Protein Atlas&lt;/a> — antibody-and-imaging proteomics, all breadth and spatial
+context; MS proteomics is the depth-per-cell complement. Reading proteins both ways — the picture &lt;em>and&lt;/em> the
+spectrum — is how you get coverage and resolution instead of choosing.&lt;/p>
+&lt;h3 id="-the-ladder-to-a-virtual-cell--and-the-check">🎯 The ladder to a virtual cell — and the check&lt;/h3>
+&lt;p>The reason to care beyond method is where this points. A brand-new review from Tiannan Guo&amp;rsquo;s group —
+&lt;a href="https://pubmed.ncbi.nlm.nih.gov/42521824/" target="_blank" rel="noopener">&lt;strong>&amp;ldquo;AI proteomics: from protein identification to virtual cells&amp;rdquo;&lt;/strong>&lt;/a>
+(&lt;em>Nature Methods&lt;/em>, 2026) — draws the arc without hedging: AI in mass-spec proteomics now runs &amp;ldquo;from protein
+identification to building AI virtual cells,&amp;rdquo; across identification, quantification, protein–protein
+interactions and complexes, spatial and perturbation proteomics, and multi-omics integration — &amp;ldquo;ultimately,
+enabling AI virtual cells.&amp;rdquo; That&amp;rsquo;s the &lt;a href="https://aicell.io/project/human-cell-simulator/">Human Cell Simulator&lt;/a>&amp;rsquo;s missing
+molecular layer, named by the proteomics field itself. But the same discipline we keep insisting on applies
+in full: a de novo peptide is a &lt;em>prediction&lt;/em>, and a confidently sequenced peptide that isn&amp;rsquo;t real is a false
+discovery. Which is why the field is building shared benchmarks like
+&lt;a href="https://arxiv.org/abs/2406.11906" target="_blank" rel="noopener">NovoBench&lt;/a> and holding onto rigorous error control. &lt;strong>Why it matters for
+the lab:&lt;/strong> it&amp;rsquo;s the same rule as &lt;a href="https://aicell.io/post/newsletter-2026-08-06/">hallucination-checked stains&lt;/a> and virtual
+cells that &lt;a href="https://aicell.io/post/newsletter-2026-08-02/">show their work&lt;/a> — an identification you can&amp;rsquo;t audit isn&amp;rsquo;t a
+measurement.&lt;/p>
+&lt;p>Read together, the arc is the one we keep meeting from new angles: a signal that used to need a reference to
+interpret can now be read directly, at finer and finer resolution, by a model that learned the mapping. The
+proteome was the omics layer that most resisted this — un-amplifiable, database-bound, spectrum-noisy — and
+it&amp;rsquo;s giving way. The genome is the blueprint; the proteome is the machine actually running. If a
+&lt;a href="https://aicell.io/project/human-cell-simulator/">virtual cell&lt;/a> is ever going to be judged against what a real cell &lt;em>does&lt;/em>,
+this is the layer it will be judged on — and we&amp;rsquo;re finally learning to read it, one spectrum at a time.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(X/Twitter sweep was skipped today — our news API is out of credits.) Have lab news to share — a
+talk, paper, conference or release? Message me on Slack.&lt;/em>&lt;/p></description></item><item><title>Lab Newsletter — August 6, 2026: The Stain You Never Applied</title><link>https://aicell.io/post/newsletter-2026-08-06/</link><pubDate>Thu, 06 Aug 2026 03:07:00 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-08-06/</guid><description>&lt;p>To see a molecule in a cell, you usually have to &lt;em>touch&lt;/em> the cell — flood it with a dye, tag it with an
 antibody, wait, and accept the cost: reagents, time, one-shot samples, and, for anything alive, the
 phototoxic, behaviour-changing burden of fluorescence. Physical staining is the tax microscopy pays for
 molecular specificity. The trade taking shape this season pays it differently: &lt;strong>predict the label directly

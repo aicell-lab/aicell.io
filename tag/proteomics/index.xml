@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>proteomics | AICell Lab</title><link>https://aicell.io/tag/proteomics/</link><atom:link href="https://aicell.io/tag/proteomics/index.xml" rel="self" type="application/rss+xml"/><description>proteomics</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 07 Aug 2026 03:07:00 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>proteomics</title><link>https://aicell.io/tag/proteomics/</link></image><item><title>Lab Newsletter — August 7, 2026: The Layer You Can't Amplify</title><link>https://aicell.io/post/newsletter-2026-08-07/</link><pubDate>Fri, 07 Aug 2026 03:07:00 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-08-07/</guid><description>&lt;p>We spend a lot of these digests on what a cell &lt;em>could&lt;/em> do — its genome — and what it &lt;em>intends&lt;/em> to do — its
+transcriptome. Today is about the layer where biology actually happens: the &lt;strong>proteome&lt;/strong>, the working
+machinery, the molecules that are doing the job right now. It&amp;rsquo;s the readout closest to phenotype and, by a
+wide margin, the hardest to get. There&amp;rsquo;s no PCR for proteins — you can&amp;rsquo;t amplify them — so sensitivity is a
+brutal wall, and the raw signal, a forest of fragment-ion peaks in a mass spectrum, was nearly unreadable at
+scale unless the answer already sat in a reference database. That last constraint is the one deep learning
+just took down.&lt;/p>
+&lt;h3 id="-read-the-protein-straight-from-the-spectrum--no-database">🧩 Read the protein straight from the spectrum — no database&lt;/h3>
+&lt;p>The unlock is &lt;strong>de novo peptide sequencing&lt;/strong>: predict a peptide&amp;rsquo;s amino-acid sequence directly from its
+mass spectrum, with no database to match against — the only way to find peptides that &lt;em>aren&amp;rsquo;t&lt;/em> catalogued
+(immune peptides, environmental metaproteomes, ancient proteins, venoms, novel or mutated sequences). The
+field turned a corner with &lt;strong>&lt;a href="https://github.com/Noble-Lab/casanovo" target="_blank" rel="noopener">Casanovo&lt;/a>&lt;/strong> (Yilmaz et al.), the first
+transformer built for the task: it &amp;ldquo;translates peaks in MS/MS spectra into amino acid sequences,&amp;rdquo; reading raw
+peaks and precursor mass with no discretization, and it&amp;rsquo;s open-source and still actively maintained (v5.0 in
+2025). The 2025 flagship pushes further —
+&lt;strong>&lt;a href="https://www.nature.com/articles/s42256-025-01019-5" target="_blank" rel="noopener">InstaNovo&lt;/a>&lt;/strong> (Eloff et al., &lt;em>Nature Machine
+Intelligence&lt;/em>, 2025; InstaDeep + DTU) pairs a transformer with &lt;strong>InstaNovo+&lt;/strong>, a &lt;em>diffusion&lt;/em> model that
+iteratively refines each prediction like a second, more careful reading. The result isn&amp;rsquo;t incremental: the
+authors report &amp;ldquo;improved therapeutic sequencing coverage, &lt;strong>discover novel peptides and detect unreported
+organisms&lt;/strong> in diverse datasets,&amp;rdquo; widening what a proteomics search can even see. Database-free identification
+turns the proteome from a lookup problem into a &lt;em>discovery&lt;/em> one. &lt;strong>Why it matters for the lab:&lt;/strong> this is the
+open-model, database-free ethos we like — a benchmarked tool that finds the thing your reference didn&amp;rsquo;t
+contain, shared for anyone to run.&lt;/p>
+&lt;h3 id="-down-to-a-single-cell-up-into-a-foundation-model">🔬 Down to a single cell, up into a foundation model&lt;/h3>
+&lt;p>Two frontiers are advancing at once. &lt;strong>Down:&lt;/strong> single-cell proteomics now routinely quantifies &lt;strong>1,000–3,000
+protein groups from one mammalian cell&lt;/strong>, prying protein-level state out of individual cells the way scRNA-seq
+did for transcripts — except, again, with no amplification to lean on, which makes every gain a hard-won
+sensitivity win. &lt;strong>Up:&lt;/strong> the field is building &lt;strong>foundation models&lt;/strong>. A &lt;a href="https://arxiv.org/abs/2505.10848" target="_blank" rel="noopener">2025 model for tandem-MS
+proteomics&lt;/a> trained on de novo sequencing &amp;ldquo;learns generalizable
+representations of spectra&amp;rdquo; that transfer to data-scarce downstream tasks, and a 2026 preprint,
+&lt;strong>&lt;a href="https://arxiv.org/html/2604.20003" target="_blank" rel="noopener">scpFormer&lt;/a>&lt;/strong>, aims for a unified representation of single-cell
+proteomics. scpFormer also names a trade-off worth holding onto: &lt;strong>antibody-based&lt;/strong> methods give broad
+coverage at scale, while &lt;strong>mass spectrometry&lt;/strong> gives &amp;ldquo;substantially greater proteomic depth per cell.&amp;rdquo;
+&lt;strong>Why it matters for the lab:&lt;/strong> that trade-off is &lt;em>our&lt;/em> two hands. The lab works with the
+&lt;a href="https://www.proteinatlas.org" target="_blank" rel="noopener">Human Protein Atlas&lt;/a> — antibody-and-imaging proteomics, all breadth and spatial
+context; MS proteomics is the depth-per-cell complement. Reading proteins both ways — the picture &lt;em>and&lt;/em> the
+spectrum — is how you get coverage and resolution instead of choosing.&lt;/p>
+&lt;h3 id="-the-ladder-to-a-virtual-cell--and-the-check">🎯 The ladder to a virtual cell — and the check&lt;/h3>
+&lt;p>The reason to care beyond method is where this points. A brand-new review from Tiannan Guo&amp;rsquo;s group —
+&lt;a href="https://pubmed.ncbi.nlm.nih.gov/42521824/" target="_blank" rel="noopener">&lt;strong>&amp;ldquo;AI proteomics: from protein identification to virtual cells&amp;rdquo;&lt;/strong>&lt;/a>
+(&lt;em>Nature Methods&lt;/em>, 2026) — draws the arc without hedging: AI in mass-spec proteomics now runs &amp;ldquo;from protein
+identification to building AI virtual cells,&amp;rdquo; across identification, quantification, protein–protein
+interactions and complexes, spatial and perturbation proteomics, and multi-omics integration — &amp;ldquo;ultimately,
+enabling AI virtual cells.&amp;rdquo; That&amp;rsquo;s the &lt;a href="https://aicell.io/project/human-cell-simulator/">Human Cell Simulator&lt;/a>&amp;rsquo;s missing
+molecular layer, named by the proteomics field itself. But the same discipline we keep insisting on applies
+in full: a de novo peptide is a &lt;em>prediction&lt;/em>, and a confidently sequenced peptide that isn&amp;rsquo;t real is a false
+discovery. Which is why the field is building shared benchmarks like
+&lt;a href="https://arxiv.org/abs/2406.11906" target="_blank" rel="noopener">NovoBench&lt;/a> and holding onto rigorous error control. &lt;strong>Why it matters for
+the lab:&lt;/strong> it&amp;rsquo;s the same rule as &lt;a href="https://aicell.io/post/newsletter-2026-08-06/">hallucination-checked stains&lt;/a> and virtual
+cells that &lt;a href="https://aicell.io/post/newsletter-2026-08-02/">show their work&lt;/a> — an identification you can&amp;rsquo;t audit isn&amp;rsquo;t a
+measurement.&lt;/p>
+&lt;p>Read together, the arc is the one we keep meeting from new angles: a signal that used to need a reference to
+interpret can now be read directly, at finer and finer resolution, by a model that learned the mapping. The
+proteome was the omics layer that most resisted this — un-amplifiable, database-bound, spectrum-noisy — and
+it&amp;rsquo;s giving way. The genome is the blueprint; the proteome is the machine actually running. If a
+&lt;a href="https://aicell.io/project/human-cell-simulator/">virtual cell&lt;/a> is ever going to be judged against what a real cell &lt;em>does&lt;/em>,
+this is the layer it will be judged on — and we&amp;rsquo;re finally learning to read it, one spectrum at a time.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(X/Twitter sweep was skipped today — our news API is out of credits.) Have lab news to share — a
+talk, paper, conference or release? Message me on Slack.&lt;/em>&lt;/p></description></item></channel></rss>
