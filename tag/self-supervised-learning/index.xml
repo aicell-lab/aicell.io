@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>self-supervised-learning | AICell Lab</title><link>https://aicell.io/tag/self-supervised-learning/</link><atom:link href="https://aicell.io/tag/self-supervised-learning/index.xml" rel="self" type="application/rss+xml"/><description>self-supervised-learning</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 10 Aug 2026 03:07:00 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>self-supervised-learning</title><link>https://aicell.io/tag/self-supervised-learning/</link></image><item><title>Lab Newsletter — August 10, 2026: One Cell, Two Answers</title><link>https://aicell.io/post/newsletter-2026-08-10/</link><pubDate>Mon, 10 Aug 2026 03:07:00 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-08-10/</guid><description>&lt;p>Ask a cell what a gene does and you have always had to choose how to listen. &lt;strong>Pooled&lt;/strong> CRISPR screens are
+gloriously scalable — perturb every gene in the genome in a single dish — but the readout collapses to a
+number: did cells carrying this guide grow or die, enrich or drop out? You lose the cell&amp;rsquo;s &lt;em>shape&lt;/em>, its
+organelles, where a protein went. &lt;strong>Arrayed&lt;/strong> image-based screens keep all of that rich phenotype, but they need
+one perturbation per well, so genome scale means hundreds of thousands of wells and they simply don&amp;rsquo;t scale.
+For years that was the deal. &lt;strong>Optical pooled screening&lt;/strong> (OPS) refuses it — and in 2025 the field carried the
+idea all the way to the whole genome.&lt;/p>
+&lt;h3 id="-read-the-genotype-and-the-phenotype-in-the-same-cell">🧬 Read the genotype and the phenotype in the same cell&lt;/h3>
+&lt;p>The trick is disarmingly direct. Grow a &lt;strong>pooled&lt;/strong> library — thousands of genes knocked out across one shared
+population — image every cell richly, and then, &lt;em>under the same microscope&lt;/em>, recover &lt;strong>which CRISPR guide each
+cell received&lt;/strong> by sequencing its molecular barcode &lt;strong>in situ&lt;/strong>. One cell gives you two answers at once: its
+perturbation and its phenotype. David Feldman, Paul Blainey and colleagues established the method in
+&lt;a href="https://www.cell.com/cell/fulltext/S0092-8674%2819%2931067-0" target="_blank" rel="noopener">&lt;strong>&amp;ldquo;Optical Pooled Screens in Human Cells&amp;rdquo;&lt;/strong>&lt;/a>
+(&lt;em>Cell&lt;/em>, 2019), using targeted in-situ sequencing to demultiplex a perturbation library &lt;em>after&lt;/em> image-based
+phenotyping — fluorescence microscopy recording both the phenotype and the sequencing reads that name the guide
+in each cell. (A lovely piece of rigor along the way: a modified lentiviral protocol cut barcode–guide
+&amp;ldquo;swapping&amp;rdquo; from &lt;strong>over 28% to under 5%&lt;/strong>, so the genotype you read is the one the cell actually carries.) By
+2023 the throughput had grown past genome scale: a
+&lt;a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10120039/" target="_blank" rel="noopener">genome-wide OPS&lt;/a> of antiviral responses (&lt;em>PNAS&lt;/em>, 2023)
+imaged &lt;strong>10,366,390 cells&lt;/strong> carrying &lt;strong>80,408 guide RNAs targeting over 20,000 genes&lt;/strong>, reading them all out
+with &lt;strong>12 cycles of in-situ sequencing&lt;/strong> — and pulled out real biology, including that &lt;strong>ATP13A1 &amp;ldquo;is essential
+for viral sensing.&amp;rdquo;&lt;/strong> &lt;strong>Why it matters for the lab:&lt;/strong> this is imaging × perturbation at scale — exactly the
+regime our &lt;a href="https://aicell.io/project/self-driving-microscope/">self-driving microscope&lt;/a>, &lt;a href="https://aicell.io/project/agent-lens/">Agent-Lens&lt;/a> and
+the &lt;a href="https://aicell.io/project/reef-imaging-farm/">REEF imaging farm&lt;/a> are built for.&lt;/p>
+&lt;h3 id="-the-genome-mapped-by-morphology">🗺️ The genome, mapped by morphology&lt;/h3>
+&lt;p>In 2025 two independent teams turned OPS into genome-scale &lt;em>atlases&lt;/em>. The Broad Institute and Calico built
+&lt;a href="https://www.nature.com/articles/s41592-024-02537-7" target="_blank" rel="noopener">&lt;strong>PERISCOPE&lt;/strong>&lt;/a> (&lt;em>Nature Methods&lt;/em>, 2025) — &amp;ldquo;&lt;strong>p&lt;/strong>erturbation
+&lt;strong>e&lt;/strong>ffect &lt;strong>r&lt;/strong>eadout &lt;strong>i&lt;/strong>n &lt;strong>s&lt;/strong>itu via single-&lt;strong>c&lt;/strong>ell &lt;strong>o&lt;/strong>ptical &lt;strong>p&lt;/strong>henotyping&amp;rdquo; — marrying
+&lt;strong>Cell Painting&lt;/strong> (high-dimensional subcellular imaging) to optical pooled screening. The result is the &lt;strong>first
+unbiased, morphology-based genome-wide perturbation atlas in human cells&lt;/strong>: three whole-genome CRISPR screens,
+knockouts of &lt;strong>more than 20,000 genes&lt;/strong> across &lt;strong>tens of millions of cells&lt;/strong>, each scored on hundreds of
+image-based features — and, crucially, &lt;strong>more than 10× cheaper&lt;/strong> than a comparable single-cell RNA-seq screen,
+with &lt;strong>all data open access&lt;/strong>. It doesn&amp;rsquo;t just re-draw known biology; it lit up the &lt;em>poorly&lt;/em> known, revealing
+for instance that &lt;strong>TMEM251&lt;/strong>, tied to a rare lysosomal storage disease, is &amp;ldquo;required for trafficking enzymes to
+lysosomes.&amp;rdquo; As the Broad&amp;rsquo;s JT Neal put it, it&amp;rsquo;s a &lt;strong>&amp;ldquo;first-in-class genome-scale resource for linking cell
+morphology to gene function.&amp;rdquo;&lt;/strong> The same year, insitro published a general platform,
+&lt;a href="https://www.nature.com/articles/s41467-025-66778-6" target="_blank" rel="noopener">&lt;strong>CellPaint-POSH&lt;/strong>&lt;/a> (&lt;em>Nature Communications&lt;/em>, 2025), aimed
+squarely at OPS&amp;rsquo;s remaining weakness — most implementations were &lt;strong>pathway-specific&lt;/strong>. Its answer is to stop
+hand-picking biomarkers: a &lt;strong>self-supervised model (CP-DINO)&lt;/strong> learns representations straight from Cell Painting
+images, and &lt;strong>gene networks emerge without any target-specific readout&lt;/strong> (AUC ≈ 0.83 against the StringDB
+interaction network), enabling &lt;strong>hypothesis-free discovery&lt;/strong> across a druggable-genome screen. Tellingly, the
+model applied &lt;strong>zero-shot to PERISCOPE&amp;rsquo;s data still worked&lt;/strong> — the learned phenotype &lt;strong>generalizes across labs
+and protocols&lt;/strong>. &lt;strong>Why it matters for the lab:&lt;/strong> letting a model &lt;em>find&lt;/em> the phenotype rather than hand-engineering
+it is the same thread as our &lt;a href="https://aicell.io/post/newsletter-2026-08-04/">morphological profiling&lt;/a> digest — now driving a
+genome-scale &lt;em>screen&lt;/em>, and shipping as open atlases in the &lt;a href="https://aicell.io/project/bioimage-model-zoo/">BioImage Model Zoo&lt;/a> /
+&lt;a href="https://aicell.io/project/bioengine/">BioEngine&lt;/a> spirit.&lt;/p>
+&lt;h3 id="-the-data-engine-of-a-virtual-cell--and-the-honest-frontier">🔗 The data engine of a virtual cell — and the honest frontier&lt;/h3>
+&lt;p>Here is why this belongs on the front page. A &lt;a href="https://aicell.io/project/human-cell-simulator/">virtual cell&lt;/a> is only as good as
+the data it learns from, and the hardest data to get is &lt;strong>causal&lt;/strong>: not &amp;ldquo;what does a healthy cell look like&amp;rdquo; but
+&amp;ldquo;what happens to &lt;em>this&lt;/em> cell when you change &lt;em>this&lt;/em> gene.&amp;rdquo; OPS manufactures exactly that — &lt;strong>millions of
+(perturbation → single-cell phenotype) pairs&lt;/strong> — at a cost that makes genome-scale feasible. It&amp;rsquo;s the
+imaging-native complement to &lt;a href="https://aicell.io/post/newsletter-2026-08-09/">yesterday&amp;rsquo;s genome language models&lt;/a>: those read DNA
+&lt;em>sequence&lt;/em> toward function; OPS &lt;em>measures&lt;/em> perturbation-to-phenotype in living cells; a &lt;a href="https://aicell.io/project/human-cell-simulator/">Human Cell
+Simulator&lt;/a> is the model that couples the two, and a
+&lt;a href="https://aicell.io/post/newsletter-2026-07-31/">self-driving lab&lt;/a> is what runs the screens that feed it. The honesty clause
+matters too: morphology is a &lt;strong>rich but partial&lt;/strong> phenotype — it sees shape and localization, not transcriptional
+state — so OPS and molecular profiling are complementary, not interchangeable; the platforms are still being
+generalized beyond pathway-specific assays; and a screen is only as trustworthy as the phenotype you can read and
+believe, the same &lt;a href="https://aicell.io/post/newsletter-2026-07-27/">prove-it discipline&lt;/a> we keep insisting on. But the direction is
+unmistakable. The microscope, which spent a century answering &lt;em>what does this cell look like?&lt;/em>, has learned to
+answer a second question in the same frame — &lt;em>and which gene made it so?&lt;/em>&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(X/Twitter sweep was skipped today — our news API is out of credits.) Have lab news to share — a
+talk, paper, conference or release? Message me on Slack.&lt;/em>&lt;/p></description></item></channel></rss>

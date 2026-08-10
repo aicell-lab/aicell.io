@@ -1,4 +1,73 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>genomics | AICell Lab</title><link>https://aicell.io/tag/genomics/</link><atom:link href="https://aicell.io/tag/genomics/index.xml" rel="self" type="application/rss+xml"/><description>genomics</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 08 Jul 2026 03:04:07 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>genomics</title><link>https://aicell.io/tag/genomics/</link></image><item><title>Lab Newsletter — July 8, 2026: The Virtual Cell's Building Blocks</title><link>https://aicell.io/post/newsletter-2026-07-08/</link><pubDate>Wed, 08 Jul 2026 03:04:07 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-07-08/</guid><description>&lt;p>If the virtual cell is the destination, this week&amp;rsquo;s items are three of its load-bearing layers:
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>genomics | AICell Lab</title><link>https://aicell.io/tag/genomics/</link><atom:link href="https://aicell.io/tag/genomics/index.xml" rel="self" type="application/rss+xml"/><description>genomics</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 09 Aug 2026 03:07:00 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>genomics</title><link>https://aicell.io/tag/genomics/</link></image><item><title>Lab Newsletter — August 9, 2026: The Grammar of the Genome</title><link>https://aicell.io/post/newsletter-2026-08-09/</link><pubDate>Sun, 09 Aug 2026 03:07:00 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-08-09/</guid><description>&lt;p>A cell&amp;rsquo;s genome is the one molecule that is both the blueprint &lt;em>and&lt;/em>, increasingly, something a model can
+generate. For most of the genomics era we could read &lt;strong>genes&lt;/strong> — the roughly 2% of human DNA that codes for
+protein — while the other &lt;strong>98%&lt;/strong>, the regulatory sequence that decides &lt;em>when, where and how much&lt;/em> a gene is
+used, stayed mostly dark. And though we learned to read, write, and edit DNA, we never learned to &lt;em>compose&lt;/em> it:
+we could cut and paste nature&amp;rsquo;s sentences without knowing the grammar to write our own. In 2026, two landmark
+&lt;em>Nature&lt;/em> papers moved both walls in the same season — one taught a model to &lt;strong>read&lt;/strong> the whole regulatory
+genome, the other taught one to &lt;strong>write&lt;/strong> genomes across all of life. The genome, at last, has a grammar you
+can model.&lt;/p>
+&lt;h3 id="-read-the-other-98">📖 Read the other 98%&lt;/h3>
+&lt;p>The reading breakthrough is &lt;a href="https://doi.org/10.1038/s41586-025-10014-0" target="_blank" rel="noopener">&lt;strong>AlphaGenome&lt;/strong>&lt;/a> (Hassabis, Kohli et
+al., Google DeepMind, &lt;em>Nature&lt;/em>, 28 January 2026). It predicts regulatory features &lt;strong>directly from DNA
+sequence&lt;/strong> — variant effects, RNA splice sites, chromatin accessibility, gene expression — and it does so at a
+resolution the field had been forced to trade away. Earlier base-resolution models like SpliceAI saw only
+short windows (≤10 kb) and missed distant regulation; long-context models like Enformer and Borzoi reached
+hundreds of kilobases but only at a coarse 32–128 bp grain. AlphaGenome takes in &lt;strong>1 megabase&lt;/strong> of sequence and
+predicts &lt;strong>5,930 human genome tracks across 11 output types at single-base resolution&lt;/strong> — both at once — via a
+U-Net-style encoder→transformer→decoder. Its most elegant trick is a &lt;strong>2D representation for splicing&lt;/strong> that,
+in the authors&amp;rsquo; framing, &amp;ldquo;parallels AlphaFold&amp;rsquo;s pairwise amino-acid representations&amp;rdquo;: just as AlphaFold&amp;rsquo;s pair
+track captures which residues sit close in a folded protein, AlphaGenome&amp;rsquo;s captures which genomic positions
+interact, so it can weigh a single splice-site nucleotide against a regulatory element half a megabase away. On
+the numbers, it &amp;ldquo;matched or exceeded the strongest available external model on &lt;strong>24 of 26 variant-effect
+evaluations&lt;/strong>.&amp;rdquo; As the Francis Crick Institute&amp;rsquo;s Robert Goldstone put it, &amp;ldquo;this level of resolution,
+particularly for non-coding DNA, is a breakthrough that moves the technology from theoretical interest to
+practical utility.&amp;rdquo; &lt;strong>Why it matters for the lab:&lt;/strong> the noncoding genome is where most disease-associated
+variants live and where interpretation has been hardest. A model that reads the regulatory 98% at base
+resolution is the sequence-to-function layer a &lt;a href="https://aicell.io/project/human-cell-simulator/">virtual cell&lt;/a> needs to connect
+genotype to what a cell actually does.&lt;/p>
+&lt;h3 id="-write-across-all-of-life">✍️ Write across all of life&lt;/h3>
+&lt;p>If AlphaGenome reads, &lt;a href="https://doi.org/10.1038/s41586-026-10176-5" target="_blank" rel="noopener">&lt;strong>Evo 2&lt;/strong>&lt;/a> (Brixi, Durrant, Ku et al.;
+co-led by Patrick Hsu and Brian Hie; Arc Institute + NVIDIA, &lt;em>Nature&lt;/em>, 2026) &lt;strong>writes&lt;/strong>. It&amp;rsquo;s a genome
+language model at frontier scale — &lt;strong>7B and 40B&lt;/strong> parameters trained on &lt;strong>over 9.3 trillion nucleotides&lt;/strong> from
+&lt;strong>more than 128,000 whole genomes&lt;/strong> spanning &lt;strong>all three domains of life&lt;/strong>, reading up to &lt;strong>1 million
+nucleotides&lt;/strong> of context with a StripedHyena 2 architecture — &amp;ldquo;the largest fully open biological AI model to
+date.&amp;rdquo; Trained only to predict sequence, it turns out to have learned biology: it classifies BRCA1 mutations as
+benign or pathogenic at &lt;strong>over 90% accuracy&lt;/strong> with no task-specific training, and — the part that still feels
+like science fiction — it can &lt;strong>design new genomes as long as those of simple bacteria&lt;/strong>. Crucially, this isn&amp;rsquo;t
+only in silico: of Evo 2&amp;rsquo;s designed sequences, &amp;ldquo;&lt;strong>16 of 285 tested designs successfully propagated and
+inhibited growth of the appropriate bacterial strains&lt;/strong>&amp;rdquo; — composed DNA that actually worked in living cells.
+Patrick Hsu&amp;rsquo;s summary is the whole thesis in one line: the models &amp;ldquo;have enabled machines to read, write, and
+think in the language of nucleotides.&amp;rdquo; &lt;strong>Why it matters for the lab:&lt;/strong> generative genome design plus zero-shot
+variant interpretation is the engine of &lt;a href="https://aicell.io/project/autonomous-research-agents/">automated discovery&lt;/a> — and Arc
+frames Evo explicitly as one layer of a stack that runs up to &lt;strong>virtual cell models&lt;/strong>. It&amp;rsquo;s the same bet as our
+&lt;a href="https://aicell.io/project/human-cell-simulator/">Human Cell Simulator&lt;/a>, and the fact that Evo ships fully open — weights, code,
+data — is the &lt;a href="https://aicell.io/project/bioimage-model-zoo/">BioImage Model Zoo&lt;/a> / &lt;a href="https://aicell.io/project/bioengine/">BioEngine&lt;/a> ethos
+carried from images to genomes.&lt;/p>
+&lt;h3 id="-the-honest-grammar--and-the-safeguard">🧭 The honest grammar — and the safeguard&lt;/h3>
+&lt;p>The excitement is earned, but the frontier is not finished, and this is where the story stays useful rather
+than triumphant. A peer-reviewed
+&lt;a href="https://www.nature.com/articles/s41467-025-65823-8" target="_blank" rel="noopener">benchmarking study&lt;/a> (&lt;em>Nature Communications&lt;/em>, 2025) finds
+a revealing split: on tissue-specific QTL tasks the &lt;strong>specialized&lt;/strong> models still win, because foundation models
+tend to learn a general, context-free sense of what makes a sequence &amp;ldquo;broken&amp;rdquo; while specialists capture the
+cell-type-specific regulatory grammar that decides whether a variant is &lt;em>functional&lt;/em> here, in this tissue.
+AlphaGenome&amp;rsquo;s own authors flag the same gap — cell-type specificity and rare variants remain unreliable — which
+is why KCL&amp;rsquo;s Xianghua Li cautions that &amp;ldquo;for important medical tasks, current AI models are still not reliable
+enough for patient care.&amp;rdquo; That&amp;rsquo;s not a knock; it&amp;rsquo;s the &lt;a href="https://aicell.io/post/newsletter-2026-07-27/">prove-it discipline&lt;/a> we
+keep returning to — hold these models to held-out, task-relevant tests, exactly as the genomic-FM
+&lt;a href="https://aicell.io/post/newsletter-2026-07-28/">evaluation reckoning&lt;/a> demanded. And a model that can &lt;em>compose&lt;/em> biology raises a
+second obligation the field is, encouragingly, taking seriously: Evo 2&amp;rsquo;s team &lt;strong>excluded human pathogens&lt;/strong> from
+training and red-teamed the model so it &amp;ldquo;would not return productive answers&amp;rdquo; about them. That is
+&lt;a href="https://aicell.io/post/newsletter-2026-07-20/">Design, Build, Test — and &lt;em>Safeguard&lt;/em>&lt;/a> in its sharpest form: when design becomes
+generative, alignment has to be built in before capability outruns it.&lt;/p>
+&lt;p>Read together, the two models bracket a single shift. The genome used to be a text we could spell out letter by
+letter but not truly &lt;em>read&lt;/em> past the genes, and copy but not &lt;em>write&lt;/em>. Now one model reads the regulatory 98% at
+single-base resolution and another writes sequences that live and function in real cells — and the sober
+benchmarks and biosafety guards arriving alongside them are what make the capability trustworthy rather than
+merely impressive. The blueprint has become a language: something we can finally read in full, and are learning,
+carefully, to compose.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(X/Twitter sweep was skipped today — our news API is out of credits.) Have lab news to share — a
+talk, paper, conference or release? Message me on Slack.&lt;/em>&lt;/p></description></item><item><title>Lab Newsletter — July 8, 2026: The Virtual Cell's Building Blocks</title><link>https://aicell.io/post/newsletter-2026-07-08/</link><pubDate>Wed, 08 Jul 2026 03:04:07 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-07-08/</guid><description>&lt;p>If the virtual cell is the destination, this week&amp;rsquo;s items are three of its load-bearing layers:
 the &lt;strong>genome&lt;/strong>, the &lt;strong>proteome&lt;/strong>, and the &lt;strong>3D tissue&lt;/strong> it all builds into. Each is getting an AI
 that turns cheap, available data into deep biology.&lt;/p>
 &lt;h3 id="-the-genome-gets-its-foundation-models">🧬 The genome gets its foundation models&lt;/h3>
