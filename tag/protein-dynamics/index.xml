@@ -1,4 +1,63 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>protein-dynamics | AICell Lab</title><link>https://aicell.io/tag/protein-dynamics/</link><atom:link href="https://aicell.io/tag/protein-dynamics/index.xml" rel="self" type="application/rss+xml"/><description>protein-dynamics</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 22 Jul 2026 03:03:49 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>protein-dynamics</title><link>https://aicell.io/tag/protein-dynamics/</link></image><item><title>Lab Newsletter — July 22, 2026: In Motion, On Trial</title><link>https://aicell.io/post/newsletter-2026-07-22/</link><pubDate>Wed, 22 Jul 2026 03:03:49 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-07-22/</guid><description>&lt;p>AlphaFold gave us the pose; biology happens in the &lt;em>motion&lt;/em>. Two of today&amp;rsquo;s items are about
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>protein-dynamics | AICell Lab</title><link>https://aicell.io/tag/protein-dynamics/</link><atom:link href="https://aicell.io/tag/protein-dynamics/index.xml" rel="self" type="application/rss+xml"/><description>protein-dynamics</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 11 Aug 2026 03:07:00 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>protein-dynamics</title><link>https://aicell.io/tag/protein-dynamics/</link></image><item><title>Lab Newsletter — August 11, 2026: After the Fold, the Motion</title><link>https://aicell.io/post/newsletter-2026-08-11/</link><pubDate>Tue, 11 Aug 2026 03:07:00 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-08-11/</guid><description>&lt;p>AlphaFold answered a question biology had chased for fifty years — &lt;em>what shape does this sequence fold into?&lt;/em> —
+and it answered it with a single, exquisite snapshot. But a protein doesn&amp;rsquo;t &lt;em>do&lt;/em> anything as a snapshot. It
+works by &lt;strong>moving&lt;/strong>: a cryptic pocket breathes open just long enough for a drug to slip in, a domain swings to
+pass a signal, a disordered tail flickers through a thousand shapes and settles on none. The fold is the first
+frame of a film. For most of the structural-biology era the only way to see the rest of the film was &lt;strong>molecular
+dynamics&lt;/strong> (MD) — simulate every atom&amp;rsquo;s jiggle, step by femtosecond step — which is physically faithful and
+brutally, budget-breakingly slow. In 2025–26 the field found a different route: don&amp;rsquo;t simulate the motion,
+&lt;strong>learn its distribution&lt;/strong>.&lt;/p>
+&lt;h3 id="-from-one-structure-to-the-whole-ensemble">🎞️ From one structure to the whole ensemble&lt;/h3>
+&lt;p>The reframing came first. &lt;a href="https://arxiv.org/pdf/2407.12053" target="_blank" rel="noopener">&lt;strong>AlphaFlow&lt;/strong>&lt;/a> (Jing, Berger &amp;amp; Jaakkola, 2024)
+took AlphaFold2 and rebuilt it into a &lt;strong>flow-matching generative model&lt;/strong>: instead of emitting one structure, it
+learns a continuous flow that turns noise into realistic conformations, so you can &lt;strong>sample from the equilibrium
+ensemble&lt;/strong> — the set of shapes a protein actually populates — after fine-tuning on MD trajectories. Its sibling
+ESMFold-based variant (ESMFlow) and a fast-growing family of diffusion and flow models (ConfDiff, P2DFlow,
+Boltzmann-distribution samplers) all share one move: &lt;strong>directly learn the distribution over structures&lt;/strong> rather
+than pay for every simulation step. The question stopped being &amp;ldquo;what is &lt;em>the&lt;/em> structure?&amp;rdquo; and became &amp;ldquo;what is
+the &lt;em>cloud&lt;/em> of structures, and how is it weighted?&amp;rdquo; &lt;strong>Why it matters for the lab:&lt;/strong> a distribution is a far
+richer object than a point — it carries flexibility, alternative states, and the rare open conformations where
+biology and drugs actually happen.&lt;/p>
+&lt;h3 id="-bioemu-molecular-dynamics-amortized">⚡ BioEmu: molecular dynamics, amortized&lt;/h3>
+&lt;p>The scaled-up demonstration is &lt;a href="https://pubmed.ncbi.nlm.nih.gov/40638710/" target="_blank" rel="noopener">&lt;strong>BioEmu&lt;/strong>&lt;/a> (Lewis, Hempel,
+Jiménez-Luna et al.; senior authors Cecilia Clementi &amp;amp; Frank Noé; Microsoft Research AI for Science),
+published in &lt;a href="https://www.science.org/doi/10.1126/science.adv9817" target="_blank" rel="noopener">&lt;em>Science&lt;/em>&lt;/a> on 14 August 2025. BioEmu pairs
+&lt;strong>AlphaFold&amp;rsquo;s sequence representation with a diffusion module&lt;/strong> and trains it on an extraordinary corpus —
+&lt;strong>over 200 milliseconds of molecular-dynamics simulation&lt;/strong>, plus static structures and experimental protein
+stabilities. The payoff is speed &lt;em>and&lt;/em> rigor: it generates &lt;strong>thousands of statistically independent structures
+per hour on a single GPU&lt;/strong> — by Frank Noé&amp;rsquo;s estimate up to &lt;strong>~100,000× faster&lt;/strong> than running the simulations
+themselves — and it isn&amp;rsquo;t just fast, it&amp;rsquo;s calibrated, predicting &lt;strong>relative free energies to about 1 kcal/mol&lt;/strong>
+against millisecond MD and experiment. Crucially, it captures the motions that &lt;em>matter functionally&lt;/em> —
+&lt;strong>&amp;ldquo;cryptic pocket formation, local unfolding, and domain rearrangements&amp;rdquo;&lt;/strong> — and, by modeling structure and
+thermodynamics together, it &amp;ldquo;reveals mechanistic insights, such as the causes for fold destabilization of
+mutants.&amp;rdquo; The whole thing amortizes decades of expensive simulation into a model you can query in seconds — and
+the &lt;strong>code and weights ship open&lt;/strong> (&lt;a href="https://github.com/microsoft/bioemu" target="_blank" rel="noopener">github.com/microsoft/bioemu&lt;/a>). &lt;strong>Why
+it matters for the lab:&lt;/strong> this is the &lt;a href="https://aicell.io/project/bioimage-model-zoo/">BioImage Model Zoo&lt;/a> /
+&lt;a href="https://aicell.io/project/bioengine/">BioEngine&lt;/a> ethos — an open, runnable model — carried from images to &lt;em>molecular motion&lt;/em>, and
+exactly the kind of fast oracle an &lt;a href="https://aicell.io/project/autonomous-research-agents/">autonomous research agent&lt;/a> can call to
+propose a cryptic drug pocket and then send it to the bench.&lt;/p>
+&lt;h3 id="-the-motion-under-the-cell--and-the-honest-frontier">🧭 The motion under the cell — and the honest frontier&lt;/h3>
+&lt;p>Here is why this belongs on a lab that builds toward a &lt;a href="https://aicell.io/project/human-cell-simulator/">virtual cell&lt;/a>. A cell is
+not an album of frozen sculptures; it is a factory of &lt;strong>machines in motion&lt;/strong> — allosteric switches, flexing
+transporters, pockets that open and close on cue. A &lt;a href="https://aicell.io/project/human-cell-simulator/">Human Cell Simulator&lt;/a> that
+knows only static folds is missing the verbs. Fast, learned equilibrium ensembles are the scalable way to put
+&lt;em>dynamics&lt;/em> under the model — and they&amp;rsquo;re the natural computational complement to
+&lt;a href="https://aicell.io/post/newsletter-2026-07-29/">cryo-ET&amp;rsquo;s in-situ snapshots&lt;/a>: where visual proteomics &lt;em>observes&lt;/em> a machine caught
+in the crowded cell, an ensemble model &lt;em>predicts the distribution&lt;/em> that snapshot was drawn from. But the frontier
+is honest about itself, and this is where it stays useful rather than triumphant. A 2026
+&lt;a href="https://www.nature.com/articles/s41592-026-03084-z" target="_blank" rel="noopener">&lt;em>Nature Methods&lt;/em> perspective&lt;/a>, &amp;ldquo;From possibility to
+precision in macromolecular ensemble prediction,&amp;rdquo; lays out the hard part: evaluation is multi-tiered — getting
+&lt;em>flexibility&lt;/em> right, then &lt;em>distributional accuracy&lt;/em>, then &lt;em>ensemble observables&lt;/em> — and stubborn targets like
+&lt;strong>GPCRs&lt;/strong>, with their multiple metastable states and slow collective rearrangements, remain a stringent test.
+Two caveats worth stating plainly: emulating the &lt;em>equilibrium distribution&lt;/em> is &lt;strong>not&lt;/strong> the same as capturing the
+&lt;em>kinetics&lt;/em> — you learn which states exist and how populated they are, not the rates or pathways between them; and
+a generated ensemble is a &lt;strong>hypothesis&lt;/strong> until it&amp;rsquo;s checked against SAXS, NMR or DEER. That&amp;rsquo;s the same
+&lt;a href="https://aicell.io/post/newsletter-2026-07-27/">prove-it discipline&lt;/a> we keep returning to: a generated ensemble, like a
+&lt;a href="https://aicell.io/post/newsletter-2026-08-06/">generated stain&lt;/a> or a &lt;a href="https://aicell.io/post/newsletter-2026-08-02/">virtual cell that shows its work&lt;/a>,
+earns trust only by being validated. The fold told us what a protein &lt;em>is&lt;/em>. The ensemble is starting to tell us
+what it &lt;em>does&lt;/em> — and doing it fast enough, and openly enough, to build on.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(X/Twitter sweep was skipped today — our news API is out of credits.) Have lab news to share — a
+talk, paper, conference or release? Message me on Slack.&lt;/em>&lt;/p></description></item><item><title>Lab Newsletter — July 22, 2026: In Motion, On Trial</title><link>https://aicell.io/post/newsletter-2026-07-22/</link><pubDate>Wed, 22 Jul 2026 03:03:49 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-07-22/</guid><description>&lt;p>AlphaFold gave us the pose; biology happens in the &lt;em>motion&lt;/em>. Two of today&amp;rsquo;s items are about
 modeling what moves — and the third is about the only thing that ultimately settles whether a
 prediction is right.&lt;/p>
 &lt;h3 id="-proteins-modeled-in-motion">🌀 Proteins, modeled in motion&lt;/h3>
