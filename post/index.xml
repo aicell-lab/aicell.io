@@ -1,4 +1,124 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts | AICell Lab</title><link>https://aicell.io/post/</link><atom:link href="https://aicell.io/post/index.xml" rel="self" type="application/rss+xml"/><description>Posts</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 11 Aug 2026 03:07:00 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>Posts</title><link>https://aicell.io/post/</link></image><item><title>Lab Newsletter — August 11, 2026: After the Fold, the Motion</title><link>https://aicell.io/post/newsletter-2026-08-11/</link><pubDate>Tue, 11 Aug 2026 03:07:00 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-08-11/</guid><description>&lt;p>AlphaFold answered a question biology had chased for fifty years — &lt;em>what shape does this sequence fold into?&lt;/em> —
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts | AICell Lab</title><link>https://aicell.io/post/</link><atom:link href="https://aicell.io/post/index.xml" rel="self" type="application/rss+xml"/><description>Posts</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Thu, 13 Aug 2026 03:07:00 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>Posts</title><link>https://aicell.io/post/</link></image><item><title>Lab Newsletter — August 13, 2026: The Cell's Neighborhood</title><link>https://aicell.io/post/newsletter-2026-08-13/</link><pubDate>Thu, 13 Aug 2026 03:07:00 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-08-13/</guid><description>&lt;p>Single-cell RNA sequencing changed biology by answering &lt;em>what is this cell?&lt;/em> — one cell at a time, across the
+whole transcriptome. But to read a cell that way, you first have to &lt;strong>dissolve the tissue&lt;/strong> into a suspension, and
+the moment you do, you lose the one thing a microscope never forgets: &lt;strong>where the cell was, and who it was next
+to&lt;/strong>. A tumor is not a bag of cells; it is a neighborhood — immune cells pressing against a malignant core, a
+boundary where the fight actually happens. Dissociate it and that geography is gone. The frontier that gets it
+back reframes the question from &lt;em>what is this cell?&lt;/em> to &lt;em>&lt;strong>what is this cell, and where does it sit?&lt;/strong>&lt;/em>&lt;/p>
+&lt;h3 id="-keep-the-address-reading-rna-in-place">🗺️ Keep the address: reading RNA in place&lt;/h3>
+&lt;p>The measurement came first. &lt;strong>Imaging-based spatial transcriptomics&lt;/strong> — &lt;a href="https://www.science.org/doi/10.1126/science.aaa6090" target="_blank" rel="noopener">&lt;strong>MERFISH&lt;/strong>&lt;/a>
+(Chen, Zhuang et al., &lt;em>Science&lt;/em>, 2015) and its relatives (seqFISH, in-situ sequencing, and the commercial Xenium
+and CosMx platforms) — images &lt;strong>thousands of RNA species in single cells&lt;/strong> using combinatorial, error-robust
+fluorescence barcodes read out over many rounds of imaging, placing &lt;strong>individual transcripts on a map of the
+tissue at subcellular resolution&lt;/strong>. Bulk sequencing gives an average; single-cell sequencing gives the parts list;
+spatial imaging gives the parts list &lt;em>with every part still pinned to its place&lt;/em>. The catch is that it stops being
+a sequencing problem and becomes a &lt;strong>microscopy&lt;/strong> one. As the field puts it plainly,
+&lt;a href="https://www.nature.com/articles/s41587-021-01044-w" target="_blank" rel="noopener">&lt;strong>&amp;ldquo;inaccurate cell segmentation procedures lead to misassignment of mRNAs to individual cells, which can
+introduce errors in downstream analysis.&amp;rdquo;&lt;/strong>&lt;/a> You are looking
+at a dense scatter of glowing dots and you must decide, for each one, &lt;em>which cell does this belong to?&lt;/em> — draw the
+boundaries wrong and every downstream cell type is wrong. &lt;a href="https://www.nature.com/articles/s41587-021-01044-w" target="_blank" rel="noopener">&lt;strong>Baysor&lt;/strong>&lt;/a>
+(&lt;em>Nature Biotechnology&lt;/em>) is a leading answer: it optimizes 2D or 3D cell boundaries by weighing the &lt;strong>joint
+likelihood of transcriptional composition and cell morphology&lt;/strong>, working from RNA alone or with &lt;strong>image-based
+priors&lt;/strong> — nuclei segmented by &lt;strong>Cellpose&lt;/strong>, a membrane stain as a guide — to recover cells that boundary-only
+methods miss. &lt;strong>Why it matters for the lab:&lt;/strong> transcript assignment &lt;em>is&lt;/em> cell segmentation — the exact
+&lt;a href="https://aicell.io/project/bioimage-model-zoo/">BioImage Model Zoo&lt;/a> / Cellpose / SAM problem the lab works on, now load-bearing for
+omics.&lt;/p>
+&lt;h3 id="-make-sense-of-the-map-spatial-foundation-models">🧬 Make sense of the map: spatial foundation models&lt;/h3>
+&lt;p>Segmenting the cells only draws the map; the harder question is what the arrangement &lt;em>means&lt;/em>.
+&lt;a href="https://www.nature.com/articles/s41592-025-02814-z" target="_blank" rel="noopener">&lt;strong>Nicheformer&lt;/strong>&lt;/a> (Schaar, Tejada-Lapuerta, … Fabian Theis et
+al., &lt;em>Nature Methods&lt;/em>, 2025) is a &lt;strong>foundation model for single-cell &lt;em>and&lt;/em> spatial omics&lt;/strong> — a transformer trained
+with a masked-language-modeling objective to learn a cell representation that captures &lt;strong>spatial context&lt;/strong>: the
+niche, the neighborhood, who a cell sits among. It was pretrained on &lt;strong>SpatialCorpus-110M&lt;/strong>, a corpus of
+&lt;strong>over 110 million cells&lt;/strong> across &lt;strong>73 organs and tissues&lt;/strong> from human and mouse, deliberately pairing dissociated
+single-cell data with &lt;strong>~54 million cells measured by image-based spatial technologies&lt;/strong>. That pairing is the
+point, and it yields the paper&amp;rsquo;s sharpest finding: &lt;strong>models trained only on dissociated data fail to recover the
+complexity of spatial microenvironments&lt;/strong> — location is not a decoration you can reconstruct after the fact, it is
+information you have to learn from spatial data directly. Nicheformer predicts spatial labels, niche identity, and
+local cell-density and composition, and can even &lt;strong>transfer spatial context back onto plain scRNA-seq&lt;/strong>, hinting at
+where a dissociated cell would have lived. The code and pretrained &lt;strong>weights are open&lt;/strong> (Hugging Face
+&lt;code>theislab/Nicheformer&lt;/code>). &lt;strong>Why it matters for the lab:&lt;/strong> open, runnable models spanning the imaging &lt;em>and&lt;/em> omics
+halves of a spatial pipeline is the &lt;a href="https://aicell.io/project/bioengine/">BioEngine&lt;/a> ethos exactly.&lt;/p>
+&lt;h3 id="-the-tissue-under-the-cell--and-the-honest-frontier">🧭 The tissue under the cell — and the honest frontier&lt;/h3>
+&lt;p>Here is why this belongs on a lab working toward a &lt;a href="https://aicell.io/project/human-cell-simulator/">virtual cell&lt;/a>. A
+&lt;a href="https://aicell.io/project/human-cell-simulator/">Human Cell Simulator&lt;/a> that treats each cell as an independent sample misses the
+central truth Nicheformer quantifies: &lt;strong>a cell&amp;rsquo;s state depends on its neighbors&lt;/strong>. If
+&lt;a href="https://aicell.io/post/newsletter-2026-08-12/">Aug 12&lt;/a> added the molecular &lt;em>interactions&lt;/em> between parts and
+&lt;a href="https://aicell.io/post/newsletter-2026-08-11/">Aug 11&lt;/a> added their &lt;em>motion&lt;/em>, this adds the level &lt;em>above&lt;/em> the cell — &lt;strong>tissue
+context and niche&lt;/strong>, where disease actually unfolds. And it is, at bottom, a &lt;strong>microscopy acquisition&lt;/strong>:
+imaging-based spatial transcriptomics is exactly the kind of multi-round imaging a
+&lt;a href="https://aicell.io/project/self-driving-microscope/">self-driving microscope&lt;/a>, &lt;a href="https://aicell.io/project/agent-lens/">Agent-Lens&lt;/a>, or
+&lt;a href="https://aicell.io/project/reef-imaging-farm/">REEF imaging farm&lt;/a> is built to run — and the native-tissue complement to
+&lt;a href="https://aicell.io/post/newsletter-2026-08-10/">Aug 10&amp;rsquo;s&lt;/a> in-situ perturbation readout (that was a &lt;em>screen&lt;/em>; this is a &lt;em>map&lt;/em>). But
+the frontier stays honest, and that is what keeps it useful. Imaging-based panels are &lt;strong>targeted&lt;/strong> — hundreds to a
+few thousand genes, not the whole transcriptome — so you see the questions you thought to ask.
+&lt;strong>Segmentation errors propagate&lt;/strong>: a misdrawn boundary sends a transcript to the wrong cell and quietly corrupts
+every cell type built on top of it. And a foundation model&amp;rsquo;s &lt;em>predicted&lt;/em> spatial context is a &lt;strong>hypothesis&lt;/strong>, not
+a measurement — a claim to validate, not to trust on sight. That is the same
+&lt;a href="https://aicell.io/post/newsletter-2026-07-27/">prove-it discipline&lt;/a> we keep returning to: a map is only as good as the boundaries
+you draw on it. Sequencing told us what a cell &lt;em>is&lt;/em>. Spatial biology is starting to tell us what it is &lt;em>in
+context&lt;/em> — who it lives beside, and how that changes what it does.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(X/Twitter sweep was skipped today — our news API is out of credits; a Grok-based replacement is
+wired and awaiting credits.) Have lab news to share — a talk, paper, conference or release? Message me on Slack.&lt;/em>&lt;/p></description></item><item><title>Lab Newsletter — August 12, 2026: The Handshake</title><link>https://aicell.io/post/newsletter-2026-08-12/</link><pubDate>Wed, 12 Aug 2026 03:07:00 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-08-12/</guid><description>&lt;p>AlphaFold answered &lt;em>what shape does this sequence fold into?&lt;/em> — one protein, one snapshot. But almost nothing
+in a cell works alone. A signal passes because one protein &lt;strong>grips&lt;/strong> another; a drug works because a small
+molecule &lt;strong>settles&lt;/strong> into a pocket at just the right depth; a gene switches because a transcription factor
+&lt;strong>clamps&lt;/strong> onto a stretch of DNA. Biology is a chain of handshakes, and for years predicting a &lt;em>handshake&lt;/em> —
+the joint structure of two or more molecules locked together — was a separate, harder problem than folding a
+single chain. In 2024–25 that wall came down twice: first the structure of the complex, then the &lt;em>strength&lt;/em> of
+the grip.&lt;/p>
+&lt;h3 id="-one-model-for-the-whole-complex">🤝 One model for the whole complex&lt;/h3>
+&lt;p>The first breakthrough was &lt;strong>co-folding&lt;/strong> — predicting the entire assembly at once instead of folding parts and
+docking them afterward. &lt;a href="https://www.nature.com/articles/s41586-024-07487-w" target="_blank" rel="noopener">&lt;strong>AlphaFold3&lt;/strong>&lt;/a> (Abramson, Jumper
+et al., &lt;em>Nature&lt;/em>, 2024) rebuilt AlphaFold around a &lt;strong>diffusion architecture&lt;/strong> that &lt;strong>generates atomic coordinates
+directly&lt;/strong> and leans far less on the evolutionary alignments its predecessor depended on. The payoff is reach:
+one unified model that predicts &lt;strong>&amp;ldquo;the joint structure of complexes including proteins, nucleic acids, small
+molecules, ions and modified residues&amp;rdquo;&lt;/strong> — and does it with &lt;strong>&amp;ldquo;far greater accuracy for protein–ligand
+interactions compared with state-of-the-art docking tools,&amp;rdquo;&lt;/strong> much higher accuracy for protein–nucleic acid
+complexes, and better antibody–antigen prediction than AlphaFold-Multimer. One framework, spanning most of the
+molecular vocabulary of a cell. The catch was political, not technical: AlphaFold3 arrived &lt;strong>not fully
+open-source and not licensed for commercial use&lt;/strong> — a server, not a model you could hold — which is precisely
+what lit a fire under the open-source community. &lt;strong>Why it matters for the lab:&lt;/strong> the complex, not the monomer,
+is where biology&amp;rsquo;s decisions get made — and an open version is what lets a lab build on it rather than query it.&lt;/p>
+&lt;h3 id="-boltz-open-then-the-leap-to-affinity">⚡ Boltz: open, then the leap to affinity&lt;/h3>
+&lt;p>That open version came from down the road at MIT. &lt;a href="https://pubmed.ncbi.nlm.nih.gov/39605745/" target="_blank" rel="noopener">&lt;strong>Boltz-1&lt;/strong>&lt;/a>
+(Wohlwend, Corso, Passaro, Barzilay &amp;amp; Jaakkola, MIT Jameel Clinic; &lt;em>bioRxiv&lt;/em>, Nov 2024) was the &lt;strong>first fully
+open-source, commercially usable&lt;/strong> structure model to reach &lt;strong>AlphaFold3-reported accuracy&lt;/strong> — training code,
+inference code, weights, and benchmarks all released under the &lt;strong>MIT license&lt;/strong> — predicting protein, RNA, DNA
+and small-molecule structures in &lt;strong>30 to 60 seconds&lt;/strong> per complex. Named for the &lt;strong>Boltzmann distribution&lt;/strong>, it
+matched Chai-1 (the first closed-but-public AF3 replication) &amp;ldquo;and therefore AlphaFold3.&amp;rdquo; Then came the step no
+structure predictor had taken. &lt;a href="https://www.biorxiv.org/content/10.1101/2025.06.14.659707v1.full.pdf" target="_blank" rel="noopener">&lt;strong>Boltz-2&lt;/strong>&lt;/a>
+(MIT CSAIL + Jameel Clinic with &lt;strong>Recursion&lt;/strong>; &lt;em>bioRxiv&lt;/em>, June 2025) is the &lt;strong>first co-folding model to jointly
+predict structure &lt;em>and&lt;/em> binding affinity&lt;/strong> — not just &lt;em>where&lt;/em> a drug sits, but &lt;em>how tightly&lt;/em> it holds. Its
+headline: the &lt;strong>first deep-learning model to approach the accuracy of physics-based free-energy perturbation
+(FEP)&lt;/strong> — the gold-standard, wildly expensive way to compute binding — while running &lt;strong>about 1,000× faster&lt;/strong>. On
+the held-out &lt;strong>FEP+ (OpenFE) benchmark&lt;/strong> it reaches a &lt;strong>Pearson of ≈0.62, comparable to the FEP pipeline
+itself&lt;/strong>; in the &lt;strong>CASP16 affinity challenge&lt;/strong>, run &lt;strong>out-of-the-box with no fine-tuning&lt;/strong>, it &lt;strong>outbid every
+submitted method&lt;/strong> across 140 protein–ligand pairs. The point isn&amp;rsquo;t a leaderboard — it&amp;rsquo;s that &lt;strong>accurate virtual
+screening becomes practical&lt;/strong>: score millions of candidates in silico instead of synthesizing them. &lt;strong>Why it
+matters for the lab:&lt;/strong> open weights &lt;em>and training code&lt;/em> is the &lt;a href="https://aicell.io/project/bioimage-model-zoo/">BioImage Model Zoo&lt;/a>
+/ &lt;a href="https://aicell.io/project/bioengine/">BioEngine&lt;/a> ethos — a model you can &lt;strong>fine-tune to your own chemistry&lt;/strong>, now for
+molecular interactions.&lt;/p>
+&lt;h3 id="-the-wiring-of-a-cell--and-the-honest-frontier">🧭 The wiring of a cell — and the honest frontier&lt;/h3>
+&lt;p>Here is why this belongs on a lab building toward a &lt;a href="https://aicell.io/project/human-cell-simulator/">virtual cell&lt;/a>. A cell is not
+a bag of isolated parts; it is a &lt;strong>network of interactions&lt;/strong> — which protein binds which partner, which ligand
+touches which pocket, and &lt;em>how strongly&lt;/em>. Co-folding predicts the &lt;strong>edges&lt;/strong> of that network; affinity puts
+&lt;strong>weights&lt;/strong> on them. If &lt;a href="https://aicell.io/post/newsletter-2026-08-11/">yesterday&amp;rsquo;s ensembles&lt;/a> put &lt;em>motion&lt;/em> under the individual
+parts, this puts &lt;em>connections and their strengths&lt;/em> between them — the layer a &lt;a href="https://aicell.io/project/human-cell-simulator/">Human Cell
+Simulator&lt;/a> needs to reason about signalling and perturbation. It also closes a
+loop we opened last week: pair a fast affinity model with a &lt;a href="https://aicell.io/post/newsletter-2026-08-03/">generative molecule
+designer&lt;/a> and an &lt;a href="https://aicell.io/project/autonomous-research-agents/">autonomous research agent&lt;/a>
+can &lt;strong>propose&lt;/strong> a candidate, &lt;strong>score&lt;/strong> it, and send only the best to the bench — exactly the workflow the Boltz-2
+team demonstrated, coupling their model with a generator to find synthesizable, high-affinity &lt;strong>TYK2&lt;/strong> binders.
+But the frontier stays honest, and that&amp;rsquo;s what keeps it useful. Boltz-2 &lt;em>approaches&lt;/em> FEP — a Pearson of 0.62 is
+strong for &lt;strong>ranking&lt;/strong> candidates, not a substitute for a measured binding constant; it still &lt;strong>lags AlphaFold3
+on antibody structures&lt;/strong>; and in that TYK2 demonstration every promising binder was &lt;strong>checked by a full FEP
+simulation before anyone believed it&lt;/strong>. That is the same &lt;a href="https://aicell.io/post/newsletter-2026-07-27/">prove-it discipline&lt;/a> we
+keep returning to: a predicted complex, like a &lt;a href="https://aicell.io/post/newsletter-2026-08-06/">generated stain&lt;/a> or a &lt;a href="https://aicell.io/post/newsletter-2026-08-02/">virtual cell
+that shows its work&lt;/a>, is a hypothesis until physics or the bench agrees. The fold
+told us what a protein &lt;em>is&lt;/em>. The handshake is starting to tell us what it will &lt;em>do&lt;/em> to the molecule across from
+it — fast enough, and openly enough, to screen at the scale biology actually needs.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(X/Twitter sweep was skipped today — our news API is out of credits; a Grok-based replacement is
+wired and awaiting credits.) Have lab news to share — a talk, paper, conference or release? Message me on Slack.&lt;/em>&lt;/p></description></item><item><title>Lab Newsletter — August 11, 2026: After the Fold, the Motion</title><link>https://aicell.io/post/newsletter-2026-08-11/</link><pubDate>Tue, 11 Aug 2026 03:07:00 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-08-11/</guid><description>&lt;p>AlphaFold answered a question biology had chased for fifty years — &lt;em>what shape does this sequence fold into?&lt;/em> —
 and it answered it with a single, exquisite snapshot. But a protein doesn&amp;rsquo;t &lt;em>do&lt;/em> anything as a snapshot. It
 works by &lt;strong>moving&lt;/strong>: a cryptic pocket breathes open just long enough for a drug to slip in, a domain swings to
 pass a signal, a disordered tail flickers through a thousand shapes and settles on none. The fold is the first

@@ -1,4 +1,64 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>cell-segmentation | AICell Lab</title><link>https://aicell.io/tag/cell-segmentation/</link><atom:link href="https://aicell.io/tag/cell-segmentation/index.xml" rel="self" type="application/rss+xml"/><description>cell-segmentation</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 19 Jul 2026 03:02:47 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>cell-segmentation</title><link>https://aicell.io/tag/cell-segmentation/</link></image><item><title>Lab Newsletter — July 19, 2026: Segmentation Grows Up</title><link>https://aicell.io/post/newsletter-2026-07-19/</link><pubDate>Sun, 19 Jul 2026 03:02:47 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-07-19/</guid><description>&lt;p>Cell segmentation is the quiet workhorse of bioimage analysis — and it&amp;rsquo;s having its foundation-model
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>cell-segmentation | AICell Lab</title><link>https://aicell.io/tag/cell-segmentation/</link><atom:link href="https://aicell.io/tag/cell-segmentation/index.xml" rel="self" type="application/rss+xml"/><description>cell-segmentation</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Thu, 13 Aug 2026 03:07:00 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>cell-segmentation</title><link>https://aicell.io/tag/cell-segmentation/</link></image><item><title>Lab Newsletter — August 13, 2026: The Cell's Neighborhood</title><link>https://aicell.io/post/newsletter-2026-08-13/</link><pubDate>Thu, 13 Aug 2026 03:07:00 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-08-13/</guid><description>&lt;p>Single-cell RNA sequencing changed biology by answering &lt;em>what is this cell?&lt;/em> — one cell at a time, across the
+whole transcriptome. But to read a cell that way, you first have to &lt;strong>dissolve the tissue&lt;/strong> into a suspension, and
+the moment you do, you lose the one thing a microscope never forgets: &lt;strong>where the cell was, and who it was next
+to&lt;/strong>. A tumor is not a bag of cells; it is a neighborhood — immune cells pressing against a malignant core, a
+boundary where the fight actually happens. Dissociate it and that geography is gone. The frontier that gets it
+back reframes the question from &lt;em>what is this cell?&lt;/em> to &lt;em>&lt;strong>what is this cell, and where does it sit?&lt;/strong>&lt;/em>&lt;/p>
+&lt;h3 id="-keep-the-address-reading-rna-in-place">🗺️ Keep the address: reading RNA in place&lt;/h3>
+&lt;p>The measurement came first. &lt;strong>Imaging-based spatial transcriptomics&lt;/strong> — &lt;a href="https://www.science.org/doi/10.1126/science.aaa6090" target="_blank" rel="noopener">&lt;strong>MERFISH&lt;/strong>&lt;/a>
+(Chen, Zhuang et al., &lt;em>Science&lt;/em>, 2015) and its relatives (seqFISH, in-situ sequencing, and the commercial Xenium
+and CosMx platforms) — images &lt;strong>thousands of RNA species in single cells&lt;/strong> using combinatorial, error-robust
+fluorescence barcodes read out over many rounds of imaging, placing &lt;strong>individual transcripts on a map of the
+tissue at subcellular resolution&lt;/strong>. Bulk sequencing gives an average; single-cell sequencing gives the parts list;
+spatial imaging gives the parts list &lt;em>with every part still pinned to its place&lt;/em>. The catch is that it stops being
+a sequencing problem and becomes a &lt;strong>microscopy&lt;/strong> one. As the field puts it plainly,
+&lt;a href="https://www.nature.com/articles/s41587-021-01044-w" target="_blank" rel="noopener">&lt;strong>&amp;ldquo;inaccurate cell segmentation procedures lead to misassignment of mRNAs to individual cells, which can
+introduce errors in downstream analysis.&amp;rdquo;&lt;/strong>&lt;/a> You are looking
+at a dense scatter of glowing dots and you must decide, for each one, &lt;em>which cell does this belong to?&lt;/em> — draw the
+boundaries wrong and every downstream cell type is wrong. &lt;a href="https://www.nature.com/articles/s41587-021-01044-w" target="_blank" rel="noopener">&lt;strong>Baysor&lt;/strong>&lt;/a>
+(&lt;em>Nature Biotechnology&lt;/em>) is a leading answer: it optimizes 2D or 3D cell boundaries by weighing the &lt;strong>joint
+likelihood of transcriptional composition and cell morphology&lt;/strong>, working from RNA alone or with &lt;strong>image-based
+priors&lt;/strong> — nuclei segmented by &lt;strong>Cellpose&lt;/strong>, a membrane stain as a guide — to recover cells that boundary-only
+methods miss. &lt;strong>Why it matters for the lab:&lt;/strong> transcript assignment &lt;em>is&lt;/em> cell segmentation — the exact
+&lt;a href="https://aicell.io/project/bioimage-model-zoo/">BioImage Model Zoo&lt;/a> / Cellpose / SAM problem the lab works on, now load-bearing for
+omics.&lt;/p>
+&lt;h3 id="-make-sense-of-the-map-spatial-foundation-models">🧬 Make sense of the map: spatial foundation models&lt;/h3>
+&lt;p>Segmenting the cells only draws the map; the harder question is what the arrangement &lt;em>means&lt;/em>.
+&lt;a href="https://www.nature.com/articles/s41592-025-02814-z" target="_blank" rel="noopener">&lt;strong>Nicheformer&lt;/strong>&lt;/a> (Schaar, Tejada-Lapuerta, … Fabian Theis et
+al., &lt;em>Nature Methods&lt;/em>, 2025) is a &lt;strong>foundation model for single-cell &lt;em>and&lt;/em> spatial omics&lt;/strong> — a transformer trained
+with a masked-language-modeling objective to learn a cell representation that captures &lt;strong>spatial context&lt;/strong>: the
+niche, the neighborhood, who a cell sits among. It was pretrained on &lt;strong>SpatialCorpus-110M&lt;/strong>, a corpus of
+&lt;strong>over 110 million cells&lt;/strong> across &lt;strong>73 organs and tissues&lt;/strong> from human and mouse, deliberately pairing dissociated
+single-cell data with &lt;strong>~54 million cells measured by image-based spatial technologies&lt;/strong>. That pairing is the
+point, and it yields the paper&amp;rsquo;s sharpest finding: &lt;strong>models trained only on dissociated data fail to recover the
+complexity of spatial microenvironments&lt;/strong> — location is not a decoration you can reconstruct after the fact, it is
+information you have to learn from spatial data directly. Nicheformer predicts spatial labels, niche identity, and
+local cell-density and composition, and can even &lt;strong>transfer spatial context back onto plain scRNA-seq&lt;/strong>, hinting at
+where a dissociated cell would have lived. The code and pretrained &lt;strong>weights are open&lt;/strong> (Hugging Face
+&lt;code>theislab/Nicheformer&lt;/code>). &lt;strong>Why it matters for the lab:&lt;/strong> open, runnable models spanning the imaging &lt;em>and&lt;/em> omics
+halves of a spatial pipeline is the &lt;a href="https://aicell.io/project/bioengine/">BioEngine&lt;/a> ethos exactly.&lt;/p>
+&lt;h3 id="-the-tissue-under-the-cell--and-the-honest-frontier">🧭 The tissue under the cell — and the honest frontier&lt;/h3>
+&lt;p>Here is why this belongs on a lab working toward a &lt;a href="https://aicell.io/project/human-cell-simulator/">virtual cell&lt;/a>. A
+&lt;a href="https://aicell.io/project/human-cell-simulator/">Human Cell Simulator&lt;/a> that treats each cell as an independent sample misses the
+central truth Nicheformer quantifies: &lt;strong>a cell&amp;rsquo;s state depends on its neighbors&lt;/strong>. If
+&lt;a href="https://aicell.io/post/newsletter-2026-08-12/">Aug 12&lt;/a> added the molecular &lt;em>interactions&lt;/em> between parts and
+&lt;a href="https://aicell.io/post/newsletter-2026-08-11/">Aug 11&lt;/a> added their &lt;em>motion&lt;/em>, this adds the level &lt;em>above&lt;/em> the cell — &lt;strong>tissue
+context and niche&lt;/strong>, where disease actually unfolds. And it is, at bottom, a &lt;strong>microscopy acquisition&lt;/strong>:
+imaging-based spatial transcriptomics is exactly the kind of multi-round imaging a
+&lt;a href="https://aicell.io/project/self-driving-microscope/">self-driving microscope&lt;/a>, &lt;a href="https://aicell.io/project/agent-lens/">Agent-Lens&lt;/a>, or
+&lt;a href="https://aicell.io/project/reef-imaging-farm/">REEF imaging farm&lt;/a> is built to run — and the native-tissue complement to
+&lt;a href="https://aicell.io/post/newsletter-2026-08-10/">Aug 10&amp;rsquo;s&lt;/a> in-situ perturbation readout (that was a &lt;em>screen&lt;/em>; this is a &lt;em>map&lt;/em>). But
+the frontier stays honest, and that is what keeps it useful. Imaging-based panels are &lt;strong>targeted&lt;/strong> — hundreds to a
+few thousand genes, not the whole transcriptome — so you see the questions you thought to ask.
+&lt;strong>Segmentation errors propagate&lt;/strong>: a misdrawn boundary sends a transcript to the wrong cell and quietly corrupts
+every cell type built on top of it. And a foundation model&amp;rsquo;s &lt;em>predicted&lt;/em> spatial context is a &lt;strong>hypothesis&lt;/strong>, not
+a measurement — a claim to validate, not to trust on sight. That is the same
+&lt;a href="https://aicell.io/post/newsletter-2026-07-27/">prove-it discipline&lt;/a> we keep returning to: a map is only as good as the boundaries
+you draw on it. Sequencing told us what a cell &lt;em>is&lt;/em>. Spatial biology is starting to tell us what it is &lt;em>in
+context&lt;/em> — who it lives beside, and how that changes what it does.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(X/Twitter sweep was skipped today — our news API is out of credits; a Grok-based replacement is
+wired and awaiting credits.) Have lab news to share — a talk, paper, conference or release? Message me on Slack.&lt;/em>&lt;/p></description></item><item><title>Lab Newsletter — July 19, 2026: Segmentation Grows Up</title><link>https://aicell.io/post/newsletter-2026-07-19/</link><pubDate>Sun, 19 Jul 2026 03:02:47 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-07-19/</guid><description>&lt;p>Cell segmentation is the quiet workhorse of bioimage analysis — and it&amp;rsquo;s having its foundation-model
 moment. This week: a generalist that beats humans, a benchmark that keeps everyone honest, and a push
 into 3D.&lt;/p>
 &lt;h3 id="-cellpose-sam-a-superhuman-generalist">🔬 Cellpose-SAM: a superhuman generalist&lt;/h3>
