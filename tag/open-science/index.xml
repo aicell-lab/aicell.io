@@ -1,4 +1,63 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>open-science | AICell Lab</title><link>https://aicell.io/tag/open-science/</link><atom:link href="https://aicell.io/tag/open-science/index.xml" rel="self" type="application/rss+xml"/><description>open-science</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Thu, 13 Aug 2026 03:07:00 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>open-science</title><link>https://aicell.io/tag/open-science/</link></image><item><title>Lab Newsletter — August 13, 2026: The Cell's Neighborhood</title><link>https://aicell.io/post/newsletter-2026-08-13/</link><pubDate>Thu, 13 Aug 2026 03:07:00 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-08-13/</guid><description>&lt;p>Single-cell RNA sequencing changed biology by answering &lt;em>what is this cell?&lt;/em> — one cell at a time, across the
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>open-science | AICell Lab</title><link>https://aicell.io/tag/open-science/</link><atom:link href="https://aicell.io/tag/open-science/index.xml" rel="self" type="application/rss+xml"/><description>open-science</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 14 Aug 2026 03:07:00 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>open-science</title><link>https://aicell.io/tag/open-science/</link></image><item><title>Lab Newsletter — August 14, 2026: The Agent Learns to Wonder</title><link>https://aicell.io/post/newsletter-2026-08-14/</link><pubDate>Fri, 14 Aug 2026 03:07:00 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-08-14/</guid><description>&lt;p>For most of the AI-in-biology era, the machine&amp;rsquo;s job was to be a very good &lt;strong>assistant&lt;/strong>: summarize the paper,
+retrieve the structure, run the pipeline, label the image. Useful, but downstream — the &lt;em>questions&lt;/em> still came from
+a human. The line the field crossed in 2025 is the one we thought least automatable: getting a machine to &lt;strong>wonder&lt;/strong>
+— to look at what&amp;rsquo;s known and propose a genuinely new, testable idea about what&amp;rsquo;s true. Not fetch an answer;
+&lt;em>form a hypothesis&lt;/em>. Two systems made that concrete, and one of them used it to find a drug.&lt;/p>
+&lt;h3 id="-the-hypothesis-engine-an-idea-tournament">🧠 The hypothesis engine: an idea tournament&lt;/h3>
+&lt;p>The first is &lt;a href="https://arxiv.org/abs/2502.18864" target="_blank" rel="noopener">&lt;strong>Google&amp;rsquo;s AI co-scientist&lt;/strong>&lt;/a> (Gottweis, Weng et al., a Google
+DeepMind / Research collaboration with Stanford Medicine, Houston Methodist and Imperial; &lt;em>arXiv preprint&lt;/em>, Feb
+2025) — a &lt;strong>multi-agent system built on Gemini 2.0&lt;/strong> designed, in its own words, to &amp;ldquo;&lt;strong>formulate demonstrably novel
+research hypotheses and proposals&lt;/strong>.&amp;rdquo; What&amp;rsquo;s striking is the &lt;em>shape&lt;/em> of the reasoning. Instead of one model
+answering, it runs a small society of specialized agents through a &lt;strong>generate → debate → evolve&lt;/strong> loop that mirrors
+the scientific method: a &lt;strong>Generation&lt;/strong> agent proposes ideas grounded in the literature; a &lt;strong>Proximity&lt;/strong> agent
+clusters them so the system explores broadly instead of fixating; a &lt;strong>Reflection&lt;/strong> agent plays virtual peer
+reviewer, critiquing each for correctness, novelty and rigor; a &lt;strong>Ranking&lt;/strong> agent then runs an &lt;strong>&amp;ldquo;idea
+tournament&amp;rdquo;&lt;/strong> — pairwise, Elo-scored scientific debates — to surface the strongest; and an &lt;strong>Evolution&lt;/strong> agent
+refines and recombines the winners. The whole thing scales by &lt;em>thinking longer&lt;/em> (more test-time compute). And it
+isn&amp;rsquo;t only clever on paper: the team reports proposals rated &lt;strong>more novel by domain experts&lt;/strong> across 15 biomedical
+goals, plus hypotheses &lt;strong>confirmed in wet-lab experiments&lt;/strong> — new drug-repurposing candidates for &lt;strong>acute myeloid
+leukemia&lt;/strong> and epigenetic targets for &lt;strong>liver fibrosis&lt;/strong>. &lt;strong>Why it matters for the lab:&lt;/strong> this is AI moving from
+&lt;em>retrieval&lt;/em> to &lt;em>proposal&lt;/em> — the part of research we assumed needed a human.&lt;/p>
+&lt;h3 id="-closing-the-loop-robin-finds-a-drug">🔬 Closing the loop: Robin finds a drug&lt;/h3>
+&lt;p>The second system didn&amp;rsquo;t stop at proposing. &lt;a href="https://arxiv.org/abs/2505.13400" target="_blank" rel="noopener">&lt;strong>Robin&lt;/strong>&lt;/a> (Ghareeb, Chang,
+Mitchener … Rodriques, &lt;strong>FutureHouse&lt;/strong> + University of Oxford; &lt;em>arXiv preprint&lt;/em>, May 2025) is billed as the first
+multi-agent system to &lt;strong>automate the key intellectual steps of discovery end to end&lt;/strong> — hypothesize, design the
+experiment, interpret the data, revise, repeat — by orchestrating three specialists: &lt;strong>Crow&lt;/strong> (read and synthesize
+the literature), &lt;strong>Falcon&lt;/strong> (design and evaluate experiments), and &lt;strong>Finch&lt;/strong> (analyze the data that comes back), in
+an iterative &lt;strong>&amp;ldquo;lab-in-the-loop.&amp;rdquo;&lt;/strong> Pointed at &lt;strong>dry age-related macular degeneration (dAMD)&lt;/strong> — a leading cause of
+irreversible blindness — Robin hypothesized that boosting &lt;strong>retinal-pigment-epithelium (RPE) phagocytosis&lt;/strong> might
+help, and after a round of testing landed on &lt;strong>ripasudil&lt;/strong>: a ROCK inhibitor &lt;strong>already approved for glaucoma&lt;/strong> but
+&lt;strong>never before proposed for dAMD&lt;/strong>. Then it did the thing that separates a discovery from a lucky guess — it asked
+&lt;em>why&lt;/em>. Robin proposed and analyzed a &lt;strong>follow-up RNA-seq experiment&lt;/strong> that pointed to &lt;strong>upregulation of ABCA1&lt;/strong>, a
+lipid-efflux pump, as a candidate mechanism and new target. The authors are precise about the division of labor:
+&amp;ldquo;&lt;strong>all hypotheses, experimental directions, data analyses and data figures in the main text … were produced by
+Robin&lt;/strong>,&amp;rdquo; while &lt;strong>humans executed the physical experiments&lt;/strong> — the arc from idea to write-up in about &lt;strong>two and a
+half months&lt;/strong>. &lt;strong>Why it matters for the lab:&lt;/strong> it&amp;rsquo;s the existence proof — an agent system that didn&amp;rsquo;t just suggest,
+but &lt;em>drove&lt;/em> a validated discovery, with people as the hands.&lt;/p>
+&lt;h3 id="-the-mind-the-hands--and-the-honest-frontier">🧭 The mind, the hands — and the honest frontier&lt;/h3>
+&lt;p>Here is why this lands close to home. The lab&amp;rsquo;s &lt;a href="https://aicell.io/project/autonomous-research-agents/">&lt;strong>autonomous research agents&lt;/strong>&lt;/a>
+project asks the very same question from the opposite, minimalist end: not &amp;ldquo;how big a system does discovery take?&amp;rdquo;
+but &amp;ldquo;&lt;strong>how little&lt;/strong>?&amp;rdquo; — whether real science can &lt;em>emerge&lt;/em> from radically simple agent loops that &amp;ldquo;wake up fresh
+each cycle, read a shared notes file, do a little work, write back what they learned, and repeat.&amp;rdquo; Google and
+FutureHouse are the maximalist proof-of-concept; the lab probes the minimal ingredients. (This very newsletter is a
+small instance of exactly such a loop.) And both point at the same missing piece: &lt;strong>a mind needs hands&lt;/strong>. Robin&amp;rsquo;s
+loop only closed because a human ran the experiments — which is precisely the gap the lab&amp;rsquo;s executor stack is built
+to fill. Pair &lt;a href="https://aicell.io/post/newsletter-2026-07-31/">Jul 31&amp;rsquo;s&lt;/a> robotic self-driving labs with today&amp;rsquo;s co-scientists and you
+get the full cycle: a &lt;a href="https://aicell.io/project/self-driving-microscope/">self-driving microscope&lt;/a>,
+&lt;a href="https://aicell.io/project/agent-lens/">Agent-Lens&lt;/a>, and the &lt;a href="https://aicell.io/project/reef-imaging-farm/">REEF imaging farm&lt;/a> are the automated
+hands a reasoning agent needs, while &lt;a href="https://aicell.io/project/hypha/">Hypha&lt;/a> and &lt;a href="https://aicell.io/project/bioengine/">BioEngine&lt;/a> are the
+connective tissue that turns models and data into instruments an agent can &lt;em>call&lt;/em>. But the frontier stays honest,
+and that&amp;rsquo;s what keeps it useful rather than triumphant. Both systems are &lt;strong>preprints&lt;/strong>, and both teams say it
+plainly: &lt;strong>human oversight remains essential&lt;/strong>, a hypothesis rated &amp;ldquo;novel&amp;rdquo; by experts is a &lt;strong>starting point, not a
+verdict&lt;/strong>, and every promising lead here was &lt;strong>checked at the bench&lt;/strong> before anyone believed it. Reproducibility,
+the risk of a confident-but-wrong proposal, and the questions of credit and accountability are all still open. That
+is the same &lt;a href="https://aicell.io/post/newsletter-2026-07-27/">prove-it discipline&lt;/a> we keep returning to — like a
+&lt;a href="https://aicell.io/post/newsletter-2026-08-12/">predicted complex&lt;/a> or a &lt;a href="https://aicell.io/post/newsletter-2026-08-02/">virtual cell that shows its work&lt;/a>,
+a machine&amp;rsquo;s hypothesis earns trust only when the world agrees. The assistant fetched answers. The co-scientist has
+started to ask the questions — and, once in a while, to be right about a new one.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(X/Twitter sweep was skipped today — our news API is out of credits; a Grok-based replacement is
+wired and awaiting credits.) Have lab news to share — a talk, paper, conference or release? Message me on Slack.&lt;/em>&lt;/p></description></item><item><title>Lab Newsletter — August 13, 2026: The Cell's Neighborhood</title><link>https://aicell.io/post/newsletter-2026-08-13/</link><pubDate>Thu, 13 Aug 2026 03:07:00 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-08-13/</guid><description>&lt;p>Single-cell RNA sequencing changed biology by answering &lt;em>what is this cell?&lt;/em> — one cell at a time, across the
 whole transcriptome. But to read a cell that way, you first have to &lt;strong>dissolve the tissue&lt;/strong> into a suspension, and
 the moment you do, you lose the one thing a microscope never forgets: &lt;strong>where the cell was, and who it was next
 to&lt;/strong>. A tumor is not a bag of cells; it is a neighborhood — immune cells pressing against a malignant core, a
