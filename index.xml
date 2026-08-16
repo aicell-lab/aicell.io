@@ -1,4 +1,125 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AICell Lab</title><link>https://aicell.io/</link><atom:link href="https://aicell.io/index.xml" rel="self" type="application/rss+xml"/><description>AICell Lab</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 14 Aug 2026 03:07:00 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>AICell Lab</title><link>https://aicell.io/</link></image><item><title>Lab Newsletter — August 14, 2026: The Agent Learns to Wonder</title><link>https://aicell.io/post/newsletter-2026-08-14/</link><pubDate>Fri, 14 Aug 2026 03:07:00 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-08-14/</guid><description>&lt;p>For most of the AI-in-biology era, the machine&amp;rsquo;s job was to be a very good &lt;strong>assistant&lt;/strong>: summarize the paper,
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AICell Lab</title><link>https://aicell.io/</link><atom:link href="https://aicell.io/index.xml" rel="self" type="application/rss+xml"/><description>AICell Lab</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 16 Aug 2026 03:07:00 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>AICell Lab</title><link>https://aicell.io/</link></image><item><title>Lab Newsletter — August 16, 2026: Segment Anything, Cell</title><link>https://aicell.io/post/newsletter-2026-08-16/</link><pubDate>Sun, 16 Aug 2026 03:07:00 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-08-16/</guid><description>&lt;p>Before you can count a cell, classify it, profile it, or feed it to a model, you have to answer a
+deceptively dull question: &lt;strong>where does this cell end and the next one begin?&lt;/strong> Segmentation — drawing the
+outline — is the unglamorous first step of nearly every microscopy pipeline, and for most of the last decade
+it carried a hidden tax: every new &lt;strong>modality, magnification, stain, or organism&lt;/strong> tended to need its own
+&lt;strong>retrained, bespoke&lt;/strong> segmenter. The frontier that lifts that tax borrows the biggest idea in computer
+vision — &lt;em>segment anything&lt;/em> — and does the hard work of making it survive contact with real microscopes.&lt;/p>
+&lt;h3 id="-the-generalist-arrives-segment-anything-comes-to-the-cell">🔬 The generalist arrives: &amp;ldquo;segment anything&amp;rdquo; comes to the cell&lt;/h3>
+&lt;p>The lab&amp;rsquo;s own lineage starts with &lt;a href="https://www.nature.com/articles/s41592-020-01018-x" target="_blank" rel="noopener">&lt;strong>Cellpose&lt;/strong>&lt;/a>
+(Stringer, Wang, Michaelos &amp;amp; Pachitariu, &lt;em>Nature Methods&lt;/em>, 2021), a &lt;strong>generalist&lt;/strong> trained on &amp;ldquo;a new dataset
+of highly varied images of cells, containing over 70,000 segmented objects&amp;rdquo; that, pointedly, &amp;ldquo;&lt;strong>does not
+require model retraining or parameter adjustments&lt;/strong>&amp;rdquo; — it predicts spatial flow fields and lets the geometry
+recover each mask. Then the ground shifted underneath the whole field:
+&lt;a href="https://arxiv.org/abs/2304.02643" target="_blank" rel="noopener">&lt;strong>Segment Anything (SAM)&lt;/strong>&lt;/a> (Kirillov et al., Meta AI, ICCV 2023) reframed
+segmentation as a &lt;strong>promptable foundation-model&lt;/strong> problem — trained on &lt;strong>over a billion masks&lt;/strong> across 11
+million images, able to &amp;ldquo;transfer zero-shot to new image distributions and tasks.&amp;rdquo; The catch: out of the box,
+SAM was built for everyday photos, and it stumbles on the dense, low-contrast, crowded reality of a
+tissue section. The obvious move — and the hard one — was to bring the generalist &lt;em>to&lt;/em> the cell.
+&lt;a href="https://www.biorxiv.org/content/10.1101/2025.04.28.651001v1" target="_blank" rel="noopener">&lt;strong>Cellpose-SAM&lt;/strong>&lt;/a> (Pachitariu, Rariden &amp;amp;
+Stringer; &lt;strong>bioRxiv preprint&lt;/strong>, May 2025) does exactly that: it &amp;ldquo;&lt;strong>adapted the pretrained transformer backbone
+of a foundation model (SAM) to the Cellpose framework&lt;/strong>.&amp;rdquo; Its claim is right there in the title —
+&lt;strong>&amp;ldquo;superhuman generalization for cellular segmentation.&amp;rdquo;&lt;/strong> The argument is subtle and worth stating carefully:
+today&amp;rsquo;s best segmenters already &lt;em>match inter-human agreement&lt;/em>, but a human-&lt;strong>consensus&lt;/strong> boundary &amp;ldquo;could
+reduce error rates in half,&amp;rdquo; and Cellpose-SAM, the authors report, &amp;ldquo;&lt;strong>substantially outperforms inter-human
+agreement and approaches the human-consensus bound&lt;/strong>&amp;rdquo; — while staying robust to channel shuffling, cell size,
+noise, downsampling, and blur. &lt;strong>Why it matters for the lab:&lt;/strong> this is our &lt;a href="https://aicell.io/project/bioimage-model-zoo/">BioImage Model Zoo&lt;/a>
+/ Cellpose / SAM problem exactly — a generalist that could, in principle, segment most of what a lab images
+without a fresh training run each time. &lt;em>(It&amp;rsquo;s a preprint; the &amp;ldquo;superhuman&amp;rdquo; claim is the authors&amp;rsquo;, and a claim to test — more on that below.)&lt;/em>&lt;/p>
+&lt;h3 id="-one-tool-every-modality-segment-anything-for-microscopy">🧫 One tool, every modality: Segment Anything for Microscopy&lt;/h3>
+&lt;p>A superhuman segmenter is only useful if a working biologist can actually &lt;em>drive&lt;/em> it — on their data, in their
+modality, at their bench. That is the gap
+&lt;a href="https://www.nature.com/articles/s41592-024-02580-4" target="_blank" rel="noopener">&lt;strong>Segment Anything for Microscopy (μSAM)&lt;/strong>&lt;/a> (Archit,
+Freckmann … Constantin Pape, University of Göttingen; &lt;strong>&lt;em>Nature Methods&lt;/em>, 2025&lt;/strong> — peer-reviewed) sets out to
+close. It &amp;ldquo;&lt;strong>extend[s] [SAM] by fine-tuning generalist models for light and electron microscopy that clearly
+improve segmentation quality for a wide range of imaging conditions&lt;/strong>&amp;rdquo; — one model family spanning &lt;strong>both&lt;/strong>
+of microscopy&amp;rsquo;s great continents, LM &lt;em>and&lt;/em> EM. And it is unusually practical about the last mile: it
+&amp;ldquo;&lt;strong>implement[s] interactive and automatic segmentation in a napari plugin … a unified solution for microscopy
+annotation across different microscopy modalities&lt;/strong>,&amp;rdquo; and &amp;ldquo;&lt;strong>supports two-dimensional (2D) and volumetric
+segmentation as well as tracking in the same tool&lt;/strong>.&amp;rdquo; Prompt a single cell and it fills the mask; ask it to
+segment the whole field and it does; hand it a 3D volume or a time-lapse and it carries the objects through.
+On benchmarks its automatic mode &amp;ldquo;&lt;strong>performs on par or better than CellPose&lt;/strong>&amp;rdquo; on most datasets tested. The
+detail that makes it &lt;em>ours&lt;/em>, though, is how it ships: the authors &amp;ldquo;&lt;strong>published our models on BioImage.IO to
+offer them in a standard format&lt;/strong>,&amp;rdquo; as an &lt;strong>open napari plugin&lt;/strong>. &lt;strong>Why it matters for the lab:&lt;/strong> open weights,
+in a standard format, in the very &lt;a href="https://aicell.io/project/bioimage-model-zoo/">BioImage Model Zoo&lt;/a> ecosystem we help build —
+the &lt;a href="https://aicell.io/project/bioengine/">BioEngine&lt;/a> / &lt;a href="https://aicell.io/project/imjoy/">ImJoy&lt;/a> ethos, made concrete for the task every image
+pipeline starts with.&lt;/p>
+&lt;h3 id="-the-first-step-everything-rests-on--and-the-honest-frontier">🧭 The first step everything rests on — and the honest frontier&lt;/h3>
+&lt;p>Here is why a segmentation model is worth a whole newsletter on a lab like ours. Segmentation is &lt;strong>load-bearing
+under almost everything downstream&lt;/strong>. As &lt;a href="https://aicell.io/post/newsletter-2026-08-13/">Aug 13&lt;/a> put it, in spatial
+transcriptomics &amp;ldquo;transcript assignment &lt;em>is&lt;/em> cell segmentation&amp;rdquo; — draw one boundary wrong and a molecule lands
+in the wrong cell, quietly corrupting every cell type built on top of it. &lt;a href="https://aicell.io/post/newsletter-2026-08-04/">Morphological profiling&lt;/a>
+measures features of &lt;em>segmented&lt;/em> cells; a &lt;a href="https://aicell.io/project/human-cell-simulator/">virtual cell&lt;/a> that learns from
+images inherits whatever the segmenter drew. And a promptable, open segmenter is precisely the instrument an
+&lt;a href="https://aicell.io/post/newsletter-2026-08-14/">autonomous agent&lt;/a> should be able to &lt;em>call&lt;/em> — point &lt;a href="https://aicell.io/project/agent-lens/">Agent-Lens&lt;/a>
+or a &lt;a href="https://aicell.io/project/self-driving-microscope/">self-driving microscope&lt;/a> at a field and let it segment what it sees,
+in the loop. Get this first step right and everything above it gets more trustworthy. Which is exactly why the
+frontier has to stay honest. &amp;ldquo;&lt;strong>Superhuman generalization&lt;/strong>&amp;rdquo; is a striking phrase and a &lt;em>benchmark&lt;/em> claim — it
+holds against the datasets and metrics tested, and Cellpose-SAM is still a &lt;strong>preprint&lt;/strong>. Generalization is the
+one property you cannot take on faith: it must be re-checked on &lt;em>your&lt;/em> microscope, &lt;em>your&lt;/em> stain, &lt;em>your&lt;/em>
+organism — the distribution the model never saw. A foundation model can render a confident, clean-looking
+boundary that is simply wrong, and a mask is a &lt;strong>hypothesis about where the cell ends&lt;/strong>, not a measurement.
+That is the same &lt;a href="https://aicell.io/post/newsletter-2026-07-27/">prove-it discipline&lt;/a> we keep coming back to: validate on
+held-out, real data before you trust the line. The generalist segmenter is a real leap — for the first time,
+one open tool can plausibly outline &lt;em>most&lt;/em> of what a lab images. It earns that trust one validated dataset
+at a time.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(X/Twitter sweep was skipped today — our news API is out of credits; a Grok-based replacement is
+wired and awaiting credits.) Have lab news to share — a talk, paper, conference or release? Message me on Slack.&lt;/em>&lt;/p></description></item><item><title>Lab Newsletter — August 15, 2026: A Turing Test for the Cell</title><link>https://aicell.io/post/newsletter-2026-08-15/</link><pubDate>Sat, 15 Aug 2026 03:07:00 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-08-15/</guid><description>&lt;p>AlphaFold made a protein&amp;rsquo;s shape something you could &lt;em>look up&lt;/em>. The field&amp;rsquo;s next moonshot is bolder: a &lt;strong>virtual
+cell&lt;/strong> you can &lt;em>query&lt;/em>. The dream, stated plainly, is this — give a model a starting cell state and a perturbation
+(knock down this gene, add this drug), and have it &lt;strong>predict the gene-expression response&lt;/strong> you would otherwise
+have to run an experiment to see. A cell you can ask &lt;em>&amp;ldquo;what if?&amp;rdquo;&lt;/em> Two things happened in 2025 that make this the
+right moment to look hard at that ambition: the field built itself a scoreboard, and the scoreboard delivered a
+humbling first verdict.&lt;/p>
+&lt;h3 id="-the-ambition-a-cell-you-can-query">🎯 The ambition: a cell you can query&lt;/h3>
+&lt;p>The clearest expression of the goal comes from Arc Institute, which has turned the dream into a public contest.
+&lt;a href="https://www.cell.com/cell/fulltext/S0092-8674%2825%2900675-0" target="_blank" rel="noopener">&lt;strong>&amp;ldquo;Virtual Cell Challenge: Toward a Turing Test for the Virtual Cell&amp;rdquo;&lt;/strong>&lt;/a>
+(Roohani et al., &lt;em>Cell&lt;/em>, 2025) is explicitly modeled on &lt;strong>CASP&lt;/strong> — the protein-structure competition whose annual,
+honest benchmarking helped summon AlphaFold. The 2025 edition set a deliberately hard task: predict the effect of
+single-gene &lt;strong>CRISPRi&lt;/strong> perturbations in a &lt;strong>held-out cell type&lt;/strong> — H1 human embryonic stem cells, a distribution
+shift from the K562/A375 lines models usually train on — scored on a purpose-built dataset of &lt;strong>~300,000
+single-cell profiles across 300 perturbations&lt;/strong>. The response says a lot about where the field&amp;rsquo;s head is at:
+&lt;strong>over 5,000 people from 114 countries and more than 1,200 teams&lt;/strong> entered. Alongside it, Arc released
+&lt;a href="https://arcinstitute.org/virtual-cell-initiative" target="_blank" rel="noopener">&lt;strong>State&lt;/strong>&lt;/a>, a first-generation virtual cell model that &amp;ldquo;captures
+the cell-type-specific effects of genetic, chemical, and cytokine perturbations,&amp;rdquo; trained on &lt;strong>167 million
+observational cells&lt;/strong> and over &lt;strong>100 million perturbational cells&lt;/strong> across &lt;strong>70 human cell contexts&lt;/strong>. &lt;strong>Why it
+matters for the lab:&lt;/strong> this is our &lt;a href="https://aicell.io/project/human-cell-simulator/">Human Cell Simulator&lt;/a> ambition, made concrete —
+and handed a shared, honest yardstick.&lt;/p>
+&lt;h3 id="-the-tools-single-cell-foundation-models">🧬 The tools: single-cell foundation models&lt;/h3>
+&lt;p>The instruments people bring to this contest are &lt;strong>single-cell foundation models&lt;/strong> — the transcriptomic cousins of
+the language models that reshaped NLP. &lt;a href="https://www.nature.com/articles/s41586-023-06139-9" target="_blank" rel="noopener">&lt;strong>Geneformer&lt;/strong>&lt;/a>
+(Theodoris et al., &lt;em>Nature&lt;/em>, 2023) is an attention-based transformer pretrained on &lt;strong>~30 million single-cell
+transcriptomes&lt;/strong> (its successor, 95 million) that, in the authors&amp;rsquo; words, &amp;ldquo;gained a fundamental understanding of
+network dynamics, encoding network hierarchy in the attention weights &amp;hellip; in a completely self-supervised manner.&amp;rdquo;
+&lt;a href="https://www.nature.com/articles/s41592-024-02201-0" target="_blank" rel="noopener">&lt;strong>scGPT&lt;/strong>&lt;/a> (Cui et al., &lt;em>Nature Methods&lt;/em>, 2024) is a
+generative pretrained transformer built over &lt;strong>33 million cells&lt;/strong>, offering one backbone for cell-type
+classification, multi-omic integration, gene-network inference, and perturbation modeling. The bet behind all of
+them is the recipe that worked for text and, arguably, for proteins: &lt;strong>pretrain on the ocean of unlabeled data,
+then fine-tune&lt;/strong> to predict what a cell will do. &lt;strong>Why it matters for the lab:&lt;/strong> these are the open, buildable
+models — the &lt;a href="https://aicell.io/project/bioimage-model-zoo/">BioImage Model Zoo&lt;/a> / &lt;a href="https://aicell.io/project/bioengine/">BioEngine&lt;/a> ethos — that a
+lab can fine-tune to its own biology rather than treat as a black box.&lt;/p>
+&lt;h3 id="-the-honest-reckoning--and-why-its-the-right-story-for-us">🧭 The honest reckoning — and why it&amp;rsquo;s the right story for us&lt;/h3>
+&lt;p>Here is where the year earned its keep. A &lt;a href="https://www.nature.com/articles/s41592-025-02772-6" target="_blank" rel="noopener">&lt;strong>Nature Methods&lt;/strong>&lt;/a>
+benchmark by Constantin Ahlmann-Eltze, Wolfgang Huber and Simon Anders (EMBL / Heidelberg), titled with unusual
+candor — &lt;em>&amp;ldquo;Deep-learning-based gene perturbation effect prediction does not yet outperform simple linear
+baselines&amp;rdquo;&lt;/em> — pitted &lt;strong>five foundation models and two other deep-learning methods against deliberately simple
+controls&lt;/strong>, and &lt;strong>none of them won&lt;/strong>. For &lt;strong>combinations&lt;/strong> of two genes whose individual effects were known, the
+deep models did no better than a &lt;strong>simple additive model&lt;/strong>; for genes &lt;strong>never seen&lt;/strong> in training, they did no
+better than &lt;strong>predicting the average&lt;/strong> of the training perturbations. A separate benchmark found even the &lt;em>mean of
+the training examples&lt;/em> beat scGPT and scFoundation. This is not a reason to look away — it is exactly why a lab
+building a &lt;a href="https://aicell.io/project/human-cell-simulator/">virtual cell&lt;/a> should build the way this one does: with &lt;strong>validation and
+benchmarking front and center&lt;/strong>, treating a predicted perturbation as a &lt;strong>hypothesis&lt;/strong>, and measuring against
+&lt;strong>CASP-style challenges&lt;/strong> rather than self-reported wins. As the authors put it, the result &amp;ldquo;highlights the
+importance of critical benchmarking in directing and evaluating method development.&amp;rdquo; And the pieces connect: a
+predictive cell model is precisely the &lt;em>instrument&lt;/em> an &lt;a href="https://aicell.io/post/newsletter-2026-08-14/">autonomous research agent&lt;/a>
+would need to decide which experiment to run, and &lt;a href="https://aicell.io/post/newsletter-2026-08-13/">spatial context&lt;/a> is a tissue layer
+these dissociated-cell models still lack. The honest frontier is stark — perturbation data is scarce, &amp;ldquo;beating the
+mean&amp;rdquo; for a truly novel gene is unsolved, and a transformer&amp;rsquo;s confidence is not a measurement. That&amp;rsquo;s the same
+&lt;a href="https://aicell.io/post/newsletter-2026-07-27/">prove-it discipline&lt;/a> we keep returning to, and here it cuts closest to home. The
+AlphaFold moment for the cell hasn&amp;rsquo;t arrived. But the honest scoreboard that could one day summon it just went up —
+and that, for a field prone to hype, is its own kind of progress.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(X/Twitter sweep was skipped today — our news API is out of credits; a Grok-based replacement is
+wired and awaiting credits.) Have lab news to share — a talk, paper, conference or release? Message me on Slack.&lt;/em>&lt;/p></description></item><item><title>Lab Newsletter — August 14, 2026: The Agent Learns to Wonder</title><link>https://aicell.io/post/newsletter-2026-08-14/</link><pubDate>Fri, 14 Aug 2026 03:07:00 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-08-14/</guid><description>&lt;p>For most of the AI-in-biology era, the machine&amp;rsquo;s job was to be a very good &lt;strong>assistant&lt;/strong>: summarize the paper,
 retrieve the structure, run the pipeline, label the image. Useful, but downstream — the &lt;em>questions&lt;/em> still came from
 a human. The line the field crossed in 2025 is the one we thought least automatable: getting a machine to &lt;strong>wonder&lt;/strong>
 — to look at what&amp;rsquo;s known and propose a genuinely new, testable idea about what&amp;rsquo;s true. Not fetch an answer;

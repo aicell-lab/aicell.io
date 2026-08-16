@@ -1,4 +1,59 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>perturbation-prediction | AICell Lab</title><link>https://aicell.io/tag/perturbation-prediction/</link><atom:link href="https://aicell.io/tag/perturbation-prediction/index.xml" rel="self" type="application/rss+xml"/><description>perturbation-prediction</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 02 Aug 2026 03:07:00 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>perturbation-prediction</title><link>https://aicell.io/tag/perturbation-prediction/</link></image><item><title>Lab Newsletter — August 2, 2026: The Cell That Shows Its Work</title><link>https://aicell.io/post/newsletter-2026-08-02/</link><pubDate>Sun, 02 Aug 2026 03:07:00 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-08-02/</guid><description>&lt;p>Three weeks ago we watched an &lt;a href="https://aicell.io/post/newsletter-2026-07-09/">entire minimal cell come alive in 4D&lt;/a> —
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>perturbation-prediction | AICell Lab</title><link>https://aicell.io/tag/perturbation-prediction/</link><atom:link href="https://aicell.io/tag/perturbation-prediction/index.xml" rel="self" type="application/rss+xml"/><description>perturbation-prediction</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sat, 15 Aug 2026 03:07:00 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>perturbation-prediction</title><link>https://aicell.io/tag/perturbation-prediction/</link></image><item><title>Lab Newsletter — August 15, 2026: A Turing Test for the Cell</title><link>https://aicell.io/post/newsletter-2026-08-15/</link><pubDate>Sat, 15 Aug 2026 03:07:00 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-08-15/</guid><description>&lt;p>AlphaFold made a protein&amp;rsquo;s shape something you could &lt;em>look up&lt;/em>. The field&amp;rsquo;s next moonshot is bolder: a &lt;strong>virtual
+cell&lt;/strong> you can &lt;em>query&lt;/em>. The dream, stated plainly, is this — give a model a starting cell state and a perturbation
+(knock down this gene, add this drug), and have it &lt;strong>predict the gene-expression response&lt;/strong> you would otherwise
+have to run an experiment to see. A cell you can ask &lt;em>&amp;ldquo;what if?&amp;rdquo;&lt;/em> Two things happened in 2025 that make this the
+right moment to look hard at that ambition: the field built itself a scoreboard, and the scoreboard delivered a
+humbling first verdict.&lt;/p>
+&lt;h3 id="-the-ambition-a-cell-you-can-query">🎯 The ambition: a cell you can query&lt;/h3>
+&lt;p>The clearest expression of the goal comes from Arc Institute, which has turned the dream into a public contest.
+&lt;a href="https://www.cell.com/cell/fulltext/S0092-8674%2825%2900675-0" target="_blank" rel="noopener">&lt;strong>&amp;ldquo;Virtual Cell Challenge: Toward a Turing Test for the Virtual Cell&amp;rdquo;&lt;/strong>&lt;/a>
+(Roohani et al., &lt;em>Cell&lt;/em>, 2025) is explicitly modeled on &lt;strong>CASP&lt;/strong> — the protein-structure competition whose annual,
+honest benchmarking helped summon AlphaFold. The 2025 edition set a deliberately hard task: predict the effect of
+single-gene &lt;strong>CRISPRi&lt;/strong> perturbations in a &lt;strong>held-out cell type&lt;/strong> — H1 human embryonic stem cells, a distribution
+shift from the K562/A375 lines models usually train on — scored on a purpose-built dataset of &lt;strong>~300,000
+single-cell profiles across 300 perturbations&lt;/strong>. The response says a lot about where the field&amp;rsquo;s head is at:
+&lt;strong>over 5,000 people from 114 countries and more than 1,200 teams&lt;/strong> entered. Alongside it, Arc released
+&lt;a href="https://arcinstitute.org/virtual-cell-initiative" target="_blank" rel="noopener">&lt;strong>State&lt;/strong>&lt;/a>, a first-generation virtual cell model that &amp;ldquo;captures
+the cell-type-specific effects of genetic, chemical, and cytokine perturbations,&amp;rdquo; trained on &lt;strong>167 million
+observational cells&lt;/strong> and over &lt;strong>100 million perturbational cells&lt;/strong> across &lt;strong>70 human cell contexts&lt;/strong>. &lt;strong>Why it
+matters for the lab:&lt;/strong> this is our &lt;a href="https://aicell.io/project/human-cell-simulator/">Human Cell Simulator&lt;/a> ambition, made concrete —
+and handed a shared, honest yardstick.&lt;/p>
+&lt;h3 id="-the-tools-single-cell-foundation-models">🧬 The tools: single-cell foundation models&lt;/h3>
+&lt;p>The instruments people bring to this contest are &lt;strong>single-cell foundation models&lt;/strong> — the transcriptomic cousins of
+the language models that reshaped NLP. &lt;a href="https://www.nature.com/articles/s41586-023-06139-9" target="_blank" rel="noopener">&lt;strong>Geneformer&lt;/strong>&lt;/a>
+(Theodoris et al., &lt;em>Nature&lt;/em>, 2023) is an attention-based transformer pretrained on &lt;strong>~30 million single-cell
+transcriptomes&lt;/strong> (its successor, 95 million) that, in the authors&amp;rsquo; words, &amp;ldquo;gained a fundamental understanding of
+network dynamics, encoding network hierarchy in the attention weights &amp;hellip; in a completely self-supervised manner.&amp;rdquo;
+&lt;a href="https://www.nature.com/articles/s41592-024-02201-0" target="_blank" rel="noopener">&lt;strong>scGPT&lt;/strong>&lt;/a> (Cui et al., &lt;em>Nature Methods&lt;/em>, 2024) is a
+generative pretrained transformer built over &lt;strong>33 million cells&lt;/strong>, offering one backbone for cell-type
+classification, multi-omic integration, gene-network inference, and perturbation modeling. The bet behind all of
+them is the recipe that worked for text and, arguably, for proteins: &lt;strong>pretrain on the ocean of unlabeled data,
+then fine-tune&lt;/strong> to predict what a cell will do. &lt;strong>Why it matters for the lab:&lt;/strong> these are the open, buildable
+models — the &lt;a href="https://aicell.io/project/bioimage-model-zoo/">BioImage Model Zoo&lt;/a> / &lt;a href="https://aicell.io/project/bioengine/">BioEngine&lt;/a> ethos — that a
+lab can fine-tune to its own biology rather than treat as a black box.&lt;/p>
+&lt;h3 id="-the-honest-reckoning--and-why-its-the-right-story-for-us">🧭 The honest reckoning — and why it&amp;rsquo;s the right story for us&lt;/h3>
+&lt;p>Here is where the year earned its keep. A &lt;a href="https://www.nature.com/articles/s41592-025-02772-6" target="_blank" rel="noopener">&lt;strong>Nature Methods&lt;/strong>&lt;/a>
+benchmark by Constantin Ahlmann-Eltze, Wolfgang Huber and Simon Anders (EMBL / Heidelberg), titled with unusual
+candor — &lt;em>&amp;ldquo;Deep-learning-based gene perturbation effect prediction does not yet outperform simple linear
+baselines&amp;rdquo;&lt;/em> — pitted &lt;strong>five foundation models and two other deep-learning methods against deliberately simple
+controls&lt;/strong>, and &lt;strong>none of them won&lt;/strong>. For &lt;strong>combinations&lt;/strong> of two genes whose individual effects were known, the
+deep models did no better than a &lt;strong>simple additive model&lt;/strong>; for genes &lt;strong>never seen&lt;/strong> in training, they did no
+better than &lt;strong>predicting the average&lt;/strong> of the training perturbations. A separate benchmark found even the &lt;em>mean of
+the training examples&lt;/em> beat scGPT and scFoundation. This is not a reason to look away — it is exactly why a lab
+building a &lt;a href="https://aicell.io/project/human-cell-simulator/">virtual cell&lt;/a> should build the way this one does: with &lt;strong>validation and
+benchmarking front and center&lt;/strong>, treating a predicted perturbation as a &lt;strong>hypothesis&lt;/strong>, and measuring against
+&lt;strong>CASP-style challenges&lt;/strong> rather than self-reported wins. As the authors put it, the result &amp;ldquo;highlights the
+importance of critical benchmarking in directing and evaluating method development.&amp;rdquo; And the pieces connect: a
+predictive cell model is precisely the &lt;em>instrument&lt;/em> an &lt;a href="https://aicell.io/post/newsletter-2026-08-14/">autonomous research agent&lt;/a>
+would need to decide which experiment to run, and &lt;a href="https://aicell.io/post/newsletter-2026-08-13/">spatial context&lt;/a> is a tissue layer
+these dissociated-cell models still lack. The honest frontier is stark — perturbation data is scarce, &amp;ldquo;beating the
+mean&amp;rdquo; for a truly novel gene is unsolved, and a transformer&amp;rsquo;s confidence is not a measurement. That&amp;rsquo;s the same
+&lt;a href="https://aicell.io/post/newsletter-2026-07-27/">prove-it discipline&lt;/a> we keep returning to, and here it cuts closest to home. The
+AlphaFold moment for the cell hasn&amp;rsquo;t arrived. But the honest scoreboard that could one day summon it just went up —
+and that, for a field prone to hype, is its own kind of progress.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(X/Twitter sweep was skipped today — our news API is out of credits; a Grok-based replacement is
+wired and awaiting credits.) Have lab news to share — a talk, paper, conference or release? Message me on Slack.&lt;/em>&lt;/p></description></item><item><title>Lab Newsletter — August 2, 2026: The Cell That Shows Its Work</title><link>https://aicell.io/post/newsletter-2026-08-02/</link><pubDate>Sun, 02 Aug 2026 03:07:00 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-08-02/</guid><description>&lt;p>Three weeks ago we watched an &lt;a href="https://aicell.io/post/newsletter-2026-07-09/">entire minimal cell come alive in 4D&lt;/a> —
 the &lt;em>mechanistic&lt;/em> road to a virtual cell, every reaction hand-modeled. The other road is the &lt;em>learned&lt;/em>
 one: black-box foundation models trained on hundreds of millions of single cells, predicting how a cell
 shifts when you perturb it. Each has a weakness the other doesn&amp;rsquo;t: mechanistic models are legible but
