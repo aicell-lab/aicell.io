@@ -8,7 +8,7 @@ tags:
   - agents
   - infrastructure
   - open source
-date: '2026-06-01T00:00:00Z'
+date: '2026-08-17T00:00:00Z'
 
 external_link: ''
 
@@ -35,5 +35,7 @@ url_video: ''
 Modern science is increasingly built from many moving parts — AI models, large datasets, compute clusters, and laboratory instruments — that rarely live in the same place. **Hypha** is our open-source framework for connecting them. It lets researchers and AI agents call remote functions, services, and models as if they were local, organising everything into unified *virtual workspaces*.
 
 Hypha is the backbone of much of what the lab builds: it powers cloud model serving in [BioEngine](/project/bioengine), instant model testing in the [BioImage Model Zoo](https://bioimage.io), autonomous microscopy in [Agent-Lens](/project/agent-lens), and agent-ready biological data. Its companion libraries — `hypha-rpc`, `hypha-core`, and `hypha-compute` — make it easy to expose any Python or browser service to the network and to AI agents over standards like the Model Context Protocol.
+
+Under continuous, active development, Hypha is the connective tissue behind the lab's push toward **agentic science** — turning models, datasets, and instruments into callable services that a reasoning agent can discover and orchestrate on demand.
 
 Learn more in the [documentation](https://docs.amun.ai) or try the public server at [hypha.aicell.io](https://hypha.aicell.io).
