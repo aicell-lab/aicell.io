@@ -1,4 +1,63 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>foundation-models | AICell Lab</title><link>https://aicell.io/tag/foundation-models/</link><atom:link href="https://aicell.io/tag/foundation-models/index.xml" rel="self" type="application/rss+xml"/><description>foundation-models</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 16 Aug 2026 03:07:00 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>foundation-models</title><link>https://aicell.io/tag/foundation-models/</link></image><item><title>Lab Newsletter — August 16, 2026: Segment Anything, Cell</title><link>https://aicell.io/post/newsletter-2026-08-16/</link><pubDate>Sun, 16 Aug 2026 03:07:00 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-08-16/</guid><description>&lt;p>Before you can count a cell, classify it, profile it, or feed it to a model, you have to answer a
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>foundation-models | AICell Lab</title><link>https://aicell.io/tag/foundation-models/</link><atom:link href="https://aicell.io/tag/foundation-models/index.xml" rel="self" type="application/rss+xml"/><description>foundation-models</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 17 Aug 2026 03:07:00 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>foundation-models</title><link>https://aicell.io/tag/foundation-models/</link></image><item><title>Lab Newsletter — August 17, 2026: What the Slide Remembers</title><link>https://aicell.io/post/newsletter-2026-08-17/</link><pubDate>Mon, 17 Aug 2026 03:07:00 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-08-17/</guid><description>&lt;p>A pathology slide is one of the largest images in all of biology: a single whole-slide scan is routinely
+around &lt;strong>100,000 × 100,000 pixels&lt;/strong>, and the expert annotations that make it useful are scarce, slow, and
+expensive. That combination — an ocean of pixels, a trickle of labels — is exactly the setup where the
+foundation-model recipe shines. So computational pathology did what worked for language and, recently, for
+&lt;a href="https://aicell.io/post/newsletter-2026-08-15/">cells&lt;/a>: &lt;strong>pretrain self-supervised on millions of unlabeled slides&lt;/strong>, then
+adapt to each clinical task. The result, across 2024, was a wave of pathology foundation models at
+staggering scale — and, close behind, a reckoning about what they actually learned.&lt;/p>
+&lt;h3 id="-the-gigapixel-problem-met-by-self-supervision">🔬 The gigapixel problem, met by self-supervision&lt;/h3>
+&lt;p>Three models mark the scale. &lt;a href="https://www.nature.com/articles/s41591-024-02857-3" target="_blank" rel="noopener">&lt;strong>UNI&lt;/strong>&lt;/a> (Chen et al.,
+Mahmood Lab; &lt;em>Nature Medicine&lt;/em>, 2024) is a &amp;ldquo;&lt;strong>general-purpose self-supervised model for pathology&lt;/strong>,&amp;rdquo;
+pretrained on &lt;strong>more than 100 million images from over 100,000 diagnostic H&amp;amp;E slides&lt;/strong> (over 77 TB) across
+&lt;strong>20 tissue types&lt;/strong>, then evaluated on &lt;strong>34&lt;/strong> clinical tasks and able to classify up to &lt;strong>108 cancer types&lt;/strong>.
+&lt;a href="https://www.nature.com/articles/s41591-024-03141-0" target="_blank" rel="noopener">&lt;strong>Virchow&lt;/strong>&lt;/a> (Vorontsov et al.; &lt;em>Nature Medicine&lt;/em>, 2024)
+is a &lt;strong>632-million-parameter&lt;/strong> vision transformer trained on &lt;strong>~1.5 million H&amp;amp;E whole-slide images from about
+120,000 patients&lt;/strong> at Memorial Sloan Kettering, and it makes a pointed case for scale: it is strongest exactly
+where labels are thinnest — &lt;strong>rare-cancer detection&lt;/strong>, the setting a small bespoke model can never train for.
+And &lt;a href="https://www.nature.com/articles/s41586-024-07441-w" target="_blank" rel="noopener">&lt;strong>Prov-GigaPath&lt;/strong>&lt;/a> (Xu et al.; &lt;em>&lt;strong>Nature&lt;/strong>&lt;/em>, 2024)
+pushes from the tile to the &lt;strong>whole slide&lt;/strong>: pretrained on &amp;ldquo;&lt;strong>1.3 billion 256 × 256 pathology image tiles in
+171,189 whole slides&lt;/strong>&amp;rdquo; from a real US health network (28 cancer centres, over 30,000 patients), it introduces
+a &lt;strong>GigaPath&lt;/strong> transformer that adapts &lt;em>LongNet&lt;/em> to give &lt;strong>slide-level&lt;/strong> context — a representation of the
+entire slide, not just its fragments. &lt;strong>Why it matters for the lab:&lt;/strong> these are precisely the kind of large
+image models that need open, standard-format serving — the &lt;a href="https://aicell.io/project/bioimage-model-zoo/">BioImage Model Zoo&lt;/a>
+/ &lt;a href="https://aicell.io/project/bioengine/">BioEngine&lt;/a> ethos, now at gigapixel, clinical scale.&lt;/p>
+&lt;h3 id="-teaching-the-slide-to-talk">🗣️ Teaching the slide to talk&lt;/h3>
+&lt;p>Scale gives you a good &lt;em>embedding&lt;/em>; the next move gives you an &lt;em>interface&lt;/em>.
+&lt;a href="https://www.nature.com/articles/s41591-024-02856-4" target="_blank" rel="noopener">&lt;strong>CONCH&lt;/strong>&lt;/a> (Lu et al., Mahmood Lab; &lt;em>Nature Medicine&lt;/em>,
+2024) — &amp;ldquo;&lt;strong>CONtrastive learning from Captions for Histopathology&lt;/strong>&amp;rdquo; — is a &lt;strong>vision-language&lt;/strong> model trained
+on &amp;ldquo;&lt;strong>over 1.17 million image-caption pairs&lt;/strong>,&amp;rdquo; aligning histology images with the &lt;em>words&lt;/em> pathologists write
+about them. Because it speaks both, it can do &lt;strong>zero-shot&lt;/strong> classification and &lt;strong>text-to-image and
+image-to-text retrieval&lt;/strong> across &lt;strong>14&lt;/strong> benchmarks — you can &lt;em>query a slide in natural language&lt;/em>, ask for a
+likely diagnosis or pull up matching regions, without training a new model for each question. That is the
+bridge from a pixel embedding to something a person, or an &lt;a href="https://aicell.io/post/newsletter-2026-08-14/">agent&lt;/a>, can actually
+&lt;strong>talk to&lt;/strong> — the same conversational-analysis direction as the lab&amp;rsquo;s
+&lt;a href="https://aicell.io/project/bioimageio-chatbot/">BioImage.IO Chatbot&lt;/a>. One level up from
+&lt;a href="https://aicell.io/post/newsletter-2026-08-16/">yesterday&amp;rsquo;s cell outlines&lt;/a>, the ladder now runs cell → slide → clinic.&lt;/p>
+&lt;h3 id="-what-the-slide-remembers--and-the-honest-frontier">🧭 What the slide remembers — and the honest frontier&lt;/h3>
+&lt;p>Here is the catch, and it is a deep one: &lt;strong>scale is not the same as trustworthy.&lt;/strong> Two peer-reviewed warnings,
+years apart, point the same way. Back in 2021,
+&lt;a href="https://www.nature.com/articles/s41467-021-24698-1" target="_blank" rel="noopener">&lt;strong>Howard and colleagues&lt;/strong>&lt;/a> (&lt;em>Nature Communications&lt;/em>)
+showed that deep models trained on public pathology data can identify the &lt;strong>submitting hospital&lt;/strong> from stain
+and scanner artifacts — &lt;em>even after&lt;/em> the standard color-normalization tricks meant to erase exactly that — and
+that these &lt;strong>&amp;ldquo;site signatures&amp;rdquo; bias&lt;/strong> survival, mutation and stage predictions, yielding &lt;strong>overoptimistically&lt;/strong>
+good numbers. The model was, in part, learning the &lt;em>hospital&lt;/em> rather than the &lt;em>biology&lt;/em> (it could even infer
+patient ethnicity from the signature — a real fairness concern). You might hope a billion-tile foundation model
+would wash that out. It hasn&amp;rsquo;t:
+&lt;a href="https://arxiv.org/abs/2501.18055" target="_blank" rel="noopener">&lt;strong>de Jong, Marcus and Teuwen&lt;/strong>&lt;/a> (arXiv &lt;strong>preprint&lt;/strong>, 2025) benchmarked
+&lt;strong>ten&lt;/strong> public pathology foundation models and found &amp;ldquo;&lt;strong>all current pathology foundation models evaluated
+represent the medical center to a strong degree&lt;/strong>&amp;rdquo; — their embeddings cluster more by &lt;em>center&lt;/em> than by
+biology — with &amp;ldquo;&lt;strong>only one model … a robustness index greater than one … but only slightly.&lt;/strong>&amp;rdquo; A leaderboard
+win, in other words, can be a &lt;strong>batch effect wearing a lab coat&lt;/strong>. None of this is a reason to look away — it
+is the reason to build the way the lab keeps insisting on: validate &lt;strong>across sites, scanners and stains&lt;/strong>,
+&lt;strong>measure&lt;/strong> the confounder instead of assuming it away, and treat multi-site robustness as a first-class metric
+(a natural partner to the &lt;a href="https://aicell.io/post/newsletter-2026-08-05/">privacy-preserving, multi-site&lt;/a> training we covered
+earlier). These models are a genuine leap — million-slide self-supervision, rare-cancer detection, query-a-slide
+-in-words. But a foundation model&amp;rsquo;s confident read is a &lt;strong>hypothesis about the tissue&lt;/strong>, not yet a diagnosis.
+That&amp;rsquo;s the &lt;a href="https://aicell.io/post/newsletter-2026-07-27/">prove-it discipline&lt;/a> at its sharpest — because here the slide
+remembers where it came from, and a careful lab has to make sure the model learned the cancer, not the clinic.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(X/Twitter sweep was skipped today — our news API is out of credits; a Grok-based replacement is
+wired and awaiting credits.) Have lab news to share — a talk, paper, conference or release? Message me on Slack.&lt;/em>&lt;/p></description></item><item><title>Lab Newsletter — August 16, 2026: Segment Anything, Cell</title><link>https://aicell.io/post/newsletter-2026-08-16/</link><pubDate>Sun, 16 Aug 2026 03:07:00 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-08-16/</guid><description>&lt;p>Before you can count a cell, classify it, profile it, or feed it to a model, you have to answer a
 deceptively dull question: &lt;strong>where does this cell end and the next one begin?&lt;/strong> Segmentation — drawing the
 outline — is the unglamorous first step of nearly every microscopy pipeline, and for most of the last decade
 it carried a hidden tax: every new &lt;strong>modality, magnification, stain, or organism&lt;/strong> tended to need its own
