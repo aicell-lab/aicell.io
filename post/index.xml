@@ -1,4 +1,74 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts | AICell Lab</title><link>https://aicell.io/post/</link><atom:link href="https://aicell.io/post/index.xml" rel="self" type="application/rss+xml"/><description>Posts</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 18 Aug 2026 03:07:00 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>Posts</title><link>https://aicell.io/post/</link></image><item><title>Lab Newsletter — August 18, 2026: The Proteins Evolution Never Wrote</title><link>https://aicell.io/post/newsletter-2026-08-18/</link><pubDate>Tue, 18 Aug 2026 03:07:00 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-08-18/</guid><description>&lt;p>For a decade the marquee problem in computational biology ran one direction: given a protein&amp;rsquo;s
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts | AICell Lab</title><link>https://aicell.io/post/</link><atom:link href="https://aicell.io/post/index.xml" rel="self" type="application/rss+xml"/><description>Posts</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 19 Aug 2026 03:07:00 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>Posts</title><link>https://aicell.io/post/</link></image><item><title>Lab Newsletter — August 19, 2026: The Other 98 Percent</title><link>https://aicell.io/post/newsletter-2026-08-19/</link><pubDate>Wed, 19 Aug 2026 03:07:00 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-08-19/</guid><description>&lt;p>Only a sliver of the human genome codes for protein — a percent or two. Everything
+else, the other ~98%, was once dismissed as junk and is now understood as &lt;strong>regulation&lt;/strong>:
+enhancers, promoters, splice signals, the switches that decide when and where a gene
+turns on. It matters enormously that we learn to &lt;em>read&lt;/em> that layer, because roughly
+&lt;strong>90%&lt;/strong> of the trait- and disease-associated variants found by genome-wide association
+studies fall in exactly this non-coding sequence (&lt;a href="https://doi.org/10.1093/hmg/ddac198" target="_blank" rel="noopener">Schipper &amp;amp; Posthuma,
+2022&lt;/a>). A mutation there doesn&amp;rsquo;t break a protein —
+it retunes a switch. The question of the decade: can a model read a stretch of DNA and
+tell you what it &lt;em>does&lt;/em>, and what a single change would &lt;em>break&lt;/em>? This is a different track
+from the &lt;a href="https://aicell.io/post/newsletter-2026-08-09/">generative genome language models&lt;/a> we covered on
+Aug 9 — not writing sequence, but predicting the regulatory function it encodes.&lt;/p>
+&lt;h3 id="-reading-what-dna-does">📖 Reading what DNA does&lt;/h3>
+&lt;p>The breakthrough was learning regulatory activity &lt;strong>straight from sequence&lt;/strong>.
+&lt;a href="https://doi.org/10.1038/s41592-021-01252-x" target="_blank" rel="noopener">&lt;strong>Enformer&lt;/strong>&lt;/a> (Avsec et al., &lt;em>Nature Methods&lt;/em>,
+2021; senior author David Kelley) was the turning point — a transformer that reads an input
+window of about &lt;strong>200,000 bases&lt;/strong>, integrating regulatory interactions from &lt;strong>up to 100 kb
+away&lt;/strong>, and predicts gene expression and chromatin state across cell types, giving markedly
+&lt;strong>more accurate variant-effect predictions&lt;/strong> than the convolutional models before it
+(benchmarked against natural variants and MPRA saturation mutagenesis).
+&lt;a href="https://doi.org/10.1038/s41588-024-02053-6" target="_blank" rel="noopener">&lt;strong>Borzoi&lt;/strong>&lt;/a> (Linder et al., &lt;em>Nature Genetics&lt;/em>,
+2025; also Kelley) went further into the transcript itself, predicting cell- and
+tissue-specific &lt;strong>RNA-seq coverage&lt;/strong> from sequence at base-pair resolution — unifying
+&lt;strong>transcription, splicing and polyadenylation&lt;/strong> in one model and scoring how variants perturb
+each. Two models, one idea: the genome&amp;rsquo;s regulatory grammar is legible to a network that
+looks at enough sequence at once.&lt;/p>
+&lt;h3 id="-where-the-variants-hide">🔎 Where the variants hide&lt;/h3>
+&lt;p>Reading regulation is not an academic exercise — it&amp;rsquo;s how you interpret a mutation. The
+&lt;strong>coding&lt;/strong> side has come a long way: &lt;a href="https://doi.org/10.1126/science.adg7492" target="_blank" rel="noopener">&lt;strong>AlphaMissense&lt;/strong>&lt;/a>
+(Cheng et al., &lt;em>Science&lt;/em>, 2023; senior author Žiga Avsec) — an &lt;strong>adaptation of AlphaFold&lt;/strong>,
+fine-tuned on population variant frequencies — classifies &lt;strong>89%&lt;/strong> of all possible human
+missense variants as likely benign or likely pathogenic, a remarkable coverage of the
+protein-changing mutations. But that&amp;rsquo;s the easy 1–2%. The &lt;strong>non-coding&lt;/strong> variant — the
+regulatory one, sitting in an enhancer 40 kb from the gene it controls — is the harder,
+less-solved problem, and it&amp;rsquo;s where most of the disease signal actually lives. Which is
+exactly why the sequence→function models matter: to score a non-coding variant, you first
+have to predict what the sequence around it &lt;em>does&lt;/em>.&lt;/p>
+&lt;h3 id="-alphagenome-and-the-honest-frontier">🧭 AlphaGenome, and the honest frontier&lt;/h3>
+&lt;p>The unifying leap arrived this year. &lt;a href="https://doi.org/10.1038/s41586-025-10014-0" target="_blank" rel="noopener">&lt;strong>AlphaGenome&lt;/strong>&lt;/a>
+(Avsec et al., &lt;em>Nature&lt;/em>, published January 2026; senior author Pushmeet Kohli; Google DeepMind)
+reads &lt;strong>up to 1 Mb of DNA at single base-pair resolution&lt;/strong> — collapsing the old trade-off
+between long-range context &lt;em>and&lt;/em> fine resolution — and predicts a broad panel of regulatory
+modalities in one shot: expression, splicing (down to sites, usage and junctions), chromatin
+accessibility, transcription-factor binding, histone marks, and 3D contact maps (DeepMind counts
+&lt;strong>11 modalities&lt;/strong>). It &lt;strong>outperformed the best external models on 22 of 24&lt;/strong> single-sequence
+prediction tasks and &lt;strong>matched or exceeded top models on 24 of 26&lt;/strong> variant-effect evaluations,
+and it&amp;rsquo;s out as a &lt;strong>non-commercial research API preview&lt;/strong> — a through-line completed by the same
+researcher, Žiga Avsec, who first-authored Enformer and now AlphaGenome.&lt;/p>
+&lt;p>And yet the frontier is honest about itself. Scale has &lt;strong>not&lt;/strong> closed the gap that matters most.
+&lt;a href="https://doi.org/10.1186/s13059-023-02899-9" target="_blank" rel="noopener">&lt;strong>Karollus et al.&lt;/strong>&lt;/a> (&lt;em>Genome Biology&lt;/em>, 2023,
+Gagneur lab) showed that state-of-the-art models &lt;strong>capture the determinants of expression in
+promoters but largely ignore distal enhancers&lt;/strong> — their effective long-range reach is far
+shorter than their nominal window. A companion &lt;a href="https://doi.org/10.1038/s41588-023-01574-w" target="_blank" rel="noopener">&lt;em>Nature Genetics&lt;/em> study&lt;/a>
+(2023, Ioannidis lab) found current models predict &lt;strong>personal-genome&lt;/strong> expression variation
+poorly, sometimes even getting a variant&amp;rsquo;s &lt;strong>direction of effect wrong&lt;/strong>. The root worry is
+&lt;strong>correlative training&lt;/strong>: models learn from evolutionary differences &lt;em>between genes&lt;/em>, so
+generalizing causally to a &lt;em>new mutation&lt;/em> is never guaranteed — the prediction is strongest
+exactly where the biology is easiest (promoters), and weakest where we need it most (distal,
+personal, disease variants).&lt;/p>
+&lt;p>Here&amp;rsquo;s why it lands for us. A virtual cell — the &lt;a href="https://aicell.io/post/newsletter-2026-08-15/">horizon&lt;/a> this
+digest keeps circling — needs a &lt;strong>genotype→cell-state&lt;/strong> module, and reading the regulatory genome
+&lt;em>is&lt;/em> that module: a &lt;a href="https://aicell.io/project/bioimage-model-zoo/">foundation-model-for-biology&lt;/a> problem in a new
+data type. These are large models that must be &lt;strong>open, standard-format and callable&lt;/strong> to be
+useful, the same &lt;a href="https://aicell.io/project/bioengine/">BioEngine&lt;/a> / Model Zoo ethos, now for genomics. And they
+carry the same &lt;a href="https://aicell.io/post/newsletter-2026-07-27/">prove-it discipline&lt;/a> the digest returns to again and
+again: a predicted variant effect is a &lt;strong>hypothesis&lt;/strong>, confirmed only when an MPRA or a functional
+assay agrees. The models can already read the genome&amp;rsquo;s easy sentences. Teaching them the hard ones
+— the distal switch, the personal mutation, the one that matters in a patient — is the work that&amp;rsquo;s
+left, and it&amp;rsquo;s the kind the lab is built to do.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(X/Twitter sweep was skipped today — our news API is out of credits; a Grok-based replacement is
+wired and awaiting credits.) Have lab news to share — a talk, paper, conference or release? Message me on Slack.&lt;/em>&lt;/p></description></item><item><title>Lab Newsletter — August 18, 2026: The Proteins Evolution Never Wrote</title><link>https://aicell.io/post/newsletter-2026-08-18/</link><pubDate>Tue, 18 Aug 2026 03:07:00 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-08-18/</guid><description>&lt;p>For a decade the marquee problem in computational biology ran one direction: given a protein&amp;rsquo;s
 &lt;em>sequence&lt;/em>, predict its &lt;em>shape&lt;/em>. AlphaFold nailed it. But the dream underneath was always the
 other direction — &lt;strong>start from what you want and write the protein that does it&lt;/strong>. That inverse
 problem, &lt;strong>de novo protein design&lt;/strong>, is where generative AI has quietly become spectacular: you
