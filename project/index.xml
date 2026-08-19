@@ -10,9 +10,17 @@ and fluidic systems, robotic arms, liquid-handling robots and automated incubato
 coordinated system. AI analyzes the images as they are captured and feeds decisions back to the
 hardware, so an experiment can adapt while it runs, minimize phototoxicity, and catch rare events
 in living cells.&lt;/p>
+&lt;h3 id="one-cycle-end-to-end">One cycle, end to end&lt;/h3>
+&lt;p>REEF runs the same loop around the clock. This is one turn of it, rendered from the lab&amp;rsquo;s digital
+twin: a plate leaves the incubator, is imaged on a microscope, travels to the liquid handler for a
+media exchange and a reagent addition, and goes back to the incubator until the next timepoint.&lt;/p>
+&lt;iframe src="https://drive.google.com/file/d/1E11Wlop5UomPwrAP7qAFYAP58bj-gCll/preview" width="100%" height="460" allow="autoplay" allowfullscreen frameborder="0" style="border-radius:8px;">&lt;/iframe>
+&lt;p>The geometry is the lab&amp;rsquo;s own. Every instrument stands where it stands, the liquid handler&amp;rsquo;s deck is
+its real layout down to the plate positions, and the robot follows the paths it is actually taught.
+The pipetting is drawn simplified, for legibility rather than as a simulation.&lt;/p>
 &lt;h3 id="the-farm-in-action">The farm in action&lt;/h3>
-&lt;p>The robotic arm moving a plate between the incubator and the microscope, part of a fully automated
-imaging run:&lt;/p>
+&lt;p>And here is the same workflow on the real hardware. The robotic arm moving a plate between the
+incubator and the microscope, part of a fully automated imaging run:&lt;/p>
 &lt;iframe src="https://drive.google.com/file/d/1_LsVB4SHRl9jfhwdTQ8yX3l1bakRNWWI/preview" width="100%" height="460" allow="autoplay" allowfullscreen frameborder="0" style="border-radius:8px;">&lt;/iframe>
 &lt;p>And the whole farm during a run, across its lab cameras (transport, imaging and liquid handling at once):&lt;/p>
 &lt;iframe src="https://drive.google.com/file/d/1IUHZfCHqTuDGX_Flwxlnkl_gMksNkmtn/preview" width="100%" height="460" allow="autoplay" allowfullscreen frameborder="0" style="border-radius:8px;">&lt;/iframe>
