@@ -384,7 +384,7 @@ in living cells.&lt;/p>
 &lt;p>REEF runs the same loop around the clock. This is one turn of it, rendered from the lab&amp;rsquo;s digital
 twin: a plate leaves the incubator, is imaged on a microscope, travels to the liquid handler for a
 media exchange and a reagent addition, and goes back to the incubator until the next timepoint.&lt;/p>
-&lt;iframe src="https://drive.google.com/file/d/1LfUuFR-zQBq0NVW-y3HvjbtSGjOZ_vgJ/preview" width="100%" height="460" allow="autoplay" allowfullscreen frameborder="0" style="border-radius:8px;">&lt;/iframe>
+&lt;iframe src="https://drive.google.com/file/d/1m5QK8-CXJyyn_VATnxiEgvllb2wPWt3_/preview" width="100%" height="460" allow="autoplay" allowfullscreen frameborder="0" style="border-radius:8px;">&lt;/iframe>
 &lt;p>The geometry is the lab&amp;rsquo;s own. Every instrument stands where it stands, the liquid handler&amp;rsquo;s deck is
 its real layout down to the plate positions, and the robot follows the paths it is actually taught.
 The pipetting is drawn simplified, for legibility rather than as a simulation.&lt;/p>
