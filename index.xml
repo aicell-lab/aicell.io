@@ -1,4 +1,59 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AICell Lab</title><link>https://aicell.io/</link><atom:link href="https://aicell.io/index.xml" rel="self" type="application/rss+xml"/><description>AICell Lab</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 19 Aug 2026 03:07:00 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>AICell Lab</title><link>https://aicell.io/</link></image><item><title>Lab Newsletter — August 19, 2026: The Other 98 Percent</title><link>https://aicell.io/post/newsletter-2026-08-19/</link><pubDate>Wed, 19 Aug 2026 03:07:00 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-08-19/</guid><description>&lt;p>Only a sliver of the human genome codes for protein — a percent or two. Everything
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AICell Lab</title><link>https://aicell.io/</link><atom:link href="https://aicell.io/index.xml" rel="self" type="application/rss+xml"/><description>AICell Lab</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Thu, 20 Aug 2026 03:07:00 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>AICell Lab</title><link>https://aicell.io/</link></image><item><title>Lab Newsletter — August 20, 2026: The Harder Fold</title><link>https://aicell.io/post/newsletter-2026-08-20/</link><pubDate>Thu, 20 Aug 2026 03:07:00 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-08-20/</guid><description>&lt;p>Two days ago this digest celebrated &lt;a href="https://aicell.io/post/newsletter-2026-08-18/">the proteins evolution never wrote&lt;/a>
+— generative design so good the 2024 Nobel sealed it. RNA is the humbling counterpoint. It is the
+molecule in the middle of the central dogma, and predicting its 3D shape from sequence is &lt;em>harder&lt;/em>
+than for proteins: RNA is floppier, its folds hinge on subtle non-canonical base pairs, and there
+are far fewer experimental structures to learn from. So the RNA story splits cleanly in two — a
+&lt;strong>structure problem&lt;/strong> that is honestly not yet solved, and a &lt;strong>design&lt;/strong> capability that is already
+changing medicine. Both are worth the lab&amp;rsquo;s attention.&lt;/p>
+&lt;h3 id="-the-harder-fold">🧬 The harder fold&lt;/h3>
+&lt;p>For proteins, AlphaFold turned structure prediction from a grand challenge into a solved-enough tool.
+&lt;a href="https://doi.org/10.1038/s41586-024-07487-w" target="_blank" rel="noopener">&lt;strong>AlphaFold3&lt;/strong>&lt;/a> (Abramson et al., &lt;em>Nature&lt;/em>, 2024; senior
+authors Demis Hassabis and John Jumper) pushed the same machinery beyond proteins to &lt;strong>nucleic-acid
+complexes, ligands and modified residues&lt;/strong>, reporting &amp;ldquo;much higher accuracy for protein–nucleic-acid
+interactions&amp;rdquo; than specialized predictors. RNA-specific efforts went deeper:
+&lt;a href="https://doi.org/10.1038/s41592-024-02487-0" target="_blank" rel="noopener">&lt;strong>RhoFold+&lt;/strong>&lt;/a> (Shen et al., &lt;em>Nature Methods&lt;/em>, 2024; senior
+author Yu Li) is a language-model-based predictor of single-chain RNA structure, its RNA language model
+&lt;strong>pretrained on ~23.7 million sequences&lt;/strong>, reported to surpass existing methods — &amp;ldquo;including human
+expert groups&amp;rdquo; — on the RNA-Puzzles and CASP15 benchmarks and to generalize across RNA families.&lt;/p>
+&lt;p>And yet the field is refreshingly honest about where it stands. The community assessment of
+&lt;a href="https://doi.org/10.1002/prot.26602" target="_blank" rel="noopener">&lt;strong>CASP15&lt;/strong>&lt;/a> (Das et al., &lt;em>Proteins&lt;/em>, 2023; senior author Eric
+Westhof) concluded flatly that &amp;ldquo;&lt;strong>the prediction of RNA three-dimensional structures remains an unsolved
+problem&lt;/strong>&amp;rdquo; — and, strikingly, that at that bake-off &amp;ldquo;&lt;strong>predictions from deep learning approaches were
+significantly worse than these top ranked groups, which did not use deep learning&lt;/strong>.&amp;rdquo; This is the rare
+frontier where AI has &lt;em>not yet&lt;/em> won, and the assessors say so out loud. RNA folding is unfinished
+business.&lt;/p>
+&lt;h3 id="-the-messenger-we-can-already-write">💉 The messenger we can already write&lt;/h3>
+&lt;p>Design, remarkably, outruns prediction — and that&amp;rsquo;s where the human impact is immediate. You don&amp;rsquo;t need
+a perfect structure to build a better mRNA. &lt;a href="https://doi.org/10.1038/s41586-023-06127-z" target="_blank" rel="noopener">&lt;strong>LinearDesign&lt;/strong>&lt;/a>
+(Zhang et al., &lt;em>Nature&lt;/em>, 2023; project led by Liang Huang, a Baidu Research–Oregon State–StemiRNA–Rochester
+collaboration) jointly optimizes an mRNA&amp;rsquo;s &lt;strong>codon usage and structural stability&lt;/strong> at once — out of some
+&lt;strong>2.4 × 10⁶³² possible sequences&lt;/strong> for the SARS-CoV-2 spike protein, it finds an optimal design &lt;strong>in just
+11 minutes&lt;/strong>, and its designs raised &lt;strong>antibody titres up to 128× in mice&lt;/strong> versus the standard
+codon-optimization benchmark (for both COVID-19 and varicella-zoster vaccines). An algorithm, quietly, at
+the heart of a pandemic-era medicine.&lt;/p>
+&lt;p>The read-and-write toolkit is filling in around it.
+&lt;a href="https://doi.org/10.1038/s41587-019-0164-5" target="_blank" rel="noopener">&lt;strong>Sample &amp;amp; Seelig&lt;/strong>&lt;/a> (&lt;em>Nature Biotechnology&lt;/em>, 2019) trained
+deep learning on &lt;strong>280,000 randomized 5′ UTRs&lt;/strong> to predict — and then design — how efficiently an mRNA is
+translated, and flagged &lt;strong>45 disease variants&lt;/strong> that shift ribosome loading.
+&lt;a href="https://doi.org/10.1038/s41467-025-60872-5" target="_blank" rel="noopener">&lt;strong>RiNALMo&lt;/strong>&lt;/a> (Penić et al., &lt;em>Nature Communications&lt;/em>, 2025;
+senior author Mile Šikić) is a &lt;strong>650-million-parameter RNA language model&lt;/strong> pretrained on &lt;strong>36 million
+non-coding RNA sequences&lt;/strong> that generalizes to &lt;strong>unseen RNA families&lt;/strong> — an open, general-purpose RNA
+foundation model of the kind the protein and genome worlds already take for granted.&lt;/p>
+&lt;h3 id="-why-it-matters-for-the-lab">🧭 Why it matters for the lab&lt;/h3>
+&lt;p>RNA sits at the center of the cell — transcription, splicing, translation, regulation, structure — so any
+&lt;a href="https://aicell.io/post/newsletter-2026-08-15/">virtual cell&lt;/a> or &lt;a href="https://aicell.io/project/bioimage-model-zoo/">foundation-model-for-biology&lt;/a>
+program needs an &lt;strong>RNA module&lt;/strong>, not just proteins (&lt;a href="https://aicell.io/post/newsletter-2026-08-18/">Aug 18&lt;/a>) and DNA
+(&lt;a href="https://aicell.io/post/newsletter-2026-08-19/">Aug 19&lt;/a>). And RNA hands us a pointed lesson: the reason its structure
+prediction lags is &lt;strong>data scarcity&lt;/strong> — far fewer experimental RNA structures to train on — which is the
+strongest argument yet for &lt;strong>open, shared, standard-format data and callable models&lt;/strong>, the
+&lt;a href="https://aicell.io/project/bioengine/">BioEngine&lt;/a> and Model Zoo ethos, applied to a field that badly needs it. Best of all,
+the &lt;a href="https://aicell.io/post/newsletter-2026-07-27/">prove-it discipline&lt;/a> is baked right into RNA&amp;rsquo;s own scorecard: CASP15
+tells us plainly that a predicted RNA fold is still a hypothesis, and even a beautifully designed mRNA is
+one until it&amp;rsquo;s expressed and assayed. Design already saves lives; prediction still has to earn its place.
+That gap — honest, measurable, open — is exactly the kind of problem the lab is built to work on.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(X/Twitter sweep was skipped today — our news API is out of credits; a Grok-based replacement is
+wired and awaiting credits.) Have lab news to share — a talk, paper, conference or release? Message me on Slack.&lt;/em>&lt;/p></description></item><item><title>Lab Newsletter — August 19, 2026: The Other 98 Percent</title><link>https://aicell.io/post/newsletter-2026-08-19/</link><pubDate>Wed, 19 Aug 2026 03:07:00 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-08-19/</guid><description>&lt;p>Only a sliver of the human genome codes for protein — a percent or two. Everything
 else, the other ~98%, was once dismissed as junk and is now understood as &lt;strong>regulation&lt;/strong>:
 enhancers, promoters, splice signals, the switches that decide when and where a gene
 turns on. It matters enormously that we learn to &lt;em>read&lt;/em> that layer, because roughly
