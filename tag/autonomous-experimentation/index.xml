@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>autonomous-experimentation | AICell Lab</title><link>https://aicell.io/tag/autonomous-experimentation/</link><atom:link href="https://aicell.io/tag/autonomous-experimentation/index.xml" rel="self" type="application/rss+xml"/><description>autonomous-experimentation</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 21 Aug 2026 03:07:00 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>autonomous-experimentation</title><link>https://aicell.io/tag/autonomous-experimentation/</link></image><item><title>Lab Newsletter — August 21, 2026: The Lab That Runs Itself</title><link>https://aicell.io/post/newsletter-2026-08-21/</link><pubDate>Fri, 21 Aug 2026 03:07:00 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-08-21/</guid><description>&lt;p>On &lt;a href="https://aicell.io/post/newsletter-2026-08-14/">Aug 14&lt;/a> this digest met the agent that &lt;em>wonders&lt;/em> — multi-agent
+systems that generate and debate their own hypotheses. On &lt;a href="https://aicell.io/post/newsletter-2026-07-31/">July 31&lt;/a>, the
+agent that &lt;em>decides&lt;/em> which experiment to run next. Today, the part that makes it real: &lt;strong>the hands&lt;/strong>. A
+&lt;strong>self-driving lab&lt;/strong> closes the entire loop — design an experiment, run it on real instruments, read the
+data, decide what to do next — with no human in the middle. It&amp;rsquo;s the most physical, least hand-wavy
+version of &amp;ldquo;AI for science,&amp;rdquo; and it has a longer, more sobering history than the current hype suggests.&lt;/p>
+&lt;h3 id="-the-closed-loop-from-adam-to-coscientist">🔬 The closed loop, from Adam to Coscientist&lt;/h3>
+&lt;p>The idea is older than the LLM era. &lt;a href="https://doi.org/10.1126/science.1165620" target="_blank" rel="noopener">&lt;strong>Robot Scientist &amp;ldquo;Adam&amp;rdquo;&lt;/strong>&lt;/a>
+(King et al., &lt;em>Science&lt;/em>, 2009) was the first machine to run the scientific method end to end: it
+&amp;ldquo;&lt;strong>autonomously generated functional genomics hypotheses about the yeast &lt;em>Saccharomyces cerevisiae&lt;/em> and
+experimentally tested these hypotheses by using laboratory automation&lt;/strong>&amp;rdquo; — and the authors then
+&lt;strong>confirmed Adam&amp;rsquo;s conclusions through manual experiments&lt;/strong>. Even the bookkeeping was radical for its day:
+a formal record of &lt;strong>over 10,000 research units&lt;/strong> relating &lt;strong>6.6 million biomass measurements&lt;/strong> to their
+logical description. Its successor &lt;a href="https://doi.org/10.1098/rsif.2014.1289" target="_blank" rel="noopener">&lt;strong>Eve&lt;/strong>&lt;/a> (Williams et al.,
+&lt;em>J. R. Soc. Interface&lt;/em>, 2015; senior author Ross King) turned the same closed loop on &lt;strong>drug repositioning&lt;/strong>,
+learning through &amp;ldquo;cycles of quantitative structure activity relationship learning and testing&amp;rdquo; — and
+validated that the anti-cancer compound &lt;strong>TNP-470 potently inhibits dihydrofolate reductase from the
+malaria parasite &lt;em>Plasmodium vivax&lt;/em>&lt;/strong>.&lt;/p>
+&lt;p>The LLM era made the loop conversational. &lt;a href="https://doi.org/10.1038/s41586-023-06792-0" target="_blank" rel="noopener">&lt;strong>Coscientist&lt;/strong>&lt;/a>
+(Boiko et al., &lt;em>Nature&lt;/em>, 2023; senior author Gabe Gomes, Carnegie Mellon) wired &lt;strong>GPT-4&lt;/strong> to lab tools —
+&amp;ldquo;internet and documentation search, code execution and experimental automation&amp;rdquo; — so it could
+&amp;ldquo;&lt;strong>autonomously design, plan and perform complex experiments&lt;/strong>&amp;rdquo; across &lt;strong>six diverse tasks&lt;/strong>, including the
+successful &lt;strong>reaction optimization of palladium-catalysed cross-couplings&lt;/strong> on real hardware. Fifteen years
+after Adam, the planner stopped being bespoke code and became something you could talk to.&lt;/p>
+&lt;h3 id="-the-honest-ledger">🧪 The honest ledger&lt;/h3>
+&lt;p>Then came the demonstration everyone cites — and it&amp;rsquo;s worth citing &lt;em>correctly&lt;/em>.
+&lt;a href="https://doi.org/10.1038/s41586-023-06734-w" target="_blank" rel="noopener">&lt;strong>A-Lab&lt;/strong>&lt;/a> (Szymanski et al., &lt;em>Nature&lt;/em>, 2023; senior author
+Gerbrand Ceder, Berkeley/LBNL) ran an autonomous inorganic-synthesis lab for &lt;strong>17 days of continuous
+operation&lt;/strong>, combining computation, machine learning, active learning and robotics to make solid-state
+targets drawn from the Materials Project and DeepMind&amp;rsquo;s GNoME predictions. As originally published it
+claimed &lt;strong>41 novel compounds from 58 targets&lt;/strong>. Materials chemists pushed back — publicly, in detail — on
+whether the X-ray characterization actually supported the &lt;em>novelty&lt;/em> claims. In &lt;strong>January 2026&lt;/strong> &lt;em>Nature&lt;/em>
+issued an &lt;a href="https://doi.org/10.1038/s41586-025-09992-y" target="_blank" rel="noopener">&lt;strong>Author Correction&lt;/strong>&lt;/a>: the headline became
+&lt;strong>36 compounds from a set of 57 targets&lt;/strong>, and the title changed from &amp;ldquo;synthesis of &lt;strong>novel&lt;/strong> materials&amp;rdquo; to
+&amp;ldquo;synthesis of &lt;strong>inorganic&lt;/strong> materials.&amp;rdquo; The paper was &lt;strong>corrected, not retracted&lt;/strong> — the autonomous lab
+genuinely ran, and genuinely made things. But the episode is the field&amp;rsquo;s cleanest lesson: &lt;strong>running the
+robot is the easy half; proving what it made — and that the claim holds up to scrutiny — is the hard half.&lt;/strong>&lt;/p>
+&lt;h3 id="-bringing-it-to-living-cells">🧭 Bringing it to living cells&lt;/h3>
+&lt;p>Chemistry and materials led here for a reason: reactions are fast, digital, and repeatable. Cells are
+slower, noisier, and &lt;em>imaged&lt;/em> rather than measured — the loop is harder to close and the readout harder to
+trust. That&amp;rsquo;s the frontier the lab actually works on. A 2025 review
+(&lt;a href="https://doi.org/10.1098/rsos.250646" target="_blank" rel="noopener">Tobias &amp;amp; Wahab, &lt;em>R. Soc. Open Sci.&lt;/em>&lt;/a>) notes that today&amp;rsquo;s most
+capable self-driving labs &amp;ldquo;&lt;strong>automate nearly the entire scientific method, from hypothesis generation,
+experimental design, experiment execution and data analysis, to drawing conclusions and updating
+hypotheses&lt;/strong>&amp;rdquo; — now explicitly spanning &lt;strong>biological&lt;/strong> sciences, not just chemistry. And biology&amp;rsquo;s own
+autonomous-agent proof points are arriving: the &lt;a href="https://doi.org/10.1038/s41586-025-09442-9" target="_blank" rel="noopener">&lt;strong>Virtual Lab&lt;/strong>&lt;/a>
+(Swanson et al., &lt;em>Nature&lt;/em>, 2025; senior author James Zou, Stanford) put an &lt;strong>LLM principal-investigator
+agent&lt;/strong> in charge of a team of LLM scientist agents that &lt;strong>designed 92 new SARS-CoV-2 nanobodies&lt;/strong>, two of
+them with improved binding to recent JN.1/KP.3 variants — a lab-in-the-loop, not yet a fully robotic one.&lt;/p>
+&lt;p>This is the lab&amp;rsquo;s home turf: the &lt;a href="https://aicell.io/project/self-driving-microscope/">self-driving microscope&lt;/a>,
+&lt;a href="https://aicell.io/project/agent-lens/">Agent-Lens&lt;/a>, &lt;a href="https://aicell.io/project/autonomous-research-agents/">autonomous research agents&lt;/a> and
+the &lt;a href="https://aicell.io/project/reef-imaging-farm/">REEF imaging farm&lt;/a> are exactly the attempt to bring this closed loop to
+&lt;em>living&lt;/em> cells — and to do it on &lt;a href="https://aicell.io/project/bioengine/">open, callable model-serving&lt;/a> so the reasoning agent
+and the instrument speak a standard language. A-Lab&amp;rsquo;s correction is the reason the
+&lt;a href="https://aicell.io/post/newsletter-2026-07-27/">prove-it discipline&lt;/a> sits at the center of that work: an autonomous result
+is a &lt;strong>hypothesis with a robot behind it&lt;/strong>, and it still has to survive an independent look. The lab that
+runs itself is within reach. The lab that runs itself &lt;em>and can be trusted&lt;/em> is the actual goal.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(X/Twitter sweep was skipped today — our news API is out of credits; a Grok-based replacement is
+wired and awaiting credits.) Have lab news to share — a talk, paper, conference or release? Message me on Slack.&lt;/em>&lt;/p></description></item></channel></rss>
