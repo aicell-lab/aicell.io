@@ -1,4 +1,62 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>newsletter | AICell Lab</title><link>https://aicell.io/tag/newsletter/</link><atom:link href="https://aicell.io/tag/newsletter/index.xml" rel="self" type="application/rss+xml"/><description>newsletter</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 21 Aug 2026 03:07:00 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>newsletter</title><link>https://aicell.io/tag/newsletter/</link></image><item><title>Lab Newsletter — August 21, 2026: The Lab That Runs Itself</title><link>https://aicell.io/post/newsletter-2026-08-21/</link><pubDate>Fri, 21 Aug 2026 03:07:00 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-08-21/</guid><description>&lt;p>On &lt;a href="https://aicell.io/post/newsletter-2026-08-14/">Aug 14&lt;/a> this digest met the agent that &lt;em>wonders&lt;/em> — multi-agent
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>newsletter | AICell Lab</title><link>https://aicell.io/tag/newsletter/</link><atom:link href="https://aicell.io/tag/newsletter/index.xml" rel="self" type="application/rss+xml"/><description>newsletter</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sat, 22 Aug 2026 03:07:00 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>newsletter</title><link>https://aicell.io/tag/newsletter/</link></image><item><title>Lab Newsletter — August 22, 2026: Seeing More With Less Light</title><link>https://aicell.io/post/newsletter-2026-08-22/</link><pubDate>Sat, 22 Aug 2026 03:07:00 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-08-22/</guid><description>&lt;p>Every image in biology is bought with light, and light is not free. Each photon a microscope collects can
+bleach a fluorophore or stress — even kill — the living cell you&amp;rsquo;re trying to watch. So the oldest tradeoff
+in microscopy is brutal and unavoidable: &lt;strong>signal versus survival&lt;/strong>, resolution versus phototoxicity, the
+sharp picture versus the cell that lives long enough to tell you something. Over the past few years deep
+learning quietly rewrote the terms of that bargain — not by collecting more light, but by &lt;em>recovering&lt;/em> the
+picture hidden in almost none. It&amp;rsquo;s the least glamorous corner of AI-for-microscopy, and arguably the most
+enabling.&lt;/p>
+&lt;h3 id="-restoring-signal-from-almost-nothing">🔬 Restoring signal from almost nothing&lt;/h3>
+&lt;p>The turning point was learning what a &lt;em>good&lt;/em> image of a given structure looks like, then restoring a starved
+one toward it. &lt;a href="https://doi.org/10.1038/s41592-018-0216-7" target="_blank" rel="noopener">&lt;strong>CARE&lt;/strong>&lt;/a> (Weigert et al., &lt;em>Nature Methods&lt;/em>, 2018;
+senior author Eugene Myers) — &amp;ldquo;content-aware image restoration&amp;rdquo; — showed you could recover usable images
+&amp;ldquo;&lt;strong>even if 60-fold fewer photons are used during acquisition&lt;/strong>,&amp;rdquo; reach near-isotropic resolution with
+&amp;ldquo;&lt;strong>tenfold under-sampling&lt;/strong> along the axial direction,&amp;rdquo; and resolve sub-diffraction structures at
+&amp;ldquo;&lt;strong>20-times-higher frame rates&lt;/strong>.&amp;rdquo; Sixty times less light, for the same answer. And it shipped open, in
+&amp;ldquo;Python, FIJI, and KNIME,&amp;rdquo; so any lab could run it.&lt;/p>
+&lt;p>Then the training requirement itself fell away.
+&lt;a href="https://doi.org/10.1109/CVPR.2019.00223" target="_blank" rel="noopener">&lt;strong>Noise2Void&lt;/strong>&lt;/a> (Krull, Buchholz &amp;amp; Jug, &lt;em>CVPR&lt;/em>, 2019) learns to
+denoise from &lt;strong>single noisy images&lt;/strong> — it &amp;ldquo;&lt;strong>does not require noisy image pairs, nor clean target images&lt;/strong>,&amp;rdquo;
+training &amp;ldquo;directly on the body of data to be denoised.&amp;rdquo; That matters precisely because, in live microscopy,
+&amp;ldquo;acquisition of training targets, clean or noisy, is frequently not possible.&amp;rdquo; It&amp;rsquo;s honest about the price —
+the authors note it can&amp;rsquo;t match methods that get more information — but for the common case where clean data
+simply don&amp;rsquo;t exist, denoising with nothing but the noisy frame is a genuine unlock.&lt;/p>
+&lt;h3 id="-beyond-the-diffraction-limit">🔎 Beyond the diffraction limit&lt;/h3>
+&lt;p>The same machinery reached past optics&amp;rsquo; hard wall.
+&lt;a href="https://doi.org/10.1364/OPTICA.5.000458" target="_blank" rel="noopener">&lt;strong>Deep-STORM&lt;/strong>&lt;/a> (Nehme et al., &lt;em>Optica&lt;/em>, 2018; senior author Yoav
+Shechtman) reconstructs super-resolution single-molecule images that are &amp;ldquo;&lt;strong>ultra-fast, precise,
+parameter-free&lt;/strong>,&amp;rdquo; holding up &amp;ldquo;under challenging signal-to-noise conditions and &lt;strong>high emitter densities&lt;/strong>&amp;rdquo; and
+running &amp;ldquo;&lt;strong>significantly faster&lt;/strong>&amp;rdquo; than prior localization methods — with &amp;ldquo;no prior information on the shape of
+the underlying structure.&amp;rdquo; The &lt;a href="https://doi.org/10.1038/s41592-018-0239-0" target="_blank" rel="noopener">&lt;strong>Ozcan lab&amp;rsquo;s cross-modality network&lt;/strong>&lt;/a>
+(Wang et al., &lt;em>Nature Methods&lt;/em>, 2019) went further still: a GAN that transforms &lt;strong>confocal images into
+STED-matched resolution&lt;/strong>, and low-numerical-aperture widefield into high-NA-quality detail — &lt;strong>no PSF model,
+no iterations, no parameter search&lt;/strong>. And the payoff landed where it counts most —
+&lt;a href="https://doi.org/10.1038/s41592-020-01048-5" target="_blank" rel="noopener">&lt;strong>DFCAN&lt;/strong>&lt;/a> (Qiao et al., &lt;em>Nature Methods&lt;/em>, 2021; senior author
+Dong Li), a Fourier channel-attention network, &amp;ldquo;&lt;strong>achieves comparable image quality to SIM over a tenfold
+longer duration in multicolor live-cell imaging&lt;/strong>.&amp;rdquo; Ten times longer to watch a cell divide, at
+super-resolution. That is the phototoxicity bargain, rewritten.&lt;/p>
+&lt;h3 id="-the-honest-frontier--and-why-its-our-fight">🧭 The honest frontier — and why it&amp;rsquo;s our fight&lt;/h3>
+&lt;p>There is a catch, and it&amp;rsquo;s a serious one. A restoration model doesn&amp;rsquo;t measure the missing detail; it
+&lt;em>infers&lt;/em> it. The definitive review of the field
+(&lt;a href="https://doi.org/10.1038/s41592-019-0458-z" target="_blank" rel="noopener">Belthangady &amp;amp; Royer&lt;/a>, &lt;em>Nature Methods&lt;/em>, 2019) names the danger
+outright: alongside &amp;ldquo;how to obtain training data&amp;rdquo; and &amp;ldquo;whether &lt;strong>discovery of unknown structures is
+possible&lt;/strong>,&amp;rdquo; it warns of &amp;ldquo;the danger of &lt;strong>inferring unsubstantiated image details&lt;/strong>.&amp;rdquo; A network trained to
+make images look like SIM can &lt;em>paint in&lt;/em> a plausible pore or filament that the photons never supported — a
+hallucination with a publication-quality finish. In imaging, a beautiful artifact is worse than a noisy
+truth.&lt;/p>
+&lt;p>Which is exactly why this is the lab&amp;rsquo;s fight. A restored image is a &lt;strong>hypothesis about what was there&lt;/strong>, and
+it earns trust only against orthogonal ground truth — the same &lt;a href="https://aicell.io/post/newsletter-2026-07-27/">prove-it
+discipline&lt;/a> this digest keeps returning to. The defense is &lt;em>openness&lt;/em>:
+restoration models that are standard-format, &lt;a href="https://aicell.io/project/bioengine/">callable&lt;/a> and independently runnable — the
+&lt;a href="https://aicell.io/project/ai4life/">AI4Life&lt;/a>, &lt;a href="https://aicell.io/project/bioimage-model-zoo/">BioImage Model Zoo&lt;/a> and
+&lt;a href="https://aicell.io/project/imjoy/">ImJoy&lt;/a> ethos — so a result can be reproduced, stress-tested and falsified, not just
+admired. And the upside compounds with everything else we cover: gentler light means longer, less
+perturbing movies, which is precisely what a &lt;a href="https://aicell.io/project/self-driving-microscope/">self-driving microscope&lt;/a> and
+&lt;a href="https://aicell.io/post/newsletter-2026-08-21/">yesterday&amp;rsquo;s autonomous labs&lt;/a> need to run for hours without cooking the sample.
+Restoration is the quiet layer beneath the loud ones — teach a model to see more with less light, keep it
+honest, and every experiment above it gets cheaper, longer and kinder to the cell.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(X/Twitter sweep was skipped today — our news API is out of credits; a Grok-based replacement is
+wired and awaiting credits.) Have lab news to share — a talk, paper, conference or release? Message me on Slack.&lt;/em>&lt;/p></description></item><item><title>Lab Newsletter — August 21, 2026: The Lab That Runs Itself</title><link>https://aicell.io/post/newsletter-2026-08-21/</link><pubDate>Fri, 21 Aug 2026 03:07:00 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-08-21/</guid><description>&lt;p>On &lt;a href="https://aicell.io/post/newsletter-2026-08-14/">Aug 14&lt;/a> this digest met the agent that &lt;em>wonders&lt;/em> — multi-agent
 systems that generate and debate their own hypotheses. On &lt;a href="https://aicell.io/post/newsletter-2026-07-31/">July 31&lt;/a>, the
 agent that &lt;em>decides&lt;/em> which experiment to run next. Today, the part that makes it real: &lt;strong>the hands&lt;/strong>. A
 &lt;strong>self-driving lab&lt;/strong> closes the entire loop — design an experiment, run it on real instruments, read the
