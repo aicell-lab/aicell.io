@@ -1,2 +1,55 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>image analysis | AICell Lab</title><link>https://aicell.io/tag/image-analysis/</link><atom:link href="https://aicell.io/tag/image-analysis/index.xml" rel="self" type="application/rss+xml"/><description>image analysis</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Thu, 29 Jan 2026 00:00:00 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>image analysis</title><link>https://aicell.io/tag/image-analysis/</link></image><item><title>Roadmap on deep learning for microscopy</title><link>https://aicell.io/publication/volpe-2026-roadmap/</link><pubDate>Thu, 29 Jan 2026 00:00:00 +0000</pubDate><guid>https://aicell.io/publication/volpe-2026-roadmap/</guid><description/></item><item><title>ImageJ.JS — ImageJ in Your Browser</title><link>https://aicell.io/project/imagej-js/</link><pubDate>Thu, 01 May 2025 00:00:00 +0000</pubDate><guid>https://aicell.io/project/imagej-js/</guid><description>&lt;p>&lt;a href="https://ij.aicell.io" target="_blank" rel="noopener">ImageJ.JS&lt;/a> brings &lt;strong>ImageJ — one of the most widely used scientific image-analysis tools — into the web browser&lt;/strong>. Powered by WebAssembly (via CheerpJ), it runs the full Java application with no installation: open it from any link, keep plugin support, work directly with local files, and get AI assistance for analysis. It serves &lt;strong>1,000–1,500 unique users every day&lt;/strong> — researchers and educators worldwide.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>image-analysis | AICell Lab</title><link>https://aicell.io/tag/image-analysis/</link><atom:link href="https://aicell.io/tag/image-analysis/index.xml" rel="self" type="application/rss+xml"/><description>image-analysis</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 23 Aug 2026 03:07:00 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>image-analysis</title><link>https://aicell.io/tag/image-analysis/</link></image><item><title>Lab Newsletter — August 23, 2026: Wiring the Brain</title><link>https://aicell.io/post/newsletter-2026-08-23/</link><pubDate>Sun, 23 Aug 2026 03:07:00 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-08-23/</guid><description>&lt;p>A &lt;strong>connectome&lt;/strong> — the complete map of every neuron and every connection in a brain — used to sit in the
+same drawer as science fiction. The surprising part is &lt;em>why&lt;/em> it was hard. The imaging was largely solved:
+electron microscopy can slice a brain into nanometre-thin sections and photograph every synapse. The wall
+was &lt;strong>reconstruction&lt;/strong> — tracing each hair-thin neurite as it weaves through billions of image voxels,
+without ever accidentally merging two neurons or dropping one. That is an image-analysis problem at a scale
+no human can finish by hand, and it is exactly the kind of problem deep learning was made to break. In 2024,
+it broke.&lt;/p>
+&lt;h3 id="-the-reconstruction-was-the-wall--and-ai-was-the-unlock">🧠 The reconstruction was the wall — and AI was the unlock&lt;/h3>
+&lt;p>The turning point was teaching a network to &lt;em>follow&lt;/em> a neuron.
+&lt;a href="https://doi.org/10.1038/s41592-018-0049-4" target="_blank" rel="noopener">&lt;strong>Flood-filling networks&lt;/strong>&lt;/a> (Januszewski et al., &lt;em>Nature
+Methods&lt;/em>, 2018; senior author Viren Jain) pair a convolutional network with a &lt;strong>recurrent pathway&lt;/strong> that
+starts inside one neurite and iteratively &amp;ldquo;floods&amp;rdquo; outward along it, segmenting and extending as it goes. On
+serial block-face EM of a &lt;strong>zebra finch&lt;/strong> brain it reached a &lt;strong>mean error-free neurite path length of 1.1 mm&lt;/strong>,
+with &lt;strong>only four mergers across 97 mm&lt;/strong> of traced path — &lt;strong>&amp;ldquo;an order of magnitude better&amp;rdquo;&lt;/strong> than the methods
+before it (at, the authors note, substantially higher compute). Tracing stopped being the bottleneck and
+became the engine.&lt;/p>
+&lt;h3 id="-the-first-whole-brain--and-the-human-scale-arriving">🪰 The first whole brain — and the human scale arriving&lt;/h3>
+&lt;p>Then came the map everyone said couldn&amp;rsquo;t be built.
+&lt;a href="https://doi.org/10.1038/s41586-024-07558-y" target="_blank" rel="noopener">&lt;strong>FlyWire&lt;/strong>&lt;/a> (Dorkenwald et al., &lt;em>Nature&lt;/em>, 2024; co-senior
+authors Sebastian Seung and Mala Murthy) published the &lt;strong>neuronal wiring diagram of an adult brain&lt;/strong> — the
+fruit fly &lt;em>Drosophila&lt;/em> — with &lt;strong>139,255 neurons&lt;/strong> and &lt;strong>about 50 million (5 × 10⁷) chemical synapses&lt;/strong>: the
+first complete connectome of an adult animal brain. A &lt;a href="https://doi.org/10.1038/s41586-024-07686-5" target="_blank" rel="noopener">companion
+paper&lt;/a> (Schlegel et al., &lt;em>Nature&lt;/em>, 2024; senior author Gregory
+Jefferis) turned that raw graph into biology, annotating &lt;strong>8,453 cell types&lt;/strong> across the ~140,000-neuron
+connectome. And the human scale is already coming into view:
+&lt;a href="https://doi.org/10.1126/science.adk4858" target="_blank" rel="noopener">&lt;strong>H01&lt;/strong>&lt;/a> (Shapson-Coe et al., &lt;em>Science&lt;/em>, 2024; senior authors Jeff
+Lichtman and Viren Jain) reconstructed roughly &lt;strong>one cubic millimeter&lt;/strong> of human temporal cortex —
+&lt;strong>about 57,000 cells&lt;/strong>, &lt;strong>about 150 million synapses&lt;/strong>, &lt;strong>1.4 petabytes&lt;/strong> of data. One cubic millimeter, and
+already a landmark; a whole human brain is a million times larger. The trajectory is unmistakable.&lt;/p>
+&lt;h3 id="-the-honest-frontier--and-why-its-our-kind-of-problem">🧭 The honest frontier — and why it&amp;rsquo;s our kind of problem&lt;/h3>
+&lt;p>Two caveats keep this grounded, and both are the lab&amp;rsquo;s native language. First, &lt;strong>automation isn&amp;rsquo;t finished&lt;/strong>.
+The same team is blunt that even with the best networks, &lt;a href="https://doi.org/10.1038/s41592-021-01330-0" target="_blank" rel="noopener">proofreading whole-brain
+reconstructions&lt;/a> &amp;ldquo;&lt;strong>will require many person-years of effort, due
+to the huge volumes of data involved&lt;/strong>&amp;rdquo; (&lt;em>Nature Methods&lt;/em>, 2022) — connectomics is the definitive
+&lt;strong>human-in-the-loop-at-planetary-scale&lt;/strong> enterprise, AI doing the impossible bulk and people catching what it
+gets wrong. Second, &lt;strong>a wiring diagram is not function&lt;/strong>. As &lt;a href="https://doi.org/10.1038/nmeth.2451" target="_blank" rel="noopener">Bargmann &amp;amp;
+Marder&lt;/a> argued (&lt;em>Nature Methods&lt;/em>, 2013), understanding a nervous system
+takes more than connectivity — you need &amp;ldquo;&lt;strong>neuronal dynamics and neuromodulation&lt;/strong>,&amp;rdquo; the electrical and
+chemical life the static map leaves out. The connectome is necessary, not sufficient.&lt;/p>
+&lt;p>Here&amp;rsquo;s why it lands for us. Connectomics is the most extreme instance of the exact problem the lab is built
+around: &lt;strong>AI reading images at a scale no human can&lt;/strong>, served openly so anyone can use — and check — the
+result. Petascale EM segmentation is the same engineering as making large &lt;a href="https://aicell.io/project/bioimage-model-zoo/">foundation
+models&lt;/a> callable over enormous image volumes on shared infrastructure
+(&lt;a href="https://aicell.io/project/bioengine/">BioEngine&lt;/a>); FlyWire&amp;rsquo;s open, community-proofread reconstruction is the same
+&lt;a href="https://aicell.io/project/imjoy/">open, reproducible&lt;/a> ethos our platforms are built on; and the map-versus-function gap is the
+&lt;a href="https://aicell.io/post/newsletter-2026-07-27/">prove-it discipline&lt;/a> once more — a reconstructed synapse is a &lt;strong>hypothesis&lt;/strong>
+until physiology agrees. It even rhymes with the &lt;a href="https://aicell.io/post/newsletter-2026-08-15/">virtual cell&lt;/a> we keep
+circling: a wiring diagram is a &lt;em>structural prior&lt;/em> for a dynamic model, just as a static protein structure is
+for its &lt;a href="https://aicell.io/post/newsletter-2026-08-11/">conformational ensemble&lt;/a>. Reading biology&amp;rsquo;s images at impossible scale,
+keeping the machine honest, and turning a static map into a living model — that&amp;rsquo;s the whole job, written very,
+very large.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(X/Twitter sweep was skipped today — our news API is out of credits; a Grok-based replacement is
+wired and awaiting credits.) Have lab news to share — a talk, paper, conference or release? Message me on Slack.&lt;/em>&lt;/p></description></item><item><title>Roadmap on deep learning for microscopy</title><link>https://aicell.io/publication/volpe-2026-roadmap/</link><pubDate>Thu, 29 Jan 2026 00:00:00 +0000</pubDate><guid>https://aicell.io/publication/volpe-2026-roadmap/</guid><description/></item><item><title>ImageJ.JS — ImageJ in Your Browser</title><link>https://aicell.io/project/imagej-js/</link><pubDate>Thu, 01 May 2025 00:00:00 +0000</pubDate><guid>https://aicell.io/project/imagej-js/</guid><description>&lt;p>&lt;a href="https://ij.aicell.io" target="_blank" rel="noopener">ImageJ.JS&lt;/a> brings &lt;strong>ImageJ — one of the most widely used scientific image-analysis tools — into the web browser&lt;/strong>. Powered by WebAssembly (via CheerpJ), it runs the full Java application with no installation: open it from any link, keep plugin support, work directly with local files, and get AI assistance for analysis. It serves &lt;strong>1,000–1,500 unique users every day&lt;/strong> — researchers and educators worldwide.&lt;/p>
 &lt;p>By removing the installation barrier, ImageJ.JS makes image analysis instantly shareable — ideal for teaching, reproducible workflows, and embedding interactive analysis in websites and notebooks. It integrates with the lab&amp;rsquo;s broader web-computing ecosystem around &lt;a href="https://aicell.io/project/imjoy">ImJoy&lt;/a> and &lt;a href="https://aicell.io/project/hypha">Hypha&lt;/a>.&lt;/p></description></item></channel></rss>
