@@ -50,7 +50,7 @@ REEF runs the same loop around the clock. This is one turn of it, rendered from 
 twin: a plate leaves the incubator, is imaged on a microscope, travels to the liquid handler for a
 media exchange and a reagent addition, and goes back to the incubator until the next timepoint.
 
-<iframe src="https://drive.google.com/file/d/1NIPYxv28snzYK8cBUZuuXX03SA2uy4Ok/preview" width="100%" height="460" allow="autoplay" allowfullscreen frameborder="0" style="border-radius:8px;"></iframe>
+<iframe src="https://drive.google.com/file/d/1KhujBzsK9Q7fglbm-E0UWSoNseg9xJe0/preview" width="100%" height="460" allow="autoplay" allowfullscreen frameborder="0" style="border-radius:8px;"></iframe>
 
 The geometry is the lab's own. Every instrument stands where it stands, the liquid handler's deck is
 its real layout down to the plate positions, and the robot follows the paths it is actually taught.
