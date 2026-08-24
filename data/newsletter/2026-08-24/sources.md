@@ -1,0 +1,129 @@
+# Newsletter sources — August 24, 2026
+
+**Theme:** Machine-learning prediction of genome-editing OUTCOMES ("Designing the Edit") — will a guide
+cut, and what will the cell make afterward. A FRESH domain not covered in this run. Distinct from Aug 19
+regulatory genomics / variant-effect (which *reads* what a natural mutation does; this *predicts what a
+deliberate edit will produce*), from Aug 07 proteomics, and from Aug 15 perturbation-response prediction
+(this is the *design* side — the edit — vs. the *response* side). Horizon / strategy-radar: the design brain
+of the design→edit→measure loop that self-driving labs and the virtual cell depend on.
+
+**X/Twitter sweep:** SKIPPED (getxapi out of credits — HTTP 402; 15th consecutive skip, over two weeks).
+Grok-based replacement wired, awaiting xAI credits.
+
+All anchors verified by two parallel general-purpose subagents against Crossref / Europe PMC / PubMed /
+Semantic Scholar, with verbatim abstracts obtained. Only abstract-verified numbers/quotes are used in the
+post; body-only names/details flagged below and NOT quoted as abstract.
+
+---
+
+## Section 1 — Will the edit work? (guide-activity prediction)
+
+### Doench et al. sgRNA design rules ("Rule Set 2" / Azimuth) — VERIFIED
+- Doench, J.G. … Root, D.E. "Optimized sgRNA design to maximize activity and minimize off-target effects of
+  CRISPR-Cas9." *Nature Biotechnology* **34**(2):184–191, 2016. DOI: 10.1038/nbt.3437 · PMID: 26780180 ·
+  PMCID: PMC4744125 · Research article.
+- First author John G. Doench; **senior/last author David E. Root**. Byline includes Nicolo Fusi & Jennifer
+  Listgarten (Microsoft Research) — ML/CS in the loop early.
+- ABSTRACT-VERIFIED (verbatim): profiled "the off-target activity of **thousands of sgRNAs**"; "develop a
+  metric to predict off-target sites"; "create optimized sgRNA libraries that maximize on-target activity
+  and minimize off-target effects."
+- FLAG (BODY-ONLY, do NOT quote as abstract): the names **"Rule Set 2," "CFD (Cutting Frequency
+  Determination) score," and "Azimuth"** do NOT appear in the abstract. Refer to them by name loosely but
+  never as abstract quotes. No AUC/Spearman numbers in the abstract.
+
+### DeepSpCas9 — VERIFIED
+- Kim, H.K. … Kim, H.H. "SpCas9 activity prediction by DeepSpCas9, a deep learning-based model with high
+  generalization performance." *Science Advances* **5**(11):eaax9249, 2019. DOI: 10.1126/sciadv.aax9249 ·
+  PMID: 31723604 · PMCID: PMC6834390 · Research article.
+- First author Hui Kwon Kim; **senior/last author Hyongbum Henry Kim**.
+- ABSTRACT-VERIFIED (verbatim): evaluated SpCas9 activity "at **12,832 target sequences**" via a
+  high-throughput human-cell library; "Deep learning-based training… on SpCas9-induced indel frequencies"
+  gave DeepSpCas9; "showed **high generalization performance**" on independent datasets.
+
+### DeepCpf1 / Seq-deepCpf1 — VERIFIED
+- Kim, H.K. … Kim, H.H. "Deep learning improves prediction of CRISPR-Cpf1 guide RNA activity." *Nature
+  Biotechnology* **36**(3), 2018. DOI: 10.1038/nbt.4061 · PMID: 29431740 · Research article. (Exact page
+  range 239–241 not source-confirmed — do NOT cite pages.)
+- First author Hui Kwon Kim; **senior/last author Hyongbum Henry Kim**.
+- ABSTRACT-VERIFIED (verbatim): "Indel frequencies for **15,000 target sequences**" used "in a deep-learning
+  framework based on a **convolutional neural network** to train Seq-deepCpf1"; then "incorporated chromatin
+  accessibility information to create the better-performing DeepCpf1"; both "outperform previous machine
+  learning algorithms."
+
+## Section 2 — What will the edit produce? (repair / base / prime-editing outcomes)
+
+### inDelphi — VERIFIED (has Author Correction; abstract unaffected)
+- Shen, M.W. … Sherwood, R.I. (co-senior David K. Gifford, penultimate). "Predictable and precise
+  template-free CRISPR editing of pathogenic variants." *Nature* **563**(7733):646–651, 2018.
+  DOI: 10.1038/s41586-018-0686-x · PMID: 30405244 · PMCID: PMC6517069 · Research article.
+- First author Max W. Shen; **senior/last author Richard I. Sherwood**.
+- ABSTRACT-VERIFIED (verbatim): template-free Cas9 editing "is predictable and capable of precise repair to
+  a predicted genotype"; library of "**2,000** Cas9 guide RNAs"; inDelphi predicts "**1- to 60-base-pair
+  deletions and 1-base-pair insertions with high accuracy (r = 0.87)** in **five** human and mouse cell
+  lines"; "**5–11%** of Cas9 guide RNAs… are 'precise-50', yielding a single genotype comprising ≥50% of all
+  major editing products"; confirmed precise edits in "**195** human disease-relevant alleles," including
+  correction in patient fibroblasts for **Hermansky–Pudlak syndrome and Menkes disease**.
+- Author Correction 10.1038/s41586-019-0938-4 (Feb 2019) affects Fig. 3e / Extended Data Table 2 — NOT the
+  abstract; abstract numbers stand.
+
+### FORECasT — VERIFIED
+- Allen, F. … Parts, L. "Predicting the mutations generated by repair of Cas9-induced double-strand breaks."
+  *Nature Biotechnology* **37**(1):64–72, 2019. DOI: 10.1038/nbt.4317 · PMID: 30480667 · PMCID: PMC6949135 ·
+  Research article.
+- First author Felicity Allen; **senior/last author Leopold Parts**.
+- ABSTRACT-VERIFIED (verbatim): mutational outcomes "are not random, but depend on DNA sequence"; measured
+  edits from "**>40,000 guide RNAs**" in synthetic constructs; "gathered data for **>10⁹ mutational
+  outcomes**"; majority are "**insertions of a single base, short deletions or longer microhomology-mediated
+  deletions**"; "Each gRNA has an **individual cell-line-dependent bias** toward particular outcomes"; derive
+  "a predictor of Cas9 editing outcomes."
+- FLAG: the name "FORECasT" is body-only (not in abstract). Cell-line dependence IS abstract-verified here.
+
+### BE-Hive (base editing) — VERIFIED
+- Arbab, M. … Liu, D.R. "Determinants of Base Editing Outcomes from Target Library Analysis and Machine
+  Learning." *Cell* **182**(2):463–480.e30, 2020. DOI: 10.1016/j.cell.2020.05.037 · PMID: 32533916 ·
+  PMCID: PMC7384975 · Research article.
+- First author Mandana Arbab; **senior/last author David R. Liu**.
+- ABSTRACT-VERIFIED (verbatim): characterized "**11 cytosine and adenine base editors (CBEs and ABEs)** on
+  **38,538 genomically integrated targets**"; trained BE-Hive, "a machine learning model that accurately
+  predicts base editing genotypic outcomes (**R ≈ 0.9**) and efficiency (**R ≈ 0.7**)"; "corrected **3,388
+  disease-associated SNVs with ≥90% precision**," including "**675** alleles with bystander nucleotides…
+  correctly predicted would not be edited"; and "**174** pathogenic transversion SNVs with ≥90% precision."
+
+### PRIDICT (prime editing) — VERIFIED
+- Mathis, N. … Schwank, G. "Predicting prime editing efficiency and product purity by deep learning."
+  *Nature Biotechnology* **41**(8):1151–1159, 2023. DOI: 10.1038/s41587-022-01613-7 · PMID: 36646933 ·
+  PMCID: PMC7614945 · Research article.
+- First author Nicolas Mathis; **senior/last author Gerald Schwank**.
+- ABSTRACT-VERIFIED (verbatim): high-throughput screen of "**92,423 pegRNAs**" on "**13,349 human
+  pathogenic mutations**"; trained PRIDICT, "an **attention-based bidirectional recurrent neural network**";
+  "reliably predicts editing rates… with a **Spearman's R of 0.85 and 0.78 for intended and unintended
+  edits**, respectively"; pegRNAs with high (>70) vs low (<70) scores showed "substantially increased prime
+  editing efficiencies… in vitro (**12-fold**) and in hepatocytes in vivo (**tenfold**)."
+
+## Section 3 — The honest frontier + lab hook
+
+### Review anchor — VERIFIED
+- Konstantakos, V. … Paliouras, G. "CRISPR–Cas9 gRNA efficiency prediction: an overview of predictive tools
+  and the role of deep learning." *Nucleic Acids Research* **50**(7):3616–3637, 2022.
+  DOI: 10.1093/nar/gkac192 · PMID: 35349718 · PMCID: PMC9023298 · Review.
+- ABSTRACT-VERIFIED (verbatim): "while many tools are available, **assessment of their application scenarios
+  and performance benchmarks are limited**"; "new deep learning tools have been explored lately for gRNA
+  efficiency prediction, but **have not been systematically evaluated**"; the review evaluates tools "on
+  independent datasets" and closes with "**challenges and perspectives about future directions**."
+- CAVEAT: this abstract scopes itself to the ON-TARGET activity problem; off-target/context-dependence is
+  NOT abstract-sourced here — ground context-dependence in FORECasT's "cell-line-dependent bias" and
+  inDelphi's five-cell-line testing instead.
+
+## Lab connections
+- Variant effect / regulatory genomics (/post/newsletter-2026-08-19/) — reading what a natural mutation
+  does; editing-outcome prediction is the inverse (how to *write* the correction).
+- Virtual cell (/post/newsletter-2026-08-15/), Human Cell Simulator (/project/human-cell-simulator/) — the
+  edit is the *design* half of perturbation; the virtual cell predicts the *response* half.
+- Self-driving labs (/post/newsletter-2026-08-21/), Autonomous Research Agents
+  (/project/autonomous-research-agents/), REEF Imaging Farm (/project/reef-imaging-farm/) — these
+  predictors are the design brain of the design→edit→measure→learn loop.
+- BioEngine (/project/bioengine/), BioImage Model Zoo (/project/bioimage-model-zoo/), ImJoy
+  (/project/imjoy/) — open, callable, community-validatable models; the same serving ethos fits editing
+  predictors.
+- Prove-it discipline (/post/newsletter-2026-07-27/) — a predicted genotype is a hypothesis until
+  sequencing agrees; every anchor here validates experimentally.
