@@ -1,4 +1,67 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>newsletter | AICell Lab</title><link>https://aicell.io/category/newsletter/</link><atom:link href="https://aicell.io/category/newsletter/index.xml" rel="self" type="application/rss+xml"/><description>newsletter</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 23 Aug 2026 03:07:00 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>newsletter</title><link>https://aicell.io/category/newsletter/</link></image><item><title>Lab Newsletter — August 23, 2026: Wiring the Brain</title><link>https://aicell.io/post/newsletter-2026-08-23/</link><pubDate>Sun, 23 Aug 2026 03:07:00 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-08-23/</guid><description>&lt;p>A &lt;strong>connectome&lt;/strong> — the complete map of every neuron and every connection in a brain — used to sit in the
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>newsletter | AICell Lab</title><link>https://aicell.io/category/newsletter/</link><atom:link href="https://aicell.io/category/newsletter/index.xml" rel="self" type="application/rss+xml"/><description>newsletter</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 24 Aug 2026 03:07:00 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>newsletter</title><link>https://aicell.io/category/newsletter/</link></image><item><title>Lab Newsletter — August 24, 2026: Designing the Edit</title><link>https://aicell.io/post/newsletter-2026-08-24/</link><pubDate>Mon, 24 Aug 2026 03:07:00 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-08-24/</guid><description>&lt;p>CRISPR made the &lt;em>cut&lt;/em> easy. What stayed hard was everything around it — the two questions that decide whether
+an edit is a tool or a gamble. &lt;strong>Will this guide actually cut?&lt;/strong> And after the enzyme snips the DNA and the
+cell scrambles to repair the break, &lt;strong>what sequence will you be left with?&lt;/strong> For years the second question was
+treated as unanswerable: double-strand-break repair was assumed to be stochastic, a mess of random insertions
+and deletions you could only sequence after the fact. Both questions turned out to be prediction problems —
+and machine learning, given enough measured edits to learn from, answered them.&lt;/p>
+&lt;h3 id="-will-the-edit-work">🎯 Will the edit work?&lt;/h3>
+&lt;p>The first question is guide activity, and it fell to data. Early on, &lt;a href="https://doi.org/10.1038/nbt.3437" target="_blank" rel="noopener">Doench and
+colleagues&lt;/a> (&lt;em>Nature Biotechnology&lt;/em>, 2016; senior author David Root — with
+Microsoft Research co-authors already in the byline) profiled &amp;ldquo;&lt;strong>the off-target activity of thousands of
+sgRNAs&lt;/strong>&amp;rdquo; and built design rules &amp;ldquo;&lt;strong>to maximize on-target activity and minimize off-target effects&lt;/strong>.&amp;rdquo;
+Deep learning then sharpened it. &lt;a href="https://doi.org/10.1126/sciadv.aax9249" target="_blank" rel="noopener">&lt;strong>DeepSpCas9&lt;/strong>&lt;/a> (Kim et al.,
+&lt;em>Science Advances&lt;/em>, 2019; senior author Hyongbum Henry Kim) trained on SpCas9-induced indel frequencies at
+&amp;ldquo;&lt;strong>12,832 target sequences&lt;/strong>&amp;rdquo; and &amp;ldquo;&lt;strong>showed high generalization performance&lt;/strong>&amp;rdquo; on datasets it had never
+seen — the trait that makes a predictor actually usable. Its sibling
+&lt;a href="https://doi.org/10.1038/nbt.4061" target="_blank" rel="noopener">&lt;strong>DeepCpf1&lt;/strong>&lt;/a> (Kim et al., &lt;em>Nature Biotechnology&lt;/em>, 2018) learned from
+&amp;ldquo;&lt;strong>15,000 target sequences&lt;/strong>&amp;rdquo; with a &lt;strong>convolutional neural network&lt;/strong>, and — tellingly — got better once it
+&amp;ldquo;&lt;strong>incorporated chromatin accessibility information&lt;/strong>&amp;rdquo;: the genome&amp;rsquo;s packaging, not just its letters, shapes
+where an enzyme can work.&lt;/p>
+&lt;h3 id="-what-will-the-edit-produce">🧬 What will the edit produce?&lt;/h3>
+&lt;p>Then the harder, more surprising result: the aftermath of the cut is &lt;em>predictable&lt;/em>.
+&lt;a href="https://doi.org/10.1038/s41586-018-0686-x" target="_blank" rel="noopener">&lt;strong>inDelphi&lt;/strong>&lt;/a> (Shen et al., &lt;em>Nature&lt;/em>, 2018; senior author
+Richard Sherwood) trained on a library of &amp;ldquo;&lt;strong>2,000 Cas9 guide RNAs&lt;/strong>&amp;rdquo; and showed template-free editing &amp;ldquo;&lt;strong>is
+predictable and capable of precise repair to a predicted genotype&lt;/strong>,&amp;rdquo; forecasting deletions and single-base
+insertions &amp;ldquo;&lt;strong>with high accuracy (r = 0.87)&lt;/strong>&amp;rdquo; across five cell lines. Its headline is startling: &amp;ldquo;&lt;strong>5–11% of
+Cas9 guide RNAs&lt;/strong>&amp;rdquo; are &lt;em>precise-50&lt;/em> — a single repair genotype makes up &lt;strong>more than half&lt;/strong> of all products —
+and the team corrected &amp;ldquo;&lt;strong>195 human disease-relevant alleles&lt;/strong>,&amp;rdquo; including patient cells for Hermansky–Pudlak
+syndrome and Menkes disease, using nothing but the cell&amp;rsquo;s own repair. &lt;a href="https://doi.org/10.1038/nbt.4317" target="_blank" rel="noopener">&lt;strong>FORECasT&lt;/strong>&lt;/a>
+(Allen et al., &lt;em>Nature Biotechnology&lt;/em>, 2019; senior author Leopold Parts) nailed the point at scale —
+&amp;ldquo;&lt;strong>&amp;gt;10⁹ mutational outcomes&lt;/strong>&amp;rdquo; from &amp;ldquo;&amp;gt;40,000 guide RNAs&amp;rdquo; — confirming outcomes &amp;ldquo;&lt;strong>are not random, but depend
+on DNA sequence&lt;/strong>.&amp;rdquo; The idea then jumped to the newer editors. &lt;a href="https://doi.org/10.1016/j.cell.2020.05.037" target="_blank" rel="noopener">&lt;strong>BE-Hive&lt;/strong>&lt;/a>
+(Arbab et al., &lt;em>Cell&lt;/em>, 2020; senior author David Liu) predicts base-editing &amp;ldquo;&lt;strong>genotypic outcomes (R ≈ 0.9)
+and efficiency (R ≈ 0.7)&lt;/strong>&amp;rdquo; and corrected &amp;ldquo;&lt;strong>3,388 disease-associated SNVs with ≥90% precision&lt;/strong>.&amp;rdquo; And
+&lt;a href="https://doi.org/10.1038/s41587-022-01613-7" target="_blank" rel="noopener">&lt;strong>PRIDICT&lt;/strong>&lt;/a> (Mathis et al., &lt;em>Nature Biotechnology&lt;/em>, 2023;
+senior author Gerald Schwank), an &amp;ldquo;&lt;strong>attention-based bidirectional recurrent neural network&lt;/strong>&amp;rdquo; trained on
+&amp;ldquo;&lt;strong>92,423 pegRNAs&lt;/strong>,&amp;rdquo; predicts prime-editing efficiency (Spearman &lt;strong>R = 0.85&lt;/strong>) &lt;em>and&lt;/em> tells you which guides
+to bother with — high-scoring pegRNAs edited &amp;ldquo;&lt;strong>12-fold&lt;/strong>&amp;rdquo; better in vitro and &amp;ldquo;&lt;strong>tenfold&lt;/strong>&amp;rdquo; better in the
+liver in vivo.&lt;/p>
+&lt;h3 id="-the-honest-frontier--and-why-its-our-kind-of-problem">🧭 The honest frontier — and why it&amp;rsquo;s our kind of problem&lt;/h3>
+&lt;p>Two caveats keep this grounded, and both are the lab&amp;rsquo;s native tongue. First, &lt;strong>the predictions are still
+narrow and context-bound&lt;/strong>. A recent review is candid that among the many CRISPR-design tools, &amp;ldquo;&lt;strong>assessment
+of their application scenarios and performance benchmarks are limited&lt;/strong>,&amp;rdquo; and the newest deep-learning
+predictors &amp;ldquo;&lt;strong>have not been systematically evaluated&lt;/strong>&amp;rdquo; (&lt;a href="https://doi.org/10.1093/nar/gkac192" target="_blank" rel="noopener">Konstantakos et
+al.&lt;/a>, &lt;em>Nucleic Acids Research&lt;/em>, 2022). And the outcomes themselves shift
+with the cell: FORECasT found each guide has an &amp;ldquo;&lt;strong>individual cell-line-dependent bias&lt;/strong>,&amp;rdquo; so a model trained
+in one line is a hypothesis, not a guarantee, in another. Second, &lt;strong>a predicted genotype is not a measured
+one&lt;/strong>. Every anchor here earns its keep by &lt;em>validating&lt;/em> — inDelphi&amp;rsquo;s 195 alleles, BE-Hive&amp;rsquo;s 3,388 SNVs — the
+same &lt;a href="https://aicell.io/post/newsletter-2026-07-27/">prove-it discipline&lt;/a> this digest keeps returning to: the model proposes,
+sequencing disposes.&lt;/p>
+&lt;p>Here&amp;rsquo;s why it lands for us. Reading a genome to predict what a natural mutation &lt;em>does&lt;/em> was
+&lt;a href="https://aicell.io/post/newsletter-2026-08-19/">last week&amp;rsquo;s story&lt;/a>; this is the inverse — predicting how to &lt;em>write&lt;/em> the
+correction. It is the &lt;strong>design half of a perturbation&lt;/strong>: a &lt;a href="https://aicell.io/post/newsletter-2026-08-15/">virtual cell&lt;/a> or
+&lt;a href="https://aicell.io/project/human-cell-simulator/">human-cell simulator&lt;/a> tries to predict a cell&amp;rsquo;s &lt;em>response&lt;/em> to a change, and
+these models design the &lt;em>change&lt;/em> itself. Put them in a loop and you have the design brain of a
+&lt;a href="https://aicell.io/post/newsletter-2026-08-21/">self-driving lab&lt;/a> — propose an edit, make it, measure it, learn, repeat — the
+exact engine our &lt;a href="https://aicell.io/project/autonomous-research-agents/">autonomous research&lt;/a> and
+&lt;a href="https://aicell.io/project/reef-imaging-farm/">imaging-farm&lt;/a> work is built around. And these predictors are precisely the kind
+of model that should live &lt;a href="https://aicell.io/project/bioengine/">open and callable&lt;/a> on shared infrastructure — the same
+&lt;a href="https://aicell.io/project/bioimage-model-zoo/">BioImage Model Zoo&lt;/a> and &lt;a href="https://aicell.io/project/imjoy/">ImJoy&lt;/a> ethos we build for imaging —
+so an edit-design claim can be reproduced and checked, not just trusted. Predict the change, keep the machine
+honest against the sequencer, and close the loop — that&amp;rsquo;s the whole job, written one base pair at a time.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(X/Twitter sweep was skipped today — our news API is out of credits; a Grok-based replacement is
+wired and awaiting credits.) Have lab news to share — a talk, paper, conference or release? Message me on Slack.&lt;/em>&lt;/p></description></item><item><title>Lab Newsletter — August 23, 2026: Wiring the Brain</title><link>https://aicell.io/post/newsletter-2026-08-23/</link><pubDate>Sun, 23 Aug 2026 03:07:00 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-08-23/</guid><description>&lt;p>A &lt;strong>connectome&lt;/strong> — the complete map of every neuron and every connection in a brain — used to sit in the
 same drawer as science fiction. The surprising part is &lt;em>why&lt;/em> it was hard. The imaging was largely solved:
 electron microscopy can slice a brain into nanometre-thin sections and photograph every synapse. The wall
 was &lt;strong>reconstruction&lt;/strong> — tracing each hair-thin neurite as it weaves through billions of image voxels,
