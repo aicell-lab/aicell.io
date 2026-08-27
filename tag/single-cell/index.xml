@@ -1,4 +1,77 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>single-cell | AICell Lab</title><link>https://aicell.io/tag/single-cell/</link><atom:link href="https://aicell.io/tag/single-cell/index.xml" rel="self" type="application/rss+xml"/><description>single-cell</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sat, 15 Aug 2026 03:07:00 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>single-cell</title><link>https://aicell.io/tag/single-cell/</link></image><item><title>Lab Newsletter — August 15, 2026: A Turing Test for the Cell</title><link>https://aicell.io/post/newsletter-2026-08-15/</link><pubDate>Sat, 15 Aug 2026 03:07:00 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-08-15/</guid><description>&lt;p>AlphaFold made a protein&amp;rsquo;s shape something you could &lt;em>look up&lt;/em>. The field&amp;rsquo;s next moonshot is bolder: a &lt;strong>virtual
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>single-cell | AICell Lab</title><link>https://aicell.io/tag/single-cell/</link><atom:link href="https://aicell.io/tag/single-cell/index.xml" rel="self" type="application/rss+xml"/><description>single-cell</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Thu, 27 Aug 2026 03:00:45 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>single-cell</title><link>https://aicell.io/tag/single-cell/</link></image><item><title>Lab Newsletter — August 27, 2026: The Arrow Inside a Snapshot</title><link>https://aicell.io/post/newsletter-2026-08-27/</link><pubDate>Thu, 27 Aug 2026 03:00:45 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-08-27/</guid><description>&lt;p>&lt;a href="https://aicell.io/post/newsletter-2026-08-25/">Yesterday&lt;/a> we followed cells through a &lt;em>movie&lt;/em> — frame after frame,
+watching each one crawl and divide. But most single-cell biology has no movie. A single-cell RNA-seq
+experiment is a &lt;strong>still photograph&lt;/strong>: to read a cell&amp;rsquo;s transcriptome you destroy it, so every cell is
+frozen at one instant and no cell is ever seen twice. That should make direction impossible — and yet
+the same question haunts the snapshot as haunts the movie: &lt;em>where is this cell going next?&lt;/em> The
+surprising answer is that a still image already contains the arrow. You just have to know where to
+look.&lt;/p>
+&lt;h3 id="-the-trick-motion-hidden-in-unspliced-rna">🧭 The trick: motion hidden in unspliced RNA&lt;/h3>
+&lt;p>The insight came from &lt;a href="https://doi.org/10.1038/s41586-018-0414-6" target="_blank" rel="noopener">&lt;strong>Sten Linnarsson&lt;/strong>&amp;rsquo;s group at &lt;strong>Karolinska Institutet&lt;/strong> and SciLifeLab in
+Stockholm&lt;/a>, with Peter Kharchenko (La Manno et al.,
+&lt;em>Nature&lt;/em>, 2018). &amp;ldquo;&lt;strong>RNA abundance is a powerful indicator of the state of individual cells&lt;/strong>,&amp;rdquo; they
+noted — but abundance alone is a static readout. Their move was to split each gene&amp;rsquo;s transcripts into
+&lt;em>unspliced&lt;/em> (freshly transcribed, introns still in) and &lt;em>spliced&lt;/em> (mature) forms. When a gene is
+switching on, unspliced RNA runs ahead of spliced; when it&amp;rsquo;s switching off, the reverse. That
+imbalance is a clock. They showed that &amp;ldquo;&lt;strong>RNA velocity — the time derivative of the gene expression
+state — can be directly estimated by distinguishing between unspliced and spliced mRNAs in common
+single-cell RNA sequencing protocols&lt;/strong>,&amp;rdquo; yielding &amp;ldquo;&lt;strong>a high-dimensional vector that predicts the
+future state of individual cells on a timescale of hours&lt;/strong>.&amp;rdquo; From one frozen snapshot they recovered
+the flow of the &lt;strong>neural crest lineage&lt;/strong> and the &lt;strong>developing mouse hippocampus&lt;/strong> — direction, out of
+a photograph. (A nice piece of the field&amp;rsquo;s history with Stockholm roots.)&lt;/p>
+&lt;h3 id="-from-clever-trick-to-careful-tool--and-then-deep">🧠 From clever trick to careful tool — and then deep&lt;/h3>
+&lt;p>The first estimate was elegant but fragile. As the next paper put it plainly, &amp;ldquo;&lt;strong>errors in velocity
+estimates arise if the central assumptions of a common splicing rate and the observation of the full
+splicing dynamics with steady-state mRNA levels are violated&lt;/strong>.&amp;rdquo;
+&lt;a href="https://doi.org/10.1038/s41587-020-0591-3" target="_blank" rel="noopener">&lt;strong>scVelo&lt;/strong>&lt;/a> (Bergen et al., &lt;em>Nature Biotechnology&lt;/em>, 2020,
+from &lt;strong>Fabian Theis&lt;/strong>&amp;rsquo;s lab) &amp;ldquo;&lt;strong>overcomes these limitations by solving the full transcriptional
+dynamics of splicing kinetics using a likelihood-based dynamical model&lt;/strong>,&amp;rdquo; which &amp;ldquo;&lt;strong>generalizes RNA
+velocity to systems with transient cell states, which are common in development and in response to
+perturbations&lt;/strong>.&amp;rdquo; Next came the question of what to &lt;em>do&lt;/em> with a field of arrows:
+&lt;a href="https://doi.org/10.1038/s41592-021-01346-6" target="_blank" rel="noopener">&lt;strong>CellRank&lt;/strong>&lt;/a> (Lange et al., &lt;em>Nature Methods&lt;/em>, 2022;
+Theis &amp;amp; Dana Pe&amp;rsquo;er) reframed &amp;ldquo;&lt;strong>computational trajectory inference&lt;/strong>&amp;rdquo; for &amp;ldquo;&lt;strong>single-cell fate mapping
+in diverse scenarios, including regeneration, reprogramming and disease, for which direction is
+unknown&lt;/strong>,&amp;rdquo; by &amp;ldquo;&lt;strong>combin[ing] the robustness of trajectory inference with directional information from
+RNA velocity, taking into account the gradual and stochastic nature of cellular fate decisions, as
+well as uncertainty in velocity vectors&lt;/strong>.&amp;rdquo; And in 2024 the tooling went deep and went to scale:
+&lt;a href="https://doi.org/10.1038/s41592-023-01994-w" target="_blank" rel="noopener">&lt;strong>veloVI&lt;/strong>&lt;/a> (Gayoso et al., &lt;em>Nature Methods&lt;/em>, 2024) is
+&amp;ldquo;&lt;strong>a deep generative modeling framework for estimating RNA velocity&lt;/strong>&amp;rdquo; that &amp;ldquo;&lt;strong>provides a
+transcriptome-wide quantification of velocity uncertainty&lt;/strong>,&amp;rdquo; while
+&lt;a href="https://doi.org/10.1038/s41592-024-02303-9" target="_blank" rel="noopener">&lt;strong>CellRank 2&lt;/strong>&lt;/a> (Weiler et al., &lt;em>Nature Methods&lt;/em>, 2024)
+is &amp;ldquo;&lt;strong>a versatile and scalable framework to study cellular fate using multiview single-cell data of
+up to millions of cells&lt;/strong>,&amp;rdquo; even &amp;ldquo;&lt;strong>estimating cell-specific transcription and degradation rates from
+metabolic-labeling data&lt;/strong>&amp;rdquo; — dynamics you can actually &lt;em>measure&lt;/em>, not just infer.&lt;/p>
+&lt;h3 id="-the-honest-frontier--and-why-its-our-kind-of-problem">🔬 The honest frontier — and why it&amp;rsquo;s our kind of problem&lt;/h3>
+&lt;p>Here&amp;rsquo;s the part that makes this the lab&amp;rsquo;s native tongue: &lt;strong>a velocity arrow is a hypothesis about
+direction&lt;/strong>, and the field has been unusually honest about it. The
+&lt;a href="https://doi.org/10.15252/msb.202110282" target="_blank" rel="noopener">community&amp;rsquo;s own review&lt;/a> (Bergen et al., &lt;em>Molecular Systems
+Biology&lt;/em>, 2021) grants that RNA velocity &amp;ldquo;&lt;strong>has enabled the recovery of directed dynamic information
+from single-cell transcriptomics&lt;/strong>&amp;rdquo; while devoting itself to &amp;ldquo;&lt;strong>various examples illustrating
+limitations and potential pitfalls&lt;/strong>.&amp;rdquo; Read the 2024 tools in that light and their real contribution
+snaps into focus: veloVI&amp;rsquo;s headline is not a prettier arrow but knowing when to believe one — its
+&amp;ldquo;&lt;strong>posterior velocity uncertainty can be used to assess whether velocity analysis is appropriate for
+a given dataset&lt;/strong>.&amp;rdquo; That is exactly the &lt;a href="https://aicell.io/post/newsletter-2026-07-27/">prove-it discipline&lt;/a> this
+digest keeps returning to: a prediction earns trust only when the model can also say how much it
+doesn&amp;rsquo;t know, and orthogonal evidence agrees.&lt;/p>
+&lt;p>And it lands squarely on what we build. Notice the symmetry with
+&lt;a href="https://aicell.io/post/newsletter-2026-08-25/">yesterday&amp;rsquo;s cell tracking&lt;/a>: imaging &lt;strong>watches&lt;/strong> a cell move through
+time; RNA velocity &lt;strong>infers&lt;/strong> the move from a single frozen instant — the same question answered from
+opposite data, and a virtual cell will eventually want &lt;em>both&lt;/em>. Because a track and a velocity field
+are two renderings of the same thing we actually care about: &lt;strong>cell-state dynamics&lt;/strong>, the raw material
+a &lt;a href="https://aicell.io/project/human-cell-simulator/">Human Cell Simulator&lt;/a> would have to reproduce and a
+&lt;a href="https://aicell.io/post/newsletter-2026-08-15/">virtual cell&lt;/a> would have to predict. The most exciting thread here —
+CellRank 2 reading real transcription and degradation rates from metabolic labeling — is dynamics
+measured rather than guessed, and &lt;em>measuring dynamics at scale&lt;/em> is what an autonomous lab is for: the
+&lt;a href="https://aicell.io/project/self-driving-microscope/">self-driving microscope&lt;/a>, the &lt;a href="https://aicell.io/project/reef-imaging-farm/">REEF imaging farm&lt;/a>,
+and an &lt;a href="https://aicell.io/project/agent-lens/">agent&lt;/a> that decides which experiment sharpens the arrow next. As always,
+the defense is openness — &lt;a href="https://cellrank.org" target="_blank" rel="noopener">cellrank.org&lt;/a>, scVelo and veloVI are public,
+&lt;a href="https://aicell.io/project/bioengine/">callable&lt;/a> tools, not black boxes. Find the arrow inside the snapshot, quantify
+how much to trust it, and a photograph of ten thousand frozen cells becomes a map of where every one
+of them was headed.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(Housekeeping: yesterday&amp;rsquo;s digest slot was missed as the session crossed the day boundary, so this is
+today&amp;rsquo;s edition — one digest, one date. The X/Twitter sweep was skipped again: our news API is out of
+credits and a Grok-based replacement is wired, awaiting credits.) Have lab news to share — a talk,
+paper, conference or release? Message me on Slack.&lt;/em>&lt;/p></description></item><item><title>Lab Newsletter — August 15, 2026: A Turing Test for the Cell</title><link>https://aicell.io/post/newsletter-2026-08-15/</link><pubDate>Sat, 15 Aug 2026 03:07:00 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-08-15/</guid><description>&lt;p>AlphaFold made a protein&amp;rsquo;s shape something you could &lt;em>look up&lt;/em>. The field&amp;rsquo;s next moonshot is bolder: a &lt;strong>virtual
 cell&lt;/strong> you can &lt;em>query&lt;/em>. The dream, stated plainly, is this — give a model a starting cell state and a perturbation
 (knock down this gene, add this drug), and have it &lt;strong>predict the gene-expression response&lt;/strong> you would otherwise
 have to run an experiment to see. A cell you can ask &lt;em>&amp;ldquo;what if?&amp;rdquo;&lt;/em> Two things happened in 2025 that make this the
