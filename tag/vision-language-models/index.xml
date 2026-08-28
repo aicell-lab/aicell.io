@@ -1,4 +1,70 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>vision-language-models | AICell Lab</title><link>https://aicell.io/tag/vision-language-models/</link><atom:link href="https://aicell.io/tag/vision-language-models/index.xml" rel="self" type="application/rss+xml"/><description>vision-language-models</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 21 Jul 2026 03:03:39 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>vision-language-models</title><link>https://aicell.io/tag/vision-language-models/</link></image><item><title>Lab Newsletter — July 21, 2026: When the Microscope Learns to Talk</title><link>https://aicell.io/post/newsletter-2026-07-21/</link><pubDate>Tue, 21 Jul 2026 03:03:39 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-07-21/</guid><description>&lt;p>A microscopy image, on its own, is a grid of pixels. It becomes &lt;em>science&lt;/em> when you attach language —
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>vision-language-models | AICell Lab</title><link>https://aicell.io/tag/vision-language-models/</link><atom:link href="https://aicell.io/tag/vision-language-models/index.xml" rel="self" type="application/rss+xml"/><description>vision-language-models</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 28 Aug 2026 03:01:11 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>vision-language-models</title><link>https://aicell.io/tag/vision-language-models/</link></image><item><title>Lab Newsletter — August 28, 2026: Talking to the Microscope</title><link>https://aicell.io/post/newsletter-2026-08-28/</link><pubDate>Fri, 28 Aug 2026 03:01:11 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-08-28/</guid><description>&lt;p>We&amp;rsquo;ve spent the last few digests on models that &lt;em>see&lt;/em> — &lt;a href="https://aicell.io/post/newsletter-2026-08-16/">segmentation&lt;/a>,
+&lt;a href="https://aicell.io/post/newsletter-2026-08-25/">tracking&lt;/a>, &lt;a href="https://aicell.io/post/newsletter-2026-08-17/">pathology foundation models&lt;/a>.
+Today&amp;rsquo;s question is different: what if you could &lt;em>talk&lt;/em> to the image? Point at a micrograph and ask
+&amp;ldquo;what&amp;rsquo;s happening in this field of cells?&amp;rdquo; — and get an answer in words. That is the promise of
+&lt;strong>vision-language models&lt;/strong> (VLMs), and it is one of the most seductive ideas in the field right now.
+It&amp;rsquo;s also one of the most honestly humbling, once you point it at a real microscope.&lt;/p>
+&lt;h3 id="-the-promise-connecting-pixels-to-words">🗣️ The promise: connecting pixels to words&lt;/h3>
+&lt;p>The foundation is teaching a model that an image and a sentence can mean the same thing. &lt;a href="https://arxiv.org/abs/2303.00915" target="_blank" rel="noopener">&lt;strong>BiomedCLIP&lt;/strong>&lt;/a>
+(Zhang et al., &lt;em>arXiv&lt;/em> 2023; later in &lt;em>NEJM AI&lt;/em>, 2025; senior author Hoifung Poon at Microsoft) did
+this at scale: from a corpus where &amp;ldquo;&lt;strong>PMC-15M contains 15 million biomedical image-text pairs
+collected from 4.4 million scientific articles&lt;/strong>,&amp;rdquo; the authors &amp;ldquo;&lt;strong>pretrained BiomedCLIP, a multimodal
+foundation model, with domain-specific adaptations tailored to biomedical vision-language
+processing&lt;/strong>.&amp;rdquo; The payoff spanned &amp;ldquo;&lt;strong>standard biomedical imaging tasks from retrieval to
+classification to visual question-answering&lt;/strong>,&amp;rdquo; where it &amp;ldquo;&lt;strong>achieved new state-of-the-art results in a
+wide range of standard datasets, substantially outperforming prior approaches&lt;/strong>.&amp;rdquo; Alignment, at the
+scale of the published literature.&lt;/p>
+&lt;p>The next step made it &lt;em>conversational&lt;/em>. &lt;a href="https://arxiv.org/abs/2306.00890" target="_blank" rel="noopener">&lt;strong>LLaVA-Med&lt;/strong>&lt;/a> (Li et al.,
+2023; also from Poon&amp;rsquo;s group) set out to build &amp;ldquo;&lt;strong>a vision-language conversational assistant that can
+answer open-ended research questions of biomedical images&lt;/strong>.&amp;rdquo; The trick was clever bootstrapping:
+take &amp;ldquo;&lt;strong>a large-scale, broad-coverage biomedical figure-caption dataset extracted from PubMed
+Central&lt;/strong>,&amp;rdquo; then &amp;ldquo;&lt;strong>use GPT-4 to self-instruct open-ended instruction-following data from the
+captions&lt;/strong>&amp;rdquo; — teaching the model to converse by having a bigger model write the lessons. The headline
+was efficiency: the assistant trains &amp;ldquo;&lt;strong>in less than 15 hours (with eight A100s)&lt;/strong>&amp;rdquo; and can then
+&amp;ldquo;&lt;strong>follow open-ended instruction to assist with inquiries about a biomedical image&lt;/strong>.&amp;rdquo; An assistant
+you can talk to, built almost overnight.&lt;/p>
+&lt;h3 id="-the-reality-check-point-it-at-a-real-microscope">🔬 The reality check: point it at a real microscope&lt;/h3>
+&lt;p>Then comes the part the field has been admirably honest about. Ask these models to do actual
+&lt;em>microscopy&lt;/em> and the fluency cracks. &lt;a href="https://arxiv.org/abs/2407.01791" target="_blank" rel="noopener">&lt;strong>μ-Bench&lt;/strong>&lt;/a> (Lozano et al.,
+NeurIPS 2024; senior author Serena Yeung-Levy at Stanford) is &amp;ldquo;&lt;strong>an expert-curated benchmark
+encompassing 22 biomedical tasks across various scientific disciplines (biology, pathology),
+microscopy modalities (electron, fluorescence, light), scales (subcellular, cellular, tissue)&lt;/strong>&amp;rdquo; — and
+the verdict is blunt: &amp;ldquo;&lt;strong>current models struggle on all categories, even for basic tasks such as
+distinguishing microscopy modalities&lt;/strong>.&amp;rdquo; Worse, the obvious fix backfires: &amp;ldquo;&lt;strong>current specialist
+models fine-tuned on biomedical data often perform worse than generalist models&lt;/strong>,&amp;rdquo; and
+&amp;ldquo;&lt;strong>fine-tuning in specific microscopy domains can cause catastrophic forgetting, eroding prior
+biomedical knowledge encoded in their base model&lt;/strong>.&amp;rdquo; A model can describe an image beautifully and
+still not know whether it&amp;rsquo;s looking at fluorescence or electron microscopy.&lt;/p>
+&lt;p>And even where the answers &lt;em>look&lt;/em> right, can you trust them? &lt;a href="https://arxiv.org/abs/2406.06007" target="_blank" rel="noopener">&lt;strong>CARES&lt;/strong>&lt;/a>
+(Xia et al., NeurIPS 2024) probes exactly this, warning that &amp;ldquo;&lt;strong>the trustworthiness of Med-LVLMs
+remains unverified, posing significant risks for future model deployment&lt;/strong>.&amp;rdquo; Testing &amp;ldquo;&lt;strong>across five
+dimensions, including trustfulness, fairness, safety, privacy, and robustness&lt;/strong>,&amp;rdquo; the authors find
+that &amp;ldquo;&lt;strong>the models consistently exhibit concerns regarding trustworthiness, often displaying factual
+inaccuracies and failing to maintain fairness across different demographic groups&lt;/strong>,&amp;rdquo; and that they
+&amp;ldquo;&lt;strong>are vulnerable to attacks and demonstrate a lack of privacy awareness&lt;/strong>.&amp;rdquo; Fluent is not the same as
+correct — and in biomedicine that difference is the whole game.&lt;/p>
+&lt;h3 id="-our-kind-of-answer--ground-it-dont-trust-it">🧭 Our kind of answer — ground it, don&amp;rsquo;t trust it&lt;/h3>
+&lt;p>Here&amp;rsquo;s why this thread is the lab&amp;rsquo;s native tongue. The gap between a confident sentence and a true one
+is the &lt;a href="https://aicell.io/post/newsletter-2026-07-27/">prove-it discipline&lt;/a> this digest keeps returning to: a model
+earns trust only when its claims are checkable against something real. So the lab&amp;rsquo;s bet is not a
+free-floating VLM that has to &lt;em>know&lt;/em> everything — it&amp;rsquo;s an assistant that&amp;rsquo;s &lt;strong>grounded&lt;/strong> in real tools
+and made to &lt;em>call&lt;/em> them. That&amp;rsquo;s the whole design of the &lt;a href="https://aicell.io/project/bioimageio-chatbot/">&lt;strong>BioImage.IO Chatbot&lt;/strong>&lt;/a>:
+an AI assistant for bioimage analysis that answers from actual documentation and validated tools, and
+can invoke real models rather than improvise from memory. Give it a &lt;a href="https://aicell.io/project/bioimage-model-zoo/">callable, FAIR BioImage Model
+Zoo&lt;/a> &lt;a href="https://aicell.io/project/bioengine/">served through BioEngine&lt;/a> and the assistant&amp;rsquo;s
+job shifts from &lt;em>guessing&lt;/em> a segmentation to &lt;em>running&lt;/em> a benchmarked one and showing you the result.
+Wire it to an instrument and it becomes an &lt;a href="https://aicell.io/project/agent-lens/">agent that actually operates the microscope&lt;/a> —
+the same &lt;a href="https://aicell.io/post/newsletter-2026-08-14/">AI-agents thread&lt;/a> we followed earlier, but with its hands on
+real hardware and its answers anchored to real measurements.&lt;/p>
+&lt;p>That&amp;rsquo;s the synthesis μ-Bench and CARES are quietly arguing for. Don&amp;rsquo;t ask the model to hold all of
+microscopy in its weights and hope it recalls correctly; give it eyes &lt;em>and&lt;/em> a toolbox, and let every
+answer trace back to something you can rerun. Talking to your microscope is a wonderful goal — the
+version worth building is the one that, when you ask, doesn&amp;rsquo;t just answer confidently but shows its
+work.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(The X/Twitter sweep was skipped again — our news API is out of credits and a Grok-based replacement
+is wired, awaiting credits.) Have lab news to share — a talk, paper, conference or release? Message me
+on Slack.&lt;/em>&lt;/p></description></item><item><title>Lab Newsletter — July 21, 2026: When the Microscope Learns to Talk</title><link>https://aicell.io/post/newsletter-2026-07-21/</link><pubDate>Tue, 21 Jul 2026 03:03:39 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-07-21/</guid><description>&lt;p>A microscopy image, on its own, is a grid of pixels. It becomes &lt;em>science&lt;/em> when you attach language —
 the study, the context, the reasoning. This week is about models learning to do exactly that.&lt;/p>
 &lt;h3 id="-microscopes-learn-to-talk">🔬 Microscopes learn to talk&lt;/h3>
 &lt;p>A perspective review, &lt;strong>&lt;a href="https://www.mdpi.com/2076-3417/16/5/2502" target="_blank" rel="noopener">ChatMicroscopy&lt;/a>&lt;/strong>, lays out a
