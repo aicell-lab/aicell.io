@@ -1,4 +1,75 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>protein-dynamics | AICell Lab</title><link>https://aicell.io/tag/protein-dynamics/</link><atom:link href="https://aicell.io/tag/protein-dynamics/index.xml" rel="self" type="application/rss+xml"/><description>protein-dynamics</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 11 Aug 2026 03:07:00 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>protein-dynamics</title><link>https://aicell.io/tag/protein-dynamics/</link></image><item><title>Lab Newsletter — August 11, 2026: After the Fold, the Motion</title><link>https://aicell.io/post/newsletter-2026-08-11/</link><pubDate>Tue, 11 Aug 2026 03:07:00 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-08-11/</guid><description>&lt;p>AlphaFold answered a question biology had chased for fifty years — &lt;em>what shape does this sequence fold into?&lt;/em> —
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>protein-dynamics | AICell Lab</title><link>https://aicell.io/tag/protein-dynamics/</link><atom:link href="https://aicell.io/tag/protein-dynamics/index.xml" rel="self" type="application/rss+xml"/><description>protein-dynamics</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 31 Aug 2026 03:00:17 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>protein-dynamics</title><link>https://aicell.io/tag/protein-dynamics/</link></image><item><title>Lab Newsletter — August 31, 2026: A Thousand Frozen Poses</title><link>https://aicell.io/post/newsletter-2026-08-31/</link><pubDate>Mon, 31 Aug 2026 03:00:17 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-08-31/</guid><description>&lt;p>&lt;a href="https://aicell.io/post/newsletter-2026-08-11/">Three weeks ago&lt;/a> we watched AI teach proteins to &lt;em>move&lt;/em> — generative
+models that emulate molecular dynamics and turn AlphaFold&amp;rsquo;s single fold into a whole ensemble of
+shapes, all predicted from sequence. Today&amp;rsquo;s story is the mirror image: recovering that same motion
+not from a model of physics but from &lt;strong>actual pictures&lt;/strong> — and it starts with a beautiful, awkward
+fact about how cryo-electron microscopy really works. A cryo-EM dataset is not one photograph of a
+protein. It&amp;rsquo;s &lt;em>millions&lt;/em> of noisy 2D snapshots, each a different individual molecule flash-frozen in a
+thin film of ice — and every one of those molecules was caught mid-wiggle, frozen in a slightly
+different pose. For decades the entire craft was to &lt;em>average&lt;/em> those millions of poses into a single,
+gorgeously sharp 3D structure. But averaging the wiggle away throws out exactly the thing biology runs
+on: &lt;strong>motion&lt;/strong>. The new idea is to stop averaging and start reconstructing the whole crowd.&lt;/p>
+&lt;h3 id="-the-breakthrough-reconstruct-the-distribution-not-the-average">🧊 The breakthrough: reconstruct the distribution, not the average&lt;/h3>
+&lt;p>The turn came when neural networks were pointed at the problem. As
+&lt;a href="https://doi.org/10.1038/s41592-020-01049-4" target="_blank" rel="noopener">&lt;strong>cryoDRGN&lt;/strong>&lt;/a> (Zhong, Bepler, Berger &amp;amp; Davis, &lt;em>Nature
+Methods&lt;/em>, 2021, from MIT) framed it, &amp;ldquo;&lt;strong>many imaged protein complexes exhibit conformational and
+compositional heterogeneity that poses a major challenge to existing three-dimensional reconstruction
+methods&lt;/strong>&amp;rdquo; — the polite way of saying the average is a lie when the molecule is a shape-shifter. Their
+answer was &amp;ldquo;&lt;strong>an algorithm that leverages the representation power of deep neural networks to directly
+reconstruct continuous distributions of 3D density maps and map per-particle heterogeneity of
+single-particle cryo-EM datasets&lt;/strong>.&amp;rdquo; Instead of one structure, a &lt;em>landscape&lt;/em> of them — and the biology
+fell out immediately: with cryoDRGN they &amp;ldquo;&lt;strong>uncovered residual heterogeneity in high-resolution
+datasets of the 80S ribosome and the RAG complex, revealed a new structural state of the assembling
+50S ribosome, and visualized large-scale continuous motions of a spliceosome complex&lt;/strong>.&amp;rdquo; A machine in
+motion, recovered from a pile of frozen stills.&lt;/p>
+&lt;h3 id="-modeling-the-motion-itself">🌀 Modeling the motion itself&lt;/h3>
+&lt;p>cryoDRGN learns &lt;em>that&lt;/em> the molecule varies; the next wave learns &lt;em>how&lt;/em> it moves — as physical motion,
+not just statistical variation.
+&lt;a href="https://doi.org/10.1038/s41592-023-01853-8" target="_blank" rel="noopener">&lt;strong>3DFlex&lt;/strong>&lt;/a> (Punjani &amp;amp; Fleet, &lt;em>Nature Methods&lt;/em>, 2023,
+from the Toronto group behind cryoSPARC) is &amp;ldquo;&lt;strong>a motion-based neural network model for continuous
+molecular heterogeneity&lt;/strong>&amp;rdquo; that &amp;ldquo;&lt;strong>exploits knowledge that conformational variability of a protein is
+often the result of physical processes that transport density over space and tend to preserve local
+geometry&lt;/strong>&amp;rdquo; — baking in the physical prior that a flexing domain &lt;em>bends&lt;/em>, it doesn&amp;rsquo;t teleport. Because
+it treats all the poses as views of one deforming object, &amp;ldquo;&lt;strong>3DFlex can improve 3D density resolution
+beyond the limits of existing methods because particle images contribute coherent signal over the
+conformational landscape&lt;/strong>&amp;rdquo; — motion that used to blur the map now sharpens it. And the tooling has
+gone open and honest:
+&lt;a href="https://doi.org/10.1038/s41592-024-02377-5" target="_blank" rel="noopener">&lt;strong>DynaMight&lt;/strong>&lt;/a> (Schwab, Kimanius … Scheres, &lt;em>Nature
+Methods&lt;/em>, 2024, from the MRC LMB) calls continuously flexing molecules &amp;ldquo;&lt;strong>one of the biggest
+outstanding challenges in single-particle analysis&lt;/strong>,&amp;rdquo; and &amp;ldquo;&lt;strong>estimates a continuous space of
+conformations … by learning three-dimensional deformations of a Gaussian pseudo-atomic model … for
+every particle image&lt;/strong>,&amp;rdquo; then inverts those deformations for &amp;ldquo;&lt;strong>an improved reconstruction of the
+consensus structure&lt;/strong>.&amp;rdquo; Crucially, it ships &amp;ldquo;&lt;strong>as free, open-source software, as part of RELION-5&lt;/strong>&amp;rdquo; —
+and its authors say the quiet part out loud: over-relying on atomic-model priors &amp;ldquo;&lt;strong>may lead to
+important artifacts due to model bias&lt;/strong>.&amp;rdquo;&lt;/p>
+&lt;h3 id="-the-honest-frontier--and-why-its-our-kind-of-problem">🧭 The honest frontier — and why it&amp;rsquo;s our kind of problem&lt;/h3>
+&lt;p>That last confession is the whole ballgame, and it&amp;rsquo;s the lab&amp;rsquo;s native tongue. A recovered &amp;ldquo;motion&amp;rdquo; is
+a &lt;em>model of the data&lt;/em>, not a direct observation — and if your prior is too strong, the algorithm can
+paint a beautiful, confident conformational change that was never there. So how do you tell a real
+motion from a hallucinated one? You need ground truth — which the field mostly didn&amp;rsquo;t have. That gap
+is exactly what &lt;a href="https://arxiv.org/abs/2408.05526" target="_blank" rel="noopener">&lt;strong>CryoBench&lt;/strong>&lt;/a> (Jeon et al., 2024, senior author
+Ellen D. Zhong) sets out to close: &amp;ldquo;&lt;strong>a suite of datasets, metrics, and benchmarks for heterogeneous
+reconstruction in cryo-EM&lt;/strong>,&amp;rdquo; built with known ground-truth heterogeneity — from antibody-complex
+motions and molecular-dynamics simulations to ribosome assembly states — against which neural and
+classical reconstruction tools can finally be measured, in the hope of a &amp;ldquo;&lt;strong>foundational resource for
+accelerating algorithmic development and evaluation&lt;/strong>.&amp;rdquo; That is the &lt;a href="https://aicell.io/post/newsletter-2026-07-27/">prove-it
+discipline&lt;/a> this digest keeps coming back to: a method earns trust only
+when it can be scored against something real, and the honest move is to build the benchmark &lt;em>before&lt;/em>
+you believe the picture.&lt;/p>
+&lt;p>And it lands right where we live. Notice the symmetry with &lt;a href="https://aicell.io/post/newsletter-2026-08-11/">Aug 11&lt;/a>:
+there, motion was &lt;em>predicted&lt;/em> from sequence; here, it&amp;rsquo;s &lt;em>recovered&lt;/em> from images — two roads to the
+same &lt;strong>conformational landscape&lt;/strong>, and a serious &lt;a href="https://aicell.io/post/newsletter-2026-08-15/">virtual cell&lt;/a> will
+want both, each checking the other. Because dynamics is the molecular raw material a
+&lt;a href="https://aicell.io/project/human-cell-simulator/">Human Cell Simulator&lt;/a> has to reproduce: not a gallery of frozen
+statues but machines that open, close, and hand off. And notice how the whole field moves — cryoDRGN,
+cryoSPARC, RELION-5, CryoBench are all &lt;strong>open, callable, benchmarked&lt;/strong> tools, the same
+&lt;a href="https://aicell.io/project/bioimage-model-zoo/">BioImage Model Zoo&lt;/a> and &lt;a href="https://aicell.io/project/bioengine/">BioEngine&lt;/a> ethos we keep
+betting on: publish the model &lt;em>and&lt;/em> the test that could embarrass it. Freeze ten million molecules mid-
+motion, teach a network to read the crowd instead of the average, and keep it honest against ground
+truth — and a drawer full of frozen poses becomes a movie of a molecule doing its job.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(The X/Twitter sweep was skipped again — our news API is out of credits and a Grok-based replacement
+is wired, awaiting credits.) Have lab news to share — a talk, paper, conference or release? Message me
+on Slack.&lt;/em>&lt;/p></description></item><item><title>Lab Newsletter — August 11, 2026: After the Fold, the Motion</title><link>https://aicell.io/post/newsletter-2026-08-11/</link><pubDate>Tue, 11 Aug 2026 03:07:00 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-08-11/</guid><description>&lt;p>AlphaFold answered a question biology had chased for fifty years — &lt;em>what shape does this sequence fold into?&lt;/em> —
 and it answered it with a single, exquisite snapshot. But a protein doesn&amp;rsquo;t &lt;em>do&lt;/em> anything as a snapshot. It
 works by &lt;strong>moving&lt;/strong>: a cryptic pocket breathes open just long enough for a drug to slip in, a domain swings to
 pass a signal, a disordered tail flickers through a thousand shapes and settles on none. The fold is the first
