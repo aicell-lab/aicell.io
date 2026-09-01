@@ -1,4 +1,82 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>newsletter | AICell Lab</title><link>https://aicell.io/category/newsletter/</link><atom:link href="https://aicell.io/category/newsletter/index.xml" rel="self" type="application/rss+xml"/><description>newsletter</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 31 Aug 2026 03:00:17 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>newsletter</title><link>https://aicell.io/category/newsletter/</link></image><item><title>Lab Newsletter — August 31, 2026: A Thousand Frozen Poses</title><link>https://aicell.io/post/newsletter-2026-08-31/</link><pubDate>Mon, 31 Aug 2026 03:00:17 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-08-31/</guid><description>&lt;p>&lt;a href="https://aicell.io/post/newsletter-2026-08-11/">Three weeks ago&lt;/a> we watched AI teach proteins to &lt;em>move&lt;/em> — generative
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>newsletter | AICell Lab</title><link>https://aicell.io/category/newsletter/</link><atom:link href="https://aicell.io/category/newsletter/index.xml" rel="self" type="application/rss+xml"/><description>newsletter</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 01 Sep 2026 03:00:15 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>newsletter</title><link>https://aicell.io/category/newsletter/</link></image><item><title>Lab Newsletter — September 1, 2026: The Tissue, in Forty Colors</title><link>https://aicell.io/post/newsletter-2026-09-01/</link><pubDate>Tue, 01 Sep 2026 03:00:15 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-09-01/</guid><description>&lt;p>Three weeks ago, in &lt;a href="https://aicell.io/post/newsletter-2026-08-13/">&lt;em>The Cell&amp;rsquo;s Neighborhood&lt;/em>&lt;/a>, we followed how AI
+keeps a tissue&amp;rsquo;s &lt;strong>RNA map&lt;/strong> — imaging individual transcripts inside intact tissue and learning
+what the arrangement means. Today is the mirror image: the &lt;strong>protein map&lt;/strong>. Because RNA tells you
+what a cell is &lt;em>transcribing&lt;/em>, but proteins are the molecules actually doing the work — the layer
+closest to what a cell &lt;em>is&lt;/em> right now. The technology that reads them in place has quietly become one
+of the most data-dense instruments in biology, and it hands AI a gorgeous, awkward object: a single
+slice of tissue rendered not in three colors but in &lt;strong>forty&lt;/strong>.&lt;/p>
+&lt;h3 id="-the-instrument-dozens-of-proteins-without-moving-the-cell">🎨 The instrument: dozens of proteins, without moving the cell&lt;/h3>
+&lt;p>Ordinary fluorescence microscopy can image a handful of proteins at once before the colors run out.
+Highly multiplexed imaging breaks that ceiling. &lt;a href="https://doi.org/10.1016/j.cell.2018.07.010" target="_blank" rel="noopener">&lt;strong>CODEX&lt;/strong>&lt;/a>
+(Goltsev et al., &lt;em>Cell&lt;/em>, 2018, from Garry Nolan&amp;rsquo;s group at Stanford) is &amp;ldquo;&lt;strong>a highly multiplexed
+cytometric imaging approach, termed co-detection by indexing (CODEX)&lt;/strong>&amp;rdquo; that &amp;ldquo;&lt;strong>iteratively
+visualizes antibody binding events using DNA barcodes, fluorescent dNTP analogs, and an in situ
+polymerization-based indexing procedure&lt;/strong>.&amp;rdquo; In plain terms: tag each antibody with a DNA barcode,
+then reveal them a few at a time over many cycles — so one physical slice yields dozens of
+co-registered protein channels, every cell still in its place. The point of all that machinery is
+biological: the authors built &amp;ldquo;&lt;strong>an algorithmic pipeline for single-cell antigen quantification in
+tightly packed tissues&lt;/strong>&amp;rdquo; and used it to characterize &amp;ldquo;&lt;strong>lymphoid tissue architecture at a
+single-cell and cellular neighborhood levels&lt;/strong>.&amp;rdquo; A tissue becomes a stack of images where each cell
+carries a high-dimensional molecular fingerprint — if you can read it.&lt;/p>
+&lt;h3 id="-step-one-find-every-cell">🔍 Step one: find every cell&lt;/h3>
+&lt;p>That &amp;ldquo;if&amp;rdquo; is where deep learning earns its keep, and the first job is the hardest to skip: before you
+can measure a cell you have to &lt;em>outline&lt;/em> it — across skin, tonsil, tumor, placenta, every tissue with
+its own shapes and densities. &lt;a href="https://doi.org/10.1038/s41587-021-01094-0" target="_blank" rel="noopener">&lt;strong>Mesmer&lt;/strong>&lt;/a> (Greenwald,
+… Van Valen, &lt;em>Nature Biotechnology&lt;/em>, 2022) took the data-first route. Framing the task as
+&amp;ldquo;&lt;strong>identifying the precise boundary of every cell in an image&lt;/strong>,&amp;rdquo; the authors first &amp;ldquo;&lt;strong>constructed
+TissueNet, a dataset for training segmentation models that contains more than 1 million manually
+labeled cells, an order of magnitude more than all previously published segmentation training
+datasets&lt;/strong>,&amp;rdquo; then &amp;ldquo;&lt;strong>used TissueNet to train Mesmer, a deep-learning-enabled segmentation
+algorithm&lt;/strong>&amp;rdquo; that reaches human-level accuracy. Crucially for this story, they &amp;ldquo;&lt;strong>adapted Mesmer to
+harness cell lineage information in highly multiplexed datasets&lt;/strong>&amp;rdquo; — segmentation built for exactly
+the forty-channel images CODEX produces. Generalization, once again, turned out to be a &lt;em>data&lt;/em>
+problem before it was a model problem.&lt;/p>
+&lt;h3 id="-step-two-name-every-cell">🏷️ Step two: name every cell&lt;/h3>
+&lt;p>A segmented cell in a multiplexed image isn&amp;rsquo;t a picture anymore — it&amp;rsquo;s a vector of forty protein
+levels. Turning that vector into an identity (&amp;ldquo;this is a CD8 T cell, that&amp;rsquo;s a macrophage&amp;rdquo;) is its own
+learning problem, and the naïve fix — reuse the clustering pipelines built for dissociated
+single-cell sequencing — quietly throws away the spatial signal.
+&lt;a href="https://doi.org/10.1038/s41592-022-01651-8" target="_blank" rel="noopener">&lt;strong>STELLAR&lt;/strong>&lt;/a> (Brbić … Leskovec, &lt;em>Nature Methods&lt;/em>, 2022,
+also Stanford) attacks it head-on: &amp;ldquo;&lt;strong>current computational methods for annotating spatially
+resolved single-cell data are typically based on techniques established for dissociated single-cell
+technologies&lt;/strong>,&amp;rdquo; so the authors present &amp;ldquo;&lt;strong>STELLAR, a geometric deep learning method for cell-type
+discovery and identification in spatially resolved single-cell datasets&lt;/strong>&amp;rdquo; — a model that learns from
+each cell&amp;rsquo;s protein profile &lt;em>and&lt;/em> its physical neighbors. It &amp;ldquo;&lt;strong>automatically assigns cells to cell
+types present in the annotated reference dataset and discovers novel cell types and cell states&lt;/strong>,&amp;rdquo;
+and — closing the loop with the modality above — the authors &amp;ldquo;&lt;strong>successfully applied STELLAR to CODEX
+multiplexed fluorescent microscopy data and multiplexed RNA imaging datasets&lt;/strong>.&amp;rdquo; Image the tissue,
+segment the cells, name them, and the &lt;em>neighborhood&lt;/em> — which cell types sit next to which — finally
+becomes legible.&lt;/p>
+&lt;h3 id="-the-honest-frontier--and-why-its-our-kind-of-problem">🧭 The honest frontier — and why it&amp;rsquo;s our kind of problem&lt;/h3>
+&lt;p>Here&amp;rsquo;s the catch the field is refreshingly candid about: a model that nails one antibody panel on one
+scanner in one lab can fall apart on the next. The 2024 &lt;a href="https://doi.org/10.1038/s41592-024-02233-6" target="_blank" rel="noopener">&lt;strong>multimodality cell segmentation
+challenge&lt;/strong>&lt;/a> (Ma … Wang, &lt;em>Nature Methods&lt;/em>) put numbers on
+it, opening with the blunt observation that &amp;ldquo;&lt;strong>existing cell segmentation methods are often tailored
+to specific modalities or require manual interventions to specify hyper-parameters in different
+experimental settings&lt;/strong>.&amp;rdquo; Its answer was a benchmark — &amp;ldquo;&lt;strong>more than 1,500 labeled images derived from
+more than 50 diverse biological experiments&lt;/strong>&amp;rdquo; — built to reward models that &amp;ldquo;&lt;strong>can also be applied to
+diverse microscopy images across imaging platforms and tissue types without manual parameter
+adjustments&lt;/strong>.&amp;rdquo; That is the &lt;a href="https://aicell.io/post/newsletter-2026-07-27/">prove-it discipline&lt;/a> this digest keeps
+returning to: the number that matters isn&amp;rsquo;t accuracy on your own slide, it&amp;rsquo;s whether the tool holds
+up on tissue, panels, and instruments it has never seen — scored against a public standard, not a
+demo.&lt;/p>
+&lt;p>And it lands squarely where we work. This is the &lt;strong>imaging×omics&lt;/strong> intersection at the heart of the
+lab — the protein half of the spatial map whose RNA half we told &lt;a href="https://aicell.io/post/newsletter-2026-08-13/">three weeks
+ago&lt;/a>; a serious &lt;a href="https://aicell.io/post/newsletter-2026-08-15/">virtual cell&lt;/a> will want
+both, each checking the other, because a cell&amp;rsquo;s state is written in &lt;em>both&lt;/em> its transcripts and its
+proteins, in &lt;em>context&lt;/em>. It needs open, callable, benchmarked models — the &lt;a href="https://aicell.io/post/newsletter-2026-08-16/">segment-anything-cell
+turn&lt;/a> served through the &lt;a href="https://aicell.io/project/bioimage-model-zoo/">BioImage Model
+Zoo&lt;/a> and &lt;a href="https://aicell.io/project/bioengine/">BioEngine&lt;/a>, the same ethos the Ma
+benchmark enforces: publish the model &lt;em>and&lt;/em> the test that could embarrass it. Its substrate is the
+&lt;a href="https://www.proteinatlas.org" target="_blank" rel="noopener">Human Protein Atlas&lt;/a> next door at KTH — a spatial proteome at scale.
+And the tissue-scale, single-cell maps this pipeline produces are exactly the context layer a
+&lt;a href="https://aicell.io/project/human-cell-simulator/">Human Cell Simulator&lt;/a> is still missing. Stain a slice in forty
+colors, teach a network to find each cell, name it, and place it among its neighbors — and a piece of
+tissue stops being a picture and becomes a map you can compute on.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(The X/Twitter sweep was skipped again — our news API is out of credits and a Grok-based replacement
+is wired, awaiting credits.) Have lab news to share — a talk, paper, conference or release? Message me
+on Slack.&lt;/em>&lt;/p></description></item><item><title>Lab Newsletter — August 31, 2026: A Thousand Frozen Poses</title><link>https://aicell.io/post/newsletter-2026-08-31/</link><pubDate>Mon, 31 Aug 2026 03:00:17 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-08-31/</guid><description>&lt;p>&lt;a href="https://aicell.io/post/newsletter-2026-08-11/">Three weeks ago&lt;/a> we watched AI teach proteins to &lt;em>move&lt;/em> — generative
 models that emulate molecular dynamics and turn AlphaFold&amp;rsquo;s single fold into a whole ensemble of
 shapes, all predicted from sequence. Today&amp;rsquo;s story is the mirror image: recovering that same motion
 not from a model of physics but from &lt;strong>actual pictures&lt;/strong> — and it starts with a beautiful, awkward
