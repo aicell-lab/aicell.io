@@ -32,11 +32,11 @@ education:
       institution: Uppsala University
 ---
 
-Hi! I am an M.Sc. student in Molecular Biotechnology at Uppsala University joining AICell Lab as a research intern. I am passionate about bioinformatics, scientific automation, and data-driven biology.
+Hi! My name is Florence, and I'm an M.Sc. student in Molecular Biotechnology at Uppsala University joining AICell Lab as a research intern. I'm passionate about bioinformatics, scientific automation, and data-driven biology.
 
 ### Research
 
-I work on the **operation and validation of the automated live-cell imaging platform**. My work involves running scheduled multi-day imaging experiments, validating the platform's control software through fault testing and automated test scripts, and supporting quantitative bioimage analysis.
+I will work on the **operation and validation of the automated live-cell imaging platform**. It involves running scheduled multi-day imaging experiments, validating the platform's control software through fault testing and automated test scripts, and supporting quantitative bioimage analysis.
 
 ### Research Interests
 
