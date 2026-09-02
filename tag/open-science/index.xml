@@ -1,4 +1,94 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>open-science | AICell Lab</title><link>https://aicell.io/tag/open-science/</link><atom:link href="https://aicell.io/tag/open-science/index.xml" rel="self" type="application/rss+xml"/><description>open-science</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 01 Sep 2026 03:00:15 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>open-science</title><link>https://aicell.io/tag/open-science/</link></image><item><title>Lab Newsletter — September 1, 2026: The Tissue, in Forty Colors</title><link>https://aicell.io/post/newsletter-2026-09-01/</link><pubDate>Tue, 01 Sep 2026 03:00:15 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-09-01/</guid><description>&lt;p>Three weeks ago, in &lt;a href="https://aicell.io/post/newsletter-2026-08-13/">&lt;em>The Cell&amp;rsquo;s Neighborhood&lt;/em>&lt;/a>, we followed how AI
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>open-science | AICell Lab</title><link>https://aicell.io/tag/open-science/</link><atom:link href="https://aicell.io/tag/open-science/index.xml" rel="self" type="application/rss+xml"/><description>open-science</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 02 Sep 2026 03:07:13 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>open-science</title><link>https://aicell.io/tag/open-science/</link></image><item><title>Lab Newsletter — September 2, 2026: What the Fold Won't Tell You</title><link>https://aicell.io/post/newsletter-2026-09-02/</link><pubDate>Wed, 02 Sep 2026 03:07:13 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-09-02/</guid><description>&lt;p>We have gotten very good at guessing what a protein &lt;em>looks like&lt;/em>. The headline result of the
+structure era isn&amp;rsquo;t one crystal — it&amp;rsquo;s scale: an &lt;a href="https://doi.org/10.1126/science.ade2574" target="_blank" rel="noopener">ESM protein language
+model&lt;/a> (Lin … Rives, &lt;em>Science&lt;/em>, 2023) can &amp;ldquo;&lt;strong>demonstrate
+direct inference of full atomic-level protein structure from primary sequence&lt;/strong>,&amp;rdquo; and its authors used
+that to build &amp;ldquo;&lt;strong>the ESM Metagenomic Atlas by predicting structures for &amp;gt;617 million metagenomic
+protein sequences, including &amp;gt;225 million that are predicted with high confidence&lt;/strong>.&amp;rdquo; Six hundred
+million folds — &amp;ldquo;&lt;strong>a view into the vast breadth and diversity of natural proteins.&lt;/strong>&amp;rdquo; And yet, staring
+at that atlas, a biologist still has to ask the question a shape can&amp;rsquo;t answer: &lt;em>what does this one
+do?&lt;/em> A fold is a hint, not a verdict. Most of those metagenomic proteins are functionally dark. So
+today&amp;rsquo;s digest is about the other machine-learning problem — the less glamorous, arguably more useful
+one — of reading a protein&amp;rsquo;s &lt;strong>job&lt;/strong> from its letters or its shape.&lt;/p>
+&lt;h3 id="-from-sequence-alone">🔡 From sequence alone&lt;/h3>
+&lt;p>The oldest way to guess a protein&amp;rsquo;s function is by resemblance: line it up against proteins we already
+understand and copy their labels. It works until the query has no close, well-annotated relative —
+which, for the dark proteome, is most of the time. Deep learning offers a different bet: learn the
+sequence-to-function mapping directly. &lt;a href="https://doi.org/10.1093/bioinformatics/btz595" target="_blank" rel="noopener">&lt;strong>DeepGOPlus&lt;/strong>&lt;/a>
+(Kulmanov &amp;amp; Hoehndorf, &lt;em>Bioinformatics&lt;/em>, 2020) is the clean version of that idea — a method &amp;ldquo;&lt;strong>for
+predicting protein functions from sequence alone which combines deep convolutional neural network
+(CNN) model with sequence similarity based predictions&lt;/strong>.&amp;rdquo; It predicts Gene Ontology terms (the
+standard vocabulary of &lt;em>what a protein does, where, and in what process&lt;/em>) and, tellingly, it&amp;rsquo;s
+practical: it can &amp;ldquo;&lt;strong>annotate around 40 protein sequences per second on common hardware&lt;/strong>.&amp;rdquo; At six
+hundred million proteins, throughput is not a footnote — it&amp;rsquo;s the difference between a method you can
+run on a metagenome and a method you can only demo.&lt;/p>
+&lt;p>&lt;a href="https://doi.org/10.7554/eLife.80942" target="_blank" rel="noopener">&lt;strong>ProteInfer&lt;/strong>&lt;/a> (Sanderson … Colwell, &lt;em>eLife&lt;/em>, 2023) pushes the
+same instinct further and lands on something quietly radical about &lt;em>access&lt;/em>. Its networks &amp;ldquo;&lt;strong>directly
+predict a variety of protein functions — Enzyme Commission (EC) numbers and Gene Ontology (GO) terms —
+directly from an unaligned amino acid sequence&lt;/strong>,&amp;rdquo; no alignment step at all. The authors are careful
+to frame it as a complement, not a conqueror — the approach &amp;ldquo;&lt;strong>provides precise predictions which
+complement alignment-based methods&lt;/strong>&amp;rdquo; — but the payoff is what a single lightweight network makes
+possible: &amp;ldquo;&lt;strong>an in-browser graphical interface for protein function prediction in which all
+computation is performed on the user&amp;rsquo;s personal computer with no data uploaded to remote servers.&lt;/strong>&amp;rdquo;
+Function prediction that runs in a browser tab, privately, is exactly the kind of open, low-friction
+tool this lab likes to point at.&lt;/p>
+&lt;h3 id="-enzymes-getting-the-ec-number-right">🧪 Enzymes: getting the EC number right&lt;/h3>
+&lt;p>Enzymes are the sharpest test of function prediction, because their labels — Enzyme Commission
+numbers — are precise, hierarchical, and &lt;em>checkable in a test tube&lt;/em>. The workhorse for decades has
+been BLAST: find the closest known enzyme, borrow its EC number. &lt;a href="https://doi.org/10.1126/science.adf2465" target="_blank" rel="noopener">&lt;strong>CLEAN&lt;/strong>&lt;/a>
+(Yu … Zhao, &lt;em>Science&lt;/em>, 2023) shows how much room that left on the table. It is &amp;ldquo;&lt;strong>a machine learning
+algorithm named CLEAN (contrastive learning-enabled enzyme annotation) to assign EC numbers to enzymes
+with better accuracy, reliability, and sensitivity compared with the state-of-the-art tool BLASTp&lt;/strong>.&amp;rdquo;
+The contrastive-learning trick — teaching the model which enzymes belong together and which don&amp;rsquo;t —
+does more than beat a baseline. It &amp;ldquo;&lt;strong>empowers CLEAN to confidently (i) annotate understudied enzymes,
+(ii) correct mislabeled enzymes, and (iii) identify promiscuous enzymes with two or more EC
+numbers&lt;/strong>,&amp;rdquo; and the authors back those claims &amp;ldquo;&lt;strong>by systematic in silico and in vitro experiments&lt;/strong>.&amp;rdquo;
+That middle point is the one to sit with: a model that doesn&amp;rsquo;t just fill blanks but &lt;em>finds errors in
+the existing annotations&lt;/em> is doing something a lookup table never could.&lt;/p>
+&lt;h3 id="-from-structure-where-the-function-lives">🧬 From structure: where the function lives&lt;/h3>
+&lt;p>The structure atlas isn&amp;rsquo;t a distraction from this problem — it&amp;rsquo;s a second input to it. Two proteins
+with unrelated sequences can fold into the same active-site geometry and do the same job; sequence
+alone would miss the kinship, but structure sees it. &lt;a href="https://doi.org/10.1038/s41467-021-23303-9" target="_blank" rel="noopener">&lt;strong>DeepFRI&lt;/strong>&lt;/a>
+(Gligorijević … Bonneau, &lt;em>Nature Communications&lt;/em>, 2021) is built for exactly that bridge: &amp;ldquo;&lt;strong>a Graph
+Convolutional Network for predicting protein functions by leveraging sequence features extracted from
+a protein language model and protein structures&lt;/strong>.&amp;rdquo; Treating the folded protein as a graph, it
+&amp;ldquo;&lt;strong>outperforms current leading methods and sequence-based Convolutional Neural Networks and scales to
+the size of current sequence repositories&lt;/strong>.&amp;rdquo; And it answers a question the sequence models can&amp;rsquo;t:
+&lt;em>where&lt;/em>. Through class activation mapping, DeepFRI enables &amp;ldquo;&lt;strong>function predictions at an unprecedented
+resolution, allowing site-specific annotations at the residue-level in an automated manner&lt;/strong>&amp;rdquo; —
+pointing not just at &lt;em>that&lt;/em> a protein binds something, but at &lt;em>which residues&lt;/em> do the binding. Fold
+the metagenome with ESMFold, read function off those folds with DeepFRI, and the two halves of
+&amp;ldquo;annotate everything&amp;rdquo; start to close.&lt;/p>
+&lt;h3 id="-the-honest-frontier--and-why-its-our-kind-of-problem">🧭 The honest frontier — and why it&amp;rsquo;s our kind of problem&lt;/h3>
+&lt;p>Every method above reports a number; the question is who scored it. Protein function prediction has an
+unusually mature answer: &lt;a href="https://doi.org/10.1186/s13059-019-1835-8" target="_blank" rel="noopener">&lt;strong>CAFA&lt;/strong>&lt;/a> (Zhou … Friedberg,
+&lt;em>Genome Biology&lt;/em>, 2019), &amp;ldquo;&lt;strong>an ongoing, global, community-driven effort to evaluate and improve the
+computational annotation of protein function&lt;/strong>.&amp;rdquo; The third round did something benchmarks rarely dare:
+it reached out of silico and into the lab, where &amp;ldquo;&lt;strong>computational predictions and assessment goals
+drove some of the experimental assays, resulting in new functional annotations for more than 1000
+genes&lt;/strong>.&amp;rdquo; Predictions that generated real wet-lab experiments — that&amp;rsquo;s the prove-it standard at its
+strongest. And CAFA stays honest about the ceiling, concluding that &amp;ldquo;&lt;strong>while predictions of the
+molecular function and biological process annotations have slightly improved over time, those of the
+cellular component have not.&lt;/strong>&amp;rdquo; Some of this problem is genuinely getting solved; some of it isn&amp;rsquo;t yet
+— and a good benchmark says which is which. It&amp;rsquo;s the same &lt;a href="https://aicell.io/post/newsletter-2026-07-27/">prove-it
+discipline&lt;/a> we flagged in cryo-EM&amp;rsquo;s &lt;a href="https://aicell.io/post/newsletter-2026-08-31/">CryoBench&lt;/a>
+and yesterday&amp;rsquo;s &lt;a href="https://aicell.io/post/newsletter-2026-09-01/">tissue-segmentation benchmark&lt;/a>: the number that counts
+is the one measured against a public test you didn&amp;rsquo;t design.&lt;/p>
+&lt;p>And it lands where we work. A serious &lt;a href="https://aicell.io/post/newsletter-2026-08-15/">virtual cell&lt;/a> or &lt;a href="https://aicell.io/project/human-cell-simulator/">Human Cell
+Simulator&lt;/a> needs a &lt;strong>parts list&lt;/strong> — not just the shape of every
+protein but its &lt;em>function&lt;/em>: what catalyzes what, what binds what, what sits in which compartment. That
+list is what function prediction writes. It&amp;rsquo;s the functional partner to the spatial proteome mapped by
+the &lt;a href="https://www.proteinatlas.org" target="_blank" rel="noopener">Human Protein Atlas&lt;/a> next door at KTH — &lt;em>where&lt;/em> proteins are, meets
+&lt;em>what they do&lt;/em>. And the way these tools should travel is the ethos we keep returning to: open,
+callable, benchmarked. ProteInfer&amp;rsquo;s in-browser, no-upload interface and CLEAN and DeepFRI as callable
+models are the same spirit as serving models through the &lt;a href="https://aicell.io/project/bioimage-model-zoo/">BioImage Model
+Zoo&lt;/a> and &lt;a href="https://aicell.io/project/bioengine/">BioEngine&lt;/a> — publish the tool, and
+publish the test that could embarrass it. We can fold the whole metagenome now. Teaching the machine
+to say what each of those six hundred million proteins is &lt;em>for&lt;/em> is the half that turns an atlas of
+shapes into a cell you can compute on.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(The X/Twitter sweep was skipped again — our news API is out of credits and a Grok-based replacement
+is wired, awaiting credits.) Have lab news to share — a talk, paper, conference or release? Message me
+on Slack.&lt;/em>&lt;/p></description></item><item><title>Lab Newsletter — September 1, 2026: The Tissue, in Forty Colors</title><link>https://aicell.io/post/newsletter-2026-09-01/</link><pubDate>Tue, 01 Sep 2026 03:00:15 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-09-01/</guid><description>&lt;p>Three weeks ago, in &lt;a href="https://aicell.io/post/newsletter-2026-08-13/">&lt;em>The Cell&amp;rsquo;s Neighborhood&lt;/em>&lt;/a>, we followed how AI
 keeps a tissue&amp;rsquo;s &lt;strong>RNA map&lt;/strong> — imaging individual transcripts inside intact tissue and learning
 what the arrangement means. Today is the mirror image: the &lt;strong>protein map&lt;/strong>. Because RNA tells you
 what a cell is &lt;em>transcribing&lt;/em>, but proteins are the molecules actually doing the work — the layer
