@@ -1,4 +1,92 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AICell Lab</title><link>https://aicell.io/</link><atom:link href="https://aicell.io/index.xml" rel="self" type="application/rss+xml"/><description>AICell Lab</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 02 Sep 2026 03:07:13 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>AICell Lab</title><link>https://aicell.io/</link></image><item><title>Lab Newsletter — September 2, 2026: What the Fold Won't Tell You</title><link>https://aicell.io/post/newsletter-2026-09-02/</link><pubDate>Wed, 02 Sep 2026 03:07:13 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-09-02/</guid><description>&lt;p>We have gotten very good at guessing what a protein &lt;em>looks like&lt;/em>. The headline result of the
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AICell Lab</title><link>https://aicell.io/</link><atom:link href="https://aicell.io/index.xml" rel="self" type="application/rss+xml"/><description>AICell Lab</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Thu, 03 Sep 2026 03:04:16 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>AICell Lab</title><link>https://aicell.io/</link></image><item><title>Lab Newsletter — September 3, 2026: The Cell in Every Language</title><link>https://aicell.io/post/newsletter-2026-09-03/</link><pubDate>Thu, 03 Sep 2026 03:04:16 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-09-03/</guid><description>&lt;p>A cell is not a single measurement. In the same instant it is doing several things at once: its
+chromatin is deciding which genes are even &lt;em>legible&lt;/em>, its transcriptome is the set of RNAs it&amp;rsquo;s
+actively reading out, and its proteins are the molecules physically doing the work. Each is a
+different &lt;strong>language&lt;/strong> describing the same cell — and for most of single-cell biology&amp;rsquo;s history we
+could only listen to one at a time, usually RNA. That has changed. Assays now read two or three
+layers in the &lt;em>same&lt;/em> cell, and with that comes a genuinely new computational problem — not measuring a
+modality, but &lt;strong>fusing&lt;/strong> them. As a 2021 &lt;a href="https://doi.org/10.1038/s41587-021-00895-7" target="_blank" rel="noopener">review by Argelaguet and
+colleagues&lt;/a> (&lt;em>Nature Biotechnology&lt;/em>) frames it, &amp;ldquo;&lt;strong>the
+development of single-cell multimodal assays provides a powerful tool for investigating multiple
+dimensions of cellular heterogeneity&lt;/strong>,&amp;rdquo; and &amp;ldquo;&lt;strong>a key challenge in the analysis of single-cell
+multimodal data is to devise appropriate strategies for tying together data across different
+modalities&lt;/strong>.&amp;rdquo; Their honest conclusion — that &amp;ldquo;&lt;strong>new definitions and concepts are needed to
+contextualize existing methods and to enable development of new methods&lt;/strong>&amp;rdquo; — is why this corner of the
+field has produced not one method but a small ecosystem.&lt;/p>
+&lt;h3 id="-paired-layers-fused-per-cell">🧬 Paired layers, fused per cell&lt;/h3>
+&lt;p>Start with the friendliest case: two modalities measured in the same cell, like RNA and surface
+protein via CITE-seq. Even here, naïvely concatenating the numbers fails — the modalities have
+different scales, different noise, different reliability. &lt;a href="https://doi.org/10.1016/j.cell.2021.04.048" target="_blank" rel="noopener">&lt;strong>Seurat&amp;rsquo;s weighted-nearest-neighbor
+(WNN)&lt;/strong>&lt;/a> (Hao … Satija, &lt;em>Cell&lt;/em>, 2021) answers with a
+beautifully simple idea: &amp;ldquo;&lt;strong>an unsupervised framework to learn the relative utility of each data type
+in each cell&lt;/strong>.&amp;rdquo; Some cells are best distinguished by their proteins, others by their transcripts —
+so let the weighting be &lt;em>per cell&lt;/em>. The authors applied it &amp;ldquo;&lt;strong>to a CITE-seq dataset of 211,000 human
+peripheral blood mononuclear cells (PBMCs) with panels extending to 228 antibodies to construct a
+multimodal reference atlas of the circulating immune system&lt;/strong>,&amp;rdquo; and framed the payoff as exactly the
+shift this digest is about: looking &amp;ldquo;&lt;strong>beyond the transcriptome toward a unified and multimodal
+definition of cellular identity&lt;/strong>.&amp;rdquo;&lt;/p>
+&lt;p>Where WNN combines views geometrically, &lt;a href="https://doi.org/10.1038/s41592-020-01050-x" target="_blank" rel="noopener">&lt;strong>totalVI&lt;/strong>&lt;/a>
+(Gayoso … Yosef, &lt;em>Nature Methods&lt;/em>, 2021) models them &lt;em>generatively&lt;/em>. The trouble it names is the
+crux of the whole field: &amp;ldquo;&lt;strong>combining these paired views into a unified representation of cell state is
+made challenging by the unique technical characteristics of each measurement&lt;/strong>.&amp;rdquo; totalVI&amp;rsquo;s answer is
+to represent the data &amp;ldquo;&lt;strong>probabilistically … as a composite of biological and technical factors,
+including protein background and batch effects&lt;/strong>&amp;rdquo; — so the model can subtract the artifacts (antibody
+background, batch) and keep the biology. That separation of &lt;em>signal from instrument&lt;/em> is the recurring
+theme in every good integration method.&lt;/p>
+&lt;h3 id="-more-layers--and-the-ones-you-didnt-measure">🔓 More layers — and the ones you didn&amp;rsquo;t measure&lt;/h3>
+&lt;p>RNA-plus-protein is only the start. &lt;a href="https://doi.org/10.1038/s41592-023-01909-9" target="_blank" rel="noopener">&lt;strong>MultiVI&lt;/strong>&lt;/a>
+(Ashuach … Yosef, &lt;em>Nature Methods&lt;/em>, 2023) brings in chromatin: it targets the joint profiling of
+&amp;ldquo;&lt;strong>the transcriptome, chromatin accessibility and other molecular properties of single cells&lt;/strong>,&amp;rdquo; a
+probabilistic model whose most useful trick is what it does with &lt;em>incomplete&lt;/em> data. MultiVI &amp;ldquo;&lt;strong>creates
+a joint representation that allows an analysis of all modalities included in the multiomic input data,
+even for cells for which one or more modalities are missing&lt;/strong>.&amp;rdquo; That last clause matters more than it
+sounds: most existing datasets measured only one modality, so a model that can place single-modality
+cells into the &lt;em>same&lt;/em> shared space as multiomic ones lets you reuse the enormous archive of older
+RNA-only or ATAC-only experiments instead of throwing it away.&lt;/p>
+&lt;h3 id="-across-datasets-with-no-shared-cells-at-all">🌉 Across datasets, with no shared cells at all&lt;/h3>
+&lt;p>The hardest version drops the last comfort — the modalities aren&amp;rsquo;t even measured in the same cells.
+&lt;a href="https://doi.org/10.1038/s41587-022-01284-4" target="_blank" rel="noopener">&lt;strong>GLUE&lt;/strong>&lt;/a> (Cao &amp;amp; Gao, &lt;em>Nature Biotechnology&lt;/em>, 2022, open
+access) states the problem plainly: &amp;ldquo;&lt;strong>despite the emergence of experimental methods for simultaneous
+measurement of multiple omics modalities in single cells, most single-cell datasets include only one
+modality&lt;/strong>,&amp;rdquo; and &amp;ldquo;&lt;strong>a major obstacle in integrating omics data from multiple modalities is that
+different omics layers typically have distinct feature spaces&lt;/strong>.&amp;rdquo; Genes, peaks, and proteins simply
+don&amp;rsquo;t live in the same coordinate system. GLUE — &amp;ldquo;&lt;strong>graph-linked unified embedding&lt;/strong>&amp;rdquo; — &amp;ldquo;&lt;strong>bridges the
+gap by modeling regulatory interactions across omics layers explicitly&lt;/strong>,&amp;rdquo; using prior biological
+knowledge (which regions regulate which genes) as the bridge. Benchmarking showed it &amp;ldquo;&lt;strong>more accurate,
+robust and scalable than state-of-the-art tools&lt;/strong>,&amp;rdquo; and the authors pushed it to &amp;ldquo;&lt;strong>triple-omics
+integration, integrative regulatory inference and multi-omics human cell atlas construction over
+millions of cells, where GLUE was able to correct previous annotations&lt;/strong>.&amp;rdquo; Fusion at atlas scale, good
+enough to &lt;em>fix&lt;/em> mistakes in the reference.&lt;/p>
+&lt;h3 id="-the-honest-frontier--integration-you-can-trust">🧭 The honest frontier — integration you can trust&lt;/h3>
+&lt;p>With this many methods, the field needed a referee, and it built a rigorous one.
+&lt;a href="https://doi.org/10.1038/s41592-021-01336-8" target="_blank" rel="noopener">&lt;strong>scIB&lt;/strong>&lt;/a> (Luecken … Theis, &lt;em>Nature Methods&lt;/em>, 2022)
+&amp;ldquo;&lt;strong>benchmarked 68 method and preprocessing combinations on 85 batches of gene expression, chromatin
+accessibility and simulation data from 23 publications, altogether representing &amp;gt;1.2 million cells
+distributed in 13 atlas-level integration tasks&lt;/strong>.&amp;rdquo; Its evaluation crystallizes the central danger of
+all integration: you can always make datasets overlap by erasing what makes them different — so scIB
+scores methods on &amp;ldquo;&lt;strong>their ability to remove batch effects while retaining biological variation&lt;/strong>,&amp;rdquo;
+across 14 metrics. The verdict is refreshingly specific (&amp;quot;&lt;strong>scANVI, Scanorama, scVI and scGen perform
+well, particularly on complex integration tasks, while single-cell ATAC-sequencing integration
+performance is strongly affected by choice of feature space&lt;/strong>&amp;quot;). It&amp;rsquo;s the same
+&lt;a href="https://aicell.io/post/newsletter-2026-07-27/">prove-it discipline&lt;/a> we keep returning to — the &lt;a href="https://aicell.io/post/newsletter-2026-09-02/">CAFA benchmark for
+protein function&lt;/a>, the &lt;a href="https://aicell.io/post/newsletter-2026-09-01/">Ma benchmark for tissue
+segmentation&lt;/a>, &lt;a href="https://aicell.io/post/newsletter-2026-08-31/">CryoBench&lt;/a>: the score that
+counts measures whether you kept the biology, not just whether the plot looks clean.&lt;/p>
+&lt;p>And it lands squarely where we work. A serious &lt;a href="https://aicell.io/post/newsletter-2026-08-15/">virtual cell&lt;/a> or
+&lt;a href="https://aicell.io/project/human-cell-simulator/">Human Cell Simulator&lt;/a> can&amp;rsquo;t be built on the transcriptome alone — it
+needs the &lt;em>multi-layer&lt;/em> definition of a cell, chromatin and RNA and protein tied together, which is
+precisely what these methods learn. It&amp;rsquo;s also the molecular twin of the lab&amp;rsquo;s &lt;strong>imaging×omics&lt;/strong> core:
+the spatial &lt;a href="https://aicell.io/post/newsletter-2026-08-13/">RNA map&lt;/a> and &lt;a href="https://aicell.io/post/newsletter-2026-09-01/">protein map&lt;/a> we
+told earlier are simply &lt;em>more modalities to fuse&lt;/em>, in space as well as in molecule. And the way these
+tools travel is the ethos we keep pointing at — totalVI and MultiVI ship inside the open
+&lt;a href="https://scvi-tools.org" target="_blank" rel="noopener">scvi-tools&lt;/a> stack, GLUE is open on GitHub, and scIB is the public yardstick:
+the same publish-the-model-and-the-test-that-could-embarrass-it spirit behind the &lt;a href="https://aicell.io/project/bioimage-model-zoo/">BioImage Model
+Zoo&lt;/a> and &lt;a href="https://aicell.io/project/bioengine/">BioEngine&lt;/a>. Listen to a cell in every
+language it speaks, and teach a machine to hear them as one voice — that&amp;rsquo;s the representation the rest
+of the pipeline has been waiting for.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(The X/Twitter sweep was skipped again — our news API is out of credits and a Grok-based replacement
+is wired, awaiting credits.) Have lab news to share — a talk, paper, conference or release? Message me
+on Slack.&lt;/em>&lt;/p></description></item><item><title>Lab Newsletter — September 2, 2026: What the Fold Won't Tell You</title><link>https://aicell.io/post/newsletter-2026-09-02/</link><pubDate>Wed, 02 Sep 2026 03:07:13 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-09-02/</guid><description>&lt;p>We have gotten very good at guessing what a protein &lt;em>looks like&lt;/em>. The headline result of the
 structure era isn&amp;rsquo;t one crystal — it&amp;rsquo;s scale: an &lt;a href="https://doi.org/10.1126/science.ade2574" target="_blank" rel="noopener">ESM protein language
 model&lt;/a> (Lin … Rives, &lt;em>Science&lt;/em>, 2023) can &amp;ldquo;&lt;strong>demonstrate
 direct inference of full atomic-level protein structure from primary sequence&lt;/strong>,&amp;rdquo; and its authors used
