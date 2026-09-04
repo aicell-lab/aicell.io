@@ -23,7 +23,10 @@ status:
 bio: "M.Sc. student in Molecular Biotechnology (Uppsala University), interning on the operation and validation of our automated live-cell imaging platform."
 
 # Social Media and other links
-social: []
+social:
+  - icon: linkedin
+    icon_pack: fab
+    link: https://www.linkedin.com/in/florence-alicia-stadelmann-8005b5191/
 
 # Education section
 education:
