@@ -86,7 +86,48 @@ that made it, and thousands of anonymous peaks per sample start becoming biology
 &lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
 (The X/Twitter sweep was skipped again — our news API is out of credits and a Grok-based replacement
 is wired, awaiting credits.) Have lab news to share — a talk, paper, conference or release? Message me
-on Slack.&lt;/em>&lt;/p></description></item><item><title>Lab Newsletter — September 3, 2026: The Cell in Every Language</title><link>https://aicell.io/post/newsletter-2026-09-03/</link><pubDate>Thu, 03 Sep 2026 03:04:16 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-09-03/</guid><description>&lt;p>A cell is not a single measurement. In the same instant it is doing several things at once: its
+on Slack.&lt;/em>&lt;/p></description></item><item><title>Welcoming Florence Stadelmann to the AICell Lab</title><link>https://aicell.io/post/welcome-florence/</link><pubDate>Thu, 03 Sep 2026 06:19:05 +0000</pubDate><guid>https://aicell.io/post/welcome-florence/</guid><description>&lt;p>We are delighted to welcome &lt;strong>Florence Stadelmann&lt;/strong> to the AICell Lab as a research intern. Florence
+is an M.Sc. student in Molecular Biotechnology at Uppsala University, and she joins us drawn by exactly
+the mix that defines the lab: bioinformatics, scientific automation, and data-driven biology.&lt;/p>
+&lt;h2 id="what-florence-will-work-on">What Florence will work on&lt;/h2>
+&lt;p>Florence will focus on the &lt;strong>operation and validation of our automated live-cell imaging platform&lt;/strong> —
+the kind of work that keeps a self-driving lab honest. Day to day, that means running scheduled
+multi-day imaging experiments, validating the platform&amp;rsquo;s control software through fault testing and
+automated test scripts, and supporting quantitative bioimage analysis. It&amp;rsquo;s a role right at the seam
+between the wet bench and the code that runs it — where reliable automation turns tedious, repetitive
+routines into reproducible data.&lt;/p>
+&lt;h2 id="in-her-own-words">In her own words&lt;/h2>
+&lt;p>We asked Florence a few questions as she settles in.&lt;/p>
+&lt;h4 id="q-what-excites-you-most-about-working-with-lab-automation">Q: What excites you most about working with lab automation?&lt;/h4>
+&lt;blockquote>
+&lt;p>&amp;ldquo;Honestly, having a robot arm run the lab work is just insanely cool. I&amp;rsquo;ve always been curious about
+automating the repetitive lab bench routines, so you can skip the tedious parts and focus entirely on
+the data analysis and problem-solving.&amp;rdquo;&lt;/p>
+&lt;/blockquote>
+&lt;h4 id="q-what-are-you-most-looking-forward-to-during-your-internship">Q: What are you most looking forward to during your internship?&lt;/h4>
+&lt;blockquote>
+&lt;p>&amp;ldquo;I&amp;rsquo;m mostly super hyped to experience what it&amp;rsquo;s actually like working inside an active research group
+— seeing the day-to-day collaboration up close and learning how the team tackles complex research
+roadblocks in real time.&amp;rdquo;&lt;/p>
+&lt;/blockquote>
+&lt;h4 id="q-what-drew-you-to-molecular-biotechnology-and-data-science">Q: What drew you to molecular biotechnology and data science?&lt;/h4>
+&lt;blockquote>
+&lt;p>&amp;ldquo;Scientific automation and data science always fascinated me even more than traditional wet lab
+biology. I wanted an education where I could apply data science directly to real-world challenges, and
+molecular biotech felt like the perfect route — especially since the pharma and biotech space is so
+exciting right now.&amp;rdquo;&lt;/p>
+&lt;/blockquote>
+&lt;h4 id="q-a-fun-fact-about-you">Q: A fun fact about you?&lt;/h4>
+&lt;blockquote>
+&lt;p>&amp;ldquo;I used to compete for the Swedish National Team in Taekwondo (ITF) back in 2019!&amp;rdquo; 🥋&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="a-warm-welcome">A warm welcome&lt;/h2>
+&lt;p>Florence&amp;rsquo;s enthusiasm for automation and data-driven biology fits right in, and we&amp;rsquo;re excited to have
+her helping our imaging platform run reliably around the clock. Please join us in giving her a warm
+welcome!&lt;/p>
+&lt;hr>
+&lt;p>Connect with Florence for collaborations or inquiries, and learn more about her role at AICell Lab
+&lt;a href="https://aicell.io/authors/florence">here&lt;/a>.&lt;/p></description></item><item><title>Lab Newsletter — September 3, 2026: The Cell in Every Language</title><link>https://aicell.io/post/newsletter-2026-09-03/</link><pubDate>Thu, 03 Sep 2026 03:04:16 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-09-03/</guid><description>&lt;p>A cell is not a single measurement. In the same instant it is doing several things at once: its
 chromatin is deciding which genes are even &lt;em>legible&lt;/em>, its transcriptome is the set of RNAs it&amp;rsquo;s
 actively reading out, and its proteins are the molecules physically doing the work. Each is a
 different &lt;strong>language&lt;/strong> describing the same cell — and for most of single-cell biology&amp;rsquo;s history we

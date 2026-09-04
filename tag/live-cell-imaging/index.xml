@@ -1,4 +1,45 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>live-cell-imaging | AICell Lab</title><link>https://aicell.io/tag/live-cell-imaging/</link><atom:link href="https://aicell.io/tag/live-cell-imaging/index.xml" rel="self" type="application/rss+xml"/><description>live-cell-imaging</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 25 Aug 2026 03:05:35 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>live-cell-imaging</title><link>https://aicell.io/tag/live-cell-imaging/</link></image><item><title>Lab Newsletter — August 25, 2026: Following Every Cell</title><link>https://aicell.io/post/newsletter-2026-08-25/</link><pubDate>Tue, 25 Aug 2026 03:05:35 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-08-25/</guid><description>&lt;p>&lt;a href="https://aicell.io/post/newsletter-2026-08-16/">Segmentation&lt;/a> answers &lt;em>where are the cells in this frame?&lt;/em> Tracking
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>live-cell-imaging | AICell Lab</title><link>https://aicell.io/tag/live-cell-imaging/</link><atom:link href="https://aicell.io/tag/live-cell-imaging/index.xml" rel="self" type="application/rss+xml"/><description>live-cell-imaging</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Thu, 03 Sep 2026 06:19:05 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>live-cell-imaging</title><link>https://aicell.io/tag/live-cell-imaging/</link></image><item><title>Welcoming Florence Stadelmann to the AICell Lab</title><link>https://aicell.io/post/welcome-florence/</link><pubDate>Thu, 03 Sep 2026 06:19:05 +0000</pubDate><guid>https://aicell.io/post/welcome-florence/</guid><description>&lt;p>We are delighted to welcome &lt;strong>Florence Stadelmann&lt;/strong> to the AICell Lab as a research intern. Florence
+is an M.Sc. student in Molecular Biotechnology at Uppsala University, and she joins us drawn by exactly
+the mix that defines the lab: bioinformatics, scientific automation, and data-driven biology.&lt;/p>
+&lt;h2 id="what-florence-will-work-on">What Florence will work on&lt;/h2>
+&lt;p>Florence will focus on the &lt;strong>operation and validation of our automated live-cell imaging platform&lt;/strong> —
+the kind of work that keeps a self-driving lab honest. Day to day, that means running scheduled
+multi-day imaging experiments, validating the platform&amp;rsquo;s control software through fault testing and
+automated test scripts, and supporting quantitative bioimage analysis. It&amp;rsquo;s a role right at the seam
+between the wet bench and the code that runs it — where reliable automation turns tedious, repetitive
+routines into reproducible data.&lt;/p>
+&lt;h2 id="in-her-own-words">In her own words&lt;/h2>
+&lt;p>We asked Florence a few questions as she settles in.&lt;/p>
+&lt;h4 id="q-what-excites-you-most-about-working-with-lab-automation">Q: What excites you most about working with lab automation?&lt;/h4>
+&lt;blockquote>
+&lt;p>&amp;ldquo;Honestly, having a robot arm run the lab work is just insanely cool. I&amp;rsquo;ve always been curious about
+automating the repetitive lab bench routines, so you can skip the tedious parts and focus entirely on
+the data analysis and problem-solving.&amp;rdquo;&lt;/p>
+&lt;/blockquote>
+&lt;h4 id="q-what-are-you-most-looking-forward-to-during-your-internship">Q: What are you most looking forward to during your internship?&lt;/h4>
+&lt;blockquote>
+&lt;p>&amp;ldquo;I&amp;rsquo;m mostly super hyped to experience what it&amp;rsquo;s actually like working inside an active research group
+— seeing the day-to-day collaboration up close and learning how the team tackles complex research
+roadblocks in real time.&amp;rdquo;&lt;/p>
+&lt;/blockquote>
+&lt;h4 id="q-what-drew-you-to-molecular-biotechnology-and-data-science">Q: What drew you to molecular biotechnology and data science?&lt;/h4>
+&lt;blockquote>
+&lt;p>&amp;ldquo;Scientific automation and data science always fascinated me even more than traditional wet lab
+biology. I wanted an education where I could apply data science directly to real-world challenges, and
+molecular biotech felt like the perfect route — especially since the pharma and biotech space is so
+exciting right now.&amp;rdquo;&lt;/p>
+&lt;/blockquote>
+&lt;h4 id="q-a-fun-fact-about-you">Q: A fun fact about you?&lt;/h4>
+&lt;blockquote>
+&lt;p>&amp;ldquo;I used to compete for the Swedish National Team in Taekwondo (ITF) back in 2019!&amp;rdquo; 🥋&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="a-warm-welcome">A warm welcome&lt;/h2>
+&lt;p>Florence&amp;rsquo;s enthusiasm for automation and data-driven biology fits right in, and we&amp;rsquo;re excited to have
+her helping our imaging platform run reliably around the clock. Please join us in giving her a warm
+welcome!&lt;/p>
+&lt;hr>
+&lt;p>Connect with Florence for collaborations or inquiries, and learn more about her role at AICell Lab
+&lt;a href="https://aicell.io/authors/florence">here&lt;/a>.&lt;/p></description></item><item><title>Lab Newsletter — August 25, 2026: Following Every Cell</title><link>https://aicell.io/post/newsletter-2026-08-25/</link><pubDate>Tue, 25 Aug 2026 03:05:35 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-08-25/</guid><description>&lt;p>&lt;a href="https://aicell.io/post/newsletter-2026-08-16/">Segmentation&lt;/a> answers &lt;em>where are the cells in this frame?&lt;/em> Tracking
 answers the harder question that comes next: &lt;em>which cell is which, across the next thousand frames?&lt;/em>
 A cell doesn&amp;rsquo;t hold still — it crawls, changes shape and brightness, drifts out of view, and, most
 awkwardly of all, &lt;strong>divides&lt;/strong>: one object becomes two, and any tracker that assumes objects persist
