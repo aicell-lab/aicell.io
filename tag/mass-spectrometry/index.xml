@@ -1,4 +1,92 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>mass-spectrometry | AICell Lab</title><link>https://aicell.io/tag/mass-spectrometry/</link><atom:link href="https://aicell.io/tag/mass-spectrometry/index.xml" rel="self" type="application/rss+xml"/><description>mass-spectrometry</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 07 Aug 2026 03:07:00 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>mass-spectrometry</title><link>https://aicell.io/tag/mass-spectrometry/</link></image><item><title>Lab Newsletter — August 7, 2026: The Layer You Can't Amplify</title><link>https://aicell.io/post/newsletter-2026-08-07/</link><pubDate>Fri, 07 Aug 2026 03:07:00 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-08-07/</guid><description>&lt;p>We spend a lot of these digests on what a cell &lt;em>could&lt;/em> do — its genome — and what it &lt;em>intends&lt;/em> to do — its
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>mass-spectrometry | AICell Lab</title><link>https://aicell.io/tag/mass-spectrometry/</link><atom:link href="https://aicell.io/tag/mass-spectrometry/index.xml" rel="self" type="application/rss+xml"/><description>mass-spectrometry</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 04 Sep 2026 03:02:56 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>mass-spectrometry</title><link>https://aicell.io/tag/mass-spectrometry/</link></image><item><title>Lab Newsletter — September 4, 2026: Naming the Unknowns</title><link>https://aicell.io/post/newsletter-2026-09-04/</link><pubDate>Fri, 04 Sep 2026 03:02:56 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-09-04/</guid><description>&lt;p>Of all the molecular layers, the metabolome sits closest to the action. Genes say what a cell &lt;em>could&lt;/em>
+do, RNA what it&amp;rsquo;s &lt;em>transcribing&lt;/em>, proteins what machinery it&amp;rsquo;s &lt;em>built&lt;/em> — but metabolites are the small
+molecules of the actual chemistry: the sugars being burned, the lipids being assembled, the signals
+being passed. As the team behind &lt;a href="https://doi.org/10.1073/pnas.1509788112" target="_blank" rel="noopener">CSI:FingerID&lt;/a> (Dührkop …
+Böcker, &lt;em>PNAS&lt;/em>, 2015) puts it in a single clean sentence, &amp;ldquo;&lt;strong>metabolites provide a direct functional
+signature of cellular state&lt;/strong>.&amp;rdquo; The instrument that reads them, mass spectrometry, is dazzlingly
+sensitive — and yet the field carries an uncomfortable open secret, stated in the same abstract:
+&amp;ldquo;&lt;strong>untargeted metabolomics experiments usually rely on tandem MS to identify the thousands of
+compounds in a biological sample. Today, the vast majority of metabolites remain unknown.&lt;/strong>&amp;rdquo; A typical
+run lights up thousands of peaks; only a small fraction can be named. This is the &lt;strong>dark metabolome&lt;/strong>,
+and machine learning is what&amp;rsquo;s finally lighting it up.&lt;/p>
+&lt;h3 id="-the-core-trick-from-a-spectrum-to-a-fingerprint">🧩 The core trick: from a spectrum to a fingerprint&lt;/h3>
+&lt;p>A tandem mass spectrum is a molecule shattered into fragments — an indirect, cryptic sketch of a
+structure. The breakthrough idea in CSI:FingerID is to not guess the structure directly but to guess a
+&lt;em>fingerprint&lt;/em> first. The method &amp;ldquo;&lt;strong>computes a fragmentation tree that best explains the fragmentation
+spectrum of an unknown molecule&lt;/strong>,&amp;rdquo; then uses &amp;ldquo;&lt;strong>the fragmentation tree to predict the molecular
+structure fingerprint of the unknown compound using machine learning&lt;/strong>.&amp;rdquo; That predicted fingerprint —
+a checklist of chemical substructures — becomes the search key against databases like PubChem. The
+approach, the authors report, &amp;ldquo;&lt;strong>improve[s] on the competing methods for computational metabolite
+identification by a considerable margin&lt;/strong>.&amp;rdquo; It reframed a chemistry problem as a learning problem, and
+the rest of the field followed.&lt;/p>
+&lt;p>The tool that put it in everyone&amp;rsquo;s hands was &lt;a href="https://doi.org/10.1038/s41592-019-0344-8" target="_blank" rel="noopener">&lt;strong>SIRIUS 4&lt;/strong>&lt;/a>
+(Dührkop … Böcker, &lt;em>Nature Methods&lt;/em>, 2019). Its abstract is refreshingly blunt about the stakes —
+&amp;ldquo;&lt;strong>mass spectrometry is a predominant experimental technique in metabolomics and related fields, but
+metabolite structural elucidation remains highly challenging&lt;/strong>&amp;rdquo; — and its contribution is to make the
+CSI:FingerID pipeline fast and usable: SIRIUS 4 &amp;ldquo;&lt;strong>integrates CSI:FingerID for searching in molecular
+structure databases&lt;/strong>,&amp;rdquo; and with it the authors &amp;ldquo;&lt;strong>achieved identification rates of more than 70% on
+challenging metabolomics datasets&lt;/strong>.&amp;rdquo; Seventy percent, on the hard cases, for a problem that used to
+strand most peaks unnamed.&lt;/p>
+&lt;h3 id="-when-the-molecule-is-in-no-database">🗂️ When the molecule is in no database&lt;/h3>
+&lt;p>Fingerprint search only works if the answer is &lt;em>somewhere&lt;/em> in a database. For genuinely novel
+chemistry — a natural product no one has catalogued — there&amp;rsquo;s nothing to match against.
+&lt;a href="https://doi.org/10.1038/s41587-020-0740-8" target="_blank" rel="noopener">&lt;strong>CANOPUS&lt;/strong>&lt;/a> (Dührkop … Böcker, &lt;em>Nature Biotechnology&lt;/em>,
+2021) takes the humbler-but-powerful route: if you can&amp;rsquo;t name the molecule, name its &lt;em>kind&lt;/em>. The
+authors note plainly that &amp;ldquo;&lt;strong>structural molecule annotation is limited to structures present in
+libraries or databases, restricting analysis and interpretation of experimental data&lt;/strong>,&amp;rdquo; and answer
+with a deep network that &amp;ldquo;&lt;strong>predict[s] 2,497 compound classes from fragmentation spectra, including all
+biologically relevant classes&lt;/strong>.&amp;rdquo; Crucially, CANOPUS &amp;ldquo;&lt;strong>explicitly targets compounds for which neither
+spectral nor structural reference data are available&lt;/strong>&amp;rdquo; — the truly dark peaks — and still reaches &amp;ldquo;&lt;strong>an
+average accuracy of 99.7% in cross-validation&lt;/strong>.&amp;rdquo; Knowing a mystery peak is a particular class of
+lipid or alkaloid is often enough to turn a dead end into a lead.&lt;/p>
+&lt;h3 id="-writing-the-structure-from-scratch">✍️ Writing the structure from scratch&lt;/h3>
+&lt;p>The boldest step is to skip the database entirely and &lt;em>draw&lt;/em> the molecule.
+&lt;a href="https://doi.org/10.1038/s41592-022-01486-3" target="_blank" rel="noopener">&lt;strong>MSNovelist&lt;/strong>&lt;/a> (Stravs … Zamboni, &lt;em>Nature Methods&lt;/em>,
+2022) does exactly that. Noting that &amp;ldquo;&lt;strong>current methods for structure elucidation of small molecules
+rely on finding similarity with spectra of known compounds, but do not predict structures de novo for
+unknown compound classes&lt;/strong>,&amp;rdquo; it &amp;ldquo;&lt;strong>combines fingerprint prediction with an encoder-decoder neural
+network to generate structures de novo solely from tandem mass spectrometry (MS2) spectra&lt;/strong>.&amp;rdquo; Tested on
+&amp;ldquo;&lt;strong>3,863 MS2 spectra from the Global Natural Product Social Molecular Networking site, MSNovelist
+predicted 25% of structures correctly on first rank, retrieved 45% of structures overall … without
+having ever seen the structure in the training phase&lt;/strong>.&amp;rdquo; It&amp;rsquo;s the small-molecule cousin of the de novo
+peptide sequencing we &lt;a href="https://aicell.io/post/newsletter-2026-08-07/">covered last month&lt;/a> — a generative model that
+writes an answer instead of looking one up — and, like the best of these tools, it&amp;rsquo;s framed as a
+complement: &amp;ldquo;&lt;strong>ideally suited to complement library-based annotation in the case of poorly represented
+analyte classes and novel compounds&lt;/strong>.&amp;rdquo;&lt;/p>
+&lt;h3 id="-better-similarity-and-an-open-commons">🌐 Better similarity, and an open commons&lt;/h3>
+&lt;p>Two more pieces make the ecosystem work. &lt;a href="https://doi.org/10.1371/journal.pcbi.1008724" target="_blank" rel="noopener">&lt;strong>Spec2Vec&lt;/strong>&lt;/a>
+(Huber … van der Hooft, &lt;em>PLOS Computational Biology&lt;/em>, 2021) rethinks how we compare spectra at all.
+Since &amp;ldquo;&lt;strong>spectral similarity is used as a proxy for structural similarity&lt;/strong>&amp;rdquo; in library matching and
+molecular networking, it borrows from language modeling — &amp;ldquo;&lt;strong>a novel spectral similarity score
+inspired by a natural language processing algorithm — Word2Vec&lt;/strong>&amp;rdquo; — treating fragment peaks like words
+and learning embeddings that &amp;ldquo;&lt;strong>correlate better with structural similarity than cosine-based
+scores&lt;/strong>,&amp;rdquo; and do so fast enough for &amp;ldquo;&lt;strong>structural analogue searches in large databases within
+seconds&lt;/strong>.&amp;rdquo; And &lt;a href="https://doi.org/10.1038/nbt.3597" target="_blank" rel="noopener">&lt;strong>GNPS&lt;/strong>&lt;/a> (Wang … Bandeira, &lt;em>Nature Biotechnology&lt;/em>,
+2016) supplies the thing every learning system needs — shared data — as &amp;ldquo;&lt;strong>an open-access knowledge
+base for community-wide organization and sharing of raw, processed or identified tandem mass (MS/MS)
+spectrometry data&lt;/strong>,&amp;rdquo; where &amp;ldquo;&lt;strong>crowdsourced curation&lt;/strong>&amp;rdquo; improves annotations and the data is treated as
+&amp;ldquo;&lt;strong>&amp;rsquo;living data&amp;rsquo; through continuous reanalysis&lt;/strong>.&amp;rdquo; Molecular networking on GNPS lets a confident
+annotation propagate to its unknown neighbors — one named peak lighting up the dark ones around it. The
+honest scorekeeper for all of this is the community &lt;a href="http://www.casmi-contest.org" target="_blank" rel="noopener">CASMI&lt;/a> contest, the
+prove-it standard MSNovelist reports against.&lt;/p>
+&lt;h3 id="-why-its-our-kind-of-problem">🧭 Why it&amp;rsquo;s our kind of problem&lt;/h3>
+&lt;p>It lands right on the lab&amp;rsquo;s map. If a serious &lt;a href="https://aicell.io/post/newsletter-2026-08-15/">virtual cell&lt;/a> or
+&lt;a href="https://aicell.io/project/human-cell-simulator/">Human Cell Simulator&lt;/a> is going to be more than a catalog of genes and
+proteins, it needs &lt;em>metabolism&lt;/em> — the small-molecule chemistry that is, quite literally, &amp;ldquo;a direct
+functional signature of cellular state.&amp;rdquo; Metabolomics is the omics layer that our
+&lt;a href="https://aicell.io/post/newsletter-2026-09-03/">multi-omics integration&lt;/a> story is still mostly missing, the phenotype-end
+partner to the &lt;a href="https://aicell.io/post/newsletter-2026-08-07/">proteome&lt;/a>. And the shape of the challenge is one we keep
+returning to: a &lt;strong>dark&lt;/strong> unknown to be annotated — the same discipline as the
+&lt;a href="https://aicell.io/post/newsletter-2026-09-02/">dark proteome&lt;/a>, aimed at a different class of molecule. The way forward
+is the ethos this digest keeps championing: open, callable, benchmarked tools — SIRIUS and GNPS&amp;rsquo;s
+&amp;ldquo;living data,&amp;rdquo; scored against a public contest like CASMI — the same publish-the-model-&lt;em>and&lt;/em>-the-test
+spirit behind the &lt;a href="https://aicell.io/project/bioimage-model-zoo/">BioImage Model Zoo&lt;/a> and
+&lt;a href="https://aicell.io/project/bioengine/">BioEngine&lt;/a>. Teach a machine to read a shattered spectrum and name the molecule
+that made it, and thousands of anonymous peaks per sample start becoming biology you can reason about.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(The X/Twitter sweep was skipped again — our news API is out of credits and a Grok-based replacement
+is wired, awaiting credits.) Have lab news to share — a talk, paper, conference or release? Message me
+on Slack.&lt;/em>&lt;/p></description></item><item><title>Lab Newsletter — August 7, 2026: The Layer You Can't Amplify</title><link>https://aicell.io/post/newsletter-2026-08-07/</link><pubDate>Fri, 07 Aug 2026 03:07:00 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-08-07/</guid><description>&lt;p>We spend a lot of these digests on what a cell &lt;em>could&lt;/em> do — its genome — and what it &lt;em>intends&lt;/em> to do — its
 transcriptome. Today is about the layer where biology actually happens: the &lt;strong>proteome&lt;/strong>, the working
 machinery, the molecules that are doing the job right now. It&amp;rsquo;s the readout closest to phenotype and, by a
 wide margin, the hardest to get. There&amp;rsquo;s no PCR for proteins — you can&amp;rsquo;t amplify them — so sensitivity is a
