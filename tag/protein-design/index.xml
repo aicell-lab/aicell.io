@@ -1,4 +1,99 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>protein-design | AICell Lab</title><link>https://aicell.io/tag/protein-design/</link><atom:link href="https://aicell.io/tag/protein-design/index.xml" rel="self" type="application/rss+xml"/><description>protein-design</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 18 Aug 2026 03:07:00 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>protein-design</title><link>https://aicell.io/tag/protein-design/</link></image><item><title>Lab Newsletter — August 18, 2026: The Proteins Evolution Never Wrote</title><link>https://aicell.io/post/newsletter-2026-08-18/</link><pubDate>Tue, 18 Aug 2026 03:07:00 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-08-18/</guid><description>&lt;p>For a decade the marquee problem in computational biology ran one direction: given a protein&amp;rsquo;s
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>protein-design | AICell Lab</title><link>https://aicell.io/tag/protein-design/</link><atom:link href="https://aicell.io/tag/protein-design/index.xml" rel="self" type="application/rss+xml"/><description>protein-design</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sat, 05 Sep 2026 03:00:20 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>protein-design</title><link>https://aicell.io/tag/protein-design/</link></image><item><title>Lab Newsletter — September 5, 2026: Designing Life's Missing Parts</title><link>https://aicell.io/post/newsletter-2026-09-05/</link><pubDate>Sat, 05 Sep 2026 03:00:20 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-09-05/</guid><description>&lt;p>For almost all of biology&amp;rsquo;s history, a protein was something you &lt;em>found&lt;/em>. You purified it from a cell,
+crystallized it, solved its structure, and named it. This week&amp;rsquo;s digests have lived in that world —
+&lt;a href="https://aicell.io/post/newsletter-2026-09-02/">predicting a protein&amp;rsquo;s function&lt;/a> from its sequence,
+&lt;a href="https://aicell.io/post/newsletter-2026-08-12/">folding two proteins together&lt;/a> to estimate how tightly they bind,
+&lt;a href="https://aicell.io/post/newsletter-2026-08-11/">mapping the flexible ensembles&lt;/a> a single protein visits. All of it reads
+molecules that already exist. Today&amp;rsquo;s story runs the other way. &lt;strong>De novo protein design&lt;/strong> is the art of
+&lt;em>writing&lt;/em> proteins — inventing sequences and structures that evolution never made — and it has quietly
+become one of the most striking demonstrations that the deep-learning revolution in structural biology
+can be run in reverse.&lt;/p>
+&lt;h3 id="-first-proof-it-was-even-possible">🧱 First, proof it was even possible&lt;/h3>
+&lt;p>Long before neural networks, the &lt;a href="https://doi.org/10.1126/science.1089427" target="_blank" rel="noopener">Baker lab settled the in-principle
+question&lt;/a> (Kuhlman … Baker, &lt;em>Science&lt;/em>, 2003). The challenge, as
+they framed it, is stark: &amp;ldquo;&lt;strong>a major challenge of computational protein design is the creation of novel
+proteins with arbitrarily chosen three-dimensional structures&lt;/strong>.&amp;rdquo; Their answer was &lt;strong>Top7&lt;/strong>, built with
+&amp;ldquo;&lt;strong>a general computational strategy that iterates between sequence design and structure prediction&lt;/strong>.&amp;rdquo; It
+wasn&amp;rsquo;t a tweak of a natural protein — it had &amp;ldquo;&lt;strong>a novel sequence and topology&lt;/strong>,&amp;rdquo; and when they made it,
+&amp;ldquo;&lt;strong>Top7 was found experimentally to be folded and extremely stable, and the x-ray crystal structure of
+Top7 is similar (root mean square deviation equals 1.2 angstroms) to the design model&lt;/strong>.&amp;rdquo; The closing
+line set the agenda for two decades: this makes possible &amp;ldquo;&lt;strong>the exploration of the large regions of the
+protein universe not yet observed in nature&lt;/strong>.&amp;rdquo;&lt;/p>
+&lt;h3 id="-then-inverting-the-predictor">🌀 Then, inverting the predictor&lt;/h3>
+&lt;p>The deep-learning era began with a mischievous idea: if a network can &lt;em>predict&lt;/em> structure from sequence,
+can you run it &lt;em>backwards&lt;/em> to design? &lt;a href="https://doi.org/10.1038/s41586-021-04184-w" target="_blank" rel="noopener">&lt;strong>Hallucination&lt;/strong>&lt;/a>
+(Anishchenko … Baker, &lt;em>Nature&lt;/em>, 2021) did exactly that, asking &amp;ldquo;&lt;strong>whether the information captured by
+such networks is sufficiently rich to generate new folded proteins with sequences unrelated to those of
+the naturally occurring proteins used in training&lt;/strong>.&amp;rdquo; The recipe reads like a dream: start from random
+amino acids, then &amp;ldquo;&lt;strong>carry out Monte Carlo sampling in amino acid sequence space, optimizing the
+contrast … between the inter-residue distance distributions predicted by the network and background
+distributions&lt;/strong>&amp;rdquo; — sharpening noise into a confident, protein-like structure. And it wasn&amp;rsquo;t just a
+computer trick: they &amp;ldquo;&lt;strong>obtained synthetic genes encoding 129 of the network-&amp;lsquo;hallucinated&amp;rsquo; sequences …
+27 of the proteins yielded monodisperse species&lt;/strong>,&amp;rdquo; with three structures solved by crystallography and
+NMR. The lesson, in their words: &amp;ldquo;&lt;strong>deep networks trained to predict native protein structures … can be
+inverted to design new proteins&lt;/strong>.&amp;rdquo;&lt;/p>
+&lt;h3 id="-writing-the-sequence-for-a-shape">✍️ Writing the sequence for a shape&lt;/h3>
+&lt;p>Design splits neatly into two questions: &lt;em>what shape do I want?&lt;/em> and &lt;em>what sequence folds into it?&lt;/em>
+&lt;a href="https://doi.org/10.1126/science.add2187" target="_blank" rel="noopener">&lt;strong>ProteinMPNN&lt;/strong>&lt;/a> (Dauparas … Baker, &lt;em>Science&lt;/em>, 2022) nailed the
+second. Its abstract names the gap it closed: &amp;ldquo;&lt;strong>although deep learning has revolutionized protein
+structure prediction, almost all experimentally characterized de novo protein designs have been generated
+using physically based approaches such as Rosetta&lt;/strong>.&amp;rdquo; ProteinMPNN changed that, and the numbers are
+blunt: &amp;ldquo;&lt;strong>on native protein backbones, ProteinMPNN has a sequence recovery of 52.4% compared with 32.9%
+for Rosetta&lt;/strong>.&amp;rdquo; Better still, it plays well with others — the authors demonstrate it &amp;ldquo;&lt;strong>by rescuing
+previously failed designs, which were made using Rosetta or AlphaFold, of protein monomers, cyclic
+homo-oligomers, tetrahedral nanoparticles, and target-binding proteins&lt;/strong>.&amp;rdquo; It&amp;rsquo;s the fast, reliable
+sequence-writer that the rest of the pipeline leans on.&lt;/p>
+&lt;h3 id="-generating-structure-and-function-by-diffusion">🎯 Generating structure &lt;em>and&lt;/em> function, by diffusion&lt;/h3>
+&lt;p>The leap that put design on magazine covers was borrowing the math behind image generators.
+&lt;a href="https://doi.org/10.1038/s41586-023-06415-8" target="_blank" rel="noopener">&lt;strong>RFdiffusion&lt;/strong>&lt;/a> (Watson … Baker, &lt;em>Nature&lt;/em>, 2023) noted
+that a truly &lt;em>general&lt;/em> design framework — &amp;ldquo;&lt;strong>including de novo binder design and design of higher-order
+symmetric architectures&lt;/strong>&amp;rdquo; — was still missing, then supplied it by &amp;ldquo;&lt;strong>fine-tuning the RoseTTAFold
+structure prediction network on protein structure denoising tasks&lt;/strong>.&amp;rdquo; The result is a generative model of
+backbones that handles &amp;ldquo;&lt;strong>protein binder design, symmetric oligomer design, enzyme active site
+scaffolding and symmetric motif scaffolding&lt;/strong>.&amp;rdquo; The proof is beautifully concrete: &amp;ldquo;&lt;strong>the accuracy of
+RFdiffusion is confirmed by the cryogenic electron microscopy structure of a designed binder in complex
+with influenza haemagglutinin that is nearly identical to the design model&lt;/strong>.&amp;rdquo; And the framing is exactly
+the one we keep meeting — &amp;ldquo;&lt;strong>in a manner analogous to networks that produce images from user-specified
+inputs, RFdiffusion enables the design of diverse functional proteins from simple molecular
+specifications&lt;/strong>.&amp;rdquo; A designed molecule, made real, and confirmed by &lt;a href="https://aicell.io/post/newsletter-2026-08-31/">cryo-EM&lt;/a>.&lt;/p>
+&lt;h3 id="-programming-protein-space">🧭 Programming protein space&lt;/h3>
+&lt;p>If RFdiffusion is a camera for proteins, &lt;a href="https://doi.org/10.1038/s41586-023-06728-8" target="_blank" rel="noopener">&lt;strong>Chroma&lt;/strong>&lt;/a>
+(Ingraham … &lt;em>Nature&lt;/em>, 2023) is a programmable one. It opens on the scale of the opportunity — &amp;ldquo;&lt;strong>three
+billion years of evolution has produced a tremendous diversity of protein molecules, but the full
+potential of proteins is likely to be much greater&lt;/strong>&amp;rdquo; — and offers &amp;ldquo;&lt;strong>a generative model for proteins and
+protein complexes that can directly sample novel protein structures and sequences, and that can be
+conditioned to steer the generative process towards desired properties and functions&lt;/strong>.&amp;rdquo; The framing is
+the one that ties design to the &lt;a href="https://aicell.io/post/newsletter-2026-08-28/">agentic thread&lt;/a> this digest keeps
+following: Chroma &amp;ldquo;&lt;strong>achieves protein design as Bayesian inference under external constraints, which can
+involve symmetries, substructure, shape, semantics and even natural-language prompts&lt;/strong>.&amp;rdquo; You can, in a
+real sense, &lt;em>ask&lt;/em> for a protein. And it holds up at the bench — &amp;ldquo;&lt;strong>the experimental characterization of
+310 proteins shows that sampling from Chroma results in proteins that are highly expressed, fold and have
+favourable biophysical properties&lt;/strong>.&amp;rdquo;&lt;/p>
+&lt;h3 id="-the-predictor-is-also-the-referee">🔁 The predictor is also the referee&lt;/h3>
+&lt;p>None of this floats free of the tool that started it. &lt;a href="https://doi.org/10.1038/s41586-021-03819-2" target="_blank" rel="noopener">&lt;strong>AlphaFold&lt;/strong>&lt;/a>
+(Jumper … Hassabis, &lt;em>Nature&lt;/em>, 2021) was &amp;ldquo;&lt;strong>the first computational method that can regularly predict
+protein structures with atomic accuracy even in cases in which no similar structure is known&lt;/strong>,&amp;rdquo;
+validated &amp;ldquo;&lt;strong>in the challenging 14th Critical Assessment of protein Structure Prediction (CASP14) …
+competitive with experimental structures&lt;/strong>.&amp;rdquo; That accuracy is what design &lt;em>inverts&lt;/em> (hallucination,
+RFdiffusion are literally structure networks turned around) and what it &lt;em>trusts as a judge&lt;/em>: the standard
+in-silico test of a design is to fold it back with a predictor and check that it returns to the intended
+target. Prediction and design are two directions of a single map — and CASP is the
+&lt;a href="https://aicell.io/post/newsletter-2026-07-27/">prove-it benchmark&lt;/a> underneath both.&lt;/p>
+&lt;h3 id="-why-its-our-kind-of-problem">🧬 Why it&amp;rsquo;s our kind of problem&lt;/h3>
+&lt;p>It lands right on the lab&amp;rsquo;s map. If &lt;a href="https://aicell.io/post/newsletter-2026-09-02/">predicting and annotating&lt;/a> proteins is
+about &lt;em>reading&lt;/em> biology, design is about &lt;em>writing&lt;/em> it — and a serious
+&lt;a href="https://aicell.io/post/newsletter-2026-08-15/">virtual cell&lt;/a> or &lt;a href="https://aicell.io/project/human-cell-simulator/">Human Cell Simulator&lt;/a>
+will need both: custom sensors to watch a cell, binders to perturb it, enzymes to rewire it. Chroma&amp;rsquo;s
+natural-language prompting points at the same &lt;a href="https://aicell.io/post/newsletter-2026-08-14/">agent-driven future&lt;/a> we keep
+sketching — describe the protein you need, let the model draft it, validate in silico, test at the bench.
+And the way these tools travel is our ethos exactly: RFdiffusion, ProteinMPNN and Chroma are open source,
+AlphaFold and CASP are the public yardstick — the same publish-the-model-&lt;em>and&lt;/em>-the-test spirit behind the
+&lt;a href="https://aicell.io/project/bioimage-model-zoo/">BioImage Model Zoo&lt;/a> and &lt;a href="https://aicell.io/project/bioengine/">BioEngine&lt;/a>. For most of
+biology, proteins were life&amp;rsquo;s given parts. Now they&amp;rsquo;re parts we can design — and that changes what a
+laboratory is &lt;em>for&lt;/em>.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(The X/Twitter sweep was skipped again — our news API is out of credits and a Grok-based replacement
+is wired, awaiting credits.) Have lab news to share — a talk, paper, conference or release? Message me
+on Slack.&lt;/em>&lt;/p></description></item><item><title>Lab Newsletter — August 18, 2026: The Proteins Evolution Never Wrote</title><link>https://aicell.io/post/newsletter-2026-08-18/</link><pubDate>Tue, 18 Aug 2026 03:07:00 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-08-18/</guid><description>&lt;p>For a decade the marquee problem in computational biology ran one direction: given a protein&amp;rsquo;s
 &lt;em>sequence&lt;/em>, predict its &lt;em>shape&lt;/em>. AlphaFold nailed it. But the dream underneath was always the
 other direction — &lt;strong>start from what you want and write the protein that does it&lt;/strong>. That inverse
 problem, &lt;strong>de novo protein design&lt;/strong>, is where generative AI has quietly become spectacular: you
