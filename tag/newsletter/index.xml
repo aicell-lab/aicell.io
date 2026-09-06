@@ -1,4 +1,89 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>newsletter | AICell Lab</title><link>https://aicell.io/tag/newsletter/</link><atom:link href="https://aicell.io/tag/newsletter/index.xml" rel="self" type="application/rss+xml"/><description>newsletter</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sat, 05 Sep 2026 03:00:20 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>newsletter</title><link>https://aicell.io/tag/newsletter/</link></image><item><title>Lab Newsletter — September 5, 2026: Designing Life's Missing Parts</title><link>https://aicell.io/post/newsletter-2026-09-05/</link><pubDate>Sat, 05 Sep 2026 03:00:20 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-09-05/</guid><description>&lt;p>For almost all of biology&amp;rsquo;s history, a protein was something you &lt;em>found&lt;/em>. You purified it from a cell,
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>newsletter | AICell Lab</title><link>https://aicell.io/tag/newsletter/</link><atom:link href="https://aicell.io/tag/newsletter/index.xml" rel="self" type="application/rss+xml"/><description>newsletter</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 06 Sep 2026 03:00:22 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>newsletter</title><link>https://aicell.io/tag/newsletter/</link></image><item><title>Lab Newsletter — September 6, 2026: The Wiring Diagram of a Cell</title><link>https://aicell.io/post/newsletter-2026-09-06/</link><pubDate>Sun, 06 Sep 2026 03:00:22 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-09-06/</guid><description>&lt;p>What makes a neuron a neuron and not a liver cell? It isn&amp;rsquo;t a single gene — both carry the same genome.
+It&amp;rsquo;s a &lt;em>circuit&lt;/em>: a web of transcription factors switching one another on and off, holding the cell in
+one stable state rather than another. This week we&amp;rsquo;ve told the cell&amp;rsquo;s story in layers
+(&lt;a href="https://aicell.io/post/newsletter-2026-09-03/">multi-omics&lt;/a>), in motion (&lt;a href="https://aicell.io/post/newsletter-2026-08-27/">RNA velocity&lt;/a>),
+and in parts (&lt;a href="https://aicell.io/post/newsletter-2026-09-05/">protein design&lt;/a>). Today&amp;rsquo;s is about the &lt;strong>wiring&lt;/strong> — the
+causal diagram of who regulates whom. Reconstructing that diagram from data is &lt;strong>gene regulatory network
+(GRN) inference&lt;/strong>, and as the GENIE3 authors put it plainly, it remains &amp;ldquo;&lt;strong>one of the pressing open
+problems of computational systems biology&lt;/strong>&amp;rdquo;: the elucidation of network topology &amp;ldquo;&lt;strong>using high
+throughput genomic data&lt;/strong>.&amp;rdquo; It&amp;rsquo;s one of the oldest hard problems in the field — and one where AI has
+quietly, steadily made headway.&lt;/p>
+&lt;h3 id="-turning-a-network-into-regression">🌲 Turning a network into regression&lt;/h3>
+&lt;p>The elegant move that still powers much of the field came from &lt;a href="https://doi.org/10.1371/journal.pone.0012776" target="_blank" rel="noopener">&lt;strong>GENIE3&lt;/strong>&lt;/a>
+(Huynh-Thu … Geurts, &lt;em>PLoS ONE&lt;/em>, 2010), &amp;ldquo;&lt;strong>a new algorithm for the inference of GRNs that was best
+performer in the DREAM4 In Silico Multifactorial challenge&lt;/strong>.&amp;rdquo; Instead of tackling the whole tangle at
+once, GENIE3 &amp;ldquo;&lt;strong>decomposes the prediction of a regulatory network between p genes into p different
+regression problems&lt;/strong>&amp;rdquo; — for each gene, predict its expression from all the others, and read off which
+predictors mattered: &amp;ldquo;&lt;strong>the importance of an input gene in the prediction of the target gene expression
+pattern is taken as an indication of a putative regulatory link&lt;/strong>.&amp;rdquo; Using random-forest ensembles, it
+&amp;ldquo;&lt;strong>doesn&amp;rsquo;t make any assumption about the nature of gene regulation, can deal with combinatorial and
+non-linear interactions, produces directed GRNs, and is fast and scalable&lt;/strong>.&amp;rdquo; Sixteen years on, its
+engine still beats inside modern single-cell pipelines.&lt;/p>
+&lt;h3 id="-the-blind-test-that-grew-up-the-field">🧠 The blind test that grew up the field&lt;/h3>
+&lt;p>Inference is easy to &lt;em>do&lt;/em> and hard to &lt;em>trust&lt;/em> — anyone can output a network; is it right? The
+&lt;a href="https://doi.org/10.1038/nmeth.2016" target="_blank" rel="noopener">&lt;strong>DREAM5&lt;/strong>&lt;/a> consortium (Marbach … Stolovitzky, &lt;em>Nature Methods&lt;/em>,
+2012) made this rigorous, opening on the same note of humility: &amp;ldquo;&lt;strong>reconstructing gene regulatory
+networks from high-throughput data is a long-standing challenge&lt;/strong>.&amp;rdquo; They ran &amp;ldquo;&lt;strong>a comprehensive blind
+assessment of over 30 network inference methods&lt;/strong>&amp;rdquo; across bacteria, yeast, and simulated data, and the
+headline result is one this digest keeps rediscovering: &amp;ldquo;&lt;strong>no single inference method performs optimally
+across all data sets&lt;/strong>.&amp;rdquo; The fix was a &lt;em>crowd&lt;/em>: &amp;ldquo;&lt;strong>integration of predictions from multiple inference
+methods shows robust and high performance across diverse data sets&lt;/strong>.&amp;rdquo; Best of all, they didn&amp;rsquo;t stop at
+scores — they &amp;ldquo;&lt;strong>experimentally tested 53 previously unobserved regulatory interactions in E. coli, of
+which 23 (43%) were supported&lt;/strong>,&amp;rdquo; establishing &amp;ldquo;&lt;strong>community-based methods as a powerful and robust tool&lt;/strong>&amp;rdquo;
+for reading the circuit.&lt;/p>
+&lt;h3 id="-down-to-single-cells">🔬 Down to single cells&lt;/h3>
+&lt;p>Bulk expression averages over thousands of cells, blurring exactly the state-specific wiring you most want
+to see. &lt;a href="https://doi.org/10.1038/nmeth.4463" target="_blank" rel="noopener">&lt;strong>SCENIC&lt;/strong>&lt;/a> (Aibar … Aerts, &lt;em>Nature Methods&lt;/em>, 2017) brought
+inference to the single-cell era as &amp;ldquo;&lt;strong>a computational method for simultaneous gene regulatory network
+reconstruction and cell-state identification from single-cell RNA-seq data&lt;/strong>.&amp;rdquo; Its clever guardrail is
+biology: rather than trust correlations alone, it &amp;ldquo;&lt;strong>exploit[s] cis-regulatory analysis … to guide the
+identification of transcription factors and cell states&lt;/strong>&amp;rdquo; — keeping only edges where the target gene
+actually carries the regulator&amp;rsquo;s DNA binding motif. The result, the authors report, &amp;ldquo;&lt;strong>provides critical
+biological insights into the mechanisms driving cellular heterogeneity&lt;/strong>&amp;rdquo; — the network and the cell types
+falling out of the same analysis. (Under the hood, SCENIC&amp;rsquo;s inference engine is GENIE3&amp;rsquo;s descendant.)&lt;/p>
+&lt;h3 id="-how-good-really">📏 How good, really?&lt;/h3>
+&lt;p>With a crowd of single-cell methods available, the field again needed a referee, and built a careful one.
+&lt;a href="https://doi.org/10.1038/s41592-019-0690-6" target="_blank" rel="noopener">&lt;strong>BEELINE&lt;/strong>&lt;/a> (Pratapa … Murali, &lt;em>Nature Methods&lt;/em>, 2020)
+delivered &amp;ldquo;&lt;strong>a systematic evaluation of state-of-the-art algorithms for inferring gene regulatory
+networks from single-cell transcriptional data&lt;/strong>,&amp;rdquo; testing against synthetic networks, curated Boolean
+models, and real datasets. The verdict is bracingly honest — &amp;ldquo;&lt;strong>the area under the precision-recall curve
+and early precision of the algorithms are moderate&lt;/strong>&amp;rdquo; — and the practical guidance is specific:
+&amp;ldquo;&lt;strong>techniques that do not require pseudotime-ordered cells are generally more accurate&lt;/strong>.&amp;rdquo; It&amp;rsquo;s the same
+&lt;a href="https://aicell.io/post/newsletter-2026-07-27/">prove-it discipline&lt;/a> we admire elsewhere — a benchmark whose job is to tell
+you how far there still is to go, built explicitly so it &amp;ldquo;&lt;strong>will aid the development of gene regulatory
+network inference algorithms&lt;/strong>.&amp;rdquo;&lt;/p>
+&lt;h3 id="-from-diagram-to-simulator">🎛️ From diagram to simulator&lt;/h3>
+&lt;p>Here&amp;rsquo;s the turn that makes all of this matter: a good GRN isn&amp;rsquo;t just a picture — it&amp;rsquo;s something you can
+&lt;em>run&lt;/em>. &lt;a href="https://doi.org/10.1038/s41586-022-05688-9" target="_blank" rel="noopener">&lt;strong>CellOracle&lt;/strong>&lt;/a> (Kamimoto … Morris, &lt;em>Nature&lt;/em>, 2023)
+uses &amp;ldquo;&lt;strong>gene-regulatory networks inferred from single-cell multi-omics data to perform in silico
+transcription factor perturbations, simulating the consequent changes in cell identity using only
+unperturbed wild-type data&lt;/strong>.&amp;rdquo; Read that again: from &lt;em>wild-type data alone&lt;/em>, knock out a transcription
+factor on a computer and predict what the cell becomes. Applied to blood formation and zebrafish
+development, it &amp;ldquo;&lt;strong>correctly model[s] reported changes in phenotype&lt;/strong>&amp;rdquo; — and, decisively, it &amp;ldquo;&lt;strong>simulate[s]
+and experimentally validate[s] a previously unreported phenotype that results from the loss of noto, an
+established notochord regulator&lt;/strong>.&amp;rdquo; A prediction made in silico, confirmed at the bench: exactly the loop
+a &lt;a href="https://aicell.io/post/newsletter-2026-08-21/">self-driving lab&lt;/a> is built to close.&lt;/p>
+&lt;h3 id="-the-enhancer-layer-and-why-its-our-problem">🧬 The enhancer layer, and why it&amp;rsquo;s our problem&lt;/h3>
+&lt;p>The frontier adds a layer we &lt;a href="https://aicell.io/post/newsletter-2026-09-03/">met earlier&lt;/a>: chromatin.
+&lt;a href="https://doi.org/10.1038/s41592-023-01938-4" target="_blank" rel="noopener">&lt;strong>SCENIC+&lt;/strong>&lt;/a> (Bravo González-Blas … Aerts, &lt;em>Nature Methods&lt;/em>,
+2023) uses &amp;ldquo;&lt;strong>joint profiling of chromatin accessibility and gene expression in individual cells … to
+decipher enhancer-driven gene regulatory networks&lt;/strong>,&amp;rdquo; predicting &amp;ldquo;&lt;strong>genomic enhancers along with candidate
+upstream transcription factors (TFs)&lt;/strong>&amp;rdquo; and linking them &amp;ldquo;&lt;strong>to candidate target genes&lt;/strong>&amp;rdquo; — wiring that
+runs TF→enhancer→gene, the way regulation actually works. It&amp;rsquo;s a fitting capstone to the week: Friday we
+&lt;a href="https://aicell.io/post/newsletter-2026-09-05/">designed the parts&lt;/a>; today we map the &lt;em>circuit&lt;/em> those parts run in. Reading
+a cell (&lt;a href="https://aicell.io/post/newsletter-2026-09-02/">function&lt;/a>), writing its molecules
+(&lt;a href="https://aicell.io/post/newsletter-2026-09-05/">design&lt;/a>), and wiring its logic (today) are three faces of one systems
+view — and a serious &lt;a href="https://aicell.io/post/newsletter-2026-08-15/">virtual cell&lt;/a> or
+&lt;a href="https://aicell.io/project/human-cell-simulator/">Human Cell Simulator&lt;/a> needs all three. The causal diagram is the piece
+that turns description into &lt;em>simulation&lt;/em> — knock out a gene in software, and predict the cell. And the way
+these tools travel is our ethos exactly: GENIE3, SCENIC, SCENIC+ and CellOracle are open source, DREAM5
+and BEELINE are the public yardsticks — the same publish-the-model-&lt;em>and&lt;/em>-the-test spirit behind the
+&lt;a href="https://aicell.io/project/bioimage-model-zoo/">BioImage Model Zoo&lt;/a> and &lt;a href="https://aicell.io/project/bioengine/">BioEngine&lt;/a>. Learn a cell&amp;rsquo;s
+wiring, and you can start asking what happens when you rewire it.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(The X/Twitter sweep was skipped again — our news API is out of credits and a Grok-based replacement
+is wired, awaiting credits.) Have lab news to share — a talk, paper, conference or release? Message me
+on Slack.&lt;/em>&lt;/p></description></item><item><title>Lab Newsletter — September 5, 2026: Designing Life's Missing Parts</title><link>https://aicell.io/post/newsletter-2026-09-05/</link><pubDate>Sat, 05 Sep 2026 03:00:20 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-09-05/</guid><description>&lt;p>For almost all of biology&amp;rsquo;s history, a protein was something you &lt;em>found&lt;/em>. You purified it from a cell,
 crystallized it, solved its structure, and named it. This week&amp;rsquo;s digests have lived in that world —
 &lt;a href="https://aicell.io/post/newsletter-2026-09-02/">predicting a protein&amp;rsquo;s function&lt;/a> from its sequence,
 &lt;a href="https://aicell.io/post/newsletter-2026-08-12/">folding two proteins together&lt;/a> to estimate how tightly they bind,
