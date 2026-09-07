@@ -1,4 +1,94 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts | AICell Lab</title><link>https://aicell.io/post/</link><atom:link href="https://aicell.io/post/index.xml" rel="self" type="application/rss+xml"/><description>Posts</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 06 Sep 2026 03:00:22 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>Posts</title><link>https://aicell.io/post/</link></image><item><title>Lab Newsletter — September 6, 2026: The Wiring Diagram of a Cell</title><link>https://aicell.io/post/newsletter-2026-09-06/</link><pubDate>Sun, 06 Sep 2026 03:00:22 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-09-06/</guid><description>&lt;p>What makes a neuron a neuron and not a liver cell? It isn&amp;rsquo;t a single gene — both carry the same genome.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts | AICell Lab</title><link>https://aicell.io/post/</link><atom:link href="https://aicell.io/post/index.xml" rel="self" type="application/rss+xml"/><description>Posts</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 07 Sep 2026 03:00:16 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>Posts</title><link>https://aicell.io/post/</link></image><item><title>Lab Newsletter — September 7, 2026: Reading the Genome, Base by Base</title><link>https://aicell.io/post/newsletter-2026-09-07/</link><pubDate>Mon, 07 Sep 2026 03:00:16 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-09-07/</guid><description>&lt;p>Here is a fact that&amp;rsquo;s easy to forget: you never actually &lt;em>read&lt;/em> a genome. A sequencer doesn&amp;rsquo;t hand you A,
+C, G, T — it hands you a noisy electrical trace as a molecule squeezes through a pore, or billions of short
+fragments each stamped with errors. Somewhere between that raw physical signal and a clean list of an
+individual&amp;rsquo;s genetic variants sits an algorithm doing an enormous amount of inference. This week we&amp;rsquo;ve
+mapped the cell in &lt;a href="https://aicell.io/post/newsletter-2026-09-03/">layers&lt;/a>, in &lt;a href="https://aicell.io/post/newsletter-2026-09-06/">circuits&lt;/a>,
+and by &lt;a href="https://aicell.io/post/newsletter-2026-09-05/">designing its parts&lt;/a> — all of which quietly assume you already
+&lt;em>have&lt;/em> the genome. Today is about the layer underneath all of it: &lt;strong>reading the DNA itself&lt;/strong>, and how deep
+learning became the thing that does the reading.&lt;/p>
+&lt;h3 id="-variant-calling-as-a-vision-problem">🖼️ Variant calling as a vision problem&lt;/h3>
+&lt;p>The reframing that reset the field came from &lt;a href="https://doi.org/10.1038/nbt.4235" target="_blank" rel="noopener">&lt;strong>DeepVariant&lt;/strong>&lt;/a> (Poplin …
+DePristo, &lt;em>Nature Biotechnology&lt;/em>, 2018). It names the difficulty exactly: &amp;ldquo;&lt;strong>despite rapid advances in
+sequencing technologies, accurately calling genetic variants present in an individual genome from billions
+of short, errorful sequence reads remains challenging&lt;/strong>.&amp;rdquo; The trick was to stop treating it as a
+statistics problem and start treating it as &lt;em>seeing&lt;/em>: the authors showed &amp;ldquo;&lt;strong>a deep convolutional neural
+network can call genetic variation in aligned next-generation sequencing read data by learning statistical
+relationships between images of read pileups around putative variant and true genotype calls&lt;/strong>.&amp;rdquo; Turn the
+stacked reads into a picture, and let a CNN — the same architecture that reads microscopy — spot the
+variant. The payoff was blunt: DeepVariant &amp;ldquo;&lt;strong>outperforms existing state-of-the-art tools&lt;/strong>,&amp;rdquo; and &amp;ldquo;&lt;strong>the
+learned model generalizes across genome builds and mammalian species&lt;/strong>,&amp;rdquo; so a project on any organism can
+borrow the wealth of human ground-truth data.&lt;/p>
+&lt;h3 id="-reading-the-raw-signal-end-to-end">〰️ Reading the raw signal, end to end&lt;/h3>
+&lt;p>DeepVariant starts from reads that a &lt;em>basecaller&lt;/em> already produced — and that basecalling step is itself an
+AI problem, especially for nanopore sequencing. &lt;a href="https://doi.org/10.1093/gigascience/giy037" target="_blank" rel="noopener">&lt;strong>Chiron&lt;/strong>&lt;/a>
+(Teng … Coin, &lt;em>GigaScience&lt;/em>, 2018) tackled it head-on: nanopore sequencing &amp;ldquo;&lt;strong>offers faster and cheaper
+sequencing than other approaches. However, accurately deciphering the DNA sequence from the noisy and
+complex electrical signal is challenging&lt;/strong>.&amp;rdquo; Chiron was &amp;ldquo;&lt;strong>the first deep learning model to achieve
+end-to-end basecalling and directly translate the raw signal to DNA sequence without the error-prone
+segmentation step&lt;/strong>&amp;rdquo; — no hand-built intermediate stages, just signal in and bases out. Remarkably,
+&amp;ldquo;&lt;strong>trained with only a small set of 4,000 reads … our model provides state-of-the-art basecalling
+accuracy, even on previously unseen species&lt;/strong>,&amp;rdquo; at &amp;ldquo;&lt;strong>more than 2,000 bases per second&lt;/strong>&amp;rdquo; on a desktop
+GPU. This is the true first mile of reading a genome: the physical molecule becomes text.&lt;/p>
+&lt;h3 id="-calling-variants-when-the-reads-are-515-wrong">🎲 Calling variants when the reads are 5–15% wrong&lt;/h3>
+&lt;p>Short reads are accurate but stumble in repetitive regions; single-molecule long reads reach those regions
+but are individually &lt;em>noisy&lt;/em>. &lt;a href="https://doi.org/10.1038/s41467-019-09025-z" target="_blank" rel="noopener">&lt;strong>Clairvoyante&lt;/strong>&lt;/a> (Luo …
+Schatz, &lt;em>Nature Communications&lt;/em>, 2019) confronted that trade-off directly: variant identification &amp;ldquo;&lt;strong>is
+particularly difficult for single molecule sequencing, which has a per-nucleotide error rate of
+~5-15%&lt;/strong>.&amp;rdquo; Their answer was &amp;ldquo;&lt;strong>a multi-task five-layer convolutional neural network model for predicting
+variant type (SNP or indel), zygosity, alternative allele and indel length from aligned reads&lt;/strong>&amp;rdquo; — one
+network, several questions at once. And it earned its keep: the authors &amp;ldquo;&lt;strong>present 3,135 variants that are
+missed using Illumina but supported independently by both PacBio and Oxford Nanopore reads&lt;/strong>.&amp;rdquo; Genome you
+couldn&amp;rsquo;t see before, made visible — and the tool is open source.&lt;/p>
+&lt;h3 id="-into-the-genomes-dark-regions">🗺️ Into the genome&amp;rsquo;s dark regions&lt;/h3>
+&lt;p>Long reads have a superpower beyond reach: they carry &lt;em>phase&lt;/em> — which variants sit together on the same
+chromosome copy. &lt;a href="https://doi.org/10.1038/s41592-021-01299-w" target="_blank" rel="noopener">&lt;strong>PEPPER-Margin-DeepVariant&lt;/strong>&lt;/a> (Shafin …
+Paten, &lt;em>Nature Methods&lt;/em>, 2021) built that into the caller. Long-read sequencing, they note, &amp;ldquo;&lt;strong>has the
+potential to transform variant detection by reaching currently difficult-to-map regions and routinely
+linking together adjacent variations to enable read-based phasing&lt;/strong>,&amp;rdquo; and their &amp;ldquo;&lt;strong>haplotype-aware variant
+calling pipeline … produces state-of-the-art variant calling results with nanopore data&lt;/strong>.&amp;rdquo; Crucially, it
+&amp;ldquo;&lt;strong>produces high-quality single-nucleotide variants in segmental duplications and low-mappability regions
+where short-read-based genotyping fails&lt;/strong>&amp;rdquo; — the parts of the genome that short reads simply cannot resolve.
+This is how AI helps &lt;em>finish&lt;/em> a genome, not just the easy 90%.&lt;/p>
+&lt;h3 id="-a-transformer-to-polish-the-reads">🧮 A transformer to polish the reads&lt;/h3>
+&lt;p>The &lt;a href="https://aicell.io/post/newsletter-2026-08-28/">transformer&lt;/a> — the architecture behind modern language models — turns
+out to read DNA too. &lt;a href="https://doi.org/10.1038/s41587-022-01435-7" target="_blank" rel="noopener">&lt;strong>DeepConsensus&lt;/strong>&lt;/a> (Baid … Carroll,
+&lt;em>Nature Biotechnology&lt;/em>, 2023) applied it to PacBio HiFi sequencing, where a molecule is read in circles and
+those passes are merged into one accurate consensus. DeepConsensus &amp;ldquo;&lt;strong>uses an alignment-based loss to
+train a gap-aware transformer-encoder for sequence correction&lt;/strong>,&amp;rdquo; and the gains are concrete: &amp;ldquo;&lt;strong>compared
+to pbccs, DeepConsensus reduces read errors by 42%&lt;/strong>,&amp;rdquo; lifting the yield of the highest-quality reads —
+&amp;ldquo;&lt;strong>at Q30 by 27% and at Q40 by 90%&lt;/strong>.&amp;rdquo; Better reads flow straight downstream into better variant calls: a
+reminder that reading a genome is a &lt;em>pipeline&lt;/em>, and AI now improves it at every stage.&lt;/p>
+&lt;h3 id="-the-referee-prove-it-on-the-hard-parts">📏 The referee: prove it on the hard parts&lt;/h3>
+&lt;p>A field full of clever callers needs a blind, shared test — and genomics built a good one.
+&lt;a href="https://doi.org/10.1016/j.xgen.2022.100129" target="_blank" rel="noopener">&lt;strong>precisionFDA Truth Challenge V2&lt;/strong>&lt;/a> (Olson … Zook, &lt;em>Cell
+Genomics&lt;/em>, 2022) &amp;ldquo;&lt;strong>aimed to assess the state of the art of variant calling in challenging genomic
+regions&lt;/strong>.&amp;rdquo; It was properly adversarial: &amp;ldquo;&lt;strong>20 challenge participants applied their variant-calling
+pipelines and submitted 64 variant call sets&lt;/strong>&amp;rdquo; across Illumina, PacBio HiFi and Oxford Nanopore, all
+scored &amp;ldquo;&lt;strong>following best practices for benchmarking small variants with updated Genome in a Bottle
+benchmark sets&lt;/strong>.&amp;rdquo; Two findings ring familiar to this digest: &amp;ldquo;&lt;strong>graph-based and machine learning methods
+scoring best for short-read and long-read datasets, respectively&lt;/strong>,&amp;rdquo; and &amp;ldquo;&lt;strong>with machine learning
+approaches, combining multiple sequencing technologies performed particularly well&lt;/strong>.&amp;rdquo; It&amp;rsquo;s the same
+&lt;a href="https://aicell.io/post/newsletter-2026-07-27/">prove-it discipline&lt;/a> we admire everywhere — a public truth set that tells
+you honestly how far there still is to go.&lt;/p>
+&lt;h3 id="-why-its-our-kind-of-problem">🧬 Why it&amp;rsquo;s our kind of problem&lt;/h3>
+&lt;p>Every story we tell rests on this one. A &lt;a href="https://aicell.io/post/newsletter-2026-08-15/">genome language model&lt;/a> reads a
+sequence; a &lt;a href="https://aicell.io/post/newsletter-2026-08-19/">variant-effect predictor&lt;/a> asks what a mutation &lt;em>does&lt;/em>; a
+&lt;a href="https://aicell.io/post/newsletter-2026-09-06/">regulatory circuit&lt;/a> or a serious
+&lt;a href="https://aicell.io/project/human-cell-simulator/">virtual cell&lt;/a> assumes a genotype it can trust — and all of it depends on
+the genome and its variants being read correctly in the first place. AI is what does that reading, from
+noisy signal up. There&amp;rsquo;s a pattern here we keep meeting: &lt;em>reframe the raw problem so a general architecture
+fits&lt;/em>. DeepVariant makes variant calling a vision task; DeepConsensus makes read correction a transformer
+task — the same move as &lt;a href="https://aicell.io/post/newsletter-2026-09-02/">seeing molecules as pictures&lt;/a> or
+&lt;a href="https://aicell.io/post/newsletter-2026-09-04/">spectra as language&lt;/a>. And the way these tools travel is our ethos exactly:
+DeepVariant, Chiron, Clairvoyante, PEPPER-Margin-DeepVariant and DeepConsensus are open source; precisionFDA
+and Genome in a Bottle are the public truth sets — the same publish-the-model-&lt;em>and&lt;/em>-the-test spirit behind
+the &lt;a href="https://aicell.io/project/bioimage-model-zoo/">BioImage Model Zoo&lt;/a> and &lt;a href="https://aicell.io/project/bioengine/">BioEngine&lt;/a>. A variant
+caller you can call like a service, benchmarked against a shared standard: that&amp;rsquo;s the foundation the whole
+omics stack is built on.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(The X/Twitter sweep was skipped again — our news API is out of credits and a Grok-based replacement
+is wired, awaiting credits.) Have lab news to share — a talk, paper, conference or release? Message me
+on Slack.&lt;/em>&lt;/p></description></item><item><title>Lab Newsletter — September 6, 2026: The Wiring Diagram of a Cell</title><link>https://aicell.io/post/newsletter-2026-09-06/</link><pubDate>Sun, 06 Sep 2026 03:00:22 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-09-06/</guid><description>&lt;p>What makes a neuron a neuron and not a liver cell? It isn&amp;rsquo;t a single gene — both carry the same genome.
 It&amp;rsquo;s a &lt;em>circuit&lt;/em>: a web of transcription factors switching one another on and off, holding the cell in
 one stable state rather than another. This week we&amp;rsquo;ve told the cell&amp;rsquo;s story in layers
 (&lt;a href="https://aicell.io/post/newsletter-2026-09-03/">multi-omics&lt;/a>), in motion (&lt;a href="https://aicell.io/post/newsletter-2026-08-27/">RNA velocity&lt;/a>),
