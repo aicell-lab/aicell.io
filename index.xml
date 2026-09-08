@@ -1,4 +1,95 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AICell Lab</title><link>https://aicell.io/</link><atom:link href="https://aicell.io/index.xml" rel="self" type="application/rss+xml"/><description>AICell Lab</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 07 Sep 2026 03:00:16 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>AICell Lab</title><link>https://aicell.io/</link></image><item><title>Lab Newsletter — September 7, 2026: Reading the Genome, Base by Base</title><link>https://aicell.io/post/newsletter-2026-09-07/</link><pubDate>Mon, 07 Sep 2026 03:00:16 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-09-07/</guid><description>&lt;p>Here is a fact that&amp;rsquo;s easy to forget: you never actually &lt;em>read&lt;/em> a genome. A sequencer doesn&amp;rsquo;t hand you A,
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AICell Lab</title><link>https://aicell.io/</link><atom:link href="https://aicell.io/index.xml" rel="self" type="application/rss+xml"/><description>AICell Lab</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 08 Sep 2026 03:00:18 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>AICell Lab</title><link>https://aicell.io/</link></image><item><title>Lab Newsletter — September 8, 2026: Climbing the Fitness Landscape</title><link>https://aicell.io/post/newsletter-2026-09-08/</link><pubDate>Tue, 08 Sep 2026 03:00:18 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-09-08/</guid><description>&lt;p>On &lt;a href="https://aicell.io/post/newsletter-2026-09-05/">Friday&lt;/a> we watched AI &lt;em>design&lt;/em> proteins from a blank page, and
+&lt;a href="https://aicell.io/post/newsletter-2026-09-07/">yesterday&lt;/a> we watched it &lt;em>read&lt;/em> a genome base by base. Today the verb is
+different and, in a way, humbler: &lt;strong>evolve&lt;/strong>. Nature already handed us a working parts list — enzymes,
+binders, fluorescent proteins — that are almost, but not quite, what an experiment needs. The classic way
+to improve one is &lt;em>directed evolution&lt;/em>: mutate, test, keep the winners, repeat. It works so well that
+Frances Arnold shared a Nobel Prize for it. The question this digest follows today is what happens when you
+put a machine-learning model inside that loop — when, instead of testing mutations blindly, you &lt;em>predict&lt;/em>
+which ones will help. The mental picture is a &lt;strong>fitness landscape&lt;/strong>: every sequence a point, its activity
+the elevation, and engineering the act of climbing toward a peak without getting lost.&lt;/p>
+&lt;h3 id="-the-paradigm-learn-the-map-then-climb">🧭 The paradigm: learn the map, then climb&lt;/h3>
+&lt;p>The clearest statement of the idea comes from a review by
+&lt;a href="https://doi.org/10.1038/s41592-019-0496-6" target="_blank" rel="noopener">&lt;strong>Yang, Wu &amp;amp; Arnold&lt;/strong>&lt;/a> (&lt;em>Nature Methods&lt;/em>, 2019): &amp;ldquo;&lt;strong>Protein
+engineering through machine-learning-guided directed evolution enables the optimization of protein
+functions.&lt;/strong>&amp;rdquo; Why reach for ML at all? Because these models &amp;ldquo;&lt;strong>predict how sequence maps to function in a
+data-driven manner without requiring a detailed model of the underlying physics or biological pathways&lt;/strong>&amp;rdquo; —
+you don&amp;rsquo;t need to understand &lt;em>why&lt;/em> a mutation helps to learn &lt;em>that&lt;/em> it does. And the payoff is speed: such
+methods &amp;ldquo;&lt;strong>accelerate directed evolution by learning from the properties of characterized variants and
+using that information to select sequences that are likely to exhibit improved properties&lt;/strong>.&amp;rdquo; Test a few,
+learn the local shape of the landscape, and let the model point you uphill.&lt;/p>
+&lt;h3 id="-reading-the-landscape-without-a-single-label">🌀 Reading the landscape without a single label&lt;/h3>
+&lt;p>Before you run any assay, evolution has already left you a map: the millions of related sequences that
+survived selection over deep time. &lt;a href="https://doi.org/10.1038/s41592-018-0138-4" target="_blank" rel="noopener">&lt;strong>DeepSequence&lt;/strong>&lt;/a>
+(Riesselman, Ingraham &amp;amp; Marks, &lt;em>Nature Methods&lt;/em>, 2018) learned to read it. The insight is that residues
+don&amp;rsquo;t act alone — &amp;ldquo;&lt;strong>the functions of proteins and RNAs are defined by the collective interactions of many
+residues, and yet most statistical models of biological sequences consider sites nearly independently&lt;/strong>.&amp;rdquo;
+Their deep generative model captured those interactions, and, &amp;ldquo;&lt;strong>learned in an unsupervised manner solely
+on the basis of sequence information&lt;/strong>,&amp;rdquo; it &amp;ldquo;&lt;strong>predicted the effects of mutations across a variety of deep
+mutational scanning experiments substantially better than existing methods based on the same evolutionary
+data&lt;/strong>.&amp;rdquo; A fitness prediction for every possible point mutation — from sequence alone, no wet lab required.&lt;/p>
+&lt;h3 id="-a-representation-you-can-engineer-with">🧩 A representation you can engineer with&lt;/h3>
+&lt;p>DeepSequence models one protein family at a time; the next move was to learn a &lt;em>general&lt;/em> language of
+proteins. &lt;a href="https://doi.org/10.1038/s41592-019-0598-1" target="_blank" rel="noopener">&lt;strong>UniRep&lt;/strong>&lt;/a> (Alley, Khimulya, Biswas, AlQuraishi &amp;amp;
+Church, &lt;em>Nature Methods&lt;/em>, 2019) did exactly that, applying &amp;ldquo;&lt;strong>deep learning to unlabeled amino-acid
+sequences to distill the fundamental features of a protein into a statistical representation that is
+semantically rich and structurally, evolutionarily and biophysically grounded&lt;/strong>.&amp;rdquo; Crucially the simplest
+models built on top of it &amp;ldquo;&lt;strong>are broadly applicable and generalize to unseen regions of sequence space&lt;/strong>&amp;rdquo; —
+and it earns its keep on real tasks, predicting &amp;ldquo;&lt;strong>the stability of natural and de novo designed proteins,
+and the quantitative function of molecularly diverse mutants&lt;/strong>,&amp;rdquo; delivering &amp;ldquo;&lt;strong>two orders of magnitude
+efficiency improvement in a protein engineering task&lt;/strong>.&amp;rdquo; This is the protein-language-model idea in an early,
+concrete form: learn once from raw sequence, reuse everywhere.&lt;/p>
+&lt;h3 id="-twenty-four-experiments-ten-million-candidates">🎯 Twenty-four experiments, ten million candidates&lt;/h3>
+&lt;p>The dream of all this is to spend &lt;em>fewer&lt;/em> experiments. &lt;a href="https://doi.org/10.1038/s41592-021-01100-y" target="_blank" rel="noopener">&lt;strong>Low-N&lt;/strong>&lt;/a>
+(Biswas, Khimulya, Alley, Esvelt &amp;amp; Church, &lt;em>Nature Methods&lt;/em>, 2021) made the number startling. Protein
+engineering, they note, &amp;ldquo;&lt;strong>is limited by the lack of experimental assays that are consistent with the
+design goal and sufficiently high throughput to find rare, enhanced variants&lt;/strong>.&amp;rdquo; Their answer: a paradigm
+that &amp;ldquo;&lt;strong>can use as few as 24 functionally assayed mutant sequences to build an accurate virtual fitness
+landscape and screen ten million sequences via in silico directed evolution&lt;/strong>.&amp;rdquo; And it isn&amp;rsquo;t a one-protein
+trick — &amp;ldquo;&lt;strong>as demonstrated in two dissimilar proteins, GFP from Aequorea victoria (avGFP) and E. coli
+strain TEM-1 β-lactamase, top candidates from a single round are diverse and as active as engineered
+mutants obtained from previous high-throughput efforts&lt;/strong>.&amp;rdquo; Twenty-four measurements in, a ten-million-wide
+search out: that is the automated-discovery dream in miniature.&lt;/p>
+&lt;h3 id="-the-sober-lesson-fuse-the-two-data-sources--and-keep-score">⚖️ The sober lesson: fuse the two data sources — and keep score&lt;/h3>
+&lt;p>With evolutionary models on one side and assay measurements on the other, which should you trust?
+&lt;a href="https://doi.org/10.1038/s41587-021-01146-5" target="_blank" rel="noopener">&lt;strong>Hsu, Nisonoff, Fannjiang &amp;amp; Listgarten&lt;/strong>&lt;/a> (&lt;em>Nature
+Biotechnology&lt;/em>, 2022) asked plainly, noting that fitness models &amp;ldquo;&lt;strong>typically learn from either unlabeled,
+evolutionarily related sequences or variant sequences with experimentally measured labels&lt;/strong>.&amp;rdquo; Their finding
+is the kind this digest keeps running into: a &lt;strong>simple&lt;/strong> combination wins. They &amp;ldquo;&lt;strong>propose a simple
+combination approach that is competitive with, and on average outperforms more sophisticated methods&lt;/strong>&amp;rdquo; —
+&amp;ldquo;&lt;strong>ridge regression on site-specific amino acid features combined with one probability density feature from
+modeling the evolutionary data&lt;/strong>.&amp;rdquo; The deeper takeaway is methodological honesty: their &amp;ldquo;&lt;strong>analysis
+highlights the importance of systematic evaluations and sufficient baselines&lt;/strong>.&amp;rdquo; A recurring refrain —
+&lt;a href="https://aicell.io/post/newsletter-2026-07-27/">prove it&lt;/a>, and beat an honest baseline before you claim the win.&lt;/p>
+&lt;h3 id="-closing-the-loop-at-the-bench">🔬 Closing the loop at the bench&lt;/h3>
+&lt;p>Prediction only matters if it changes what comes out of a flask. &lt;a href="https://doi.org/10.1073/pnas.1901979116" target="_blank" rel="noopener">&lt;strong>Wu, Kan, Lewis, Wittmann &amp;amp;
+Arnold&lt;/strong>&lt;/a> (&lt;em>PNAS&lt;/em>, 2019) closed the loop. The motivation is
+economic: &amp;ldquo;&lt;strong>combinatorial sequence space can be quite expensive to sample experimentally, but
+machine-learning models trained on tested variants provide a fast method for testing sequence space
+computationally&lt;/strong>.&amp;rdquo; They &amp;ldquo;&lt;strong>validated this approach on a large published empirical fitness landscape for
+human GB1 binding protein, demonstrating that machine learning-guided directed evolution finds variants
+with higher fitness than those found by other directed evolution approaches&lt;/strong>&amp;rdquo; — then took it to new
+chemistry, engineering an enzyme that &amp;ldquo;&lt;strong>fixed seven mutations in two rounds of evolution to identify
+variants for selective catalysis with 93% and 79% ee (enantiomeric excess)&lt;/strong>.&amp;rdquo; Model proposes, bench
+disposes, model updates: &lt;strong>design–build–test–learn&lt;/strong>, made real.&lt;/p>
+&lt;h3 id="-why-its-our-kind-of-problem">🧬 Why it&amp;rsquo;s our kind of problem&lt;/h3>
+&lt;p>Reading a protein&amp;rsquo;s &lt;a href="https://aicell.io/post/newsletter-2026-09-02/">function&lt;/a>, writing
+&lt;a href="https://aicell.io/post/newsletter-2026-09-05/">new ones from scratch&lt;/a>, and &lt;em>evolving&lt;/em> the ones we have are three verbs on
+the same molecule — and today&amp;rsquo;s is the one that most looks like a loop. That loop is precisely what a
+&lt;a href="https://aicell.io/post/newsletter-2026-08-21/">self-driving lab&lt;/a> automates and what an
+&lt;a href="https://aicell.io/post/newsletter-2026-08-14/">AI co-scientist&lt;/a> orchestrates: the model nominates a handful of variants,
+the bench measures them, the landscape sharpens, and the next round climbs higher. Low-N&amp;rsquo;s &amp;ldquo;24 assays →
+ten million in silico&amp;rdquo; is that flywheel in one sentence. It also feeds the
+&lt;a href="https://aicell.io/project/human-cell-simulator/">virtual cell&lt;/a>: to simulate or re-engineer a pathway, you have to predict
+how each mutation changes a protein&amp;rsquo;s behavior — a fitness landscape for every player. And the way these
+tools travel is our ethos exactly. DeepSequence and UniRep are open source; deep mutational scanning
+datasets and the GB1 landscape are the public yardsticks everyone is scored against — the same
+publish-the-model-&lt;em>and&lt;/em>-the-test spirit behind the &lt;a href="https://aicell.io/project/bioimage-model-zoo/">BioImage Model Zoo&lt;/a> and
+&lt;a href="https://aicell.io/project/bioengine/">BioEngine&lt;/a>. A fitness predictor you can call like a service, benchmarked on a shared
+landscape, and looped straight into an experiment: that&amp;rsquo;s protein engineering starting to run itself.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(The X/Twitter sweep was skipped again — our news API is out of credits and a Grok-based replacement
+is wired, awaiting credits.) Have lab news to share — a talk, paper, conference or release? Message me
+on Slack.&lt;/em>&lt;/p></description></item><item><title>Lab Newsletter — September 7, 2026: Reading the Genome, Base by Base</title><link>https://aicell.io/post/newsletter-2026-09-07/</link><pubDate>Mon, 07 Sep 2026 03:00:16 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-09-07/</guid><description>&lt;p>Here is a fact that&amp;rsquo;s easy to forget: you never actually &lt;em>read&lt;/em> a genome. A sequencer doesn&amp;rsquo;t hand you A,
 C, G, T — it hands you a noisy electrical trace as a molecule squeezes through a pore, or billions of short
 fragments each stamped with errors. Somewhere between that raw physical signal and a clean list of an
 individual&amp;rsquo;s genetic variants sits an algorithm doing an enormous amount of inference. This week we&amp;rsquo;ve
