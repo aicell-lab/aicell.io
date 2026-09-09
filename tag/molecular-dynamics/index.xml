@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>molecular-dynamics | AICell Lab</title><link>https://aicell.io/tag/molecular-dynamics/</link><atom:link href="https://aicell.io/tag/molecular-dynamics/index.xml" rel="self" type="application/rss+xml"/><description>molecular-dynamics</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 09 Sep 2026 03:00:24 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>molecular-dynamics</title><link>https://aicell.io/tag/molecular-dynamics/</link></image><item><title>Lab Newsletter — September 9, 2026: Quantum Accuracy, Classical Speed</title><link>https://aicell.io/post/newsletter-2026-09-09/</link><pubDate>Wed, 09 Sep 2026 03:00:24 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-09-09/</guid><description>&lt;p>This week we&amp;rsquo;ve read the &lt;a href="https://aicell.io/post/newsletter-2026-09-07/">genome&lt;/a>, designed
+&lt;a href="https://aicell.io/post/newsletter-2026-09-05/">proteins from scratch&lt;/a>, and
+&lt;a href="https://aicell.io/post/newsletter-2026-09-08/">evolved the ones we have&lt;/a>. Under every one of those stories sits a physical
+fact: to know what a molecule &lt;em>does&lt;/em>, you eventually need the &lt;strong>forces on its atoms&lt;/strong> — the push and pull
+that make a pocket open, a ligand bind, a bond break. The gold standard for those forces is quantum
+mechanics, and it is gloriously, ruinously expensive. Today&amp;rsquo;s digest is about the trade that has quietly
+reshaped molecular simulation: teach a neural network to compute those forces, and you can keep almost all
+of the quantum accuracy at a tiny fraction of the cost. &lt;strong>Quantum accuracy, classical speed.&lt;/strong>&lt;/p>
+&lt;h3 id="-the-founding-idea-learn-the-energy-landscape">⚛️ The founding idea: learn the energy landscape&lt;/h3>
+&lt;p>The problem is stated cleanly by the paper that started the field.
+&lt;a href="https://doi.org/10.1103/PhysRevLett.98.146401" target="_blank" rel="noopener">&lt;strong>Behler &amp;amp; Parrinello&lt;/strong>&lt;/a> (&lt;em>Physical Review Letters&lt;/em>, 2007)
+open with the pain: &amp;ldquo;&lt;strong>the accurate description of chemical processes often requires the use of
+computationally demanding methods like density-functional theory (DFT), making long simulations of large
+systems unfeasible&lt;/strong>.&amp;rdquo; Their fix reframed the whole task — not to &lt;em>approximate the physics equation&lt;/em> but to
+&lt;em>learn its answer&lt;/em>. They &amp;ldquo;&lt;strong>introduce a new kind of neural-network representation of DFT potential-energy
+surfaces, which provides the energy and forces as a function of all atomic positions in systems of
+arbitrary size and is several orders of magnitude faster than DFT&lt;/strong>.&amp;rdquo; Feed in where the atoms are, read out
+the energy and the forces — and do it in a way that is &amp;ldquo;&lt;strong>general and can be applied to all types of
+periodic and nonperiodic systems&lt;/strong>.&amp;rdquo; Every method below is a child of this move.&lt;/p>
+&lt;h3 id="-transferable-across-chemical-space">🧪 Transferable across chemical space&lt;/h3>
+&lt;p>A potential is only useful if it works on molecules it never trained on.
+&lt;a href="https://doi.org/10.1039/c6sc05720a" target="_blank" rel="noopener">&lt;strong>ANI-1&lt;/strong>&lt;/a> (Smith, Isayev &amp;amp; Roitberg, &lt;em>Chemical Science&lt;/em>, 2017) carries
+its thesis in its title: &lt;em>DFT accuracy at force field computational cost&lt;/em>. The authors &amp;ldquo;&lt;strong>demonstrate how a
+deep neural network (NN) trained on quantum mechanical (QM) DFT calculations can learn an accurate and
+transferable potential for organic molecules&lt;/strong>,&amp;rdquo; using atomic-environment vectors that &amp;ldquo;&lt;strong>provide the
+ability to train neural networks to data that spans both configurational and conformational space, a feat
+not previously accomplished on this scale&lt;/strong>.&amp;rdquo; The proof is generalization: trained on small molecules,
+&amp;ldquo;&lt;strong>ANI-1 is chemically accurate compared to reference DFT calculations on much larger molecular systems (up
+to 54 atoms) than those included in the training data set&lt;/strong>.&amp;rdquo; Learn chemistry on the small, predict it on
+the large — the same generalization dream we keep chasing across biology.&lt;/p>
+&lt;h3 id="-a-deep-architecture-built-for-atoms">🔬 A deep architecture built for atoms&lt;/h3>
+&lt;p>As deep learning matured, the architectures grew purpose-built.
+&lt;a href="https://doi.org/10.1063/1.5019779" target="_blank" rel="noopener">&lt;strong>SchNet&lt;/strong>&lt;/a> (Schütt, Sauceda, Kindermans, Tkatchenko &amp;amp; Müller,
+&lt;em>Journal of Chemical Physics&lt;/em>, 2018) makes the case that this is a natural fit: machine learning is
+&amp;ldquo;&lt;strong>ideally suitable for representing quantum-mechanical interactions, enabling us to model nonlinear
+potential-energy surfaces or enhancing the exploration of chemical compound space&lt;/strong>.&amp;rdquo; SchNet is &amp;ldquo;&lt;strong>a deep
+learning architecture … specifically designed to model atomistic systems by making use of continuous-filter
+convolutional layers&lt;/strong>&amp;rdquo; — convolutions that respect the fact that atoms sit at arbitrary distances, not on
+a pixel grid. It doesn&amp;rsquo;t just score structures; it &amp;ldquo;&lt;strong>predict[s] potential-energy surfaces and
+energy-conserving force fields for molecular dynamics simulations&lt;/strong>,&amp;rdquo; and was used to study a fullerene in
+a way &amp;ldquo;&lt;strong>that would have been infeasible with regular ab initio molecular dynamics&lt;/strong>.&amp;rdquo; The learned atom
+embeddings even recover chemical intuition across the periodic table.&lt;/p>
+&lt;h3 id="-making-it-scale">📈 Making it scale&lt;/h3>
+&lt;p>Accuracy is table stakes; the real prize is &lt;em>long simulations of big systems&lt;/em>.
+&lt;a href="https://doi.org/10.1103/PhysRevLett.120.143001" target="_blank" rel="noopener">&lt;strong>Deep Potential Molecular Dynamics&lt;/strong>&lt;/a> (Zhang, Han, Wang,
+Car &amp;amp; E, &lt;em>Physical Review Letters&lt;/em>, 2018) delivered the scaling. DeePMD is &amp;ldquo;&lt;strong>a scheme for molecular
+simulations … based on a many-body potential and interatomic forces generated by a carefully crafted deep
+neural network trained with ab initio data&lt;/strong>,&amp;rdquo; and it is principled rather than patched: &amp;ldquo;&lt;strong>the neural
+network model preserves all the natural symmetries in the problem&lt;/strong>,&amp;rdquo; with &amp;ldquo;&lt;strong>no ad hoc components aside
+from the network model&lt;/strong>.&amp;rdquo; The result is the sentence that matters for anyone who wants to simulate
+something the size of a protein: DeePMD &amp;ldquo;&lt;strong>gives results that are essentially indistinguishable from the
+original data, at a cost that scales linearly with system size&lt;/strong>.&amp;rdquo; Quantum accuracy that grows only
+linearly as the system grows — that is what turns a toy into a tool.&lt;/p>
+&lt;h3 id="-symmetry-as-a-shortcut-to-data-efficiency">🧭 Symmetry as a shortcut to data efficiency&lt;/h3>
+&lt;p>Quantum reference data is costly to generate, so the field&amp;rsquo;s newest gains come from &lt;em>needing less of it&lt;/em>.
+&lt;a href="https://doi.org/10.1038/s41467-022-29939-5" target="_blank" rel="noopener">&lt;strong>NequIP&lt;/strong>&lt;/a> (Batzner et al., &lt;em>Nature Communications&lt;/em>, 2022)
+gets there by building the symmetries of 3D space directly into the network. It &amp;ldquo;&lt;strong>employs E(3)-equivariant
+convolutions for interactions of geometric tensors, resulting in a more information-rich and faithful
+representation of atomic environments&lt;/strong>,&amp;rdquo; and the payoff is striking: it &amp;ldquo;&lt;strong>achieves state-of-the-art
+accuracy on a challenging and diverse set of molecules and materials while exhibiting remarkable data
+efficiency&lt;/strong>.&amp;rdquo; How remarkable? NequIP &amp;ldquo;&lt;strong>outperforms existing models with up to three orders of magnitude
+fewer training data, challenging the widely held belief that deep neural networks require massive training
+sets&lt;/strong>.&amp;rdquo; Encode what physics already knows — that space has no preferred orientation — and the model earns
+back a thousandfold in data it no longer has to see.&lt;/p>
+&lt;h3 id="-the-synthesis-and-the-discipline">📐 The synthesis, and the discipline&lt;/h3>
+&lt;p>Where does this leave us? A &lt;a href="https://doi.org/10.1021/acs.chemrev.0c01111" target="_blank" rel="noopener">review&lt;/a> by Unke, Chmiela,
+Sauceda, Gastegger, Poltavsky, Schütt, Tkatchenko &amp;amp; Müller (&lt;em>Chemical Reviews&lt;/em>, 2021) names the mission
+exactly: the goal is &amp;ldquo;&lt;strong>to narrow the gap between the accuracy of ab initio methods and the efficiency of
+classical FFs&lt;/strong>,&amp;rdquo; and the philosophy is refreshingly assumption-free — &amp;ldquo;&lt;strong>learn the statistical relation
+between chemical structure and potential energy without relying on a preconceived notion of fixed chemical
+bonds or knowledge about the relevant interactions&lt;/strong>.&amp;rdquo; Tellingly, the review ends not with hype but with &amp;ldquo;&lt;strong>a
+step-by-step guide for constructing and testing them from scratch&lt;/strong>.&amp;rdquo; Build it, then &lt;em>test&lt;/em> it — the same
+&lt;a href="https://aicell.io/post/newsletter-2026-07-27/">prove-it discipline&lt;/a> this digest admires wherever it appears.&lt;/p>
+&lt;h3 id="-why-its-our-kind-of-problem">🧬 Why it&amp;rsquo;s our kind of problem&lt;/h3>
+&lt;p>A protein doesn&amp;rsquo;t work by holding one shape; it works by &lt;em>moving&lt;/em>, and motion is driven by forces. We&amp;rsquo;ve
+covered the &lt;a href="https://aicell.io/post/newsletter-2026-09-02/">fold&lt;/a> and the
+&lt;a href="https://aicell.io/post/newsletter-2026-08-11/">ensemble of shapes it visits&lt;/a> — machine-learned force fields are the layer
+beneath both, the thing that says &lt;em>how hard each atom is pushed&lt;/em> at every step. That&amp;rsquo;s why this is
+infrastructure for the &lt;a href="https://aicell.io/project/human-cell-simulator/">virtual cell&lt;/a>: to simulate a pathway, or watch a
+&lt;a href="https://aicell.io/post/newsletter-2026-08-12/">drug find its pocket&lt;/a>, you need forces you can trust at a cost you can
+afford, and linear-scaling quantum-accurate MD is a real rung toward biomolecular scale. There&amp;rsquo;s also a
+pattern here we keep meeting: &lt;em>bake the physics in&lt;/em>. NequIP&amp;rsquo;s equivariance is the molecular cousin of every
+model that respects the symmetry of its data — and it buys the same thing, a thousandfold in efficiency.
+And the way these tools travel is our ethos exactly: SchNet, DeePMD and NequIP are open source; shared
+molecular datasets are the public yardsticks — the same publish-the-model-&lt;em>and&lt;/em>-the-test spirit behind the
+&lt;a href="https://aicell.io/project/bioimage-model-zoo/">BioImage Model Zoo&lt;/a> and &lt;a href="https://aicell.io/project/bioengine/">BioEngine&lt;/a>. A force field you
+can call like a service, benchmarked on a shared dataset, fast enough to loop into an experiment: that&amp;rsquo;s
+the physics engine the rest of the stack quietly runs on.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(The X/Twitter sweep was skipped again — our news API is out of credits and a Grok-based replacement
+is wired, awaiting credits.) Have lab news to share — a talk, paper, conference or release? Message me
+on Slack.&lt;/em>&lt;/p></description></item></channel></rss>
