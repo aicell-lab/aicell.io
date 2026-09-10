@@ -1,4 +1,98 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>open-science | AICell Lab</title><link>https://aicell.io/tag/open-science/</link><atom:link href="https://aicell.io/tag/open-science/index.xml" rel="self" type="application/rss+xml"/><description>open-science</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 09 Sep 2026 03:00:24 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>open-science</title><link>https://aicell.io/tag/open-science/</link></image><item><title>Lab Newsletter — September 9, 2026: Quantum Accuracy, Classical Speed</title><link>https://aicell.io/post/newsletter-2026-09-09/</link><pubDate>Wed, 09 Sep 2026 03:00:24 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-09-09/</guid><description>&lt;p>This week we&amp;rsquo;ve read the &lt;a href="https://aicell.io/post/newsletter-2026-09-07/">genome&lt;/a>, designed
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>open-science | AICell Lab</title><link>https://aicell.io/tag/open-science/</link><atom:link href="https://aicell.io/tag/open-science/index.xml" rel="self" type="application/rss+xml"/><description>open-science</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Thu, 10 Sep 2026 03:00:16 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>open-science</title><link>https://aicell.io/tag/open-science/</link></image><item><title>Lab Newsletter — September 10, 2026: An Antibiotic in the Machine</title><link>https://aicell.io/post/newsletter-2026-09-10/</link><pubDate>Thu, 10 Sep 2026 03:00:16 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-09-10/</guid><description>&lt;p>Antibiotic resistance is one of those slow emergencies that never makes the front page until it&amp;rsquo;s personal.
+The uncomfortable arithmetic: resistant bacteria are evolving faster than we discover drugs to stop them,
+and the traditional discovery pipeline — culture, screen, medicinal chemistry — has been sputtering for
+decades. This week we&amp;rsquo;ve watched AI &lt;a href="https://aicell.io/post/newsletter-2026-09-05/">design proteins&lt;/a>,
+&lt;a href="https://aicell.io/post/newsletter-2026-09-08/">evolve them&lt;/a>, and &lt;a href="https://aicell.io/post/newsletter-2026-09-09/">compute the forces&lt;/a> that
+hold molecules together. Today those same tools meet a problem with a body count. The move throughout is
+one this digest keeps returning to: when the search space is too large for people to comb, teach a machine
+to comb it — and point it somewhere new.&lt;/p>
+&lt;h3 id="-the-landmark-predict-activity-then-go-looking">💊 The landmark: predict activity, then go looking&lt;/h3>
+&lt;p>The paper that showed this could work is &lt;a href="https://doi.org/10.1016/j.cell.2020.01.021" target="_blank" rel="noopener">&lt;strong>Stokes et al.&lt;/strong>&lt;/a>
+(&lt;em>Cell&lt;/em>, 2020). Its premise is stark: &amp;ldquo;&lt;strong>due to the rapid emergence of antibiotic-resistant bacteria, there
+is a growing need to discover new antibiotics. To address this challenge, we trained a deep neural network
+capable of predicting molecules with antibacterial activity&lt;/strong>.&amp;rdquo; Rather than design a molecule, they used
+the network as a &lt;em>filter&lt;/em> over libraries humans had already made — and it found something odd and wonderful:
+&amp;ldquo;&lt;strong>a molecule from the Drug Repurposing Hub—halicin—that is structurally divergent from conventional
+antibiotics and displays bactericidal activity against a wide phylogenetic spectrum of pathogens including
+Mycobacterium tuberculosis and carbapenem-resistant Enterobacteriaceae&lt;/strong>.&amp;rdquo; Then they aimed it at the vast
+unknown: &amp;ldquo;&lt;strong>from a discrete set of 23 empirically tested predictions from &amp;gt;107 million molecules curated
+from the ZINC15 database, our model identified eight antibacterial compounds that are structurally distant
+from known antibiotics&lt;/strong>.&amp;rdquo; A model looking where chemists&amp;rsquo; intuitions don&amp;rsquo;t.&lt;/p>
+&lt;h3 id="-aiming-at-the-hardest-targets">🎯 Aiming at the hardest targets&lt;/h3>
+&lt;p>Broad-spectrum discovery is one thing; hitting a specific, nightmarish pathogen is another.
+&lt;a href="https://doi.org/10.1038/s41589-023-01349-8" target="_blank" rel="noopener">&lt;strong>Liu et al.&lt;/strong>&lt;/a> (&lt;em>Nature Chemical Biology&lt;/em>, 2023) went after
+one of the worst — &amp;ldquo;&lt;strong>&lt;em>Acinetobacter baumannii&lt;/em> … a nosocomial Gram-negative pathogen that often displays
+multidrug resistance&lt;/strong>,&amp;rdquo; a WHO priority target notoriously resistant to new drugs. Their pitch for ML is the
+efficiency: it &amp;ldquo;&lt;strong>allow[s] for the rapid exploration of chemical space, increasing the probability of
+discovering new antibacterial molecules&lt;/strong>.&amp;rdquo; From a modest, focused experiment — &amp;ldquo;&lt;strong>we screened ~7,500
+molecules for those that inhibited the growth of &lt;em>A. baumannii&lt;/em> in vitro&lt;/strong>&amp;rdquo; — they trained a network and
+predicted new structures, arriving at &amp;ldquo;&lt;strong>abaucin, an antibacterial compound with narrow-spectrum activity
+against &lt;em>A. baumannii&lt;/em>&lt;/strong>.&amp;rdquo; Narrow-spectrum is a feature, not a bug: a drug that spares the rest of your
+microbiome. And it worked in a living host — abaucin &amp;ldquo;&lt;strong>could control an &lt;em>A. baumannii&lt;/em> infection in a
+mouse wound model&lt;/strong>.&amp;rdquo;&lt;/p>
+&lt;h3 id="-making-the-black-box-explain-itself">🔍 Making the black box explain itself&lt;/h3>
+&lt;p>A recurring worry with deep learning in discovery is that it&amp;rsquo;s an oracle: it says &lt;em>yes&lt;/em> without saying
+&lt;em>why&lt;/em>. &lt;a href="https://doi.org/10.1038/s41586-023-06887-8" target="_blank" rel="noopener">&lt;strong>Wong et al.&lt;/strong>&lt;/a> (&lt;em>Nature&lt;/em>, 2024) set out to fix that,
+noting that such approaches &amp;ldquo;&lt;strong>typically use black box models and do not provide chemical insights&lt;/strong>.&amp;rdquo; Their
+answer married scale to interpretability. They measured &amp;ldquo;&lt;strong>the antibiotic activities and human cell
+cytotoxicity profiles of 39,312 compounds and applied ensembles of graph neural networks to predict
+antibiotic activity and cytotoxicity for 12,076,365 compounds&lt;/strong>&amp;rdquo; — then used explainable graph algorithms
+to extract the &lt;em>substructures&lt;/em> driving the prediction. The result was not one molecule but a &lt;em>class&lt;/em>: one
+&amp;ldquo;&lt;strong>selective against methicillin-resistant &lt;em>S. aureus&lt;/em> (MRSA) and vancomycin-resistant enterococci, evades
+substantial resistance, and reduces bacterial titres in mouse models&lt;/strong>.&amp;rdquo; The headline for us is the
+methodological one: &amp;ldquo;&lt;strong>machine learning models in drug discovery can be explainable, providing insights
+into the chemical substructures that underlie selective antibiotic activity&lt;/strong>.&amp;rdquo;&lt;/p>
+&lt;h3 id="-from-screening-to-designing">🧪 From screening to designing&lt;/h3>
+&lt;p>Every model so far &lt;em>ranks&lt;/em> molecules that already exist. The next step is to &lt;em>invent&lt;/em> them.
+&lt;a href="https://doi.org/10.1038/s41551-021-00689-x" target="_blank" rel="noopener">&lt;strong>Das et al.&lt;/strong>&lt;/a> (&lt;em>Nature Biomedical Engineering&lt;/em>, 2021) did,
+tackling the fact that &amp;ldquo;&lt;strong>the de novo design of antimicrobial therapeutics involves the exploration of a
+vast chemical repertoire to find compounds with broad-spectrum potency and low toxicity&lt;/strong>.&amp;rdquo; Their pipeline
+is a nice echo of &lt;a href="https://aicell.io/post/newsletter-2026-09-09/">yesterday&amp;rsquo;s physics&lt;/a>: it &amp;ldquo;&lt;strong>leverages guidance from
+classifiers trained on an informative latent space of molecules modelled using a deep generative
+autoencoder, and screens the generated molecules using deep-learning classifiers as well as physicochemical
+features derived from high-throughput molecular dynamics simulations&lt;/strong>.&amp;rdquo; Generation, then a simulation-based
+sanity check. The payoff was fast and real: &amp;ldquo;&lt;strong>within 48 days, we identified, synthesized and
+experimentally tested 20 candidate antimicrobial peptides, of which two displayed high potency against
+diverse Gram-positive and Gram-negative pathogens … and a low propensity to induce drug resistance&lt;/strong>.&amp;rdquo;&lt;/p>
+&lt;h3 id="-mining-natures-own-arsenal">🦠 Mining nature&amp;rsquo;s own arsenal&lt;/h3>
+&lt;p>Here&amp;rsquo;s the twist the field didn&amp;rsquo;t see coming: we don&amp;rsquo;t only have to invent antibiotics — the microbial
+world is already full of them, waiting to be read out of sequence.
+&lt;a href="https://doi.org/10.1038/s41587-022-01226-0" target="_blank" rel="noopener">&lt;strong>Ma et al.&lt;/strong>&lt;/a> (&lt;em>Nature Biotechnology&lt;/em>, 2022) turned language
+models loose on the gut. The catch is size: &amp;ldquo;&lt;strong>the human gut microbiome encodes a large variety of
+antimicrobial peptides (AMPs), but the short lengths of AMPs pose a challenge for computational
+prediction&lt;/strong>.&amp;rdquo; Their fix borrowed straight from NLP — they &amp;ldquo;&lt;strong>combined multiple natural language processing
+neural network models, including LSTM, Attention and BERT, to form a unified pipeline for candidate AMP
+identification from human gut microbiome data&lt;/strong>.&amp;rdquo; The hit rate is what stuns: &amp;ldquo;&lt;strong>of 2,349 sequences
+identified as candidate AMPs, 216 were chemically synthesized, with 181 showing antimicrobial activity (a
+positive rate of &amp;gt;83%)&lt;/strong>.&amp;rdquo; Reading DNA as text to find drugs written into the microbiome.&lt;/p>
+&lt;h3 id="-at-planetary-scale-and-open-to-all">🌍 At planetary scale, and open to all&lt;/h3>
+&lt;p>And then the scale went global. &lt;a href="https://doi.org/10.1016/j.cell.2024.05.013" target="_blank" rel="noopener">&lt;strong>Santos-Júnior et al.&lt;/strong>&lt;/a>
+(&lt;em>Cell&lt;/em>, 2024) mined essentially the whole known microbial world. From &amp;ldquo;&lt;strong>a vast dataset of 63,410
+metagenomes and 87,920 prokaryotic genomes from environmental and host-associated habitats&lt;/strong>,&amp;rdquo; their
+machine-learning approach built &amp;ldquo;&lt;strong>the AMPSphere, a comprehensive catalog comprising 863,498 non-redundant
+peptides, few of which match existing databases&lt;/strong>.&amp;rdquo; Then they proved it: &amp;ldquo;&lt;strong>we synthesized and tested 100
+AMPs against clinically relevant drug-resistant pathogens … A total of 79 peptides were active, with 63
+targeting pathogens&lt;/strong>.&amp;rdquo; Nearly a million candidate antibiotics — and, in the detail that makes it &lt;em>our&lt;/em> kind
+of science, &amp;ldquo;&lt;strong>an open-access resource for antibiotic discovery&lt;/strong>.&amp;rdquo; Discovery released as public
+infrastructure, not locked in a pipeline.&lt;/p>
+&lt;h3 id="-why-its-our-kind-of-problem">🧬 Why it&amp;rsquo;s our kind of problem&lt;/h3>
+&lt;p>The thread tying these six papers together is a single verb: AI &lt;em>widens&lt;/em> where we look for medicine. Old
+drug libraries (halicin), a focused in-house screen (abaucin), twelve million virtual compounds (Wong), a
+generative latent space (Das), and the microbiome&amp;rsquo;s own encrypted arsenal (Ma, AMPSphere) — each is a search
+space too vast for intuition, made tractable by a model. It&amp;rsquo;s the same pattern behind
+&lt;a href="https://aicell.io/post/newsletter-2026-09-04/">reading spectra as language&lt;/a> or
+&lt;a href="https://aicell.io/post/newsletter-2026-09-07/">genomes as text&lt;/a>: point a general learner at biology&amp;rsquo;s haystacks. It closes
+a loop we care about, too — predict, synthesize, assay in a dish and a mouse, refine — exactly the
+&lt;a href="https://aicell.io/post/newsletter-2026-08-21/">design–build–test–learn&lt;/a> cycle a self-driving lab is built to turn. And the
+ethos is ours to the core: AMPSphere is &lt;em>open&lt;/em>; the models and growth-inhibition datasets are shared
+yardsticks — the same publish-the-model-&lt;em>and&lt;/em>-the-data spirit behind the
+&lt;a href="https://aicell.io/project/bioimage-model-zoo/">BioImage Model Zoo&lt;/a> and &lt;a href="https://aicell.io/project/bioengine/">BioEngine&lt;/a>. A drug-discovery
+model you can call like a service, benchmarked on shared data, aimed at one of medicine&amp;rsquo;s most urgent
+problems: that&amp;rsquo;s AI for life science doing exactly what we hope it will.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(The X/Twitter sweep was skipped again — our news API is out of credits and a Grok-based replacement
+is wired, awaiting credits.) Have lab news to share — a talk, paper, conference or release? Message me
+on Slack.&lt;/em>&lt;/p></description></item><item><title>Lab Newsletter — September 9, 2026: Quantum Accuracy, Classical Speed</title><link>https://aicell.io/post/newsletter-2026-09-09/</link><pubDate>Wed, 09 Sep 2026 03:00:24 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-09-09/</guid><description>&lt;p>This week we&amp;rsquo;ve read the &lt;a href="https://aicell.io/post/newsletter-2026-09-07/">genome&lt;/a>, designed
 &lt;a href="https://aicell.io/post/newsletter-2026-09-05/">proteins from scratch&lt;/a>, and
 &lt;a href="https://aicell.io/post/newsletter-2026-09-08/">evolved the ones we have&lt;/a>. Under every one of those stories sits a physical
 fact: to know what a molecule &lt;em>does&lt;/em>, you eventually need the &lt;strong>forces on its atoms&lt;/strong> — the push and pull
