@@ -1,4 +1,102 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>machine-learning | AICell Lab</title><link>https://aicell.io/tag/machine-learning/</link><atom:link href="https://aicell.io/tag/machine-learning/index.xml" rel="self" type="application/rss+xml"/><description>machine-learning</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Thu, 10 Sep 2026 03:00:16 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>machine-learning</title><link>https://aicell.io/tag/machine-learning/</link></image><item><title>Lab Newsletter — September 10, 2026: An Antibiotic in the Machine</title><link>https://aicell.io/post/newsletter-2026-09-10/</link><pubDate>Thu, 10 Sep 2026 03:00:16 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-09-10/</guid><description>&lt;p>Antibiotic resistance is one of those slow emergencies that never makes the front page until it&amp;rsquo;s personal.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>machine-learning | AICell Lab</title><link>https://aicell.io/tag/machine-learning/</link><atom:link href="https://aicell.io/tag/machine-learning/index.xml" rel="self" type="application/rss+xml"/><description>machine-learning</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 11 Sep 2026 03:03:44 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>machine-learning</title><link>https://aicell.io/tag/machine-learning/</link></image><item><title>Lab Newsletter — September 11, 2026: Medicine as a Graph</title><link>https://aicell.io/post/newsletter-2026-09-11/</link><pubDate>Fri, 11 Sep 2026 03:03:44 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-09-11/</guid><description>&lt;p>For a week this digest has zoomed &lt;em>in&lt;/em> — on a single molecule at a time. We
+&lt;a href="https://aicell.io/post/newsletter-2026-09-05/">designed proteins from scratch&lt;/a>,
+&lt;a href="https://aicell.io/post/newsletter-2026-09-08/">evolved the ones we have&lt;/a>,
+&lt;a href="https://aicell.io/post/newsletter-2026-09-09/">computed the forces&lt;/a> that hold them together, and
+&lt;a href="https://aicell.io/post/newsletter-2026-09-10/">screened chemical space for antibiotics&lt;/a>. Today we zoom all the way
+&lt;em>out&lt;/em>. Because biology isn&amp;rsquo;t only a pile of molecules — it&amp;rsquo;s a &lt;strong>web of relationships&lt;/strong>: this gene
+regulates that pathway, this drug hits that target, this disease shares mechanisms with that one. Draw
+all of it as one enormous graph, and a new question opens up: &lt;em>which edges are missing?&lt;/em> Which drug
+already on a pharmacy shelf might treat a disease no one has tried it on? Today&amp;rsquo;s digest is about
+teaching machines to reason over that graph — and the hidden medicine they find in it.&lt;/p>
+&lt;h3 id="-the-founding-move-integrate-everything-then-walk-it">🕸️ The founding move: integrate everything, then walk it&lt;/h3>
+&lt;p>The idea starts with a refusal to look at one thing in isolation.
+&lt;a href="https://doi.org/10.7554/eLife.26726" target="_blank" rel="noopener">&lt;strong>Himmelstein et al.&lt;/strong>&lt;/a> (&lt;em>eLife&lt;/em>, 2017) set out to make drug
+repurposing computable: &amp;ldquo;&lt;strong>the ability to computationally predict whether a compound treats a disease
+would improve the economy and success rate of drug approval&lt;/strong>.&amp;rdquo; Their move was to fuse the scattered
+literature into a single network. They &amp;ldquo;&lt;strong>constructed Hetionet … an integrative network encoding
+knowledge from millions of biomedical studies&lt;/strong>&amp;rdquo; — a graph that in v1.0 held &amp;ldquo;&lt;strong>47,031 nodes of 11
+types and 2,250,197 relationships of 24 types&lt;/strong>,&amp;rdquo; wiring together compounds, diseases, genes, pathways,
+side effects and more. Then they learned which &lt;em>patterns&lt;/em> of connection distinguish a real treatment
+from a coincidence, and used them to score &amp;ldquo;&lt;strong>the probability of treatment for 209,168 compound-disease
+pairs&lt;/strong>.&amp;rdquo; The detail that makes it &lt;em>our&lt;/em> kind of science: the whole project &amp;ldquo;&lt;strong>was entirely open and
+received realtime feedback from 40 community members&lt;/strong>.&amp;rdquo; Medicine, redrawn as a graph anyone could read.&lt;/p>
+&lt;h3 id="-graph-neural-networks-enter-predict-the-exact-missing-edge">🔗 Graph neural networks enter: predict the &lt;em>exact&lt;/em> missing edge&lt;/h3>
+&lt;p>Hetionet walked the graph with hand-designed path patterns; the next step was to &lt;em>learn&lt;/em> the patterns.
+&lt;a href="https://doi.org/10.1093/bioinformatics/bty294" target="_blank" rel="noopener">&lt;strong>Zitnik, Agrawal &amp;amp; Leskovec&lt;/strong>&lt;/a> (&lt;em>Bioinformatics&lt;/em>, 2018)
+brought deep learning to the network with &lt;strong>Decagon&lt;/strong>, aimed at a real clinical danger — the side
+effects that emerge when drugs are combined. They &amp;ldquo;&lt;strong>construct[ed] a multimodal graph of protein-protein
+interactions, drug-protein target interactions and the polypharmacy side effects, which are represented
+as drug-drug interactions, where each side effect is an edge of a different type&lt;/strong>,&amp;rdquo; then built &amp;ldquo;&lt;strong>a new
+graph convolutional neural network for multirelational link prediction in multimodal networks&lt;/strong>.&amp;rdquo; The
+payoff over prior methods was specificity: Decagon &amp;ldquo;&lt;strong>can predict the exact side effect, if any, through
+which a given drug combination manifests clinically&lt;/strong>,&amp;rdquo; and it does so accurately, &amp;ldquo;&lt;strong>outperforming
+baselines by up to 69%&lt;/strong>.&amp;rdquo; Not just &lt;em>whether&lt;/em> two drugs clash, but &lt;em>how&lt;/em> — a missing edge, named.&lt;/p>
+&lt;h3 id="-the-method-meets-an-emergency">🦠 The method meets an emergency&lt;/h3>
+&lt;p>A framework proves itself under pressure. When COVID-19 arrived and there was no time for de novo
+discovery, &lt;a href="https://doi.org/10.1073/pnas.2025581118" target="_blank" rel="noopener">&lt;strong>Morselli Gysi et al.&lt;/strong>&lt;/a> (&lt;em>PNAS&lt;/em>, 2021) turned the
+network loose on the problem of &lt;em>repurposing&lt;/em>. They &amp;ldquo;&lt;strong>deployed algorithms relying on artificial
+intelligence, network diffusion, and network proximity, tasking each of them to rank 6,340 drugs for
+their expected efficacy against SARS-CoV-2&lt;/strong>.&amp;rdquo; A key lesson was humility about any single model — &amp;ldquo;&lt;strong>a
+consensus among the different predictive methods consistently exceeds the performance of the best
+individual pipelines&lt;/strong>.&amp;rdquo; And the graph earned its keep at the bench: screening the top-ranked drugs in
+human cells gave &amp;ldquo;&lt;strong>a 62% success rate, in contrast to the 0.8% hit rate of nonguided screenings&lt;/strong>.&amp;rdquo;
+The most striking finding is &lt;em>why&lt;/em> it worked — &amp;ldquo;&lt;strong>76 of the 77 drugs that successfully reduced viral
+infection do not bind the proteins targeted by SARS-CoV-2, indicating that these network drugs rely on
+network-based mechanisms that cannot be identified using docking-based strategies&lt;/strong>.&amp;rdquo; Exactly the
+medicine that yesterday&amp;rsquo;s &lt;a href="https://aicell.io/post/newsletter-2026-09-10/">structure-based screens&lt;/a> can&amp;rsquo;t see.&lt;/p>
+&lt;h3 id="-an-open-map-for-precision-medicine">🗺️ An open map for precision medicine&lt;/h3>
+&lt;p>A model is only as good as the graph beneath it — so the next contribution was a better graph, released
+for everyone. &lt;a href="https://doi.org/10.1038/s41597-023-01960-3" target="_blank" rel="noopener">&lt;strong>Chandak, Huang &amp;amp; Zitnik&lt;/strong>&lt;/a> (&lt;em>Scientific
+Data&lt;/em>, 2023) built &lt;strong>PrimeKG&lt;/strong>, &amp;ldquo;&lt;strong>a multimodal knowledge graph for precision medicine analyses&lt;/strong>.&amp;rdquo; It
+&amp;ldquo;&lt;strong>integrates 20 high-quality resources to describe 17,080 diseases with 4,050,249 relationships
+representing ten major biological scales&lt;/strong>&amp;rdquo; — from protein perturbations and pathways up to anatomy and
+clinical phenotype. Crucially for AI, it is rich where other graphs are thin: it &amp;ldquo;&lt;strong>contains an
+abundance of &amp;lsquo;indications&amp;rsquo;, &amp;lsquo;contradictions&amp;rsquo;, and &amp;lsquo;off-label use&amp;rsquo; drug-disease edges … and can support
+AI analyses of how drugs affect disease-associated networks&lt;/strong>.&amp;rdquo; They even &amp;ldquo;&lt;strong>supplement PrimeKG&amp;rsquo;s graph
+structure with language descriptions of clinical guidelines to enable multimodal analyses&lt;/strong>.&amp;rdquo; A shared,
+open, continually updated map — the substrate the next model would learn on.&lt;/p>
+&lt;h3 id="-a-foundation-model-that-reasons-over-the-graph">🧠 A foundation model that reasons over the graph&lt;/h3>
+&lt;p>That model arrived. &lt;a href="https://doi.org/10.1038/s41591-024-03233-x" target="_blank" rel="noopener">&lt;strong>Huang et al.&lt;/strong>&lt;/a> (&lt;em>Nature Medicine&lt;/em>,
+2024) named the ceiling of earlier tools plainly: &amp;ldquo;&lt;strong>the clinical utility of drug-repurposing artificial
+intelligence (AI) models remains limited because these models focus narrowly on diseases for which some
+drugs already exist&lt;/strong>.&amp;rdquo; Their answer, &lt;strong>TxGNN&lt;/strong>, is &amp;ldquo;&lt;strong>a graph foundation model for zero-shot drug
+repurposing, identifying therapeutic candidates even for diseases with limited treatment options or no
+existing drugs&lt;/strong>.&amp;rdquo; Trained on a medical knowledge graph, it ranks drugs as indications and
+contraindications for 17,080 diseases and &amp;ldquo;&lt;strong>improves prediction accuracy for indications by 49.2% and
+contraindications by 35.1% under stringent zero-shot evaluation&lt;/strong>.&amp;rdquo; And it doesn&amp;rsquo;t just answer — it
+&lt;em>explains&lt;/em>: its &amp;ldquo;&lt;strong>Explainer module offers transparent insights into multi-hop medical knowledge paths
+that form TxGNN&amp;rsquo;s predictive rationales&lt;/strong>,&amp;rdquo; with the reassuring result that &amp;ldquo;&lt;strong>many of TxGNN&amp;rsquo;s new
+predictions align well with off-label prescriptions that clinicians previously made in a large
+healthcare system&lt;/strong>.&amp;rdquo; A model that can reason toward a disease with &lt;em>no&lt;/em> treatment — and show its work.&lt;/p>
+&lt;h3 id="-the-synthesis-graphs-are-the-universal-language">🧭 The synthesis: graphs are the universal language&lt;/h3>
+&lt;p>Step back, and a review by &lt;a href="https://doi.org/10.1038/s41551-022-00942-x" target="_blank" rel="noopener">&lt;strong>Li, Huang &amp;amp; Zitnik&lt;/strong>&lt;/a>
+(&lt;em>Nature Biomedical Engineering&lt;/em>, 2022) names why this whole family of methods keeps working:
+&amp;ldquo;&lt;strong>networks—or graphs—are universal descriptors of systems of interacting elements&lt;/strong>.&amp;rdquo; Molecular
+interactions, signalling pathways, disease co-morbidities, whole healthcare systems — all are graphs,
+and the authors &amp;ldquo;&lt;strong>posit that representation learning can realize principles of network medicine&lt;/strong>.&amp;rdquo;
+The horizon they sketch is broad and, tellingly, spans the rest of this digest&amp;rsquo;s beats: &amp;ldquo;&lt;strong>the
+identification of genetic variants underlying complex traits, the disentanglement of single-cell
+behaviours and their effects on health, the assistance of patients in diagnosis and treatment, and the
+development of safe and effective medicines&lt;/strong>.&amp;rdquo; One representation, many biologies.&lt;/p>
+&lt;h3 id="-why-its-our-kind-of-problem">🧬 Why it&amp;rsquo;s our kind of problem&lt;/h3>
+&lt;p>This is a &lt;em>different lens&lt;/em> from the rest of the week, and that&amp;rsquo;s the point. Structure and sequence models
+ask &amp;ldquo;what is this molecule and how does it move&amp;rdquo;; knowledge graphs ask &amp;ldquo;how is everything &lt;strong>connected&lt;/strong>&amp;rdquo;
+— and the two are complementary, as COVID network medicine showed when 76 of 77 hits acted through
+connections a docking model would never see. The reasoning style here is close to the lab&amp;rsquo;s heart: our
+&lt;strong>Research Navigator&lt;/strong> is about reasoning over biomedical knowledge, and TxGNN&amp;rsquo;s &lt;em>multi-hop interpretable
+rationales&lt;/em> are exactly the transparent, cite-your-path reasoning an
+&lt;a href="https://aicell.io/post/newsletter-2026-08-14/">AI co-scientist&lt;/a> needs to be trusted. The ethos matches too — Hetionet,
+Decagon and PrimeKG are all &lt;strong>open&lt;/strong> graphs and code, the public yardsticks everyone is measured on, in
+the same publish-the-model-&lt;em>and&lt;/em>-the-data spirit behind the
+&lt;a href="https://aicell.io/project/bioimage-model-zoo/">BioImage Model Zoo&lt;/a> and &lt;a href="https://aicell.io/project/bioengine/">BioEngine&lt;/a>. And it&amp;rsquo;s a rung
+toward the &lt;a href="https://aicell.io/project/human-cell-simulator/">virtual cell&lt;/a>, which will need &lt;em>both&lt;/em> lenses at once: the
+mechanistic physics of molecules &lt;strong>and&lt;/strong> a knowledge-graph scaffold of how genes, drugs and diseases
+relate. A repurposing model you can query with an explanation attached, built on an open graph of
+biology: that&amp;rsquo;s AI for life science reasoning about the whole web, not just one thread of it.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(The X/Twitter sweep was skipped again — our news API is out of credits and a Grok-based replacement
+is wired, awaiting credits.) Have lab news to share — a talk, paper, conference or release? Message me
+on Slack.&lt;/em>&lt;/p></description></item><item><title>Lab Newsletter — September 10, 2026: An Antibiotic in the Machine</title><link>https://aicell.io/post/newsletter-2026-09-10/</link><pubDate>Thu, 10 Sep 2026 03:00:16 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-09-10/</guid><description>&lt;p>Antibiotic resistance is one of those slow emergencies that never makes the front page until it&amp;rsquo;s personal.
 The uncomfortable arithmetic: resistant bacteria are evolving faster than we discover drugs to stop them,
 and the traditional discovery pipeline — culture, screen, medicinal chemistry — has been sputtering for
 decades. This week we&amp;rsquo;ve watched AI &lt;a href="https://aicell.io/post/newsletter-2026-09-05/">design proteins&lt;/a>,
