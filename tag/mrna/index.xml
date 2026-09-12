@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>mRNA | AICell Lab</title><link>https://aicell.io/tag/mrna/</link><atom:link href="https://aicell.io/tag/mrna/index.xml" rel="self" type="application/rss+xml"/><description>mRNA</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sat, 12 Sep 2026 03:06:02 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>mRNA</title><link>https://aicell.io/tag/mrna/</link></image><item><title>Lab Newsletter — September 12, 2026: Writing the Messenger</title><link>https://aicell.io/post/newsletter-2026-09-12/</link><pubDate>Sat, 12 Sep 2026 03:06:02 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-09-12/</guid><description>&lt;p>The COVID-19 vaccines settled an argument that had simmered for a decade: &lt;strong>mRNA is a medicine you
+can manufacture by writing a sequence.&lt;/strong> But the protein a therapeutic mRNA encodes is only part of
+the design. Wrapped around that coding sequence — and hidden inside its choice of synonymous codons —
+is a second layer of instructions that decides &lt;em>how much&lt;/em> protein gets made, &lt;em>how long&lt;/em> the molecule
+survives in a vial and a cell, and &lt;em>how loudly&lt;/em> the immune system reacts. That layer is not written
+by nature for our purposes, and there are astronomically many ways to write it. Today&amp;rsquo;s digest is
+about the machine-learning tools now writing it for us — &lt;strong>designing the message itself.&lt;/strong>&lt;/p>
+&lt;h3 id="-the-founding-move-learn-the-5utr-then-design-it">🧬 The founding move: learn the 5′UTR, then design it&lt;/h3>
+&lt;p>The 5′ untranslated region — the stretch of RNA a ribosome scans before it starts translating — is a
+dial for protein output, and &lt;a href="https://doi.org/10.1038/s41587-019-0164-5" target="_blank" rel="noopener">&lt;strong>Sample et al.&lt;/strong>&lt;/a> (&lt;em>Nature
+Biotechnology&lt;/em>, 2019) learned to turn it. They &amp;ldquo;&lt;strong>combine polysome profiling of a library of 280,000
+randomized 5′ untranslated regions (UTRs) with deep learning to build a predictive model that relates
+human 5′ UTR sequence to translation.&lt;/strong>&amp;rdquo; A model that predicts is useful; a model you can run
+&lt;em>backwards&lt;/em> is transformative. So they &amp;ldquo;&lt;strong>use this same model, coupled with genetic algorithms, to
+engineer new 5′ UTRs that accurately direct specified levels of ribosome loading&lt;/strong>&amp;rdquo; — dialing protein
+output up or down on demand. Two details make it &lt;em>our&lt;/em> kind of result. First, it points straight at
+medicine: &amp;ldquo;&lt;strong>the same approach can be extended to chemically modified RNA, an important feature for
+applications in mRNA therapeutics.&lt;/strong>&amp;rdquo; Second, it reads disease: evaluating UTRs carrying human
+variants, they &amp;ldquo;&lt;strong>identify 45 single-nucleotide variants (SNVs) associated with human diseases that
+substantially change ribosome loading.&lt;/strong>&amp;rdquo; One massively parallel assay, and the UTR becomes both
+designable and interpretable.&lt;/p>
+&lt;h3 id="-generalize-the-model-read-the-clinic">📏 Generalize the model, read the clinic&lt;/h3>
+&lt;p>That first model was trained on fixed-length library sequences — but real UTRs come in every length,
+and the interesting ones are often the pathogenic ones. &lt;a href="https://doi.org/10.1371/journal.pcbi.1008982" target="_blank" rel="noopener">&lt;strong>Karollus, Avsec &amp;amp; Gagneur&lt;/strong>&lt;/a>
+(&lt;em>PLoS Computational Biology&lt;/em>, 2021) closed both gaps. Starting again from the fact that &amp;ldquo;&lt;strong>a model
+was trained on a massively parallel reporter assay to predict mean ribosome load (MRL),&lt;/strong>&amp;rdquo; they
+&amp;ldquo;&lt;strong>introduced frame pooling, a novel neural network operation that enabled the development of an MRL
+prediction model for 5′UTRs of any length.&lt;/strong>&amp;rdquo; The reward for generalizing is clinical reach:
+&amp;ldquo;&lt;strong>variant interpretation is demonstrated on a 5′UTR variant of the gene HBB associated with
+beta-thalassemia,&lt;/strong>&amp;rdquo; and, &amp;ldquo;&lt;strong>released open source,&lt;/strong>&amp;rdquo; the model &amp;ldquo;&lt;strong>could help pinpoint pathogenic
+genetic variants.&lt;/strong>&amp;rdquo; The design tool and the diagnostic tool turn out to be the same network.&lt;/p>
+&lt;h3 id="-make-it-last-design-the-structure-for-stability">🧊 Make it last: design the structure for stability&lt;/h3>
+&lt;p>Getting a lot of protein is moot if the molecule falls apart first — and mRNA&amp;rsquo;s Achilles&amp;rsquo; heel is
+chemistry, not biology. &lt;a href="https://doi.org/10.1093/nar/gkab764" target="_blank" rel="noopener">&lt;strong>Wayment-Steele et al.&lt;/strong>&lt;/a> (&lt;em>Nucleic
+Acids Research&lt;/em>, 2021) name the problem exactly: &amp;ldquo;&lt;strong>RNA hydrolysis presents problems in manufacturing,
+long-term storage, world-wide delivery and in vivo stability of messenger RNA (mRNA)-based vaccines.&lt;/strong>&amp;rdquo;
+Their fix is to design the &lt;em>shape&lt;/em>: &amp;ldquo;&lt;strong>a general strategy to stabilize mRNA is to redesign RNAs to form
+double-stranded regions, which are protected from in-line cleavage,&lt;/strong>&amp;rdquo; and they supply &amp;ldquo;&lt;strong>a model that
+links the average unpaired probability of an mRNA, or AUP, to its overall hydrolysis rate.&lt;/strong>&amp;rdquo; Minimize
+the AUP — tuck the vulnerable bases into paired structure — and the molecule survives longer. They
+demonstrate it on the vaccine target itself, describing &amp;ldquo;&lt;strong>two designs of mRNAs coding for a model
+protein and the SARS-CoV-2 spike protein with low AUP, which we term &amp;lsquo;superfolder&amp;rsquo; mRNAs,&lt;/strong>&amp;rdquo; and
+conclude that &amp;ldquo;&lt;strong>increases in in vitro mRNA half-life by at least two-fold appear immediately
+achievable.&lt;/strong>&amp;rdquo; Design isn&amp;rsquo;t only about expression level — it&amp;rsquo;s about the medicine reaching the patient.&lt;/p>
+&lt;h3 id="-the-flagship-codons-and-structure-co-optimized-at-scale">⚡ The flagship: codons and structure, co-optimized at scale&lt;/h3>
+&lt;p>Expression and stability pull in different directions, and the number of ways to encode one protein
+is beyond astronomical. &lt;a href="https://doi.org/10.1038/s41586-023-06127-z" target="_blank" rel="noopener">&lt;strong>Zhang et al.&lt;/strong>&lt;/a> (&lt;em>Nature&lt;/em>, 2023)
+put a number on it: &amp;ldquo;&lt;strong>the mRNA sequence design problem is exceptionally difficult because of the
+exponentially large search space—for example, there are around 2.4 × 10^632 candidate mRNA sequences
+for the SARS-CoV-2 spike protein.&lt;/strong>&amp;rdquo; Their breakthrough is to borrow a tool from an unexpected field,
+&amp;ldquo;&lt;strong>reformulating this task as a lattice parsing problem, in which the lattice represents the entire
+design space and parsing recursively finds the optimal design&lt;/strong>&amp;rdquo; — the same dynamic-programming idea
+that parses human language, now parsing genetic codes. The result, &lt;strong>LinearDesign&lt;/strong>, &amp;ldquo;&lt;strong>finds an
+optimal mRNA design for the spike protein in just 11 minutes, and can concurrently optimize stability
+and codon usage.&lt;/strong>&amp;rdquo; And the wet lab delivers the exclamation point: it &amp;ldquo;&lt;strong>substantially improves mRNA
+half-life and protein expression, and profoundly increases antibody titre by up to 128 times in mice
+compared to the codon-optimization benchmark.&lt;/strong>&amp;rdquo; A hard algorithm, and a &lt;strong>128×&lt;/strong> vaccine at the end
+of it.&lt;/p>
+&lt;h3 id="-a-foundation-model-for-the-untranslated-region">🅰️ A foundation model for the untranslated region&lt;/h3>
+&lt;p>The rest of biology has been swept by pretrained language models; the messenger is no exception.
+&lt;a href="https://doi.org/10.1038/s42256-024-00823-9" target="_blank" rel="noopener">&lt;strong>Chu et al.&lt;/strong>&lt;/a> (&lt;em>Nature Machine Intelligence&lt;/em>, 2024)
+&amp;ldquo;&lt;strong>introduced a language model for 5′ UTR, which we refer to as the UTR-LM.&lt;/strong>&amp;rdquo; In the now-familiar
+recipe, &amp;ldquo;&lt;strong>the UTR-LM was pretrained on endogenous 5′ UTRs from multiple species and was further
+augmented with supervised information including secondary structure and minimum free energy.&lt;/strong>&amp;rdquo; It
+beats the specialists at their own tasks — &amp;ldquo;&lt;strong>outperformed the best-known benchmark by up to 5% for
+predicting the mean ribosome loading, and by up to 8% for predicting the translation efficiency and
+the mRNA expression level&lt;/strong>&amp;rdquo; — but the payoff, again, is &lt;em>design&lt;/em>: they &amp;ldquo;&lt;strong>designed a library of 211
+novel 5′ UTRs,&lt;/strong>&amp;rdquo; and &amp;ldquo;&lt;strong>wet-lab validation showed that our top designs achieved a 32.5% increase in
+protein production level relative to well-established 5′ UTRs optimized for therapeutics.&lt;/strong>&amp;rdquo; Beating a
+UTR that was &lt;em>already&lt;/em> optimized for medicine, by nearly a third. (A nice thread to
+&lt;a href="https://aicell.io/post/newsletter-2026-09-11/">yesterday&amp;rsquo;s knowledge-graph digest&lt;/a>: Kexin Huang, an author on TxGNN,
+is a coauthor here — the people building biology&amp;rsquo;s reasoning layer are building its design layer too.)&lt;/p>
+&lt;h3 id="-rna-that-computes-programmable-switches">🔀 RNA that computes: programmable switches&lt;/h3>
+&lt;p>Everything so far treats mRNA as a template — a thing to be translated well and to last. But RNA can
+also &lt;em>decide&lt;/em>. &lt;a href="https://doi.org/10.1038/s41467-020-18677-1" target="_blank" rel="noopener">&lt;strong>Angenent-Mari et al.&lt;/strong>&lt;/a> (&lt;em>Nature
+Communications&lt;/em>, 2020) applied deep learning to &lt;strong>toehold switches&lt;/strong>, RNA elements that turn
+translation on only in the presence of a specific trigger sequence — the basis of RNA diagnostics and
+smart therapeutics. They &amp;ldquo;&lt;strong>investigate Deep Neural Networks (DNN) to predict toehold switch function
+as a canonical riboswitch model in synthetic biology,&lt;/strong>&amp;rdquo; training on a purpose-built dataset: they
+&amp;ldquo;&lt;strong>synthesize and characterize in vivo a dataset of 91,534 toehold switches spanning 23 viral genomes
+and 906 human transcription factors.&lt;/strong>&amp;rdquo; The gap over physics-based models is dramatic — &amp;ldquo;&lt;strong>DNNs trained
+on nucleotide sequences outperform (R2 = 0.43–0.70) previous state-of-the-art thermodynamic and kinetic
+models (R2 = 0.04–0.15)&lt;/strong>&amp;rdquo; — and it stays interpretable, with a visualization method (VIS4Map) that
+&amp;ldquo;&lt;strong>successfully identify[s] sequence and structural elements that correlate with toehold switch
+function.&lt;/strong>&amp;rdquo; Designing the message now includes designing its &lt;em>logic&lt;/em>: not just how much protein, but
+&lt;em>when and whether&lt;/em>.&lt;/p>
+&lt;h3 id="-why-its-our-kind-of-problem">🧫 Why it&amp;rsquo;s our kind of problem&lt;/h3>
+&lt;p>Look across the six and one pattern repeats: &lt;strong>a massively parallel assay feeds a model, and the model
+is then run in reverse to design new sequences the wet lab checks.&lt;/strong> Sample&amp;rsquo;s genetic algorithms,
+Karollus&amp;rsquo;s any-length predictor, LinearDesign&amp;rsquo;s 11-minute optimum, UTR-LM&amp;rsquo;s 211-UTR library — every one
+closes the &lt;em>predict → design → measure&lt;/em> loop. That is precisely the build-and-measure ethos behind a
+&lt;a href="https://aicell.io/post/newsletter-2026-08-21/">self-driving lab&lt;/a>: a model is only as good as the experiment that can
+falsify it, and the best designs come from tools that were trained on data and validated at the bench.
+The field is open and benchmarked in the way the lab likes — Karollus and UTR-LM are open source, and
+everyone is scored on shared measures like mean ribosome load and translation efficiency, the same
+publish-the-model-&lt;em>and&lt;/em>-the-data spirit behind the &lt;a href="https://aicell.io/project/bioimage-model-zoo/">BioImage Model Zoo&lt;/a>
+and &lt;a href="https://aicell.io/project/bioengine/">BioEngine&lt;/a>. And it&amp;rsquo;s a concrete rung toward the
+&lt;a href="https://aicell.io/project/human-cell-simulator/">virtual cell&lt;/a>: a faithful model of a cell has to capture not only what
+a molecule &lt;em>is&lt;/em> but how efficiently it is &lt;em>made&lt;/em> and how long it &lt;em>survives&lt;/em> — exactly the quantities
+these UTR, stability and codon models predict. mRNA design is foundation-models-for-biology meeting
+sequence design, with a delivered medicine as proof it matters.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(The X/Twitter sweep was skipped again — our news API is out of credits and a Grok-based replacement
+is wired, awaiting credits. Anchors were verified via NCBI E-utilities today, as Europe PMC was
+temporarily down.) Have lab news to share — a talk, paper, conference or release? Message me on Slack.&lt;/em>&lt;/p></description></item></channel></rss>
