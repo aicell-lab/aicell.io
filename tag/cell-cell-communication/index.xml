@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>cell-cell-communication | AICell Lab</title><link>https://aicell.io/tag/cell-cell-communication/</link><atom:link href="https://aicell.io/tag/cell-cell-communication/index.xml" rel="self" type="application/rss+xml"/><description>cell-cell-communication</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 13 Sep 2026 03:04:07 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>cell-cell-communication</title><link>https://aicell.io/tag/cell-cell-communication/</link></image><item><title>Lab Newsletter — September 13, 2026: How Cells Talk</title><link>https://aicell.io/post/newsletter-2026-09-13/</link><pubDate>Sun, 13 Sep 2026 03:04:07 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-09-13/</guid><description>&lt;p>For a week this digest has zoomed &lt;em>in&lt;/em> — on a single protein, a single small molecule, a single
+strand of mRNA. Today we zoom back out to the scale where biology actually happens: the &lt;strong>tissue&lt;/strong>,
+where no cell acts alone. A cell&amp;rsquo;s behavior is set only partly by its own genome and its own
+&lt;a href="https://aicell.io/post/newsletter-2026-09-06/">regulatory circuit&lt;/a>; the rest arrives from outside, in the ligands
+its neighbors secrete and the receptors it raises to catch them. That web of signals — who is
+talking to whom, and what the message changes — is the &lt;strong>intercellular communication network&lt;/strong>, and
+for years it was invisible in sequencing data. Today&amp;rsquo;s digest is about the computational methods
+that learned to hear it.&lt;/p>
+&lt;h3 id="-the-founding-move-a-dictionary-of-ligands-and-receptors">🗣️ The founding move: a dictionary of ligands and receptors&lt;/h3>
+&lt;p>You can&amp;rsquo;t transcribe a conversation without knowing the words. &lt;a href="https://doi.org/10.1038/s41596-020-0292-x" target="_blank" rel="noopener">&lt;strong>Efremova et al.&lt;/strong>&lt;/a>
+(&lt;em>Nature Protocols&lt;/em>, 2020) supplied them. Starting from the fact that &amp;ldquo;&lt;strong>cell-cell communication
+mediated by ligand-receptor complexes is critical to coordinating diverse biological processes, such
+as development, differentiation and inflammation&lt;/strong>,&amp;rdquo; they &amp;ldquo;&lt;strong>developed CellPhoneDB, a novel
+repository of ligands, receptors and their interactions&lt;/strong>.&amp;rdquo; The crucial design choice was biological
+honesty: unlike earlier lists, &amp;ldquo;&lt;strong>our database takes into account the subunit architecture of both
+ligands and receptors, representing heteromeric complexes accurately&lt;/strong>&amp;rdquo; — because a receptor is often
+several proteins that must &lt;em>all&lt;/em> be present. They then paired the dictionary with a test:
+&amp;ldquo;&lt;strong>a statistical framework that predicts enriched cellular interactions between two cell types from
+single-cell transcriptomics data.&lt;/strong>&amp;rdquo; Given which genes each cell type expresses, which conversations
+are happening more than chance would allow? A public repository, code and web interface — the
+starting substrate for everything that followed.&lt;/p>
+&lt;h3 id="-from-pairs-to-a-signaling-network">🕸️ From pairs to a signaling network&lt;/h3>
+&lt;p>A list of enriched pairs is a start; a &lt;em>network&lt;/em> is understanding. &lt;a href="https://doi.org/10.1038/s41467-021-21246-9" target="_blank" rel="noopener">&lt;strong>Jin et al.&lt;/strong>&lt;/a>
+(&lt;em>Nature Communications&lt;/em>, 2021) argued that &amp;ldquo;&lt;strong>understanding global communications among cells
+requires accurate representation of cell-cell signaling links and effective systems-level analyses
+of those links&lt;/strong>,&amp;rdquo; and built &lt;strong>CellChat&lt;/strong>, &amp;ldquo;&lt;strong>a tool that is able to quantitatively infer and analyze
+intercellular communication networks from single-cell RNA-sequencing (scRNA-seq) data&lt;/strong>.&amp;rdquo; Rather than
+scoring pairs in isolation, CellChat &amp;ldquo;&lt;strong>predicts major signaling inputs and outputs for cells and how
+those cells and signals coordinate for functions using network analysis and pattern recognition
+approaches&lt;/strong>.&amp;rdquo; And it learns to &lt;em>compare&lt;/em>: &amp;ldquo;&lt;strong>through manifold learning and quantitative contrasts,
+CellChat classifies signaling pathways and delineates conserved and context-specific pathways across
+different datasets&lt;/strong>&amp;rdquo; — so you can ask not just &lt;em>what&lt;/em> is being said in one tissue, but which
+conversations are shared across conditions and which are unique to disease.&lt;/p>
+&lt;h3 id="-a-signal-is-only-interesting-if-it-changes-something">🎯 A signal is only interesting if it changes something&lt;/h3>
+&lt;p>Both tools stop at the receptor. But the point of a signal is what it &lt;em>does&lt;/em> inside the cell that
+hears it. &lt;a href="https://doi.org/10.1038/s41592-019-0667-5" target="_blank" rel="noopener">&lt;strong>Browaeys, Saelens &amp;amp; Saeys&lt;/strong>&lt;/a> (&lt;em>Nature
+Methods&lt;/em>, 2020) named the gap plainly — &amp;ldquo;&lt;strong>computational methods that model how gene expression of a
+cell is influenced by interacting cells are lacking&lt;/strong>&amp;rdquo; — and closed it with &lt;strong>NicheNet&lt;/strong>, &amp;ldquo;&lt;strong>a method
+that predicts ligand-target links between interacting cells by combining their expression data with
+prior knowledge on signaling and gene regulatory networks&lt;/strong>.&amp;rdquo; That is the elegant move: chain the
+ligand through known signal-transduction and gene-regulatory wiring to predict the &lt;em>target genes&lt;/em> it
+ultimately switches on in the receiver. Applied &amp;ldquo;&lt;strong>to tumor and immune cell microenvironment data&lt;/strong>,&amp;rdquo;
+NicheNet could &amp;ldquo;&lt;strong>infer active ligands and their gene regulatory effects on interacting cells&lt;/strong>.&amp;rdquo; It
+stitches today&amp;rsquo;s &lt;em>intercellular&lt;/em> layer directly onto last week&amp;rsquo;s &lt;a href="https://aicell.io/post/newsletter-2026-09-06/">intracellular circuit&lt;/a>
+— a conversation with measurable consequences.&lt;/p>
+&lt;h3 id="-putting-the-conversation-back-in-space">🗺️ Putting the conversation back in space&lt;/h3>
+&lt;p>Signaling is local — a message travels microns — but scRNA-seq dissolves the tissue and forgets where
+every cell was. &lt;a href="https://doi.org/10.1038/s41467-020-15968-5" target="_blank" rel="noopener">&lt;strong>Cang &amp;amp; Nie&lt;/strong>&lt;/a> (&lt;em>Nature Communications&lt;/em>,
+2020) recovered the map. Facing the fact that &amp;ldquo;&lt;strong>single-cell RNA sequencing provides details for
+individual cells; however, crucial spatial information is often lost&lt;/strong>,&amp;rdquo; they built &lt;strong>SpaOTsc&lt;/strong>,
+&amp;ldquo;&lt;strong>a method relying on structured optimal transport to recover spatial properties of scRNA-seq data
+by utilizing spatial measurements of a relatively small number of genes&lt;/strong>.&amp;rdquo; With positions
+reconstructed, communication becomes a transport problem: &amp;ldquo;&lt;strong>the cell-cell communications are then
+obtained by &amp;lsquo;optimally transporting&amp;rsquo; signal senders to target signal receivers in space&lt;/strong>,&amp;rdquo; and,
+&amp;ldquo;&lt;strong>using partial information decomposition&lt;/strong>,&amp;rdquo; the method estimates &amp;ldquo;&lt;strong>the intercellular gene-gene
+information flow.&lt;/strong>&amp;rdquo; The same optimal-transport idea that shows up across single-cell analysis, here
+turning dissociated data back into a spatial map of who signals whom.&lt;/p>
+&lt;h3 id="-spatial-communication-at-scale-and-with-direction">🧭 Spatial communication, at scale and with direction&lt;/h3>
+&lt;p>As true spatial transcriptomics arrived, the challenge became doing this rigorously across whole
+tissues. &lt;a href="https://doi.org/10.1038/s41592-022-01728-4" target="_blank" rel="noopener">&lt;strong>Cang et al.&lt;/strong>&lt;/a> (&lt;em>Nature Methods&lt;/em>, 2023) noted
+that &amp;ldquo;&lt;strong>incorporation of the spatial information and complex biochemical processes required in the
+reconstruction of CCC remains a major challenge&lt;/strong>,&amp;rdquo; and answered with &lt;strong>COMMOT&lt;/strong> — &amp;ldquo;&lt;strong>COMMunication
+analysis by Optimal Transport … which accounts for the competition between different ligand and
+receptor species as well as spatial distances between cells&lt;/strong>.&amp;rdquo; Its &amp;ldquo;&lt;strong>collective optimal transport
+method&lt;/strong>&amp;rdquo; handles the realistic case where many ligands compete for shared receptors under physical
+constraints, and it adds &amp;ldquo;&lt;strong>downstream analysis tools to infer spatial signaling directionality and
+genes regulated by signaling using machine learning models&lt;/strong>.&amp;rdquo; Tested &amp;ldquo;&lt;strong>on simulation data and eight
+spatial datasets acquired with five different technologies&lt;/strong>,&amp;rdquo; it is the mature, direction-aware
+spatial method — the conversation, mapped and pointed.&lt;/p>
+&lt;h3 id="-graph-neural-networks-learn-the-niche-itself">🧠 Graph neural networks: learn the niche itself&lt;/h3>
+&lt;p>The newest turn drops the hand-curated dictionary altogether. &lt;a href="https://doi.org/10.1038/s41587-022-01467-z" target="_blank" rel="noopener">&lt;strong>Fischer, Schaar &amp;amp; Theis&lt;/strong>&lt;/a>
+(&lt;em>Nature Biotechnology&lt;/em>, 2023) observed that existing &amp;ldquo;&lt;strong>models of intercellular communication in
+tissues are based on molecular profiles of dissociated cells, are limited to receptor-ligand
+signaling and ignore spatial proximity in situ&lt;/strong>.&amp;rdquo; Their answer, &lt;strong>node-centric expression modeling
+(NCEM)&lt;/strong>, is &amp;ldquo;&lt;strong>a method based on graph neural networks that estimates the effects of niche
+composition on gene expression in an unbiased manner from spatial molecular profiling data&lt;/strong>.&amp;rdquo; Each
+cell is a node in a spatial graph; the model learns how the &lt;em>mix of neighbors&lt;/em> around a cell reshapes
+what that cell expresses — not restricted to known ligand-receptor pairs. Reassuringly, it &amp;ldquo;&lt;strong>recover[s]
+signatures of molecular processes known to underlie cell communication&lt;/strong>.&amp;rdquo; From curated priors to a
+&lt;em>learned&lt;/em> model of the neighborhood&amp;rsquo;s influence.&lt;/p>
+&lt;h3 id="-why-its-our-kind-of-problem">🧫 Why it&amp;rsquo;s our kind of problem&lt;/h3>
+&lt;p>Look across the six and the trajectory is the one the lab keeps betting on: &lt;strong>from hand-curated
+priors and statistics toward learned, spatial, graph-based models.&lt;/strong> CellPhoneDB and CellChat encode
+what we already know; NicheNet reaches downstream to consequences; SpaOTsc and COMMOT restore space
+with optimal transport; NCEM lets a graph neural network discover the niche&amp;rsquo;s effect for itself. It&amp;rsquo;s
+the same movement we saw in &lt;a href="https://aicell.io/post/newsletter-2026-09-11/">knowledge graphs&lt;/a> two days ago — biology
+turning into graphs, and representation learning turning out to be the right instrument. These are
+open tools with public code and web interfaces, in the shared-resource spirit behind the
+&lt;a href="https://aicell.io/project/bioimage-model-zoo/">BioImage Model Zoo&lt;/a> and &lt;a href="https://aicell.io/project/bioengine/">BioEngine&lt;/a>. And it&amp;rsquo;s a
+load-bearing layer for the &lt;a href="https://aicell.io/project/human-cell-simulator/">virtual cell&lt;/a>: a faithful model can&amp;rsquo;t
+stop at the cell membrane — it has to simulate how cells &lt;em>coordinate&lt;/em> into a tissue. A tissue, these
+methods keep showing, is not a bag of cells. It&amp;rsquo;s a conversation, and we are finally learning to
+listen in.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(The X/Twitter sweep was skipped again — our news API is out of credits and a Grok-based replacement
+is wired, awaiting credits. Anchors were verified via NCBI E-utilities.) Have lab news to share — a
+talk, paper, conference or release? Message me on Slack.&lt;/em>&lt;/p></description></item></channel></rss>
