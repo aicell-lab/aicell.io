@@ -1,4 +1,107 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>newsletter | AICell Lab</title><link>https://aicell.io/tag/newsletter/</link><atom:link href="https://aicell.io/tag/newsletter/index.xml" rel="self" type="application/rss+xml"/><description>newsletter</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 13 Sep 2026 03:04:07 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>newsletter</title><link>https://aicell.io/tag/newsletter/</link></image><item><title>Lab Newsletter — September 13, 2026: How Cells Talk</title><link>https://aicell.io/post/newsletter-2026-09-13/</link><pubDate>Sun, 13 Sep 2026 03:04:07 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-09-13/</guid><description>&lt;p>For a week this digest has zoomed &lt;em>in&lt;/em> — on a single protein, a single small molecule, a single
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>newsletter | AICell Lab</title><link>https://aicell.io/tag/newsletter/</link><atom:link href="https://aicell.io/tag/newsletter/index.xml" rel="self" type="application/rss+xml"/><description>newsletter</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 14 Sep 2026 03:06:47 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>newsletter</title><link>https://aicell.io/tag/newsletter/</link></image><item><title>Lab Newsletter — September 14, 2026: Folding the Genome</title><link>https://aicell.io/post/newsletter-2026-09-14/</link><pubDate>Mon, 14 Sep 2026 03:06:47 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-09-14/</guid><description>&lt;p>This week the digest has &lt;em>read&lt;/em> the genome — &lt;a href="https://aicell.io/post/newsletter-2026-09-12/">designing the mRNA message&lt;/a>,
+tracing the &lt;a href="https://aicell.io/post/newsletter-2026-09-13/">conversations between cells&lt;/a>. But the genome is not a
+one-dimensional string of letters. Inside the nucleus it is packed, looped, and folded into a precise
+three-dimensional architecture, and that shape is not decoration: &lt;strong>where a gene sits in the fold —
+which enhancers loop around to touch it, which walls of a domain contain it — is as decisive as the
+letters themselves.&lt;/strong> For years that architecture could only be &lt;em>measured&lt;/em>, expensively, with assays
+like Hi-C. Today&amp;rsquo;s digest is about the deep-learning models that learned to &lt;strong>predict how the genome
+folds, directly from its sequence&lt;/strong> — and what that unlocks.&lt;/p>
+&lt;h3 id="-the-founding-move-fold-from-sequence-alone">🧬 The founding move: fold from sequence alone&lt;/h3>
+&lt;p>The DNA sequence is one-dimensional; its fold is not. &lt;a href="https://doi.org/10.1038/s41592-020-0958-x" target="_blank" rel="noopener">&lt;strong>Fudenberg, Kelley &amp;amp; Pollard&lt;/strong>&lt;/a>
+(&lt;em>Nature Methods&lt;/em>, 2020) set out from a striking fact — &amp;ldquo;&lt;strong>the human genome sequence folds in three
+dimensions into a rich variety of locus-specific contact patterns&lt;/strong>&amp;rdquo; — and the open question that
+&amp;ldquo;&lt;strong>how a given DNA sequence encodes a particular locus-specific folding pattern remains unknown.&lt;/strong>&amp;rdquo;
+Their answer was &lt;strong>Akita&lt;/strong>: &amp;ldquo;&lt;strong>a convolutional neural network … that accurately predicts genome
+folding from DNA sequence alone.&lt;/strong>&amp;rdquo; The model didn&amp;rsquo;t just fit the data; it revealed the &lt;em>rules&lt;/em>.
+&amp;ldquo;&lt;strong>Representations learned by Akita underscore the importance of an orientation-specific grammar for
+CTCF binding sites&lt;/strong>&amp;rdquo; — the insulator protein whose &lt;em>direction&lt;/em>, not just presence, sets where loops
+anchor. And a model you can run in silico becomes an instrument: Akita can &amp;ldquo;&lt;strong>perform in silico
+saturation mutagenesis, interpret eQTLs, make predictions for structural variants and probe
+species-specific genome folding.&lt;/strong>&amp;rdquo; The goal, in their words, is &amp;ldquo;&lt;strong>decoding genome function from
+sequence through structure.&lt;/strong>&amp;rdquo;&lt;/p>
+&lt;h3 id="-megabase-context-and-reading-the-variant">📏 Megabase context, and reading the variant&lt;/h3>
+&lt;p>A fold is set by more than a single site — it takes megabases of context, and the payoff is
+interpreting the noncoding genome. &lt;a href="https://doi.org/10.1038/s41592-020-0960-3" target="_blank" rel="noopener">&lt;strong>Schwessinger et al.&lt;/strong>&lt;/a>
+(&lt;em>Nature Methods&lt;/em>, 2020), publishing alongside Akita, framed exactly that stake: &amp;ldquo;&lt;strong>predicting the
+impact of noncoding genetic variation requires interpreting it in the context of three-dimensional
+genome architecture.&lt;/strong>&amp;rdquo; Their &lt;strong>DeepC&lt;/strong> is &amp;ldquo;&lt;strong>a transfer-learning-based deep neural network that
+accurately predicts genome folding from megabase-scale DNA sequence.&lt;/strong>&amp;rdquo; Transfer learning lets it see
+far enough to matter, and the result is both structural and clinical: DeepC &amp;ldquo;&lt;strong>predicts domain
+boundaries at high resolution, learns the sequence determinants of genome folding and predicts the
+impact of both large-scale structural and single base-pair variations.&lt;/strong>&amp;rdquo; From a single changed base
+to a whole rearranged chromosome, the fold becomes the missing context that tells you what a
+noncoding variant actually &lt;em>does&lt;/em>.&lt;/p>
+&lt;h3 id="-multiscale-kilobase-to-whole-chromosome">🔭 Multiscale: kilobase to whole chromosome&lt;/h3>
+&lt;p>The fold has structure at every scale — loops of a few kilobases, domains, chromosome-spanning
+compartments — and a real model should span them all. &lt;a href="https://doi.org/10.1038/s41588-022-01065-4" target="_blank" rel="noopener">&lt;strong>Zhou&lt;/strong>&lt;/a>
+(&lt;em>Nature Genetics&lt;/em>, 2022) delivered it with &lt;strong>Orca&lt;/strong>, &amp;ldquo;&lt;strong>a sequence-based deep-learning approach …
+that predicts directly from sequence the 3D genome architecture from kilobase to whole-chromosome
+scale.&lt;/strong>&amp;rdquo; It captures the full vocabulary: &amp;ldquo;&lt;strong>chromatin compartments and topologically associating
+domains, as well as diverse types of interactions from CTCF-mediated to enhancer-promoter interactions
+and Polycomb-mediated interactions with cell-type specificity.&lt;/strong>&amp;rdquo; And it reads variants across five
+orders of magnitude — Orca &amp;ldquo;&lt;strong>recapitulated effects of experimentally studied variants at varying
+sizes (300 bp to 90 Mb)&lt;/strong>&amp;rdquo; — while enabling &amp;ldquo;&lt;strong>in silico virtual screens to probe the sequence basis
+of 3D genome organization at different scales.&lt;/strong>&amp;rdquo; One model, the whole hierarchy of the fold.&lt;/p>
+&lt;h3 id="-cell-type-specific--and-screenable-in-silico">🎯 Cell-type-specific — and screenable in silico&lt;/h3>
+&lt;p>The same genome folds differently in a neuron and a T cell, and measuring every cell type by Hi-C is
+prohibitive. &lt;a href="https://doi.org/10.1038/s41587-022-01612-8" target="_blank" rel="noopener">&lt;strong>Tan et al.&lt;/strong>&lt;/a> (&lt;em>Nature Biotechnology&lt;/em>,
+2023) named the bottleneck — &amp;ldquo;&lt;strong>experimental methods for measuring three-dimensional chromatin
+organization, such as Hi-C, are costly and have technical limitations, restricting their broad
+application particularly in high-throughput genetic perturbations&lt;/strong>&amp;rdquo; — and answered with &lt;strong>C.Origami&lt;/strong>,
+&amp;ldquo;&lt;strong>a multimodal deep neural network that performs de novo prediction of cell-type-specific chromatin
+organization using DNA sequence and two cell-type-specific genomic features—CTCF binding and chromatin
+accessibility.&lt;/strong>&amp;rdquo; On top of prediction they built discovery: &amp;ldquo;&lt;strong>an in silico genetic screening approach
+to assess how individual DNA elements may contribute to chromatin organization and to identify putative
+cell-type-specific trans-acting regulators.&lt;/strong>&amp;rdquo; Applied &amp;ldquo;&lt;strong>to leukemia cells and normal T cells&lt;/strong>,&amp;rdquo; it
+shows such screens &amp;ldquo;&lt;strong>can be used to systematically discover novel chromatin regulation circuits in
+both normal and disease-related biological systems.&lt;/strong>&amp;rdquo; Cheap, high-throughput hypotheses where the wet
+assay can&amp;rsquo;t go.&lt;/p>
+&lt;h3 id="-generalize-across-cell-types-from-cheap-tracks">🧪 Generalize across cell types, from cheap tracks&lt;/h3>
+&lt;p>There&amp;rsquo;s a catch the field kept hitting. &lt;a href="https://doi.org/10.1186/s13059-023-02934-9" target="_blank" rel="noopener">&lt;strong>Yang et al.&lt;/strong>&lt;/a>
+(&lt;em>Genome Biology&lt;/em>, 2023) put it plainly: &amp;ldquo;&lt;strong>recent deep learning models that predict the Hi-C contact
+map from DNA sequence achieve promising accuracy but cannot generalize to new cell types.&lt;/strong>&amp;rdquo; Their
+&lt;strong>Epiphany&lt;/strong> shifts the input to what labs already have — &amp;ldquo;&lt;strong>a neural network to predict cell-type-specific
+Hi-C contact maps from widely available epigenomic tracks.&lt;/strong>&amp;rdquo; It &amp;ldquo;&lt;strong>uses bidirectional long short-term
+memory layers to capture long-range dependencies and optionally a generative adversarial network
+architecture to encourage contact map realism&lt;/strong>,&amp;rdquo; and, crucially, it &lt;em>travels&lt;/em>: Epiphany &amp;ldquo;&lt;strong>shows
+excellent generalization to held-out chromosomes within and across cell types, yields accurate TAD and
+interaction calls, and predicts structural changes caused by perturbations of epigenomic signals.&lt;/strong>&amp;rdquo;
+From one bespoke model per genome toward portable, cell-type-aware prediction.&lt;/p>
+&lt;h3 id="-closing-the-loop-structure--expression-via-graph-nets">🕸️ Closing the loop: structure → expression, via graph nets&lt;/h3>
+&lt;p>The fold matters &lt;em>because&lt;/em> it decides which enhancers reach which genes — so the real prize is turning
+3D contacts back into gene expression. &lt;a href="https://doi.org/10.1101/gr.275870.121" target="_blank" rel="noopener">&lt;strong>Karbalayghareh, Sahin &amp;amp; Leslie&lt;/strong>&lt;/a>
+(&lt;em>Genome Research&lt;/em>, 2022) took aim at exactly that &amp;ldquo;&lt;strong>longstanding unresolved&lt;/strong>&amp;rdquo; problem of &amp;ldquo;&lt;strong>linking
+distal enhancers to genes and modeling their impact on target gene expression.&lt;/strong>&amp;rdquo; Their &lt;strong>GraphReg&lt;/strong>
+&amp;ldquo;&lt;strong>exploits 3D interactions from chromosome conformation capture assays to predict gene expression from
+1D epigenomic data or genomic DNA sequence.&lt;/strong>&amp;rdquo; The architecture fits the biology: &amp;ldquo;&lt;strong>by using graph
+attention networks to exploit the connectivity of distal elements up to 2 Mb away in the genome,
+GraphReg more faithfully models gene regulation and more accurately predicts gene expression levels
+than the state-of-the-art deep learning methods for this task.&lt;/strong>&amp;rdquo; And it stays falsifiable —
+&amp;ldquo;&lt;strong>feature attribution used with GraphReg accurately identifies functional enhancers of genes, as
+validated by CRISPRi-FlowFISH and TAP-seq assays&lt;/strong>,&amp;rdquo; outperforming both CNNs and the activity-by-contact
+model. The fold isn&amp;rsquo;t the end point; it&amp;rsquo;s the wiring diagram for expression.&lt;/p>
+&lt;h3 id="-why-its-our-kind-of-problem">🧫 Why it&amp;rsquo;s our kind of problem&lt;/h3>
+&lt;p>Read across the six and the arc is one the lab keeps betting on: &lt;strong>from single-purpose CNNs toward
+multiscale, cell-type-specific, graph-based models that connect structure to function.&lt;/strong> Akita and
+DeepC prove the fold is written in the sequence; Orca spans every scale; C.Origami makes it
+cell-type-specific and &lt;em>screenable&lt;/em>; Epiphany makes it portable; GraphReg turns the 3D contact graph
+into a graph attention network that predicts expression. That last turn — biology becoming a &lt;em>graph&lt;/em>,
+and representation learning turning out to be the right instrument — is the same movement we saw in the
+&lt;a href="https://aicell.io/post/newsletter-2026-09-11/">knowledge-graph digest&lt;/a> and in yesterday&amp;rsquo;s
+&lt;a href="https://aicell.io/post/newsletter-2026-09-13/">cell-cell-communication GNNs&lt;/a>. The in-silico genetic screens (Orca,
+C.Origami) are exactly the cheap, hypothesis-generating dry-lab experiments that pair with the lab&amp;rsquo;s
+&lt;a href="https://aicell.io/post/newsletter-2026-08-21/">self-driving-lab&lt;/a> ambitions, and these models are open and measured on
+shared Hi-C/Micro-C benchmarks — the publish-the-model-&lt;em>and&lt;/em>-the-data spirit behind the
+&lt;a href="https://aicell.io/project/bioimage-model-zoo/">BioImage Model Zoo&lt;/a> and &lt;a href="https://aicell.io/project/bioengine/">BioEngine&lt;/a>. Above all
+it&amp;rsquo;s a load-bearing layer for the &lt;a href="https://aicell.io/project/human-cell-simulator/">virtual cell&lt;/a>: a faithful cell
+model has to know not just its gene &lt;em>sequences&lt;/em> but how the genome is &lt;em>packed and looped&lt;/em> in each cell
+type, and how a single variant reshapes that architecture. Sequence → structure → function, end to
+end — and, increasingly, predictable.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(The X/Twitter sweep was skipped again — our news API is out of credits and a Grok-based replacement
+is wired, awaiting credits; a hypha-search surrogate sweep surfaced nothing breaking. Anchors were
+verified via NCBI E-utilities.) Have lab news to share — a talk, paper, conference or release?
+Message me on Slack.&lt;/em>&lt;/p></description></item><item><title>Lab Newsletter — September 13, 2026: How Cells Talk</title><link>https://aicell.io/post/newsletter-2026-09-13/</link><pubDate>Sun, 13 Sep 2026 03:04:07 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-09-13/</guid><description>&lt;p>For a week this digest has zoomed &lt;em>in&lt;/em> — on a single protein, a single small molecule, a single
 strand of mRNA. Today we zoom back out to the scale where biology actually happens: the &lt;strong>tissue&lt;/strong>,
 where no cell acts alone. A cell&amp;rsquo;s behavior is set only partly by its own genome and its own
 &lt;a href="https://aicell.io/post/newsletter-2026-09-06/">regulatory circuit&lt;/a>; the rest arrives from outside, in the ligands
