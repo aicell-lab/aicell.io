@@ -17,10 +17,6 @@ image:
   focal_point: Smart
 
 links:
-  - icon: globe
-    icon_pack: fas
-    name: Live Demo
-    url: https://hypha.aicell.io/agent-lens/apps/agent-lens/
   - icon: github
     icon_pack: fab
     name: Code
