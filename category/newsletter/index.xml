@@ -1,4 +1,104 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>newsletter | AICell Lab</title><link>https://aicell.io/category/newsletter/</link><atom:link href="https://aicell.io/category/newsletter/index.xml" rel="self" type="application/rss+xml"/><description>newsletter</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 14 Sep 2026 03:06:47 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>newsletter</title><link>https://aicell.io/category/newsletter/</link></image><item><title>Lab Newsletter — September 14, 2026: Folding the Genome</title><link>https://aicell.io/post/newsletter-2026-09-14/</link><pubDate>Mon, 14 Sep 2026 03:06:47 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-09-14/</guid><description>&lt;p>This week the digest has &lt;em>read&lt;/em> the genome — &lt;a href="https://aicell.io/post/newsletter-2026-09-12/">designing the mRNA message&lt;/a>,
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>newsletter | AICell Lab</title><link>https://aicell.io/category/newsletter/</link><atom:link href="https://aicell.io/category/newsletter/index.xml" rel="self" type="application/rss+xml"/><description>newsletter</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 15 Sep 2026 03:00:18 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>newsletter</title><link>https://aicell.io/category/newsletter/</link></image><item><title>Lab Newsletter — September 15, 2026: The Art of Alignment</title><link>https://aicell.io/post/newsletter-2026-09-15/</link><pubDate>Tue, 15 Sep 2026 03:00:18 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-09-15/</guid><description>&lt;p>This week the digest lived in molecules — &lt;a href="https://aicell.io/post/newsletter-2026-09-12/">designing mRNA&lt;/a>, inferring
+&lt;a href="https://aicell.io/post/newsletter-2026-09-13/">the conversations between cells&lt;/a>, &lt;a href="https://aicell.io/post/newsletter-2026-09-14/">folding the genome&lt;/a>.
+Today we come back to the lab&amp;rsquo;s imaging home, and to a step so routine it&amp;rsquo;s almost invisible:
+&lt;strong>alignment&lt;/strong>. Before you can subtract one image from another, follow a cell across a movie, overlay
+forty rounds of &lt;a href="https://aicell.io/post/newsletter-2026-09-01/">multiplexed staining&lt;/a>, or stack a hundred tissue
+sections into a three-dimensional whole, you first have to make the images &lt;em>line up&lt;/em>. That is image
+registration — finding the spatial transformation that warps one image onto another — and for
+decades it meant running a fresh optimization for every single pair. Today&amp;rsquo;s digest is about how deep
+learning turned that slow, per-pair grind into a fast, &lt;em>learned&lt;/em> function.&lt;/p>
+&lt;h3 id="-the-founding-move-registration-as-a-function-you-learn-once">🧭 The founding move: registration as a function you learn once&lt;/h3>
+&lt;p>Classical registration treats each image pair as its own optimization problem — accurate, but slow,
+and slower still for rich deformations. &lt;a href="https://doi.org/10.1109/TMI.2019.2897538" target="_blank" rel="noopener">&lt;strong>Balakrishnan et al.&lt;/strong>&lt;/a>
+(&lt;em>IEEE TMI&lt;/em>, 2019) changed the framing. Noting that &amp;ldquo;&lt;strong>traditional registration methods optimize an
+objective function for each pair of images, which can be time-consuming for large datasets or rich
+deformation models,&lt;/strong>&amp;rdquo; they built &lt;strong>VoxelMorph&lt;/strong>, which instead &amp;ldquo;&lt;strong>formulate[s] registration as a
+function that maps an input image pair to a deformation field that aligns these images&lt;/strong>,&amp;rdquo; a function
+&amp;ldquo;&lt;strong>parameterize[d] … via a convolutional neural network (CNN)&lt;/strong>&amp;rdquo; and trained once &amp;ldquo;&lt;strong>on a set of
+images.&lt;/strong>&amp;rdquo; The payoff is amortization: &amp;ldquo;&lt;strong>given a new pair of scans, VoxelMorph rapidly computes a
+deformation field by directly evaluating the function&lt;/strong>&amp;rdquo; — no per-pair optimization at all. And it
+costs nothing in accuracy, with &amp;ldquo;&lt;strong>the unsupervised model&amp;rsquo;s accuracy … comparable to state-of-the-art
+methods, while operating orders of magnitude faster.&lt;/strong>&amp;rdquo; Registration became inference.&lt;/p>
+&lt;h3 id="-where-does-the-training-signal-come-from-image-similarity-itself">🧩 Where does the training signal come from? Image similarity itself&lt;/h3>
+&lt;p>A learned function needs a training target — but you can&amp;rsquo;t hand-draw the &lt;em>correct&lt;/em> deformation field
+for a pair of images. &lt;a href="https://doi.org/10.1016/j.media.2018.11.010" target="_blank" rel="noopener">&lt;strong>de Vos et al.&lt;/strong>&lt;/a> (&lt;em>Medical Image
+Analysis&lt;/em>, 2019) named the problem — &amp;ldquo;&lt;strong>training of ConvNets for registration was supervised using
+predefined example registrations. However, obtaining example registrations is not trivial&lt;/strong>&amp;rdquo; — and
+answered it with the &lt;strong>DLIR&lt;/strong> framework &amp;ldquo;&lt;strong>for unsupervised affine and deformable image
+registration.&lt;/strong>&amp;rdquo; The trick is to borrow the objective from classical methods: DLIR&amp;rsquo;s networks &amp;ldquo;&lt;strong>are
+trained … by exploiting image similarity analogous to conventional intensity-based image
+registration.&lt;/strong>&amp;rdquo; No labels required — the images supervise themselves. And by &amp;ldquo;&lt;strong>stacking multiple of
+these ConvNets into a larger architecture,&lt;/strong>&amp;rdquo; DLIR does &amp;ldquo;&lt;strong>coarse-to-fine image registration&lt;/strong>,&amp;rdquo;
+first the broad affine alignment, then the fine deformable warp.&lt;/p>
+&lt;h3 id="-dont-tear-the-tissue-cycle-consistency-for-topology">🪢 Don&amp;rsquo;t tear the tissue: cycle-consistency for topology&lt;/h3>
+&lt;p>A deformation field is powerful enough to fold anatomy onto itself or rip it apart — physically
+impossible warps that still lower the loss. &lt;a href="https://doi.org/10.1016/j.media.2021.102036" target="_blank" rel="noopener">&lt;strong>Kim et al.&lt;/strong>&lt;/a>
+(&lt;em>Medical Image Analysis&lt;/em>, 2021) targeted exactly that failure: &amp;ldquo;&lt;strong>the existing deep learning methods
+still have limitations in the preservation of original topology during the deformation with
+registration vector fields.&lt;/strong>&amp;rdquo; Their fix, &lt;strong>CycleMorph&lt;/strong>, is elegant — if you warp image A onto B and
+then B back onto A, you should return to where you started. That round-trip constraint, &amp;ldquo;&lt;strong>cycle
+consistency,&lt;/strong>&amp;rdquo; acts as &amp;ldquo;&lt;strong>an implicit regularization to preserve topology during the deformation.&lt;/strong>&amp;rdquo;
+It keeps the warp physically sensible, and it&amp;rsquo;s practical at scale: CycleMorph &amp;ldquo;&lt;strong>can be applied for
+both 2D and 3D registration problems&lt;/strong>&amp;rdquo; and &amp;ldquo;&lt;strong>easily extended to multi-scale implementation to deal
+with the memory issues in large volume registration.&lt;/strong>&amp;rdquo; A geometric prior, enforced by construction.&lt;/p>
+&lt;h3 id="-transformers-diffeomorphisms-and-knowing-when-youre-unsure">🔭 Transformers, diffeomorphisms, and knowing when you&amp;rsquo;re unsure&lt;/h3>
+&lt;p>Alignment is fundamentally about &lt;em>long-range&lt;/em> correspondence — a landmark on one side of the image
+must find its partner across the frame — and that&amp;rsquo;s precisely where a CNN&amp;rsquo;s local receptive field
+strains. &lt;a href="https://doi.org/10.1016/j.media.2022.102615" target="_blank" rel="noopener">&lt;strong>Chen et al.&lt;/strong>&lt;/a> (&lt;em>Medical Image Analysis&lt;/em>,
+2022) made the case: &amp;ldquo;&lt;strong>the performances of ConvNets may be limited by a lack of explicit
+consideration of the long-range spatial relationships in an image,&lt;/strong>&amp;rdquo; whereas transformers&amp;rsquo; &amp;ldquo;&lt;strong>substantially
+larger receptive field enables a more precise comprehension of the spatial correspondence between
+moving and fixed images.&lt;/strong>&amp;rdquo; Their &lt;strong>TransMorph&lt;/strong> is &amp;ldquo;&lt;strong>a hybrid Transformer-ConvNet model for
+volumetric medical image registration,&lt;/strong>&amp;rdquo; and it ships with two variants the lab especially values:
+&amp;ldquo;&lt;strong>the diffeomorphic variants ensure the topology-preserving deformations, and the Bayesian variant
+produces a well-calibrated registration uncertainty estimate.&lt;/strong>&amp;rdquo; Not just a better alignment — a
+&lt;em>guaranteed-smooth&lt;/em> one, and one that can tell you how much to trust it.&lt;/p>
+&lt;h3 id="-registration-without-ever-seeing-a-real-image">🎭 Registration without ever seeing a real image&lt;/h3>
+&lt;p>Learned registration has a stubborn weakness: a model trained on one imaging contrast tends to fail
+on another. &lt;a href="https://doi.org/10.1109/TMI.2021.3116879" target="_blank" rel="noopener">&lt;strong>Hoffmann et al.&lt;/strong>&lt;/a> (&lt;em>IEEE TMI&lt;/em>, 2022)
+removed the dependency entirely. Observing that &amp;ldquo;&lt;strong>learning-based techniques are fast at test time
+but limited to registering images with contrasts and geometric content similar to those seen during
+training,&lt;/strong>&amp;rdquo; &lt;strong>SynthMorph&lt;/strong> learns &amp;ldquo;&lt;strong>without acquired imaging data,&lt;/strong>&amp;rdquo; using &amp;ldquo;&lt;strong>a generative strategy
+for diverse synthetic label maps and images that exposes networks to a wide range of variability,
+forcing them to learn more invariant features.&lt;/strong>&amp;rdquo; The result is a single contrast-agnostic model —
+and, remarkably, &amp;ldquo;&lt;strong>training on arbitrary shapes synthesized from noise distributions results in
+competitive performance, removing the dependency on acquired data of any kind.&lt;/strong>&amp;rdquo; A registration
+network taught by pure synthesis, generalizing to modalities it never met — a striking cousin of the
+lab&amp;rsquo;s interest in simulation-driven learning.&lt;/p>
+&lt;h3 id="-aligning-space-itself-from-slices-to-a-3d-atlas">🗺️ Aligning space itself: from slices to a 3D atlas&lt;/h3>
+&lt;p>The same problem reappears the moment imaging meets omics. &lt;a href="https://doi.org/10.1038/s41592-022-01459-6" target="_blank" rel="noopener">&lt;strong>Zeira et al.&lt;/strong>&lt;/a>
+(&lt;em>Nature Methods&lt;/em>, 2022) tackled it for spatial transcriptomics, where each slice &amp;ldquo;&lt;strong>measures mRNA
+expression across thousands of spots … while recording the two-dimensional (2D) coordinates of each
+spot.&lt;/strong>&amp;rdquo; Their &lt;strong>PASTE&lt;/strong> — probabilistic alignment of ST experiments — &amp;ldquo;&lt;strong>align[s] and integrate[s]
+ST data from multiple adjacent tissue slices,&lt;/strong>&amp;rdquo; computing &amp;ldquo;&lt;strong>pairwise alignments of slices using an
+optimal transport formulation that models both transcriptional similarity and physical distances
+between spots.&lt;/strong>&amp;rdquo; From those pairwise maps it &amp;ldquo;&lt;strong>construct[s] a stacked 3D alignment of a tissue,&lt;/strong>&amp;rdquo;
+and the integration pays off downstream: &amp;ldquo;&lt;strong>the PASTE integrated slice improves the identification of
+cell types and differentially expressed genes.&lt;/strong>&amp;rdquo; Note the engine — &lt;strong>optimal transport&lt;/strong>, the same
+primitive behind the spatial cell-cell-communication methods from &lt;a href="https://aicell.io/post/newsletter-2026-09-13/">two days ago&lt;/a>.
+Alignment is what turns a pile of 2D slices into a 3D map.&lt;/p>
+&lt;h3 id="-why-its-our-kind-of-problem">🧫 Why it&amp;rsquo;s our kind of problem&lt;/h3>
+&lt;p>Read across the six and the arc is quietly the lab&amp;rsquo;s own: &lt;strong>reframe a slow optimization as a learned
+function&lt;/strong> (VoxelMorph), &lt;strong>supervise it with the data&amp;rsquo;s own structure&lt;/strong> (DLIR), &lt;strong>constrain it with a
+physically-meaningful prior&lt;/strong> (CycleMorph&amp;rsquo;s topology), &lt;strong>upgrade the architecture for long-range
+correspondence and report uncertainty&lt;/strong> (TransMorph), &lt;strong>erase the data dependency with synthesis&lt;/strong>
+(SynthMorph), and &lt;strong>carry it into a new modality&lt;/strong> (PASTE). Registration is the hidden prerequisite of
+almost everything the lab images: the forty rounds of &lt;a href="https://aicell.io/post/newsletter-2026-09-01/">multiplexed staining&lt;/a>
+have to align cycle-to-cycle; live-cell movies on the &lt;a href="https://aicell.io/project/reef-imaging-farm/">REEF imaging farm&lt;/a>
+and &lt;a href="https://aicell.io/project/agent-lens/">Agent-Lens&lt;/a> need drift correction and multi-position stitching; and an
+autonomous microscope that knows its own &lt;em>registration uncertainty&lt;/em> (TransMorph&amp;rsquo;s Bayesian variant)
+can decide, on its own, when a frame needs re-imaging. These are open, benchmarked tools — VoxelMorph,
+TransMorph, SynthMorph and PASTE all ship public code, the same publish-the-model spirit behind the
+&lt;a href="https://aicell.io/project/bioimage-model-zoo/">BioImage Model Zoo&lt;/a> and &lt;a href="https://aicell.io/project/bioengine/">BioEngine&lt;/a>. And it&amp;rsquo;s a
+concrete rung toward the &lt;a href="https://aicell.io/project/human-cell-simulator/">virtual cell&lt;/a>: building a cell model from
+imaging means fusing many partial views — timepoints, channels, sections, modalities — into one
+coherent, registered whole. Alignment is the connective tissue of that data engine. Before you can
+model the cell, you have to line up everything you saw of it.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(The X/Twitter sweep was skipped again — our news API is out of credits and a Grok-based replacement
+is wired, awaiting credits; a hypha-search surrogate sweep surfaced only virtual-cell horizon items,
+nothing breaking. Anchors were verified via NCBI E-utilities.) Have lab news to share — a talk, paper,
+conference or release? Message me on Slack.&lt;/em>&lt;/p></description></item><item><title>Lab Newsletter — September 14, 2026: Folding the Genome</title><link>https://aicell.io/post/newsletter-2026-09-14/</link><pubDate>Mon, 14 Sep 2026 03:06:47 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-09-14/</guid><description>&lt;p>This week the digest has &lt;em>read&lt;/em> the genome — &lt;a href="https://aicell.io/post/newsletter-2026-09-12/">designing the mRNA message&lt;/a>,
 tracing the &lt;a href="https://aicell.io/post/newsletter-2026-09-13/">conversations between cells&lt;/a>. But the genome is not a
 one-dimensional string of letters. Inside the nucleus it is packed, looped, and folded into a precise
 three-dimensional architecture, and that shape is not decoration: &lt;strong>where a gene sits in the fold —
