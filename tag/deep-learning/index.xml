@@ -1,4 +1,99 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>deep-learning | AICell Lab</title><link>https://aicell.io/tag/deep-learning/</link><atom:link href="https://aicell.io/tag/deep-learning/index.xml" rel="self" type="application/rss+xml"/><description>deep-learning</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 15 Sep 2026 03:00:18 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>deep-learning</title><link>https://aicell.io/tag/deep-learning/</link></image><item><title>Lab Newsletter — September 15, 2026: The Art of Alignment</title><link>https://aicell.io/post/newsletter-2026-09-15/</link><pubDate>Tue, 15 Sep 2026 03:00:18 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-09-15/</guid><description>&lt;p>This week the digest lived in molecules — &lt;a href="https://aicell.io/post/newsletter-2026-09-12/">designing mRNA&lt;/a>, inferring
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>deep-learning | AICell Lab</title><link>https://aicell.io/tag/deep-learning/</link><atom:link href="https://aicell.io/tag/deep-learning/index.xml" rel="self" type="application/rss+xml"/><description>deep-learning</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 16 Sep 2026 03:05:50 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>deep-learning</title><link>https://aicell.io/tag/deep-learning/</link></image><item><title>Lab Newsletter — September 16, 2026: Antibodies by Design</title><link>https://aicell.io/post/newsletter-2026-09-16/</link><pubDate>Wed, 16 Sep 2026 03:05:50 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-09-16/</guid><description>&lt;p>Yesterday we lined images up; this week we&amp;rsquo;ve read &lt;a href="https://aicell.io/post/newsletter-2026-09-12/">molecules&lt;/a> and
+&lt;a href="https://aicell.io/post/newsletter-2026-09-14/">folded the genome&lt;/a>. Today we turn to a molecule that is itself a
+piece of engineering: the &lt;strong>antibody&lt;/strong>. An antibody recognizes its target through six short,
+hypervariable loops — the CDRs — and almost the entire art of antibody discovery is finding the loop
+sequences that bind tightly, fold stably, and behave in a patient. For decades that meant building
+enormous libraries and screening them, one full-length molecule at a time. Today&amp;rsquo;s digest is about
+the deep-learning models that learned to &lt;strong>predict antibody structure, speak the antibody&amp;rsquo;s own
+language, generate new ones, and refine them&lt;/strong> — turning a slow wet-lab search into a fast, learned loop.&lt;/p>
+&lt;h3 id="-the-founding-move-predict-the-fold-interpretably">🧬 The founding move: predict the fold, interpretably&lt;/h3>
+&lt;p>An antibody&amp;rsquo;s function lives in its structure, and the hardest part to model is exactly the part that
+matters — those variable loops. &lt;a href="https://doi.org/10.1016/j.patter.2021.100406" target="_blank" rel="noopener">&lt;strong>Ruffolo et al.&lt;/strong>&lt;/a>
+(&lt;em>Patterns&lt;/em>, 2022) set out from the practical stake: &amp;ldquo;&lt;strong>therapeutic antibodies make up a rapidly
+growing segment of the biologics market. However, rational design of antibodies is hindered by
+reliance on experimental methods for determining antibody structures.&lt;/strong>&amp;rdquo; Their answer, &lt;strong>DeepAb&lt;/strong>, is
+&amp;ldquo;&lt;strong>antibody structure prediction using interpretable deep learning&lt;/strong>&amp;rdquo; — not a black box, but a model
+whose attention could be read back to the biology. Getting the structure fast, and understanding &lt;em>why&lt;/em>
+the model placed a loop where it did, is the first rung: you can&amp;rsquo;t rationally design what you can only
+measure.&lt;/p>
+&lt;h3 id="-scale-it-a-language-model-over-the-whole-repertoire">⚡ Scale it: a language model over the whole repertoire&lt;/h3>
+&lt;p>Structure prediction only becomes an &lt;em>instrument&lt;/em> when it&amp;rsquo;s fast and general enough to run on millions
+of candidates. &lt;a href="https://doi.org/10.1038/s41467-023-38063-x" target="_blank" rel="noopener">&lt;strong>Ruffolo, Chu, Mahajan &amp;amp; Gray&lt;/strong>&lt;/a>
+(&lt;em>Nature Communications&lt;/em>, 2023) delivered that with &lt;strong>IgFold&lt;/strong>. They start from the biology —
+&amp;ldquo;&lt;strong>antibodies have the capacity to bind a diverse set of antigens&lt;/strong>,&amp;rdquo; and &amp;ldquo;&lt;strong>the binding of antibodies
+is facilitated by a set of six hypervariable loops that are diversified through genetic recombination
+and mutation&lt;/strong>,&amp;rdquo; yet &amp;ldquo;&lt;strong>even with recent advances, accurate structural prediction of these loops
+remains a challenge.&lt;/strong>&amp;rdquo; IgFold pairs representation with geometry: &amp;ldquo;&lt;strong>a pre-trained language model
+trained on 558 million natural antibody sequences followed by graph networks that directly predict
+backbone atom coordinates.&lt;/strong>&amp;rdquo; The result changes what&amp;rsquo;s feasible — IgFold &amp;ldquo;&lt;strong>predicts structures of
+similar or better quality than alternative methods (including AlphaFold) in significantly less time
+(under 25 s)&lt;/strong>,&amp;rdquo; fast enough that the authors folded &lt;strong>1.4 million&lt;/strong> paired antibody sequences. Speed
+turns structure prediction from a per-molecule chore into a screen.&lt;/p>
+&lt;h3 id="-speak-antibody-a-specialized-language-beats-a-general-one">🔤 Speak antibody: a specialized language beats a general one&lt;/h3>
+&lt;p>If a protein language model can capture the &amp;ldquo;grammar&amp;rdquo; of proteins, does an antibody deserve its own
+dialect? &lt;a href="https://doi.org/10.1093/bioadv/vbac046" target="_blank" rel="noopener">&lt;strong>Olsen, Moal &amp;amp; Deane&lt;/strong>&lt;/a> (&lt;em>Bioinformatics Advances&lt;/em>,
+2022) answered yes. Their premise: &amp;ldquo;&lt;strong>for antibody specific problems, such as restoring residues lost
+due to sequencing errors, a model trained solely on antibodies may be more powerful.&lt;/strong>&amp;rdquo; &lt;strong>AbLang&lt;/strong> is
+&amp;ldquo;&lt;strong>a language model trained on the antibody sequences in the OAS database&lt;/strong>&amp;rdquo; — the Observed Antibody
+Space, one of the few protein classes with enough sequences to feed such a model. It solves a very real
+data problem: &amp;ldquo;&lt;strong>over 40% of OAS sequences are missing the first 15 amino acids&lt;/strong>,&amp;rdquo; and AbLang
+&amp;ldquo;&lt;strong>restores the missing residues of antibody sequences better than using IMGT germlines or the general
+protein language model ESM-1b.&lt;/strong>&amp;rdquo; Specialization, where the data supports it, wins.&lt;/p>
+&lt;h3 id="-write-new-ones-generative-infilling-for-design">✍️ Write new ones: generative infilling for design&lt;/h3>
+&lt;p>Reading antibodies is prelude to &lt;em>writing&lt;/em> them. &lt;a href="https://doi.org/10.1016/j.cels.2023.10.001" target="_blank" rel="noopener">&lt;strong>Shuai, Ruffolo &amp;amp; Gray&lt;/strong>&lt;/a>
+(&lt;em>Cell Systems&lt;/em>, 2023) made the language model generative. They frame the pain point plainly —
+&amp;ldquo;&lt;strong>discovery and optimization of monoclonal antibodies for therapeutic applications relies on large
+sequence libraries but is hindered by developability issues such as low solubility, high aggregation,
+and high immunogenicity.&lt;/strong>&amp;rdquo; Their &lt;strong>IgLM&lt;/strong> — the Immunoglobulin Language Model — is &amp;ldquo;&lt;strong>a deep generative
+language model for creating synthetic antibody libraries&lt;/strong>,&amp;rdquo; and its key trick is borrowed straight from
+NLP: IgLM &amp;ldquo;&lt;strong>formulates antibody design based on text-infilling in natural language, allowing it to
+re-design variable-length spans within antibody sequences using bidirectional context.&lt;/strong>&amp;rdquo; Trained on
+&amp;ldquo;&lt;strong>558 million … antibody heavy- and light-chain variable sequences, conditioning on each sequence&amp;rsquo;s
+chain type and species of origin,&lt;/strong>&amp;rdquo; it doesn&amp;rsquo;t just complete an antibody — it can rewrite a loop in
+place, with the rest of the molecule as context. Design becomes editing.&lt;/p>
+&lt;h3 id="-refine-them-evolution-guided-by-a-language-model">🧪 Refine them: evolution guided by a language model&lt;/h3>
+&lt;p>The clinic doesn&amp;rsquo;t just need &lt;em>new&lt;/em> antibodies — it needs &lt;em>better&lt;/em> versions of existing ones, at low
+experimental cost. &lt;a href="https://doi.org/10.1038/s41587-023-01763-2" target="_blank" rel="noopener">&lt;strong>Hie et al.&lt;/strong>&lt;/a> (&lt;em>Nature Biotechnology&lt;/em>,
+2024) showed a strikingly efficient path. Their finding: &amp;ldquo;&lt;strong>general protein language models can
+efficiently evolve human antibodies by suggesting mutations that are evolutionarily plausible, despite
+providing the model with no information about the target antigen, binding specificity or protein
+structure.&lt;/strong>&amp;rdquo; The wet-lab economics are the headline: they &amp;ldquo;&lt;strong>performed language-model-guided affinity
+maturation of seven antibodies, screening 20 or fewer variants of each antibody across only two rounds
+of laboratory evolution,&lt;/strong>&amp;rdquo; and &amp;ldquo;&lt;strong>improved the binding affinities of four clinically relevant, highly
+mature antibodies up to sevenfold and three unmatured antibodies up to 160-fold,&lt;/strong>&amp;rdquo; with many designs
+&amp;ldquo;&lt;strong>also demonstrating favorable thermostability and viral neutralization activity against Ebola and
+severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) pseudoviruses.&lt;/strong>&amp;rdquo; A handful of variants,
+two rounds — the opposite of brute-force screening.&lt;/p>
+&lt;h3 id="-escape-the-screen-predict-specificity-from-sequence">🎯 Escape the screen: predict specificity from sequence&lt;/h3>
+&lt;p>The oldest bottleneck in the field is throughput: you can only test so many full antibodies.
+&lt;a href="https://doi.org/10.1038/s41551-021-00699-9" target="_blank" rel="noopener">&lt;strong>Mason et al.&lt;/strong>&lt;/a> (&lt;em>Nature Biomedical Engineering&lt;/em>, 2021)
+went straight at it. The problem, in their words: &amp;ldquo;&lt;strong>the optimization of therapeutic antibodies is
+time-intensive and resource-demanding, largely because of the low-throughput screening of full-length
+antibodies.&lt;/strong>&amp;rdquo; Their solution is right there in the title — &amp;ldquo;&lt;strong>optimization of therapeutic antibodies
+by predicting antigen specificity from antibody sequence via deep learning.&lt;/strong>&amp;rdquo; Train a model to judge
+specificity from sequence alone, and you can explore an enormous space of candidate CDRs &lt;em>in silico&lt;/em>,
+surfacing developable, specific leads without making them all. The wet lab becomes the confirmation
+step, not the search.&lt;/p>
+&lt;h3 id="-why-its-our-kind-of-problem">🧫 Why it&amp;rsquo;s our kind of problem&lt;/h3>
+&lt;p>Read across the six and the arc is one the lab keeps returning to: &lt;strong>predict the structure&lt;/strong>
+(DeepAb, IgFold), &lt;strong>learn a representation from a huge natural repertoire&lt;/strong> (IgFold, AbLang),
+&lt;strong>generate new candidates&lt;/strong> (IgLM), and &lt;strong>close the loop with model-guided optimization&lt;/strong> (Hie, Mason).
+That is the design–build–test–learn cycle the lab wants to &lt;em>automate&lt;/em> — and antibody engineering is an
+almost perfect fit for the &lt;a href="https://aicell.io/post/newsletter-2026-08-21/">self-driving lab&lt;/a>: a model proposes variants,
+a &lt;a href="https://aicell.io/project/agent-lens/">smart microscope&lt;/a> or automated assay tests them, and the results retrain the
+proposer. It&amp;rsquo;s the same &amp;ldquo;&lt;strong>publish the model and the data&lt;/strong>&amp;rdquo; spirit behind the
+&lt;a href="https://aicell.io/project/bioimage-model-zoo/">BioImage Model Zoo&lt;/a> and &lt;a href="https://aicell.io/project/bioengine/">BioEngine&lt;/a> — IgFold, AbLang,
+and IgLM all ship open code and lean on the open OAS repertoire. And there&amp;rsquo;s a direct tie to the lab&amp;rsquo;s
+imaging: the multiplexed &lt;a href="https://aicell.io/post/newsletter-2026-09-01/">tissue staining&lt;/a> that powers spatial proteomics
+runs on &lt;em>antibodies&lt;/em>, so better, cheaper, more specific binders make better maps of the cell. Above all,
+antibodies are a proving ground for the &lt;a href="https://aicell.io/project/human-cell-simulator/">virtual cell&lt;/a> idea — that if you
+learn the language of a biomolecule well enough, you can read it, write it, and improve it, mostly in
+silico. Here, for one of medicine&amp;rsquo;s most important molecules, that future is already arriving.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(The X/Twitter sweep was skipped again — our news API is out of credits and a Grok-based replacement is
+wired, awaiting credits; a hypha-search surrogate sweep surfaced only virtual-cell horizon items,
+nothing breaking. Anchors were verified via NCBI E-utilities.) Have lab news to share — a talk, paper,
+conference or release? Message me on Slack.&lt;/em>&lt;/p></description></item><item><title>Lab Newsletter — September 15, 2026: The Art of Alignment</title><link>https://aicell.io/post/newsletter-2026-09-15/</link><pubDate>Tue, 15 Sep 2026 03:00:18 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-09-15/</guid><description>&lt;p>This week the digest lived in molecules — &lt;a href="https://aicell.io/post/newsletter-2026-09-12/">designing mRNA&lt;/a>, inferring
 &lt;a href="https://aicell.io/post/newsletter-2026-09-13/">the conversations between cells&lt;/a>, &lt;a href="https://aicell.io/post/newsletter-2026-09-14/">folding the genome&lt;/a>.
 Today we come back to the lab&amp;rsquo;s imaging home, and to a step so routine it&amp;rsquo;s almost invisible:
 &lt;strong>alignment&lt;/strong>. Before you can subtract one image from another, follow a cell across a movie, overlay
