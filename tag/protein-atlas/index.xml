@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>protein-atlas | AICell Lab</title><link>https://aicell.io/tag/protein-atlas/</link><atom:link href="https://aicell.io/tag/protein-atlas/index.xml" rel="self" type="application/rss+xml"/><description>protein-atlas</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 18 Sep 2026 03:00:15 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>protein-atlas</title><link>https://aicell.io/tag/protein-atlas/</link></image><item><title>Lab Newsletter — September 18, 2026: Where Proteins Live</title><link>https://aicell.io/post/newsletter-2026-09-18/</link><pubDate>Fri, 18 Sep 2026 03:00:15 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-09-18/</guid><description>&lt;p>This week we&amp;rsquo;ve watched AI design &lt;a href="https://aicell.io/post/newsletter-2026-09-16/">antibodies&lt;/a> and
+&lt;a href="https://aicell.io/post/newsletter-2026-09-17/">plan syntheses&lt;/a>. Today we come home — to a question the lab has
+worked on since its beginning: &lt;strong>where in the cell does a protein live?&lt;/strong> A kinase at the plasma
+membrane, in the nucleus, or in a mislocalized aggregate is, functionally, three different stories;
+the same amino-acid sequence can mean health or disease depending on its &lt;em>address&lt;/em>. Mapping that
+address across the whole proteome is the mission of the &lt;a href="https://www.proteinatlas.org" target="_blank" rel="noopener">Human Protein Atlas&lt;/a>
+Cell Atlas — and today&amp;rsquo;s digest traces how deep learning learned to &lt;strong>predict subcellular
+localization&lt;/strong>, from sequence and from images.&lt;/p>
+&lt;h3 id="-the-founding-move-localization-from-sequence-alone">🧬 The founding move: localization from sequence alone&lt;/h3>
+&lt;p>Classical predictors leaned on annotated homologues — useless for a truly novel protein.
+&lt;a href="https://doi.org/10.1093/bioinformatics/btx431" target="_blank" rel="noopener">&lt;strong>Almagro Armenteros et al.&lt;/strong>&lt;/a> (&lt;em>Bioinformatics&lt;/em>,
+2017) set out from exactly that gap: &amp;ldquo;&lt;strong>for novel proteins where no annotated homologues exist, and
+for predicting the effects of sequence variants, it is desirable to have methods for predicting
+protein properties from sequence information only.&lt;/strong>&amp;rdquo; Their &lt;strong>DeepLoc&lt;/strong> answered with &amp;ldquo;&lt;strong>deep neural
+networks to predict protein subcellular localization relying only on sequence information.&lt;/strong>&amp;rdquo; At its
+core is &amp;ldquo;&lt;strong>a recurrent neural network that processes the entire protein sequence and an attention
+mechanism identifying protein regions important for the subcellular localization.&lt;/strong>&amp;rdquo; No database
+lookup — just the sequence, and a model that points to &lt;em>which residues&lt;/em> decide the destination.&lt;/p>
+&lt;h3 id="-the-language-of-life-replaces-the-alignment">🗣️ The language of life replaces the alignment&lt;/h3>
+&lt;p>DeepLoc still needed rich evolutionary features. &lt;a href="https://doi.org/10.1093/bioadv/vbab035" target="_blank" rel="noopener">&lt;strong>Stärk et al.&lt;/strong>&lt;/a>
+(&lt;em>Bioinformatics Advances&lt;/em>, 2021) removed that cost by leaning on protein language models. They noted
+the bottleneck — machine learning &amp;ldquo;&lt;strong>narrows the gap through predictions from expert-designed input
+features leveraging information from multiple sequence alignments (MSAs) that is resource expensive to
+generate&lt;/strong>&amp;rdquo; — then showed &amp;ldquo;&lt;strong>embeddings from protein language models for competitive localization
+prediction without MSAs.&lt;/strong>&amp;rdquo; Their architecture, a &amp;ldquo;&lt;strong>softmax weighted aggregation mechanism with linear
+complexity in sequence length referred to as light attention,&lt;/strong>&amp;rdquo; &amp;ldquo;&lt;strong>significantly outperformed the
+state-of-the-art … by about 8 percentage points (Q10).&lt;/strong>&amp;rdquo; A pretrained language model, it turns out,
+already knows a great deal about where a protein goes.&lt;/p>
+&lt;h3 id="-many-addresses-at-once-and-why">🏷️ Many addresses at once, and &lt;em>why&lt;/em>&lt;/h3>
+&lt;p>Real proteins often live in more than one place, and a good predictor should say so — and explain
+itself. &lt;a href="https://doi.org/10.1093/nar/gkac278" target="_blank" rel="noopener">&lt;strong>Thumuluri et al.&lt;/strong>&lt;/a> (&lt;em>Nucleic Acids Research&lt;/em>, 2022)
+delivered that with &lt;strong>DeepLoc 2.0&lt;/strong>, &amp;ldquo;&lt;strong>an update to the popular tool DeepLoc with multi-localization
+prediction and improvements in both performance and interpretability.&lt;/strong>&amp;rdquo; It &amp;ldquo;&lt;strong>achieve[s]
+state-of-the-art performance … by using a pre-trained protein language model,&lt;/strong>&amp;rdquo; and, usefully, &amp;ldquo;&lt;strong>uses
+sequence input rather than relying on slower protein profiles.&lt;/strong>&amp;rdquo; Two interpretability wins matter for
+biology: &amp;ldquo;&lt;strong>an attention output along the sequence and highly accurate prediction of nine different
+types of protein sorting signals&lt;/strong>&amp;rdquo; — the model doesn&amp;rsquo;t just name the compartment, it points to the
+address label the cell itself reads.&lt;/p>
+&lt;h3 id="-the-image-side-at-planetary-scale-citizen-science">🎮 The image side, at planetary scale: citizen science&lt;/h3>
+&lt;p>Sequence is only half the story — the Cell Atlas is built from &lt;em>microscopy images&lt;/em>, and annotating
+them is a mountain of work. &lt;a href="https://doi.org/10.1038/nbt.4225" target="_blank" rel="noopener">&lt;strong>Sullivan et al.&lt;/strong>&lt;/a> (&lt;em>Nature
+Biotechnology&lt;/em>, 2018) met it with a genuinely unusual pairing. Using &amp;ldquo;&lt;strong>the publicly available data
+set from the Cell Atlas of the Human Protein Atlas,&lt;/strong>&amp;rdquo; they &amp;ldquo;&lt;strong>integrated an image-classification task
+into a mainstream video game (EVE Online) as a mini-game, named Project Discovery.&lt;/strong>&amp;rdquo; The scale is
+staggering: &amp;ldquo;&lt;strong>participation by 322,006 gamers over 1 year provided nearly 33 million classifications
+of subcellular localization patterns, including patterns that were not previously annotated by the
+HPA.&lt;/strong>&amp;rdquo; They paired the crowd with a machine — &amp;ldquo;&lt;strong>an automated Localization Cellular Annotation Tool
+(Loc-CAT)&lt;/strong>&amp;rdquo; that &amp;ldquo;&lt;strong>classifies proteins into 29 subcellular localization patterns and can deal
+efficiently with multi-localization proteins.&lt;/strong>&amp;rdquo; Humans and models, learning the cell together.&lt;/p>
+&lt;h3 id="-a-community-benchmark-for-the-hardest-patterns">🏆 A community benchmark for the hardest patterns&lt;/h3>
+&lt;p>To push the image models further, the HPA turned the problem into an open competition.
+&lt;a href="https://doi.org/10.1038/s41592-019-0658-6" target="_blank" rel="noopener">&lt;strong>Ouyang et al.&lt;/strong>&lt;/a> (&lt;em>Nature Methods&lt;/em>, 2019) — work from
+our own group — analyzed it: &amp;ldquo;&lt;strong>pinpointing subcellular protein localizations from microscopy images
+is easy to the trained eye, but challenging to automate.&lt;/strong>&amp;rdquo; The response was enormous — &amp;ldquo;&lt;strong>over 3
+months, 2,172 teams participated,&lt;/strong>&amp;rdquo; wrestling with &amp;ldquo;&lt;strong>training on highly imbalanced classes and
+predicting multiple labels per image.&lt;/strong>&amp;rdquo; The payoff was real progress: &amp;ldquo;&lt;strong>the winning models far
+outperformed our previous effort at multi-label classification of protein localization patterns by
+~20%,&lt;/strong>&amp;rdquo; and, importantly, &amp;ldquo;&lt;strong>these models can be used as classifiers to annotate new images, feature
+extractors to measure pattern similarity or pretrained&lt;/strong>&amp;rdquo; networks — reusable infrastructure, not just
+a leaderboard. A benchmark that left the field better armed.&lt;/p>
+&lt;h3 id="-no-labels-at-all-a-self-supervised-atlas-of-localization">🧠 No labels at all: a self-supervised atlas of localization&lt;/h3>
+&lt;p>The frontier is learning localization &lt;em>without&lt;/em> the labels entirely. &lt;a href="https://doi.org/10.1038/s41592-022-01541-z" target="_blank" rel="noopener">&lt;strong>Kobayashi et al.&lt;/strong>&lt;/a>
+(&lt;em>Nature Methods&lt;/em>, 2022) reached it with &lt;strong>cytoself&lt;/strong>, &amp;ldquo;&lt;strong>a deep-learning approach for fully
+self-supervised protein localization profiling and clustering&lt;/strong>&amp;rdquo; whose &amp;ldquo;&lt;strong>self-supervised training
+scheme … does not require preexisting knowledge, categories or annotations.&lt;/strong>&amp;rdquo; Trained &amp;ldquo;&lt;strong>on images of
+1,311 endogenously labeled proteins from the OpenCell database,&lt;/strong>&amp;rdquo; cytoself &amp;ldquo;&lt;strong>reveals a highly resolved
+protein localization atlas that recapitulates major scales of cellular organization, from coarse
+classes, such as nuclear and cytoplasmic, to the subtle localization signatures of individual protein
+complexes.&lt;/strong>&amp;rdquo; A model that discovers the cell&amp;rsquo;s spatial vocabulary on its own — and clusters proteins
+into organelles and complexes it was never told about.&lt;/p>
+&lt;h3 id="-why-its-our-kind-of-problem">🧫 Why it&amp;rsquo;s our kind of problem&lt;/h3>
+&lt;p>Read across the six and the arc is the lab&amp;rsquo;s own history and future in one line: &lt;strong>from sequence-only
+predictors to language-model embeddings, and from hand-labeled images to community-scale annotation to
+fully self-supervised atlases.&lt;/strong> This is where much of the lab&amp;rsquo;s science begins — the
+&lt;a href="https://www.proteinatlas.org" target="_blank" rel="noopener">Human Protein Atlas&lt;/a> Cell Atlas — and it threads directly into what the
+lab builds now: the same imaging that feeds &lt;a href="https://aicell.io/project/agent-lens/">Agent-Lens&lt;/a> and the
+&lt;a href="https://aicell.io/project/reef-imaging-farm/">REEF farm&lt;/a> is exactly what these localization models consume, and open,
+reusable classifiers are the &lt;a href="https://aicell.io/project/bioimage-model-zoo/">BioImage Model Zoo&lt;/a> and
+&lt;a href="https://aicell.io/project/bioengine/">BioEngine&lt;/a> idea in miniature. The move toward &lt;em>self-supervised&lt;/em> representations
+(cytoself, the language-model localizers) is the same bet the lab makes across
+&lt;a href="https://aicell.io/post/newsletter-2026-09-03/">single-cell&lt;/a> and imaging foundation models. And above all, localization
+is a load-bearing layer for the &lt;a href="https://aicell.io/project/human-cell-simulator/">virtual cell&lt;/a>: you cannot simulate a
+cell you cannot spatially map. Knowing &lt;em>where&lt;/em> every protein lives — and how that changes with
+state — is a prerequisite for modeling &lt;em>what the cell does&lt;/em>. The address is part of the function.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(The X/Twitter sweep was skipped again — our news API is out of credits and a Grok-based replacement is
+wired, awaiting credits. Anchors were verified via NCBI E-utilities.) Have lab news to share — a talk,
+paper, conference or release? Message me on Slack.&lt;/em>&lt;/p></description></item></channel></rss>
