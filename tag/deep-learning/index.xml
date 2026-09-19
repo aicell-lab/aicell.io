@@ -1,4 +1,82 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>deep-learning | AICell Lab</title><link>https://aicell.io/tag/deep-learning/</link><atom:link href="https://aicell.io/tag/deep-learning/index.xml" rel="self" type="application/rss+xml"/><description>deep-learning</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 18 Sep 2026 03:00:15 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>deep-learning</title><link>https://aicell.io/tag/deep-learning/</link></image><item><title>Lab Newsletter — September 18, 2026: Where Proteins Live</title><link>https://aicell.io/post/newsletter-2026-09-18/</link><pubDate>Fri, 18 Sep 2026 03:00:15 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-09-18/</guid><description>&lt;p>This week we&amp;rsquo;ve watched AI design &lt;a href="https://aicell.io/post/newsletter-2026-09-16/">antibodies&lt;/a> and
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>deep-learning | AICell Lab</title><link>https://aicell.io/tag/deep-learning/</link><atom:link href="https://aicell.io/tag/deep-learning/index.xml" rel="self" type="application/rss+xml"/><description>deep-learning</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sat, 19 Sep 2026 03:00:28 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>deep-learning</title><link>https://aicell.io/tag/deep-learning/</link></image><item><title>Lab Newsletter — September 19, 2026: A Structure for Every Sequence</title><link>https://aicell.io/post/newsletter-2026-09-19/</link><pubDate>Sat, 19 Sep 2026 03:00:28 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-09-19/</guid><description>&lt;p>This week we&amp;rsquo;ve followed proteins in every direction — &lt;a href="https://aicell.io/post/newsletter-2026-09-16/">designing antibodies&lt;/a>,
+&lt;a href="https://aicell.io/post/newsletter-2026-09-18/">locating them in the cell&lt;/a>, &lt;a href="https://aicell.io/post/newsletter-2026-09-02/">reading their function&lt;/a>.
+All of it rests on one thing we&amp;rsquo;ve quietly taken for granted all month: that you can go from a protein&amp;rsquo;s
+&lt;strong>amino-acid sequence to its 3D shape&lt;/strong> with a computer. For half a century that was biology&amp;rsquo;s most famous
+unsolved problem — the &amp;ldquo;protein folding problem.&amp;rdquo; Today&amp;rsquo;s digest goes back to the breakthrough itself: the
+handful of models that turned sequence-to-structure from a grand challenge into a &lt;strong>lookup&lt;/strong>, and in doing so
+laid the foundation almost every other digest this month stands on.&lt;/p>
+&lt;h3 id="-the-breakthrough-atomic-accuracy-at-last">🧬 The breakthrough: atomic accuracy, at last&lt;/h3>
+&lt;p>The turning point came at the CASP14 blind assessment in 2020, and landed in print the next year.
+&lt;a href="https://doi.org/10.1038/s41586-021-03819-2" target="_blank" rel="noopener">&lt;strong>Jumper et al.&lt;/strong>&lt;/a> (&lt;em>Nature&lt;/em>, 2021) opened &lt;strong>AlphaFold&lt;/strong> with
+the plainest possible stakes: &amp;ldquo;&lt;strong>proteins are essential to life, and understanding their structure can
+facilitate a mechanistic understanding of their function.&lt;/strong>&amp;rdquo; Their result — &amp;ldquo;&lt;strong>highly accurate protein
+structure prediction with AlphaFold&lt;/strong>&amp;rdquo; — reached, for the first time, accuracy competitive with experiment
+across a huge range of targets, from sequence alone. Decades of X-ray crystallography, NMR, and cryo-EM had
+mapped structures one hard-won protein at a time; suddenly a model could predict them in hours. It is hard to
+overstate the shift: the field&amp;rsquo;s defining problem became, for most proteins, effectively solved.&lt;/p>
+&lt;h3 id="-the-open-parallel-three-tracks-and-complexes-for-free">🔗 The open parallel: three tracks, and complexes for free&lt;/h3>
+&lt;p>A breakthrough only becomes a &lt;em>movement&lt;/em> when the community can build on it. Days after CASP14,
+&lt;a href="https://doi.org/10.1126/science.abj8754" target="_blank" rel="noopener">&lt;strong>Baek et al.&lt;/strong>&lt;/a> (&lt;em>Science&lt;/em>, 2021) delivered &lt;strong>RoseTTAFold&lt;/strong>, an
+open method that &amp;ldquo;&lt;strong>explored network architectures that incorporate related ideas&lt;/strong>&amp;rdquo; and found &amp;ldquo;&lt;strong>the best
+performance with a three-track network in which information at the one-dimensional (1D) sequence level, the
+2D distance map level, and the 3D coordinate level is successively transformed and integrated.&lt;/strong>&amp;rdquo; It reached
+&amp;ldquo;&lt;strong>accuracies approaching those of DeepMind in CASP14&lt;/strong>&amp;rdquo; — and threw in a bonus that mattered enormously:
+&amp;ldquo;&lt;strong>rapid generation of accurate protein-protein complex models from sequence information alone,
+short-circuiting traditional approaches that require modeling of individual subunits followed by docking.&lt;/strong>&amp;rdquo;
+Crucially, the authors &amp;ldquo;&lt;strong>make the method available to the scientific community to speed biological
+research.&lt;/strong>&amp;rdquo; Open weights, open science — the pattern the lab bets on.&lt;/p>
+&lt;h3 id="-the-scale-jump-folding-a-whole-proteome">🌍 The scale jump: folding a whole proteome&lt;/h3>
+&lt;p>With a fast, accurate predictor, the natural next move is &lt;em>everything at once&lt;/em>.
+&lt;a href="https://doi.org/10.1038/s41586-021-03828-1" target="_blank" rel="noopener">&lt;strong>Tunyasuvunakool et al.&lt;/strong>&lt;/a> (&lt;em>Nature&lt;/em>, 2021) turned AlphaFold on
+an entire species. Their framing captures how sparse structural knowledge really was: &amp;ldquo;&lt;strong>after decades of
+effort, 17% of the total residues in human protein sequences are covered by an experimentally determined
+structure.&lt;/strong>&amp;rdquo; Their answer — &amp;ldquo;&lt;strong>highly accurate protein structure prediction for the human proteome&lt;/strong>&amp;rdquo; —
+filled in the other 83%, delivering confident structural models across nearly the whole set of human proteins.
+Overnight, &amp;ldquo;&lt;strong>do we have a structure for this protein?&lt;/strong>&amp;rdquo; stopped being a research project and became a query.&lt;/p>
+&lt;h3 id="-make-it-open-a-database-for-all-of-protein-space">📚 Make it open: a database for all of protein space&lt;/h3>
+&lt;p>Predictions only change a field when everyone can reach them.
+&lt;a href="https://doi.org/10.1093/nar/gkab1061" target="_blank" rel="noopener">&lt;strong>Varadi et al.&lt;/strong>&lt;/a> (&lt;em>Nucleic Acids Research&lt;/em>, 2022) built the
+&lt;strong>AlphaFold Protein Structure Database&lt;/strong> — &amp;ldquo;&lt;strong>an openly accessible, extensive database of high-accuracy
+protein-structure predictions.&lt;/strong>&amp;rdquo; It ships not just coordinates but calibrated confidence: &amp;ldquo;&lt;strong>per-residue and
+pairwise model-confidence estimates and predicted aligned errors.&lt;/strong>&amp;rdquo; And the scale is staggering — the initial
+release held &amp;ldquo;&lt;strong>over 360,000 predicted structures across 21 model-organism proteomes,&lt;/strong>&amp;rdquo; slated to expand &amp;ldquo;&lt;strong>to
+cover most of the (over 100 million) representative sequences from the UniRef90 data set.&lt;/strong>&amp;rdquo; A structural map of
+almost all known proteins, free to anyone — the same open-infrastructure spirit as the lab&amp;rsquo;s
+&lt;a href="https://aicell.io/project/bioimage-model-zoo/">BioImage Model Zoo&lt;/a> and &lt;a href="https://aicell.io/project/bioengine/">BioEngine&lt;/a>, applied to structure.&lt;/p>
+&lt;h3 id="-the-language-model-route-no-alignment-required">🔤 The language-model route: no alignment required&lt;/h3>
+&lt;p>AlphaFold and RoseTTAFold both lean on multiple-sequence alignments — powerful, but slow to build and thin for
+&amp;ldquo;orphan&amp;rdquo; proteins. &lt;a href="https://doi.org/10.1126/science.ade2574" target="_blank" rel="noopener">&lt;strong>Lin et al.&lt;/strong>&lt;/a> (&lt;em>Science&lt;/em>, 2023) showed another
+way with &lt;strong>ESMFold&lt;/strong>: &amp;ldquo;&lt;strong>direct inference of full atomic-level protein structure from primary sequence using a
+large language model.&lt;/strong>&amp;rdquo; Their observation is remarkable — &amp;ldquo;&lt;strong>as language models of protein sequences are
+scaled up to 15 billion parameters, an atomic-resolution picture of protein structure emerges in the learned
+representations.&lt;/strong>&amp;rdquo; The payoff is speed: &amp;ldquo;&lt;strong>an order-of-magnitude acceleration of high-resolution structure
+prediction,&lt;/strong>&amp;rdquo; fast enough to fold the unmapped microbial world. They used it to build &amp;ldquo;&lt;strong>the ESM Metagenomic
+Atlas by predicting structures for &amp;gt;617 million metagenomic protein sequences, including &amp;gt;225 million that are
+predicted with high confidence.&lt;/strong>&amp;rdquo; Structure, straight from the language of life.&lt;/p>
+&lt;h3 id="-beyond-the-monomer-predicting-interactions">🧩 Beyond the monomer: predicting interactions&lt;/h3>
+&lt;p>A cell is not a bag of lone proteins — it runs on &lt;em>complexes&lt;/em>: proteins with DNA, RNA, ligands, ions.
+&lt;a href="https://doi.org/10.1038/s41586-024-07487-w" target="_blank" rel="noopener">&lt;strong>Abramson et al.&lt;/strong>&lt;/a> (&lt;em>Nature&lt;/em>, 2024) generalized the whole
+approach with &lt;strong>AlphaFold 3&lt;/strong> — &amp;ldquo;&lt;strong>accurate structure prediction of biomolecular interactions with AlphaFold
+3.&lt;/strong>&amp;rdquo; Rather than a protein-only folder, it is a single model that predicts the joint 3D structure of many
+molecule types together, bringing drug-like ligands and nucleic acids into the same unified framework. The
+question shifts from &amp;ldquo;&lt;strong>what shape is this protein?&lt;/strong>&amp;rdquo; to &amp;ldquo;&lt;strong>what does this molecular machine look like when
+its parts come together?&lt;/strong>&amp;rdquo; — the shape of function itself.&lt;/p>
+&lt;h3 id="-why-its-our-kind-of-problem">🧫 Why it&amp;rsquo;s our kind of problem&lt;/h3>
+&lt;p>Read across the six and it&amp;rsquo;s the bedrock of nearly everything the lab digests. Structure prediction is now a
+&lt;em>primitive&lt;/em> — fast, accurate, and open — which is exactly why the frontier has moved to what you &lt;strong>do&lt;/strong> with a
+structure: predict &lt;a href="https://aicell.io/post/newsletter-2026-09-02/">function&lt;/a>, &lt;a href="https://aicell.io/post/newsletter-2026-09-05/">design new proteins&lt;/a>
+and &lt;a href="https://aicell.io/post/newsletter-2026-09-16/">antibodies&lt;/a>, model &lt;a href="https://aicell.io/post/newsletter-2026-08-11/">motion&lt;/a> and
+&lt;a href="https://aicell.io/post/newsletter-2026-08-12/">complexes&lt;/a>. The two design choices that made it stick are the lab&amp;rsquo;s own creed:
+&lt;strong>open weights and open databases&lt;/strong> (RoseTTAFold, ESMFold, AlphaFold DB) turn a result into shared
+infrastructure, and &lt;strong>learned representations&lt;/strong> (the ESM language model growing structure &amp;ldquo;for free&amp;rdquo; as it
+scales) are the same bet the lab makes across imaging and single-cell foundation models. Above all, structure
+is a load-bearing layer for the &lt;a href="https://aicell.io/project/human-cell-simulator/">virtual cell&lt;/a>: you cannot simulate a molecular
+machine you cannot see, and now — for almost every protein, and increasingly for their partners — we can. A
+structure for every sequence is not the end of the story; it&amp;rsquo;s the substrate the rest of the story is written on.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(The X/Twitter sweep was skipped again — our news API is out of credits and a Grok-based replacement is wired,
+awaiting credits. Anchors were verified via NCBI E-utilities.) Have lab news to share — a talk, paper,
+conference or release? Message me on Slack.&lt;/em>&lt;/p></description></item><item><title>Lab Newsletter — September 18, 2026: Where Proteins Live</title><link>https://aicell.io/post/newsletter-2026-09-18/</link><pubDate>Fri, 18 Sep 2026 03:00:15 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-09-18/</guid><description>&lt;p>This week we&amp;rsquo;ve watched AI design &lt;a href="https://aicell.io/post/newsletter-2026-09-16/">antibodies&lt;/a> and
 &lt;a href="https://aicell.io/post/newsletter-2026-09-17/">plan syntheses&lt;/a>. Today we come home — to a question the lab has
 worked on since its beginning: &lt;strong>where in the cell does a protein live?&lt;/strong> A kinase at the plasma
 membrane, in the nucleus, or in a mislocalized aggregate is, functionally, three different stories;
