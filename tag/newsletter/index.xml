@@ -1,4 +1,81 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>newsletter | AICell Lab</title><link>https://aicell.io/tag/newsletter/</link><atom:link href="https://aicell.io/tag/newsletter/index.xml" rel="self" type="application/rss+xml"/><description>newsletter</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sat, 19 Sep 2026 03:00:28 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>newsletter</title><link>https://aicell.io/tag/newsletter/</link></image><item><title>Lab Newsletter — September 19, 2026: A Structure for Every Sequence</title><link>https://aicell.io/post/newsletter-2026-09-19/</link><pubDate>Sat, 19 Sep 2026 03:00:28 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-09-19/</guid><description>&lt;p>This week we&amp;rsquo;ve followed proteins in every direction — &lt;a href="https://aicell.io/post/newsletter-2026-09-16/">designing antibodies&lt;/a>,
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>newsletter | AICell Lab</title><link>https://aicell.io/tag/newsletter/</link><atom:link href="https://aicell.io/tag/newsletter/index.xml" rel="self" type="application/rss+xml"/><description>newsletter</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 20 Sep 2026 03:00:21 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>newsletter</title><link>https://aicell.io/tag/newsletter/</link></image><item><title>Lab Newsletter — September 20, 2026: What the T-Cell Sees</title><link>https://aicell.io/post/newsletter-2026-09-20/</link><pubDate>Sun, 20 Sep 2026 03:00:21 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-09-20/</guid><description>&lt;p>Last week we watched AI &lt;a href="https://aicell.io/post/newsletter-2026-09-16/">design antibodies&lt;/a> — the &lt;em>B-cell&lt;/em> arm of adaptive
+immunity. Today we turn to the other arm, and a harder recognition problem: the &lt;strong>T cell&lt;/strong>. Every cell in
+your body continuously chops up its proteins and displays the fragments on &lt;strong>MHC&lt;/strong> molecules, like a shop
+holding up samples of everything inside. T cells patrol this display, and when a T-cell receptor (TCR)
+recognizes a peptide-MHC that looks foreign — a viral fragment, a tumor mutation — it raises the alarm. Two
+prediction problems sit at the heart of it: &lt;strong>which peptides get presented&lt;/strong>, and &lt;strong>which TCRs recognize
+them&lt;/strong>. Today&amp;rsquo;s digest is about the models learning to read that immune code.&lt;/p>
+&lt;h3 id="-the-display-predicting-what-gets-presented">🪟 The display: predicting what gets presented&lt;/h3>
+&lt;p>Not every peptide makes it onto an MHC molecule — presentation is a filter, and it&amp;rsquo;s the crux.
+&lt;a href="https://doi.org/10.1093/nar/gkaa379" target="_blank" rel="noopener">&lt;strong>Reynisson et al.&lt;/strong>&lt;/a> (&lt;em>Nucleic Acids Research&lt;/em>, 2020) built the field&amp;rsquo;s
+workhorse, &lt;strong>NetMHCpan-4.1&lt;/strong>. They frame the stakes precisely: MHC molecules &amp;ldquo;&lt;strong>are expressed on the cell
+surface, where they present peptides to T cells, which gives them a key role in the development of T-cell
+immune responses,&lt;/strong>&amp;rdquo; and &amp;ldquo;&lt;strong>the binding between MHC and antigenic peptides is the most selective step in the
+antigen presentation pathway.&lt;/strong>&amp;rdquo; Their pan-allele predictor improved accuracy &amp;ldquo;&lt;strong>by concurrent motif
+deconvolution and integration of MS MHC eluted ligand data&lt;/strong>&amp;rdquo; — learning directly from peptides that were
+actually caught being presented. Predict this step well, and you can scan an entire proteome for what the
+immune system might see.&lt;/p>
+&lt;h3 id="-beyond-binding-model-the-whole-processing-pipeline">🧵 Beyond binding: model the whole processing pipeline&lt;/h3>
+&lt;p>Binding to MHC is only the last step; before it, a peptide has to be cut out and transported.
+&lt;a href="https://doi.org/10.1016/j.cels.2020.06.010" target="_blank" rel="noopener">&lt;strong>O&amp;rsquo;Donnell, Rubinsteyn &amp;amp; Laserson&lt;/strong>&lt;/a> (&lt;em>Cell Systems&lt;/em>, 2020)
+captured more of that pipeline in open source with &lt;strong>MHCflurry 2.0&lt;/strong>. Their insight: mass-spec-identified
+ligands don&amp;rsquo;t just reveal binding motifs — &amp;ldquo;&lt;strong>the identified ligands also reflect the antigen processing steps
+that occur prior to MHC binding.&lt;/strong>&amp;rdquo; So they &amp;ldquo;&lt;strong>developed an integrated predictor of MHC class I presentation
+that combines new models for MHC class I binding and antigen processing.&lt;/strong>&amp;rdquo; It&amp;rsquo;s a small but important shift in
+framing: predict &lt;em>presentation&lt;/em>, not just &lt;em>affinity&lt;/em> — and ship it as a tool anyone can run, the same
+open-model spirit behind the lab&amp;rsquo;s &lt;a href="https://aicell.io/project/bioimage-model-zoo/">BioImage Model Zoo&lt;/a> and
+&lt;a href="https://aicell.io/project/bioengine/">BioEngine&lt;/a>.&lt;/p>
+&lt;h3 id="-the-receptor-side-recognition-is-partly-predictable">🔑 The receptor side: recognition is partly predictable&lt;/h3>
+&lt;p>The harder half is the receptor. There are more possible TCRs than stars in the galaxy — could recognition
+ever be predictable? &lt;a href="https://doi.org/10.1038/nature22383" target="_blank" rel="noopener">&lt;strong>Dash et al.&lt;/strong>&lt;/a> (&lt;em>Nature&lt;/em>, 2017) answered yes, and
+launched computational TCR analysis. Their title says it: &amp;ldquo;&lt;strong>quantifiable predictive features define
+epitope-specific T cell receptor repertoires.&lt;/strong>&amp;rdquo; TCRs &amp;ldquo;&lt;strong>mediate recognition of pathogen-associated epitopes
+through interactions with peptide and major histocompatibility complexes (pMHCs),&lt;/strong>&amp;rdquo; and though V(D)J
+recombination generates almost limitless diversity, the receptors that see the &lt;em>same&lt;/em> epitope turn out to
+share measurable sequence patterns. Their &lt;strong>TCRdist&lt;/strong> metric made those patterns computable — the seed of
+everything that followed.&lt;/p>
+&lt;h3 id="-learn-the-repertoire-deep-representations-of-tcrs">🧠 Learn the repertoire: deep representations of TCRs&lt;/h3>
+&lt;p>If specificity leaves a sequence signature, deep learning should be able to read it.
+&lt;a href="https://doi.org/10.1038/s41467-021-21879-w" target="_blank" rel="noopener">&lt;strong>Sidhom et al.&lt;/strong>&lt;/a> (&lt;em>Nature Communications&lt;/em>, 2021) built
+&lt;strong>DeepTCR&lt;/strong> for exactly that — noting that &amp;ldquo;&lt;strong>the ability to learn complex patterns in data has tremendous
+implications in immunogenomics.&lt;/strong>&amp;rdquo; DeepTCR is &amp;ldquo;&lt;strong>a suite of unsupervised and supervised deep learning methods
+able to model highly complex TCR sequencing data by learning a joint representation of a TCR by its CDR3
+sequences and V/D/J gene usage.&lt;/strong>&amp;rdquo; Instead of hand-crafted distances, it &lt;em>learns&lt;/em> the features that matter —
+the same representation-learning move the lab bets on across proteins, genomes, and images.&lt;/p>
+&lt;h3 id="-predict-the-binding-paired-chains-and-an-honest-lesson">🤝 Predict the binding: paired chains, and an honest lesson&lt;/h3>
+&lt;p>The prize is predicting, for an arbitrary TCR and peptide, whether they bind.
+&lt;a href="https://doi.org/10.1038/s42003-021-02610-3" target="_blank" rel="noopener">&lt;strong>Montemurro et al.&lt;/strong>&lt;/a> (&lt;em>Communications Biology&lt;/em>, 2021) pushed
+toward it with &lt;strong>NetTCR-2.0&lt;/strong>, which &amp;ldquo;&lt;strong>enables accurate prediction of TCR-peptide binding by using paired
+TCRα and β sequence data,&lt;/strong>&amp;rdquo; showing that even &amp;ldquo;&lt;strong>&amp;lsquo;shallow&amp;rsquo; convolutional neural network … architectures are
+adequate to deal with the problem complexity.&lt;/strong>&amp;rdquo; But their most valuable contribution may be candor: &amp;ldquo;&lt;strong>current
+public bulk CDR3β-pMHC binding data overall is of low quality,&lt;/strong>&amp;rdquo; and real progress is &amp;ldquo;&lt;strong>contingent on paired
+α/β TCR sequence data.&lt;/strong>&amp;rdquo; It&amp;rsquo;s a lesson the lab knows well — in this field, better &lt;em>data and benchmarks&lt;/em> often
+matter more than a bigger model.&lt;/p>
+&lt;h3 id="-to-the-clinic-neoantigens-and-cancer">🎯 To the clinic: neoantigens and cancer&lt;/h3>
+&lt;p>Why does all this matter now? Because the immune system can be taught to attack tumors — if we can find the
+right targets. &lt;a href="https://doi.org/10.1038/s42256-021-00383-2" target="_blank" rel="noopener">&lt;strong>Lu et al.&lt;/strong>&lt;/a> (&lt;em>Nature Machine Intelligence&lt;/em>, 2021)
+built &lt;strong>pMTnet&lt;/strong> for that mission, starting from the clinical bottleneck: &amp;ldquo;&lt;strong>neoantigens play a key role in the
+recognition of tumor cells by T cells. However, only a small proportion of neoantigens truly elicit T cell
+responses, and fewer clues exist as to which neoantigens are recognized by which T cell receptors.&lt;/strong>&amp;rdquo; Their
+&amp;ldquo;&lt;strong>transfer learning-based model … to predict TCR-binding specificities of neoantigens, and T cell antigens in
+general,&lt;/strong>&amp;rdquo; borrows strength from abundant unlabeled data to fight the scarcity of labeled binding pairs —
+pointing straight at personalized cancer vaccines and TCR therapies.&lt;/p>
+&lt;h3 id="-why-its-our-kind-of-problem">🧫 Why it&amp;rsquo;s our kind of problem&lt;/h3>
+&lt;p>Read across the six and the shape is familiar: immune recognition is a &lt;strong>representation-learning problem on
+biological sequences&lt;/strong>, the same wager the lab makes with &lt;a href="https://aicell.io/post/newsletter-2026-09-19/">protein&lt;/a> and genome
+language models and &lt;a href="https://aicell.io/post/newsletter-2026-09-18/">imaging foundation models&lt;/a>. Two themes recur that are
+squarely the lab&amp;rsquo;s own. First, &lt;strong>open models and shared data win&lt;/strong> — MHCflurry, NetTCR, and NetMHCpan are open
+tools trained on communal ligand databases, exactly the &lt;a href="https://aicell.io/project/bioengine/">BioEngine&lt;/a> idea. Second, the
+binding constraint is &lt;em>data, not architecture&lt;/em> (NetTCR-2.0&amp;rsquo;s warning, pMTnet&amp;rsquo;s transfer-learning workaround) —
+which is why careful benchmarks and better datasets are as valuable as new networks. And it connects to the
+lab&amp;rsquo;s imaging future: recognition doesn&amp;rsquo;t happen in a spreadsheet but in tissue, where a T cell physically
+meets its target — &lt;em>spatial immunology&lt;/em> that platforms like &lt;a href="https://aicell.io/project/agent-lens/">Agent-Lens&lt;/a> and the
+&lt;a href="https://aicell.io/project/reef-imaging-farm/">REEF farm&lt;/a> are built to watch. Antibodies were last week&amp;rsquo;s key; the TCR is this
+week&amp;rsquo;s lock. Learn to read what the T cell sees, and you can start to direct it.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(The X/Twitter sweep was skipped again — our news API is out of credits and a Grok-based replacement is wired,
+awaiting credits. Anchors were verified via NCBI E-utilities.) Have lab news to share — a talk, paper,
+conference or release? Message me on Slack.&lt;/em>&lt;/p></description></item><item><title>Lab Newsletter — September 19, 2026: A Structure for Every Sequence</title><link>https://aicell.io/post/newsletter-2026-09-19/</link><pubDate>Sat, 19 Sep 2026 03:00:28 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-09-19/</guid><description>&lt;p>This week we&amp;rsquo;ve followed proteins in every direction — &lt;a href="https://aicell.io/post/newsletter-2026-09-16/">designing antibodies&lt;/a>,
 &lt;a href="https://aicell.io/post/newsletter-2026-09-18/">locating them in the cell&lt;/a>, &lt;a href="https://aicell.io/post/newsletter-2026-09-02/">reading their function&lt;/a>.
 All of it rests on one thing we&amp;rsquo;ve quietly taken for granted all month: that you can go from a protein&amp;rsquo;s
 &lt;strong>amino-acid sequence to its 3D shape&lt;/strong> with a computer. For half a century that was biology&amp;rsquo;s most famous
