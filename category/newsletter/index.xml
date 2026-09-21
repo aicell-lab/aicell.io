@@ -1,4 +1,80 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>newsletter | AICell Lab</title><link>https://aicell.io/category/newsletter/</link><atom:link href="https://aicell.io/category/newsletter/index.xml" rel="self" type="application/rss+xml"/><description>newsletter</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 20 Sep 2026 03:00:21 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>newsletter</title><link>https://aicell.io/category/newsletter/</link></image><item><title>Lab Newsletter — September 20, 2026: What the T-Cell Sees</title><link>https://aicell.io/post/newsletter-2026-09-20/</link><pubDate>Sun, 20 Sep 2026 03:00:21 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-09-20/</guid><description>&lt;p>Last week we watched AI &lt;a href="https://aicell.io/post/newsletter-2026-09-16/">design antibodies&lt;/a> — the &lt;em>B-cell&lt;/em> arm of adaptive
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>newsletter | AICell Lab</title><link>https://aicell.io/category/newsletter/</link><atom:link href="https://aicell.io/category/newsletter/index.xml" rel="self" type="application/rss+xml"/><description>newsletter</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 21 Sep 2026 03:00:33 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>newsletter</title><link>https://aicell.io/category/newsletter/</link></image><item><title>Lab Newsletter — September 21, 2026: Will the Drug Work?</title><link>https://aicell.io/post/newsletter-2026-09-21/</link><pubDate>Mon, 21 Sep 2026 03:00:33 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-09-21/</guid><description>&lt;p>We&amp;rsquo;ve spent the week deep in molecules — &lt;a href="https://aicell.io/post/newsletter-2026-09-19/">structures&lt;/a>,
+&lt;a href="https://aicell.io/post/newsletter-2026-09-20/">immune receptors&lt;/a>, &lt;a href="https://aicell.io/post/newsletter-2026-09-16/">antibodies&lt;/a>. Today we zoom
+out to a bedside question that all of it ultimately serves: &lt;strong>will this drug work for this patient?&lt;/strong> Two
+people with the &amp;ldquo;same&amp;rdquo; cancer can respond completely differently, because their tumors differ underneath — in
+mutations, gene expression, copy number. Precision oncology&amp;rsquo;s dream is to read that molecular profile and
+predict the response &lt;em>before&lt;/em> treating. Today&amp;rsquo;s digest is about the deep-learning models learning to do exactly
+that — a concrete, high-stakes instance of the &lt;a href="https://aicell.io/project/human-cell-simulator/">virtual cell&lt;/a> idea: given a
+cell&amp;rsquo;s state and a perturbation, predict the outcome.&lt;/p>
+&lt;h3 id="-the-foundation-a-map-from-genotype-to-sensitivity">🗺️ The foundation: a map from genotype to sensitivity&lt;/h3>
+&lt;p>You can&amp;rsquo;t learn drug response without data linking molecular profiles to outcomes at scale.
+&lt;a href="https://doi.org/10.1016/j.cell.2016.06.017" target="_blank" rel="noopener">&lt;strong>Iorio et al.&lt;/strong>&lt;/a> (&lt;em>Cell&lt;/em>, 2016) built that map with the Genomics
+of Drug Sensitivity in Cancer (GDSC) resource. They took &amp;ldquo;&lt;strong>cancer-driven alterations identified in 11,289
+tumors from 29 tissues (integrating somatic mutations, copy number alterations, DNA methylation, and gene
+expression)&lt;/strong>&amp;rdquo; and mapped them &amp;ldquo;&lt;strong>onto 1,001 molecularly annotated human cancer cell lines and correlated with
+sensitivity to 265 drugs.&lt;/strong>&amp;rdquo; Crucially, they found that &amp;ldquo;&lt;strong>cell lines faithfully recapitulate oncogenic
+alterations identified in tumors&lt;/strong>&amp;rdquo; — the assumption that makes the whole enterprise possible. This landscape,
+and its siblings, became the training ground for everything that followed.&lt;/p>
+&lt;h3 id="-the-first-move-predict-effectiveness-from-a-genomic-signature">🧮 The first move: predict effectiveness from a genomic signature&lt;/h3>
+&lt;p>With a landscape in hand, could a network learn the genotype→response mapping directly?
+&lt;a href="https://doi.org/10.1038/s41598-018-27214-6" target="_blank" rel="noopener">&lt;strong>Chang et al.&lt;/strong>&lt;/a> (&lt;em>Scientific Reports&lt;/em>, 2018) showed it could
+with &lt;strong>CDRscan&lt;/strong>, &amp;ldquo;&lt;strong>a novel deep learning model that predicts anticancer drug responsiveness based on a
+large-scale drug screening assay data encompassing genomic profiles of 787 human cancer cell lines and
+structural profiles of 244 drugs.&lt;/strong>&amp;rdquo; Its &amp;ldquo;&lt;strong>two-step convolution architecture&lt;/strong>&amp;rdquo; learned to read a tumor&amp;rsquo;s
+mutation profile as a &lt;em>signature&lt;/em> of vulnerability. The premise is precision medicine in one line: &amp;ldquo;&lt;strong>cancer
+therapy can be tailored to an individual patient based on the genomic profile of a tumour.&lt;/strong>&amp;rdquo;&lt;/p>
+&lt;h3 id="-the-honest-problem-from-cell-lines-to-real-tumors">🌉 The honest problem: from cell lines to real tumors&lt;/h3>
+&lt;p>Cell lines are not patients, and pretending otherwise is where these models break.
+&lt;a href="https://doi.org/10.1186/s12920-018-0460-9" target="_blank" rel="noopener">&lt;strong>Chiu et al.&lt;/strong>&lt;/a> (&lt;em>BMC Medical Genomics&lt;/em>, 2019) confronted that
+head-on with &lt;strong>DeepDR&lt;/strong>, predicting &amp;ldquo;&lt;strong>drug response of tumors from integrated genomic profiles by deep neural
+networks.&lt;/strong>&amp;rdquo; They name the crux plainly: &amp;ldquo;&lt;strong>due to essential differences between cell lines and tumors, to date
+the translation into predicting drug response in tumors remains challenging.&lt;/strong>&amp;rdquo; Their answer was to pretrain on
+the abundant cell-line and tumor genomic data, then transfer — an early recognition that in this field the
+&lt;em>generalization gap&lt;/em>, not raw accuracy on cell lines, is the real target.&lt;/p>
+&lt;h3 id="-more-omics-integrated-expression-mutation-copy-number">🧬 More omics, integrated: expression, mutation, copy number&lt;/h3>
+&lt;p>A tumor is more than its mutations. &lt;a href="https://doi.org/10.1093/bioinformatics/btz318" target="_blank" rel="noopener">&lt;strong>Sharifi-Noghabi et al.&lt;/strong>&lt;/a>
+(&lt;em>Bioinformatics&lt;/em>, 2019) asked how to combine data types with &lt;strong>MOLI&lt;/strong>, &amp;ldquo;&lt;strong>multi-omics late integration with
+deep neural networks for drug response prediction.&lt;/strong>&amp;rdquo; Their starting point is a well-earned fact — &amp;ldquo;&lt;strong>gene
+expression has been shown to be the most informative data for drug response prediction&lt;/strong>&amp;rdquo; — but &amp;ldquo;&lt;strong>recent
+evidence suggests that integrating additional omics can improve the prediction accuracy, which raises the
+question of how to integrate.&lt;/strong>&amp;rdquo; MOLI learns separate representations for each omic and fuses them late,
+reflecting the lab&amp;rsquo;s own conviction that &lt;a href="https://aicell.io/post/newsletter-2026-09-03/">multi-omics integration&lt;/a> done well
+beats any single view of the cell.&lt;/p>
+&lt;h3 id="-bring-in-the-drug-molecules-as-graphs">💊 Bring in the drug: molecules as graphs&lt;/h3>
+&lt;p>Predicting response for a &lt;em>new&lt;/em> drug means the model must understand chemistry, not just biology.
+&lt;a href="https://doi.org/10.1093/bioinformatics/btaa822" target="_blank" rel="noopener">&lt;strong>Liu et al.&lt;/strong>&lt;/a> (&lt;em>Bioinformatics&lt;/em>, 2020) closed that loop with
+&lt;strong>DeepCDR&lt;/strong>, &amp;ldquo;&lt;strong>a hybrid graph convolutional network for predicting cancer drug response.&lt;/strong>&amp;rdquo; It &amp;ldquo;&lt;strong>integrates
+multi-omics profiles of cancer cells and explores intrinsic chemical structures of drugs&lt;/strong>,&amp;rdquo; representing each
+compound as a molecular graph. Modeling both sides — the cell&amp;rsquo;s state &lt;em>and&lt;/em> the drug&amp;rsquo;s structure — is what lets
+a predictor generalize across the vast grid of (cell, drug) pairs, and it connects this work to the same
+molecular-graph representations behind &lt;a href="https://aicell.io/post/newsletter-2026-08-03/">drug design&lt;/a> and
+&lt;a href="https://aicell.io/post/newsletter-2026-09-17/">synthesis planning&lt;/a>.&lt;/p>
+&lt;h3 id="-make-it-interpretable-a-visible-model-of-the-cell">🔍 Make it interpretable: a visible model of the cell&lt;/h3>
+&lt;p>Accuracy alone won&amp;rsquo;t reach the clinic — oncologists need to know &lt;em>why&lt;/em>.
+&lt;a href="https://doi.org/10.1016/j.ccell.2020.09.014" target="_blank" rel="noopener">&lt;strong>Kuenzi et al.&lt;/strong>&lt;/a> (&lt;em>Cancer Cell&lt;/em>, 2020) built for that with
+&lt;strong>DrugCell&lt;/strong>, motivated by a sobering fact: &amp;ldquo;&lt;strong>most drugs entering clinical trials fail, often related to an
+incomplete understanding of the mechanisms governing drug response,&lt;/strong>&amp;rdquo; and most ML models &amp;ldquo;&lt;strong>have not reached
+clinical practice due to their lack of interpretability and their focus on monotherapies.&lt;/strong>&amp;rdquo; DrugCell is &amp;ldquo;&lt;strong>an
+interpretable deep learning model of human cancer cells trained on the responses of 1,235 tumor cell lines to
+684 drugs,&lt;/strong>&amp;rdquo; in which &amp;ldquo;&lt;strong>tumor genotypes induce states in cellular subsystems that are integrated with drug
+structure to predict response.&lt;/strong>&amp;rdquo; Its network is &lt;em>structured to mirror real cell biology&lt;/em>, so a prediction
+comes with a mechanistic trace — and it predicts drug &lt;strong>synergy&lt;/strong>, pointing toward rational combinations.&lt;/p>
+&lt;h3 id="-why-its-our-kind-of-problem">🧫 Why it&amp;rsquo;s our kind of problem&lt;/h3>
+&lt;p>Read across the six and it&amp;rsquo;s the &lt;a href="https://aicell.io/project/human-cell-simulator/">virtual cell&lt;/a> problem in miniature: encode a
+cell&amp;rsquo;s molecular state, apply a perturbation, predict the phenotype. DrugCell&amp;rsquo;s &amp;ldquo;visible&amp;rdquo; network — built to
+match cellular subsystems rather than as a black box — is precisely the &lt;strong>mechanistic-plus-learned hybrid&lt;/strong> the
+lab believes cell modeling needs, and its interpretability is the same value the lab prizes across
+&lt;a href="https://aicell.io/post/newsletter-2026-09-18/">imaging&lt;/a> and omics. Two lab themes recur loudly. First, &lt;strong>multi-omics
+integration&lt;/strong> (MOLI, DeepCDR) — the conviction that no single readout captures a cell — is core to the lab&amp;rsquo;s
+&lt;a href="https://aicell.io/post/newsletter-2026-09-03/">single-cell&lt;/a> work. Second, the field&amp;rsquo;s real bottleneck is &lt;strong>generalization and
+data&lt;/strong> (the cell-line→patient gap DeepDR names), which is exactly why open datasets, honest benchmarks, and
+shared infrastructure — the &lt;a href="https://aicell.io/project/bioengine/">BioEngine&lt;/a> ethos — matter more than any single architecture.
+Getting from &amp;ldquo;we designed a molecule&amp;rdquo; to &amp;ldquo;it will help &lt;em>this&lt;/em> patient&amp;rdquo; is the whole game; these models are
+early, imperfect, but pointed straight at it.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(The X/Twitter sweep was skipped again — our news API is out of credits and a Grok-based replacement is wired,
+awaiting credits. Anchors were verified via NCBI E-utilities.) Have lab news to share — a talk, paper,
+conference or release? Message me on Slack.&lt;/em>&lt;/p></description></item><item><title>Lab Newsletter — September 20, 2026: What the T-Cell Sees</title><link>https://aicell.io/post/newsletter-2026-09-20/</link><pubDate>Sun, 20 Sep 2026 03:00:21 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-09-20/</guid><description>&lt;p>Last week we watched AI &lt;a href="https://aicell.io/post/newsletter-2026-09-16/">design antibodies&lt;/a> — the &lt;em>B-cell&lt;/em> arm of adaptive
 immunity. Today we turn to the other arm, and a harder recognition problem: the &lt;strong>T cell&lt;/strong>. Every cell in
 your body continuously chops up its proteins and displays the fragments on &lt;strong>MHC&lt;/strong> molecules, like a shop
 holding up samples of everything inside. T cells patrol this display, and when a T-cell receptor (TCR)
