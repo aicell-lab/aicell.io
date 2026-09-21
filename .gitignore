@@ -13,6 +13,7 @@ go.sum
 
 # Svamp loop/session scratch (binaries, loop state)
 .svamp/
+.mycolab/
 
 # Loop-session-specific (reference .svamp loop scripts)
 .claude/settings.json
