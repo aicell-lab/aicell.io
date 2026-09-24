@@ -1,4 +1,76 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts | AICell Lab</title><link>https://aicell.io/post/</link><atom:link href="https://aicell.io/post/index.xml" rel="self" type="application/rss+xml"/><description>Posts</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 23 Sep 2026 03:00:25 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>Posts</title><link>https://aicell.io/post/</link></image><item><title>Lab Newsletter — September 23, 2026: Teaching Machines to Name Cells</title><link>https://aicell.io/post/newsletter-2026-09-23/</link><pubDate>Wed, 23 Sep 2026 03:00:25 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-09-23/</guid><description>&lt;p>We&amp;rsquo;ve spent the week among molecules — &lt;a href="https://aicell.io/post/newsletter-2026-09-19/">structures&lt;/a>,
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts | AICell Lab</title><link>https://aicell.io/post/</link><atom:link href="https://aicell.io/post/index.xml" rel="self" type="application/rss+xml"/><description>Posts</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Thu, 24 Sep 2026 03:01:49 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>Posts</title><link>https://aicell.io/post/</link></image><item><title>Lab Newsletter — September 24, 2026: Will This Molecule Bind?</title><link>https://aicell.io/post/newsletter-2026-09-24/</link><pubDate>Thu, 24 Sep 2026 03:01:49 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-09-24/</guid><description>&lt;p>Earlier this month we watched AI &lt;a href="https://aicell.io/post/newsletter-2026-08-03/">invent new molecules&lt;/a> and, at the other end,
+&lt;a href="https://aicell.io/post/newsletter-2026-09-21/">predict whether a drug will work in a patient&lt;/a>. Today we fill in the step
+between: &lt;strong>screening&lt;/strong>. A modern compound library can hold billions of molecules; a protein target has one
+binding pocket. You cannot run a wet-lab assay on billions of candidates — so the whole game is a fast, learned
+guess: &lt;em>given this target and this molecule, will they bind, and how tightly?&lt;/em> Today&amp;rsquo;s digest is about the
+deep-learning &lt;strong>scoring functions&lt;/strong> that answer that question well enough to rank a haystack, and the two routes
+they take — from the 3D structure of the complex, or from sequence alone.&lt;/p>
+&lt;h3 id="-the-idea-let-a-cnn-read-the-3d-complex">🧊 The idea: let a CNN read the 3D complex&lt;/h3>
+&lt;p>Classical docking scores a pose with hand-crafted physics terms. Could a network learn the scoring rules instead?
+&lt;a href="https://doi.org/10.1021/acs.jcim.6b00740" target="_blank" rel="noopener">&lt;strong>Ragoza et al.&lt;/strong>&lt;/a> (&lt;em>J. Chem. Inf. Model.&lt;/em>, 2017) showed it could,
+founding CNN-based scoring. Their model takes &amp;ldquo;&lt;strong>a comprehensive three-dimensional (3D) representation of a
+protein-ligand interaction&lt;/strong>&amp;rdquo; and &amp;ldquo;&lt;strong>automatically learns the key features of protein-ligand interactions that
+correlate with binding.&lt;/strong>&amp;rdquo; Trained &amp;ldquo;&lt;strong>to discriminate between correct and incorrect binding poses and known
+binders and nonbinders,&lt;/strong>&amp;rdquo; it &amp;ldquo;&lt;strong>outperforms the AutoDock Vina scoring function when ranking poses both for pose
+prediction and virtual screening.&lt;/strong>&amp;rdquo; The premise is the lab&amp;rsquo;s own bet, applied to chemistry: stop hand-crafting
+features, and let the model learn them from data.&lt;/p>
+&lt;h3 id="-absolute-affinity-in-a-fraction-of-a-second">⚡ Absolute affinity, in a fraction of a second&lt;/h3>
+&lt;p>Ranking is good; a calibrated &lt;em>number&lt;/em> is better — and for screening it has to be fast.
+&lt;a href="https://doi.org/10.1021/acs.jcim.7b00650" target="_blank" rel="noopener">&lt;strong>Jiménez et al.&lt;/strong>&lt;/a> (&lt;em>J. Chem. Inf. Model.&lt;/em>, 2018) built &lt;strong>KDEEP&lt;/strong>, a
+&amp;ldquo;&lt;strong>fast machine-learning approach for predicting binding affinities using state-of-the-art 3D-convolutional neural
+networks.&lt;/strong>&amp;rdquo; On the standard PDBbind core set it reached &amp;ldquo;&lt;strong>a Pearson&amp;rsquo;s correlation coefficient of 0.82,&lt;/strong>&amp;rdquo; with
+&amp;ldquo;&lt;strong>each prediction taking a fraction of a second.&lt;/strong>&amp;rdquo; But they were refreshingly honest about the catch that still
+haunts the field: &amp;ldquo;&lt;strong>accuracy is still very sensitive to the specific protein used.&lt;/strong>&amp;rdquo; Speed plus a candid look
+at where it breaks — exactly the framing the lab values in a tool.&lt;/p>
+&lt;h3 id="-one-representation-for-atoms-of-both-kinds">🔲 One representation for atoms of both kinds&lt;/h3>
+&lt;p>How you &lt;em>represent&lt;/em> the complex is half the battle. &lt;a href="https://doi.org/10.1093/bioinformatics/bty374" target="_blank" rel="noopener">&lt;strong>Stępniewska-Dziubińska et al.&lt;/strong>&lt;/a>
+(&lt;em>Bioinformatics&lt;/em>, 2018) made a clean choice with &lt;strong>Pafnucy&lt;/strong>: the complex &amp;ldquo;&lt;strong>is represented with a 3D grid, and
+the model utilizes a 3D convolution to produce a feature map of this representation, treating the atoms of both
+proteins and ligands in the same manner.&lt;/strong>&amp;rdquo; That symmetry — no special-casing protein vs. ligand — let one
+network generalize, and it &amp;ldquo;&lt;strong>outperformed classical scoring functions&lt;/strong>&amp;rdquo; on the CASF-2013 benchmark and the
+Astex Diverse Set. And, in the lab&amp;rsquo;s favorite tradition, they shipped it open source.&lt;/p>
+&lt;h3 id="-robust-when-the-structure-is-only-a-guess">🧅 Robust when the structure is only a guess&lt;/h3>
+&lt;p>Real screening rarely has a crystal structure of the bound complex — you have a &lt;em>docked&lt;/em> pose, which may be
+wrong. &lt;a href="https://doi.org/10.1021/acsomega.9b01997" target="_blank" rel="noopener">&lt;strong>Zheng et al.&lt;/strong>&lt;/a> (&lt;em>ACS Omega&lt;/em>, 2019) designed &lt;strong>OnionNet&lt;/strong>
+with that in mind, building features from &amp;ldquo;&lt;strong>element-pair-specific contacts between ligands and protein atoms&lt;/strong>&amp;rdquo;
+that are &amp;ldquo;&lt;strong>grouped into different distance ranges to cover both the local and nonlocal interaction
+information.&lt;/strong>&amp;rdquo; Crucially, they stress-tested robustness &amp;ldquo;&lt;strong>by predicting the binding affinities of the complexes
+generated from docking simulations instead of experimentally determined PDB structures&lt;/strong>&amp;rdquo; — the setting that
+actually matters when you&amp;rsquo;re triaging a library, not scoring a solved structure.&lt;/p>
+&lt;h3 id="-no-structure-score-from-sequence">🔤 No structure? Score from sequence&lt;/h3>
+&lt;p>Most of the proteome has no solved structure with your ligand — so can you skip 3D entirely?
+&lt;a href="https://doi.org/10.1093/bioinformatics/bty593" target="_blank" rel="noopener">&lt;strong>Öztürk et al.&lt;/strong>&lt;/a> (&lt;em>Bioinformatics&lt;/em>, 2018) showed you can with
+&lt;strong>DeepDTA&lt;/strong>, &amp;ldquo;&lt;strong>a deep-learning based model that uses only sequence information of both targets and drugs to
+predict DT interaction binding affinities.&lt;/strong>&amp;rdquo; They reframed the task away from yes/no binding: &amp;ldquo;&lt;strong>protein-ligand
+interactions assume a continuum of binding strength values … and predicting this value still remains a
+challenge.&lt;/strong>&amp;rdquo; Modeling &amp;ldquo;&lt;strong>protein sequences and compound 1D representations with convolutional neural
+networks&lt;/strong>,&amp;rdquo; it outperformed strong classical baselines — opening affinity prediction to targets with no
+structure at all, the same structure-free spirit as &lt;a href="https://aicell.io/post/newsletter-2026-09-19/">protein language models&lt;/a>.&lt;/p>
+&lt;h3 id="-molecules-are-graphs-not-strings">🕸️ Molecules are graphs, not strings&lt;/h3>
+&lt;p>A SMILES string is a lossy way to describe a molecule. &lt;a href="https://doi.org/10.1093/bioinformatics/btaa921" target="_blank" rel="noopener">&lt;strong>Nguyen et al.&lt;/strong>&lt;/a>
+(&lt;em>Bioinformatics&lt;/em>, 2021) closed that gap with &lt;strong>GraphDTA&lt;/strong>, which represents &amp;ldquo;&lt;strong>drugs as graphs and uses graph
+neural networks to predict drug-target affinity,&lt;/strong>&amp;rdquo; on the argument that strings are &amp;ldquo;&lt;strong>not a natural way to
+represent molecules.&lt;/strong>&amp;rdquo; Graph nets &amp;ldquo;&lt;strong>not only predict drug-target affinity better than non-deep learning models,
+but also outperform competing deep learning methods.&lt;/strong>&amp;rdquo; Their motivation is squarely translational —
+&amp;ldquo;&lt;strong>drug repurposing can avoid the expensive and lengthy process of drug development by finding new uses for
+already approved drugs&lt;/strong>&amp;rdquo; — and the molecular-graph representation is the same one behind the lab&amp;rsquo;s
+&lt;a href="https://aicell.io/post/newsletter-2026-08-03/">drug-design&lt;/a> and &lt;a href="https://aicell.io/post/newsletter-2026-09-21/">drug-response&lt;/a> digests.&lt;/p>
+&lt;h3 id="-why-its-our-kind-of-problem">🧫 Why it&amp;rsquo;s our kind of problem&lt;/h3>
+&lt;p>Read across the six and it&amp;rsquo;s one leg of the AI-for-discovery loop the lab keeps returning to: &lt;strong>generate&lt;/strong>
+candidate molecules, &lt;strong>screen&lt;/strong> them against a target (today), then &lt;strong>predict the response&lt;/strong> in a living cell.
+Two lab themes stand out. First, &lt;strong>learned representations beat hand-crafted ones&lt;/strong> — CNNs on 3D grids, graph
+nets on molecules — the same wager the lab makes across &lt;a href="https://aicell.io/post/newsletter-2026-09-19/">structure&lt;/a>,
+&lt;a href="https://aicell.io/post/newsletter-2026-09-18/">imaging&lt;/a>, and &lt;a href="https://aicell.io/post/newsletter-2026-09-23/">single cells&lt;/a>. Second, and louder,
+the honest bottleneck is &lt;strong>generalization, not correlation&lt;/strong>: KDEEP&amp;rsquo;s sensitivity to the specific protein,
+OnionNet&amp;rsquo;s need to work on docked poses, the whole field&amp;rsquo;s over-reliance on PDBbind. That is precisely why
+open, adversarial benchmarks and shared infrastructure — the &lt;a href="https://aicell.io/project/bioengine/">BioEngine&lt;/a> and
+&lt;a href="https://aicell.io/project/bioimage-model-zoo/">model-zoo&lt;/a> ethos — matter more than any single architecture. Scoring the haystack
+is easy to do badly and hard to do honestly; the models that reach the clinic will be the ones benchmarked like
+they mean it.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(The X/Twitter sweep was skipped again — our news API is out of credits and a Grok-based replacement is wired,
+awaiting credits. Anchors were verified via NCBI E-utilities.) Have lab news to share — a talk, paper,
+conference or release? Message me on Slack.&lt;/em>&lt;/p></description></item><item><title>Lab Newsletter — September 23, 2026: Teaching Machines to Name Cells</title><link>https://aicell.io/post/newsletter-2026-09-23/</link><pubDate>Wed, 23 Sep 2026 03:00:25 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-09-23/</guid><description>&lt;p>We&amp;rsquo;ve spent the week among molecules — &lt;a href="https://aicell.io/post/newsletter-2026-09-19/">structures&lt;/a>,
 &lt;a href="https://aicell.io/post/newsletter-2026-09-20/">immune receptors&lt;/a>, &lt;a href="https://aicell.io/post/newsletter-2026-09-21/">drug responses&lt;/a>. Today we
 step back up to the level of the &lt;strong>whole cell&lt;/strong>, and a question so basic it&amp;rsquo;s easy to overlook: &lt;em>what kind of
 cell is this?&lt;/em> Every single-cell experiment produces thousands of expression profiles, and for years a human
