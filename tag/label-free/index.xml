@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>label-free | AICell Lab</title><link>https://aicell.io/tag/label-free/</link><atom:link href="https://aicell.io/tag/label-free/index.xml" rel="self" type="application/rss+xml"/><description>label-free</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 25 Sep 2026 03:01:58 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>label-free</title><link>https://aicell.io/tag/label-free/</link></image><item><title>Lab Newsletter — September 25, 2026: Reading a Cell's Future from Live Images</title><link>https://aicell.io/post/newsletter-2026-09-25/</link><pubDate>Fri, 25 Sep 2026 03:01:58 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-09-25/</guid><description>&lt;p>This week we&amp;rsquo;ve worked at the level of &lt;a href="https://aicell.io/post/newsletter-2026-09-24/">molecules&lt;/a> and
+&lt;a href="https://aicell.io/post/newsletter-2026-09-23/">whole-cell identity&lt;/a>. Today we come home to the lab&amp;rsquo;s own instrument — the
+&lt;strong>microscope&lt;/strong> — and a quietly astonishing idea: a cell&amp;rsquo;s &lt;em>future&lt;/em> is often visible in its present shape and
+motion, well before any stain, marker, or reporter reveals it. Today&amp;rsquo;s digest is about deep learning that
+&lt;strong>forecasts fate, cycle stage, and behavior from live, often label-free, imaging&lt;/strong> — the perception layer beneath
+a &lt;a href="https://aicell.io/project/self-driving-microscope/">self-driving microscope&lt;/a> that can watch, predict, and decide in real time.&lt;/p>
+&lt;h3 id="-first-see-every-cell-over-time">🔬 First, see every cell over time&lt;/h3>
+&lt;p>You can&amp;rsquo;t predict a cell&amp;rsquo;s future until you can reliably find it in every frame. &lt;a href="https://doi.org/10.1371/journal.pcbi.1005177" target="_blank" rel="noopener">&lt;strong>Van Valen et al.&lt;/strong>&lt;/a>
+(&lt;em>PLoS Computational Biology&lt;/em>, 2016) laid that groundwork with &lt;strong>DeepCell&lt;/strong>, showing that &amp;ldquo;&lt;strong>deep convolutional
+neural networks … can robustly segment the cytoplasms of mammalian cells … from phase contrast images without the
+need for a fluorescent cytoplasmic marker,&lt;/strong>&amp;rdquo; and do so &amp;ldquo;&lt;strong>across multiple cell types across the domains of
+life.&lt;/strong>&amp;rdquo; Turning raw live-cell movies into per-cell measurements — no labels required — is the substrate
+everything else here builds on, and the same automated-analysis spirit as the lab&amp;rsquo;s &lt;a href="https://aicell.io/project/imagej-js/">imaging tools&lt;/a>.&lt;/p>
+&lt;h3 id="-predict-lineage--generations-early">🩸 Predict lineage — generations early&lt;/h3>
+&lt;p>The headline result is almost eerie. &lt;a href="https://doi.org/10.1038/nmeth.4182" target="_blank" rel="noopener">&lt;strong>Buggenthin et al.&lt;/strong>&lt;/a>
+(&lt;em>Nature Methods&lt;/em>, 2017) built a network that &amp;ldquo;&lt;strong>prospectively predicts lineage choice in differentiating primary
+hematopoietic progenitors using image patches from brightfield microscopy and cellular movement.&lt;/strong>&amp;rdquo; The finding
+that stopped people short: &amp;ldquo;&lt;strong>lineage choice can be detected up to three generations before conventional
+molecular markers are observable.&lt;/strong>&amp;rdquo; The commitment a cell will make is already encoded in how it looks and moves
+— the model just reads it, &amp;ldquo;&lt;strong>without molecular labeling.&lt;/strong>&amp;rdquo;&lt;/p>
+&lt;h3 id="-catch-differentiation-in-minutes">⏱️ Catch differentiation in minutes&lt;/h3>
+&lt;p>How early can you catch a fate decision? &lt;a href="https://doi.org/10.1016/j.stemcr.2019.02.004" target="_blank" rel="noopener">&lt;strong>Waisman et al.&lt;/strong>&lt;/a>
+(&lt;em>Stem Cell Reports&lt;/em>, 2019) trained a CNN on &amp;ldquo;&lt;strong>transmitted light microscopy images to distinguish pluripotent
+stem cells from early differentiating cells,&lt;/strong>&amp;rdquo; reaching &amp;ldquo;&lt;strong>an accuracy higher than 99%.&lt;/strong>&amp;rdquo; Remarkably,
+&amp;ldquo;&lt;strong>successful prediction started just 20 min after the onset of differentiation&lt;/strong>&amp;rdquo; — long before any standard
+assay would register the switch, and robust across settings including &amp;ldquo;&lt;strong>mesoderm differentiation in human
+induced PSCs.&lt;/strong>&amp;rdquo; Non-invasive, live, and early enough to &lt;em>act&lt;/em> on.&lt;/p>
+&lt;h3 id="-call-organoid-fate-before-the-reporter-lights-up">👁️ Call organoid fate before the reporter lights up&lt;/h3>
+&lt;p>The same trick scales to 3D tissue. &lt;a href="https://doi.org/10.3389/fncel.2020.00171" target="_blank" rel="noopener">&lt;strong>Kegeles et al.&lt;/strong>&lt;/a>
+(&lt;em>Frontiers in Cellular Neuroscience&lt;/em>, 2020) built a CNN that predicts retinal differentiation in stem-cell
+organoids &amp;ldquo;&lt;strong>based on bright-field imaging,&lt;/strong>&amp;rdquo; and — the key word — &amp;ldquo;&lt;strong>before the onset of reporter gene
+expression.&lt;/strong>&amp;rdquo; It beat a human expert (&amp;quot;&lt;strong>84% vs. 67 ± 6% of correct predictions&lt;/strong>&amp;quot;), in what they call &amp;ldquo;&lt;strong>the
+first demonstration of CNN&amp;rsquo;s ability to classify stem cell-derived tissue in vitro.&lt;/strong>&amp;rdquo; A non-invasive, reporter-
+free readout of where an organoid is heading — exactly the kind of live decision a smart microscope wants.&lt;/p>
+&lt;h3 id="-reconstruct-the-hidden-clock">🔄 Reconstruct the hidden clock&lt;/h3>
+&lt;p>Fate is discrete; many processes are continuous. &lt;a href="https://doi.org/10.1038/s41467-017-00623-3" target="_blank" rel="noopener">&lt;strong>Eulenberg et al.&lt;/strong>&lt;/a>
+(&lt;em>Nature Communications&lt;/em>, 2017) showed that &amp;ldquo;&lt;strong>deep convolutional neural networks combined with nonlinear
+dimension reduction enable reconstructing biological processes based on raw image data,&lt;/strong>&amp;rdquo; demonstrating it by
+&amp;ldquo;&lt;strong>reconstructing the cell cycle of Jurkat cells and disease progression in diabetic retinopathy.&lt;/strong>&amp;rdquo; It even
+separated dying cells &amp;ldquo;&lt;strong>in an unsupervised manner&lt;/strong>&amp;rdquo; — and, crucially for live use, ran &amp;ldquo;&lt;strong>fast enough for
+on-the-fly analysis in an imaging flow cytometer.&lt;/strong>&amp;rdquo; Recovering a cell&amp;rsquo;s position along a hidden timeline, from a
+single snapshot.&lt;/p>
+&lt;h3 id="-and-explain-what-the-model-sees">🧠 …and explain what the model sees&lt;/h3>
+&lt;p>The obvious objection to all this is the &amp;ldquo;black box.&amp;rdquo; &lt;a href="https://doi.org/10.1016/j.cels.2021.05.003" target="_blank" rel="noopener">&lt;strong>Zaritsky et al.&lt;/strong>&lt;/a>
+(&lt;em>Cell Systems&lt;/em>, 2021) met it head-on, pairing &amp;ldquo;&lt;strong>a generative neural network … with supervised machine
+learning&lt;/strong>&amp;rdquo; to classify melanoma xenografts as &amp;ldquo;&lt;strong>&amp;rsquo;efficient&amp;rsquo; or &amp;lsquo;inefficient&amp;rsquo; metastatic&lt;/strong>&amp;rdquo; from &lt;strong>label-free
+live images&lt;/strong>, then using the generator to synthesize &amp;ldquo;&lt;strong>in silico cell images that amplify the critical
+predictive cell properties.&lt;/strong>&amp;rdquo; Those exaggerated images &amp;ldquo;&lt;strong>unveiled pseudopodial extensions and increased light
+scattering as hallmark properties of metastatic cells&lt;/strong>&amp;rdquo; — features &amp;ldquo;&lt;strong>too subtle to be identified in the raw
+imagery by a human expert.&lt;/strong>&amp;rdquo; Prediction &lt;em>and&lt;/em> a biological explanation of what the cell is telling us.&lt;/p>
+&lt;h3 id="-why-its-our-kind-of-problem">🧫 Why it&amp;rsquo;s our kind of problem&lt;/h3>
+&lt;p>Read across the six and it&amp;rsquo;s the lab&amp;rsquo;s thesis in miniature. First, this is the &lt;strong>perception layer of the
+&lt;a href="https://aicell.io/project/self-driving-microscope/">self-driving microscope&lt;/a>&lt;/strong>: a model that reads fate and state from live
+images in real time lets the instrument &lt;em>decide&lt;/em> — where to look, when to image, when to intervene — the closed
+loop that &lt;a href="https://aicell.io/project/agent-lens/">Agent-Lens&lt;/a> and the &lt;a href="https://aicell.io/project/reef-imaging-farm/">REEF farm&lt;/a> are built to run.
+Second, predictive live imaging is a cheap, non-invasive path toward the &lt;a href="https://aicell.io/project/human-cell-simulator/">virtual cell&lt;/a>:
+forecast phenotype from a cell&amp;rsquo;s observable morphology and motion, at scale, without perturbing it. And third,
+Zaritsky&amp;rsquo;s interpretable, generative approach is the lab&amp;rsquo;s answer to the &amp;ldquo;black box&amp;rdquo; worry — models that don&amp;rsquo;t
+just predict but &lt;em>show their reasoning&lt;/em>, the same value behind open, inspectable tools like the
+&lt;a href="https://aicell.io/project/bioimage-model-zoo/">BioImage Model Zoo&lt;/a>. A cell, it turns out, keeps telling you where it&amp;rsquo;s going.
+The work here is learning to listen — live, label-free, and early.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(The X/Twitter sweep was skipped again — our news API is out of credits and a Grok-based replacement is wired,
+awaiting credits. Anchors were verified via NCBI E-utilities.) Have lab news to share — a talk, paper,
+conference or release? Message me on Slack.&lt;/em>&lt;/p></description></item></channel></rss>
