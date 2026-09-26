@@ -1,4 +1,75 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>newsletter | AICell Lab</title><link>https://aicell.io/tag/newsletter/</link><atom:link href="https://aicell.io/tag/newsletter/index.xml" rel="self" type="application/rss+xml"/><description>newsletter</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 25 Sep 2026 03:01:58 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>newsletter</title><link>https://aicell.io/tag/newsletter/</link></image><item><title>Lab Newsletter — September 25, 2026: Reading a Cell's Future from Live Images</title><link>https://aicell.io/post/newsletter-2026-09-25/</link><pubDate>Fri, 25 Sep 2026 03:01:58 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-09-25/</guid><description>&lt;p>This week we&amp;rsquo;ve worked at the level of &lt;a href="https://aicell.io/post/newsletter-2026-09-24/">molecules&lt;/a> and
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>newsletter | AICell Lab</title><link>https://aicell.io/tag/newsletter/</link><atom:link href="https://aicell.io/tag/newsletter/index.xml" rel="self" type="application/rss+xml"/><description>newsletter</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sat, 26 Sep 2026 03:01:05 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>newsletter</title><link>https://aicell.io/tag/newsletter/</link></image><item><title>Lab Newsletter — September 26, 2026: Mapping the Cell's Wiring</title><link>https://aicell.io/post/newsletter-2026-09-26/</link><pubDate>Sat, 26 Sep 2026 03:01:05 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-09-26/</guid><description>&lt;p>Yesterday we watched a microscope &lt;a href="https://aicell.io/post/newsletter-2026-09-25/">read a cell&amp;rsquo;s future from its images&lt;/a>; earlier
+this week we &lt;a href="https://aicell.io/post/newsletter-2026-09-23/">named cells&lt;/a> and &lt;a href="https://aicell.io/post/newsletter-2026-09-19/">folded proteins&lt;/a>.
+Today we connect them: a cell isn&amp;rsquo;t a bag of independent parts, it&amp;rsquo;s a &lt;strong>network&lt;/strong> — proteins that touch, bind,
+and assemble into molecular machines. Knowing &lt;em>which&lt;/em> proteins interact, and what they build together, is the
+cell&amp;rsquo;s wiring diagram — and a load-bearing layer of the &lt;a href="https://aicell.io/project/human-cell-simulator/">virtual cell&lt;/a>. Today&amp;rsquo;s
+digest is about the AI now drawing that diagram at proteome scale.&lt;/p>
+&lt;h3 id="-the-reference-map">🗺️ The reference map&lt;/h3>
+&lt;p>You can&amp;rsquo;t study a network without a map of it. &lt;a href="https://doi.org/10.1093/nar/gky1131" target="_blank" rel="noopener">&lt;strong>STRING&lt;/strong>&lt;/a>
+(Szklarczyk et al., &lt;em>Nucleic Acids Research&lt;/em>, 2019) is the field&amp;rsquo;s, built on the premise that &amp;ldquo;&lt;strong>proteins and
+their functional interactions form the backbone of the cellular machinery&lt;/strong>&amp;rdquo; whose &amp;ldquo;&lt;strong>connectivity network needs
+to be considered for the full understanding of biological phenomena.&lt;/strong>&amp;rdquo; STRING sets out &amp;ldquo;&lt;strong>to collect, score and
+integrate all publicly available sources of protein-protein interaction information&lt;/strong>&amp;rdquo; and &amp;ldquo;&lt;strong>to achieve a
+comprehensive and objective global network, including direct (physical) as well as indirect (functional)
+interactions,&lt;/strong>&amp;rdquo; now spanning &amp;ldquo;&lt;strong>5090&lt;/strong>&amp;rdquo; organisms. An open, scored atlas of the interactome — the same
+open-infrastructure spirit as the lab&amp;rsquo;s &lt;a href="https://aicell.io/project/bioimage-model-zoo/">BioImage Model Zoo&lt;/a>, applied to
+interactions.&lt;/p>
+&lt;h3 id="-read-interaction-from-evolution">🧬 Read interaction from evolution&lt;/h3>
+&lt;p>Where does a &lt;em>new&lt;/em> interaction signal come from? Evolution leaves one. &lt;a href="https://doi.org/10.1126/science.aaw6718" target="_blank" rel="noopener">&lt;strong>Cong et al.&lt;/strong>&lt;/a>
+(&lt;em>Science&lt;/em>, 2019) mined &amp;ldquo;&lt;strong>coevolution between 5.4 million pairs of proteins in Escherichia coli&lt;/strong>&amp;rdquo; (and 3.9
+million in &lt;em>M. tuberculosis&lt;/em>): proteins that must fit together tend to mutate in concert, and that coupling, plus
+structure modeling, &amp;ldquo;&lt;strong>predict[s] protein-protein interactions (PPIs) with an accuracy that benchmark studies
+suggest is considerably higher than that of proteome-wide two-hybrid and mass spectrometry screens.&lt;/strong>&amp;rdquo; The result
+was discovery, not just recapitulation — &amp;ldquo;&lt;strong>hundreds of previously uncharacterized PPIs&lt;/strong>&amp;rdquo; that &amp;ldquo;&lt;strong>add components
+to known protein complexes … and establish the existence of new ones.&lt;/strong>&amp;rdquo;&lt;/p>
+&lt;h3 id="-predict-from-sequence-alone">🔤 Predict from sequence alone&lt;/h3>
+&lt;p>Coevolution needs deep alignments; sequence-based deep learning can go further and faster.
+&lt;a href="https://doi.org/10.1016/j.cels.2021.08.010" target="_blank" rel="noopener">&lt;strong>Sledzieski et al.&lt;/strong>&lt;/a> (&lt;em>Cell Systems&lt;/em>, 2021) built &lt;strong>D-SCRIPT&lt;/strong>,
+&amp;ldquo;&lt;strong>an interpretable and generalizable deep-learning model, which predicts interaction between two proteins using
+only their sequence and maintains high accuracy with limited training data and across species.&lt;/strong>&amp;rdquo; Impressively,
+&amp;ldquo;&lt;strong>the inter-protein contact map output by D-SCRIPT has significant overlap with the ground truth&lt;/strong>&amp;rdquo; — it learns
+&lt;em>where&lt;/em> proteins touch, not just whether — letting it &amp;ldquo;&lt;strong>screen for PPIs&lt;/strong>&amp;rdquo; genome-wide in species like cow where
+almost no interaction data exist. Structure-aware, but structure-free at inference: the same representation-
+learning wager the lab makes across biology.&lt;/p>
+&lt;h3 id="-add-the-network-view">🕸️ Add the network view&lt;/h3>
+&lt;p>A protein&amp;rsquo;s interactions aren&amp;rsquo;t independent — the shape of the whole network is itself a clue.
+&lt;a href="https://doi.org/10.1093/bioinformatics/btac258" target="_blank" rel="noopener">&lt;strong>Singh et al.&lt;/strong>&lt;/a> (&lt;em>Bioinformatics&lt;/em>, 2022) unified the two
+schools with &lt;strong>Topsy-Turvy&lt;/strong>, synthesizing &amp;ldquo;&lt;strong>bottom-up&lt;/strong>&amp;rdquo; sequence features and &amp;ldquo;&lt;strong>top-down&lt;/strong>&amp;rdquo; network patterns
+in one model. It delivers &amp;ldquo;&lt;strong>genome-scale, interpretable PPI prediction for non-model organisms with no existing
+experimental PPI data,&lt;/strong>&amp;rdquo; and — crucially for anyone running these at scale — &amp;ldquo;&lt;strong>running Topsy-Turvy … screens is
+feasible for whole genomes, and thus these methods scale to settings where other methods (e.g.
+AlphaFold-Multimer) might be infeasible.&lt;/strong>&amp;rdquo; Accuracy you can actually afford across a proteome.&lt;/p>
+&lt;h3 id="-fold-the-complex-directly">🧩 Fold the complex directly&lt;/h3>
+&lt;p>When you &lt;em>can&lt;/em> afford structure, it pays off. &lt;a href="https://doi.org/10.1038/s41467-022-28865-w" target="_blank" rel="noopener">&lt;strong>Bryant, Pozzati &amp;amp; Elofsson&lt;/strong>&lt;/a>
+(&lt;em>Nature Communications&lt;/em>, 2022) — at Stockholm University / &lt;strong>SciLifeLab&lt;/strong>, the lab&amp;rsquo;s own backyard — turned
+AlphaFold2 onto interactions, applying it &amp;ldquo;&lt;strong>for the prediction of heterodimeric protein complexes.&lt;/strong>&amp;rdquo; With
+&amp;ldquo;&lt;strong>optimised multiple sequence alignments,&lt;/strong>&amp;rdquo; it produced &amp;ldquo;&lt;strong>models with acceptable quality (DockQ ≥ 0.23) for
+63% of the dimers,&lt;/strong>&amp;rdquo; and, cleverly, they built &amp;ldquo;&lt;strong>a simple function to predict the DockQ score&lt;/strong>&amp;rdquo; that
+distinguishes &amp;ldquo;&lt;strong>interacting from non-interacting proteins with state-of-art accuracy&lt;/strong>&amp;rdquo; — recovering &amp;ldquo;&lt;strong>51% of
+all interacting pairs at 1% FPR.&lt;/strong>&amp;rdquo; Structure prediction becomes an interaction &lt;em>detector&lt;/em>.&lt;/p>
+&lt;h3 id="-the-proteome-scale-payoff">🏗️ The proteome-scale payoff&lt;/h3>
+&lt;p>Put coevolution and deep folding together and you can rebuild a cell&amp;rsquo;s machines wholesale.
+&lt;a href="https://doi.org/10.1126/science.abm4805" target="_blank" rel="noopener">&lt;strong>Humphreys et al.&lt;/strong>&lt;/a> (&lt;em>Science&lt;/em>, 2021) combined &amp;ldquo;&lt;strong>proteome-wide amino
+acid coevolution analysis and deep-learning–based structure modeling&lt;/strong>&amp;rdquo; (RoseTTAFold + AlphaFold) to screen
+&amp;ldquo;&lt;strong>8.3 million pairs of yeast proteins, identify 1505 likely to interact, and build structure models for 106
+previously unidentified assemblies and 806 that have not been structurally characterized.&lt;/strong>&amp;rdquo; These complexes,
+&amp;ldquo;&lt;strong>as many as five subunits,&lt;/strong>&amp;rdquo; touch &amp;ldquo;&lt;strong>almost all key processes in eukaryotic cells&lt;/strong>&amp;rdquo; — a first structural
+draft of a eukaryote&amp;rsquo;s molecular machinery.&lt;/p>
+&lt;h3 id="-why-its-our-kind-of-problem">🧫 Why it&amp;rsquo;s our kind of problem&lt;/h3>
+&lt;p>Read across the six and it&amp;rsquo;s the wiring layer of the &lt;a href="https://aicell.io/project/human-cell-simulator/">virtual cell&lt;/a>: you cannot
+simulate a cell without knowing which proteins interact and what they build. Two lab themes recur. First, the
+&lt;strong>structure-based vs. sequence/network-based&lt;/strong> trade-off — AlphaFold-quality complexes are accurate but heavy,
+while D-SCRIPT and Topsy-Turvy scale to whole genomes and orphan species — is precisely the case for the lab&amp;rsquo;s
+&lt;a href="https://aicell.io/project/bioengine/">BioEngine&lt;/a>: make the heavy methods &lt;em>runnable at scale&lt;/em>, for everyone. Second, &lt;strong>open shared
+maps&lt;/strong> (STRING) and &lt;strong>learned representations&lt;/strong> are the same bets the lab makes across
+&lt;a href="https://aicell.io/post/newsletter-2026-09-19/">structure&lt;/a>, &lt;a href="https://aicell.io/post/newsletter-2026-09-25/">imaging&lt;/a>, and
+&lt;a href="https://aicell.io/post/newsletter-2026-09-23/">single cells&lt;/a>. And it&amp;rsquo;s close to home: the AlphaFold-for-interactions work comes
+from SciLifeLab, down the road. A parts list was never enough — biology runs on the connections, and we&amp;rsquo;re
+finally able to draw them.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(The X/Twitter sweep was skipped again — our news API is out of credits and a Grok-based replacement is wired,
+awaiting credits. Anchors were verified via NCBI E-utilities.) Have lab news to share — a talk, paper,
+conference or release? Message me on Slack.&lt;/em>&lt;/p></description></item><item><title>Lab Newsletter — September 25, 2026: Reading a Cell's Future from Live Images</title><link>https://aicell.io/post/newsletter-2026-09-25/</link><pubDate>Fri, 25 Sep 2026 03:01:58 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-09-25/</guid><description>&lt;p>This week we&amp;rsquo;ve worked at the level of &lt;a href="https://aicell.io/post/newsletter-2026-09-24/">molecules&lt;/a> and
 &lt;a href="https://aicell.io/post/newsletter-2026-09-23/">whole-cell identity&lt;/a>. Today we come home to the lab&amp;rsquo;s own instrument — the
 &lt;strong>microscope&lt;/strong> — and a quietly astonishing idea: a cell&amp;rsquo;s &lt;em>future&lt;/em> is often visible in its present shape and
 motion, well before any stain, marker, or reporter reveals it. Today&amp;rsquo;s digest is about deep learning that
