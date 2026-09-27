@@ -1,4 +1,69 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>proteomics | AICell Lab</title><link>https://aicell.io/tag/proteomics/</link><atom:link href="https://aicell.io/tag/proteomics/index.xml" rel="self" type="application/rss+xml"/><description>proteomics</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 02 Sep 2026 03:07:13 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>proteomics</title><link>https://aicell.io/tag/proteomics/</link></image><item><title>Lab Newsletter — September 2, 2026: What the Fold Won't Tell You</title><link>https://aicell.io/post/newsletter-2026-09-02/</link><pubDate>Wed, 02 Sep 2026 03:07:13 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-09-02/</guid><description>&lt;p>We have gotten very good at guessing what a protein &lt;em>looks like&lt;/em>. The headline result of the
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>proteomics | AICell Lab</title><link>https://aicell.io/tag/proteomics/</link><atom:link href="https://aicell.io/tag/proteomics/index.xml" rel="self" type="application/rss+xml"/><description>proteomics</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 27 Sep 2026 03:01:11 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>proteomics</title><link>https://aicell.io/tag/proteomics/</link></image><item><title>Lab Newsletter — September 27, 2026: Predicting the Spectrum</title><link>https://aicell.io/post/newsletter-2026-09-27/</link><pubDate>Sun, 27 Sep 2026 03:01:11 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-09-27/</guid><description>&lt;p>Yesterday we drew the cell&amp;rsquo;s &lt;a href="https://aicell.io/post/newsletter-2026-09-26/">protein wiring diagram&lt;/a>; to build one you first have
+to &lt;em>detect&lt;/em> the proteins. The workhorse for that is &lt;strong>mass spectrometry&lt;/strong>: shatter peptides into fragments,
+measure the pieces, and infer what was there. For decades the catch was that nobody could accurately &lt;em>predict&lt;/em>
+what a given peptide&amp;rsquo;s fragmentation spectrum should look like — so searches leaned on slow experimental
+libraries or crude theoretical guesses. Today&amp;rsquo;s digest is about the deep-learning models that finally predict
+peptide spectra from sequence alone, and how that quietly unlocked faster, deeper, library-free proteomics — more
+protein data per experiment, exactly what data-hungry &lt;a href="https://aicell.io/project/human-cell-simulator/">cell models&lt;/a> need.&lt;/p>
+&lt;h3 id="-the-first-accurate-predictions">🎼 The first accurate predictions&lt;/h3>
+&lt;p>Could a network learn the rules of peptide fragmentation? &lt;a href="https://doi.org/10.1021/acs.analchem.7b02566" target="_blank" rel="noopener">&lt;strong>Zhou et al.&lt;/strong>&lt;/a>
+(&lt;em>Analytical Chemistry&lt;/em>, 2017) showed it could with &lt;strong>pDeep&lt;/strong>, &amp;ldquo;&lt;strong>a deep neural network-based model for the
+spectrum prediction of peptides.&lt;/strong>&amp;rdquo; Using &amp;ldquo;&lt;strong>bidirectional long short-term memory (BiLSTM),&lt;/strong>&amp;rdquo; pDeep predicted
+multiple fragmentation modes &amp;ldquo;&lt;strong>with &amp;gt;0.9 median Pearson correlation coefficients,&lt;/strong>&amp;rdquo; and — a striking hint that
+it learned real chemistry — could &amp;ldquo;&lt;strong>distinguish extremely similar peptides … (GG = N, AG = Q, or even I = L),&lt;/strong>&amp;rdquo;
+cases &amp;ldquo;&lt;strong>very difficult to distinguish using traditional search engines.&lt;/strong>&amp;rdquo;&lt;/p>
+&lt;h3 id="-predictions-better-than-the-measurement">🎯 Predictions better than the measurement&lt;/h3>
+&lt;p>Then the models got &lt;em>good&lt;/em>. &lt;a href="https://doi.org/10.1038/s41592-019-0426-7" target="_blank" rel="noopener">&lt;strong>Gessulat et al.&lt;/strong>&lt;/a>
+(&lt;em>Nature Methods&lt;/em>, 2019) trained &lt;strong>Prosit&lt;/strong> on &amp;ldquo;&lt;strong>550,000 tryptic peptides and 21 million high-quality tandem
+mass spectra,&lt;/strong>&amp;rdquo; producing &amp;ldquo;&lt;strong>chromatographic retention time and fragment ion intensity predictions that exceed
+the quality of the experimental data.&lt;/strong>&amp;rdquo; Folded into search pipelines, that precision meant &amp;ldquo;&lt;strong>more
+identifications at &amp;gt;10× lower false discovery rates&lt;/strong>&amp;rdquo; — and Prosit could go further, &amp;ldquo;&lt;strong>generating spectral
+libraries for data-independent acquisition&lt;/strong>&amp;rdquo; from &amp;ldquo;&lt;strong>peptide sequence alone.&lt;/strong>&amp;rdquo; A predictor accurate enough to
+&lt;em>replace&lt;/em> measurement in parts of the workflow.&lt;/p>
+&lt;h3 id="-fragmentation-is-a-long-range-affair">🔬 Fragmentation is a long-range affair&lt;/h3>
+&lt;p>Why does a peptide break where it does? &lt;a href="https://doi.org/10.1038/s41592-019-0427-6" target="_blank" rel="noopener">&lt;strong>Tiwary et al.&lt;/strong>&lt;/a>
+(&lt;em>Nature Methods&lt;/em>, 2019) built &lt;strong>DeepMass:Prism&lt;/strong> and showed &amp;ldquo;&lt;strong>machine learning can predict peptide
+fragmentation patterns in mass spectrometers with accuracy within the uncertainty of measurement.&lt;/strong>&amp;rdquo; Analyzing
+the model revealed biology, not just fit: &amp;ldquo;&lt;strong>peptide fragmentation depends on long-range interactions within a
+peptide sequence.&lt;/strong>&amp;rdquo; And practically, using predicted spectra for data-independent acquisition was &amp;ldquo;&lt;strong>nearly
+equivalent to the use of spectra from experimental libraries&lt;/strong>&amp;rdquo; — the interpretability-plus-utility combination
+the lab prizes.&lt;/p>
+&lt;h3 id="-libraries-with-no-experiments">📚 Libraries with no experiments&lt;/h3>
+&lt;p>DIA is powerful but was shackled to a slow prerequisite: build an experimental (DDA) spectral library first.
+&lt;a href="https://doi.org/10.1038/s41467-019-13866-z" target="_blank" rel="noopener">&lt;strong>Yang et al.&lt;/strong>&lt;/a> (&lt;em>Nature Communications&lt;/em>, 2020) cut that cord with
+&lt;strong>DeepDIA&lt;/strong>, generating &amp;ldquo;&lt;strong>in silico spectral libraries for DIA analysis&lt;/strong>&amp;rdquo; whose quality is &amp;ldquo;&lt;strong>comparable to
+that of experimental libraries.&lt;/strong>&amp;rdquo; With peptide-detectability prediction, libraries can be &amp;ldquo;&lt;strong>built directly from
+protein sequence databases,&lt;/strong>&amp;rdquo; letting DIA &amp;ldquo;&lt;strong>break through the limitation of DDA on peptide/protein
+detection.&lt;/strong>&amp;rdquo; Skip the wet-lab library entirely — start from the genome.&lt;/p>
+&lt;h3 id="-analyze-dia-at-scale">⚙️ Analyze DIA at scale&lt;/h3>
+&lt;p>Predicting libraries is half the battle; extracting quantities from dense DIA data is the other.
+&lt;a href="https://doi.org/10.1038/s41592-019-0638-x" target="_blank" rel="noopener">&lt;strong>Demichev et al.&lt;/strong>&lt;/a> (&lt;em>Nature Methods&lt;/em>, 2020) built &lt;strong>DIA-NN&lt;/strong>, an
+&amp;ldquo;&lt;strong>integrated software suite … that exploits deep neural networks and new quantification and signal correction
+strategies for the processing of data-independent acquisition proteomics experiments.&lt;/strong>&amp;rdquo; It is &amp;ldquo;&lt;strong>particularly
+beneficial for high-throughput applications,&lt;/strong>&amp;rdquo; enabling &amp;ldquo;&lt;strong>deep and confident proteome coverage when used in
+combination with fast chromatographic methods&lt;/strong>&amp;rdquo; — the engine behind today&amp;rsquo;s large-cohort proteomics.&lt;/p>
+&lt;h3 id="-one-framework-for-every-peptide-property">🧰 One framework for every peptide property&lt;/h3>
+&lt;p>Finally, the field consolidated. &lt;a href="https://doi.org/10.1038/s41467-022-34904-3" target="_blank" rel="noopener">&lt;strong>Zeng et al.&lt;/strong>&lt;/a>
+(&lt;em>Nature Communications&lt;/em>, 2022) introduced &lt;strong>AlphaPeptDeep&lt;/strong>, a &amp;ldquo;&lt;strong>modular … framework&lt;/strong>&amp;rdquo; that predicts &amp;ldquo;&lt;strong>the
+retention time, ion mobility and fragment intensities of a peptide just from the amino acid sequence.&lt;/strong>&amp;rdquo; It
+represents post-translational modifications &amp;ldquo;&lt;strong>in a generic manner,&lt;/strong>&amp;rdquo; leans on &amp;ldquo;&lt;strong>transfer learning&lt;/strong>&amp;rdquo; to avoid
+huge training sets, and features &amp;ldquo;&lt;strong>a model shop that enables non-specialists to create models in just a few lines
+of code&lt;/strong>&amp;rdquo; — even extending to &amp;ldquo;&lt;strong>a HLA peptide prediction model&lt;/strong>&amp;rdquo; that ties straight back to the
+&lt;a href="https://aicell.io/post/newsletter-2026-09-20/">immunopeptidomics&lt;/a> we covered last week.&lt;/p>
+&lt;h3 id="-why-its-our-kind-of-problem">🧫 Why it&amp;rsquo;s our kind of problem&lt;/h3>
+&lt;p>Read across the six and the throughline is the lab&amp;rsquo;s own. First, this is a &lt;strong>force-multiplier for omics
+throughput&lt;/strong>: library-free DIA and better identification mean deeper, faster proteomes from the same instrument —
+more data per experiment, the fuel for &lt;a href="https://aicell.io/project/human-cell-simulator/">cell modeling&lt;/a>. Second, the &lt;strong>proteome is
+a data layer of the virtual cell&lt;/strong> — which proteins are present, how abundant, how modified — complementing the
+lab&amp;rsquo;s imaging-based proteomics heritage (the Human Protein Atlas) with the mass-spec view. Third, the winning
+tools are &lt;strong>open and reusable&lt;/strong> (Prosit in ProteomicsDB, AlphaPeptDeep&amp;rsquo;s &amp;ldquo;model shop,&amp;rdquo; DIA-NN) — shared models
+over bespoke pipelines, the same &lt;a href="https://aicell.io/project/bioengine/">BioEngine&lt;/a> and &lt;a href="https://aicell.io/project/bioimage-model-zoo/">model-zoo&lt;/a>
+ethos. Predicting a spectrum sounds narrow; it turned a measurement bottleneck into a computation, and that is
+how a field speeds up.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(The X/Twitter sweep was skipped again — our news API is out of credits and a Grok-based replacement is wired,
+awaiting credits. Anchors were verified via the Europe PMC API, as NCBI&amp;rsquo;s search backend was down at run time.)
+Have lab news to share — a talk, paper, conference or release? Message me on Slack.&lt;/em>&lt;/p></description></item><item><title>Lab Newsletter — September 2, 2026: What the Fold Won't Tell You</title><link>https://aicell.io/post/newsletter-2026-09-02/</link><pubDate>Wed, 02 Sep 2026 03:07:13 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-09-02/</guid><description>&lt;p>We have gotten very good at guessing what a protein &lt;em>looks like&lt;/em>. The headline result of the
 structure era isn&amp;rsquo;t one crystal — it&amp;rsquo;s scale: an &lt;a href="https://doi.org/10.1126/science.ade2574" target="_blank" rel="noopener">ESM protein language
 model&lt;/a> (Lin … Rives, &lt;em>Science&lt;/em>, 2023) can &amp;ldquo;&lt;strong>demonstrate
 direct inference of full atomic-level protein structure from primary sequence&lt;/strong>,&amp;rdquo; and its authors used
