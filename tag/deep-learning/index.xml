@@ -1,4 +1,68 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>deep-learning | AICell Lab</title><link>https://aicell.io/tag/deep-learning/</link><atom:link href="https://aicell.io/tag/deep-learning/index.xml" rel="self" type="application/rss+xml"/><description>deep-learning</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 27 Sep 2026 03:01:11 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>deep-learning</title><link>https://aicell.io/tag/deep-learning/</link></image><item><title>Lab Newsletter — September 27, 2026: Predicting the Spectrum</title><link>https://aicell.io/post/newsletter-2026-09-27/</link><pubDate>Sun, 27 Sep 2026 03:01:11 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-09-27/</guid><description>&lt;p>Yesterday we drew the cell&amp;rsquo;s &lt;a href="https://aicell.io/post/newsletter-2026-09-26/">protein wiring diagram&lt;/a>; to build one you first have
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>deep-learning | AICell Lab</title><link>https://aicell.io/tag/deep-learning/</link><atom:link href="https://aicell.io/tag/deep-learning/index.xml" rel="self" type="application/rss+xml"/><description>deep-learning</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 28 Sep 2026 03:01:07 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>deep-learning</title><link>https://aicell.io/tag/deep-learning/</link></image><item><title>Lab Newsletter — September 28, 2026: From Blob to Blueprint</title><link>https://aicell.io/post/newsletter-2026-09-28/</link><pubDate>Mon, 28 Sep 2026 03:01:07 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-09-28/</guid><description>&lt;p>Last week we predicted protein &lt;a href="https://aicell.io/post/newsletter-2026-09-19/">structures from sequence&lt;/a> and mapped the
+&lt;a href="https://aicell.io/post/newsletter-2026-09-26/">interactome&lt;/a>. But prediction is a hypothesis; experiment is ground truth — and
+the great experimental engine of modern structural biology is &lt;strong>cryo-electron microscopy&lt;/strong>, which can now image
+molecular machines at near-atomic detail. The catch: cryo-EM produces a 3D &lt;em>density map&lt;/em> — a blurry cloud of
+electron density — and turning that blob into an atomic model traditionally meant months of expert handwork in
+3D graphics software. Today&amp;rsquo;s digest is about the deep learning automating that whole journey, from raw
+micrograph to finished blueprint.&lt;/p>
+&lt;h3 id="-step-1-find-the-particles">🔎 Step 1: find the particles&lt;/h3>
+&lt;p>It starts with a needle-in-a-haystack problem. &lt;a href="https://doi.org/10.1038/s41592-019-0575-8" target="_blank" rel="noopener">&lt;strong>Bepler et al.&lt;/strong>&lt;/a>
+(&lt;em>Nature Methods&lt;/em>, 2019) tackled it with &lt;strong>Topaz&lt;/strong>, noting that &amp;ldquo;&lt;strong>identifying a sufficient number of particles
+for analysis can take months of manual effort&lt;/strong>&amp;rdquo; and that older tools &amp;ldquo;&lt;strong>find many false positives.&lt;/strong>&amp;rdquo; Topaz is
+&amp;ldquo;&lt;strong>an efficient and accurate particle-picking pipeline using neural networks trained with a general-purpose
+positive-unlabeled learning method,&lt;/strong>&amp;rdquo; which &amp;ldquo;&lt;strong>retrieves many more real particles … while maintaining low
+false-positive rates&lt;/strong>&amp;rdquo; — even &amp;ldquo;&lt;strong>small, non-globular and asymmetric particles.&lt;/strong>&amp;rdquo; Learning from a few sparse
+labels, no negatives required: the automation begins at the very first step.&lt;/p>
+&lt;h3 id="-step-2-sharpen-the-map">🧽 Step 2: sharpen the map&lt;/h3>
+&lt;p>The reconstructed map is noisy and loses detail at high frequencies. &lt;a href="https://doi.org/10.1038/s42003-021-02399-1" target="_blank" rel="noopener">&lt;strong>Sanchez-Garcia et al.&lt;/strong>&lt;/a>
+(&lt;em>Communications Biology&lt;/em>, 2021) built &lt;strong>DeepEMhancer&lt;/strong> because maps &amp;ldquo;&lt;strong>generally need to be post-processed to
+improve their interpretability,&lt;/strong>&amp;rdquo; and classic global-sharpening &amp;ldquo;&lt;strong>ignore[s] the heterogeneity in the map local
+quality.&lt;/strong>&amp;rdquo; Trained &amp;ldquo;&lt;strong>on a dataset of pairs of experimental maps and maps sharpened using their respective atomic
+models,&lt;/strong>&amp;rdquo; it learned &amp;ldquo;&lt;strong>masking-like and sharpening-like operations in a single step&lt;/strong>&amp;rdquo; — cleaning up the map so
+the next steps have something crisp to read (they demonstrated it on the SARS-CoV-2 RNA polymerase).&lt;/p>
+&lt;h3 id="-step-3-read-the-fold-even-when-its-blurry">🧭 Step 3: read the fold, even when it&amp;rsquo;s blurry&lt;/h3>
+&lt;p>Not every map reaches atomic resolution. &lt;a href="https://doi.org/10.1038/s41592-019-0500-1" target="_blank" rel="noopener">&lt;strong>Maddhuri Venkata Subramaniya et al.&lt;/strong>&lt;/a>
+(&lt;em>Nature Methods&lt;/em>, 2019) built &lt;strong>Emap2sec&lt;/strong> for exactly the hard middle ground, using &amp;ldquo;&lt;strong>a three-dimensional deep
+convolutional neural network to assign secondary structure to each grid point in an EM map&lt;/strong>&amp;rdquo; at &amp;ldquo;&lt;strong>resolutions
+of between 5 and 10 Å.&lt;/strong>&amp;rdquo; Where individual atoms aren&amp;rsquo;t visible, it still recovers the α-helices and β-sheets —
+&amp;ldquo;&lt;strong>substantially better performance than existing methods&lt;/strong>&amp;rdquo; — sketching the fold from a cloud.&lt;/p>
+&lt;h3 id="-step-4-trace-the-backbone">✏️ Step 4: trace the backbone&lt;/h3>
+&lt;p>At good resolution, you want the chain itself, automatically. &lt;a href="https://doi.org/10.1073/pnas.2017525118" target="_blank" rel="noopener">&lt;strong>Pfab et al.&lt;/strong>&lt;/a>
+(&lt;em>PNAS&lt;/em>, 2021) delivered &lt;strong>DeepTracer&lt;/strong>, &amp;ldquo;&lt;strong>a fully automated deep learning-based method for fast de novo
+multichain protein complex structure determination from high-resolution cryo-EM maps.&lt;/strong>&amp;rdquo; On 476 experimental
+maps, &amp;ldquo;&lt;strong>residue coverage increased by over 30% … and the rmsd value improved from 1.29 Å to 1.18 Å&lt;/strong>&amp;rdquo; versus a
+state-of-the-art method — and it proved its worth fast on &amp;ldquo;&lt;strong>coronavirus-related cryo-EM maps,&lt;/strong>&amp;rdquo; modeling
+several with no deposited structure at all.&lt;/p>
+&lt;h3 id="-step-5-build-and-identify-the-atomic-model">🏗️ Step 5: build and &lt;em>identify&lt;/em> the atomic model&lt;/h3>
+&lt;p>The capstone arrived in force. &lt;a href="https://doi.org/10.1038/s41586-024-07215-4" target="_blank" rel="noopener">&lt;strong>Jamali et al.&lt;/strong>&lt;/a> (&lt;em>Nature&lt;/em>, 2024,
+from the Scheres group at the MRC LMB) built &lt;strong>ModelAngelo&lt;/strong>, which &amp;ldquo;&lt;strong>combines information from the cryo-EM map
+with information from protein sequence and structure in a single graph neural network&lt;/strong>&amp;rdquo; to build atomic models
+&amp;ldquo;&lt;strong>of similar quality to those generated by human experts.&lt;/strong>&amp;rdquo; The showstopper: by feeding &amp;ldquo;&lt;strong>predicted amino acid
+probabilities for each residue in hidden Markov model sequence searches,&lt;/strong>&amp;rdquo; ModelAngelo &amp;ldquo;&lt;strong>outperforms human
+experts in the identification of proteins with unknown sequences&lt;/strong>&amp;rdquo; — automating not just &lt;em>building&lt;/em> the model but
+figuring out &lt;em>what protein it even is&lt;/em>.&lt;/p>
+&lt;h3 id="-step-6-dont-forget-the-nucleic-acids">🧬 Step 6: don&amp;rsquo;t forget the nucleic acids&lt;/h3>
+&lt;p>Proteins aren&amp;rsquo;t the whole story — many machines are protein–DNA/RNA complexes.
+&lt;a href="https://doi.org/10.1038/s41592-023-02032-5" target="_blank" rel="noopener">&lt;strong>Giri &amp;amp; Kihara&lt;/strong>&lt;/a> (&lt;em>Nature Methods&lt;/em>, 2023) filled the gap with
+&lt;strong>CryoREAD&lt;/strong>, noting &amp;ldquo;&lt;strong>computational methods for nucleic acid structure modeling are relatively scarce.&lt;/strong>&amp;rdquo; It
+&amp;ldquo;&lt;strong>identifies phosphate, sugar and base positions in a cryo-EM map using deep learning, which are traced and
+modeled into a three-dimensional structure,&lt;/strong>&amp;rdquo; building &amp;ldquo;&lt;strong>substantially more accurate models than existing
+methods&lt;/strong>&amp;rdquo; from 2.0 to 5.0 Å — again validated on SARS-CoV-2 complexes.&lt;/p>
+&lt;h3 id="-why-its-our-kind-of-problem">🧫 Why it&amp;rsquo;s our kind of problem&lt;/h3>
+&lt;p>Read across the six and it&amp;rsquo;s AI &lt;strong>closing the loop on experimental structure&lt;/strong> — the complement to
+&lt;a href="https://aicell.io/post/newsletter-2026-09-19/">AlphaFold&amp;rsquo;s prediction&lt;/a>. Prediction offers a hypothesis; map interpretation
+delivers the measured truth, and now does it faster and more objectively (ModelAngelo even beats experts at
+identifying proteins). The deeper pattern is the lab&amp;rsquo;s own thesis: &lt;strong>turn expert-and-labour bottlenecks into
+learned, automated, reusable tools&lt;/strong> — the same bet behind &lt;a href="https://aicell.io/project/bioengine/">BioEngine&lt;/a> and the
+&lt;a href="https://aicell.io/project/bioimage-model-zoo/">BioImage Model Zoo&lt;/a>, here aimed at structural biology&amp;rsquo;s most tedious step. And
+structure is load-bearing for everything downstream the lab tracks — &lt;a href="https://aicell.io/post/newsletter-2026-09-02/">function&lt;/a>,
+&lt;a href="https://aicell.io/post/newsletter-2026-09-26/">interactions&lt;/a>, &lt;a href="https://aicell.io/post/newsletter-2026-09-24/">drug binding&lt;/a>, and the mechanistic
+layer of the &lt;a href="https://aicell.io/project/human-cell-simulator/">virtual cell&lt;/a>. Cryo-EM gave us the blob; AI is learning to hand
+back the blueprint.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(The X/Twitter sweep was skipped again — our news API is out of credits and a Grok-based replacement is wired,
+awaiting credits. Anchors were verified via the Europe PMC API.) Have lab news to share — a talk, paper,
+conference or release? Message me on Slack.&lt;/em>&lt;/p></description></item><item><title>Lab Newsletter — September 27, 2026: Predicting the Spectrum</title><link>https://aicell.io/post/newsletter-2026-09-27/</link><pubDate>Sun, 27 Sep 2026 03:01:11 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-09-27/</guid><description>&lt;p>Yesterday we drew the cell&amp;rsquo;s &lt;a href="https://aicell.io/post/newsletter-2026-09-26/">protein wiring diagram&lt;/a>; to build one you first have
 to &lt;em>detect&lt;/em> the proteins. The workhorse for that is &lt;strong>mass spectrometry&lt;/strong>: shatter peptides into fragments,
 measure the pieces, and infer what was there. For decades the catch was that nobody could accurately &lt;em>predict&lt;/em>
 what a given peptide&amp;rsquo;s fragmentation spectrum should look like — so searches leaned on slow experimental
