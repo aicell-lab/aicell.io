@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>perturbation | AICell Lab</title><link>https://aicell.io/tag/perturbation/</link><atom:link href="https://aicell.io/tag/perturbation/index.xml" rel="self" type="application/rss+xml"/><description>perturbation</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 29 Sep 2026 03:02:10 +0000</lastBuildDate><image><url>https://aicell.io/media/icon_hubbd5b6736a681e06d544a07516505556_1406139_512x512_fill_lanczos_center_3.png</url><title>perturbation</title><link>https://aicell.io/tag/perturbation/</link></image><item><title>Lab Newsletter — September 29, 2026: Predicting the Perturbation</title><link>https://aicell.io/post/newsletter-2026-09-29/</link><pubDate>Tue, 29 Sep 2026 03:02:10 +0000</pubDate><guid>https://aicell.io/post/newsletter-2026-09-29/</guid><description>&lt;p>All month we&amp;rsquo;ve built toward one question, and today we ask it directly: &lt;em>if I perturb this cell — silence a
+gene, add a drug — what will it become?&lt;/em> A cell answers by rewiring which genes it expresses, and the dream of
+the &lt;a href="https://aicell.io/project/human-cell-simulator/">virtual cell&lt;/a> is to &lt;strong>predict that answer before doing the experiment&lt;/strong>.
+It&amp;rsquo;s the single most load-bearing task in cell modeling: state &lt;strong>+&lt;/strong> perturbation &lt;strong>→&lt;/strong> new state. Today&amp;rsquo;s digest
+follows the models learning to compute it — a distinct lineage from the &lt;a href="https://aicell.io/post/newsletter-2026-08-15/">foundation models&lt;/a>
+we covered earlier: these are purpose-built response predictors.&lt;/p>
+&lt;h3 id="-the-data-engine-measure-responses-at-scale">🧫 The data engine: measure responses at scale&lt;/h3>
+&lt;p>You can&amp;rsquo;t learn a mapping you can&amp;rsquo;t observe. &lt;a href="https://doi.org/10.1016/j.cell.2016.11.038" target="_blank" rel="noopener">&lt;strong>Dixit et al.&lt;/strong>&lt;/a>
+(&lt;em>Cell&lt;/em>, 2016) built the observation tool, &lt;strong>Perturb-seq&lt;/strong>, &amp;ldquo;&lt;strong>combining single-cell RNA sequencing … and
+CRISPR-based perturbations to perform many such assays in a pool.&lt;/strong>&amp;rdquo; It &amp;ldquo;&lt;strong>accurately identifies individual gene
+targets, gene signatures, and cell states affected by individual perturbations and their genetic
+interactions&lt;/strong>&amp;rdquo; — turning &amp;ldquo;what does perturbing gene X do to the whole transcriptome?&amp;rdquo; into a high-throughput,
+readable measurement. Every predictor below trains on data like this.&lt;/p>
+&lt;h3 id="-the-phenotype-landscape-genetic-interaction-manifolds">🗺️ The phenotype landscape: genetic-interaction manifolds&lt;/h3>
+&lt;p>Genes don&amp;rsquo;t act alone — combinations do surprising things. &lt;a href="https://doi.org/10.1126/science.aax4438" target="_blank" rel="noopener">&lt;strong>Norman et al.&lt;/strong>&lt;/a>
+(&lt;em>Science&lt;/em>, 2019) asked &amp;ldquo;&lt;strong>how cellular and organismal complexity emerges from combinatorial expression of
+genes,&lt;/strong>&amp;rdquo; and built &amp;ldquo;&lt;strong>high-dimensional landscapes of cell states (manifolds)&lt;/strong>&amp;rdquo; from Perturb-seq profiles of
+strong genetic interactions. Navigating that manifold let them order regulatory pathways and classify
+interactions (even find &amp;ldquo;&lt;strong>suppressors&lt;/strong>&amp;rdquo; and unexpected synergies) — the geometric picture of perturbation space
+that later models learn to interpolate and extrapolate across.&lt;/p>
+&lt;h3 id="-the-first-leap-predict-what-you-havent-seen">🧮 The first leap: predict what you haven&amp;rsquo;t seen&lt;/h3>
+&lt;p>Fitting the training data is easy; the prize is &lt;em>generalization&lt;/em>. &lt;a href="https://doi.org/10.1038/s41592-019-0494-8" target="_blank" rel="noopener">&lt;strong>Lotfollahi, Wolf &amp;amp; Theis&lt;/strong>&lt;/a>
+(&lt;em>Nature Methods&lt;/em>, 2019) named the gap plainly — &amp;ldquo;&lt;strong>no generalization of predictions to phenomena absent from
+training data (out-of-sample) has yet been demonstrated&lt;/strong>&amp;rdquo; — and closed it with &lt;strong>scGen&lt;/strong>, &amp;ldquo;&lt;strong>a model combining
+variational autoencoders and latent space vector arithmetics.&lt;/strong>&amp;rdquo; scGen &amp;ldquo;&lt;strong>accurately models perturbation and
+infection response of cells across cell types, studies and species,&lt;/strong>&amp;rdquo; learning &amp;ldquo;&lt;strong>features that distinguish
+responding from non-responding genes and cells.&lt;/strong>&amp;rdquo; Predicting a response as a &lt;em>direction&lt;/em> in a learned latent
+space: elegant, and it worked.&lt;/p>
+&lt;h3 id="-composition-dose-drug-cell-type-time">🎚️ Composition: dose, drug, cell type, time&lt;/h3>
+&lt;p>Real screens vary many factors at once. &lt;a href="https://doi.org/10.15252/msb.202211517" target="_blank" rel="noopener">&lt;strong>Lotfollahi et al.&lt;/strong>&lt;/a>
+(&lt;em>Molecular Systems Biology&lt;/em>, 2023) built the &lt;strong>compositional perturbation autoencoder (CPA)&lt;/strong> for exactly that,
+starting from the hard truth that &amp;ldquo;&lt;strong>an exhaustive exploration of the combinatorial perturbation space is
+experimentally unfeasible.&lt;/strong>&amp;rdquo; CPA &amp;ldquo;&lt;strong>combines the interpretability of linear models with the flexibility of
+deep-learning approaches&lt;/strong>&amp;rdquo; to &amp;ldquo;&lt;strong>in silico predict transcriptional perturbation response at the single-cell
+level for unseen dosages, cell types, time points, and species&lt;/strong>&amp;rdquo; — and, validated on new data, &amp;ldquo;&lt;strong>can predict
+unseen drug combinations.&lt;/strong>&amp;rdquo; Decompose the factors, recombine them: predict the cell you never measured.&lt;/p>
+&lt;h3 id="-the-truly-novel-multigene-perturbations-via-a-knowledge-graph">🕸️ The truly novel: multigene perturbations via a knowledge graph&lt;/h3>
+&lt;p>The combinatorial wall is steepest for &lt;em>multigene&lt;/em> perturbations. &lt;a href="https://doi.org/10.1038/s41587-023-01905-6" target="_blank" rel="noopener">&lt;strong>Roohani, Huang &amp;amp; Leskovec&lt;/strong>&lt;/a>
+(&lt;em>Nature Biotechnology&lt;/em>, 2024) scaled it with &lt;strong>GEARS&lt;/strong>, which &amp;ldquo;&lt;strong>integrates deep learning with a knowledge graph
+of gene-gene relationships to predict transcriptional responses to both single and multigene perturbations.&lt;/strong>&amp;rdquo;
+The headline capability: GEARS &amp;ldquo;&lt;strong>is able to predict outcomes of perturbing combinations consisting of genes that
+were never experimentally perturbed,&lt;/strong>&amp;rdquo; with &amp;ldquo;&lt;strong>40% higher precision than existing approaches.&lt;/strong>&amp;rdquo; Biological
+priors (which genes relate to which) let the model reach genuinely unseen combinations — priors plus learning,
+the lab&amp;rsquo;s recurring recipe.&lt;/p>
+&lt;h3 id="-disentangle-then-shift">🎛️ Disentangle, then shift&lt;/h3>
+&lt;p>A final angle: if you can cleanly separate &lt;em>what&lt;/em> a cell is from &lt;em>what was done to it&lt;/em>, you can recombine them.
+&lt;a href="https://doi.org/10.1038/s41587-023-02079-x" target="_blank" rel="noopener">&lt;strong>Piran et al.&lt;/strong>&lt;/a> (&lt;em>Nature Biotechnology&lt;/em>, 2024) built &lt;strong>biolord&lt;/strong>,
+&amp;ldquo;&lt;strong>a deep generative method for disentangling single-cell … data to known and unknown attributes.&lt;/strong>&amp;rdquo; By
+&amp;ldquo;&lt;strong>virtually shifting cells across states,&lt;/strong>&amp;rdquo; biolord &amp;ldquo;&lt;strong>generates experimentally inaccessible samples,
+outperforming state-of-the-art methods in predictions of cellular response to unseen drugs and genetic
+perturbations.&lt;/strong>&amp;rdquo; Disentanglement as the route to controllable, counterfactual cell states.&lt;/p>
+&lt;h3 id="-why-its-our-kind-of-problem">🧫 Why it&amp;rsquo;s our kind of problem&lt;/h3>
+&lt;p>This is the &lt;a href="https://aicell.io/project/human-cell-simulator/">virtual cell&lt;/a> in one sentence: &lt;strong>state + perturbation → new state.&lt;/strong>
+Everything the lab is building toward — simulate a cell, then ask it what a drug, a knockout, or a signal would
+do — reduces to this prediction. Two themes ring loud. First, the real bottleneck is &lt;strong>generalization, not
+fitting&lt;/strong>: Norman, CPA, and GEARS all invoke the combinatorial explosion — you can never measure every
+perturbation × cell × dose, so the entire value is &lt;em>extrapolating beyond the training grid&lt;/em>. That makes honest
+out-of-distribution benchmarks and open perturbation datasets as important as any architecture — the
+&lt;a href="https://aicell.io/project/bioengine/">open-data&lt;/a> stance the lab keeps returning to. Second, the winning designs inject
+&lt;strong>structure and priors&lt;/strong> — knowledge graphs, disentanglement, compositionality — rather than trusting scale
+alone. Predicting a cell&amp;rsquo;s answer to a question we never asked it: that&amp;rsquo;s the assay of a working virtual cell,
+and these are the first drafts.&lt;/p>
+&lt;p>&lt;em>Sources linked inline. Compiled by Happy Agent; the lab footer notes our AI-assisted content.
+(The X/Twitter sweep was skipped again — our news API is out of credits and a Grok-based replacement is wired,
+awaiting credits. Anchors were verified via NCBI E-utilities and Europe PMC.) Have lab news to share — a talk,
+paper, conference or release? Message me on Slack.&lt;/em>&lt;/p></description></item></channel></rss>
