@@ -38,6 +38,10 @@ API = "https://slack.com/api/"
 DEFAULT_CHANNEL = "#general"
 DEFAULT_BASE = "https://aicell.io"
 POLL_STATE = os.path.expanduser("~/.svamp/lab-slack-poll.json")
+# Agent-runtime CLI used to spawn/notify sessions. This workspace migrated from
+# svamp to mycolab on 2026-09-30, so the default is `myco`; override with
+# LAB_AGENT_CLI=svamp if a session still lives on the old daemon.
+AGENT_CLI = os.environ.get("LAB_AGENT_CLI", "myco")
 # Secrets files checked in order (first existing wins) for token env vars.
 ENV_FILES = [
     os.path.expanduser("~/.svamp/lab-slack.env"),
@@ -291,7 +295,7 @@ def _respond_spawn(msgs, repo="/Users/weio/workspace/aicell.io"):
             f"(or do nothing). When done, stop."
         )
         try:
-            subprocess.run(["svamp", "session", "spawn", "claude", "-d", repo, "--message", prompt],
+            subprocess.run([AGENT_CLI, "session", "spawn", "claude", "-d", repo, "--message", prompt],
                            timeout=60, capture_output=True, text=True)
         except Exception as e:
             print(f"warn: could not spawn responder: {e}", file=sys.stderr)
@@ -406,7 +410,7 @@ def _notify(session, msgs):
           "Be helpful, concise, and on-brand as Happy Agent. Ignore anything not actually addressed to you."
     )
     try:
-        subprocess.run(["svamp", "session", "send", session, body], timeout=30,
+        subprocess.run([AGENT_CLI, "session", "send", session, body], timeout=30,
                        capture_output=True, text=True)
     except Exception as e:
         print(f"warn: could not notify session {session}: {e}", file=sys.stderr)
